@@ -1,0 +1,135 @@
+{
+  "activation_gate": "Run-local direct screen only. Execute the batch with the OGS candidate harness only if best_direct_delta_vs_active is below the materiality threshold and the modelling decision explicitly accepts structural/EDZ probing as the next family.",
+  "active_direct_objective": 269.8180571059851,
+  "active_fit_evaluation_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/structural_edz_field_family_plan/active_incumbent_permeability_fit_evaluation.csv",
+  "active_fit_summary_json": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/structural_edz_field_family_plan/active_incumbent_permeability_fit_summary.json",
+  "active_run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "active_weighted_rmse_log10": 1.61071549171474,
+  "amplitudes_log10": [
+    -1.0,
+    -0.5,
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "best_direct_candidate": {
+    "affected_cells": 6182,
+    "amplitude_log10": 0.5,
+    "applied_log10_multiplier_max": 0.5,
+    "applied_log10_multiplier_min": 5.00598248189513e-09,
+    "band_normal_offset_m": -0.75,
+    "band_width_m": 0.25,
+    "bedding_theta_deg": 144.0,
+    "candidate_id": "struct_bedding_parallel_band_bed_om0p75_w0p25_a0p5",
+    "cap_radius_m": null,
+    "corridor_width_m": null,
+    "decay_along_borehole_m": null,
+    "decay_length_m": null,
+    "direct_objective_delta_vs_active": 0.0,
+    "effective_objective_weight": 52.0,
+    "evaluation_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/structural_edz_field_family_plan/struct_bedding_parallel_band_bed_om0p75_w0p25_a0p5/permeability_fit_evaluation.csv",
+    "execution_priority_score": 0.06137340615702969,
+    "family": "bedding_parallel_band",
+    "max_abs_applied_log10_multiplier_objective_support": 1.0537861938290722e-08,
+    "max_abs_log10_residual": 3.4744237387763093,
+    "mean_abs_applied_log10_multiplier_affected": 0.1106812314059368,
+    "mean_abs_applied_log10_multiplier_objective_support": 1.0537861938290722e-08,
+    "mesh": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/structural_edz_field_family_plan/struct_bedding_parallel_band_bed_om0p75_w0p25_a0p5/bulk_w_projections.vtu",
+    "objective_support_cell_count": 30,
+    "objective_support_cells_with_nonzero_applied": 1,
+    "objective_support_cells_with_nonzero_shape": 1,
+    "objective_value": 269.8180571059851,
+    "rank_by_direct_objective": 1,
+    "requested_log10_multiplier_max": 0.5,
+    "requested_log10_multiplier_min": 5.005982481850167e-09,
+    "shape_description": "bedding-parallel band using theta=144 deg, normal offset -0.75 m, width 0.25 m",
+    "shape_id": "bed_om0p75_w0p25",
+    "shape_mean_weight": 0.13365199190379945,
+    "shape_nonzero_cells": 6182,
+    "shape_p95_weight": 0.8195861364876726,
+    "shell_center_radius_m": null,
+    "shell_width_m": null,
+    "summary_json": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/structural_edz_field_family_plan/struct_bedding_parallel_band_bed_om0p75_w0p25_a0p5/permeability_fit_summary.json",
+    "used_in_objective_rows": 75,
+    "weighted_mean_abs_log10_residual": 1.2295502506091056,
+    "weighted_rmse_log10": 1.61071549171474
+  },
+  "best_direct_delta_vs_active": 0.0,
+  "best_direct_objective": 269.8180571059851,
+  "candidate_count": 234,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/structural_edz_field_family_plan/derived_files/structural_edz_candidate_scores.csv",
+      "source": "inversion_workflow/runs/structural_edz_field_family_plan/structural_edz_candidate_scores.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/structural_edz_field_family_plan/derived_files/next_structural_edz_candidate_batch.csv",
+      "source": "inversion_workflow/runs/structural_edz_field_family_plan/next_structural_edz_candidate_batch.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/structural_edz_field_family_plan/derived_files/structural_edz_support_features.csv",
+      "source": "inversion_workflow/runs/structural_edz_field_family_plan/structural_edz_support_features.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/structural_edz_field_family_plan/derived_files/active_incumbent_permeability_fit_summary.json",
+      "source": "inversion_workflow/runs/structural_edz_field_family_plan/active_incumbent_permeability_fit_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/structural_edz_field_family_plan/derived_files/STRUCTURAL_EDZ_FIELD_FAMILY_PLAN.md",
+      "source": "inversion_workflow/runs/structural_edz_field_family_plan/STRUCTURAL_EDZ_FIELD_FAMILY_PLAN.md"
+    }
+  ],
+  "ert_lookup": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/ert_spatial_projection_lookup.csv",
+  "families": [
+    "bedding_parallel_band",
+    "central_edz_cap_decay",
+    "central_edz_shell",
+    "open_twin_broad_corridor",
+    "open_twin_depth_decay_corridor"
+  ],
+  "family_codes": {
+    "bedding_parallel_band": 1,
+    "central_edz_cap_decay": 2,
+    "central_edz_shell": 3,
+    "open_twin_broad_corridor": 4,
+    "open_twin_depth_decay_corridor": 5
+  },
+  "field_name": "k_i_rd",
+  "improving_candidate_count": 0,
+  "input_mesh": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/current_permeability_field/current_best_bulk_w_projections.vtu",
+  "interpretation": "No structural/EDZ candidate improves the direct permeability screen. The generated top meshes are useful as documented diagnostic probes, but they do not justify more active-objective OGS runs before measurement-stream gates or a different parameterization are addressed.",
+  "line_samples": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/borehole_line_mesh_samples.csv",
+  "magnitude_field_name": "k_mag_rd",
+  "material_direct_improvement_threshold": 0.25,
+  "next_candidate_batch_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/structural_edz_field_family_plan/next_structural_edz_candidate_batch.csv",
+  "notes": [
+    "All candidates preserve tensor orientation and anisotropy ratio by scalar multiplication of k_i_rd.",
+    "The central EDZ shapes use the existing approximate centre-radius support convention.",
+    "The open-twin corridor shapes use mapped BCD-A32/BCD-A33 line geometry, not residual-derived local coefficients.",
+    "ERT, Taupe/TDR, RH, and other HM streams remain gated; this screen is not a replacement for those gates."
+  ],
+  "output_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/structural_edz_field_family_plan",
+  "proposal_mesh_count": 18,
+  "recommended_execution_batch_size": 3,
+  "results_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/structural_edz_field_family_plan/structural_edz_candidate_scores.csv",
+  "status": "structural_edz_direct_screen_no_ogs_batch_recommended",
+  "summary_markdown": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/structural_edz_field_family_plan/STRUCTURAL_EDZ_FIELD_FAMILY_PLAN.md",
+  "support_feature_counts": {
+    "active_permeability_objective_support_cells": 30,
+    "cell_count": 10239,
+    "ert_ready_support_cells": 1928,
+    "line_segments_available": [
+      "BCD-A32",
+      "BCD-A33"
+    ],
+    "material_id_counts": {
+      "0": 6864,
+      "1": 3375
+    },
+    "within_approx_1p5m_center_support_cells": 4964
+  },
+  "support_features_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/structural_edz_field_family_plan/structural_edz_support_features.csv",
+  "target_cells": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/permeability_observation_cells.csv",
+  "targets": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/permeability_observation_targets.csv"
+}

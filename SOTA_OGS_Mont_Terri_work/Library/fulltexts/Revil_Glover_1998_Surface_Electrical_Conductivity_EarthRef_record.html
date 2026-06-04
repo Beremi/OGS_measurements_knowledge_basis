@@ -1,0 +1,223 @@
+<html>
+        <head>
+            <title>EarthRef.org Reference Database (ERR) -- Revil & Glover 1998</title>
+            <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>                                             
+            <meta name="description" content="EarthRef.org is the web site for Earth Reference Data and Models"/>
+            <meta name="keywords"    content="earthref.org portal, earth sciences, oceanography, geochemistry, volcanology, petrology, mineralogy, geochronology, online databases, reference models, search, download, references, publications, papers, books, abstracts, thesis, theses, reports, data tables, technical notes, appendix, appendices, "/>
+            <meta name="robots"      content="index, follow"/>
+    		<script type="text/javascript" src ="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"          ></script>
+    		<script type="text/javascript" src ="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"    ></script>
+    		<script type="text/javascript" src="/js/z-browser.js?1161810679"        ></script>
+    		<script type="text/javascript" src="/js/z-cookie.js?1318622759"         ></script>
+    		<script type="text/javascript" src="/js/z-html.js?1352398491"           ></script>
+            <script type="text/javascript" src="/js/z-hide-div.js?1228068491"       ></script>
+            <script type="text/javascript" src="/js/z-top-menu.js?1576230009"       ></script>
+    		<script type="text/javascript" src="/js/z-popup-no-jquery.js?1285992277"></script>
+    		<script type="text/javascript" src="/js/z-popup.js?1289316244"          ></script>
+    		<script type="text/javascript" src="/js/j-popup.js?1322985703"          ></script>
+    	   <script language="JavaScript" src="../js/z-map.js"></script>
+<script language="JavaScript">
+	$(document).ready(function () {
+		$('.cit-art-list').each(function(){
+			var $list_div = $(this);
+			var xhr = $.ajax({
+				dataType:	'jsonp',
+				url:		'x-wos-json.fcgi?n=' + $list_div.attr('cit_id'),
+				cache:		true,
+				error:		function(xhr, status, exception) {
+								$list_div.html('No citing references currently found in the Thomson Reuters Web of Science&reg;.');
+								if(console && console.log) console.log('Thomson Reuters Web of Science&reg;. AJAX error', xhr,status,exception);
+							},
+				success:	function(data, status, xhr) {
+								if(data) {
+									if(data.citing_articles && data.citing_articles.length) {
+										var $ul = $('<ul>');
+										for(var i = 0; i < data.citing_articles.length; i++) {
+											if(data.citing_articles[i].er_citation_id)
+												$ul.append('<li><a href="/err/' + data.citing_articles[i].er_citation_id + '">' + data.citing_articles[i].citation + '</a></li>');
+											else
+												$ul.append('<li>' + data.citing_articles[i].citation + '</li>');
+										}
+										$list_div.empty().append($ul);
+									}
+									else {
+										$list_div.html('No citing references currently found in the Thomson Reuters Web of Science&reg;.');
+									}
+								}
+							}
+			});
+		});
+	
+	});
+</script>
+
+    		<link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css"/>
+    		<link rel="stylesheet" type="text/css" href="/css/cgi.css?1471324801"/>
+    	   
+            <style type="text/css"> a:link{color:#800080;} a:active{color:#800080;} a:visited{color:#800080;} </style>
+            <meta name="google-site-verification" content="swe1d2bTwsG9w5Rwk8FV790D6X4_IN-TXPNVhVubJj0" />
+            <meta name="msvalidate.01" content="73E578485BD8A6B62D8521BDED1AFCA4" />
+        </head>
+    <body style="overflow:auto; color:#000000; background-color:#FFFFFF; margin-top:0px;" exec_time='20260531183754'>
+<div class="popup"      id="popup"     ></div>
+<div class="popup"      id="popup1"    ></div>
+<div class="info_popup" id="info_popup"></div>
+
+
+<center>
+
+<table border=0 cellpadding=0 cellspacing=0 width="100%"><tr><td><img src="/images/icons/spacer.gif" width=1 height=1></td></tr></table>
+<p style="text-align:center;"><span class=pagetitle>EarthRef.org Reference Database (ERR)</span><br><span class=subsubtitle>Development and Maintenance by the EarthRef.org Database Team</span></p>
+
+<form name="userform" method="post" action="err-s2-list.cgi" >
+
+<input type="hidden" name="database_name" value="err">
+<input type="hidden" name="search_start"  value="main">
+
+<table border=0 cellpadding=0 cellspacing=0 width=67%>
+<tr>
+<td width=9 height=36 background="/images/table/table.ulc.gif"><img border=0 src="/images/icons/spacer.gif" width=9 height=36></td>
+<td background="/images/table/table.tr.gif" nowrap><a href="/ERR/"      ><img border=0 src="/images/table/home.gif"     width=57 height=36></a><img border=0 src="/images/table/table.d.gif" width=4 height=36><a href="/ERR/help/"       target=_blank><img border=0 src="/images/table/help.gif" width=49 height=36></a><img border=0 src="/images/table/table.tl.gif" width=25 height=36></td>
+<td width=9 height=36 background="/images/table/table.urc.gif"><img border=0 src="/images/icons/spacer.gif" width=9 height=36></td>
+</tr>
+
+<tr>
+<td width=9 height=9  background="/images/table/table.l.gif"  ><img border=0 src="/images/icons/spacer.gif" width=9 height=1></td>
+<td width="100%" bgcolor=#999999 nowrap>
+
+<table width=100% border=0 cellspacing=2 cellpadding=2>
+<tr valign=middle><th height=35 align=center bgcolor=#006600><font face=Verdana color=#FFFFFF size=2>Detailed Reference Information</font></th></tr>
+</table>
+
+<table width=100% border=0 cellspacing=2 cellpadding=0><tr><td>
+<table width=100% border=0 cellspacing=0 cellpadding=2><tr>
+<td width=99% height=25 valign=middle bgcolor=#F7F7F7><img class="spacer" alt="" src="/images/icons/spacer.gif" style="width:5px; height:1px;"/><a style='font-family:Verdana; font-weight:bolder; font-size:11pt;' href="http://earthref.org/ERR/17694/">Revil & Glover 1998</a></td>
+<td width=1%  height=25 valign=middle bgcolor=#F7F7F7 nowrap><a href="z-login.cgi?dbms=err&database_name=err&search_start=main&next_url=erda-c0-start.cgi&main_frametop_src=erda-c3-reference.cgi&cit_id=17694&cit_type=11&ref_contrib_type=update" target=main><img border=0 src=../images/buttons/edit.small.gif width=46 height=20 hspace=2 vspace=2></a></td></tr></table>
+</td></tr></table>
+<div id='nfc' style='display:block;'>
+<table width=100% border=0 cellspacing=2 cellpadding=2>
+<tr><td bgcolor=#EEEEEE><table width=100% border=0 cellpadding=4 cellspacing=0>
+<!-- 17694, <b>Revil, A. and Glover, P.W.J. (1998).</b> Nature of surface electrical conductivity in natural sands, sandstones, and clays.<i> Geophysical Research Letters 25: doi: 10.1029/98GL00296. issn: 0094-8276.</i><u></u> //-->
+<tr valign=top>
+<td style='padding-left:5;padding-right:5'>
+<b>Revil, A. and Glover, P.W.J. (1998).</b> Nature of surface electrical conductivity in natural sands, sandstones, and clays.<i> Geophysical Research Letters 25: doi: 10.1029/98GL00296. issn: 0094-8276.</i><u></u></td></tr>
+</table>
+</td></tr>
+</table>
+</div>
+<div id='abstract' style='display:block;'>
+<table width=100% border=0 cellspacing=2 cellpadding=2>
+<tr><td bgcolor=#EEEEEE><table width=100% border=0 cellpadding=4 cellspacing=0>
+<tr valign=top>
+<td style='padding-left:5;padding-right:5'>
+<p>The electrical conductivity of rocks results from conduction through the bulk solution occupying the pores and from surface conduction occurring at the fluid/grain interface. The nature of the surface electrical conductivity of shaly and clean sands and sandstones is examined. Surface conduction is characterized by the specific surface conductance which is the sum of three contributions: (i) Conduction within the electrical diffuse layer, which makes a negligible contribution to the total specific surface conductance. (ii) Conduction in the Stern layer, which is shown to vary significantly with the salinity of the pore fluid at low salinities (<formula>10<supscr>-6</supscr></formula> to <formula>10<supscr>-3</supscr> <emph type=roman>mol l</emph><supscr><emph type=roman>-1</emph></supscr></formula>), but becomes independent of salinity at higher salinities. (iii) A mechanism operating directly on the mineral surface, independent of salinity, and perhaps associated with proton transfer. At salinities higher than <formula>10<supscr>-3</supscr> <emph type=roman>mol l</emph><supscr><emph type=roman>-1</emph></supscr></formula> and at 25 ¿C, the specific surface conductance of quartz and clays is equal to <formula>8.9¿10<supscr>-9</supscr> <emph type=roman>S</emph></formula> and <formula>2.5¿10<supscr>-9</supscr> <emph type=roman>S</emph></formula> respectively. Equations describing the influence of surface conductivity and microstructure upon the macroscopic electrical conductivity of sands, sandstones, and shales are also developed. ¿ 1998 American Geophysical Union</p></td></tr>
+</table>
+</td></tr>
+</table>
+</div>
+<table width=100% border=0 cellspacing=2 cellpadding=2><tr><td bgcolor=#F7F7F7><table width=100% border=0 cellspacing=0 cellpadding=8>
+<tr>
+<td width= 1% nowrap valign=top bgcolor=#F7F7F7><img class="spacer" alt="" src="/images/icons/spacer.gif" style="width:1px; height:1px;"/></td>
+<td width=98% nowrap valign=top bgcolor=#F7F7F7><img class="spacer" alt="" src="/images/icons/spacer.gif" style="width:9px; height:1px;"/></td>
+<td width=1% nowrap valign=top bgcolor=#F7F7F7><table width=100% border=0 cellspacing=0 cellpadding=1>
+<tr><td nowrap colspan=4><font size=2 face=verdana color=#5D5DC9><b>BACKGROUND DATA FILES</b></font></td></tr>
+
+<tr><td nowrap colspan=4><hr width=100%></td></tr>
+
+<tr>
+<td width=1% nowrap><img border=0 src=../images/icons/sq.gif width=8 height=7 hspace=3 vspace=2></td>
+<td width=1% nowrap><b>Abstract<img class="spacer" alt="" src="/images/icons/spacer.gif" style="width:9px; height:1px;"/></b></td>
+<td width=1% nowrap></td>
+<td width=1% nowrap><a href=err-s3-download.cgi?database_name=err&search_start=main&cit_id=17694&file_id=22791><img border=0 src=../images/buttons/download.very.flat.gif width=69 height=13 hspace=1 vspace=2></a></td>
+</tr><tr><td nowrap colspan=4><hr width=100%></td></tr>
+
+</table></td>
+
+</table></td></tr></table>
+<div id='keyw_div17694' style='display:block;'>
+<table width=100% border=0 cellspacing=2 cellpadding=2>
+<tr><td bgcolor=#EEEEEE><table width=100% border=0 cellpadding=4 cellspacing=0>
+<tr valign=top>
+<td style='padding-left:5;padding-right:5'><b>Keywords</b><br>
+Mineral Physics, Electrical properties, Physical Properties of Rocks, General or miscellaneous, Physical Properties of Rocks, Transport properties, Physical Properties of Rocks, Magnetic and electrical properties</td></tr>
+</table>
+</td></tr></table>
+</div>
+<div id='jour_div17694' style='display:block;'>
+<table width=100% border=0 cellspacing=2 cellpadding=2>
+<tr><td bgcolor=#EEEEEE><table width=100% border=0 cellpadding=4 cellspacing=0>
+<tr valign=top>
+<td style='padding-left:5;padding-right:5'><b>Journal</b><br>
+Geophysical Research Letters<br /><a href=http://www.agu.org/journals/gl/ target=_blank>http://www.agu.org/journals/gl/</a></td></tr>
+</table>
+</td></tr></table>
+<table width=100% border=0 cellspacing=2 cellpadding=2>
+<tr><td bgcolor=#EEEEEE><table width=100% border=0 cellpadding=4 cellspacing=0>
+<tr valign=top>
+<td style='padding-left:5;padding-right:5'><b>Publisher</b><br>
+American Geophysical Union<br />2000 Florida Avenue N.W.<br/>Washington, D.C. 20009-1277<br/>USA<br />1-202-462-6900<br />1-202-328-0566<br /><a href=mailto:service@agu.org>service@agu.org</a></td></tr>
+</table>
+</td></tr></table>
+</div>
+</td>
+<td width=9 height=9  background="/images/table/table.r.gif"  ><img border=0 src="/images/icons/spacer.gif" width=9 height=1></td></tr>
+<tr>
+<td width=9 height=1  background="/images/table/table.l.gif"><img border=0 src="/images/icons/spacer.gif" width=9 height=1></td>
+<td width=9 height=9  bgcolor=#999999                         ><img border=0 src="/images/icons/spacer.gif" width=9 height=9></td>
+<td width=9 height=1  background="/images/table/table.r.gif"><img border=0 src="/images/icons/spacer.gif" width=9 height=1></td>
+</tr>
+<tr>
+<td width=9 height=9  background="/images/table/table.l.gif"  ><img border=0 src="/images/icons/spacer.gif" width=9 height=1></td>
+<td align=right       bgcolor=#999999   nowrap                  ><a href="javascript:document.userform.reset()"><img border=0 src="/images/buttons/clear.gif" width=59 height=23 alt="Click to clear form" onMouseOver="window.status='Click to clear form'; return true;" onMouseOut="window.status=''; return true;"></a><img border=0 src="/images/icons/spacer.gif" width=8 height=25><a href="javascript:history.back();"><img border=0 src="/images/buttons/back.gif" width=56 height=23 alt="Click to return to previous page" onMouseOver="window.status='Click to return to previous page'; return true;" onMouseOut="window.status=''; return true;"></a><img border=0 src="/images/icons/spacer.gif" width=8 height=25><a href="javascript: document.userform.submit();"><img border=0 src="/images/buttons/continue.gif" width="86" height=23 alt="Click to submit" onMouseOver="window.status='Click to submit'; return true;" onMouseOut="window.status=''; return true;"></a></td>
+<td width=9 height=9  background="/images/table/table.r.gif"><img border=0 src="/images/icons/spacer.gif" width=9 height=1></td>
+</tr>
+<tr>
+<td width=9 height=9  background="/images/table/table.llc.gif"><img border=0 src="/images/icons/spacer.gif" width=9 height=9></td>
+<td width=9 height=9  background="/images/table/table.b.gif"  ><img border=0 src="/images/icons/spacer.gif" width=1 height=9></td>
+<td width=9 height=9  background="/images/table/table.lrc.gif"><img border=0 src="/images/icons/spacer.gif" width=9 height=9></td></tr>
+</table>
+
+</form>
+
+
+		<div class="footer">
+		  <div class="footer-main">
+		    <a class="normallink" href="/"                                    > Home                 </a>&nbsp;|&nbsp;
+            <a class="normallink" href="/databases/"                          > Databases            </a>&nbsp;|&nbsp;
+            <a class="normallink" href="/events/"                             > Events               </a>&nbsp;|&nbsp;
+            <a class="normallink" href="/tools/"                              > Tools                </a>&nbsp;|&nbsp;
+            <a class="normallink" href="/publications/"                       > Publications         </a>&nbsp;|&nbsp;
+            <a class="normallink" href="/links/"                              > Links                </a>&nbsp;|&nbsp;
+            <a class="normallink" href="/search"                              > Google Site Search   </a><br/>              
+            <a class="normallink" href="/information/disclaimer.htm"          > Copyright Disclaimer </a>&nbsp;|&nbsp;
+            <a class="normallink" href="/whoswho/"                            > Who's Who           </a>&nbsp;|&nbsp;
+            <a class="normallink" href="/ER/whoswho/"                         > Database Team        </a>&nbsp;|&nbsp;
+            <a class="normallink" href="/information/browsers-and-plugins.htm"> Browsers and Plugins </a>&nbsp;|&nbsp;
+            <a class="normallink" href="/index/"                              > Database Indices     </a>
+		  </div>
+		  <div class="footer-left">
+		    Sponsored by <a class="normallink" href="http://www.nsf.gov" target="_blank">NSF</a><br/>EAR 0000998
+		  </div>
+		  <div class="footer-right">
+		    Webservices and Database Support by the <a class="normallink" href="http://www.sdsc.edu" target="_blank">San Diego Supercomputer Center</a><br/>
+		    Supported by <a class="normallink" href="http://sio.ucsd.edu" target="_blank">Scripps Institution of Oceanography</a> and the <a class="normallink" href="http://ceoas.oregonstate.edu/" target="_blank">College of Earth, Ocean and Atmospheric Sciences</a>
+		  </div>
+		</div>
+	<script type="text/javascript">if (top.document) top.document.title = document.title;</script>
+
+</center>
+
+        <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11960481-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body></html>

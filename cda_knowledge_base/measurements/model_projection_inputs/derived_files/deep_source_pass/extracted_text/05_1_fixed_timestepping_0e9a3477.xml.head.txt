@@ -1,0 +1,44 @@
+<time_stepping>
+<type>FixedTimeStepping</type>
+<t_initial>0</t_initial><!-- last time step -->
+<t_end>140000000</t_end><!-- last time step of the curve -->
+<!--t_initial>3153624278400</t_initial--><!-- last time step -->
+<!--t_end>3153759099264</t_end--><!-- last time step of the curve -->
+<timesteps>
+<pair>
+<repeat>365</repeat>
+<delta_t>864000</delta_t><!--t0 = 18.09.2019; deltat= 10d so that first output is exported at the end of the month -->
+</pair>
+<pair>
+<repeat>365</repeat>
+<delta_t>1314900</delta_t><!--15.2187d -> 365.25d/y / 12 = 304375 d/month -->
+</pair>
+</timesteps>
+</time_stepping>
+<!--
+<t_end> 3.1536000E+13</t_end>
+<timesteps>
+<pair><repeat>1</repeat> <delta_t>360.0</delta_t></pair>
+<pair><repeat>1</repeat> <delta_t>8460.0</delta_t></pair>
+<pair><repeat>1</repeat> <delta_t>69100.0</delta_t></pair>
+<pair><repeat>1</repeat> <delta_t>86400.0</delta_t></pair>
+<pair><repeat>1</repeat> <delta_t>17300.0</delta_t></pair>
+<pair><repeat>1</repeat> <delta_t>43200.0</delta_t></pair>
+<pair><repeat>1</repeat> <delta_t>60500.0</delta_t></pair>
+<pair><repeat>1</repeat> <delta_t>864000.0</delta_t></pair>
+<pair><repeat>1</repeat> <delta_t>1730000.0</delta_t></pair>
+<pair><repeat>1</repeat> <delta_t>2590000.0</delta_t></pair>
+<pair><repeat>1</repeat> <delta_t>3890000.0</delta_t></pair>
+<pair><repeat>1</repeat> <delta_t>6050000.0</delta_t></pair>
+<pair><repeat>40</repeat> <delta_t>7880000.0</delta_t></pair>
+<pair><repeat>20</repeat> <delta_t>15800000.0</delta_t></pair>
+<pair><repeat>110</repeat> <delta_t>31500000.0</delta_t></pair>
+<pair><repeat>25</repeat> <delta_t>63100000.0</delta_t></pair>
+<pair><repeat>104</repeat> <delta_t>157600000.0</delta_t></pair>
+<pair><repeat>20</repeat> <delta_t>789000000.0</delta_t></pair>
+<pair><repeat>176</repeat> <delta_t>1577500000.0</delta_t></pair>
+<pair><repeat>101</repeat> <delta_t>3150000000.0</delta_t></pair>
+<pair><repeat>91</repeat> <delta_t>31500000000.0</delta_t></pair>
+<pair><repeat>110</repeat> <delta_t>315000000000.0</delta_t></pair>
+<pair><repeat>1</repeat> <delta_t>5677800000000.0</delta_t></pair>
+</timesteps> -->

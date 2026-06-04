@@ -1,0 +1,49 @@
+<processes>
+<process ref="TRM">
+<nonlinear_solver>basic_newton</nonlinear_solver>
+<!--compensate_non_equilibrium_initial_residuum>true
+</compensate_non_equilibrium_initial_residuum-->
+<convergence_criterion>
+<type>PerComponentDeltaX</type>
+<norm_type>NORM2</norm_type>
+<abstols>1e-10 1e-10 1e-10 1e-10</abstols>
+<reltols>1e-8 1e-8 1e-8 1e-8</reltols>
+</convergence_criterion>
+<time_discretization>
+<type>BackwardEuler</type>
+</time_discretization>
+<include file="./05_1_fixed_timestepping.xml" />
+</process>
+</processes>
+<output>
+<type>VTK</type>
+<prefix>results_cd-a_03_01</prefix>
+<timesteps>
+<pair>
+<repeat>7</repeat>
+<each_steps>2</each_steps><!--every 2 days, for 2 weeks-->
+</pair>
+<pair>
+<repeat>10000</repeat>
+<each_steps>7</each_steps><!--every 1 week-->
+</pair>
+</timesteps>
+<!--include
+file="./051_fixed_output_times.xml"/> -->
+<!-- specify variables if you don't want all available to be exported
+if you plan to make a restart, it is better to export all of them-->
+<variables>
+<!--variable>displacement</variable>
+<variable>pressure</variable>
+<variable>pressure_interpolated</variable>
+<variable>sigma</variable>
+<variable>epsilon</variable>
+<variable>velocity</variable>
+<variable>saturation</variable>
+<variable>porosity</variable>
+<variable>temperature</variable>
+<variable>swelling_stress</variable-->
+</variables>
+<suffix>_ts_{:0>4timestep}_t_{:time:0>10}</suffix>
+<output_iteration_results>false</output_iteration_results>
+</output>

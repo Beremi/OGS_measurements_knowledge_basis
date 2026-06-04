@@ -1,0 +1,34 @@
+{
+  "activation_status_counts": {
+    "blocked_numeric_series_missing": 3,
+    "blocked_or_unverified_auxiliary_exports": 1,
+    "blocked_statistical_export_missing": 1,
+    "partial_slide_summary_available_full_table_missing": 1
+  },
+  "active_objective_rows": 0,
+  "catalogue_copies": [
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/other_hm_monitoring/derived_files/other_hm_missing_numeric_request.csv",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/other_hm_monitoring/derived_files/other_hm_missing_numeric_evidence.csv",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/other_hm_monitoring/derived_files/other_hm_missing_numeric_request_summary.json",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/other_hm_monitoring/derived_files/other_hm_missing_numeric_request.md"
+  ],
+  "evidence_rows": 8,
+  "inventory_levelling_rows": 12,
+  "inventory_qualitative_target_rows": 10,
+  "inventory_status": "layout_and_qualitative_targets_ready_numeric_series_missing",
+  "inventory_zone_rows": 84,
+  "outputs": {
+    "evidence_csv": "inversion_workflow/processed_observations/other_hm_missing_numeric_evidence.csv",
+    "markdown": "inversion_workflow/processed_observations/other_hm_missing_numeric_request.md",
+    "request_csv": "inversion_workflow/processed_observations/other_hm_missing_numeric_request.csv",
+    "summary_json": "inversion_workflow/processed_observations/other_hm_missing_numeric_request_summary.json"
+  },
+  "priority_counts": {
+    "high": 2,
+    "low": 1,
+    "medium": 3
+  },
+  "remaining_blocker": "Numeric Geoscope and laser-scan exports are still absent from the catalogue; the request package states exactly what is needed before hard pressure/deformation residuals can be assigned.",
+  "request_rows": 6,
+  "status": "request_package_ready_numeric_exports_still_missing"
+}

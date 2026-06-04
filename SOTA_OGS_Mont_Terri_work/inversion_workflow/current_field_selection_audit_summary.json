@@ -1,0 +1,41 @@
+{
+  "status": "current_field_selection_audit_generated",
+  "run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "active_objective_decision": "accept_as_current_active_objective_incumbent",
+  "final_all_measurement_decision": "do_not_promote_to_final_all_measurement_field",
+  "status_counts": {
+    "pass": 2,
+    "pass_with_caveat": 2,
+    "fails_final_promotion": 2,
+    "blocked_or_gated": 4
+  },
+  "decision_rationale": [
+    "The packaged field is complete, release-gated, and first under the current active objective.",
+    "The active objective still contains only direct permeability and raw NMR state residuals.",
+    "The preferred provisional NMR trend/anomaly residual selects a different run.",
+    "The cross-stream scorecard's best mean-rank run differs from the packaged field.",
+    "ERT, Taupe/TDR, RH, and other-HM streams remain gated by support, calibration, provenance, or numeric-export gaps."
+  ],
+  "key_numbers": {
+    "active_objective_rank": 1.0,
+    "active_objective_value": 3156.353066948979,
+    "direct_permeability_weighted_rmse_log10": 1.61071549171474,
+    "raw_nmr_rmse_normalized_residual": 5.483436241919646,
+    "nmr_trend_anomaly_rank": 14.0,
+    "nmr_trend_anomaly_winner": "broad_continuous_001_003_length_0p021m",
+    "ert_rank": 8.0,
+    "taupe_rank": 29.0,
+    "mean_rank_all_streams": 13.2,
+    "worst_rank_all_streams": 29.0,
+    "best_mean_rank_run": "local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000",
+    "required_gate_fail_count": 7,
+    "missing_external_responses": 7
+  },
+  "source_artifacts": [
+    "inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD_SUMMARY.json",
+    "inversion_workflow/cross_stream_candidate_scorecard_summary.json",
+    "inversion_workflow/nmr_trend_anomaly_active_objective_summary.json",
+    "inversion_workflow/measurement_stream_activation_gate_audit_summary.json",
+    "inversion_workflow/external_gate_response_intake_summary.json"
+  ]
+}

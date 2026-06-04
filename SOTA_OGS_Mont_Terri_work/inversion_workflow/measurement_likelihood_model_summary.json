@@ -1,0 +1,44 @@
+{
+  "activation_state_counts": {
+    "active_direct_parameter_likelihood": 1,
+    "active_state_likelihood_from_sampled_ogs_outputs": 1,
+    "boundary_forcing_audit_not_point_likelihood": 1,
+    "qualitative_validation_layer_numeric_series_missing": 1,
+    "resistivity_diagnostic_evaluated_transform_support_unconfirmed": 1,
+    "support_and_prior_layer": 1,
+    "trend_diagnostic_evaluated_pending_absolute_calibration": 1
+  },
+  "active_streams_now": 2,
+  "current_candidate_total_active_objective": 3159.6643814648755,
+  "ert_support_sensitivity_best_mean_rank_run": "broad_continuous_001_001_length_0p023m_shift_1p004",
+  "ert_support_sensitivity_runs": 6,
+  "ert_support_sensitivity_variant_count": 9,
+  "measurement_streams": 7,
+  "notes": [
+    "This artifact records likelihood intent and activation gates, not just data coverage.",
+    "Direct permeability pulse tests and sampled NMR rows are active for the current executed OGS candidate where usable observation times and required model quantities are covered.",
+    "NMR is the first active state residual, but the generated bound-water sensitivity audit rules out treating raw absolute theta as a naive saturation residual.",
+    "ERT and Taupe/TDR remain diagnostic until their support/calibration choices are confirmed.",
+    "RH currently audits boundary-condition provenance and candidate-envelope uncertainty rather than acting as a cell residual."
+  ],
+  "other_hm_numeric_source_audit_hard_ready_requests": 0,
+  "other_hm_numeric_source_audit_request_rows": 6,
+  "other_hm_numeric_source_audit_support_ready_requests": 6,
+  "rh_boundary_uncertainty_active_outside_envelope_count": 575,
+  "rh_boundary_uncertainty_envelope_dates": 1064,
+  "rh_boundary_uncertainty_overlap_pressure_range_p50_mpa": 2.103967930926996,
+  "state_evaluation_status_counts": {
+    "boundary_forcing_target_no_state_residual": 4247,
+    "evaluated": 192,
+    "external_projection_required": 1691,
+    "outside_time_tolerance": 95,
+    "target_not_usable_for_current_state_fit": 5265
+  },
+  "state_target_rows": 11490,
+  "taupe_series_weight_sensitivity_best_mean_rank_run": "adaptive_combined_001_length_0p050m",
+  "taupe_series_weight_sensitivity_compared_series": 12,
+  "taupe_series_weight_sensitivity_distinct_series_winners": 8,
+  "taupe_series_weight_sensitivity_runs": 66,
+  "total_candidate_rows": 11858,
+  "total_current_objective_rows": 267
+}

@@ -1,0 +1,687 @@
+{
+  "checks": [
+    {
+      "message": "all project mesh files exist",
+      "name": "project_mesh_files_exist",
+      "severity": "ok"
+    },
+    {
+      "message": "all process-variable mesh references are in the project mesh list",
+      "name": "process_variable_mesh_references",
+      "severity": "ok"
+    },
+    {
+      "message": "required observation-output variables are requested",
+      "name": "required_output_variables",
+      "severity": "ok"
+    },
+    {
+      "message": "bulk_w_projections.vtu contains required k_i_rd and n_rd cell fields",
+      "name": "projected_bulk_mesh_fields",
+      "severity": "ok"
+    },
+    {
+      "message": "meshio cannot decode: bulk_all.vtu, cd-a_niche4.vtu, cd-a_left.vtu, cd-a_right.vtu, cd-a_top.vtu, cd-a_bottom.vtu",
+      "name": "meshio_readability",
+      "severity": "warning"
+    },
+    {
+      "message": "all VTU XML headers expose point/cell counts and DataArray declarations",
+      "name": "vtu_header_integrity",
+      "severity": "ok"
+    },
+    {
+      "message": "all boundary/support submeshes expose bulk_node_ids and bulk_element_ids in their VTU headers",
+      "name": "submesh_bulk_id_arrays",
+      "severity": "ok"
+    },
+    {
+      "message": "recorded OGS execution accepted the project inputs with returncode 0",
+      "name": "ogs_execution_acceptance",
+      "severity": "ok"
+    }
+  ],
+  "execution_backend": "docker_apptainer_sif",
+  "execution_returncode": 0,
+  "execution_status_file": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/OGS_EXECUTION_STATUS.json",
+  "field_checks": [
+    {
+      "expected_components": 4,
+      "field_name": "k_i_rd",
+      "ok": true,
+      "shape": [
+        10239,
+        4
+      ]
+    },
+    {
+      "expected_components": 1,
+      "field_name": "n_rd",
+      "ok": true,
+      "shape": [
+        10239,
+        1
+      ]
+    }
+  ],
+  "mesh_element_parameters": [
+    {
+      "field_name": "n_rd",
+      "name": "phi",
+      "type": "MeshElement"
+    },
+    {
+      "field_name": "k_i_rd",
+      "name": "k_i",
+      "type": "MeshElement"
+    }
+  ],
+  "meshes": [
+    {
+      "cell_data": [
+        "MaterialIDs",
+        "k_anisotropy_ratio_rd",
+        "k_i_rd",
+        "k_local_basis_applied_log10_increment_rd",
+        "k_local_basis_nearest_anchor_distance_m_rd",
+        "k_local_basis_requested_log10_increment_rd",
+        "k_local_basis_weight_sum_rd",
+        "k_mag_rd",
+        "k_smooth_applied_log10_multiplier_rd",
+        "k_smooth_kernel_weight_sum_rd",
+        "k_smooth_nearest_anchor_distance_m_rd",
+        "k_smooth_requested_log10_multiplier_rd",
+        "k_theta_deg_rd",
+        "n_rd"
+      ],
+      "cell_field_shapes": {
+        "MaterialIDs": [
+          10239
+        ],
+        "k_anisotropy_ratio_rd": [
+          10239,
+          1
+        ],
+        "k_i_rd": [
+          10239,
+          4
+        ],
+        "k_local_basis_applied_log10_increment_rd": [
+          10239,
+          1
+        ],
+        "k_local_basis_nearest_anchor_distance_m_rd": [
+          10239,
+          1
+        ],
+        "k_local_basis_requested_log10_increment_rd": [
+          10239,
+          1
+        ],
+        "k_local_basis_weight_sum_rd": [
+          10239,
+          1
+        ],
+        "k_mag_rd": [
+          10239,
+          1
+        ],
+        "k_smooth_applied_log10_multiplier_rd": [
+          10239,
+          1
+        ],
+        "k_smooth_kernel_weight_sum_rd": [
+          10239,
+          1
+        ],
+        "k_smooth_nearest_anchor_distance_m_rd": [
+          10239,
+          1
+        ],
+        "k_smooth_requested_log10_multiplier_rd": [
+          10239,
+          1
+        ],
+        "k_theta_deg_rd": [
+          10239,
+          1
+        ],
+        "n_rd": [
+          10239,
+          1
+        ]
+      },
+      "cells": [
+        {
+          "count": 10239,
+          "type": "triangle6"
+        }
+      ],
+      "exists": true,
+      "header": {
+        "data_arrays": [
+          {
+            "components": 3,
+            "format": "binary",
+            "name": "Points",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "connectivity",
+            "offset": "",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "offsets",
+            "offset": "",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "types",
+            "offset": "",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "MaterialIDs",
+            "offset": "",
+            "type": "Int32"
+          },
+          {
+            "components": 4,
+            "format": "binary",
+            "name": "k_i_rd",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "k_mag_rd",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "k_anisotropy_ratio_rd",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "k_theta_deg_rd",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "n_rd",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "k_smooth_requested_log10_multiplier_rd",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "k_smooth_applied_log10_multiplier_rd",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "k_smooth_kernel_weight_sum_rd",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "k_smooth_nearest_anchor_distance_m_rd",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "k_local_basis_requested_log10_increment_rd",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "k_local_basis_applied_log10_increment_rd",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "k_local_basis_weight_sum_rd",
+            "offset": "",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "binary",
+            "name": "k_local_basis_nearest_anchor_distance_m_rd",
+            "offset": "",
+            "type": "Float64"
+          }
+        ],
+        "number_of_cells": 10239,
+        "number_of_points": 20873
+      },
+      "meshio_error": "",
+      "meshio_readable": true,
+      "path": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/bulk_w_projections.vtu",
+      "point_data": [],
+      "points": 20873
+    },
+    {
+      "cell_data": [],
+      "cells": [],
+      "exists": true,
+      "header": {
+        "data_arrays": [
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "bulk_node_ids",
+            "offset": "0",
+            "type": "UInt64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "MaterialIDs",
+            "offset": "222656",
+            "type": "Int32"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "bulk_element_ids",
+            "offset": "277276",
+            "type": "UInt64"
+          },
+          {
+            "components": 3,
+            "format": "appended",
+            "name": "Points",
+            "offset": "386504",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "connectivity",
+            "offset": "1054452",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "offsets",
+            "offset": "1709760",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "types",
+            "offset": "1818988",
+            "type": "UInt8"
+          }
+        ],
+        "number_of_cells": 10239,
+        "number_of_points": 20873
+      },
+      "meshio_error": "Error: Incorrect padding",
+      "meshio_readable": false,
+      "path": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/bulk_all.vtu",
+      "point_data": [],
+      "points": null
+    },
+    {
+      "cell_data": [],
+      "cells": [],
+      "exists": true,
+      "header": {
+        "data_arrays": [
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "bulk_node_ids",
+            "offset": "0",
+            "type": "UInt64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "bulk_element_ids",
+            "offset": "6732",
+            "type": "UInt64"
+          },
+          {
+            "components": 3,
+            "format": "appended",
+            "name": "Points",
+            "offset": "10104",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "connectivity",
+            "offset": "30276",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "offsets",
+            "offset": "40368",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "types",
+            "offset": "43740",
+            "type": "UInt8"
+          }
+        ],
+        "number_of_cells": 315,
+        "number_of_points": 630
+      },
+      "meshio_error": "Error: Incorrect padding",
+      "meshio_readable": false,
+      "path": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/cd-a_niche4.vtu",
+      "point_data": [],
+      "points": null
+    },
+    {
+      "cell_data": [],
+      "cells": [],
+      "exists": true,
+      "header": {
+        "data_arrays": [
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "bulk_node_ids",
+            "offset": "0",
+            "type": "UInt64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "bulk_element_ids",
+            "offset": "448",
+            "type": "UInt64"
+          },
+          {
+            "components": 3,
+            "format": "appended",
+            "name": "Points",
+            "offset": "672",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "connectivity",
+            "offset": "1996",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "offsets",
+            "offset": "2648",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "types",
+            "offset": "2872",
+            "type": "UInt8"
+          }
+        ],
+        "number_of_cells": 20,
+        "number_of_points": 41
+      },
+      "meshio_error": "Error: Invalid base64-encoded string: number of data characters (913) cannot be 1 more than a multiple of 4",
+      "meshio_readable": false,
+      "path": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/cd-a_left.vtu",
+      "point_data": [],
+      "points": null
+    },
+    {
+      "cell_data": [],
+      "cells": [],
+      "exists": true,
+      "header": {
+        "data_arrays": [
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "bulk_node_ids",
+            "offset": "0",
+            "type": "UInt64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "bulk_element_ids",
+            "offset": "448",
+            "type": "UInt64"
+          },
+          {
+            "components": 3,
+            "format": "appended",
+            "name": "Points",
+            "offset": "672",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "connectivity",
+            "offset": "1996",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "offsets",
+            "offset": "2648",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "types",
+            "offset": "2872",
+            "type": "UInt8"
+          }
+        ],
+        "number_of_cells": 20,
+        "number_of_points": 41
+      },
+      "meshio_error": "Error: Invalid base64-encoded string: number of data characters (913) cannot be 1 more than a multiple of 4",
+      "meshio_readable": false,
+      "path": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/cd-a_right.vtu",
+      "point_data": [],
+      "points": null
+    },
+    {
+      "cell_data": [],
+      "cells": [],
+      "exists": true,
+      "header": {
+        "data_arrays": [
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "bulk_node_ids",
+            "offset": "0",
+            "type": "UInt64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "bulk_element_ids",
+            "offset": "448",
+            "type": "UInt64"
+          },
+          {
+            "components": 3,
+            "format": "appended",
+            "name": "Points",
+            "offset": "672",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "connectivity",
+            "offset": "1996",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "offsets",
+            "offset": "2648",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "types",
+            "offset": "2872",
+            "type": "UInt8"
+          }
+        ],
+        "number_of_cells": 20,
+        "number_of_points": 41
+      },
+      "meshio_error": "Error: Invalid base64-encoded string: number of data characters (913) cannot be 1 more than a multiple of 4",
+      "meshio_readable": false,
+      "path": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/cd-a_top.vtu",
+      "point_data": [],
+      "points": null
+    },
+    {
+      "cell_data": [],
+      "cells": [],
+      "exists": true,
+      "header": {
+        "data_arrays": [
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "bulk_node_ids",
+            "offset": "0",
+            "type": "UInt64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "bulk_element_ids",
+            "offset": "448",
+            "type": "UInt64"
+          },
+          {
+            "components": 3,
+            "format": "appended",
+            "name": "Points",
+            "offset": "672",
+            "type": "Float64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "connectivity",
+            "offset": "1996",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "offsets",
+            "offset": "2648",
+            "type": "Int64"
+          },
+          {
+            "components": 1,
+            "format": "appended",
+            "name": "types",
+            "offset": "2872",
+            "type": "UInt8"
+          }
+        ],
+        "number_of_cells": 20,
+        "number_of_points": 41
+      },
+      "meshio_error": "Error: Invalid base64-encoded string: number of data characters (913) cannot be 1 more than a multiple of 4",
+      "meshio_readable": false,
+      "path": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/cd-a_bottom.vtu",
+      "point_data": [],
+      "points": null
+    }
+  ],
+  "notes": [
+    "This audit checks run-input consistency before OGS execution.",
+    "Meshio decoding warnings do not prove OGS will reject the file, but they are a reproducibility risk for downstream tooling."
+  ],
+  "output_variables": [
+    "pressure",
+    "saturation",
+    "temperature",
+    "displacement",
+    "porosity"
+  ],
+  "process_variable_mesh_references": [
+    "bulk_all",
+    "cd-a_bottom",
+    "cd-a_left",
+    "cd-a_niche4",
+    "cd-a_right",
+    "cd-a_top"
+  ],
+  "project_file": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/cd_a_open_niche_quad.prj",
+  "project_meshes": [
+    "bulk_w_projections.vtu",
+    "bulk_all.vtu",
+    "cd-a_niche4.vtu",
+    "cd-a_left.vtu",
+    "cd-a_right.vtu",
+    "cd-a_top.vtu",
+    "cd-a_bottom.vtu"
+  ],
+  "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "sif_image": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/file_transfers/collected/2025-04-04_2d_model_container/apptainer_ogs6.5.4.sif",
+  "status": "run_inputs_ogs_accepted_with_meshio_submesh_warnings"
+}

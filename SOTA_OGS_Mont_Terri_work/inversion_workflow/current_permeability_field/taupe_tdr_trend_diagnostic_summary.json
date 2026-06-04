@@ -1,0 +1,35 @@
+{
+  "compared_rows": 1860,
+  "compared_series": 12,
+  "diagnostic_rows": 5088,
+  "diagnostic_status_counts": {
+    "operator_not_mapped_for_current_mesh": 2544,
+    "outside_time_tolerance": 684,
+    "trend_compared": 1860
+  },
+  "max_time_delta_days": 20.0,
+  "mean_abs_time_delta_days": 5.0613201911589005,
+  "notes": [
+    "This file is diagnostic only and is not assembled into the active objective.",
+    "Taupe/TDR absolute residuals remain blocked until the Taupe_WC workbook unit and sensor calibration are documented.",
+    "Rows after the available OGS output time horizon are marked outside_time_tolerance.",
+    "A7/A8 rows remain outside the current local mesh support; A3/A4 mapped rows can be compared as trends."
+  ],
+  "ogs_output_times": 83,
+  "ogs_state_samples": "SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/ogs_state_samples.csv",
+  "series_rows": 24,
+  "standardized_residual": {
+    "mae": 1.863211058631399,
+    "mean": -0.4839129780414623,
+    "p50_abs": 1.4713109260493238,
+    "p90_abs": 4.060256925206716,
+    "rmse": 2.3542717467881773
+  },
+  "state_quantity": "theta_from_porosity_times_saturation",
+  "state_sample_rows": 37184,
+  "status": "taupe_trend_diagnostic_generated_not_active_likelihood",
+  "target_samples": "SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/state_observation_samples.csv",
+  "taupe_bands": "SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/taupe_tdr_bands.csv",
+  "taupe_operator": "SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/taupe_tdr_trend_operator.csv",
+  "time_origin": "2019-09-18T00:00:00"
+}

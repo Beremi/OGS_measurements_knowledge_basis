@@ -1,0 +1,18 @@
+# Response Notes: perm_endpoint_geometry
+- Response status: `missing_response`
+- Request status: `drafted_pending_send`
+- Gate: `PERM_SUPPORT`
+- Audience: Gesa Ziefle / BGR permeability source
+- Recipient draft: `inversion_workflow/external_gate_requests/bgr_historical_permeability_geometry_via_gesa_ziefle.md`
+## Received Files Or Answers
+- None recorded yet.
+## Intake Metadata Checklist
+- borehole id, open/closed assignment, start/end coordinates or depths, orientation convention, interval length/support, date/source table, permeability value, and uncertainty/evaluation note.
+## Acceptance Test
+Inactive historical rows can be projected to OGS cells with a trace/support definition rather than excluded for missing geometry.
+## Refresh Commands After Acceptance
+`python inversion_workflow/scripts/build_permeability_observation_targets.py; python inversion_workflow/scripts/build_permeability_semantics_audit.py; python inversion_workflow/scripts/evaluate_permeability_targets.py; python inversion_workflow/scripts/build_measurement_operator_coverage.py; python inversion_workflow/scripts/build_measurement_likelihood_model.py; python inversion_workflow/scripts/build_measurement_stream_gate_audit.py; python inversion_workflow/scripts/build_measurement_gate_closure_request.py; python inversion_workflow/scripts/build_external_gate_request_pack.py; python inversion_workflow/scripts/build_objective_readiness_audit.py`
+## Gate Decision
+- Current effect if accepted: May close the tracked PERM_SUPPORT caveat and add historical pulse-test rows to the direct parameter objective.
+- Decision: `not_evaluated`
+- Evaluated by/date: not recorded

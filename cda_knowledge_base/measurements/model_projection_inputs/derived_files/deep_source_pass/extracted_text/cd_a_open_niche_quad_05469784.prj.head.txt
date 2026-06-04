@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<OpenGeoSysProject>
+<meshes>
+<!--mesh>bulk.vtu</mesh-->
+<mesh>bulk_w_projections.vtu</mesh>
+<mesh>bulk_all.vtu</mesh>
+<mesh>cd-a_niche4.vtu</mesh>
+<mesh>cd-a_left.vtu</mesh>
+<mesh>cd-a_right.vtu</mesh>
+<mesh>cd-a_top.vtu</mesh>
+<mesh>cd-a_bottom.vtu</mesh>
+</meshes>
+<processes>
+<include file="./01_processes_TRM.xml" />
+</processes>
+<process_variables>
+<include file="./02_process_variables_TRM.xml" />
+</process_variables>
+<parameters>
+<include file="./03_parameters_TRM.xml" />
+</parameters>
+<media>
+<include file="./04_media_TRM.xml" />
+</media>
+<time_loop>
+<include file="./05_time_loop_TRM.xml" />
+</time_loop>
+<nonlinear_solvers>
+<include file="./06_nonlinear_solver_T.xml" />
+</nonlinear_solvers>
+<linear_solvers>
+<include file="./07_linear_solver_T.xml" />
+</linear_solvers>
+<curves>
+<include file="./08_curves.xml"/>
+</curves>
+</OpenGeoSysProject>

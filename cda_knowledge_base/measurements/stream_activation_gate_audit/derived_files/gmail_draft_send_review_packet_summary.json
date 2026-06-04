@@ -1,0 +1,47 @@
+{
+  "all_expected_drafts_observed": true,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/gmail_draft_send_review_packet.csv",
+      "source": "inversion_workflow/gmail_draft_send_review_packet.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/gmail_draft_send_review_packet_summary.json",
+      "source": "inversion_workflow/gmail_draft_send_review_packet_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/gmail_draft_send_review_packet.md",
+      "source": "inversion_workflow/gmail_draft_send_review_packet.md"
+    }
+  ],
+  "closeout_open_criterion_count": 9,
+  "cte_confirmation_draft_count": 1,
+  "draft_count": 6,
+  "draft_ids": [
+    "r6776618065355728003",
+    "r1284411814726937591",
+    "r-8461584324877432346",
+    "r-4809950961900799564",
+    "r-4984596174110032107",
+    "r2947727639429158073"
+  ],
+  "external_dispatch_failed_check_count": 0,
+  "external_dispatch_status": "external_gate_dispatch_gmail_drafts_created_waiting_user_send_and_responses",
+  "external_measurement_draft_count": 5,
+  "gmail_live_state_checked_at": "2026-06-01T03:55:46+02:00",
+  "next_action": "Review the six drafts in Gmail, send only after user approval, then file replies/files in the listed response-note locations and rerun the close-out audits.",
+  "provider_reply_search_result_count": 0,
+  "ready_for_user_review_count": 6,
+  "request_count": 8,
+  "sent_subject_search_result_count": 0,
+  "source_artifacts": [
+    "inversion_workflow/external_gate_gmail_drafts.csv",
+    "inversion_workflow/cte_confirmation_gmail_draft.csv",
+    "inversion_workflow/external_blocker_dashboard.csv",
+    "inversion_workflow/external_gate_dispatch_audit.csv",
+    "inversion_workflow/gmail_gate_live_state_audit_summary.json",
+    "inversion_workflow/final_inversion_closeout_playbook.md"
+  ],
+  "status": "gmail_draft_send_review_packet_generated_not_sent",
+  "unsent_draft_count": 6
+}

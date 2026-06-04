@@ -1,0 +1,52 @@
+{
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_response_intake.csv",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_response_intake.csv"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_response_intake_summary.json",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_response_intake_summary.json"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_response_intake.md",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_response_intake.md"
+    }
+  ],
+  "generated_files": [
+    "inversion_workflow/external_gate_response_intake.csv",
+    "inversion_workflow/external_gate_response_intake_summary.json",
+    "inversion_workflow/external_gate_response_intake.md"
+  ],
+  "intake_directories": [
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/ert/source_files/provider_responses",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/other_hm_monitoring/source_files/provider_responses",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/permeability_pulse_tests/source_files/provider_responses",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/suction_relative_humidity/source_files/provider_responses",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/taupe_tdr/source_files/provider_responses"
+  ],
+  "intake_directory_count": 5,
+  "missing_response_count": 7,
+  "request_ids": [
+    "ert_transform_support",
+    "ert_uncertainty",
+    "hm_numeric_exports",
+    "hm_uncertainty",
+    "rh_active_curve_provenance",
+    "taupe_unit_calibration",
+    "perm_endpoint_geometry"
+  ],
+  "response_note_template_count": 7,
+  "response_note_templates": [
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/ert/source_files/provider_responses/ert_transform_support_response_notes.md",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/ert/source_files/provider_responses/ert_uncertainty_response_notes.md",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/other_hm_monitoring/source_files/provider_responses/hm_numeric_exports_response_notes.md",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/other_hm_monitoring/source_files/provider_responses/hm_uncertainty_response_notes.md",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/suction_relative_humidity/source_files/provider_responses/rh_active_curve_provenance_response_notes.md",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/taupe_tdr/source_files/provider_responses/taupe_unit_calibration_response_notes.md",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/permeability_pulse_tests/source_files/provider_responses/perm_endpoint_geometry_response_notes.md"
+  ],
+  "status": "external_gate_response_intake_generated_waiting_for_responses",
+  "tracked_request_count": 7,
+  "tracked_request_with_suggested_to_count": 7
+}

@@ -1,0 +1,80 @@
+{
+  "active_objective_decision": "accept_as_current_active_objective_incumbent",
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_inversion_promotion_checklist.csv",
+      "source": "inversion_workflow/final_inversion_promotion_checklist.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_inversion_promotion_checklist_summary.json",
+      "source": "inversion_workflow/final_inversion_promotion_checklist_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_inversion_promotion_checklist.md",
+      "source": "inversion_workflow/final_inversion_promotion_checklist.md"
+    }
+  ],
+  "conditional_current_field_wins": 1,
+  "conditional_scenario_count": 8,
+  "conditional_unique_winner_count": 5,
+  "criterion_count": 17,
+  "current_field_final_decision": "do_not_promote_to_final_all_measurement_field",
+  "current_field_run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "missing_response_blocker_count": 8,
+  "open_blocker_count": 8,
+  "open_blocker_ids": [
+    "ert_transform_support",
+    "ert_uncertainty",
+    "hm_numeric_exports",
+    "hm_uncertainty",
+    "rh_active_curve_provenance",
+    "taupe_unit_calibration",
+    "perm_endpoint_geometry",
+    "cte_value_confirmation"
+  ],
+  "open_criterion_ids": [
+    "P08_nmr_residual_policy",
+    "P09_ert_gate",
+    "P10_taupe_gate",
+    "P11_rh_gate",
+    "P12_other_hm_gate",
+    "P13_perm_endpoint_gate",
+    "P14_cte_confirmation",
+    "P15_conditional_field_stability",
+    "P16_final_field_decision"
+  ],
+  "production_sampler_recommendation": "pause_active_production_sampling",
+  "promotion_decision": "do_not_promote_current_field",
+  "required_stream_gate_fail_count": 7,
+  "source_artifacts": [
+    "inversion_workflow/report_open_comment_audit.md",
+    "inversion_workflow/measurement_report_traceability_audit.md",
+    "inversion_workflow/ogs_formulation_consistency_audit.md",
+    "inversion_workflow/runs/direct_fit_observation_run/OGS_RUN_INPUT_AUDIT.md",
+    "inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD.md",
+    "inversion_workflow/current_field_selection_audit.md",
+    "inversion_workflow/conditional_field_selection_scenarios.md",
+    "inversion_workflow/conditional_field_candidates/CONDITIONAL_FIELD_CANDIDATES.md",
+    "inversion_workflow/conditional_field_candidates/CONDITIONAL_FIELD_DIFFERENCE_AUDIT.md",
+    "inversion_workflow/runs/production_sampler_convergence/PRODUCTION_SAMPLER_DECISION.md",
+    "inversion_workflow/measurement_stream_activation_gate_audit.md",
+    "inversion_workflow/nmr_final_residual_policy_gate.md",
+    "inversion_workflow/external_blocker_dashboard.md",
+    "inversion_workflow/internal_gate_decision_register.md",
+    "inversion_workflow/permeability_support_conflict_spatial_audit.md",
+    "inversion_workflow/permeability_support_lower_bound_audit.md",
+    "inversion_workflow/permeability_likelihood_policy_acceptance_record_template.md",
+    "inversion_workflow/permeability_next_field_fit_gate.md",
+    "Library/citation_locator_audit.md"
+  ],
+  "status": "final_inversion_promotion_checklist_generated",
+  "status_counts": {
+    "active_only_pass": 2,
+    "blocked_external": 6,
+    "blocked_internal_decision": 1,
+    "fails_promotion": 2,
+    "pass": 5,
+    "pass_with_caveat": 1
+  },
+  "unsent_blocker_count": 8
+}

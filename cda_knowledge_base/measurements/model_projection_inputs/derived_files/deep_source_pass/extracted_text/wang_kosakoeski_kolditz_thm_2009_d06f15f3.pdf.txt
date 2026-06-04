@@ -1,0 +1,1188 @@
+--- Page 1 ---
+A parallel ﬁnite element scheme for thermo-hydro-mechanical (THM)
+coupled problems in porous media
+Wenqing Wang a,/C3, Georg Kosakowski b, Olaf Kolditz a,c
+a Helmholtz Center for Environmental Research - UFZ, Leipzig, Germany
+b Paul Scherrer Institut - PSI, Villigen, Switzerland
+c Technical University of Dresden, Dresden, Germany
+article info
+Article history:
+Received 4 January 2008
+Received in revised form
+21 April 2008
+Accepted 23 July 2008
+Keywords:
+Parallel computing
+Finite element method
+Domain decomposition
+Thermo-hydro-mechanical (THM) coupled
+processes
+Porous media
+abstract
+Many applied problems in geoscience require knowledge about complex interactions between multiple
+physical and chemical processes in the sub-surface. As a direct experimental investigation is often not
+possible, numerical simulation is a common approach. The numerical analysis of coupled thermo-
+hydro-mechanical (THM) problems is computationally very expensive, and therefore the applicability of
+existing codes is still limited to simpliﬁed problems. In this paper we present a novel implementation of
+a parallel ﬁnite element method (FEM) for the numerical analysis of coupled THM problems in porous
+media. The computational task of the FEM is partitioned into sub-tasks by a priori domain
+decomposition. The sub-tasks are assigned to the CPU nodes concurrently. Parallelization is achieved
+by simultaneously establishing the sub-domain mesh topology, synchronously assembling linear
+equation systems in sub-domains and obtaining the overall solution with a sub-domain linear solver
+(parallel BiCGStab method with Jacobi pre-conditioner). The present parallelization method is
+implemented in an object-oriented way using MPI for inter-processor communication. The parallel
+code was successfully tested with a 2-D example from the international DECOVALEX benchmarking
+project. The achieved speed-up for a 3-D extension of the test example on different computers
+demonstrates the advantage of the present parallel scheme.
+& 2009 Elsevier Ltd. All rights reserved.
+1. Introduction
+The numerical analysis of multi-ﬁeld problems in porous
+media is an important subject for many geo-engineering tasks
+such as the management of geo-resources (e.g. engineering of
+geothermal, oil and gas reservoirs) as well as waste management
+(e.g. chemo-toxic and nuclear waste, CO 2 sequestration) (Doughty
+and Pruess, 2004; Stephansson et al., 2004; Alonso et al., 2005 ).
+For instance, the functional integrity of nuclear waste repositories
+in the deep geologic underground is inﬂuenced by several
+interfering physical and chemical processes. A typical concept
+for deep geological disposal of high level radioactive waste is
+based on a combination of technical and natural barriers. Steel or
+copper waste containers are placed in emplacement tunnels and
+the void space is backﬁlled with bentonite. The emplacement
+tunnels are located in host rocks like clay or salt that hinder water
+movement and migration of radionuclides. Due to the depth of the
+disposal system, considerable overburden loads accompanied by
+large lithostatic stresses are possible. Moreover, radioactive waste
+emplacements like spent fuel will generate heat for relatively long
+times. Therefore, thermo-hydro-mechanical (THM) phenomena
+are very important to consider in those geological environments
+(Tsang, 1991; Stephansson et al., 2004 ). Normally, liquid phase
+ﬂow is very slow in intact very low-permeable host rocks.
+However, even in such an environment, vapor ﬂow can develop
+due to artiﬁcially induced thermal gradients caused by heat
+emitting waste forms ( Olivella and Gens, 2000 ). Gas phases might
+be produced due to the local heating of the formation water close
+to hot waste canisters or as a result of chemical reactions during
+canister corrosion. The mechanical behavior of host rock and
+buffer materials for waste isolation, such as bentonites, can be
+considerably altered under variably saturated and non-isothermal
+conditions. Visco-elasto-plastic material behavior needs to be
+addressed in the mechanical analysis of engineered barrier/waste
+systems in salt rock ( Wallner et al., 2007 ). Moisture changes in
+buffer materials, such as bentonite, results in swelling/shrinking
+effects which have a large impact to the mechanical stability of
+the corresponding host-rock/engineered barrier/waste system
+(Xie et al., 2004; Rutqvist et al., 2005b). In return, thermal and
+hydraulic processes can cause signiﬁcant mechanical damage in
+the near ﬁeld of the host rock formations. A fully coupled THM
+analysis is required to gain appropriate understanding of the
+ARTICLE IN PRESS
+Contents lists available at ScienceDirect
+journal homepage: www.elsevier.com/locate/cageo
+Computers & Geosciences
+0098-3004/$ - see front matter & 2009 Elsevier Ltd. All rights reserved.
+doi:10.1016/j.cageo.2008.07 .007
+/C3Corresponding author.
+E-mail address: wenqing.wang@ufz.de (W. Wang).
+Computers & Geosciences 35 (2009) 1631–1641
+
+--- Page 2 ---
+complex process interactions in the near ﬁeld of chemo-toxic and
+nuclear waste repositories ( Tsang, 1991 ). Therefore, for the
+evaluation of possible scenarios, long-term predictions, and safety
+assessments, numerical modeling tools are increasingly used. In
+the past decade, many efforts have been done for numerically
+solving THM problems by different research groups ( Rutqvist
+et al., 2005a; Sanavia et al., 2006; Wang and Kolditz, 2007 );
+especially in the framework of the DECOVALEX ( http://www.
+decovalex.com) and the BAMBUS projects.
+From the mathematics point of view, THM processes lead to a
+coupled initial-boundary-value-problem (IBVP) which needs to be
+solved numerically. Among the available numerical methods, the
+ﬁnite element method (FEM) is mainly used ( Noorishad et al.,
+1984; Kohl, 1992; Lewis and Schreﬂer, 1998; Rutqvist et al., 2001a;
+Ehlers and Bluhm, 2002; de Boer, 2005 ). Irrespective of the
+speciﬁc numerical method the computation of coupled THM
+problems is very expensive. This is mainly due to two reasons:
+degree of freedom (i.e. number of ﬁeld variables) and strong
+nonlinearity. There are several ways to improve the computational
+efﬁciency, e.g. more efﬁcient numerical algorithms, optimization
+of memory management in the code, and parallelization techni-
+ques. Among them, parallel computing provides the most power-
+ful speed-up. Thanks to the decreasing hardware cost in the past
+years, the parallel computation is getting very attractive for
+research in computer science ( Salinger et al., 1994; Topping and
+Khan, 1996; Fujisawa et al., 2003; Shioya and Yagawa, 2005;
+Tezduyar and Sameh, 2006 ).
+Only little work has been published so far about the parallel
+ﬁnite element analysis of THM coupled problems in porous
+media. Parallel computations have been conducted previously
+only on small clusters with up to eight CPU nodes ( Wang and
+Schreﬂer, 1998; Schreﬂer et al., 2000; Thomas et al., 2003 ).
+Previously developed codes make use of the sub-structuring
+technique for parallelization. This approach is based on the
+following steps: (1) divide the system into different sub-structur-
+ing levels, which consist of several element cells or super-
+elements, (2) condense the terms associated with internal
+nodal points in the sub-structure level assembly, (3) parallel
+assemble local condensed equation systems at sub-structures, (4)
+assemble a condensed global equation system with unknowns
+only associated with sub-structure interface nodes and then solve
+the problem in a so-called multi-front manner, (5) recover
+internal unknowns using the condensed equations.
+This paper presents a novel parallel scheme which is entirely
+based on the domain decomposition concept (DDC). To this
+purpose, the numerical calculation for each individual T/H/M
+process is partitioned by the a priori decomposition of the ﬁnite
+element mesh into sub-domains. All sub-domain related opera-
+tions are assigned to the involved CPUs concurrently. The object-
+oriented parallelization of the ﬁnite element scheme for each
+T/H/M process is realized in three major steps: (1) concurrently
+establish sub-domain mesh topology for both linear and quadratic
+interpolations, (2) simultaneously assemble linear equation
+systems in sub-domains, (3) obtain the overall solution by using
+sub-domain linear equation solver. For step (3), a Jacobi
+preconditioned BiCGStab linear solver is implemented. The
+matrix–vector multiplications, which are the basic computational
+operations of the solver algorithm, are performed at sub-domain
+level by all involved CPUs concurrently. Finally, the overall
+numerical solutions for the entire domain are updated by inter-
+processor communications. It is important to note that this
+parallel scheme completely avoids the assembly of a global
+equation system. All equation assemblies are restricted to sub-
+domain level.
+The paper is structured as follows. The mathematical formula-
+tion of the THM problem as well as the corresponding ﬁnite
+element scheme are brieﬂy described in Sections 2 and 3,
+respectively. Details of the parallelization method are given in
+Section 4 which also includes some aspects of the object-oriented
+implementation in the framework of the open-source scientiﬁc
+software GeoSys/RockFlow. The speed-up of the parallelization
+method is presented together with 2-D and 3-D THM numerical
+simulations in Section 5.
+2. Mechanics of THM coupled processes
+The governing equations of coupled THM problems are
+brieﬂy summarized in this section. The physical processes
+involved are non-isothermal unsaturated ﬂow, heat transport,
+and poro-elasto-plastic deformation. The corresponding ﬁeld
+variables of the multi-ﬁeld problem are liquid phase pressure p,
+temperature T, and displacement vector u. More details on THM
+mechanics can be found e.g. in Lewis and Schreﬂer (1998) ,
+Rutqvist et al. (2001a) , and Wang and Kolditz (2007) .
+2.1. Non-isothermal unsaturated ﬂow in a deformable porous
+medium
+We apply an extended Richards model for the description of
+non-isothermal ﬂow in unsaturated deformable porous media.
+The applicability of the Richards approximation for the selected
+examples (Section 5) was justiﬁed by in previous work ( Kolditz
+and de Jonge, 2004; Wang et al., 2007 ). According to the extended
+Darcy law for unsaturated ﬂow ( Bear and Bachmat, 1991 ) the
+macroscopic liquid phase ﬂow due to pressure gradients,
+capillarity, and gravity is deﬁned as
+q
+w ¼/C0 nS rw
+krelk
+m ðrp /C0 rwgÞ
+/C18/C19
+(1)
+where n is effective porosity, S is water saturation, rw is water
+density, krel is relative permeability function, k is saturated
+permeability tensor, m is water viscosity, p is water pressure
+(ﬁeld variable of ﬂow process), g is gravity acceleration
+vector.
+In addition to classic Darcian processes, vapor ﬂow effects
+have to be considered in non-isothermal systems. Hereby, we
+directly adopt the ﬂux and mass balance equations derived by
+Rutqvist et al. (2001a) :
+qv ¼/C0 Dpvrp /C0 f TvDTvrT (2)
+where T is local equilibrium temperature of the porous medium,
+f T v is thermal diffusion enhancement factor. Dpv and DTv are
+hydraulic and thermal diffusion coefﬁcients,
+Dpv ¼ Dvrv
+rwRT
+DTv ¼ Dv y qrvS
+qT /C0 rvp
+rwRT2
+ !
+(3)
+Dv is vapor diffusion coefﬁcient, rv is vapor density, y is relative
+humidity deﬁned as
+y ¼ ep=rw RT (4)
+with the speciﬁc gas constant for water vapor R. rvS is the
+saturated vapor density given by an empirical function ( Rutqvist
+et al., 2001a )
+rvS ¼ 10/C0 3e19:891/C0 4975=T (5)
+which is related to vapor density by the expression rv ¼ yrvS.
+Darcy ﬂux (1) and, additionally, the vapor ﬂux term (2) are
+inserted in the ﬂuid mass balance equation, which yields the
+ARTICLE IN PRESS
+W. Wang et al. / Computers & Geosciences 35 (2009) 1631–16411632
+
+--- Page 3 ---
+following ﬁeld equation for water pressure:
+n rw /C0 rv
+rw
+qS
+qp þ Sbp þð 1 /C0 SÞ rv
+r2
+wRT
+/C20/C21 qp
+qt
+þ r /C1ð qw þ qvÞ=rw þ S q
+qt ðr /C1 uÞ
+n 1 /C0 S
+rw
+y qrvS
+qT þ rvP
+RT2
+/C18/C19 qT
+qt ¼ 0 (6)
+where bp is a hydraulic storativity coefﬁcient of the porous
+medium.
+2.2. Poro-thermo-elastic deformation
+Deformation processes are described by the momentum
+balance equation of the porous medium in the terms of stress as
+r /C1ð r /C0 SpI /C0 aEDTIÞþ rg ¼ 0 (7)
+where r is the effective stress of the porous medium, a is the
+thermal expansion coefﬁcient, E is the young’s modulus, and I is
+the identity tensor. The density of the porous medium is
+composed by three phases, liquid, gas, and solids r ¼ nSrw þ
+nð1 /C0 SÞrg þð 1 /C0 nÞrs with rw, the liquid, rg , the gas and rs, the
+solid densities, respectively.
+2.3. Heat transport in a unsaturated porous medium
+The heat ﬂux in an unsaturated porous medium is composed
+by diffusive and advective parts
+qT ¼/C0 krT þ nSrwcwvT (8)
+where k ¼ nSkw þ nð1 /C0 SÞkg þð 1 /C0 nÞks is the heat conductivity
+of the porous medium. kw, kg and ks are the heat conductivities of
+water, gas and solid phase, respectively. v is liquid phase velocity.
+With the deﬁnition of heat ﬂux (8), the governing equation for
+heat transport in a porous medium is given by
+cr qT
+qt /C0 rqT ¼ Q T (9)
+where cr ¼ nScwrw þ nð1 /C0 SÞcg rg þð 1 /C0 nÞcsrs is the heat capa-
+city of the porous medium. cw, cg , cs are the speciﬁc heat
+capacities of liquid, gas and solid phases, respectively. Q T is a heat
+source term.
+3. Finite element formulation
+The method of weighted residuals ( Lewis and Schreﬂer, 1998 )
+is applied to derive the weak formulation of the governing
+equations for water ﬂow (6), deformation (7), and heat transport
+processes (9) given in Section 2.
+Water ﬂow —H process :
+Z
+O
+n ðrw /C0 rvÞ qS
+qp þ Sbprw þð 1 /C0 SÞ rv
+rwRT
+/C20/C21 qp
+qt o dO
+/C0
+Z
+O
+qw /C1 ro dO þ
+Z
+G
+qwno dG
+þ
+Z
+O
+rqvo dO þ
+Z
+O
+Srw
+q
+qt ðr /C1 uÞo dO
+þ
+Z
+O
+nð1 /C0 SÞ y qrvS
+qT þ rvp
+RT2
+/C18/C19 qT
+qt o dO ¼ 0 (10)
+Deformation—M process :
+Z
+O
+1
+2 ðr /C0 SpI /C0 aEDTIÞ : ðrx þð rxÞTÞ dO /C0
+Z
+O
+xT /C1 rg dO
+/C0
+Z
+G
+xT /C1 t dG ¼ 0 (11)
+Heat transport —T process :
+Z
+O
+cr qT
+qt o dO /C0
+Z
+O
+qT /C1 ro dO
+þ
+Z
+G
+qT /C1 no dG /C0
+Z
+O
+Q T o dO ¼ 0 (12)
+Here o 2 V1 /C26 H1
+GðOÞ1 is the linear test function, and x 2 Vn /C26
+H1
+GðOÞn is the quadratic test function in n-dimensional space. O
+denotes the model domain with G as domain boundary, where
+boundary conditions have to be speciﬁed for all ﬁeld functions p,
+T, and u, respectively. A Galerkin method is used to discretize the
+weak forms (10)–(12) of the THM balance equations. Time
+discretization is accomplished through implicit ﬁnite difference
+schemes. All variables are approximated by admissible interpola-
+tion functions in the Taylor–Hood ﬁnite element space. Achieving
+a reasonable numerical stability and accuracy requires the use of
+linear interpolation functions for pressure and temperature
+variables and quadratic interpolation functions for displacement
+variables ( Korsawe et al., 2006 ).
+We consider the staggered method to handle the coupling
+terms of the balance equations. As a consequence, the coupling
+terms are treated as right-hand side (RHS) terms. The staggered
+scheme of the THM coupled problem may be brieﬂy written as
+MT T0 þ KT T ¼ fT ðpÞ
+MH p0 þ KH p ¼ fH ðT; uÞ
+MM u ¼
+Z
+O
+B dOT DBu ¼ fM ðp; TÞ (13)
+where T, p and u are the primary node variables of temperature,
+water pressure and displacements. f is the speciﬁc RHS term
+containing the contributions of the coupled processes, B is the
+strain displacement matrix, and D is the elasto-plastic constitu-
+tive tensor. M and K are process-speciﬁc mass and Laplace
+matrices given by
+M ¼
+Z
+O
+NMNT dO
+K ¼
+Z
+O
+rNKðrNÞT dO (14)
+M and K are material tensors. The solution of the THM coupled
+nonlinear problem (13) is obtained by using a combination of
+Picard and Newton–Raphson schemes ( Wang and Kolditz, 2007 ).
+More detailed information on the ﬁnite element approach of THM
+coupled problems can be found e.g. in Lewis and Schreﬂer (1998) .
+4. Parallelization method
+In this section we describe the parallelization concept for the
+numerical solution of the THM coupled problem formulated in Eq.
+(13). Basically, the present parallelization method is based upon
+the DDC. Domain decomposition is used to split the topological
+discretization of whole model domain (i.e. ﬁnite element mesh)
+into several sub-domains. Then the ﬁnite element contributions
+are assembled for each of those sub-domains. Finally the sub-
+domain contributions are reconciled to obtain a solution of the
+original problem for the whole domain.
+In general, the parallelization concept consists of following
+three basic steps: (1) domain decomposition (Section 4.1), (2)
+partitioning of global assembly of the algebraic equation systems;
+i.e. assembly of local sub-domain matrices A
+k
+i and vectors xk
+i of
+each process k ¼ T; H; M (Section 4.2), where i is the number of
+sub-domains, and (3) partitioning of the global linear solver
+(Section 4.3).
+We consider geometric parallelism. This means that all CPU
+nodes of a parallel machine run the same code for the existing
+ARTICLE IN PRESS
+W. Wang et al. / Computers & Geosciences 35 (2009) 1631–1641 1633
+
+--- Page 4 ---
+domain decomposition. The major simulation procedure for each
+CPU node i is summarized into a pseudo-code provided in Fig. 1.
+Procedures that were parallelized are the construction of the
+sub-domain mesh topology, assembly of the sub-domain equation
+systems, and the linear solver. Actually, the communication
+among the CPU nodes is only required in the linear solver
+algorithm.
+4.1. Domain decomposition
+There are two basic approaches for domain decomposition in
+use, the Schwarz-method with sub-domains overlapping with
+each other, and the Schur-complement-method with sub-domains
+being separated by distinct interfaces ( Przemieniecki, 1985; Lions,
+1989; Carey, 1989; Farhat and Roux, 1991, 1992 ). The latter is
+adopted for the present study in order to assure that the assembly
+of element matrices and vectors is restricted to sub-domains. The
+iterative Krylov subspace equation solver only performs local sub-
+domain matrix–vector multiplications, and, therefore, less inter-
+processor communication is required. Usually, the domain
+decomposition is conducted a priori using existing tools such as
+Jostle (Walshaw et al., 1997; Soper et al., 2004 ) or METIS ( Karypis
+et al., 1998). These tools minimize the number of border nodes of
+the sub-domains. This is important for ensuring an optimal load
+balance and it reduces communication latency during parallel
+computing ( Kemmler et al., 2005 ).
+The domain decomposition procedure is realized as follows:
+(1) Partitioning of the global ﬁnite element mesh into a number
+of sub-domains Oi. Usually, the number of sub-domains
+corresponds to the number of available CPU nodes of the
+parallel machine. Those sub-domain data contain global
+element indices as well as internal and border nodes of the
+sub-domain.
+(2) Reading of the ﬁnite element mesh (MSH ﬁle) and of the sub-
+domain data (DDC ﬁle).
+(3) Computation of the local ﬁnite element topology and
+local–global mapping relations for each sub-domain Oi in a
+parallel manner. This ensures that the local matrices Ai and
+vectors xi can be easily assembled afterwards.
+4.2. Partitioning of global assembly
+The basic concept of parallelization is to split the global
+equation system into a number of sub-systems, which are denoted
+as local equation systems hereafter. This partitioning procedure is
+conducted according to the domain decomposition (Section 4.1). It
+is based completely on sub-domain mesh topology. These sub-
+systems are cast to a number of processors (CPU nodes)
+concurrently. Applying this technique to the FEM leads to a so-
+called sub-structuring technique of domain decomposition ( Far-
+hat and Roux, 1991, 1992 ). The most important operation for
+domain decomposition data is the mapping of global to local data
+and vice versa. That way, local equation systems are established
+by assembling matrices and vectors, such as M, K and f for each
+ﬁnite element and each T/H/M process.
+Consider the element mesh of the entire domain
+O is
+decomposed into m sub-domains, O ¼ O0 [ O1 [/C1/C1/C1[ Om for the
+THM coupled ﬁnite element problem (13). Local equation systems
+are assembled in these sub-domains with corresponding sub-
+domain mesh topology and with respect to the initial and
+boundary conditions. The stiffness matrices A and RHS vectors b
+are therefore split into blocks related to sub-domain Oi
+Ap
+i p ¼ bp
+i
+AT
+i T ¼ bT
+i
+Au
+i u ¼ bu
+i ; i ¼ 1; ...; m (15)
+where Ap
+i , AT
+i and Au
+i
+are sub-domain stiffness matrices, bp
+i , bT
+i and
+bu
+i
+are sub-domain RHS vectors of ﬂuid ﬂow, heat transport and
+deformation processes, respectively. The assembly of Ap
+i , AT
+i , Au
+i
+, bp
+i ,
+bT
+i , bu
+i
+can be easily conducted on different CPU nodes concur-
+rently. The parallel assembly of local equation systems is
+illustrated in Fig. 2 . All required operations, including memory
+allocations, are managed by each CPU node itself. At this stage
+inter-processor communication is not yet required.
+4.3. Partitioning of global linear solver
+The most difﬁcult and challenging part of the parallelization
+task is the solution of the global equation system. We modiﬁed an
+iterative Krylov solver method for this purpose. Technically, the
+Krylov method is based on performing a series of products of
+the system matrix A with several vectors. As a result of the
+parallelization concept (cf. Section 4.1), these matrix–vector-
+multiplications can be carried out completely at sub-domain
+level, i.e. for sub-domain matrix A
+i and vectors bi in the different
+processors concurrently
+Ak
+i xk
+i ; k ¼ p; T or u
+Important for these local matrix–vector-multiplications is,
+whether the entries of local matrices and vectors are associated
+with border nodes or with internal nodes of a sub-domain. If the
+components of local matrices and vectors are associated with sub-
+domain border nodes, inter-processor communication is con-
+ducted during collection of the norm of kA
+k
+i xk
+i k and during
+updating the iteration step solutions. Technically, the message
+passing interface (MPI) function MPI_Allreduce(y) is adopted
+to collect the required data from the different CPU nodes.
+In case of sparse linear systems it is possible to accelerate the
+convergence of the iterative Krylov method by employing a left
+pre-conditioner M. The modiﬁed equation system is given by
+M
+/C0 1Ax ¼ M/C0 1b (16)
+We apply a Jacobian pre-conditioner in two steps. At ﬁrst, the
+diagonal entries of the local system matrix are computed
+according to
+M
+a
+i ¼
+ðaklÞa
+i if k ¼ l;
+0i f kal;
+(
+a ¼ p; T or u
+ARTICLE IN PRESS
+Fig. 1. THM simulation procedure for each processor.
+Fig. 2. Parallel assembly scheme of local equation systems.
+W. Wang et al. / Computers & Geosciences 35 (2009) 1631–16411634
+
+--- Page 5 ---
+where Aa
+i :¼ðaklÞa
+i . Secondly, the entries which are associated with
+border nodes of adjacent sub-domains are accumulated. These
+operations require inter-processor communications.
+4.4. Outline of the parallel scheme
+The parallelization of the ﬁnite element for the solution of
+THM problems is conducted with MPI. Based on the geometric
+parallelization concept outlined in Section 4, all CPUs run the
+same code during program execution. The major simulation steps
+for each processor (CPU node i) are presented as pseudo-code in
+Fig. 1. A schematic of the parallel ﬁnite element analysis of the
+THM coupled problems including inter-processor communication
+is illustrated in Fig. 3 . Using the parallelization scheme as
+described in Sections 4.1–4.3, the assembly of the global system
+of equations can be completely avoided. The parallelization
+scheme ensures an efﬁcient load balance between the CPU nodes
+as long as the domain is well partitioned.
+4.5. Accuracy
+In this section we prove that the parallel scheme is not loosing
+accuracy with increasing number of involved CPU nodes. In
+particular we show that the accuracy of the parallel solution
+algorithm of the linear equation is not decaying. In the
+parallelization scheme we have to partition the algebraic equation
+system (13) and then collect the overall solution in the linear
+solver scheme. We explain the method and its impact on the
+accuracy for the case of two partitions. We ﬁrst assume the
+algebraic equation can be written in the general form of Eq. (15)
+Ax ¼ b. Our target is to minimize krk¼k b /C0 Axk in order to get a
+solution. When the equation is partitioned into two domains (by
+local assembly in FEM), we split it into
+r
+1
+r1
+b
+ !
+¼
+b1
+b1
+b
+ !
+/C0
+A11 A1b
+Ab1 A1
+bb
+ ! x1
+x1
+b
+ !
+r2
+r2
+b
+ !
+¼
+b2
+b2
+b
+ !
+/C0
+A22 A2b
+Ab2 A2
+bb
+ ! x2
+x2
+b
+ !
+where x ¼ð x1; xb; x2ÞT, b ¼ð b1; bb; b2ÞT and r ¼ð r1; rb; r2ÞT with
+subscript b denotes border node related entries. The partitioning
+scheme has to ensure that
+bb ¼ b1
+b þ b2
+1
+Moreover the local domain assembly guarantees the collection of
+the residual as
+rb ¼ b1
+b þ b2
+b
+/C0 Ab1x1 /C0 A1
+bbx1
+b /C0 Ab2x2 /C0 A2
+bbx2
+b
+Therefore, the accuracy of the solution method does not depend on
+the number of domain decompositions. However, there may be an
+accumulation of truncation errors from the iterative solver. This
+would result in little differences between solutions with different
+numbers of sub-domains. We show this effect for the 3-D THM
+example in Section 5.2.3 and demonstrate that the resulting error is
+very small, normally in the range of the iterative solver tolerance.
+4.6. Efﬁciency
+CPU clock time and wall clock time can be used to evaluate the
+efﬁciency of a parallel scheme. Since the present parallel scheme
+is based on geometric parallelism, the overall simulation time is
+measured when the execution on all computer nodes is ﬁnished.
+The CPU time includes user time for instructions and cache, as
+well as system time for initiating I/O, paging exceptions and
+memory allocation. It has a rather low temporal resolution
+(typically
+1
+100 second). CPU time is an appropriate measure to
+evaluate the performance of the entire program on a shared
+system. The wall time is the elapsed time, which includes CPU
+time, communication time and the time needed to release
+computer or network resources after execution is ﬁnished. It
+should be noted that the wall time is also inﬂuenced by speciﬁc
+hardware features, such as speed and bandwidth of the node-to-
+node connections. The difference between CPU time and wall
+clock time will vary on different hardware and software platforms.
+In this paper we use both CPU clock time and wall clock time to
+evaluate the performance of the present parallel scheme.
+4.7. Computer platforms
+The computations were performed at two different platforms:
+CRAY XT3 and SUN X4600 parallel machines. The CRAY XT3 at the
+Swiss Super Computing Centre (CSCS) is based on AMD x86_64
+O p t e r o nC P U sw i t h2o r4 G Ba c c e s s i b l em e m o r yf o re a c hC P Un o d e .
+T h ee n t i r eX T 3c o m p u t es y s t e mc o n s i s t so f1 6 6 4d u a lc o r en o d e s
+giving 3328 compute CPU nodes, subdivided into 416 compute
+blades. The whole machine has a peak performance of 17.30
+TeraFlops and in total 3.3 TeraBytes of RAM are accessible. Each
+Opteron processor is directly connected to a dedicated Cray SeaStar
+chip. Each SeaStar contains a 6-Port router and communications
+engine and also provides a serial connection to the Cray RAS and
+management system. The SUN X4600 cluster at UFZ is used for
+development and testing of parallel codes. It consists of AMD x86_64
+based processor nodes, each equipped with 8 x Opteron 885 and 8 GB
+of RAM per CPU. A total of 80 CPU and 320 GB of RAM give an HPL
+based peak performance of 238 GFlops. All nodes are connected via
+low-latency 10 GBit-Inﬁniband with 1 GBit-Ethernet-Interconnect.
+Both platforms are based on x86_64 Opteron nodes, but the
+node interconnection speed is different. The technical differences
+of the platforms are important for the achieved speed-up, as we
+will see in Section 5.2.2.
+5. Parallel computation results
+As application example for the present parallel FEM scheme
+we consider the simulation of THM coupled processes in a
+ARTICLE IN PRESS
+Fig. 3. Schematic of the parallel ﬁnite element method.
+W. Wang et al. / Computers & Geosciences 35 (2009) 1631–1641 1635
+
+--- Page 6 ---
+geotechnical repository system. The present numerical model was
+developed in the framework of the international code comparison
+project DECOVALEX-THMC (an acronym for DEvelopment of
+COupled models and their VALidation against EXperiments) ( Barr
+et al., 2004 ). This project was dedicated to the analysis of THMC
+processes (the C stands for geochemical processes) for nuclear
+waste depository scenarios in different geological environments.
+The particular ‘‘Task-D’’ benchmark test is based on experimental
+data obtained in the Grimsel (Switzerland) and Yucca-Mountain
+(US) test sites. The experiments were aimed at gaining a better
+understanding of basic processes such as the effect of THM
+processes on porosity and permeability changes. For this purpose
+two 2D-test cases have been originally deﬁned ( Rutqvist et al.,
+2008).
+The contents of this section is twofold. First, the results of the
+original 2-D ‘‘Task-D’’ test are given and compared to other codes
+(Section 5.1). Second, a 3-D extension of the ‘‘Task-D’’ test example
+demonstrates the efﬁciency and the limitations of the present
+parallel scheme for complex THM problems (Section 5.2).
+5.1. Veriﬁcation example (2-D)
+5.1.1. Deﬁnition
+Fig. 4 depicts the deﬁnition of the DECOVALEX-THMC ‘‘TASK-
+D’’ test case as a concept of a buffer system to isolate radioactive
+waste in crystalline rock. The waste canister is installed into a drift
+and sealed with bentonite. The drift is embedded in fully
+saturated rock at a depth of 500 m below ground surface. Since
+the surrounding crystalline rock is assumed to be fully saturated,
+water may leak into the initially ‘‘dry’’ bentonite, which leads to
+swelling of the buffer material. The radioactive waste will heat the
+bentonite buffer, as well as the surrounding rock for a relatively
+long time. Therefore, the understanding of the fully coupled THM
+processes in a long-term period is very important for safety
+assessment.
+The geometry of the 2-D model domain is illustrated in Fig. 4 .
+Material parameters for host rock and bentonite buffer were
+chosen according to the DECOVALEX TASK D deﬁnition ( Barr et al.,
+2004). Particular soil–water-characteristic functions are used for
+the description of the hydraulic behavior of the partially saturated
+porous materials. To mimic the heat emission of the radioactive
+waste, a time-dependent heat power function is applied as
+thermal source term. Boundary conditions applied for ﬂow,
+deformation, and heat transport processes are shown in Fig. 4 .
+Further details of the case study deﬁnition can be found in
+Rutqvist et al. (2008).
+5.1.2. Results
+The 2-D THM simulations have been used for veriﬁcation and
+testing of the parallel scheme. We systematically tested the
+ARTICLE IN PRESS
+Fig. 4. Deﬁnition of the DECOVALEX-THMC ‘‘TASK-D’’ test case (Barr et al., 2004).
+W. Wang et al. / Computers & Geosciences 35 (2009) 1631–16411636
+
+--- Page 7 ---
+individual T/H/M processes in the beginning, and then increased
+complexity step-by-step by adding the different process cou-
+plings. The sequential computation served as a reference solution
+and was used to test the correct implementation of the parallel
+scheme (see also Section 5.2.3 for discussion of accuracy). We
+would like to stress, that we did not ﬁnd signiﬁcant differences
+between the serial and parallel solutions. Within the testing
+procedure sequential and parallel simulations with 2–20 decom-
+posed domains have been compared.
+In addition, we present selected results of the code comparison
+study that was conducted within the DECOVALEX TASK D. Fig. 5
+shows the temperature evolution at selected observation points, a
+result of the code-to-code comparison between the THM codes of
+the DECOVALEX project, ROCMAS ( Rutqvist et al., 2001a ), TOUGH-
+FLAC ( Rutqvist et al., 2001b ), THAMES ( Chijimatsu et al., 2000 ),
+FRT-THM (Liu et al., 2006 ) and the present parallel code GeoSys/
+RockFlow.
+5.1.3. Efﬁciency
+In this section we do a ﬁrst analysis of the efﬁciency of the
+parallel scheme, which in general depends on the following
+factors: problem size, hardware and software effects.
+The speed-up for a 2-D THM simulation based on wall clock
+time measurements on the SUN X4600 cluster is shown in Fig. 6 .
+We would like to note that the problem size with 1720 nodes and
+3152 is rather small. A nearly optimal speed-up can be achieved
+for up to 16 CPU nodes, then the parallel efﬁciency goes down. We
+found that the most important factor is the behavior of the linear
+solver, which was also reported by Ouarraui and Kaeli (2004) .
+Since there is inter-computer-node communication in the parallel
+solver algorithm, an increasing number of iterations causes larger
+communication latency. Therefore, the overall speed-up is
+affected by the number of solver iterations. The inter-computer-
+node communication takes place on border mesh nodes during
+each solver iteration and once on all mesh nodes after solver
+convergence is achieved. The number of border mesh nodes is
+monotonically increasing with the number of sub-domains. If the
+number of border mesh nodes becomes close to the overall
+number of the mesh nodes, the communication between border
+nodes will limit the speed-up. In other words, if we decompose a
+mesh into too many sub-domains, we cannot achieve a further
+speed-up for the parallel simulation.
+5.2. Demonstration example (3-D)
+5.2.1. Deﬁnition
+The original DECOVALEX TASK-D problem (Fig. 4) was designed
+to study long-term effects concerning possible saturation–stress–
+temperature redistribution resulting from waste deposition. With
+the help of a 3-D demonstration example we investigate spatial
+THM processes in the near ﬁeld of a hypothetical repository. We
+construct the 3-D model by cutting out a zone of about 100 m
+from the original 2-D model ( Fig. 4 ). The 2-D vertical domain is
+then expanded horizontally into the y-direction to produce the 3-
+D model. In order to assign correct boundary conditions in the 3-D
+model we use results of the 2-D simulation for the corresponding
+bounding surfaces. The outline and the mesh of the 3-D THM
+demonstration problem is shown in Fig. 7.
+The 3-D domain is discretized into 66 900 tetrahedra with
+12 485 element nodes for thermal (T) as well as hydraulic (H)
+processes (using linear elements) and with 94 215 nodes for the
+deformation (M) process (using quadratic elements). The mesh is
+partitioned into 2–100 sub-domains for parallel simulations in
+order to conduct speed-up measurements. Decomposed domains
+are depicted in different colors ( Fig. 7 ).
+5.2.2. Results
+Results of the parallel 3-D THM computations are shown in
+Fig. 8 . THM processes are represented by the distributions of the
+ﬁeld variables, saturation (non-isothermal unsaturated ﬂow),
+temperature (heat transport), and stress (thermo-mechanical
+deformation).
+In order to obtain speed-up curves for the parallel scheme, we
+conducted simulation runs with different numbers of domain
+decompositions on the CRAY XT3 and SUN X4600 platforms. The
+technical features are explained in Section 4.7. On the CRAY XT3,
+the sequential simulation consumed a wall time of 4468 s. The
+wall time decreased to 132 s for the parallel simulation with 100
+CPUs. For all simulations performed on the CRAY XT3, the longest
+CPU time was identical to the wall clock time. On the newly
+available SUN X4600, we could use up to 64 CPUs for the parallel
+simulations. For the sequential reference simulation a wall time of
+4598 s was required, which is close to the computation time on
+the
+CRAY XT3. Unlike the parallel runs on the CRAY XT3, the
+wall clock time on the SUN X4600 does not match the longest
+CPU time.
+ARTICLE IN PRESS
+Fig. 5. Temporal evolution of temperature at given observation points (V1: at
+canister surface, V2: in drift at rock surface, V6: 12.5 m into rock) (Rutqvist et al.,
+2008).
+Number of CPUs
+Speedup
+5
+0
+5
+10
+15
+20
+10 15 20
+Fig. 6. Speed-up of parallel 2-D THM simulations on a SUN X4600 cluster.
+W. Wang et al. / Computers & Geosciences 35 (2009) 1631–1641 1637
+
+--- Page 8 ---
+The speed-up behavior achieved on both platforms is illu-
+strated in Fig. 9. We clearly see that on CRAY XT3 the longest CPU
+time is identical to the wall clock time. In contrast on SUN X4600,
+we observe that the deviation between CPU and wall clock times
+increases monotonically with the number of involved processors.
+Since we allow I/O operation only on one processor, this time lag
+is also related to the time duration needed for inter-processor-
+communication as well as for locating/releasing the communica-
+tion resources for the parallel computation.
+In terms of longest CPU time, the simulations on both
+platforms give an ideal speed-up of 1:1 for up to 24 CPUs. For
+more CPUs, the communication latency is gradually increasing
+which reduces speed-up. Signiﬁcant deviations between CPU and
+wall clock time are observed on the X4600 platform beginning
+from eight CPUs. This ‘‘parasitic consumption’’ is related to the job
+management system which clearly interferes the processor
+communication. Along with the increase in the number of
+involved CPUs, there is a growing delay between wall and CPU
+ARTICLE IN PRESS
+z
+-400
+-200
+0
+200
+400
+x00.511.5y-10
+z
+00.511.5
+XY
+Z
+Near field zoom in
+Bottom boundary conditions
+Top boundary conditions
+2D results at here
+2D results at here
+Fig. 7. Mesh of 2-D example (left). Magniﬁed look at 2-D mesh (middle) with positions of trace lines which were used for extraction of boundary conditions for the 3-D
+THM problem (right).
+Fig. 8. Computed 3-D distributions of saturation (in m 3 =m3 ), temperature (in /C14 C) and vertical stress (in Pa) (from left to right).
+W. Wang et al. / Computers & Geosciences 35 (2009) 1631–16411638
+
+--- Page 9 ---
+times. In order to investigate this phenomenon we changed the
+batch system temporarily in a way to guarantee full access to all
+eight Dual-Core Opteron CPUs on a processor node of the SUN
+X4600 cluster. Fig. 10 shows the improvement of the wall clock
+time if all CPU nodes of a processor node are exclusively used. The
+discrepancies in wall time behavior shows the importance of
+comparing speed-up measurements on different platforms for the
+validation of parallel computations.
+5.2.3. Accuracy
+Finally, we examine the accuracy of the parallel scheme
+(according to Section 5.2.3). In all our test cases we did not
+observe great discrepancies between the serial and parallel
+solutions. As a typical result we present the accumulated errors
+for secondary variables. We look at a local grid point where
+signiﬁcant changes for the absolute values of the state variables
+are observed. First, we deﬁne the relative difference between
+solutions x for the serial version (index ¼ 1) and for a parallel
+version with 40 sub-domains (index ¼ 40) as e ¼ð x
+1 /C0 x40Þ=x1.A t
+the end of simulation, the relative difference for the main
+components of the stress tensor sxx, syy, and szz are
+8:433 /C2 10/C0 6,4 :7 /C2 10/C0 6 and 5 :7 /C2 10/C0 4. The difference between
+serial and parallel versions is in the order of about 10 /C0 10, which is
+in the order of the solver tolerance.
+6. Conclusions and outlook
+A parallel FEM for the numerical simulation of thermo-hydro-
+mechanical (THM) coupled processes in porous media has been
+developed. Although the parallelization technique itself is rather
+standard, the scheme is (i) new for the parallel computation of
+this class of coupled multi-ﬁeld problems (i.e. THM processes in
+porous media) and (ii) it is analyzed on different medium size
+platforms (up to 100 CPU nodes) for the ﬁrst time. For numerical
+validation, the parallel scheme is applied to the Task-D test
+example of the DECOVALEX code comparison project.
+6.1. Achievements
+So far, parallel THM coupled simulations have been conducted
+only on small clusters with up to eight CPU nodes applying sub-
+structuring technique ( Wang and Schreﬂer, 1998; Schreﬂer et al.,
+2000; Thomas et al., 2003 ). The present domain decomposition
+scheme is used for equation assembly and for the linear solver. To
+our knowledge it is the ﬁrst time that THM coupled processes in
+geosciences are solved without any global assembly of the
+equation system. The iterative solver is preconditioned by a
+Jacobian method. The sub-domain matrices and vectors are
+directly used to compute matrix–vector-multiplications and to
+obtain the overall solution of the linear equation system.
+The computational speed-up was analyzed for 2-D and, in
+particular, 3-D test examples on two different platforms, a CRAY
+XT3 and a cluster of SUN X4600 machines. The results are
+summarized in Fig. 9 . An examination of the different hardware
+platforms clearly shows the importance of inter-computer-node
+communication. There is almost no difference between CPU and
+wall clock times on CRAY XT3 highlighting the fast connections
+between all CPU nodes. For the SUN X4600 cluster we see an
+increasing delay between CPU and wall clock times due to the
+hardware structure. There is a fast interconnection between the
+CPUs on each processor node but a slower communication
+between the processor nodes.
+From a practical viewpoint it is now possible to conduct 3-D
+THM simulations on a 100 CPU-node conﬁguration about 36 times
+faster than before with the sequential version. In other words, 36
+times more numerical simulations are feasible now in the same
+time for 3-D analysis of practical THM problems. Only a few
+publications are available so far that present speed-up curves for
+parallel simulations of similar multi-ﬁeld problems, therefore a
+comprehensive classiﬁcation of the computational efﬁciency of
+our parallel code is difﬁcult. The achieved speed-up of the present
+scheme is at least comparable, or even better than that by
+Ouarraui and Kaeli (2004) obtained on a cluster with 16 CPUs.
+6.2. Deﬁciencies and future work
+The speed-up curves shown in Fig. 9 , however, reveal a
+problem which needs further investigation. Increasing the
+number of domain decompositions (CPU nodes) will not really
+improve the computational efﬁciency of the present parallel
+scheme even on optimal platforms with fast interconnection
+between all CPU nodes. The saturation of speed-up for the
+selected test case starts at about 50 CPU nodes for the 3-D-
+example. Of course the breakdown of efﬁciency will occur later for
+ARTICLE IN PRESS
+Number of CPUs
+Speedup
+20
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+Longest CPU time (CrayXT3)
+Wall clock time (CrayXT3)
+Longest CPU time (X4600)
+Wall clock time (X4600)
+40 60 80 100
+Fig. 9. Speed-up of 3-D THM simulations on CRAY XT3 and SUN X4600 platforms,
+respectively.
+Number of CPUs
+Speedup
+2
+0
+5
+10
+15
+Longest CPU time (X4600, multi-node)
+Wall clock time (X4600, multi-node)
+Longest CPU time (X4600, single node)
+Wall clock time (X4600, single node)
+4 6 8 1 01 21 41 6
+Fig. 10. Speed-up of 3-D THM simulations on SUN X4600 platform with optimized
+job management.
+W. Wang et al. / Computers & Geosciences 35 (2009) 1631–1641 1639
+
+--- Page 10 ---
+‘‘bigger’’ problems, but we will not be able to avoid it once we
+reach a problem-size-dependent threshold. This decay of parallel
+efﬁciency is caused by the increase in communication between
+sub-domain border nodes if the problem is decomposed into too
+many sub-domains. In order to improve the parallel efﬁciency
+further, we will focus on (i) shortening the inter-computer-node
+communication time by introducing non-blocking communica-
+tion and on (ii) improving the data exchange scheme on border
+nodes.
+An important lesson learned from this study is, that software
+and hardware compatibility is very important for the computa-
+tional efﬁciency of parallel schemes. In a few years Peta
+computing (i.e. availability of more than 10 4 CPU nodes) is
+envisaged. In order to be able to use this supercomputing
+technology we have to further increase the scalability of the
+parallel codes for the solution of coupled multi-ﬁeld problems.
+Acknowledgments
+This work was funded by the Landesstiftung Baden-Wu ¨ rttem-
+berg in the priority program ‘‘Modeling and simulation at high
+performance computers’’ under Grant 727 and by the German
+Ministry of Education and Research (BMBF) under Grant 02C1 1 14.
+We thank the anonymous reviewers for their careful reviews
+based on which the manuscript was substantially improved. We
+thank Rolf Rabenseifner, Thomas Boenisch and Andry Chut with
+the Federal High Performance Computing Center in Stuttgart
+(HLRS) for advising us in the parallel ‘‘things’’, including us into
+the DEISA activities and starting speed-up measurements for the
+THM solver on the NEC-SX8 machine at HLRS. We are very grateful
+to the continuous support of our work in the ﬁeld of thermo-
+hydro-mechanical-chemical (THMC) coupled processes provided
+by the Federal Institute of Geosciences and Natural Resources
+(BGR) in Hannover (Hua Shao, Thomas Nowak, Herbert Kunz).
+Finally we acknowledge the support by Thomas Schnicke and
+Thomas Wieser for setting up the parallel machine at UFZ in
+Leipzig for further research and optimization of parallel comput-
+ing with GeoSys/RockFlow.
+References
+Alonso, E.E., Alcoverro, J., Coste, F., Malinsky, L., Merrien-Soukatchoff, V., Kadiri, I.,
+Nowak, T., Shao, H., Nguyen, T.S., Selvadurai, A.P.S., Armand, G., Sobolik, S.R.,
+Itamura, M., Stone, C.M., Webb, S.W., Rejeb, A., Tijani, M., Maouche, Z.,
+Kobayashi, A., Kurikami, H., Ito, A., Sugita, Y., Chijimatsu, M., Borgesson, L.,
+Hernelind, J., Rutqvist, J., Tsang, C.F., Jussila, P., 2005. The FEBEX benchmark
+test: case deﬁnition and comparison of modelling approaches. International
+Journal of Rock Mechanics and Mining Sciences 42 (5–6), 61 1–638.
+Barr, D., Birkholzer, J., Rutqvist, J., Sonnenthal, E., 2004. Draft description for
+DECOVALEX-THMC task D: long-term permeability/porosity changes in EDZ
+and near ﬁeld, due to THM and THC processes in volcanic and crystalline-
+bentonite systems. Earth Sciences Division, Lawrence Berkeley National
+Laboratory, Berkeley, USA, 100pp.
+Bear, J., Bachmat, Y., 1991. Introduction to modeling of transport phenomena in
+porous media. In: Theory and Applications of Transport in Porous Media, vol. 4.
+Kluwer Academic Publisher, Boston, USA, 553pp.
+Carey, G.F., 1989. Parallel Supercomputing: Methods, Algorithms and Applications.
+Wiley, New York, USA, 298pp.
+Chijimatsu, M., Fujita, T., Kobayashi, A., Nakano, M., 2000. Experiment and
+validation of numerical simulation of coupled thermal, hydraulic and
+mechanical behaviour in the engineered buffer materials. International Journal
+of Numerical and Analytical Methods in Geomechanics 24, 403–424.
+de Boer, R., 2005. Trends in Continuum Mechanics of Porous Media: Theory and
+Applications of Transport in Porous Media. Springer, Heidelberg, Germany,
+282pp.
+Doughty, C., Pruess, K., 2004. Modeling supercritical carbon dioxide injection in
+heterogeneous porous media. Vadose Zone Journal 3, 837–847.
+Ehlers, W., Bluhm, J., 2002. Porous Media: Theory, Experiments and Numerical
+Applications. Springer, Berlin, Germany, 459pp.
+Farhat, C., Roux, F., 1991. A method of ﬁnite element tearing and interconnecting
+and its parallel solution algorithm. International Journal for Numerical
+Methods in Engineering 32 (6), 1205–1227.
+Farhat, C., Roux, F., 1992. An unconventional domain decomposition method for an
+efﬁcient parallel solution of large-scale ﬁnite element systems. SIAM Journal
+on Scientiﬁc and Statistical Computing 13 (1), 379–396.
+Fujisawa, T., Inaba, M., Yagawa, G., 2003. Parallel computing of high-speed
+compressible ﬂows using a node-based ﬁnite-element method. International
+Journal for Numerical Methods in Engineering 58 (3), 481–51 1.
+Karypis, G., Schloegel, K., Kumar, V., 1998. Parallel graph partitioning and sparse
+matrix ordering library, University of Minnesota, Minneapolis, USA, 29pp
+hhttp://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/manual.pdfi.
+Kemmler, D., Wang, W., Adamidis, P., Bauer, S., Kolditz, O., 2005. Solving
+Coupled Geoscience Problems on High Performance Computing Platforms.
+In: Lecture Notes in Computer Science, vol. 3515. Springer, Berlin, Germany,
+pp. 1064–1071.
+Kohl, T., 1992. Modellsimulation gekoppelter Vorga ¨ nge beim Wa¨ rmeentzug aus
+heißem Tiefengestein (Simulation of coupled processes in hot deep rock during
+heat extraction). Ph.D. Dissertation, No. 9802, ETH Zu¨ rich, Zurich, Switzerland,
+149pp.
+Kolditz, O., de Jonge, J., 2004. Non-isothermal two-phase ﬂow in low-permeable
+porous media. Computational Mechanics 33 (5), 345–364.
+Korsawe, J., Starke, G., Wang, W., Kolditz, O., 2006. Finite element analysis of poro-
+elastic consolidation in porous media: mixed and standard approaches.
+Computer Methods in Applied Mechanics and Engineering 195 (9–12),
+1096–1 1 15.
+Lewis, R.W., Schreﬂer, B.A., 1998. The Finite Element Method in the Static and
+Dynamic Deformation and Consolidation of Porous Media, second ed. Wiley,
+New York, USA, 508pp.
+Lions, P.L., 1989. On the Schwarz alternating method III: a variant of non-
+overlapping subdomains. In: Proceedings of the 3rd International Symposium
+on Domain Decomposition Methods for Partial Differential Equations. SIAM,
+Philadelphia, Houston, USA, pp. 202–223 (Chapter 5).
+Liu, Q., Zhang, C., Liu, X., 2006. A practical method for coupled THM simulations of
+the Yucca Mountain and FEBEX case examples for task D of the DECOVALEX-
+THMC project. In: Proceedings of GEOPROC 2006, 2nd International Sympo-
+sium on Coupled THMC Processes in Geosystems and Engineering. HoHai
+University, Nanjing, China, pp. 220–225.
+Noorishad, J., Tsang, C., Witherspoon, P., 1984. Coupled thermal-hydraulic-
+mechanical phenomena in saturated fractured porous rocks: numerical
+approach. Journal of Geophysical Research 89, 10365–10373.
+Olivella, S., Gens, A., 2000. Vapour transport in low permeability unsaturated soil
+with capillary effects. Transport in Porous Media 40, 219–241.
+Ouarraui, C., Kaeli, D., 2004. Developing object-oriented parallel iterative methods.
+International Journal of High Performance Computing and Networking 1,
+85–90.
+Przemieniecki, J.S., 1985. Theory of Matrix Structural Analysis. McGraw Hill Book
+Co., New York, USA, 480pp.
+Rutqvist, J., Barr, D., Birkholzer, J.T., Chijimatsu, M., Kolditz, O., Liu, Q.,
+Oda, Y., Wang, W., Zhang, C., 2008. Results from an international
+simulation study on coupled thermal, hydrological, and mechanical processes
+near geological nuclear waste repositories. Nuclear Technology 163 (1),
+101–109.
+Rutqvist, J., Barr, D., Datta, R., Gens, A., Millard, A., Olivella, S., Tsang, C.F., Tsang,
+Y.W., 2005a. Coupled thermal-hydrological-mechanical analyses of the Yucca
+Mountain drift scale test —comparison of ﬁeld measurements to predictions of
+four different numerical models. International Journal of Rock Mechanics and
+Mining Sciences 42 (5–6), 680–697.
+Rutqvist, J., Bo ¨ rgesson, L., Chijimatsu, M., Kobayashi, A., Nguyen, T.S., Jing, L.,
+Noorishad, J., Tsang, C.F., 2001a. Thermohydromechanics of partially saturated
+geological media—governing equations and formulation of four ﬁnite element
+models. International Journal of Rock Mechanics and Mining Sciences 38,
+105–127.
+Rutqvist, J., Chijimatsu, M., Jing, L., De Jonge, J., Kohlmeier, M., Millard, A., Nguyen,
+T.S., Rejeb, A., Souley, M., Sugita, Y., Tsang, C.F., 2005b. Numerical study of the
+THM effects on the near-ﬁeld safety of a hypothetical nuclear waste
+repository—BMT1 of the DECOVALEX III project, Part 3: effects of THM
+coupling in fractured rock. International Journal of Rock Mechanics and Mining
+Sciences 42, 745–755.
+Rutqvist, J., Wu, Y.S., Tsang, C.F., Bodvarsson, G., 2001b. A modeling approach for
+analysis of coupled multiphase ﬂuid ﬂow, heat transfer, and deformation in
+fractured porous rock. International Journal of Rock Mechanics and Mining
+Sciences 39, 429–442.
+Salinger, A.G., Xiao, Q., Zhou, Y., Derby, J.J., 1994. Massively parallel ﬁnite element
+computations of three-dimensional, time-dependent, incompressible ﬂows in
+materials processing systems. Computer Methods in Applied Mechanics and
+Engineering 1 19 (1–2), 139–156.
+Sanavia, L., Pesavento, F., Schreﬂer, B.A., 2006. Finite element analysis of non-
+isothermal multiphase geomaterials with application to strain localization
+simulation. Computational Mechanics 37 (4), 331–348.
+Schreﬂer, B.A., Matteazzi, R., Gawin, D., Wang, X., 2000. Two parallel computing
+methods for coupled thermohydromechanical problems. Computer-Aided Civil
+and Infrastructure Engineering 15 (3), 1 76–188.
+Shioya, R., Yagawa, G., 2005. Large-scale parallel ﬁnite-element analysis using the
+internet: a performance study. International Journal for Numerical Methods in
+Engineering 63 (2), 218–230.
+Soper, A.J., Walshaw, C., Cross, M., 2004. A combined evolutionary search and
+multilevel optimisation approach to graph partitioning. Journal of Global
+Optimization 29 (2), 225–241.
+ARTICLE IN PRESS
+W. Wang et al. / Computers & Geosciences 35 (2009) 1631–16411640
+
+--- Page 11 ---
+Stephansson, O., Hudson, J., Jing, L. (Eds.), 2004. Coupled Thermo-Hydro-
+Mechanical-Chemical Processes in Geo-Systems: Fundamentals, Modelling,
+Experiments, and Applications. Geo-Engineering Book Series, vol. 2. Elsevier,
+London, UK, 852pp.
+Tezduyar, T.E., Sameh, A., 2006. Parallel ﬁnite element computations in ﬂuid
+mechanics. Computer Methods in Applied Mechanics and Engineering 195
+(13–16), 1872–1884.
+Thomas, H.R., Yang, H.T., He, Y., Cleall, P.J., 2003. A multi-level parallelized
+substructuring-frontal solution for coupled thermo/hydro/mechanical pro-
+blems in unsaturated soil. International Journal for Numerical and Analytical
+Methods in Geomechanics 27, 951–965.
+Topping, B.H.V., Khan, A.I., 1996. Parallel Finite Element Computations. Saxe-
+Coburg Publications, Edinburgh, UK, 320pp.
+Tsang, C.F., 1991. Coupled hydromechanical-thermomechanical processes in rock
+fractures. Review of Geophysics 29 (4), 537–551.
+Wallner, M., Lux, K.-H., Minkley, W., Hardy, H.R. (Eds.), 2007. The mechanical
+behaviour of salt—understanding of THMC processes in salt. In: Proceedings of
+the 6th Conference on the Mechanical Behavior of Salt, ‘SALTMECH6’. Taylor &
+Francis Group, London, UK, 453pp.
+Walshaw, C., Cross, M., Everett, M.G., 1997. Parallel dynamic graph partitioning for
+adaptive unstructured meshes. Journal of Parallel and Distributed Computing
+47 (2), 102–108.
+Wang, W., Kolditz, O., 2007 . Object-oriented ﬁnite element analysis of thermo-
+hydro-mechanical (THM) problems in porous media. International Journal for
+Numerical Methods in Engineering 69 (1), 162–201.
+Wang, W., Walsh, R., Shao, H., Xie, M., Kolditz, O., 2007. Simulation of long
+term thermal, hydraulic and mechanical interaction between buffer
+and salt host rock. In: Proceedings of the 6th Conference on the Mechanical
+Behavior of Salt ’SALTMECH6’ —The Mechanical Behavior of Salt —Understand-
+ing of THMC Processes in Salt. Taylor & Francis Group, London, UK,
+pp. 201–208.
+Wang, X., Schreﬂer, B.A., 1998. A multi-frontal parallel algorithm for coupled
+thermo-hydro-mechanical analysis of deforming porous media. International
+Journal for Numerical Methods in Engineering 43, 1069–1083.
+Xie, M., Agus, S.S., Schanz, T., Kolditz, O., 2004. An upscaling method and numerical
+modelling of swelling/shrinking processes in compacted bentonite/sand
+mixtures. International Journal for Numerical and Analytical Methods in
+Geomechanics 28, 1479–1502.
+ARTICLE IN PRESS
+W. Wang et al. / Computers & Geosciences 35 (2009) 1631–1641 1641

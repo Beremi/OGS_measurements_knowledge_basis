@@ -1,0 +1,36 @@
+{
+  "generated_files": [
+    "cda_knowledge_base/measurements/deep_source_index.md",
+    "cda_knowledge_base/measurements/deep_source_index.csv",
+    "cda_knowledge_base/measurements/workbook_sheet_deep_index.csv",
+    "cda_knowledge_base/measurements/source_file_manifest.csv"
+  ],
+  "kind_counts": {
+    "bib": 1,
+    "fig": 11,
+    "jpg": 1,
+    "pdf": 25,
+    "png": 22,
+    "pptx": 4,
+    "pvsm": 1,
+    "py": 1,
+    "tex": 2,
+    "text/data": 100,
+    "vtu": 15,
+    "xlsx": 12,
+    "zip": 11
+  },
+  "measurement_folders_scanned": [
+    "bedding_geology_structure",
+    "coordinates_geometry_layout",
+    "ert",
+    "model_projection_inputs",
+    "nmr",
+    "other_hm_monitoring",
+    "permeability_pulse_tests",
+    "suction_relative_humidity",
+    "taupe_tdr"
+  ],
+  "source_files_scanned": 206,
+  "workbook_sheets_summarized": 34
+}

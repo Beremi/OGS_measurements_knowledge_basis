@@ -1,0 +1,38 @@
+{
+  "ert_timesteps": 1691,
+  "ert_timesteps_missing_matching_vtk": 16,
+  "ert_timesteps_with_matching_vtk": 1675,
+  "model_theta_definition": "theta_fraction = porosity * liquid_saturation from OGS outputs",
+  "notes": [
+    "The workbook model_data2019 power law is the default first-test conversion because it is the smooth local workbook relation.",
+    "The N4 paired NMR/resistivity fit is retained as a calibration diagnostic but is much more scattered.",
+    "The relation is empirical and local; it must be combined with the ERT spatial/support operator before residuals are active.",
+    "Use log-resistivity residuals after OGS theta is sampled and projected because the fitted relation is multiplicative."
+  ],
+  "operator_equation": "rho_ohm_m = coefficient_a * theta_fraction ** exponent_b",
+  "operator_rows": 6,
+  "processed_dir": "inversion_workflow/processed_observations",
+  "recommended_relation": {
+    "coefficient_a": 1.107999999999997,
+    "exponent_b": -1.5800000000000012,
+    "n_points": 18,
+    "resistivity_max_ohm_m": 1601.547265986488,
+    "resistivity_min_ohm_m": 16.64214119518955,
+    "rmse_log10_resistivity": 4.409944738201401e-16,
+    "theta_max": 0.18,
+    "theta_min": 0.01
+  },
+  "recommended_relation_id": "kruschwitz_model_data2019",
+  "remaining_blocker": "Confirm the ERT-to-OGS coordinate transform and exact near-niche support mask, then sample OGS theta outputs and form log-resistivity residuals.",
+  "spatial_projection": {
+    "lookup_rows": 5966,
+    "projection_ready_rows": 2035,
+    "reference_vtk_member": "Niche open/2019/11-2019/dcinv.result_01.vtk",
+    "status": "projection_lookup_ready_transform_assumed_ogs_outputs_pending",
+    "transform": {
+      "model_x": "raw_x * 1 + 0",
+      "model_y": "raw_y * 1 + 500"
+    }
+  },
+  "status": "calibration_operator_ready_spatial_lookup_available_transform_assumed"
+}

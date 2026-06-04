@@ -1,0 +1,114 @@
+[
+  {
+    "category": "catalogue scope",
+    "comment": "Counts are from cda_knowledge_base/measurements/deep_source_index.csv.",
+    "item": "copied source files",
+    "measurement": "model_projection_inputs",
+    "sources": "",
+    "value": "87 files; total copied source bytes 13723696; file kinds bib=1, pdf=1, pptx=1, pvsm=1, py=1, tex=2, text/data=61, vtu=15, zip=4"
+  },
+  {
+    "category": "copied model/projection files",
+    "comment": "These files are model-support inputs rather than measurements, but they define the mesh, projection support, output timesteps, and exchanged OGS configurations used to place the measurement data.",
+    "item": "source_files",
+    "measurement": "model_projection_inputs",
+    "sources": "",
+    "value": ".bib=1, .pdf=1, .pptx=1, .prj=3, .pvsm=1, .py=1, .tex=2, .txt=1, .vtu=15, .xml=57, .zip=4"
+  },
+  {
+    "category": "projection workflow reference",
+    "comment": "Use these files to understand how measured points/intervals are projected to the frozen OGS mesh and timesteps.",
+    "item": "cd_a_open_niche_quad.prj",
+    "measurement": "model_projection_inputs",
+    "sources": "cda_knowledge_base/measurements/model_projection_inputs/source_files/CDA_N4_2D_250403/CDA_N4_2D_250403/cd_a_open_niche_quad.prj",
+    "value": "type text/data; 1072 bytes; extracted note: <?xml version=\"1.0\" encoding=\"ISO-8859-1\"?> | <OpenGeoSysProject> | <meshes> | <mesh>bulk.vtu</mesh> | <mesh>bulk_all.vtu</mesh> | <mesh>cd-a_niche4.vtu</mesh> | <mesh>cd-a_left.vtu</mesh> | <mesh>cd-a_right.vtu</mesh> | <mesh>cd-a_top.vtu</mesh> | <mesh>cd-a_bottom.vtu</mesh>"
+  },
+  {
+    "category": "projection workflow reference",
+    "comment": "Use these files to understand how measured points/intervals are projected to the frozen OGS mesh and timesteps.",
+    "item": "cd_a_open_niche_quad.prj",
+    "measurement": "model_projection_inputs",
+    "sources": "cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA_OGS_Mont_Terri_zip/ogs_settings/cd_a_open_niche_quad.prj",
+    "value": "type text/data; 1072 bytes; extracted note: <?xml version=\"1.0\" encoding=\"ISO-8859-1\"?> | <OpenGeoSysProject> | <meshes> | <mesh>bulk.vtu</mesh> | <mesh>bulk_all.vtu</mesh> | <mesh>cd-a_niche4.vtu</mesh> | <mesh>cd-a_left.vtu</mesh> | <mesh>cd-a_right.vtu</mesh> | <mesh>cd-a_top.vtu</mesh> | <mesh>cd-a_bottom.vtu</mesh>"
+  },
+  {
+    "category": "projection workflow reference",
+    "comment": "Use these files to understand how measured points/intervals are projected to the frozen OGS mesh and timesteps.",
+    "item": "README.txt",
+    "measurement": "model_projection_inputs",
+    "sources": "cda_knowledge_base/measurements/model_projection_inputs/source_files/projection_example/README.txt",
+    "value": "type text/data; 290 bytes; extracted note: important changes: | *prj: mesh call | 03_param*: Function (projection) specification | domain identification bulk_all.vtu needs to be re-done with bulk.vtu | /home/ogs_auto_jenkins/release_versions/native/master/ogs6_v6.5.4/bin/identifySubdomains -m bulk_w_projections.vtu bulk_a"
+  },
+  {
+    "category": "projection workflow reference",
+    "comment": "Use these files to understand how measured points/intervals are projected to the frozen OGS mesh and timesteps.",
+    "item": "cd_a_open_niche_quad.prj",
+    "measurement": "model_projection_inputs",
+    "sources": "cda_knowledge_base/measurements/model_projection_inputs/source_files/projection_example/cd_a_open_niche_quad.prj",
+    "value": "type text/data; 1122 bytes; extracted note: <?xml version=\"1.0\" encoding=\"ISO-8859-1\"?> | <OpenGeoSysProject> | <meshes> | <!--mesh>bulk.vtu</mesh--> | <mesh>bulk_w_projections.vtu</mesh> | <mesh>bulk_all.vtu</mesh> | <mesh>cd-a_niche4.vtu</mesh> | <mesh>cd-a_left.vtu</mesh> | <mesh>cd-a_right.vtu</mesh> | <mesh>cd-a_top.v"
+  },
+  {
+    "category": "projection workflow reference",
+    "comment": "Use these files to understand how measured points/intervals are projected to the frozen OGS mesh and timesteps.",
+    "item": "generate_projections.py",
+    "measurement": "model_projection_inputs",
+    "sources": "cda_knowledge_base/measurements/model_projection_inputs/source_files/projection_example/generate_projections.py",
+    "value": "type py; 1990 bytes; extracted note: "
+  },
+  {
+    "category": "projection workflow reference",
+    "comment": "Use these files to understand how measured points/intervals are projected to the frozen OGS mesh and timesteps.",
+    "item": "specifications.pptx",
+    "measurement": "model_projection_inputs",
+    "sources": "cda_knowledge_base/measurements/model_projection_inputs/source_files/projection_example/specifications.pptx",
+    "value": "type pptx; 184636 bytes; extracted note: --- Slide 1 --- | ts_0000: 18.09.2019 | ts_0001: 18.09.2019 + 10 | days | => End | of | September 2019 | ts_0003: ts_001 + 1 | month | => End"
+  },
+  {
+    "category": "model/archive member coverage",
+    "comment": "The member catalogue links each ZIP member to the copied model_projection_inputs source tree where it was extracted or preserved.",
+    "item": "SOTA___OGS___Mont_Terri.zip",
+    "measurement": "model_projection_inputs",
+    "sources": "SOTA___OGS___Mont_Terri.zip",
+    "value": "19 indexed model/projection/report-context members"
+  },
+  {
+    "category": "model/archive member coverage",
+    "comment": "The member catalogue links each ZIP member to the copied model_projection_inputs source tree where it was extracted or preserved.",
+    "item": "2025-09-05_Niche_4_no_gravity_no_sigV_no_uy_deltat_projection_on_mesh.zip",
+    "measurement": "model_projection_inputs",
+    "sources": "cda_knowledge_base/attachments/thunderbird_recovered/2025-09-05_Niche_4_no_gravity_no_sigV_no_uy_deltat_projection_on_mesh.zip",
+    "value": "28 indexed model/projection/report-context members"
+  },
+  {
+    "category": "model/archive member coverage",
+    "comment": "The member catalogue links each ZIP member to the copied model_projection_inputs source tree where it was extracted or preserved.",
+    "item": "CDA_N4_2D_250403.zip",
+    "measurement": "model_projection_inputs",
+    "sources": "cda_knowledge_base/file_transfers/collected/2025-04-04_2d_model_container/CDA_N4_2D_250403.zip",
+    "value": "22 indexed model/projection/report-context members"
+  },
+  {
+    "category": "model/archive member coverage",
+    "comment": "The member catalogue links each ZIP member to the copied model_projection_inputs source tree where it was extracted or preserved.",
+    "item": "CDA_N4_2D_250509.zip",
+    "measurement": "model_projection_inputs",
+    "sources": "cda_knowledge_base/file_transfers/collected/2025-05-09_updated_model/CDA_N4_2D_250509.zip",
+    "value": "14 indexed model/projection/report-context members"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "wang_kosakoeski_kolditz_thm_2009.pdf",
+    "measurement": "model_projection_inputs",
+    "sources": "cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA_OGS_Mont_Terri_zip/wang_kosakoeski_kolditz_thm_2009.pdf",
+    "value": "type pdf; pages/slides 11; keywords ERT; humidity; permeability; fracture; saturation; pressure; extract cda_knowledge_base/measurements/model_projection_inputs/derived_files/deep_source_pass/extracted_text/wang_kosakoeski_kolditz_thm_2009_d06f15f3.pdf.txt"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "specifications.pptx",
+    "measurement": "model_projection_inputs",
+    "sources": "cda_knowledge_base/measurements/model_projection_inputs/source_files/projection_example/specifications.pptx",
+    "value": "type pptx; pages/slides 3; keywords not detected; extract cda_knowledge_base/measurements/model_projection_inputs/derived_files/deep_source_pass/extracted_text/specifications_2ca482df.pptx.txt"
+  }
+]

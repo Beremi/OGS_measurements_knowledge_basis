@@ -1,0 +1,42 @@
+{
+  "notes": [
+    "Permeability pulse-test targets are handled separately by build_permeability_observation_targets.py.",
+    "Taupe/TDR targets are mapped to line-sample bands; taupe_tdr_trend_operator.csv provides baseline-normalized trend diagnostics while absolute calibration remains pending.",
+    "RH targets are boundary-forcing targets and intentionally do not require OGS cell samples.",
+    "ERT targets have theta-to-resistivity calibration and ERT-to-OGS spatial lookup artifacts, but require transform/support confirmation and OGS state outputs before numerical residuals.",
+    "NMR theta targets compare to porosity*saturation and do not correct bound/interlayer water."
+  ],
+  "outputs": {
+    "samples": "inversion_workflow/processed_observations/state_observation_samples.csv",
+    "targets": "inversion_workflow/processed_observations/state_observation_targets.csv"
+  },
+  "sample_rows": 11311,
+  "sample_rows_by_family": {
+    "NMR seasonal": 117,
+    "NMR weekly": 170,
+    "Taupe/TDR": 11024
+  },
+  "target_rows": 11490,
+  "targets_by_family": {
+    "ERT open-niche time series": 1691,
+    "NMR seasonal": 294,
+    "NMR weekly": 170,
+    "Suction/RH": 4247,
+    "Taupe/TDR": 5088
+  },
+  "targets_by_status": {
+    "('ERT open-niche time series', 'has_matching_ert_vtk')": 1675,
+    "('ERT open-niche time series', 'missing_matching_ert_vtk')": 16,
+    "('NMR seasonal', 'inside_cell')": 28,
+    "('NMR seasonal', 'inside_mesh_bbox_nearest_cell')": 89,
+    "('NMR seasonal', 'missing_coordinate_label')": 40,
+    "('NMR seasonal', 'outside_current_niche_model_scope')": 137,
+    "('NMR weekly', 'inside_cell')": 149,
+    "('NMR weekly', 'inside_mesh_bbox_nearest_cell')": 21,
+    "('Suction/RH', 'boundary_forcing_valid')": 4228,
+    "('Suction/RH', 'excluded_invalid_or_low_rh')": 19,
+    "('Taupe/TDR', 'band_samples_outside_mesh')": 2544,
+    "('Taupe/TDR', 'mapped_band_samples')": 2544
+  },
+  "usable_for_current_state_fit_rows": 4515
+}

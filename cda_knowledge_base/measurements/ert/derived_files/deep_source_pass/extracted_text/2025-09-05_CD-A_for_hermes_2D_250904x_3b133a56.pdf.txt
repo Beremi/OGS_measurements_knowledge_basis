@@ -1,0 +1,296 @@
+--- Page 1 ---
+TODO
+
+--- Page 2 ---
+ERT measurements
+How is the resistivity field computed from discrete resistivity measurements? 
+Difference related to t
+o=10/2019, computed as given in publication
+Are the original (raw) data available? Yes
+If a saturation field from OGS is available, which parameters need to be fitted in order to 
+simulate the discrete measurements? 
+ Permeability, 
+ pressure BC at surface (derived from RH measurements and Kelvin equation), 
+ retention curve (pc-S-relation), 
+ (krel-S-relation, porosity)
+ (storativity), 
+ BC (stress)
+ Would it be better to include the saturation -resistivity (Archie, WC-Sat) relation directly in 
+the model (meaning computing resistivity between two points from OGS saturation), with 
+its parameters treated as unknowns (Archies parameter (2)), so that less artificial error is 
+introduced? 
+How reliable are the measurements, and what types of errors can occur (e.g. noise, 
+fracture-related electric paths not represented in the OGS model)? To be checked with 
+Markus
+Given the instability observed at some physical points over time, will it be necessary to 
+“clean” the measurements (e.g. discard some observations)? Have you performed such 
+filtering before, or do you have guidance on how to distinguish erroneous from naturally 
+expected variations? To be checked with Markus
+The computational domains used for ERT fields and OGS simulations differ — how should 
+this discrepancy be addressed? to be discussed (slide)
+
+--- Page 3 ---
+NMR measurements
+•  Would you be against including NMR measurements in 
+the inverse problem? No
+•  If they are available, could they be incorporated into the 
+Bayesian inverse formulation as additional measurements? Yes
+•  How reliable are these measurements? To be checked with 
+Stephan
+Inversion setup
+•  How should the permeability subdomains be specified 
+(number, dimensions, etc.)? Will permeability be treated as scalar 
+within subdomains? To be discussed
+•  How should storativity be treated? Since it is often linked 
+to permeability through the porosity field, would it be better to 
+consider porosity as an unknown and use parameterized relations for 
+permeability and storativity? To be discussed (we are in the desaturated 
+zone…)
+•  Which other parameters need to be specified? Pressure BC 
+at surface, pc-S-curve
+- ERT measurements available
+- Permeability measurements
+- Taupe
+- Suction
+
+--- Page 4 ---
+If we start with permeability only, I will need to confirm the other OGS input parameters (or verify if the 
+values in the model files you provided are correct). 
+For permeability, I’ll need your help defining the domains: for example, a ring around the niche with 
+constant values on segments —  the width and segmentation.
+4
+Permeability
+
+--- Page 5 ---
+Permeability (Pulse tests)
+Measurements in 2021 
+(1.5 yrs after excavation)
+Measurements in 2024 
+(4.5 yrs after excavation)
+- modified COMDRILL double piston packer system (http://www.comdrill.de/) 
+- static interval length of 10 cm
+- non-reactive nitrogen gas at standard temperature and pressure was used as injection medium
+- injection pressure up to 1 bar
+- injection of the gas and hereafter a monitoring of the pressure evolution within the test interval
+- determination of the intrinsic permeability of a 3D volume in the near field around a 10 cm long borehole interval
+- maximum error from experimental and evaluation sources is half the order of magnitude
+2 measurements in each
+direction at every 10cm 
+interval (3 yrs inbetween)
+
+--- Page 6 ---
+6
+2021 (1.5 yrs after installation) 2024 (4.5 yrs after installation)
+Permeability (Pulse tests)
+2021 as input in early stage
+2024 later?
+Rings: 
+One ring per measurement? As the curve (2021) is very steep…
+But data points in 2024 are varying…
+
+--- Page 7 ---
+7
+I think any measurement that has a reasonably clear connection to OGS model outputs could be valuable for the inverse problem. But 
+I would need your help to understand what each measurement represents and how it links to model outputs. For example, I am not 
+familiar with Taupe measurements (is that refractometry?). If you could provide a short overview of how suction, permeability, or 
+Taupe data relate to OGS variables, that would help me a lot if we decide to use them.
+Measurements related to saturation
+(Taupe, Suction, ERT, NMR)
+
+--- Page 8 ---
+Taupe (TDR measurements)
+ε_r = ε_rock * (1 - φ) + ε_w * φ * S_w
+With: 
+ε_r : residual apparent relative dielectric permittivity, 
+ε_rock: apparent relative dielectric constant of rock, 
+φ pores in the rock, 
+ε_w: apparent relative dielectric constant of water, 
+S_w: water saturation.
+∆ε_r = ε_Gestein * (1 - φ) + ε_w * φ * ∆ S_w
+ε_w (permittivity): ca. 80
+φ = Porosity * 100 [Vol.%pores]
+
+--- Page 9 ---
+9
+
+--- Page 10 ---
+10
+We can provide: 
+Mean amplitude of 
+change of saturation 
+S for different 
+intervals from the 
+niche wall
+Intervals?
+Proposal:
+0-10cm
+10-20cm
+20-30cm
+…
+(different to plot, 
+where we have:
+0-10cm
+0-20cm
+0-30cm
+…)
+
+--- Page 11 ---
+Water content evolution at a depth of 40cm
+40cm
+70cm
+70cm
+40cm
+
+--- Page 12 ---
+Water content evolution at a depth of 40cm
+40cm
+70cm
+70cm
+40cm
+𝑝𝑝𝑐𝑐= −𝑝𝑝𝐿𝐿= 𝜌𝜌𝜌𝜌𝜌𝜌
+𝑀𝑀ln 𝜌𝜌𝑅𝑅
+100
+𝜌𝜌𝑅𝑅
+100 = exp(𝑝𝑝𝐿𝐿𝑀𝑀) 𝜌𝜌𝜌𝜌𝜌𝜌
+𝑆𝑆𝑒𝑒= 1 + 𝑝𝑝𝑐𝑐
+𝑝𝑝𝑏𝑏
+1
+1−𝑚𝑚
+−𝑚𝑚
+𝑆𝑆= 𝑆𝑆𝑒𝑒𝑆𝑆𝑚𝑚𝑚𝑚𝑚𝑚− 𝑆𝑆𝑟𝑟+ 𝑆𝑆𝑟𝑟
+𝑝𝑝𝐿𝐿< 0:
+Van Genuchten curve
+Saturation as a function of
+obtained experimental data
+S=f(RH)
+
+--- Page 13 ---
+13
+𝑝𝑝𝐿𝐿= −𝑝𝑝𝑐𝑐= 𝜌𝜌𝜌𝜌𝜌𝜌
+𝑀𝑀ln 𝜌𝜌𝑅𝑅
+100
+𝜌𝜌𝑅𝑅
+100 = exp(𝑝𝑝𝐿𝐿𝑀𝑀) 𝜌𝜌𝜌𝜌𝜌𝜌
+𝑆𝑆𝑒𝑒= 1 + 𝑝𝑝𝑐𝑐
+𝑝𝑝𝑏𝑏
+1
+1−𝑚𝑚
+−𝑚𝑚
+𝑆𝑆= 𝑆𝑆𝑒𝑒𝑆𝑆𝑚𝑚𝑚𝑚𝑚𝑚− 𝑆𝑆𝑟𝑟+ 𝑆𝑆𝑟𝑟
+𝑝𝑝𝐿𝐿< 0:
+
+--- Page 14 ---
+14
+I know the NMR dataset is very sparse compared to ERT, but since it measures water content more directly than ERT plus Archie, it 
+could still serve to anchor the inversion. I’d also like to compare the NMR values to the ERT-derived water content to better understand 
+where the apparent noise in the Archie fit is coming from. The Rsquared looked rather low, I’m not sure if that’s due to 
+homogenization of ERT (I hope I got it right from the paper) or something else. Could you please share the NMR measurement tables 
+(I assume for the open twin), along with the sensor positions, so I can link them with the ERT spatial fields?
+NMR:
+Stephan Costabel (BGR) 
+back on September 4th
+
+--- Page 15 ---
+Available data: NMR
+15
+Data set 1: Water content at pre-defined positions
+-  16/19 positions along profile
+- Twice the year
+- Adaptation of measuring system and post-
+processing
+Data set 2: Ongoing measurements
+- at one position
+- Since Oct 2021 (with change of position in May 
+2022)
+- Adaptation of measuring system and post-
+processing
+Data set 1: Data set 2:
+
+--- Page 16 ---
+Available data: ERT 
+16
+* I take ERT data from your archive ERT_meas_Niche_open 
+(resistivity field).
+* Apply Archie’s law to convert to water content, using the 
+parametrization from the paper for the open twin (y = 
+1.44x^-1.51).
+* The first measurement is 1 November 2019, which should 
+correspond to t = 0 in the OGS model?
+• How do we link OGS saturation output to water content?
+S = WC_vol / n 
+with porosity:
+ n = Vol_pore/Vol_total
+* When I compare OGS output with the ERT vtk files, the 
+mesh seems slightly different around the tunnel. Did I 
+perhaps mixed open vs. closed twin data, or is that 
+expected? Also, what depth of ERT measurement should I use 
+for comparison?
+10m
+10m
+1.5m
+35cm
+
+--- Page 17 ---
+I am also attaching 
+the screenshots of 
+the ERT and OGS 
+results, where the 
+meshes around the 
+tunnel appear 
+different.
+17
+Mesh for ERT evaluation 
+not equal 
+to FEM mesh
+Different surface
+Different mesh
+What do we have to adapt?
+FEM Mesh: surface from Laser Scan data ERT Mesh: surface with sensor positions
+FEM ERT
+ERT
+
+--- Page 18 ---
+Available data: ERT 
+18
+• Data on 10m by 10m
+• Reliable range: 
+1.5m radius (green in the image), 
+35cm in the rock – only use this range!!
+• FEM Definition x/y (in ERT model x/z)
+• Mesh for ERT evaluation not equal to FEM 
+mesh
+• Data available daily (vtk)
+• Data set includes several parameters 
+(resistivity, delta resistivity, log resistivity, 
+phase angle…)
+• Data on exact circular shape
+10m
+10m
+1.5m
+35cm
+
+--- Page 19 ---
+I also looked at the paper you shared, Tuanny, on heterogeneous inputs to OGS. This looks like the 
+approach I should use. If you have example input files, that would help me adapt to this setup faster.
+19
+Heterogeneous inputs to OGS
+
+--- Page 20 ---
+Projection of data on elements
+20
+generate_projections.py
+Input: main mesh (bulk.vtu)
+Output: mesh with projections
+Other functions, parameters
+can be defined.
+./bin/identifySubdomains -m 
+bulk_w_projections.vtu bulk_all.vtu
+*.prj
+Changed to account for
+projected mesh
+Domain identification needs
+to be carried out again:
+*parameters_TRM.xml
+We now read the projected
+values instead of hard coded
+ones:

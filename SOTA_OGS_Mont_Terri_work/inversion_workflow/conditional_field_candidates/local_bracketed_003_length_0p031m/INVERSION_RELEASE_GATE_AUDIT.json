@@ -1,0 +1,32 @@
+{
+  "base_parameters": "ogs_settings/03_parameters_TRM.xml",
+  "check_count": 20,
+  "failure_count": 0,
+  "notes": [
+    "The release gate allows k_i_rd as the active stage-1 parameter field.",
+    "n_rd must remain fixed support; retention, mechanical, thermal, boundary, and initialization parameters must match the projection reference.",
+    "This audit checks candidate-run configuration, not physical acceptance of the OGS result."
+  ],
+  "reference_dir": "GESA_model_original/projection_on_mesh_2025-09-05",
+  "release_plan": "inversion_workflow/inversion_parameter_release_plan.csv",
+  "run_count": 1,
+  "runs": [
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_bracketed_003_length_0p031m",
+      "run_id": "local_bracketed_003_length_0p031m",
+      "status": "pass",
+      "warning_count": 0
+    }
+  ],
+  "status": "pass",
+  "warning_count": 0
+}

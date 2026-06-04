@@ -1,0 +1,46 @@
+{
+  "status": "report_open_comment_audit_generated",
+  "active_report_sources": [
+    "main.tex",
+    "measurement_chapter.tex"
+  ],
+  "active_report_unresolved_marker_count": 0,
+  "resolved_formulation_comment_count": 5,
+  "tracked_external_blocker_count": 0,
+  "tracked_internal_or_provenance_item_count": 4,
+  "false_positive_marker_count": 4,
+  "audit_row_count": 13,
+  "audit_class_counts": {
+    "false_positive_search_hit": 4,
+    "resolved_formulation_comment": 5,
+    "tracked_internal_policy": 2,
+    "tracked_model_provenance_confirmation": 1,
+    "tracked_operational_caveat": 1
+  },
+  "status_counts": {
+    "container_execution_available_local_ogs_absent": 1,
+    "local_policy_recorded_not_promoted_default": 2,
+    "not_active_report_comment": 4,
+    "open_confirmation_required": 1,
+    "resolved_in_active_report": 5
+  },
+  "external_gate_request_pack_status": null,
+  "external_gate_response_intake_status": null,
+  "external_gate_response_intake_missing_response_count": null,
+  "cte_confirmation_request_status": null,
+  "cte_confirmation_request_request_status": null,
+  "cte_confirmation_request_response_status": null,
+  "cte_confirmation_request_suggested_to": null,
+  "cte_confirmation_request_suggested_cc": null,
+  "active_report_open_item_ids": [
+    "cte_value_provenance",
+    "nmr_trend_anomaly_default_promotion",
+    "perm_likelihood_policy_default"
+  ],
+  "active_report_clean_marker_statement": "No TODO/FIXME/??/LaTeX todo/highlight/color review markers were found in main.tex or measurement_chapter.tex.",
+  "notes": [
+    "Resolved formulation comments are separated from provenance and calibration gates.",
+    "The external rows are request/intake gates, not evidence that those gates have been closed.",
+    "long_report.tex is treated as legacy context because main.tex only inputs measurement_chapter.tex."
+  ]
+}

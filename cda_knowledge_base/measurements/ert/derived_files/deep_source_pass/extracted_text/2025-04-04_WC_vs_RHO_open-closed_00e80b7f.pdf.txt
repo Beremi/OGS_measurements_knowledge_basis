@@ -1,0 +1,16 @@
+--- Page 1 ---
+y = 6.6662x-0.667
+R² = 0.265
+y = 10.699x-0.743
+R² = 0.0739
+y = 1.0876x-1.68
+R² = 0.432
+1.00
+10.00
+100.00
+1000.00
+0.050 0.100 0.150
+Resistivity [Ωm]
+Water content [m3/m3]
+Closed twin Open twin
+All Fit (Closed twin)

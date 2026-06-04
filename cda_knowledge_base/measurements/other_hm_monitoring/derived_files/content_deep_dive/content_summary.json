@@ -1,0 +1,98 @@
+[
+  {
+    "category": "catalogue scope",
+    "comment": "Counts are from cda_knowledge_base/measurements/deep_source_index.csv.",
+    "item": "copied source files",
+    "measurement": "other_hm_monitoring",
+    "sources": "",
+    "value": "12 files; total copied source bytes 292088523; file kinds pdf=5, pptx=3, text/data=3, zip=1"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "2024-12-19_Input_HERMES_BGR_20241217.pdf",
+    "measurement": "other_hm_monitoring",
+    "sources": "cda_knowledge_base/measurements/other_hm_monitoring/source_files/2024-12-19_Input_HERMES_BGR_20241217.pdf",
+    "value": "type pdf; pages/slides 7; keywords ERT; TDR; humidity; fracture; water content; pressure; piezometer; extensometer; laser; OGS; HERMES; CD-A; niche; extract cda_knowledge_base/measurements/other_hm_monitoring/derived_files/deep_source_pass/extracted_text/2024-12-19_Input_HERMES_BGR_20241217_a3a7ba63.pdf.txt"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "2026-05-11_TD517_CD-A_260507__Minutes.pdf",
+    "measurement": "other_hm_monitoring",
+    "sources": "cda_knowledge_base/measurements/other_hm_monitoring/source_files/2026-05-11_TD517_CD-A_260507__Minutes.pdf",
+    "value": "type pdf; pages/slides 8; keywords ERT; NMR; Taupe; TDR; suction; humidity; relative humidity; permeability; fault; fracture; water content; saturation; pressure; piezometer; extensometer; crackmeter; laser; levelling; HERMES; CD-A; niche; extract cda_knowledge_base/measurements/other_hm_monitoring/derived_files/deep_source_pass/extracted_text/2026-05-11_TD517_CD-A_260507__Minutes_382ada29.pdf.txt"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "CD-A_Slides_TD_260427x.pdf",
+    "measurement": "other_hm_monitoring",
+    "sources": "cda_knowledge_base/measurements/other_hm_monitoring/source_files/CD-A_Slides_TD_260427x.pdf",
+    "value": "type pdf; pages/slides 34; keywords ERT; NMR; Taupe; suction; humidity; relative humidity; permeability; water content; saturation; pressure; piezometer; extensometer; crackmeter; laser; levelling; OGS; HERMES; CD-A; niche; extract cda_knowledge_base/measurements/other_hm_monitoring/derived_files/deep_source_pass/extracted_text/CD-A_Slides_TD_260427x_71b1ce18.pdf.txt"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "CD-A_TD_2026_sc.pdf",
+    "measurement": "other_hm_monitoring",
+    "sources": "cda_knowledge_base/measurements/other_hm_monitoring/source_files/CD-A_TD_2026_sc.pdf",
+    "value": "type pdf; pages/slides 15; keywords ERT; suction; pressure; piezometer; extensometer; OGS; CD-A; niche; extract cda_knowledge_base/measurements/other_hm_monitoring/derived_files/deep_source_pass/extracted_text/CD-A_TD_2026_sc_7834d993.pdf.txt"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "Folien_Niv_TD_CDA_2026.pdf",
+    "measurement": "other_hm_monitoring",
+    "sources": "cda_knowledge_base/measurements/other_hm_monitoring/source_files/Folien_Niv_TD_CDA_2026.pdf",
+    "value": "type pdf; pages/slides 6; keywords laser; levelling; CD-A; niche; extract cda_knowledge_base/measurements/other_hm_monitoring/derived_files/deep_source_pass/extracted_text/Folien_Niv_TD_CDA_2026_99304cee.pdf.txt"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "2025-09-05_CD-A_for_hermes_2D_Bologna_250904.pptx",
+    "measurement": "other_hm_monitoring",
+    "sources": "cda_knowledge_base/measurements/other_hm_monitoring/source_files/2025-09-05_CD-A_for_hermes_2D_Bologna_250904.pptx",
+    "value": "type pptx; pages/slides 1; keywords niche; extract cda_knowledge_base/measurements/other_hm_monitoring/derived_files/deep_source_pass/extracted_text/2025-09-05_CD-A_for_hermes_2D_Bologna_250904_4afd25d7.pptx.txt"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "2025-09-05_Hermes_T5_BGR_UGN_250904.pptx",
+    "measurement": "other_hm_monitoring",
+    "sources": "cda_knowledge_base/measurements/other_hm_monitoring/source_files/2025-09-05_Hermes_T5_BGR_UGN_250904.pptx",
+    "value": "type pptx; pages/slides 1; keywords CD-A; niche; extract cda_knowledge_base/measurements/other_hm_monitoring/derived_files/deep_source_pass/extracted_text/2025-09-05_Hermes_T5_BGR_UGN_250904_b815a347.pptx.txt"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "2025-09-05_Hermes_T5_BGR_UGN_250905x.pptx",
+    "measurement": "other_hm_monitoring",
+    "sources": "cda_knowledge_base/measurements/other_hm_monitoring/source_files/2025-09-05_Hermes_T5_BGR_UGN_250905x.pptx",
+    "value": "type pptx; pages/slides 1; keywords CD-A; niche; extract cda_knowledge_base/measurements/other_hm_monitoring/derived_files/deep_source_pass/extracted_text/2025-09-05_Hermes_T5_BGR_UGN_250905x_f22cadc1.pptx.txt"
+  },
+  {
+    "category": "text/data source",
+    "comment": "Header/first-line extraction is recorded in derived_files/deep_source_pass/extracted_text.",
+    "item": "VisualisationCDA.dat",
+    "measurement": "other_hm_monitoring",
+    "sources": "cda_knowledge_base/measurements/other_hm_monitoring/source_files/VisualisationCDA.dat",
+    "value": "not counted (large file) lines; first extracted content: TITLE = \"\" | VARIABLES = \"X\" | \"Y\" | \"Z\" | TEXT | CS=FRAME | X=9.78378378378,Y=15.6756756757 | C=BLACK | S=LOCAL | HU=POINT"
+  },
+  {
+    "category": "text/data source",
+    "comment": "Header/first-line extraction is recorded in derived_files/deep_source_pass/extracted_text.",
+    "item": "hm_numeric_exports_response_notes.md",
+    "measurement": "other_hm_monitoring",
+    "sources": "cda_knowledge_base/measurements/other_hm_monitoring/source_files/provider_responses/hm_numeric_exports_response_notes.md",
+    "value": "29 lines; first extracted content: # Response Notes: hm_numeric_exports | - Response status: `missing_response` | - Request status: `drafted_pending_send` | - Gate: `HM_NUMERIC_EXPORTS` | - Audience: Gesa Ziefle / BGR Geoscope, laser-scan, and levelling source | - Recipient draft: `inversion_wo"
+  },
+  {
+    "category": "text/data source",
+    "comment": "Header/first-line extraction is recorded in derived_files/deep_source_pass/extracted_text.",
+    "item": "hm_uncertainty_response_notes.md",
+    "measurement": "other_hm_monitoring",
+    "sources": "cda_knowledge_base/measurements/other_hm_monitoring/source_files/provider_responses/hm_uncertainty_response_notes.md",
+    "value": "29 lines; first extracted content: # Response Notes: hm_uncertainty | - Response status: `missing_response` | - Request status: `drafted_pending_send` | - Gate: `HM_UNCERTAINTY` | - Audience: Gesa Ziefle / BGR Geoscope, laser-scan, and levelling source | - Recipient draft: `inversion_workflow/e"
+  }
+]

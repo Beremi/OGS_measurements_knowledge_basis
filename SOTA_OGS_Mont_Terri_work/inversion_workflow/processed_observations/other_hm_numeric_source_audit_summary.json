@@ -1,0 +1,51 @@
+{
+  "activation_gate": "Do not assign hard HM residual weights until numeric exports include timestamps or survey epochs, units, support geometry, reference conventions, uncertainty/covariance, and quality/status flags.",
+  "catalogue_copies": [
+    "../cda_knowledge_base/measurements/other_hm_monitoring/derived_files/other_hm_numeric_source_audit.csv",
+    "../cda_knowledge_base/measurements/other_hm_monitoring/derived_files/other_hm_numeric_source_evidence.csv",
+    "../cda_knowledge_base/measurements/other_hm_monitoring/derived_files/other_hm_numeric_source_audit_summary.json",
+    "../cda_knowledge_base/measurements/other_hm_monitoring/derived_files/other_hm_numeric_source_audit.md"
+  ],
+  "evidence_hit_count": 82,
+  "geometry_only_request_count": 1,
+  "hard_residual_ready_request_count": 0,
+  "local_support_ready_request_count": 6,
+  "not_ready_request_count": 6,
+  "outputs": {
+    "audit_csv": "inversion_workflow/processed_observations/other_hm_numeric_source_audit.csv",
+    "evidence_csv": "inversion_workflow/processed_observations/other_hm_numeric_source_evidence.csv",
+    "markdown": "inversion_workflow/processed_observations/other_hm_numeric_source_audit.md",
+    "summary_json": "inversion_workflow/processed_observations/other_hm_numeric_source_audit_summary.json"
+  },
+  "partial_numeric_summary_request_count": 1,
+  "remaining_blocker": "Local source scan found layout geometry, laser surface geometry, extracted levelling slide rows, and report/minute evidence, but no hard-residual-ready Geoscope time series, laser statistical interpretation product, or full levelling survey table.",
+  "request_rows": 6,
+  "source_bundle": {
+    "numeric_extension_source_files": [
+      "cda_knowledge_base/measurements/other_hm_monitoring/source_files/VisualisationCDA.dat"
+    ],
+    "presentation_or_report_source_files": [
+      "cda_knowledge_base/measurements/other_hm_monitoring/source_files/2024-12-19_Input_HERMES_BGR_20241217.pdf",
+      "cda_knowledge_base/measurements/other_hm_monitoring/source_files/2025-09-05_CD-A_for_hermes_2D_Bologna_250904.pptx",
+      "cda_knowledge_base/measurements/other_hm_monitoring/source_files/2025-09-05_Hermes_T5_BGR_UGN_250904.pptx",
+      "cda_knowledge_base/measurements/other_hm_monitoring/source_files/2025-09-05_Hermes_T5_BGR_UGN_250905x.pptx",
+      "cda_knowledge_base/measurements/other_hm_monitoring/source_files/2026-05-11_TD517_CD-A_260507__Minutes.pdf",
+      "cda_knowledge_base/measurements/other_hm_monitoring/source_files/CD-A_Slides_TD_260427x.pdf",
+      "cda_knowledge_base/measurements/other_hm_monitoring/source_files/CD-A_TD_2026_sc.pdf",
+      "cda_knowledge_base/measurements/other_hm_monitoring/source_files/Folien_Niv_TD_CDA_2026.pdf"
+    ],
+    "source_extension_counts": {
+      ".dat": 1,
+      ".pdf": 5,
+      ".pptx": 3,
+      ".zip": 1
+    },
+    "source_file_count": 10,
+    "zip_member_count": 7,
+    "zip_member_extension_counts": {
+      ".pdf": 7
+    },
+    "zip_member_numeric_candidate_count": 0
+  },
+  "status": "other_hm_numeric_source_audit_complete_hard_residual_exports_missing"
+}

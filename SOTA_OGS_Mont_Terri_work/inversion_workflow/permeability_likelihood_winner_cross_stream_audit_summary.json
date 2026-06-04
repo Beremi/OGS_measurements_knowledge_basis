@@ -1,0 +1,56 @@
+{
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_winner_cross_stream_audit.csv",
+      "source": "inversion_workflow/permeability_likelihood_winner_cross_stream_audit.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_winner_cross_stream_audit_summary.json",
+      "source": "inversion_workflow/permeability_likelihood_winner_cross_stream_audit_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_winner_cross_stream_audit.md",
+      "source": "inversion_workflow/permeability_likelihood_winner_cross_stream_audit.md"
+    }
+  ],
+  "cross_stream_best_mean_rank_run": "local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000",
+  "cross_stream_joined_run_count": 66,
+  "current_accepted_active_rank": 1.0,
+  "current_accepted_mean_rank": 13.2,
+  "current_accepted_run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "direct_only_policy_winner_rows": 3,
+  "disposition_counts": {
+    "current_accepted_field_with_cross_stream_evidence": 1,
+    "direct_only_winner_requires_ogs_before_stream_promotion": 3,
+    "executed_direct_tie_representative_not_current_active_preferred": 3
+  },
+  "notes": [
+    "No OGS execution is performed by this audit.",
+    "A policy winner without a cross-stream scorecard row is a direct-field candidate only.",
+    "Current accepted field scorecard evidence is matched through CURRENT_PERMEABILITY_FIELD_SUMMARY.source run_id."
+  ],
+  "outputs": {
+    "audit_csv": "inversion_workflow/permeability_likelihood_winner_cross_stream_audit.csv",
+    "markdown": "inversion_workflow/permeability_likelihood_winner_cross_stream_audit.md",
+    "summary_json": "inversion_workflow/permeability_likelihood_winner_cross_stream_audit_summary.json"
+  },
+  "outside_tie_direct_only_policy_winner_rows": 3,
+  "policy_winner_rows": 7,
+  "policy_winner_rows_with_cross_stream_scorecard": 4,
+  "rerank_alt_policy_winners_outside_tie_set": 3,
+  "rerank_candidate_fields_scored": 522,
+  "rerank_current_gaussian_best_tie_count": 40,
+  "row_gaussian_representative_active_rank": 45.0,
+  "row_gaussian_representative_mean_rank": 30.4,
+  "row_gaussian_representative_run_id": "broad_continuous_loop_001_001_length_0p015m",
+  "source_artifacts": [
+    "inversion_workflow/permeability_likelihood_scenario_rerank_policy_winners.csv",
+    "inversion_workflow/permeability_likelihood_scenario_rerank_summary.json",
+    "inversion_workflow/cross_stream_candidate_scorecard.csv",
+    "inversion_workflow/cross_stream_candidate_scorecard_summary.json",
+    "inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD_SUMMARY.json"
+  ],
+  "status": "permeability_likelihood_winner_cross_stream_audit_generated",
+  "unique_winner_count": 5,
+  "unique_winners_with_cross_stream_scorecard": 2
+}

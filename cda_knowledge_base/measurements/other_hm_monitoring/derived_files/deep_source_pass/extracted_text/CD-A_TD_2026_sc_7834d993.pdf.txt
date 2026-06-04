@@ -1,0 +1,164 @@
+--- Page 1 ---
+BGR modelling activities under the EURAD and 
+CD-A Projects
+Mont Terri Technical Discussion
+2026.04.28
+Shuang Chen, Gesa Ziefle, Tuanny Cajuhi
+
+--- Page 2 ---
+Overview of the recent works
+1. BGR: Test of Constitutive Models (Shuang Chen)
+- 2D model (Test of different solvers, computational efficiency analyse)
+- Evaluation of strains
+- Comparison with 3D model (Tuanny) and extensometer measurements
+- Next: test of constitutive models 
+2. BGR–EDF (France) Collaboration
+• Meeting on 5 March: exchange on the latest modelling results
+• Coordination of the next work focus
+Next focus: Comparison with Measurements:
+• Displacements / Strains (Extensometer measurements)
+• Pore pressure (Mini-Piezometer measurements)
+• Pore pressure in desaturated zone (Suction measurments)
+Approach:
+• Stepwise benchmarking approach
+
+--- Page 3 ---
+Recent modelling works
+- 2D model (Test of different solvers, computational efficiency analyse )
+- Evaluation of strains
+- Comparison with 3D model (Tuanny) and extensometer measurements
+- Next: test of constitutive models
+
+--- Page 4 ---
+4
+Testing the 2D Model in OGS6 
+Linear Solver behavior
+OGS6 process: 
+Thermal–Richards Flow–Mechanical (TRM)
+Solver type:
+Serial: PardisoLU, BiCGILUT
+Parallel: MUMPS, HYPRE, GMRES, CPardiso.
+Scenario 1: 2D model with 
+precise surface geometry.
+
+--- Page 5 ---
+5
+Testing the 2D Model in OGS6 
+Linear Solver behavior
+Output points for comparison
+Verification of result consistency across solvers
+
+--- Page 6 ---
+6
+Testing the 2D Model in OGS6 
+Linear Solver behavior
+Comparison of computational cost across solvers
+
+--- Page 7 ---
+7
+Testing the 2D Model in OGS6 
+Scenario 2: 2D model with 
+simplified perfect ring geometry. 
+ Mesh tool: GINA
+Model Setup:
+Points: 3,620
+Cells: 5,879
+DOF: 14,480
+Mesh resolution on the inner ring: 0.03 m.
+P1
+P2
+P3
+P4
+
+--- Page 8 ---
+8
+Testing the 2D Model in OGS6 
+Preliminary comparison of results with measurements
+
+--- Page 9 ---
+BGR–EDF Collaboration
+• Meeting on 5 March: exchange on the latest modelling results
+• Coordination of the next work focus
+Next focus: Comparison with Measurements:
+• Displacements / Strains (Extensometer measurements)
+• Pore pressure (Mini-Piezometer measurements)
+• Pore pressure in desaturated zone (Suction measurments)
+Approach:
+• Stepwise benchmarking approach
+
+--- Page 10 ---
+Stepwise benchmarking approach
+Scenario Overview
+x= −5: 5 𝑚
+y= −5: 5 𝑚
+Sce#1
+2D Simplified Model 
+Geometry: 10m x 10m
+Sce#2
+2D Slice-Based Model
+Geometry: slice of the 3D model 
+Sce#3
+3D Model
+Open and closed niches and gallery
+Detail Information: Excel File 
+2D_Model_Setup_v1.xlsx
+
+--- Page 11 ---
+Motivation
+A stepwise benchmarking approach from a simple 2D model to the 3D in-situ model provides a practical 
+basis for benchmarking, later constitutive model testing, and finally comparison with extensometer and 
+pore pressure measurement data. 
+The intermediate 2D slice-based model serves as a practical compromise between the simplified 2D case 
+and the full 3D model, retaining the practical advantages of 2D model assessment while allowing testing 
+under conditions that more closely approximate the 3D model. In particular, it enables consideration of 
+the in-situ stress state, which will likely require explicit simulation of the excavation process.
+
+--- Page 12 ---
+Mechanical boundary conditions (BC)
+Sce#1: 2D Simplified Model
+Initial conditions (IC)
+▪ Homogeneous
+12
+y= −5: 5 𝑚
+x= −5: 5 𝑚
+uy = 0
+uy = 0
+u𝑥 = 0 u𝑥 = 0
+Hydraulic boundary conditions (BC)
+▪ At the wall of the niche
+𝑅𝐻 → 𝑝𝐿 (Open_niche_seasonal_sinus_curve)
+Process: THERMO_RICHARDS_MECHANICS
+Material properties 
+Expected outputs:
+
+--- Page 13 ---
+Sce#2: 2D Slice-Based Model
+13
+Detailed model setup will follow after the proposed scenarios have been discussed and agreed upon.
+
+--- Page 14 ---
+Sce#3: 3D Model
+14
+ҧ𝒕𝒕𝒐𝒑 = −𝟕 𝑴𝑷𝒂
+𝒑𝒊𝒏−𝒔𝒊𝒕𝒖 = 𝟏. 𝟓 𝑴𝑷𝒂
+x y
+z
+ഥ𝒖𝒃𝒐𝒕𝒕𝒐𝒎 = (𝒖𝒙, 𝒖𝒚, 𝟎)
+ഥ𝒖𝒚 = 𝟎
+ഥ𝒖𝒚 = 𝟎
+ഥ𝒖𝒙 = 𝟎
+ഥ𝒖𝒙 = 𝟎
+
+--- Page 15 ---
+Summary and next todos
+15
+2D Model
+Model precise surface geometry: Tested solver behavior and efficiency.
+Model with perfect ring geometry: Simulated strain showed discrepancies vs. measurements. Model 
+setup is prepared for the next benchmarking scenario.
+Modelling Strategy
+Stepwise benchmarking: Simple 2D → Complex 3D in-situ model. Finally targets to compare with 
+extensometer and pore pressure measurement data.
+Next steps
+• BGR internal: test of constitutive models. 
+• Collaboration: Benchmark BGR vs. EDF modelling.

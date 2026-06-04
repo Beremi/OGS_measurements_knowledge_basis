@@ -1,0 +1,43 @@
+{
+  "active_objective_rows": 267,
+  "active_stream_count": 2,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/measurement_stream_activation_gate_audit.csv",
+      "source": "inversion_workflow/measurement_stream_activation_gate_audit.csv"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/measurement_stream_activation_gate_checks.csv",
+      "source": "inversion_workflow/measurement_stream_activation_gate_checks.csv"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/measurement_stream_activation_gate_audit_summary.json",
+      "source": "inversion_workflow/measurement_stream_activation_gate_audit_summary.json"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/measurement_stream_activation_gate_audit.md",
+      "source": "inversion_workflow/measurement_stream_activation_gate_audit.md"
+    }
+  ],
+  "diagnostic_or_boundary_only_count": 3,
+  "gate_check_count": 20,
+  "highest_priority_gate_actions": [
+    "Keep the active direct-permeability/NMR objective conditional; do not claim a final all-measurement fit.",
+    "Confirm ERT transform, exact support mask, and inversion uncertainty/correlation before ERT residual weights.",
+    "Confirm Taupe/TDR units/calibration and grouped uncertainty before Taupe residual weights.",
+    "Resolve RH active-curve provenance before replacement boundary forcing or retention likelihood.",
+    "Locate hard-residual-ready Geoscope/laser/levelling exports before other-HM residual weights."
+  ],
+  "not_ready_for_hard_residual_count": 1,
+  "promotion_decision_counts": {
+    "active_with_tracked_caveats": 2,
+    "boundary_audit_only": 1,
+    "diagnostic_only": 2,
+    "not_ready_for_hard_residual": 1,
+    "support_layer_ready": 2
+  },
+  "required_gate_fail_count": 7,
+  "required_gate_warn_count": 4,
+  "status": "measurement_stream_activation_gate_audit_generated",
+  "stream_count": 8
+}

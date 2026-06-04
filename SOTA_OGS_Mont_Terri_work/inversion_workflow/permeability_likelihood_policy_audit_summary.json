@@ -1,0 +1,61 @@
+{
+  "active_direct_rows": 75,
+  "active_rows_outside_configured_scalar_range": 2,
+  "cap_abs_log10": 1.0,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_policy_audit.csv",
+      "source": "inversion_workflow/permeability_likelihood_policy_audit.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_policy_row_audit.csv",
+      "source": "inversion_workflow/permeability_likelihood_policy_row_audit.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_policy_group_summary.csv",
+      "source": "inversion_workflow/permeability_likelihood_policy_group_summary.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_policy_audit.md",
+      "source": "inversion_workflow/permeability_likelihood_policy_audit.md"
+    }
+  ],
+  "current_gaussian_objective": 269.8180571059851,
+  "current_max_abs_log10": 3.4744237387763093,
+  "current_weighted_mae_log10": 1.2295502504064544,
+  "current_weighted_rmse_log10": 1.61071549171474,
+  "effective_objective_weight": 52.0,
+  "group_output_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_policy_group_summary.csv",
+  "huber_delta_normalized": 2.0,
+  "large_residual_active_rows_ge_1_log10": 48,
+  "log10_sigma": 0.5,
+  "notes": [
+    "Objective-like values are comparable within a policy family but robust policies omit normalization constants.",
+    "Support-cell aggregation is a diagnostic because it assumes rows sharing one model support cell should not be fitted independently.",
+    "The active objective remains the duplicate-weighted Gaussian row policy unless the modelling team explicitly changes it."
+  ],
+  "output_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_policy_audit.csv",
+  "policy_comparison_rows": 7,
+  "recommendation": "Keep the current Gaussian row policy as the recorded active objective for reproducibility, but do not treat more spatial sampling as the next default step. First decide whether the direct permeability likelihood should use robust tails, support-cell aggregation, or explicit exclusion/reinterpretation of configured-scalar-range outliers. The support-cell weighted-mean diagnostic changes the objective-like value from 269.818 to 1.76705e-28, which shows that the current field is fitting mapped support averages while row-level pulse-test conflicts dominate the active Gaussian loss.",
+  "residual_audit_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_residual_conflict_audit.csv",
+  "residual_conflict_interpretation": "2 active rows are outside the configured scalar multiplier range; more spatial sampling within the same scalar-bounded family cannot close those rows without revisiting bounds, tensor-shape release, or measurement interpretation.",
+  "residual_summary_json": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_residual_conflict_audit_summary.json",
+  "robust_huber_delta_2sigma_objective": 183.67124740833367,
+  "robust_student_t_nu4_objective": 121.16896116540622,
+  "row_loss_top_10_share": 0.49400403343820803,
+  "row_loss_top_5_share": 0.3114171478881606,
+  "row_output_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_policy_row_audit.csv",
+  "status": "permeability_likelihood_policy_audit_generated",
+  "student_t_nu": 4.0,
+  "summary_markdown": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_policy_audit.md",
+  "summary_output_json": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_policy_audit_summary.json",
+  "support_cell_audit_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_residual_support_cell_audit.csv",
+  "support_group_count": 30,
+  "support_groups_with_observed_range_ge_1_log10": 16,
+  "support_groups_with_observed_range_ge_2_log10": 16,
+  "support_groups_with_repeated_rows": 24,
+  "support_mean_unit_objective": 1.7670484276950664e-28,
+  "support_median_unit_objective": 134.72779043641356,
+  "top_2_support_group_loss_share": 0.35556972599914893,
+  "very_large_residual_active_rows_ge_2_log10": 21
+}

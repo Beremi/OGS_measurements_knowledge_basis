@@ -1,0 +1,672 @@
+{
+  "check_count": 28,
+  "checks": [
+    {
+      "details": {
+        "entries": 1805,
+        "files": 1736,
+        "suffix_counts": {
+          ".txt": 61,
+          ".vtk": 1675
+        }
+      },
+      "observation_id": "ert_open_time_series",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/ert/source_files/ERT_meas_Niche_open.zip",
+      "status": "ok",
+      "type": "zip"
+    },
+    {
+      "details": {
+        "line_count": 6128,
+        "size_bytes": 1055029
+      },
+      "observation_id": "ert_open_time_series",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/ert/source_files/2025-12-12_2022-09-01_02-00-00.tx0",
+      "status": "ok",
+      "type": "text"
+    },
+    {
+      "details": {
+        "line_count": 2656,
+        "size_bytes": 85076
+      },
+      "observation_id": "ert_open_time_series",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/ert/source_files/2025-12-12_2022-09-01_02-00_open.ohm",
+      "status": "ok",
+      "type": "text"
+    },
+    {
+      "details": {
+        "line_count": 2524,
+        "size_bytes": 80726
+      },
+      "observation_id": "ert_open_time_series",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/ert/source_files/2025-12-12_2022-09-01_02-00_closed.ohm",
+      "status": "ok",
+      "type": "text"
+    },
+    {
+      "details": {
+        "sheet_shapes": {
+          "Data2019+": {
+            "columns": [
+              "Archie-Plot",
+              "Unnamed: 1",
+              "Unnamed: 2",
+              "Unnamed: 3",
+              "Unnamed: 4",
+              "Unnamed: 5",
+              "Unnamed: 6",
+              "Unnamed: 7",
+              "Unnamed: 8",
+              "Unnamed: 9"
+            ],
+            "rows": 41
+          },
+          "Kruschwitz2004": {
+            "columns": [
+              "water content",
+              "saturation",
+              "cond.",
+              "resistivity",
+              "Unnamed: 4",
+              "Model Data2019+ ",
+              "old fit"
+            ],
+            "rows": 24
+          }
+        },
+        "sheets": [
+          "Data2019+",
+          "open-closed",
+          "sidewalls",
+          "top-bottom",
+          "Tabelle1",
+          "Kruschwitz2004"
+        ]
+      },
+      "observation_id": "ert_open_time_series",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/ert/source_files/2025-04-04_WC_vs_RHO_2025-02.xlsx",
+      "status": "ok",
+      "type": "xlsx"
+    },
+    {
+      "details": {
+        "columns": [
+          "Date",
+          "Vol.Wat.Content[%]",
+          "WC-Conf.Int.95%",
+          "T2[ms]",
+          "T2-Conf.Int.95%"
+        ],
+        "rows": 21
+      },
+      "observation_id": "nmr_weekly_and_seasonal",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/nmr/source_files/2025-09-15_Weekly_2021-2022_at_4S.dat",
+      "status": "ok",
+      "type": "csv"
+    },
+    {
+      "details": {
+        "columns": [
+          "Date",
+          "Vol.Wat.Content[%]",
+          "WC-Conf.Int.95%",
+          "T2[ms]",
+          "T2-Conf.Int.95%"
+        ],
+        "rows": 149
+      },
+      "observation_id": "nmr_weekly_and_seasonal",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/nmr/source_files/2025-09-15_Weekly_2022-2025_at_4E.dat",
+      "status": "ok",
+      "type": "csv"
+    },
+    {
+      "details": {
+        "entries": 47,
+        "files": 44,
+        "suffix_counts": {
+          ".dat": 22,
+          ".fig": 11,
+          ".png": 11
+        }
+      },
+      "observation_id": "nmr_weekly_and_seasonal",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/nmr/source_files/2025-09-15_saisonally.zip",
+      "status": "ok",
+      "type": "zip"
+    },
+    {
+      "details": {
+        "sheet_shapes": {
+          "Tabelle1": {
+            "columns": [
+              "Unnamed: 0",
+              "Original Koordinaten",
+              "Unnamed: 2",
+              "Unnamed: 3",
+              "Unnamed: 4",
+              "BGR Model Koordinaten",
+              "Unnamed: 6",
+              "Unnamed: 7"
+            ],
+            "rows": 38
+          }
+        },
+        "sheets": [
+          "Tabelle1"
+        ]
+      },
+      "observation_id": "nmr_weekly_and_seasonal",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/nmr/source_files/Coordinates_NMR_Taupe_characborehole.xlsx",
+      "status": "ok",
+      "type": "xlsx"
+    },
+    {
+      "details": {
+        "sheet_shapes": {
+          "2021_BCDA27_19": {
+            "columns": [
+              "Unnamed: 0",
+              "1. MessEinsatz (M\u00e4rz. 2021)",
+              "Unnamed: 2",
+              "Unnamed: 3",
+              "Unnamed: 4",
+              "Unnamed: 5",
+              "Unnamed: 6",
+              "Unnamed: 7",
+              "Unnamed: 8",
+              "Unnamed: 9",
+              "Unnamed: 10",
+              "Unnamed: 11",
+              "Unnamed: 12"
+            ],
+            "rows": 17
+          },
+          "2024_CT": {
+            "columns": [
+              "Unnamed: 0",
+              "1. MessEinsatz (April 2024)",
+              "Unnamed: 2",
+              "Unnamed: 3",
+              "Unnamed: 4",
+              "Unnamed: 5",
+              "Unnamed: 6",
+              "Unnamed: 7"
+            ],
+            "rows": 17
+          },
+          "2024_OT": {
+            "columns": [
+              "Unnamed: 0",
+              "1. MessEinsatz (April 2024)",
+              "Unnamed: 2",
+              "Unnamed: 3",
+              "Unnamed: 4",
+              "Unnamed: 5",
+              "Unnamed: 6",
+              "Unnamed: 7"
+            ],
+            "rows": 17
+          },
+          "Messdaten_BCDA26": {
+            "columns": [
+              "0.15",
+              "Unnamed: 1",
+              "0.25",
+              "Unnamed: 3",
+              "0.35",
+              "Unnamed: 5",
+              "0.45",
+              "Unnamed: 7",
+              "0.55",
+              "Unnamed: 9",
+              "0.65",
+              "Unnamed: 11",
+              "0.75",
+              "Unnamed: 13",
+              "0.85",
+              "Unnamed: 15",
+              "0.95",
+              "Unnamed: 17",
+              "1.05",
+              "Unnamed: 19",
+              "1.15",
+              "Unnamed: 21",
+              "1.25",
+              "Unnamed: 23",
+              "1.70",
+              "Unnamed: 25",
+              "2.5",
+              "Unnamed: 27",
+              "3.3",
+              "Unnamed: 29",
+              "Nullmessung",
+              "Unnamed: 31",
+              "Unnamed: 32",
+              "Unnamed: 33",
+              "Unnamed: 34",
+              "Unnamed: 35",
+              "Unnamed: 36",
+              "Unnamed: 37",
+              "Unnamed: 38",
+              "Unnamed: 39",
+              "Unnamed: 40",
+              "Unnamed: 41"
+            ],
+            "rows": 1870
+          },
+          "Messdaten_BCDA27": {
+            "columns": [
+              "0.15",
+              "Unnamed: 1",
+              "0.25",
+              "Unnamed: 3",
+              "0.35",
+              "Unnamed: 5",
+              "0.45",
+              "Unnamed: 7",
+              "0.55",
+              "Unnamed: 9",
+              "0.65",
+              "Unnamed: 11",
+              "0.75",
+              "Unnamed: 13",
+              "0.85",
+              "Unnamed: 15",
+              "0.95",
+              "Unnamed: 17",
+              "1.05",
+              "Unnamed: 19",
+              "1.15",
+              "Unnamed: 21",
+              "1.25",
+              "Unnamed: 23",
+              "1.70",
+              "Unnamed: 25",
+              "2.5",
+              "Unnamed: 27",
+              "3.3",
+              "Unnamed: 29",
+              "Nullmessung",
+              "Unnamed: 31",
+              "Unnamed: 32",
+              "Unnamed: 33",
+              "Unnamed: 34",
+              "Unnamed: 35",
+              "Unnamed: 36",
+              "Unnamed: 37",
+              "Unnamed: 38",
+              "Unnamed: 39",
+              "Unnamed: 40",
+              "Unnamed: 41"
+            ],
+            "rows": 1873
+          }
+        },
+        "sheets": [
+          "2024_OT",
+          "2024_CT",
+          "2021_BCDA27_19",
+          "Messdaten_BCDA26",
+          "Messdaten_BCDA27"
+        ]
+      },
+      "observation_id": "permeability_pulse_tests",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/permeability_pulse_tests/source_files/2025-09-05_CD-A_Permeability.xlsx",
+      "status": "ok",
+      "type": "xlsx"
+    },
+    {
+      "details": {
+        "sheet_shapes": {
+          "2021": {
+            "columns": [
+              "Unnamed: 0",
+              "BCDA_24 (vertical, 2021)",
+              "Unnamed: 2",
+              "IntervallDKP3=0.1 m",
+              "Unnamed: 4",
+              "BCDA_25 (horizontal, 2021)",
+              "Unnamed: 6",
+              "Unnamed: 7"
+            ],
+            "rows": 34
+          },
+          "2024": {
+            "columns": [
+              "Unnamed: 0",
+              "BCDA_32 (horizontal, 2024)",
+              "Unnamed: 2",
+              "IntervallDKP3=0.1 m",
+              "Unnamed: 4",
+              "BCDA_33 (vertical, 2024)",
+              "Unnamed: 6",
+              "Unnamed: 7"
+            ],
+            "rows": 34
+          }
+        },
+        "sheets": [
+          "2021",
+          "2024"
+        ]
+      },
+      "observation_id": "permeability_pulse_tests",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/permeability_pulse_tests/source_files/Permeability_CDA_all_2025.xlsx",
+      "status": "ok",
+      "type": "xlsx"
+    },
+    {
+      "details": {
+        "sheet_shapes": {
+          "A3": {
+            "columns": [
+              "Datum",
+              "MV EDZ 0-50",
+              "MV EDZ 0-10",
+              "MV EDZ 10-20",
+              "MV EDZ 20-30",
+              "MV EDZ 30-40",
+              "MV EDZ 40-50"
+            ],
+            "rows": 212
+          },
+          "A4": {
+            "columns": [
+              "Datum",
+              "MV EDZ 0-50",
+              "MV EDZ 0-10",
+              "MV EDZ 10-20",
+              "MV EDZ 20-30",
+              "MV EDZ 30-40",
+              "MV EDZ 40-50"
+            ],
+            "rows": 212
+          },
+          "A7": {
+            "columns": [
+              "Datum",
+              "MV EDZ 0-50",
+              "MV EDZ 0-10",
+              "MV EDZ 10-20",
+              "MV EDZ 20-30",
+              "MV EDZ 30-40",
+              "MV EDZ 40-50"
+            ],
+            "rows": 212
+          },
+          "A8": {
+            "columns": [
+              "Datum",
+              "MV EDZ 0-50",
+              "MV EDZ 0-10",
+              "MV EDZ 10-20",
+              "MV EDZ 20-30",
+              "MV EDZ 30-40",
+              "MV EDZ 40-50"
+            ],
+            "rows": 212
+          }
+        },
+        "sheets": [
+          "A3",
+          "A4",
+          "A7",
+          "A8"
+        ]
+      },
+      "observation_id": "taupe_tdr_edz_bands",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/taupe_tdr/source_files/Taupe_WC.xlsx",
+      "status": "ok",
+      "type": "xlsx"
+    },
+    {
+      "details": {
+        "sheet_shapes": {
+          "OT_RH5": {
+            "columns": [
+              "time5",
+              "RH5"
+            ],
+            "rows": 1042
+          }
+        },
+        "sheets": [
+          "OT_RH5"
+        ]
+      },
+      "observation_id": "suction_relative_humidity_open_twin",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/suction_relative_humidity/source_files/OT_RH5.xlsx",
+      "status": "ok",
+      "type": "xlsx"
+    },
+    {
+      "details": {
+        "sheet_shapes": {
+          "OT_RH6": {
+            "columns": [
+              "time6",
+              "RH6"
+            ],
+            "rows": 1064
+          }
+        },
+        "sheets": [
+          "OT_RH6"
+        ]
+      },
+      "observation_id": "suction_relative_humidity_open_twin",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/suction_relative_humidity/source_files/OT_RH6.xlsx",
+      "status": "ok",
+      "type": "xlsx"
+    },
+    {
+      "details": {
+        "sheet_shapes": {
+          "OT_RH7": {
+            "columns": [
+              "time7",
+              "RH7"
+            ],
+            "rows": 1071
+          }
+        },
+        "sheets": [
+          "OT_RH7"
+        ]
+      },
+      "observation_id": "suction_relative_humidity_open_twin",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/suction_relative_humidity/source_files/OT_RH7.xlsx",
+      "status": "ok",
+      "type": "xlsx"
+    },
+    {
+      "details": {
+        "sheet_shapes": {
+          "OT_RH8": {
+            "columns": [
+              "time8",
+              "RH8"
+            ],
+            "rows": 1070
+          }
+        },
+        "sheets": [
+          "OT_RH8"
+        ]
+      },
+      "observation_id": "suction_relative_humidity_open_twin",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/suction_relative_humidity/source_files/OT_RH8.xlsx",
+      "status": "ok",
+      "type": "xlsx"
+    },
+    {
+      "details": {
+        "sheet_shapes": {
+          "Tabelle1": {
+            "columns": [
+              "Unnamed: 0",
+              "3D Modell",
+              "Unnamed: 2",
+              "Unnamed: 3",
+              "2D_Model (x/z)",
+              "Unnamed: 5",
+              "Unnamed: 6",
+              "2D_Model (x/y)",
+              "Unnamed: 8",
+              "Unnamed: 9"
+            ],
+            "rows": 108
+          }
+        },
+        "sheets": [
+          "Tabelle1"
+        ]
+      },
+      "observation_id": "coordinates_and_geometry",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/coordinates_geometry_layout/source_files/2025-09-05_Mess_Koord_XY.xlsx",
+      "status": "ok",
+      "type": "xlsx"
+    },
+    {
+      "details": {
+        "sheet_shapes": {
+          "Tabelle1": {
+            "columns": [
+              "Unnamed: 0",
+              "Original Koordinaten",
+              "Unnamed: 2",
+              "Unnamed: 3",
+              "Unnamed: 4",
+              "BGR Model Koordinaten",
+              "Unnamed: 6",
+              "Unnamed: 7"
+            ],
+            "rows": 38
+          }
+        },
+        "sheets": [
+          "Tabelle1"
+        ]
+      },
+      "observation_id": "coordinates_and_geometry",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/coordinates_geometry_layout/source_files/Coordinates_NMR_Taupe_characborehole.xlsx",
+      "status": "ok",
+      "type": "xlsx"
+    },
+    {
+      "details": {
+        "line_count": 7043549,
+        "size_bytes": 266780550
+      },
+      "observation_id": "coordinates_and_geometry",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/coordinates_geometry_layout/source_files/VisualisationCDA.dat",
+      "status": "ok",
+      "type": "text"
+    },
+    {
+      "details": {
+        "size_bytes": 583796
+      },
+      "observation_id": "bedding_structure",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/bedding_geology_structure/source_files/bedding_angle_ERT.png",
+      "status": "ok",
+      "type": "file"
+    },
+    {
+      "details": {
+        "size_bytes": 8977440
+      },
+      "observation_id": "bedding_structure",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/bedding_geology_structure/source_files/bedding_page_4_Ziefle_GETE_2022.pdf",
+      "status": "ok",
+      "type": "file"
+    },
+    {
+      "details": {
+        "entries": 28,
+        "files": 28,
+        "suffix_counts": {
+          ".pptx": 1,
+          ".prj": 1,
+          ".pvsm": 1,
+          ".py": 1,
+          ".txt": 1,
+          ".vtu": 8,
+          ".xml": 15
+        }
+      },
+      "observation_id": "model_projection_inputs",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/model_projection_inputs/source_files/2025-09-05_Niche_4_no_gravity_no_sigV_no_uy_deltat_projection_on_mesh.zip",
+      "status": "ok",
+      "type": "zip"
+    },
+    {
+      "details": {
+        "cell_counts": {
+          "triangle6": 10239
+        },
+        "cell_data": [
+          "MaterialIDs"
+        ],
+        "points": 20873
+      },
+      "observation_id": "model_projection_inputs",
+      "path": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/GESA_model_original/projection_on_mesh_2025-09-05/bulk.vtu",
+      "status": "ok",
+      "type": "mesh"
+    },
+    {
+      "details": {
+        "size_bytes": 335795
+      },
+      "observation_id": "other_hm_monitoring",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/other_hm_monitoring/source_files/2024-12-19_Input_HERMES_BGR_20241217.pdf",
+      "status": "ok",
+      "type": "file"
+    },
+    {
+      "details": {
+        "size_bytes": 1153047
+      },
+      "observation_id": "other_hm_monitoring",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/other_hm_monitoring/source_files/CD-A_TD_2026_sc.pdf",
+      "status": "ok",
+      "type": "file"
+    },
+    {
+      "details": {
+        "size_bytes": 178398
+      },
+      "observation_id": "other_hm_monitoring",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/other_hm_monitoring/source_files/2026-05-11_TD517_CD-A_260507__Minutes.pdf",
+      "status": "ok",
+      "type": "file"
+    },
+    {
+      "details": {
+        "size_bytes": 512209
+      },
+      "observation_id": "other_hm_monitoring",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/other_hm_monitoring/source_files/Folien_Niv_TD_CDA_2026.pdf",
+      "status": "ok",
+      "type": "file"
+    },
+    {
+      "details": {
+        "line_count": 7043549,
+        "size_bytes": 266780550
+      },
+      "observation_id": "other_hm_monitoring",
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/other_hm_monitoring/source_files/VisualisationCDA.dat",
+      "status": "ok",
+      "type": "text"
+    }
+  ],
+  "data_root": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements",
+  "failures": 0,
+  "manifest": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/observation_manifest.json",
+  "observation_count": 9
+}

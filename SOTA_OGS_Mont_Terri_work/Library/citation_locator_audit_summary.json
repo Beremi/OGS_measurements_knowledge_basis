@@ -1,0 +1,63 @@
+{
+  "status": "citation_locator_audit_generated",
+  "report_sources": [
+    "main.tex",
+    "measurement_chapter.tex"
+  ],
+  "citation_key_instance_count": 63,
+  "unique_cited_key_count": 29,
+  "citation_commands_with_keys_count": 63,
+  "missing_or_weak_locator_count": 0,
+  "missing_bib_entry_count": 0,
+  "unavailable_fulltext_missing_log_count": 0,
+  "locator_status_counts": {
+    "checkable_locator": 63
+  },
+  "bibliography_status_counts": {
+    "present": 63
+  },
+  "fulltext_status_counts": {
+    "local_fulltext_available": 56,
+    "official_web_documentation": 5,
+    "unavailable_tracked": 2
+  },
+  "cited_keys": [
+    "Amann2015",
+    "Archie1942",
+    "BGRModellingTD2026Local",
+    "CDAModellingSlides2025",
+    "ComparativeHydraulicOPA2017",
+    "Cui2022DualScaleNMR",
+    "Garitte2017",
+    "Gens2017",
+    "InputHERMES2024Local",
+    "Kleinberg1996NMR",
+    "Klinkenberg1941",
+    "LevellingTD2026Local",
+    "Marschall2005",
+    "NMR2026Local",
+    "OpenGeoSysParametersDocs",
+    "OpenGeoSysTRMDocs",
+    "Revil1998ShalySands",
+    "Robinson2003TDRReview",
+    "TDMinutes2026Local",
+    "TaupeISU2026Local",
+    "ThermalEffectsOPA2010",
+    "Thomson1871Kelvin",
+    "Topp1980TDR",
+    "VanGenuchten1980",
+    "VanLoon2004Nagra",
+    "VillarRomero2012",
+    "Wang2009THM",
+    "WaterContentEDZ2024",
+    "Ziefle2024Characterization"
+  ],
+  "missing_or_weak_locator_rows": [],
+  "missing_bib_entries": [],
+  "unavailable_fulltexts_missing_from_log": [],
+  "notes": [
+    "A checkable locator may be a page range, PDF page, section, equation, table, or named official documentation section.",
+    "Official OGS documentation is treated separately from PDF fulltexts because the source is a web manual section.",
+    "Unavailable fulltexts are acceptable only when their citation keys are tracked in Library/unavailable_fulltexts.md."
+  ]
+}

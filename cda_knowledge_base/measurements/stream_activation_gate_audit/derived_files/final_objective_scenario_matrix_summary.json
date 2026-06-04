@@ -1,0 +1,58 @@
+{
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_scenario_matrix.csv",
+      "source": "inversion_workflow/final_objective_scenario_matrix.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_scenario_matrix_summary.json",
+      "source": "inversion_workflow/final_objective_scenario_matrix_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_scenario_matrix.md",
+      "source": "inversion_workflow/final_objective_scenario_matrix.md"
+    }
+  ],
+  "conditional_scenario_count": 8,
+  "conditional_unique_winner_count": 5,
+  "current_field_final_decision": "do_not_promote_to_final_all_measurement_field",
+  "current_field_winning_option_count": 2,
+  "current_run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "final_objective_decision_register_pending_count": 9,
+  "interpretation": [
+    "The current field wins only the current raw-NMR option and ties the direct-only option.",
+    "Every option that includes promoted NMR, ERT, or Taupe selects a different field.",
+    "RH, other-HM, and endpoint-missing historical permeability cannot select a field yet because their required evidence is not in the scored scenario set.",
+    "The direct-permeability support/likelihood policy is not approved, and the same-support active-objective batch gate remains closed."
+  ],
+  "not_final_likelihood_or_needs_new_policy_count": 3,
+  "option_count": 9,
+  "permeability_likelihood_policy_primary_approvals_recorded": 0,
+  "permeability_likelihood_policy_primary_approvals_required": 1,
+  "permeability_likelihood_policy_ready_to_apply": false,
+  "permeability_next_field_fit_gate_same_support_batch_executable_now": false,
+  "permeability_support_conflict_spatial_active_support_cell_count": 30,
+  "permeability_support_conflict_spatial_range_ge_2_log10_cell_count": 16,
+  "permeability_support_conflict_spatial_repeated_support_cell_count": 24,
+  "source_artifacts": [
+    "inversion_workflow/conditional_field_selection_scenarios.csv",
+    "inversion_workflow/conditional_field_selection_scenarios_summary.json",
+    "inversion_workflow/cross_stream_candidate_scorecard.csv",
+    "inversion_workflow/final_objective_decision_register_summary.json",
+    "inversion_workflow/current_field_selection_audit_summary.json",
+    "inversion_workflow/permeability_support_conflict_spatial_audit_summary.json",
+    "inversion_workflow/permeability_support_lower_bound_audit_summary.json",
+    "inversion_workflow/permeability_likelihood_policy_acceptance_record_template_summary.json",
+    "inversion_workflow/permeability_next_field_fit_gate_summary.json"
+  ],
+  "status": "final_objective_scenario_matrix_generated",
+  "unique_winner_count": 5,
+  "unique_winners": [
+    "broad_continuous_001_003_length_0p021m",
+    "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+    "local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000",
+    "local_bracketed_003_length_0p031m",
+    "production_sampler_round3_002_length_0p028m_shift_1p050"
+  ],
+  "unscored_future_option_count": 1
+}

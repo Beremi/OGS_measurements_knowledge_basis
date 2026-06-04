@@ -1,0 +1,82 @@
+[
+  {
+    "category": "catalogue scope",
+    "comment": "Counts are from cda_knowledge_base/measurements/deep_source_index.csv.",
+    "item": "copied source files",
+    "measurement": "taupe_tdr",
+    "sources": "",
+    "value": "10 files; total copied source bytes 287757440; file kinds pdf=2, png=3, text/data=2, xlsx=2, zip=1"
+  },
+  {
+    "category": "workbook content",
+    "comment": "The Taupe/TDR workbook sheets give date ranges and EDZ band summaries; current model use remains trend/anomaly based until units/calibration are confirmed.",
+    "item": "Coordinates_NMR_Taupe_characborehole.xlsx / Tabelle1",
+    "measurement": "taupe_tdr",
+    "sources": "cda_knowledge_base/measurements/taupe_tdr/source_files/Coordinates_NMR_Taupe_characborehole.xlsx",
+    "value": "39 x 8; 255 non-empty cells; numeric ranges: C2: n=35, min=2.579e+06, max=2.579e+06; C3: n=35, min=1.247e+06, max=1.247e+06; C4: n=35, min=507.711, max=514.328; C6: n=35, min=-10.2324, max=13.0348; C7: n=35, min=5.77969, max=11.6326; C8: n=35, min=-4.22899, max=2.38801"
+  },
+  {
+    "category": "workbook content",
+    "comment": "The Taupe/TDR workbook sheets give date ranges and EDZ band summaries; current model use remains trend/anomaly based until units/calibration are confirmed.",
+    "item": "Taupe_WC.xlsx / A3",
+    "measurement": "taupe_tdr",
+    "sources": "cda_knowledge_base/measurements/taupe_tdr/source_files/Taupe_WC.xlsx",
+    "value": "213 x 9; 1491 non-empty cells; dates 2019-12-01T00:00:00 to 2025-10-10T00:00:00 (n=212); numeric ranges: C2: n=212, min=10.1804, max=10.2588; C3: n=212, min=10.0765, max=10.1931; C4: n=212, min=10.1023, max=10.2138; C5: n=212, min=10.1438, max=10.2486; C6: n=212, min=10.199, max=10.2864; C7: n=212, min=10.3205, max=10.4571"
+  },
+  {
+    "category": "workbook content",
+    "comment": "The Taupe/TDR workbook sheets give date ranges and EDZ band summaries; current model use remains trend/anomaly based until units/calibration are confirmed.",
+    "item": "Taupe_WC.xlsx / A4",
+    "measurement": "taupe_tdr",
+    "sources": "cda_knowledge_base/measurements/taupe_tdr/source_files/Taupe_WC.xlsx",
+    "value": "213 x 7; 1491 non-empty cells; dates 2019-12-01T00:00:00 to 2025-10-10T00:00:00 (n=212); numeric ranges: C2: n=212, min=10.2198, max=10.2661; C3: n=212, min=10.1701, max=10.2875; C4: n=212, min=10.1985, max=10.2746; C5: n=212, min=10.1942, max=10.3181; C6: n=212, min=10.2465, max=10.3574; C7: n=212, min=10.2463, max=10.407"
+  },
+  {
+    "category": "workbook content",
+    "comment": "The Taupe/TDR workbook sheets give date ranges and EDZ band summaries; current model use remains trend/anomaly based until units/calibration are confirmed.",
+    "item": "Taupe_WC.xlsx / A7",
+    "measurement": "taupe_tdr",
+    "sources": "cda_knowledge_base/measurements/taupe_tdr/source_files/Taupe_WC.xlsx",
+    "value": "213 x 7; 1491 non-empty cells; dates 2019-12-01T00:00:00 to 2025-10-10T00:00:00 (n=212); numeric ranges: C2: n=212, min=10.2676, max=10.7081; C3: n=212, min=10.1542, max=10.5672; C4: n=212, min=10.2896, max=10.7126; C5: n=212, min=10.3659, max=10.8617; C6: n=212, min=10.3823, max=10.8947; C7: n=212, min=10.4261, max=11.0044"
+  },
+  {
+    "category": "workbook content",
+    "comment": "The Taupe/TDR workbook sheets give date ranges and EDZ band summaries; current model use remains trend/anomaly based until units/calibration are confirmed.",
+    "item": "Taupe_WC.xlsx / A8",
+    "measurement": "taupe_tdr",
+    "sources": "cda_knowledge_base/measurements/taupe_tdr/source_files/Taupe_WC.xlsx",
+    "value": "213 x 7; 1491 non-empty cells; dates 2019-12-01T00:00:00 to 2025-10-10T00:00:00 (n=212); numeric ranges: C2: n=212, min=9.97487, max=10.2166; C3: n=212, min=9.87127, max=10.1692; C4: n=212, min=10.001, max=10.2454; C5: n=212, min=10.036, max=10.251; C6: n=212, min=10.0348, max=10.2635; C7: n=212, min=10.0205, max=10.2252"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "2604_TD_CD-A_ISU.pdf",
+    "measurement": "taupe_tdr",
+    "sources": "cda_knowledge_base/measurements/taupe_tdr/source_files/2604_TD_CD-A_ISU.pdf",
+    "value": "type pdf; pages/slides 7; keywords ERT; Taupe; TDR; fault; CD-A; extract cda_knowledge_base/measurements/taupe_tdr/derived_files/deep_source_pass/extracted_text/2604_TD_CD-A_ISU_79f12d23.pdf.txt"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "CD-A_Slides_TD_260427x.pdf",
+    "measurement": "taupe_tdr",
+    "sources": "cda_knowledge_base/measurements/taupe_tdr/source_files/CD-A_Slides_TD_260427x.pdf",
+    "value": "type pdf; pages/slides 34; keywords ERT; NMR; Taupe; suction; humidity; relative humidity; permeability; water content; saturation; pressure; piezometer; extensometer; crackmeter; laser; levelling; OGS; HERMES; CD-A; niche; extract cda_knowledge_base/measurements/taupe_tdr/derived_files/deep_source_pass/extracted_text/CD-A_Slides_TD_260427x_c2d9942f.pdf.txt"
+  },
+  {
+    "category": "text/data source",
+    "comment": "Header/first-line extraction is recorded in derived_files/deep_source_pass/extracted_text.",
+    "item": "VisualisationCDA.dat",
+    "measurement": "taupe_tdr",
+    "sources": "cda_knowledge_base/measurements/taupe_tdr/source_files/VisualisationCDA.dat",
+    "value": "not counted (large file) lines; first extracted content: TITLE = \"\" | VARIABLES = \"X\" | \"Y\" | \"Z\" | TEXT | CS=FRAME | X=9.78378378378,Y=15.6756756757 | C=BLACK | S=LOCAL | HU=POINT"
+  },
+  {
+    "category": "text/data source",
+    "comment": "Header/first-line extraction is recorded in derived_files/deep_source_pass/extracted_text.",
+    "item": "taupe_unit_calibration_response_notes.md",
+    "measurement": "taupe_tdr",
+    "sources": "cda_knowledge_base/measurements/taupe_tdr/source_files/provider_responses/taupe_unit_calibration_response_notes.md",
+    "value": "29 lines; first extracted content: # Response Notes: taupe_unit_calibration | - Response status: `missing_response` | - Request status: `drafted_pending_send` | - Gate: `TAUPE_UNIT_CALIBRATION` | - Audience: Taupe/TDR provider via Gesa Ziefle | - Recipient draft: `inversion_workflow/external_ga"
+  }
+]

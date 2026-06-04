@@ -1,0 +1,40 @@
+{
+  "active_objective_groups": 2,
+  "coverage_status_counts": {
+    "active_parameter_objective": 1,
+    "active_state_residual_from_sampled_ogs_outputs": 1,
+    "boundary_forcing_audited_not_point_residual": 1,
+    "layout_and_qualitative_targets_ready_numeric_series_missing": 1,
+    "resistivity_diagnostic_generated_transform_support_unconfirmed": 1,
+    "structural_prior_ready": 1,
+    "support_layer_ready": 1,
+    "trend_operator_ready_absolute_calibration_pending": 1,
+    "workflow_support_ready": 1
+  },
+  "current_candidate_summary": "inversion_workflow/runs/local_refinement_candidate_search/local_refined_001_length_0p013m_summary.json",
+  "current_candidate_total_active_objective": 3159.6643814648755,
+  "direct_permeability_target_rows": 204,
+  "ert_support_sensitivity_best_mean_rank_run": "broad_continuous_001_001_length_0p023m_shift_1p004",
+  "ert_support_sensitivity_runs": 6,
+  "ert_support_sensitivity_variant_count": 9,
+  "notes": [
+    "Coverage status describes current model-entry readiness, not scientific sufficiency.",
+    "Use measurement_likelihood_model.md for residual transforms, scales, bias terms, and activation gates.",
+    "Direct permeability pulse tests and sampled NMR rows currently contribute finite objective rows for the current executed OGS candidate.",
+    "Taupe/TDR, ERT and RH are represented, but remain diagnostic or boundary-forcing streams pending support/calibration/provenance choices."
+  ],
+  "observation_groups": 9,
+  "other_hm_numeric_source_audit_hard_ready_requests": 0,
+  "other_hm_numeric_source_audit_request_rows": 6,
+  "other_hm_numeric_source_audit_support_ready_requests": 6,
+  "rh_boundary_uncertainty_active_outside_envelope_count": 575,
+  "rh_boundary_uncertainty_envelope_dates": 1064,
+  "rh_boundary_uncertainty_overlap_pressure_range_p50_mpa": 2.103967930926996,
+  "state_lookup_rows": 11311,
+  "state_sample_rows": 37184,
+  "state_target_rows": 11490,
+  "taupe_series_weight_sensitivity_best_mean_rank_run": "adaptive_combined_001_length_0p050m",
+  "taupe_series_weight_sensitivity_compared_series": 12,
+  "taupe_series_weight_sensitivity_distinct_series_winners": 8,
+  "taupe_series_weight_sensitivity_runs": 66
+}

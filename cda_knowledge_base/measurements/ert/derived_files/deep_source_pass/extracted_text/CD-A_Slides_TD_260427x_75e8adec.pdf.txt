@@ -1,0 +1,358 @@
+--- Page 1 ---
+CD-A 
+TD 28.04.2026
+9:00 – 11:30
+St. Ursanne / Webex
+
+--- Page 2 ---
+• Update of measurements (Geoscope and laser scans) has been sent (20.04.26)
+9:00 – 10:30:
+• Update of measurements
+• ERT (Markus)
+• NMR (Stephan)
+• Taupe (Franz)
+• Levelling (Sebastian, Senecio)
+• Suction (Susana, Jose Luis, today: Gesa)
+• Hannover Meeting focusing on measuring techniques (Taupe, NMR, ERT) 18.09.25
+10:30 – 11:30:
+• Modelling activities
+• Collaborations in the EURAD Hermes Workpackage (Gesa)
+• Modelling at BGR (Shuang)
+• Next steps: 
+• Measured trends? Any adjustments needed?
+• Drilling program?
+• Next meeting
+Agenda
+
+--- Page 5 ---
+• Update of measurements (Geoscope and laser scans) has been sent (20.04.26)
+9:00 – 10:30:
+• Update of measurements
+• ERT (Markus)
+• NMR (Stephan)
+• Taupe (Franz)
+• Levelling (Sebastian, Senecio)
+• Suction (Susana, Jose Luis, today: Gesa)
+• Hannover Meeting focusing on measuring techniques (Taupe, NMR, ERT) 18.09.25
+10:30 – 11:30:
+• Modelling activities
+• Collaborations in the EURAD Hermes Workpackage (Gesa)
+• Modelling at BGR (Shuang)
+• Next steps: 
+• Measured trends? Any adjustments needed?
+• Drilling program?
+• Next meeting
+Agenda
+
+--- Page 6 ---
+Suction measurements
+(Thermo-hygrometer and Psychrometer)
+Reliable measurements
+- Open Twin:
+Thermo-hygrometer at RH < 95%
+- Closed Twin:
+Psychrometer at RH > 95%
+TODOs:
+- Data transfer PSS (not at Geoscope)
+- Save these sensors
+- Save data connection
+- Continue interpretation (potential 
+use of more sensor data)
+
+--- Page 7 ---
+7
+
+--- Page 8 ---
+8
+
+--- Page 9 ---
+9
+
+--- Page 10 ---
+10
+
+--- Page 11 ---
+11
+
+--- Page 12 ---
+12
+
+--- Page 13 ---
+• Update of measurements (Geoscope and laser scans) has been sent (20.04.26)
+9:00 – 10:30:
+• Update of measurements
+• ERT (Markus)
+• NMR (Stephan)
+• Taupe (Franz)
+• Levelling (Sebastian, Senecio)
+• Suction (Susana, Jose Luis, today: Gesa)
+• Hannover Meeting focusing on measuring techniques (Taupe, NMR, ERT) 18.09.25
+10:30 – 11:30:
+• Modelling activities
+• Collaborations in the EURAD Hermes Workpackage (Gesa)
+• Modelling at BGR (Shuang)
+• Next steps: 
+• Measured trends? Any adjustments needed?
+• Drilling program?
+• Next meeting
+Agenda
+
+--- Page 14 ---
+14
+Combined interpretation of measurements
+related to the water content
+Temporal evolution
+Distribution along boreholes
+Numerical model
+
+--- Page 15 ---
+Relation between Resistivity and Water content
+Variante 1: Blaue Kurve für beide 
+Bohrungen. Messdaten bis 03/2025 
+Variante 2: linke blaue Kurve für Vertikalbohrung, 
+rechte blaue Kurve für Horizontalbohrung. 
+Messdaten bis 03/2025
+Literaturquelle Amabile (2020)
+Resistivity- water content – relation
+für gravel/sand embankment
+
+--- Page 16 ---
+• Update of measurements (Geoscope and laser scans) has been sent (20.04.26)
+9:00 – 10:30:
+• Update of measurements
+• ERT (Markus)
+• NMR (Stephan)
+• Taupe (Franz)
+• Levelling (Sebastian, Senecio)
+• Suction (Susana, Jose Luis, today: Gesa)
+• Hannover Meeting focusing on measuring techniques (Taupe, NMR, ERT) 18.09.25
+10:30 – 11:30:
+• Modelling activities
+• Collaborations in the EURAD Hermes Workpackage (Gesa)
+• Modelling at BGR (Shuang)
+• Next steps: 
+• Measured trends? Any adjustments needed?
+• Drilling program?
+• Next meeting
+Agenda
+
+--- Page 17 ---
+CD-A Experiment:
+Models
+17
+3D model:
+• Modelling of excavation (gallery, niches)
+• Modelling of long-term effects due to excavation 
+and desaturation
+2D (100m*100m):
+• Long-term effects due to desaturation
+• Homogeneous material (EDZ, Host rock)
+2D (10m*10m):
+• Long-term effects due to desaturation
+• Use of ERT/NMR data
+• Precise geometry
+2D Quarter:
+• Ideal ring (DigBen)
+Different MaterialIDs
+Tuanny
+
+--- Page 18 ---
+Optimizing numerical models 
+using geophysical data sets
+18
+Starting point Enhanced use of measurements
+IGN & BGR cooperation
+Numerical
+model
+EDZ
+around niche
+Improvement of realistic model
+approaches by combining physical and 
+data-driven models
+Aim
+
+--- Page 19 ---
+19
+Collaboration with IGN
+Focus:
+Near field effects (EDZ)
+Improvement of numerical models by use of ML tools and data sets:
+- Permeability
+- ERT
+- NMR
+- Taupe
+- Pore pressures
+- Extensometer measurements
+- …
+• First tests are based on a simplified 2D model set-up (OGS6) and 
+permeability measurements
+• Planned visit at BGR: Tomas Luber (22.-26. June 2026)
+
+--- Page 20 ---
+20
+2021 (1.5 yrs after installation) 2024 (4.5 yrs after installation)
+Permeability (Pulse tests)
+2021 as input in early stage
+2024 later?
+Rings: 
+One ring per measurement? As the curve (2021) is very steep…
+But data points in 2024 are varying…
+
+--- Page 21 ---
+21
+3D Model Set-up
+• OpenGeoSys 6
+• THM model with Richards approximation (TRM model)
+• Quadratic-linear formulation
+• 3D domain (~70 x 90 x 60m) 
+• 3D domain (68m x 87m x 58m)
+• Meshed with tetrahedras (xx nodes, xx elements)
+• Pre-calculations:
+• Calculation of equilibrium conditions before excavation
+• Excavation of gallery (9 month before excavation of niches)
+• Excavation of niches (09/2019)
+• Use of derived equilibrium conditions for long-term model:
+• Application of seasonal boundary conditions 
+ Start: 18.09.2019 = T0,model
+ 
+Tuanny
+
+--- Page 22 ---
+22
+3D Model Set-up: Inital and boundary conditions
+Boundary conditions:
+• All edges fixed perpendicular to surface
+• Stress field: 
+• Vertical: -7MPa
+• Horizontal: -5MPa (along gallery)
+• Horizontal: -3MPa (along niches)
+• Hydrostatic pore pressure distribution
+• Top:  1.2 MPa (BC)
+• Bottom: 1.8 MPa (calculated, =f(p))
+• Gallery: patm
+• Niches: 
+ BC derive from measured RH and T
+• Gravity
+Initial conditions:
+• Derived from pre-calculations
+-7MPa
+-5MPa
+-3MPa
+Tuanny
+
+--- Page 23 ---
+Segmental strains: 
+Measurement versus modelling
+
+--- Page 24 ---
+Segmental strains: 
+Measurement versus modelling
+
+--- Page 25 ---
+Segmental strains: 
+Measurement versus modelling
+
+--- Page 26 ---
+26
+Collaboration with EDF
+Focus:
+3D Modelling on in-situ scale (validation)
+Constitutive material models
+• HM modeling of desaturated host rock is computationally expensive:
+Test of different HPC solvers (EDF, BGR)
+• Validation of modeling results against measurements (extensometer, pore
+pressure, suction…) indicates open questions:
+Step-wise approach (presentation by Shuang):
+• 2D basic model
+• 2D realistic model
+• 3D model
+
+--- Page 27 ---
+• Update of measurements (Geoscope and laser scans) has been sent (20.04.26)
+9:00 – 10:30:
+• Update of measurements
+• ERT (Markus)
+• NMR (Stephan)
+• Taupe (Franz)
+• Levelling (Sebastian, Senecio)
+• Suction (Susana, Jose Luis, today: Gesa)
+• Hannover Meeting focusing on measuring techniques (Taupe, NMR, ERT) 18.09.25
+10:30 – 11:30:
+• Modelling activities
+• Collaborations in the EURAD Hermes Workpackage (Gesa)
+• Modelling at BGR (Shuang)
+• Next steps: 
+• Measured trends? Any adjustments needed?
+• Drilling program?
+• Next meeting
+Agenda
+
+--- Page 28 ---
+• Update of measurements (Geoscope and laser scans) has been sent (20.04.26)
+9:00 – 10:30:
+• Update of measurements
+• ERT (Markus)
+• NMR (Stephan)
+• Taupe (Franz)
+• Levelling (Sebastian, Senecio)
+• Suction (Susana, Jose Luis, today: Gesa)
+• Hannover Meeting focusing on measuring techniques (Taupe, NMR, ERT) 18.09.25
+10:30 – 11:30:
+• Modelling activities
+• Collaborations in the EURAD Hermes Workpackage (Gesa)
+• Modelling at BGR (Shuang)
+• Next steps: 
+• Measured trends? Any adjustments needed?
+• Drilling program?
+• Next meeting
+Agenda
+
+--- Page 29 ---
+Overview of CD-A measurements
+
+--- Page 30 ---
+Trends in measurements: Extensometer
+Open Twin:
+Ongoing trend of displacement evolution – to be observed further
+
+--- Page 31 ---
+Trends in measurements: Suction
+Open Twin: Thermo-hygrometer measurements
+Ongoing trend of relative humidity evolution – to be observed further
+Closed Twin: Psychrometer measurements
+Steady state reached?
+
+--- Page 32 ---
+Trends in measurements: Mini-Piezometer
+Open Twin:
+Seasonality and ongoing trend (?) – to be observed further
+Closed Twin: 
+Steady state reached? 
+(Use of this data for model validation)
+
+--- Page 33 ---
+Trends in measurements: Crackmeter
+
+--- Page 34 ---
+Trends in measurements: Summary
+Open Twin:
+Seasonality and ongoing trend in various measurements
+• Extensometer
+• Suction
+• Pore pressure
+• NMR
+• ERT
+• Taupe
+• …
+• To be observed further
+Closed Twin: 
+Steady state reached? 
+• Crackmeter shows ongoing trend!
+• Taupe (slight trends)
+• Extensometer (steady conditions)
+• Pore pressure?
+• Saturation?
+• Characterization (Permeability?)
+• Change conditions?
+• e.g. Drilling campaign (2028), Opening of niche (2028)?
+• TO BE DISCUSSED!

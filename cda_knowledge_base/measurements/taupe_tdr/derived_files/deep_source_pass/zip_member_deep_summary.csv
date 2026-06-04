@@ -1,0 +1,11 @@
+archive,member,extension,size_bytes,compressed_bytes,loose_file_with_same_name_present,loose_file_with_same_name_present_anywhere
+cda_knowledge_base/measurements/taupe_tdr/source_files/003_Nov_2025.zip,003_Nov_2025/001_Location_Taupe_NMR_CharacBorehole/Coordinates_NMR_Taupe_characborehole.xlsx,.xlsx,12829,10161,True,True
+cda_knowledge_base/measurements/taupe_tdr/source_files/003_Nov_2025.zip,003_Nov_2025/001_Location_Taupe_NMR_CharacBorehole/NMR_Taupe_Char_brg_1.png,.png,324361,320900,True,True
+cda_knowledge_base/measurements/taupe_tdr/source_files/003_Nov_2025.zip,003_Nov_2025/001_Location_Taupe_NMR_CharacBorehole/NMR_Taupe_Char_brg_2.png,.png,175606,174030,True,True
+cda_knowledge_base/measurements/taupe_tdr/source_files/003_Nov_2025.zip,003_Nov_2025/001_Location_Taupe_NMR_CharacBorehole/NMR_Taupe_Char_brg_3.png,.png,148003,144127,True,True
+cda_knowledge_base/measurements/taupe_tdr/source_files/003_Nov_2025.zip,003_Nov_2025/002_Taupe_Measurements/Taupe_WC.xlsx,.xlsx,80708,77964,True,True
+cda_knowledge_base/measurements/taupe_tdr/source_files/003_Nov_2025.zip,003_Nov_2025/003_Suction_Measurements/Location_suc.png,.png,13243051,13206354,False,True
+cda_knowledge_base/measurements/taupe_tdr/source_files/003_Nov_2025.zip,003_Nov_2025/003_Suction_Measurements/OT_RH5.xlsx,.xlsx,35651,32382,False,True
+cda_knowledge_base/measurements/taupe_tdr/source_files/003_Nov_2025.zip,003_Nov_2025/003_Suction_Measurements/OT_RH6.xlsx,.xlsx,36191,33024,False,True
+cda_knowledge_base/measurements/taupe_tdr/source_files/003_Nov_2025.zip,003_Nov_2025/003_Suction_Measurements/OT_RH7.xlsx,.xlsx,33797,30635,False,True
+cda_knowledge_base/measurements/taupe_tdr/source_files/003_Nov_2025.zip,003_Nov_2025/003_Suction_Measurements/OT_RH8.xlsx,.xlsx,35918,32803,False,True

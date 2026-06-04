@@ -1,0 +1,728 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{siunitx}
+\usepackage{booktabs,array,tabularx}
+\usepackage{ltablex} % makes tabularx break across pages
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+
+\usepackage{array,booktabs,longtable}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\setlength{\tabcolsep}{4pt}         % tighter columns (optional)
+\renewcommand{\arraystretch}{1.12}  % a bit more row height (optional)
+
+
+\sisetup{per-mode=symbol, exponent-product=\cdot}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.15}
+
+% --- ltablex settings ---
+\keepXColumns  % keep X column widths across pages
+
+% --- listings (XML) ---
+\definecolor{codeline}{gray}{0.85}
+\lstdefinestyle{xml}{
+  language=XML,
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue!60!black}\bfseries,
+  commentstyle=\color{gray},
+  stringstyle=\color{green!40!black},
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{codeline},
+  xleftmargin=0.5em,
+  xrightmargin=0.5em,
+  aboveskip=0.6\baselineskip,
+  belowskip=0.6\baselineskip,
+  literate={ä}{{\"a}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ä}{{\"A}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1 {ß}{{\ss}}1 {°}{{$^\circ$}}1
+}
+
+% --- Wang (2009) notation ---
+\newcommand{\uu}{\bm{u}}
+\newcommand{\sig}{\bm{\sigma}}
+\newcommand{\I}{\bm{I}}
+\newcommand{\grad}{\nabla}
+\newcommand{\divv}{\nabla\!\cdot}
+\newcommand{\TT}{T}
+\newcommand{\pp}{p}
+\newcommand{\rhoW}{\rho_w}
+\newcommand{\muW}{\mu}
+\newcommand{\npor}{n}
+\newcommand{\Sat}{S}
+\newcommand{\alphaB}{\alpha_B}
+\newcommand{\pcap}{p_c}
+\newcommand{\vW}{\bm v^l}
+\newcommand{\kperm}{\bm{k}}
+\newcommand{\krel}{k_{\mathrm{rel}}(\Sat)}
+\newcommand{\qW}{\bm{q}_w}
+\newcommand{\qT}{\bm{q}_T}
+\newcommand{\Ceff}{(\rho c)_r}
+\newcommand{\keff}{k}
+
+\title{Thermo--Richards--Mechanics (TRM)\\
+\large Open-Geo-Sys model}
+\author{MB}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Link to paper}
+This is summary of the configured OGS TRM model, rewritten into Wang–Kosakowski–Kolditz (2009) notation. 
+
+Discussion goals:
+\begin{itemize}
+    
+\item[(i)] confirm which couplings we actually switch on in OGS, and
+
+\item[(ii)] see clearly how each XML parameter lands in the PDEs.
+
+\end{itemize}
+
+\section{Topics and issues to discuss in Leipzig (or earlier)}
+The plan: based on provided data, present a model tuned for Bayesian inversion to determine
+$\kperm$.
+The current audit resolves the two formulation comments that were still open in the
+first version of the notes:
+\begin{itemize}
+    \item \textbf{Homogeneity versus heterogeneity:} the exchanged OGS model remains a
+    homogeneous-material TRM model.  The active workflow introduces heterogeneity only
+    through run-local mesh-cell parameter fields, first for the intrinsic permeability
+    tensor \(\kperm(\bm x)\).  Porosity and retention parameters are documented below
+    as later releasable scalar options, but they are not part of the active objective
+    until OGS state outputs and identifiability checks exist.
+    \item \textbf{Specific expression for \(\krel\):} the XML uses
+    \texttt{RelativePermeabilityVanGenuchten} with
+    \(S_{\ell r}=0.1\), \(S_{gr}=0\), \(m=0.45\), and
+    \(k_{\mathrm{rel}}^{\min}=10^{-25}\).  The explicit function is given in
+    Table~\ref{tab:fixed-params}; it is fixed in the current permeability-focused
+    workflow.
+\end{itemize}
+The remaining unresolved model-provenance items are not equation-formulation issues:
+the suspicious active \texttt{CTE} value, the provenance of the open-niche RH pressure
+curve, the native-host OGS executable caveat (the collected OGS 6.5.4 SIF is used
+through the recorded Dockerized-Apptainer backend), and the still-pending ERT and
+Taupe/TDR observation-operator calibrations are tracked in the measurement and workflow
+sections.
+
+\section{Model provenance and non-modification constraint}
+The editable report folder contains the LaTeX source and a copy of the OGS settings.
+For the model audit, the authoritative exchanged inputs are the Gesa TeamBeam archives
+copied into
+\path{GESA_model_original/2025-04-03_CDA_N4_2D_250403} and
+\path{GESA_model_original/2025-05-09_CDA_N4_2D_250509}.
+The report's \texttt{ogs\_settings} directory matches the May 2025 XML settings, with the
+project file \texttt{cd\_a\_open\_niche\_quad.prj} retained from the April archive.
+The April archive also contains the mesh files (\texttt{bulk.vtu}, \texttt{bulk\_all.vtu},
+and the boundary meshes), while the May archive updates the timestep/output schedule to
+align outputs with monthly ERT data.
+
+The model itself is treated here as frozen. Measurement information should therefore enter
+through (i) observation operators applied to the model outputs, (ii) preprocessing of
+boundary-condition curves or comparison targets, and (iii) externally generated
+parameter-field files or XML parameter replacements used by an inversion workflow.
+Those generated fields can vary between inversion samples, but the mathematical meaning
+of the OGS process and the original mesh/project structure should remain explicit.
+
+This non-modification claim is also checked by the generated formulation audit
+\path{inversion_workflow/ogs_formulation_consistency_audit.md}.  That audit parses the
+source XML and the representative run-local XML, verifies 18 formulation checks with
+no hard failures, and records the two remaining caveats separately: \texttt{phi} is a
+run-local mesh field but fixed at \(0.105\), and the active \texttt{CTE} value still
+needs provenance confirmation.  The run-local workflow therefore substitutes
+\texttt{k\_i\_rd} for the heterogeneous intrinsic-permeability tensor without changing
+the TRM process, phase laws, media laws, or boundary-condition semantics.
+
+\section{Governing equations (Wang 2009 notation)}
+Primary variables: displacement \(\uu\), liquid pressure \(\pp\), temperature \(\TT\).
+Porous medium: porosity \(\npor\), saturation \(\Sat\), intrinsic permeability \(\kperm\), relative permeability \(\krel\),
+liquid density \(\rhoW\), viscosity \(\muW\).
+
+\paragraph{Darcy velocity and mass flux (unsaturated, gravity off):}
+The OGS TRM process uses the Darcy velocity
+\[
+\vW = -\,\frac{\krel\,\kperm}{\muW}\,\grad \pp,
+\qquad
+\qW = \rhoW\,\vW ,
+\]
+because \texttt{specific\_body\_force} is zero in \texttt{01\_processes\_TRM.xml}.
+The factors \(\npor\Sat\) belong to storage and thermal mixing terms, not to the Darcy
+velocity itself \cite[Sec.~``Governing equations without vapor diffusion'']{OpenGeoSysTRMDocs}.
+
+\paragraph{Liquid mass balance (no vapor):}
+For the actual OGS TRM formulation without vapor diffusion, the hydraulic equation is
+\[
+\left(\Sat\beta-\npor\frac{\partial \Sat}{\partial \pcap}\right)\rhoW\,\dot{\pp}
+- \Sat\left(
+      \frac{\partial \rhoW}{\partial \TT}
+      + \rhoW(\alphaB-\Sat)\alpha_T^s
+  \right)\dot{\TT}
++ \divv(\rhoW\vW)
++ \Sat\alphaB\rhoW\,\divv\dot{\uu}
+= Q_H ,
+\qquad \pcap=-\pp .
+\]
+This resolves the earlier comment on \(\beta_p\): the XML does not use constant density.
+The liquid density is the OGS \texttt{Linear} model
+\[
+\rhoW(\TT,\pp)
+=1095\left[1-5\times10^{-4}(\TT-298.15)
++3.2\times10^{-10}(\pp-7.5\times10^6)\right],
+\]
+so \(\partial\rhoW/\partial\pp\neq0\) and
+\(\partial\rhoW/\partial\TT\neq0\).  The OGS storage term is not the informal
+\(\Sat\rhoW^{-1}\partial\rhoW/\partial\pp\) expression alone; it is the composite
+\(\Sat\beta\) term combined with the capillary-storage term
+\(-\npor\,\partial \Sat/\partial \pcap\).  Likewise, vapor diffusion is absent, but
+the no-vapor OGS TRM equation still contains a thermal coupling term through liquid
+density temperature dependence and solid thermal expansivity
+\cite[pp.~1633--1634]{Wang2009THM}
+\cite[Sec.~``Governing equations without vapor diffusion'']{OpenGeoSysTRMDocs}.
+
+\paragraph{Momentum balance (quasi-static):}
+\[
+\divv\!\bigl(\sig - b(\Sat)\alphaB\pp\,\I\bigr)+\bm f=\bm{0},
+\qquad
+\sig=\bm{C}:\Big(\bm{\varepsilon}(\uu)-\bm{\varepsilon}^{T}
+-\bm{\varepsilon}^{\rm sw}(\Sat)\Big).
+\]
+In this model \(\bm f=\bm0\), \(\alphaB=1\), and
+\texttt{BishopsPowerLaw} with exponent \(1\) gives \(b(\Sat)=\Sat\).
+The compact form \(\divv(\sig-\Sat\pp\I)=0\) is therefore valid only after those
+XML substitutions.  Wang et al. write the thermal stress term directly for an
+isotropic special case; OGS instead places thermal strain inside the generalized
+Hooke law, which is the correct representation for the configured orthotropic
+\texttt{LinearElasticOrthotropic} relation and the active saturation-dependent swelling
+term \cite[pp.~1633--1634]{Wang2009THM}
+\cite[Sec.~``Governing equations without vapor diffusion'']{OpenGeoSysTRMDocs}.
+
+\paragraph{Heat balance:}
+\[
+(\rho c_p)^{\rm eff}\dot{\TT}
+-\divv\!\left(\bm{k}_T^{\rm eff}\grad\TT\right)
++\rhoW c_w\,\grad\TT\cdot\vW
+=Q_T,
+\]
+with OGS effective phase mixing
+\[
+(\rho c_p)^{\rm eff}=(1-\npor)\rho_s c_s+\npor\Sat\rhoW c_w,
+\qquad
+\bm{k}_T^{\rm eff}=(1-\npor)\bm{k}_T^s+\npor\Sat k_T^l\I .
+\]
+This resolves the heat-balance comment: the missing \(\npor\Sat\) is in storage and
+thermal conductivity mixing, while OGS writes the advective heat term with the Darcy
+velocity \(\vW\), not with pore velocity. Expanding
+\(\divv(\rhoW c_w \vW \TT)\) into \(\rhoW c_w \vW\cdot\grad\TT\) is only valid after
+using the mass balance and the OGS weak-form assumptions; for the report we keep the
+official OGS form rather than an independently expanded flux form
+\cite[Sec.~``Governing equations without vapor diffusion'']{OpenGeoSysTRMDocs}.
+
+\section{What differs from Wang et al. (2009)}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Coupling/solver:} one monolithic \texttt{THERMO\_RICHARDS\_MECHANICS}
+  process with Backward Euler time discretization and one Newton solver.
+  \item \textbf{Gravity:} disabled here (\(\bm g=\bm 0\)); no hydrostatics.
+  \item \textbf{Vapor:} neglected here; Wang derives/keeps vapor terms.
+  \item \textbf{Elasticity:} orthotropic linear elasticity here vs. isotropic demos in Wang.
+  \item \textbf{Bishop/Biot:} \(b(\Sat)=\Sat\) and \(\alpha=1\Rightarrow\) pore-stress term \(\Sat\,\pp\,\I\) (same structure).
+  \item \textbf{Swelling:} saturation-dependent swelling strain active here.
+  \item \textbf{Thermal conductivity:} OGS effective porosity mixing for \(\keff\) (solid+liquid; no gas).
+\end{itemize}
+
+\section{Boundary data}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Temperature:} Dirichlet \( \TT=298.15\,\mathrm{K}\) on \texttt{bulk\_all}.
+  \item \textbf{Pressure:} Dirichlet \(p=1.5\,\mathrm{MPa}\) on \texttt{cd-a\_top};
+  time-dependent \texttt{open\_niche\_seasonal} pressure on \texttt{cd-a\_niche4}.
+  The parameter \texttt{bc\_pressure\_outside} is defined but is not attached to an
+  active boundary condition.
+  \item \textbf{Mechanics:} zero normal displacement on the outer box
+  (\texttt{left/right} in component 0, \texttt{top/bottom} in component 1).
+  \texttt{load\_top} and \texttt{initial\_stress} are defined/commented but inactive.
+\end{itemize}
+
+\section{XML \texorpdfstring{$\rightarrow$}{->} PDE symbol mapping}
+Below, each XML entry is mapped to the PDEs parameter.
+% ===== TABLE A: Medium & phases =====
+\begin{longtable}{P{4.5cm} P{2cm} P{1.5cm} P{2cm} P{7cm}}
+\caption{Medium/phases: properties and laws mapped to PDE symbols}
+\label{tab:medium-mapping}\\
+\toprule
+\textbf{XML path (name)} & \textbf{Type} & \textbf{Symbol} & \textbf{Unit} & \textbf{Where it appears / comment} \\
+\midrule
+\endfirsthead
+\caption[]{Medium/phases: properties and laws mapped to PDE symbols (continued)}\\
+\toprule
+\textbf{XML path (name)} & \textbf{Type} & \textbf{Symbol} & \textbf{Unit} & \textbf{Where it appears / comment} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\emph{Continued on next page}}\\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+\texttt{porosity (phi)} & Parameter & \(\npor\) & -- &
+Storage in mass balance; mixing in thermal storage/conductivity. \\
+\texttt{permeability (k\_i)} & Param (tensor) & \(\kperm\) & m\(^2\) &
+Darcy flux; anisotropy allowed. \\
+\texttt{biot\_coefficient (biot)} & Parameter & \(\alpha\) & -- &
+Pore-stress partition (with Bishop \(b(\Sat)=\Sat\)). \\
+\texttt{thermal\_conductivity (mixing)} & Model & \(\keff\) & W\,m\(^{-1}\)K\(^{-1}\) &
+Conductive heat flux; porosity mix of solid+liquid. \\
+\texttt{viscosity (eta)} & Parameter & \(\muW\) & Pa\,s &
+Flow resistance in Darcy’s law. \\
+\texttt{density (Linear)} & Model & \(\rhoW(\TT,\pp)\) & kg\,m\(^{-3}\) &
+Storage/advection terms; linearized about a reference state. \\
+\texttt{specific\_heat\_capacity (c\_p\_l)} & Parameter & \(c_w\) & J\,kg\(^{-1}\)K\(^{-1}\) &
+Enters \(\Ceff\) and heat advection. \\
+\texttt{thermal\_conductivity (kappa\_l)} & Parameter & \(k_\ell\) & W\,m\(^{-1}\)K\(^{-1}\) &
+Input to the effective \(\keff\) mixing. \\
+\texttt{density (rho\_s)} & Parameter & \(\rho_s\) & kg\,m\(^{-3}\) &
+Thermal storage mixing (solid fraction). \\
+\texttt{specific\_heat\_capacity (c\_p\_s)} & Parameter & \(c_s\) & J\,kg\(^{-1}\)K\(^{-1}\) &
+Thermal storage mixing (solid fraction). \\
+\texttt{thermal\_conductivity (kappa\_th\_s)} & Parameter & \(k_s\) & W\,m\(^{-1}\)K\(^{-1}\) &
+Input to effective \(\keff\). \\
+\texttt{thermal\_expansivity (CTE)} & Parameter & \(\alpha_T\) & K\(^{-1}\) &
+Thermal strain and hydraulic thermal-storage coupling; the active XML value is suspicious and must not be interpreted as calibrated. \\
+\texttt{swelling\_stress\_rate} & Model & \(\bm{\varepsilon}^{\rm sw}(\Sat)\) & -- &
+Saturation-dependent swelling strain (isotropic; limits in XML). \\
+\path{relative_permeability} (VG) & Model & \(k_{\mathrm{rel}}\) & -- &
+Hydraulic conductivity factor in Darcy’s law. \\
+\texttt{saturation (VG)} & Model & \(\Sat(\pp_c)\) & -- &
+Storage term via \(\partial \Sat/\partial \pp\). \\
+\texttt{bishops\_effective\_stress (power=1)} & Model & \(b(\Sat)=\Sat\) & -- &
+Pore-stress scaling in momentum balance. \\
+\end{longtable}
+% ===== TABLE B: ICs/BCs =====
+\begin{longtable}{P{4cm} P{2cm} P{1.5cm} P{3.5cm} P{5cm}}
+\caption{ICs/BCs: parameters mapped to variables and equations}
+\label{tab:icbc-mapping}\\
+\toprule
+\textbf{XML path (name)} & \textbf{Type} & \textbf{Applies to} & \textbf{Unit} & \textbf{Meaning / where used} \\
+\midrule
+\endfirsthead
+\caption[]{ICs/BCs: parameters mapped to variables and equations (continued)}\\
+\toprule
+\textbf{XML path (name)} & \textbf{Type} & \textbf{Applies to} & \textbf{Unit} & \textbf{Meaning / where used} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{\emph{Continued on next page}}\\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+\texttt{ic\_displacement} & Constant & \(\uu(\cdot,0)\) & m &
+Initial displacement (typically \(\bm 0\)). \\
+\texttt{ic\_pressure} & Function & \(\pp(\cdot,0)\) & Pa &
+Initial liquid pressure (current function yields a constant). \\
+\texttt{ic\_temperature} & Constant & \(\TT(\cdot,0)\) & K &
+Initial temperature. \\
+\texttt{bc\_displacement} & Constant & \(\uu\) & m &
+Zero-displacement box (kinematic constraints). \\
+\texttt{bc\_top\_pressure} & Function & \(\pp\) & Pa &
+Dirichlet pressure on top boundary. \\
+\texttt{open\_niche\_seasonal} & CurveScaled & \(\pp\) & Pa &
+Time-varying pressure on niche boundary. \\
+\texttt{bc\_temperature\_outside} & Constant & \(\TT\) & K &
+Outer temperature Dirichlet. \\
+\texttt{load\_top} & Function & traction & Pa &
+Defined but inactive in the process file. \\
+\texttt{bc\_atm\_pressure} & Constant & ref. & Pa &
+Reference value; not bound to an active BC. \\
+\end{longtable}
+
+\section{Model parameters, fixed values and candidate priors}
+\label{sec:params-and-priors}
+
+In this section we collect all material parameters entering the TRM model and split
+them into: (i) parameters and constitutive laws that are kept fixed from the exchanged
+model for the present workflow, and (ii) parameters that could be released in a later
+Bayesian calibration once the relevant observation operators are active.  The only
+implemented field unknown at present is the intrinsic permeability tensor
+\(\kperm(\bm x)\), treated through run-local mesh-cell data.  The sampled NMR state
+residual is now part of the active objective, but porosity remains a fixed support
+field until the NMR residual policy and porosity--saturation separation gate are
+approved.  Retention and mechanical parameters are listed as later candidate priors,
+not as already-fitted active unknowns.  The machine-readable staging decision is regenerated by
+\path{inversion_workflow/scripts/build_inversion_parameter_release_plan.py} and stored
+in \path{inversion_workflow/inversion_parameter_release_plan.md}.
+
+% ============================================================
+% FIXED PARAMETERS
+% ============================================================
+\begin{longtable}{P{3.8cm} P{1.8cm} P{2.6cm} P{8.7cm}}
+\caption{Fixed material and fluid parameters and constitutive laws (values taken from the XML configuration).}
+\label{tab:fixed-params}\\
+\toprule
+\textbf{XML name / property} & \textbf{Symbol} & \textbf{Unit} & \textbf{Value / definition}\\
+\midrule
+\endfirsthead
+\caption[]{Fixed material and fluid parameters and constitutive laws (continued).}\\
+\toprule
+\textbf{XML name / property} & \textbf{Symbol} & \textbf{Unit} & \textbf{Value / definition}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\emph{Continued on next page}}\\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+
+\multicolumn{4}{l}{\emph{Solid phase (Opalinus Clay matrix)}}\\
+\midrule
+\texttt{rho\_s} (density) & \(\rho_s\) & kg\,m\(^{-3}\) &
+Dry solid density, taken constant:
+\(\rho_s = 2.52\times 10^3\).\\
+
+\texttt{kappa\_th\_s} (thermal\_conductivity) & \(k_s\) & W\,m\(^{-1}\)K\(^{-1}\) &
+Solid thermal conductivity:
+\(k_s = 2.156\).\\
+
+\texttt{c\_p\_s} (specific\_heat\_capacity) & \(c_s\) & J\,kg\(^{-1}\)K\(^{-1}\) &
+Solid specific heat capacity:
+\(c_s = 1254.74\).\\
+
+\texttt{CTE} (thermal\_expansivity) & \(\alpha_T\) & K\(^{-1}\) &
+Active XML value
+\(\alpha_T = 1.25474\times 10^3\), with the XML comment incorrectly labelling it
+as a heat-capacity-like unit. This is not physically plausible for a rock thermal
+expansion coefficient and is likely a copied placeholder from \texttt{c\_p\_s}.
+The generated thermal-expansivity audit compares this value with HE-D/Opalinus Clay
+reference scales: Garitte et al. list linear solid thermal-expansion coefficients
+from \(1.0\times10^{-5}\) to \(2.6\times10^{-5}\,\mathrm{K^{-1}}\), and Gens et al.
+used \(1.4\times10^{-5}\,\mathrm{K^{-1}}\) in thermal-loading interpretation
+\cite[PDF p.~12]{Garitte2017}\cite[PDF p.~14]{Gens2017}.  The XML value is therefore
+\(4.83\times10^7\) times the high end of that range.  Because the current run is
+nearly isothermal, the hydraulic calibration can proceed only if this parameter is
+treated as an active-model caveat, not as a calibrated Opalinus Clay property.\\
+
+\texttt{swelling\_stress\_rate} (SaturationDependentSwelling) &
+\(\bm{\varepsilon}^{\mathrm{sw}}(S)\) & -- &
+Isotropic saturation-dependent swelling strain defined by the OGS
+\texttt{SaturationDependentSwelling} model with
+swelling pressures \(p_{\mathrm{sw}} = 1.0\times10^6\)~Pa in all principal directions,
+exponents \(1,1,1\),
+and activation for \(S\in[0.1,1]\).
+The detailed functional form is kept fixed as in the XML.\\
+
+\texttt{E}, \texttt{G}, \texttt{nu} (orthotropic elasticity) &
+\(\bm{C}\) & Pa, -- &
+Orthotropic linear elasticity as in \texttt{LinearElasticOrthotropic}:
+Young moduli
+\(E_1 = 13.8\times10^9\)~Pa,
+\(E_2 = 6.0\times10^9\)~Pa,
+\(E_3 = 13.8\times10^9\)~Pa;
+shear moduli
+\(G_1 = 4.79\times10^9\)~Pa,
+\(G_2 = 2.46\times10^9\)~Pa,
+\(G_3 = 4.79\times10^9\)~Pa;
+Poisson ratios
+\(\nu_{12} = 0.44\),
+\(\nu_{23} = 0.22\),
+\(\nu_{13} = 0.44\).
+These are kept fixed in the hydraulic-focused inversion.\\[0.3em]
+
+\multicolumn{4}{l}{\emph{Liquid phase (aqueous pore water)}}\\
+\midrule
+\texttt{c\_p\_l} (specific\_heat\_capacity) & \(c_w\) & J\,kg\(^{-1}\)K\(^{-1}\) &
+Liquid specific heat capacity:
+\(c_w = 4160\).\\
+
+\texttt{kappa\_l} (thermal\_conductivity) & \(k_\ell\) & W\,m\(^{-1}\)K\(^{-1}\) &
+Liquid thermal conductivity:
+\(k_\ell = 0.6\).\\
+
+\texttt{eta} (viscosity) & \(\mu_w\) & Pa\,s &
+Dynamic viscosity of the liquid:
+\(\mu_w = 1.0\times 10^{-3}\), constant (temperature dependence neglected in this configuration).\\
+
+\texttt{density} (Linear) & \(\rho_w(T,p)\) & kg\,m\(^{-3}\) &
+Liquid density given by an affine law in temperature and pressure:
+\[
+\rho_w(T,p)
+= \rho_{w,0}\Bigl(1
++ a_T\,(T-T_0)
++ a_p\,(p-p_0)\Bigr),
+\]
+with reference value \(\rho_{w,0} = 1095\),
+\(T_0 = 298.15\)~K,
+\(p_0 = 7.5\times10^6\)~Pa,
+and slopes
+\(a_T = -5\times10^{-4}\,\mathrm{K}^{-1}\),
+\(a_p = 3.2\times10^{-10}\,\mathrm{Pa}^{-1}\).\\[0.3em]
+
+\multicolumn{4}{l}{\emph{Medium-scale thermal mixing}}\\
+\midrule
+\texttt{thermal\_conductivity} (EffectiveThermalConductivityPorosityMixing) &
+\(k_{\mathrm{eff}}(S)\) & W\,m\(^{-1}\)K\(^{-1}\) &
+Effective thermal conductivity of the porous medium, with liquid and solid only
+(gas neglected):
+\[
+k_{\mathrm{eff}}(S)
+= n S\,k_\ell + (1-n)\,k_s.
+\]
+The porosity \(n\) is given below, and \(k_\ell, k_s\) are as above.\\[0.3em]
+
+\multicolumn{4}{l}{\emph{Hydraulic constitutive laws (van Genuchten)}}\\
+\midrule
+\path{relative_permeability} (RelativePermeabilityVanGenuchten) &
+\(k_{\mathrm{rel}}(S)\) & -- &
+van Genuchten--Mualem relative permeability function with residual saturations
+\(S_{\ell r} = 0.1\), \(S_{gr}=0\),
+exponent \(m = 0.45\),
+and minimum liquid relative permeability
+\(k_{\mathrm{rel}}^{\min} = 10^{-25}\):
+\[
+\begin{aligned}
+S_e &=
+\frac{S_\ell - S_{\ell r}}{1 - S_{\ell r} - S_{gr}},\\
+k_{\mathrm{rel}}(S_\ell)
+&= S_e^{1/2}
+\Bigl[1-\bigl(1 - S_e^{1/m}\bigr)^m\Bigr]^2.
+\end{aligned}
+\]
+Here \(S_\ell\) is the liquid saturation.\\
+
+\texttt{saturation} (SaturationVanGenuchten) &
+\(S_\ell(p_c)\) & -- &
+Water-retention curve (drying branch) in van Genuchten form with
+\(S_{\ell r} = 0.1\), \(S_{gr} = 0\),
+exponent \(m = 0.45\)
+and air-entry pressure \(p_b = 10\,\mathrm{MPa}\):
+\[
+S_\ell(p_c)
+= S_{\ell r}
++ (1-S_{\ell r}-S_{gr})
+\Bigl[1 + \bigl(\tfrac{p_c}{p_b}\bigr)^{1/(1-m)}\Bigr]^{-m},
+\]
+where \(p_c\) is the capillary pressure.\\
+
+\path{bishops_effective_stress} (BishopsPowerLaw) &
+\(b(S)\) & -- &
+Bishop effective-stress function
+\(b(S) = S^q\) with exponent \(q=1\),
+i.e. \(b(S) = S\).\\[0.3em]
+
+\multicolumn{4}{l}{\emph{Poromechanical coupling and porosity (fixed in this study)}}\\
+\midrule
+\texttt{phi} (porosity) & \(n\) & -- &
+Total (water-loss) porosity used in the Richards and thermal mixing terms:
+\[
+n = 0.105.
+\]
+In the present configuration this value is taken as fixed and is only used as a reference for the prior in Table~\ref{tab:inv-params}.\\
+
+\texttt{biot} (biot\_coefficient) & \(\alpha\) & -- &
+Biot coefficient, here fixed to
+\(\alpha = 1.0\).\\
+
+\end{longtable}
+
+% ============================================================
+% INVERSION PARAMETERS
+% ============================================================
+\begin{longtable}{P{3.0cm} P{3.0cm} P{4.7cm} P{6.3cm}}
+\caption{Candidate hydraulic parameters and prior distributions for staged Bayesian calibration.  Only the intrinsic permeability tensor field is implemented in the current workflow; scalar porosity and retention parameters should be released only after OGS state-output residuals are active.}
+\label{tab:inv-params}\\
+\toprule
+\textbf{Parameter / function} & \textbf{XML reference value} & \textbf{Prior distribution} & \textbf{Role if released}\\
+\midrule
+\endfirsthead
+\caption[]{Candidate hydraulic parameters and prior distributions for staged Bayesian calibration (continued).}\\
+\toprule
+\textbf{Parameter / function} & \textbf{XML reference value} & \textbf{Prior distribution} & \textbf{Role if released}\\
+\midrule
+\endhead
+\midrule
+\multicolumn{4}{r}{\emph{Continued on next page}}\\
+\midrule
+\endfoot
+\bottomrule
+\endlastfoot
+
+\multicolumn{4}{l}{\emph{Porosity and water-retention curve (later-release scalar parameters)}}\\
+\midrule
+Porosity of Opalinus Clay &
+\(n_0 = 0.105\) &
+Normal:
+\(\displaystyle n \sim \mathcal{N}(0.105,\;0.02^2)\) &
+Scalar porosity controlling storage and thermal mixing.
+Mean set to the XML value,
+standard deviation chosen to cover the range
+\(n\approx 0.09\)--0.17 reported for Mont Terri OPA:
+Nagra diffusion and rock-capacity data give HTO-accessible porosities
+of about 0.14--0.17, with some method- and tracer-specific values
+around 0.09--0.11
+\cite[pp.~26--27, Tables~8--9 and pp.~44, 65--66, Tables~12 and 19]{VanLoon2004Nagra},
+while the geomechanical compilation reports total porosity values in the
+same order \cite[pp.~153--156]{Amann2015}).\\
+
+van Genuchten exponent (retention) \(m\) &
+\(m_0 = 0.45\) &
+Normal:
+\(\displaystyle m \sim \mathcal{N}(0.45,\;0.05^2)\) &
+Scalar shape parameter of the water-retention curve.
+The mean is the XML value, consistent with laboratory WRC fits
+for Opalinus Clay where \(m\) typically lies in the range
+\(0.4\)–\(0.6\) depending on facies and stress path
+\cite[pp.~22--30, Sect.~4]{VillarRomero2012}.\\
+
+Air-entry pressure \(p_b\) in VG WRC &
+\(p_{b,0} = 10~\mathrm{MPa}\) &
+Uniform:
+\(\displaystyle p_b \sim \mathcal{U}(5\,\mathrm{MPa},\,20\,\mathrm{MPa})\) &
+Controls the suction range over which desaturation occurs.
+The XML value \(10\)~MPa is taken as central;
+the bounds reflect roughly a factor-two scatter reported in
+fitted WRCs for OPA under different conditions
+(e.g. \cite[pp.~31--33, Sect.~5]{VillarRomero2012} and
+\cite[p.~4448]{WaterContentEDZ2024}).\\[0.3em]
+
+\multicolumn{4}{l}{\emph{Intrinsic permeability tensor (random field + global anisotropy)}}\\
+\midrule
+Permeability magnitude (log-field) &
+\(\begin{aligned}
+k_x&=1.00\times10^{-19}\\
+k_y&=4.00\times10^{-20}\\
+k_{\mathrm{ref}}&=6.32\times10^{-20}
+\end{aligned}\)
+\(\mathrm{m}^2\)
+&
+Lognormal RF:
+\(\ln k_{\mathrm{mag}}\sim \mathcal{N}(\mu_k,\sigma_k^2)\).
+\(\mu_k = \ln(6.32\times10^{-20})\);
+\(\sigma_k = 0.5\).
+The prior generator draws this field independently of \(\bm x\) before spatial
+correlation is imposed. &
+Scalar permeability magnitude field entering the intrinsic permeability tensor
+\(\bm{k}_{\mathrm{perm}}(\bm x)\).
+The mean is chosen as the geometric mean of the XML principal values
+\(1.00\times10^{-19}\) and \(4.00\times10^{-20}\,\mathrm{m}^2\);
+\(\sigma_k = 0.5\) (natural-log scale) corresponds to an order-of-magnitude prior range
+consistent with OPA hydraulic characterisations
+\cite[pp.~130--135]{Marschall2005}
+\cite[pp.~3--5]{Garitte2017}
+\cite[pp.~223--227]{ComparativeHydraulicOPA2017}
+\cite[pp.~4450--4452]{WaterContentEDZ2024}.\\
+
+Global anisotropy ratio \(r = k_{\parallel}/k_{\perp}\) &
+\(\begin{aligned}
+k_x&=1.00\times10^{-19}\\
+k_y&=4.00\times10^{-20}\\
+r_0&=2.5
+\end{aligned}\)
+&
+Lognormal (scalar):
+\(\ln r \sim \mathcal{N}(\mu_r,\sigma_r^2)\).
+\(\mu_r = \ln(2.5)\);
+\(\sigma_r = 0.4\).
+&
+Global (spatially constant) anisotropy ratio between
+the permeability components parallel and normal to bedding.
+The prior mean reproduces the XML ratio; the chosen \(\sigma_r\) allows
+\(r\) in the interval of a few to about ten, which is compatible with
+directional anisotropies reported for Opalinus Clay
+\cite[pp.~130--135]{Marschall2005}
+\cite[pp.~225--227]{ComparativeHydraulicOPA2017}.\\
+
+Global bedding-orientation angle \(\theta\) in the tunnel cross-section &
+The current XML tensor \(\texttt{k\_i}\) is aligned with the global axes,
+which we interpret as a reference angle
+\[
+\theta_0 = 0~\text{rad}
+\]
+&
+Normal (scalar):
+\[
+\theta \sim \mathcal{N}\bigl(0,\sigma_\theta^2\bigr),
+\qquad
+\sigma_\theta = \pi/12,
+\]
+i.e. a standard deviation of \(15^\circ\). &
+Global (spatially constant) rotation of the intrinsic permeability tensor
+in the tunnel cross-section.
+The prior mean corresponds to the current XML configuration (no rotation);
+\(\sigma_\theta = 15^\circ\) reflects moderate uncertainty in the effective
+alignment of hydraulic anisotropy with the structural bedding orientation
+as inferred from geological and geophysical observations
+\cite[pp.~130--135]{Marschall2005}
+\cite[pp.~2--5]{Garitte2017}
+\cite[pp.~4447--4450]{WaterContentEDZ2024}.\\
+
+\end{longtable}
+
+In summary, the fixed set (Table~\ref{tab:fixed-params}) contains thermal properties,
+fluid properties, the Biot coefficient, the Bishop function, the detailed form of the
+saturation-dependent swelling strain, and the orthotropic elastic constants, which are
+constrained independently by thermal and mechanical experiments on Opalinus Clay
+(e.g.~heating tests HE-B/HE-D/HE-E and geomechanical campaigns
+\cite[pp.~270--279]{Gens2017} \cite[pp.~153--166]{Amann2015}
+\cite[pp.~211--222]{ThermalEffectsOPA2010}).
+
+The staged Bayesian workflow should start with the intrinsic permeability tensor
+\(\bm{k}_{\mathrm{perm}}\) because it is the only parameter field with a direct
+measurement target layer in the current files.  It is parameterised as
+\[
+\bm{k}_{\mathrm{perm}}(\bm x)
+= k_{\mathrm{mag}}(\bm x)\,
+\mathbf{R}(\theta)^\top
+\begin{pmatrix}
+r & 0\\[0.3em]
+0 & 1
+\end{pmatrix}
+\mathbf{R}(\theta),
+\]
+where \(k_{\mathrm{mag}}(\bm x)\) is a lognormal scalar random field and
+\(r\) and \(\theta\) are global (spatially constant) scalar parameters describing,
+respectively, the anisotropy ratio and the bedding-related orientation of the tensor.
+This reflects the empirical evidence that permeability magnitudes in Opalinus Clay
+vary by roughly one to two orders of magnitude at the metre scale and that the
+principal directions of anisotropy are controlled by the large-scale bedding fabric
+and can be treated as homogeneous at the tunnel scale
+\cite[pp.~130--135]{Marschall2005}
+\cite[pp.~2--5]{Garitte2017}
+\cite[pp.~225--227]{ComparativeHydraulicOPA2017}
+\cite[pp.~4447--4450]{WaterContentEDZ2024}.
+The Gaussian priors for \(n\) and \(m\), and the uniform prior for \(p_b\), are retained
+as later scalar release options.  They are centred at or around the XML values, which
+are themselves consistent with independent porosity and WRC measurements for Mont
+Terri samples
+\cite[pp.~44 and 65--66, Tables~12 and 19]{VanLoon2004Nagra}
+\cite[pp.~22--33, Sects.~4--5]{VillarRomero2012}.  They should remain fixed in the
+first production inversion unless NMR, ERT, RH, and Taupe/TDR state residuals show that
+permeability alone cannot explain the hydraulic evolution.
+
+
+\input{measurement_chapter}
+
+\section{Full XML listings}
+
+\subsection*{04\_media\_TRM.xml}
+\lstinputlisting[style=xml]{ogs_settings/04_media_TRM.xml}
+
+\subsection*{04\_1\_media\_aqu\_liq.xml}
+\lstinputlisting[style=xml]{ogs_settings/04_1_media_aqu_liq.xml}
+
+\subsection*{04\_2\_media\_xml}
+\lstinputlisting[style=xml]{ogs_settings/04_2_media_twophase.xml}
+
+\subsection*{03\_parameters\_TRM.xml}
+\lstinputlisting[style=xml]{ogs_settings/03_parameters_TRM.xml}
+
+\bibliographystyle{amsplain}
+\bibliography{opalinus_clay}
+
+\end{document}

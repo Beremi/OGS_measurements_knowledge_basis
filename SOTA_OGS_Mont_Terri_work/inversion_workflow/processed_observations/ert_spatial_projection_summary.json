@@ -1,0 +1,66 @@
+{
+  "calibration_relation_id": "kruschwitz_model_data2019",
+  "calibration_status": "calibration_operator_ready_mesh_projection_pending",
+  "ert_cell_type": "triangle",
+  "ert_cells": 5966,
+  "ert_points": 3126,
+  "ert_timesteps": 1691,
+  "ert_timesteps_missing_matching_vtk": 16,
+  "ert_timesteps_with_matching_vtk": 1675,
+  "ert_zip": "../cda_knowledge_base/measurements/ert/source_files/ERT_meas_Niche_open.zip",
+  "inside_ogs_cell_rows": 4676,
+  "inside_ogs_mesh_bbox_rows": 4835,
+  "lookup_status_counts": {
+    "inside_cell": 4676,
+    "inside_mesh_bbox_nearest_cell": 159,
+    "outside_mesh_bbox_nearest_cell": 1131
+  },
+  "notes": [
+    "Raw ERT VTK coordinates are shifted by +500 m in the second coordinate by default, matching the local slide convention that FEM x/y is interpreted in ERT x/z.",
+    "The lookup uses ERT cell centroids, not electrode-pair forward modelling; it is a pragmatic common-support approximation.",
+    "The approximate 1.5 m radius flag follows the local slide note, but the exact 35 cm-in-rock mask is not reconstructed here.",
+    "Numerical residuals should use log10 resistivity after OGS theta is sampled and converted with the documented ERT calibration relation."
+  ],
+  "ogs_mesh": "GESA_model_original/projection_on_mesh_2025-09-05/bulk.vtu",
+  "ogs_mesh_bounds": {
+    "max": [
+      5.0,
+      5.0
+    ],
+    "min": [
+      -5.0,
+      -5.0
+    ]
+  },
+  "raw_ert_bounds": {
+    "max": [
+      10.0,
+      -490.0,
+      0.0
+    ],
+    "min": [
+      -10.0,
+      -510.0,
+      0.0
+    ]
+  },
+  "ready_for_residual_after_ogs_output_rows": 2035,
+  "reference_vtk_member": "Niche open/2019/11-2019/dcinv.result_01.vtk",
+  "remaining_blocker": "Confirm the ERT-to-OGS coordinate transform and exact near-niche support mask, then sample OGS theta outputs and form log-resistivity residuals.",
+  "status": "projection_lookup_ready_transform_assumed_ogs_outputs_pending",
+  "transform": {
+    "model_x": "raw_x * 1 + 0",
+    "model_y": "raw_y * 1 + 500"
+  },
+  "transformed_ert_bounds": {
+    "max": [
+      9.819158254042334,
+      9.782842292063341
+    ],
+    "min": [
+      -9.769414469845334,
+      -9.814676013259998
+    ]
+  },
+  "within_approx_1p5m_center_support_rows": 2194
+}

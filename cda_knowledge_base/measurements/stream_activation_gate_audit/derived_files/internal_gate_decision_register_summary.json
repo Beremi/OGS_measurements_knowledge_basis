@@ -1,0 +1,40 @@
+{
+  "active_or_ready_internal_policy_count": 2,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/internal_gate_decision_register.csv",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/internal_gate_decision_register.csv"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/internal_gate_decision_register_summary.json",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/internal_gate_decision_register_summary.json"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/internal_gate_decision_register.md",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/internal_gate_decision_register.md"
+    }
+  ],
+  "decision_count": 7,
+  "diagnostic_or_boundary_policy_count": 3,
+  "generated_files": [
+    "inversion_workflow/internal_gate_decision_register.csv",
+    "inversion_workflow/internal_gate_decision_register_summary.json",
+    "inversion_workflow/internal_gate_decision_register.md"
+  ],
+  "local_policy_recorded_count": 7,
+  "nmr_default_promotion_status": "local_policy_recorded_not_promoted_default",
+  "not_promoted_default_policy_count": 2,
+  "permeability_likelihood_policy_status": "local_policy_recorded_not_promoted_default",
+  "remaining_confirmation_or_promotion_caveat_count": 5,
+  "required_for_active_likelihood_decision_count": 5,
+  "status": "internal_gate_decision_register_generated",
+  "status_counts": {
+    "local_policy_recorded_current_objective_approved": 1,
+    "local_policy_recorded_diagnostic_only": 1,
+    "local_policy_recorded_executable_mode_available": 1,
+    "local_policy_recorded_external_provenance_still_required": 1,
+    "local_policy_recorded_not_promoted_default": 2,
+    "local_policy_recorded_support_mask_fixed_for_current_mesh": 1
+  },
+  "still_external_or_activation_gated_count": 3
+}

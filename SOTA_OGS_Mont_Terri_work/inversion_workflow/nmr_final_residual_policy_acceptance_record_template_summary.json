@@ -1,0 +1,43 @@
+{
+  "approval_status_counts": {
+    "not_approved_template_only": 4
+  },
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/nmr/derived_files/nmr_final_residual_policy_acceptance_record_template.csv",
+      "source": "inversion_workflow/nmr_final_residual_policy_acceptance_record_template.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/nmr/derived_files/nmr_final_residual_policy_acceptance_record_template_summary.json",
+      "source": "inversion_workflow/nmr_final_residual_policy_acceptance_record_template_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/nmr/derived_files/nmr_final_residual_policy_acceptance_record_template.md",
+      "source": "inversion_workflow/nmr_final_residual_policy_acceptance_record_template.md"
+    }
+  ],
+  "changes_active_objective": false,
+  "current_report_default_policy_before_approval": "retain_raw_absolute_theta_current_report_default_with_caveats",
+  "decision_package_status": "nmr_objective_decision_generated_active_objective_unchanged",
+  "final_nmr_policy_selected_before_approval": false,
+  "followup_recommendation_before_approval": "pause_new_trend_anomaly_ogs_batch",
+  "gate_status": "nmr_final_residual_policy_gate_generated",
+  "new_ogs_batch_recommended_now": false,
+  "next_action": "Fill this template only after the modelling team chooses the final NMR residual semantics. Until exactly one primary policy row is approved with provenance, keep raw absolute theta as the current-report default with caveats and keep trend/anomaly NMR as scenario/provisional evidence only.",
+  "primary_policy_approval_rows_recorded": 0,
+  "primary_policy_approval_rows_required": 1,
+  "promotes_current_field": false,
+  "ready_to_apply_policy": false,
+  "recommended_candidate_policy_before_approval": "within_label_trend_anomaly",
+  "recommended_candidate_run_before_approval": "broad_continuous_001_003_length_0p021m",
+  "records_actual_decision": false,
+  "selected_policy_option_id": "",
+  "sends_or_modifies_email": false,
+  "source_artifacts": [
+    "inversion_workflow/nmr_objective_decision.csv",
+    "inversion_workflow/nmr_objective_decision_summary.json",
+    "inversion_workflow/nmr_final_residual_policy_gate_summary.json"
+  ],
+  "status": "nmr_final_residual_policy_acceptance_record_template_generated",
+  "template_row_count": 4
+}

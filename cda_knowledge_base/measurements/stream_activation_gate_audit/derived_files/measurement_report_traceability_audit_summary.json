@@ -1,0 +1,41 @@
+{
+  "status": "measurement_report_traceability_audit_generated",
+  "observation_count": 9,
+  "manifest_validation_check_count": 28,
+  "manifest_validation_failures": 0,
+  "coverage_row_count": 9,
+  "traceability_status_counts": {
+    "pass": 9
+  },
+  "coverage_status_counts": {
+    "active_parameter_objective": 1,
+    "active_state_residual_from_sampled_ogs_outputs": 1,
+    "boundary_forcing_audited_not_point_residual": 1,
+    "layout_and_qualitative_targets_ready_numeric_series_missing": 1,
+    "resistivity_diagnostic_generated_transform_support_unconfirmed": 1,
+    "structural_prior_ready": 1,
+    "support_layer_ready": 1,
+    "trend_operator_ready_absolute_calibration_pending": 1,
+    "workflow_support_ready": 1
+  },
+  "missing_catalogue_folder_count": 0,
+  "missing_catalogue_readme_count": 0,
+  "missing_data_content_summary_count": 0,
+  "data_content_fact_row_count": 101,
+  "missing_chapter_section_count": 0,
+  "missing_inventory_table_reference_count": 0,
+  "missing_model_entry_statement_count": 0,
+  "missing_expected_artifact_observation_count": 0,
+  "validation_failure_observation_count": 0,
+  "all_observations_traceable": true,
+  "missing_chapter_sections": [],
+  "missing_inventory_table_references": [],
+  "missing_model_entry_statements": [],
+  "missing_data_content_summaries": [],
+  "missing_expected_artifacts": {},
+  "validation_failure_observations": [],
+  "notes": [
+    "Traceability pass means the catalogue folder, README, mined data-content summary, manifest validation, coverage row, report section, inventory-table reference, model-entry statement, and expected workflow artifacts are all present.",
+    "Scientific activation status is separate: ERT, Taupe/TDR, RH, and other-HM may be traceable while still gated out of the active likelihood."
+  ]
+}

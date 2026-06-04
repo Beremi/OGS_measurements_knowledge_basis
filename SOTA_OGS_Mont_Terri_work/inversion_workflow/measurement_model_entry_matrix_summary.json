@@ -1,0 +1,85 @@
+{
+  "active_measurement_count": 2,
+  "active_objective_row_total": 267,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/measurement_model_entry_matrix.csv",
+      "source": "inversion_workflow/measurement_model_entry_matrix.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/measurement_model_entry_matrix_summary.json",
+      "source": "inversion_workflow/measurement_model_entry_matrix_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/measurement_model_entry_matrix.md",
+      "source": "inversion_workflow/measurement_model_entry_matrix.md"
+    }
+  ],
+  "coverage_status_counts": {
+    "active_parameter_objective": 1,
+    "active_state_residual_from_sampled_ogs_outputs": 1,
+    "boundary_forcing_audited_not_point_residual": 1,
+    "layout_and_qualitative_targets_ready_numeric_series_missing": 1,
+    "resistivity_diagnostic_generated_transform_support_unconfirmed": 1,
+    "structural_prior_ready": 1,
+    "support_layer_ready": 1,
+    "trend_operator_ready_absolute_calibration_pending": 1,
+    "workflow_support_ready": 1
+  },
+  "current_allowed_use_counts": {
+    "active_raw_absolute_theta_with_provisional_trend_scenario": 1,
+    "boundary_audit_only": 1,
+    "diagnostic_only": 2,
+    "frozen_uninterpreted_caveat": 1,
+    "not_ready_for_hard_residual": 1,
+    "partial_active_support": 1,
+    "support_layer_ready": 1,
+    "support_or_prior_layer": 1
+  },
+  "current_objective_row_total": 267,
+  "diagnostic_or_boundary_measurement_count": 3,
+  "final_decision_status_counts": {
+    "pending_modelling_team_final_policy": 1,
+    "pending_user_send_and_provider_response_or_explicit_exclusion": 6
+  },
+  "likelihood_activation_state_counts": {
+    "active_direct_parameter_likelihood": 1,
+    "active_state_likelihood_from_sampled_ogs_outputs": 1,
+    "boundary_forcing_audit_not_point_likelihood": 1,
+    "qualitative_validation_layer_numeric_series_missing": 1,
+    "resistivity_diagnostic_evaluated_transform_support_unconfirmed": 1,
+    "support_and_prior_layer": 2,
+    "trend_diagnostic_evaluated_pending_absolute_calibration": 1
+  },
+  "model_entry_class_counts": {
+    "active_objective": 2,
+    "boundary_audit_only": 1,
+    "diagnostic_only": 2,
+    "not_ready_for_hard_residual": 1,
+    "support_or_prior_layer": 3
+  },
+  "not_ready_for_hard_residual_count": 1,
+  "notes": [
+    "This matrix is a bridge artifact: it joins coverage, residual semantics, activation gates, and final include/exclude decisions.",
+    "It does not close any external provider gate and does not promote the current field to a final all-measurement inversion result.",
+    "Direct permeability and NMR are the only active objective contributors in the current matrix."
+  ],
+  "row_count": 9,
+  "rows_with_final_decision_gate": 7,
+  "rows_without_likelihood_row": 1,
+  "source_artifacts": [
+    "inversion_workflow/measurement_operator_coverage.csv",
+    "inversion_workflow/measurement_likelihood_model.csv",
+    "inversion_workflow/measurement_stream_activation_gate_audit.csv",
+    "inversion_workflow/final_objective_decision_register.csv"
+  ],
+  "status": "measurement_model_entry_matrix_generated",
+  "stream_promotion_decision_counts": {
+    "active_with_tracked_caveats": 2,
+    "boundary_audit_only": 1,
+    "diagnostic_only": 2,
+    "not_ready_for_hard_residual": 1,
+    "support_layer_ready": 2
+  },
+  "support_or_prior_measurement_count": 3
+}

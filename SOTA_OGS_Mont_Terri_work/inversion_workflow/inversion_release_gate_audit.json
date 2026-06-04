@@ -1,0 +1,992 @@
+{
+  "base_parameters": "ogs_settings/03_parameters_TRM.xml",
+  "check_count": 1300,
+  "failure_count": 0,
+  "notes": [
+    "The release gate allows k_i_rd as the active stage-1 parameter field.",
+    "n_rd must remain fixed support; retention, mechanical, thermal, boundary, and initialization parameters must match the projection reference.",
+    "This audit checks candidate-run configuration, not physical acceptance of the OGS result."
+  ],
+  "reference_dir": "GESA_model_original/projection_on_mesh_2025-09-05",
+  "release_plan": "inversion_workflow/inversion_parameter_release_plan.csv",
+  "run_count": 65,
+  "runs": [
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/regularized_ogs_candidate_001_length_0p025m",
+      "run_id": "regularized_ogs_candidate_001_length_0p025m",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/regularized_ogs_candidate_002_length_0p025m_shift_0p750",
+      "run_id": "regularized_ogs_candidate_002_length_0p025m_shift_0p750",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/regularized_ogs_candidate_003_length_0p025m_shift_0p500",
+      "run_id": "regularized_ogs_candidate_003_length_0p025m_shift_0p500",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/adaptive_combined_001_length_0p050m",
+      "run_id": "adaptive_combined_001_length_0p050m",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/adaptive_combined_002_length_0p050m_shift_0p750",
+      "run_id": "adaptive_combined_002_length_0p050m_shift_0p750",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/adaptive_combined_003_length_0p075m",
+      "run_id": "adaptive_combined_003_length_0p075m",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_refined_001_length_0p013m",
+      "run_id": "local_refined_001_length_0p013m",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_refined_002_length_0p019m",
+      "run_id": "local_refined_002_length_0p019m",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_bracketed_001_length_0p013m_shift_0p875",
+      "run_id": "local_bracketed_001_length_0p013m_shift_0p875",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_bracketed_002_length_0p013m_shift_1p125",
+      "run_id": "local_bracketed_002_length_0p013m_shift_1p125",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_bracketed_003_length_0p031m",
+      "run_id": "local_bracketed_003_length_0p031m",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/optimizer_proposed_001_length_0p019m_shift_1p125",
+      "run_id": "optimizer_proposed_001_length_0p019m_shift_1p125",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/optimizer_proposed_002_length_0p019m_shift_0p875",
+      "run_id": "optimizer_proposed_002_length_0p019m_shift_0p875",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/optimizer_proposed_003_length_0p025m_shift_1p125",
+      "run_id": "optimizer_proposed_003_length_0p025m_shift_1p125",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/continuous_proposed_001_length_0p006m_shift_0p992",
+      "run_id": "continuous_proposed_001_length_0p006m_shift_0p992",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/continuous_proposed_002_length_0p007m",
+      "run_id": "continuous_proposed_002_length_0p007m",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/continuous_proposed_003_length_0p007m_shift_0p972",
+      "run_id": "continuous_proposed_003_length_0p007m_shift_0p972",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/lower_support_continuous_001_length_0p004m_shift_0p995",
+      "run_id": "lower_support_continuous_001_length_0p004m_shift_0p995",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/lower_support_continuous_002_length_0p003m_shift_0p986",
+      "run_id": "lower_support_continuous_002_length_0p003m_shift_0p986",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/lower_support_continuous_003_length_0p004m_shift_0p994",
+      "run_id": "lower_support_continuous_003_length_0p004m_shift_0p994",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/lower_support_loop_001_001_length_0p003m_shift_1p006",
+      "run_id": "lower_support_loop_001_001_length_0p003m_shift_1p006",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/lower_support_loop_001_002_length_0p005m_shift_0p985",
+      "run_id": "lower_support_loop_001_002_length_0p005m_shift_0p985",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/lower_support_loop_001_003_length_0p004m_shift_1p014",
+      "run_id": "lower_support_loop_001_003_length_0p004m_shift_1p014",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/lower_support_loop_002_001_length_0p004m_shift_0p992",
+      "run_id": "lower_support_loop_002_001_length_0p004m_shift_0p992",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/lower_support_loop_002_002_length_0p004m_shift_1p020",
+      "run_id": "lower_support_loop_002_002_length_0p004m_shift_1p020",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/lower_support_loop_002_003_length_0p006m_shift_0p975",
+      "run_id": "lower_support_loop_002_003_length_0p006m_shift_0p975",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/broad_continuous_001_001_length_0p023m_shift_1p004",
+      "run_id": "broad_continuous_001_001_length_0p023m_shift_1p004",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/broad_continuous_001_002_length_0p022m_shift_0p998",
+      "run_id": "broad_continuous_001_002_length_0p022m_shift_0p998",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/broad_continuous_001_003_length_0p021m",
+      "run_id": "broad_continuous_001_003_length_0p021m",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/broad_continuous_loop_001_001_length_0p015m",
+      "run_id": "broad_continuous_loop_001_001_length_0p015m",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/broad_continuous_loop_001_002_length_0p016m_shift_0p968",
+      "run_id": "broad_continuous_loop_001_002_length_0p016m_shift_0p968",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/broad_continuous_loop_001_003_length_0p010m",
+      "run_id": "broad_continuous_loop_001_003_length_0p010m",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_001_basis_004_det_l_0p0015_s_1p000",
+      "run_id": "local_basis_sampler_001_basis_004_det_l_0p0015_s_1p000",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+      "run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000",
+      "run_id": "local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_001_length_0p004m_shift_0p954",
+      "run_id": "production_sampler_001_length_0p004m_shift_0p954",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_002_length_0p005m_shift_0p952",
+      "run_id": "production_sampler_002_length_0p005m_shift_0p952",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_003_length_0p003m_shift_0p950",
+      "run_id": "production_sampler_003_length_0p003m_shift_0p950",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_004_length_0p007m_shift_0p951",
+      "run_id": "production_sampler_004_length_0p007m_shift_0p951",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_005_length_0p007m_shift_0p950",
+      "run_id": "production_sampler_005_length_0p007m_shift_0p950",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_006_length_0p008m_shift_0p948",
+      "run_id": "production_sampler_006_length_0p008m_shift_0p948",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round2_001_basis_003_det_l_0p0015_s_0p750",
+      "run_id": "production_sampler_round2_001_basis_003_det_l_0p0015_s_0p750",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round2_002_basis_008_det_l_0p0025_s_0p750",
+      "run_id": "production_sampler_round2_002_basis_008_det_l_0p0025_s_0p750",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round2_003_basis_013_det_l_0p0035_s_0p750",
+      "run_id": "production_sampler_round2_003_basis_013_det_l_0p0035_s_0p750",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round2_004_basis_018_det_l_0p0050_s_0p750",
+      "run_id": "production_sampler_round2_004_basis_018_det_l_0p0050_s_0p750",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round2_005_basis_023_det_l_0p0075_s_0p750",
+      "run_id": "production_sampler_round2_005_basis_023_det_l_0p0075_s_0p750",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round2_006_length_0p026m_shift_1p107",
+      "run_id": "production_sampler_round2_006_length_0p026m_shift_1p107",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round3_001_length_0p028m",
+      "run_id": "production_sampler_round3_001_length_0p028m",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round3_002_length_0p028m_shift_1p050",
+      "run_id": "production_sampler_round3_002_length_0p028m_shift_1p050",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round3_003_length_0p008m_shift_0p934",
+      "run_id": "production_sampler_round3_003_length_0p008m_shift_0p934",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round3_004_length_0p010m_shift_0p950",
+      "run_id": "production_sampler_round3_004_length_0p010m_shift_0p950",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round3_005_basis_019_det_l_0p0050_s_1p000",
+      "run_id": "production_sampler_round3_005_basis_019_det_l_0p0050_s_1p000",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round3_006_basis_014_det_l_0p0035_s_1p000",
+      "run_id": "production_sampler_round3_006_basis_014_det_l_0p0035_s_1p000",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round4_001_length_0p029m_shift_0p954",
+      "run_id": "production_sampler_round4_001_length_0p029m_shift_0p954",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round4_002_basis_009_det_l_0p0025_s_1p000",
+      "run_id": "production_sampler_round4_002_basis_009_det_l_0p0025_s_1p000",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round4_003_length_0p006m_shift_0p977",
+      "run_id": "production_sampler_round4_003_length_0p006m_shift_0p977",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round4_004_length_0p003m_shift_0p972",
+      "run_id": "production_sampler_round4_004_length_0p003m_shift_0p972",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round4_005_length_0p006m_shift_0p970",
+      "run_id": "production_sampler_round4_005_length_0p006m_shift_0p970",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round4_006_length_0p004m_shift_0p967",
+      "run_id": "production_sampler_round4_006_length_0p004m_shift_0p967",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round5_001_length_0p009m_shift_0p933",
+      "run_id": "production_sampler_round5_001_length_0p009m_shift_0p933",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round5_002_length_0p009m_shift_0p929",
+      "run_id": "production_sampler_round5_002_length_0p009m_shift_0p929",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round5_003_length_0p010m_shift_0p926",
+      "run_id": "production_sampler_round5_003_length_0p010m_shift_0p926",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round5_004_length_0p009m_shift_0p913",
+      "run_id": "production_sampler_round5_004_length_0p009m_shift_0p913",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round5_005_length_0p004m_shift_1p031",
+      "run_id": "production_sampler_round5_005_length_0p004m_shift_1p031",
+      "status": "pass",
+      "warning_count": 0
+    },
+    {
+      "check_count": 20,
+      "failure_count": 0,
+      "output_variables": [
+        "pressure",
+        "saturation",
+        "temperature",
+        "displacement",
+        "porosity"
+      ],
+      "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round5_006_length_0p003m_shift_0p964",
+      "run_id": "production_sampler_round5_006_length_0p003m_shift_0p964",
+      "status": "pass",
+      "warning_count": 0
+    }
+  ],
+  "status": "pass",
+  "warning_count": 0
+}

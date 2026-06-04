@@ -1,0 +1,44 @@
+{
+  "c_p_s_value": 1254.74,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/cte_confirmation_gmail_draft.csv",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/cte_confirmation_gmail_draft.csv"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/cte_confirmation_request.csv",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/cte_confirmation_request.csv"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/cte_confirmation_request_summary.json",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/cte_confirmation_request_summary.json"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/cte_confirmation_request.md",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/cte_confirmation_request.md"
+    }
+  ],
+  "contact_route_status": "coordinator_with_model_setup_cc",
+  "cte_equals_c_p_s": true,
+  "cte_value": 1254.74,
+  "generated_files": [
+    "inversion_workflow/cte_confirmation_gmail_draft.csv",
+    "inversion_workflow/cte_confirmation_request.csv",
+    "inversion_workflow/cte_confirmation_request_summary.json",
+    "inversion_workflow/cte_confirmation_request.md"
+  ],
+  "generated_on": "2026-05-31",
+  "gmail_draft_id": "r2947727639429158073",
+  "gmail_draft_tracker": "inversion_workflow/cte_confirmation_gmail_draft.csv",
+  "gmail_message_id": "19e7f61a36cb3470",
+  "gmail_send_status": "gmail_draft_created_not_sent",
+  "gmail_thread_id": "19e7f61a36cb3470",
+  "ratio_to_reference_high": 48259230.769230776,
+  "request_id": "cte_value_confirmation",
+  "request_status": "drafted_pending_send",
+  "response_status": "no_response_recorded",
+  "status": "cte_confirmation_gmail_draft_created_waiting_user_send_and_response",
+  "suggested_cc": "Tuanny.Cajuhi@bgr.de",
+  "suggested_to": "Gesa.Ziefle@bgr.de",
+  "thermal_audit_status": "blocked_confirm_cte_value"
+}

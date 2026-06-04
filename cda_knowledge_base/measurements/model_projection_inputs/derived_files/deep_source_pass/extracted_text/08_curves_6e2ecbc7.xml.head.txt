@@ -1,0 +1,8 @@
+<curve>
+<include file="./08_08_open_niche_seasonal.xml" /> <!--open_niche_seasonal_curve_shifted.xml" /-->
+</curve>
+<!--
+<curve>
+<include file="./closed_niche_seasonal_curve_shifted.xml" />
+</curve>
+-->

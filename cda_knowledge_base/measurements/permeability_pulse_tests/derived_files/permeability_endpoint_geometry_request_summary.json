@@ -1,0 +1,115 @@
+{
+  "activation_decision": "No historical BCD-A24/25/26/27 or BFM-D19 row is activated by this package; the package defines exactly what external geometry is still needed.",
+  "available_geometry_reference": [
+    {
+      "end_label": "BCD-A3 Ende",
+      "inside_cell_samples": 39,
+      "outside_samples": 7,
+      "segment_group": "Taupe",
+      "segment_label": "BCD-A3",
+      "segment_length_2d_m": 4.499999984171918,
+      "start_label": "BCD-A3 Anfang"
+    },
+    {
+      "end_label": "BCD-A32 Ende",
+      "inside_cell_samples": 40,
+      "outside_samples": 0,
+      "segment_group": "Charac. Bohrungen",
+      "segment_label": "BCD-A32",
+      "segment_length_2d_m": 3.9890156474488174,
+      "start_label": "BCD-A32 Anfang"
+    },
+    {
+      "end_label": "BCD-A33 Ende",
+      "inside_cell_samples": 40,
+      "outside_samples": 0,
+      "segment_group": "Charac. Bohrungen",
+      "segment_label": "BCD-A33",
+      "segment_length_2d_m": 4.0019499251900905,
+      "start_label": "BCD-A33 Anfang"
+    },
+    {
+      "end_label": "BCD-A34 Ende",
+      "inside_cell_samples": 0,
+      "outside_samples": 41,
+      "segment_group": "Charac. Bohrungen",
+      "segment_label": "BCD-A34",
+      "segment_length_2d_m": 3.998689126113928,
+      "start_label": "BCD-A34 Anfang"
+    },
+    {
+      "end_label": "BCD-A35 Ende",
+      "inside_cell_samples": 0,
+      "outside_samples": 41,
+      "segment_group": "Charac. Bohrungen",
+      "segment_label": "BCD-A35",
+      "segment_length_2d_m": 3.9890223393278927,
+      "start_label": "BCD-A35 Anfang"
+    },
+    {
+      "end_label": "BCD-A4 Ende",
+      "inside_cell_samples": 38,
+      "outside_samples": 6,
+      "segment_group": "Taupe",
+      "segment_label": "BCD-A4",
+      "segment_length_2d_m": 4.399999999999978,
+      "start_label": "BCD-A4 Anfang"
+    },
+    {
+      "end_label": "BCD-A7 Ende",
+      "inside_cell_samples": 0,
+      "outside_samples": 44,
+      "segment_group": "Taupe",
+      "segment_label": "BCD-A7",
+      "segment_length_2d_m": 4.299999983169249,
+      "start_label": "BCD-A7 Anfang"
+    },
+    {
+      "end_label": "BCD-A8 Ende",
+      "inside_cell_samples": 0,
+      "outside_samples": 41,
+      "segment_group": "Taupe",
+      "segment_label": "BCD-A8",
+      "segment_length_2d_m": 4.0,
+      "start_label": "BCD-A8 Anfang"
+    }
+  ],
+  "blocked_row_count": 98,
+  "catalogue_copies": [
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/permeability_pulse_tests/derived_files/permeability_endpoint_geometry_request.csv",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/permeability_pulse_tests/derived_files/permeability_endpoint_geometry_blocked_rows.csv",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/permeability_pulse_tests/derived_files/permeability_endpoint_geometry_request_summary.json",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/permeability_pulse_tests/derived_files/permeability_endpoint_geometry_request.md"
+  ],
+  "direction_counts": {
+    "horizontal": 2,
+    "nearly horizontal": 1,
+    "vertical": 2
+  },
+  "fallback_request": "If labelled coordinates are unavailable, provide an explicitly approved digitized trace from the original layout/figure, the source figure/file used, the digitization transform, and an uncertainty to apply to mapped interval locations.",
+  "outputs": {
+    "blocked_rows_csv": "inversion_workflow/processed_observations/permeability_endpoint_geometry_blocked_rows.csv",
+    "markdown": "inversion_workflow/processed_observations/permeability_endpoint_geometry_request.md",
+    "request_csv": "inversion_workflow/processed_observations/permeability_endpoint_geometry_request.csv",
+    "summary_json": "inversion_workflow/processed_observations/permeability_endpoint_geometry_request_summary.json"
+  },
+  "positive_blocked_row_count": 98,
+  "request_segment_count": 5,
+  "requested_field_set": "For each borehole/trace: start/collar point x,y,z; end/tip point x,y,z; coordinate frame; depth-zero reference; positive along-borehole direction; whether workbook depth is interval centre or interval start; borehole diameter or packer interval length if it differs from 0.10 m; and coordinate uncertainty.",
+  "segments": [
+    "BCD-A24",
+    "BCD-A25",
+    "BCD-A26",
+    "BCD-A27",
+    "BFM-D19"
+  ],
+  "source_evidence": {
+    "available_geometry_reference": "The current coordinate/mesh line-sample layer has labelled endpoints for BCD-A32 to BCD-A35 and Taupe BCD-A3/A4/A7/A8, which proves the expected format, but not for BCD-A24/25/26/27 or BFM-D19.",
+    "characterization_pdf": "Ziefle et al. characterization paper, Section 4.3 / PDF text around p. 7: pulse tests in BCD-A24 to BCD-A27; BCD-A24 and BCD-A26 vertical, BCD-A25 and BCD-A27 horizontal, and BFM-D19 nearly horizontal; pulse tests in March 2021 and evapometer measurements in June/July 2020.",
+    "visualisation_probe": "VisualisationCDA.dat contains generic zones Permeability_bhrg and Permeability_Meas_points, but the recovered zones do not attach unambiguous BCD-A24/25/26/27 or BFM-D19 start/end labels to the points.",
+    "workbook_probe": "Permeability_CDA_all_2025.xlsx sheet 2021 contains block labels for BCDA_24/25/26/27; 2025-09-05_CD-A_Permeability.xlsx sheet 2021_BCDA27_19 contains labels for BCDA_26, BCDA_27 Closed twin, and BFM-D19 Open twin. These workbook labels are measurement-table headings, not start/end coordinates."
+  },
+  "target_status_counts": {
+    "missing_segment_geometry": 98
+  }
+}

@@ -1,0 +1,6 @@
+<nonlinear_solver>
+<name>basic_newton</name>
+<type>Newton</type>
+<max_iter>150</max_iter>
+<linear_solver>general_linear_solver</linear_solver>
+</nonlinear_solver>

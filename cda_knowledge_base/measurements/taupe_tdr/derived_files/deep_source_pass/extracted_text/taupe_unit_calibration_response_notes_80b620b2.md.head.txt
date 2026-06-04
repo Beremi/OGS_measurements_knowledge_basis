@@ -1,0 +1,18 @@
+# Response Notes: taupe_unit_calibration
+- Response status: `missing_response`
+- Request status: `drafted_pending_send`
+- Gate: `TAUPE_UNIT_CALIBRATION`
+- Audience: Taupe/TDR provider via Gesa Ziefle
+- Recipient draft: `inversion_workflow/external_gate_requests/taupe_tdr_calibration_via_gesa_ziefle.md`
+## Received Files Or Answers
+- None recorded yet.
+## Intake Metadata Checklist
+- workbook sheet/column unit, whether values are volumetric water-content percent or a proxy, matrix/porosity correction status, calibration constants, and uncertainty model.
+## Acceptance Test
+The Taupe semantics audit can decide whether absolute Taupe values are water content, permittivity/proxy, or trend-only evidence.
+## Refresh Commands After Acceptance
+`python inversion_workflow/scripts/build_taupe_semantics_audit.py; python inversion_workflow/scripts/build_taupe_observation_operator.py; python inversion_workflow/scripts/build_taupe_candidate_discrimination_audit.py; python inversion_workflow/scripts/build_taupe_series_weight_sensitivity_audit.py; python inversion_workflow/scripts/build_measurement_likelihood_model.py; python inversion_workflow/scripts/build_measurement_stream_gate_audit.py; python inversion_workflow/scripts/build_measurement_gate_closure_request.py; python inversion_workflow/scripts/build_external_gate_request_pack.py; python inversion_workflow/scripts/build_objective_readiness_audit.py`
+## Gate Decision
+- Current effect if accepted: May close TAUPE_UNIT_CALIBRATION and allow Taupe to become trend-only or absolute residual evidence.
+- Decision: `not_evaluated`
+- Evaluated by/date: not recorded

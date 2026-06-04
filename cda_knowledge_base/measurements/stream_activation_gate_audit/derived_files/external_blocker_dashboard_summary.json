@@ -1,0 +1,110 @@
+{
+  "all_expected_drafts_observed": true,
+  "blocker_count": 8,
+  "blocker_type_counts": {
+    "external_measurement_gate": 7,
+    "model_provenance_confirmation": 1
+  },
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_blocker_dashboard.csv",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_blocker_dashboard.csv"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_blocker_dashboard_summary.json",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_blocker_dashboard_summary.json"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_blocker_dashboard.md",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_blocker_dashboard.md"
+    }
+  ],
+  "cte_confirmation_blocker_count": 1,
+  "download_gate_recovery_document_count": 533,
+  "download_gate_recovery_evidence_row_count": 381,
+  "download_gate_recovery_gates_still_external_count": 7,
+  "download_gate_recovery_possible_closure_evidence_count": 0,
+  "download_gate_recovery_status": "download_gate_recovery_audit_generated",
+  "download_gate_recovery_uncatalogued_run_output_dirs": 1,
+  "download_gate_recovery_verified_duplicate_catalogue_rows": 25,
+  "draft_ids": [
+    "r-4809950961900799564",
+    "r-4984596174110032107",
+    "r-8461584324877432346",
+    "r1284411814726937591",
+    "r2947727639429158073",
+    "r6776618065355728003"
+  ],
+  "external_dispatch_failed_check_count": 0,
+  "external_dispatch_missing_response_count": 7,
+  "external_dispatch_not_sent_request_count": 7,
+  "external_dispatch_ready_request_count": 7,
+  "external_dispatch_status": "external_gate_dispatch_gmail_drafts_created_waiting_user_send_and_responses",
+  "external_dispatch_unique_gmail_draft_count": 5,
+  "external_measurement_blocker_count": 7,
+  "generated_files": [
+    "inversion_workflow/external_blocker_dashboard.csv",
+    "inversion_workflow/external_blocker_dashboard_summary.json",
+    "inversion_workflow/external_blocker_dashboard.md"
+  ],
+  "generated_on": "2026-06-01",
+  "gmail_live_state_checked_at": "2026-06-01T03:55:46+02:00",
+  "gmail_live_state_expected_draft_count_including_cte": 6,
+  "gmail_live_state_observed_draft_count": 6,
+  "gmail_live_state_provider_reply_search_result_count": 0,
+  "gmail_live_state_sent_subject_search_result_count": 0,
+  "gmail_live_state_teambeam_context_non_draft_result_count": 0,
+  "gmail_send_status_counts": {
+    "gmail_draft_created_not_sent": 8
+  },
+  "local_gate_recovery_document_count": 2540,
+  "local_gate_recovery_evidence_row_count": 4553,
+  "local_gate_recovery_gates_still_external_count": 7,
+  "local_gate_recovery_possible_closure_evidence_count": 0,
+  "local_gate_recovery_status": "local_gate_recovery_audit_generated",
+  "missing_response_blocker_count": 8,
+  "next_action": "Review/send the six Gmail drafts, then file provider responses in the tracker intake locations and rerun the gate/readiness audits.",
+  "observed_draft_ids": [
+    "r-4809950961900799564",
+    "r-4984596174110032107",
+    "r-8461584324877432346",
+    "r1284411814726937591",
+    "r2947727639429158073",
+    "r6776618065355728003"
+  ],
+  "open_blocker_count": 8,
+  "open_blocker_ids": [
+    "ert_transform_support",
+    "ert_uncertainty",
+    "hm_numeric_exports",
+    "hm_uncertainty",
+    "rh_active_curve_provenance",
+    "taupe_unit_calibration",
+    "perm_endpoint_geometry",
+    "cte_value_confirmation"
+  ],
+  "priority_counts": {
+    "high": 7,
+    "medium": 1
+  },
+  "response_status_counts": {
+    "missing_response": 7,
+    "no_response_recorded": 1
+  },
+  "source_artifacts": [
+    "inversion_workflow/external_gate_response_intake.csv",
+    "inversion_workflow/external_gate_gmail_drafts.csv",
+    "inversion_workflow/external_gate_dispatch_audit_summary.json",
+    "inversion_workflow/gmail_gate_live_state_audit_summary.json",
+    "inversion_workflow/local_gate_recovery_audit_summary.json",
+    "inversion_workflow/download_gate_recovery_audit_summary.json",
+    "inversion_workflow/cte_confirmation_request.csv",
+    "inversion_workflow/cte_confirmation_gmail_draft.csv",
+    "inversion_workflow/cte_confirmation_request_summary.json"
+  ],
+  "status": "external_blocker_dashboard_generated_waiting_user_send_and_responses",
+  "status_counts": {
+    "blocked_waiting_user_send_and_provider_response": 8
+  },
+  "unsent_blocker_count": 8
+}

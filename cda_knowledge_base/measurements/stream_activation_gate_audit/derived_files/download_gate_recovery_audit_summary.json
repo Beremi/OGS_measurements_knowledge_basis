@@ -1,0 +1,521 @@
+{
+  "status": "download_gate_recovery_audit_generated",
+  "document_count": 533,
+  "evidence_row_count": 381,
+  "gate_count": 7,
+  "gates_with_closure_candidates": [],
+  "gate_summaries": {
+    "ert_transform_support": {
+      "stream": "ert_resistivity",
+      "gate": "ERT_TRANSFORM_SUPPORT",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 81,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 6,
+      "status_counts": {
+        "supporting_context_only": 75,
+        "keyword_candidate_not_gate_closure": 6
+      },
+      "top_sources": [
+        {
+          "source_kind": "downloads_archive_member_names",
+          "source_path": "Downloads/003_Nov_2025 (1).zip",
+          "context": "003_Nov_2025 (1).zip members 1-10",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "coordinate; coordinates"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/AGES_Detailed_Workplan_Task5p3 (1).docx",
+          "context": "AGES_Detailed_Workplan_Task5p3 (1).docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert; support"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/AGES_Detailed_Workplan_Task5p3.docx",
+          "context": "AGES_Detailed_Workplan_Task5p3.docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert; support"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/Author queries form.docx",
+          "context": "Author queries form.docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert; origin"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/04_1_media_aqu_liq.xml",
+          "context": "04_1_media_aqu_liq.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/04_2_media_twophase.xml",
+          "context": "04_2_media_twophase.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/04_media_TRM.xml",
+          "context": "04_media_TRM.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/DPFDP6-9106205812-20240327-215954.xml",
+          "context": "DPFDP6-9106205812-20240327-215954.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        }
+      ]
+    },
+    "ert_uncertainty": {
+      "stream": "ert_resistivity",
+      "gate": "ERT_UNCERTAINTY",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 84,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 25,
+      "status_counts": {
+        "supporting_context_only": 59,
+        "keyword_candidate_not_gate_closure": 25
+      },
+      "top_sources": [
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/AGES_Detailed_Workplan_Task5p3 (1).docx",
+          "context": "AGES_Detailed_Workplan_Task5p3 (1).docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/AGES_Detailed_Workplan_Task5p3.docx",
+          "context": "AGES_Detailed_Workplan_Task5p3.docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/Author queries form.docx",
+          "context": "Author queries form.docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/01_processes_TRM.xml",
+          "context": "01_processes_TRM.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "sigma"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/03_parameters_TRM.xml",
+          "context": "03_parameters_TRM.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "sigma"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/04_1_media_aqu_liq.xml",
+          "context": "04_1_media_aqu_liq.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/04_2_media_twophase.xml",
+          "context": "04_2_media_twophase.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/04_media_TRM.xml",
+          "context": "04_media_TRM.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        }
+      ]
+    },
+    "taupe_unit_calibration": {
+      "stream": "taupe_tdr",
+      "gate": "TAUPE_UNIT_CALIBRATION",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 40,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 2,
+      "status_counts": {
+        "supporting_context_only": 38,
+        "keyword_candidate_not_gate_closure": 2
+      },
+      "top_sources": [
+        {
+          "source_kind": "downloads_archive_member_names",
+          "source_path": "Downloads/003_Nov_2025 (1).zip",
+          "context": "003_Nov_2025 (1).zip members 1-10",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "taupe"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/Author queries form.docx",
+          "context": "Author queries form.docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "equation"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/DPFDP6-9106205812-20240327-215954.xml",
+          "context": "DPFDP6-9106205812-20240327-215954.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ardp; tdr"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/DPFDP6-9106205812-20240327-220545.xml",
+          "context": "DPFDP6-9106205812-20240327-220545.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ardp; tdr"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/EURAD-2-HERMES-AWPY1_HERMES (1).docx",
+          "context": "EURAD-2-HERMES-AWPY1_HERMES (1).docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "uncertainty; unit"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/EURAD-2-HERMES-AWPY1_HERMES (2).docx",
+          "context": "EURAD-2-HERMES-AWPY1_HERMES (2).docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "uncertainty; unit"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/EURAD-2-HERMES-AWPY1_HERMES.docx",
+          "context": "EURAD-2-HERMES-AWPY1_HERMES.docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "uncertainty; unit"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/EURAD-2_WP18_HERMES_Template#3.docx",
+          "context": "EURAD-2_WP18_HERMES_Template#3.docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "calibration; uncertainty; unit; water content"
+        }
+      ]
+    },
+    "rh_active_curve_provenance": {
+      "stream": "relative_humidity_suction",
+      "gate": "RH_ACTIVE_CURVE_PROVENANCE",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 35,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 1,
+      "status_counts": {
+        "supporting_context_only": 34,
+        "keyword_candidate_not_gate_closure": 1
+      },
+      "top_sources": [
+        {
+          "source_kind": "downloads_archive_member_names",
+          "source_path": "Downloads/003_Nov_2025 (1).zip",
+          "context": "003_Nov_2025 (1).zip members 1-10",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "rh5; rh6; rh7; rh8; suction"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/02_process_variables_TRM.xml",
+          "context": "02_process_variables_TRM.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "open_niche_seasonal"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/03_parameters_TRM.xml",
+          "context": "03_parameters_TRM.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "open_niche_seasonal; seasonal curve"
+        },
+        {
+          "source_kind": "downloads_file_name",
+          "source_path": "Downloads/CDA_N4_2D_250403/08_08_open_niche_seasonal.xml",
+          "context": "08_08_open_niche_seasonal.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "08_08_open_niche_seasonal; open_niche_seasonal"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/08_08_open_niche_seasonal.xml",
+          "context": "08_08_open_niche_seasonal.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "open_niche_seasonal; seasonal curve"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/08_curves.xml",
+          "context": "08_curves.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "08_08_open_niche_seasonal; open_niche_seasonal; seasonal curve"
+        },
+        {
+          "source_kind": "downloads_file_name",
+          "source_path": "Downloads/CDA_N4_2D_250403/closed_niche_seasonal_curve_shifted.xml",
+          "context": "closed_niche_seasonal_curve_shifted.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "seasonal curve"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/closed_niche_seasonal_curve_shifted.xml",
+          "context": "closed_niche_seasonal_curve_shifted.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "seasonal curve"
+        }
+      ]
+    },
+    "hm_numeric_exports": {
+      "stream": "other_hm_monitoring",
+      "gate": "HM_NUMERIC_EXPORTS",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 42,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 3,
+      "status_counts": {
+        "supporting_context_only": 39,
+        "keyword_candidate_not_gate_closure": 3
+      },
+      "top_sources": [
+        {
+          "source_kind": "downloads_file_name",
+          "source_path": "Downloads/.~lock.HERMES_SIMULACE_MEZD_reorganized (1).xlsx#",
+          "context": ".~lock.HERMES_SIMULACE_MEZD_reorganized (1).xlsx#",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "downloads_file_name",
+          "source_path": "Downloads/.~lock.HERMES_Task4_Task5_plan.xlsx#",
+          "context": ".~lock.HERMES_Task4_Task5_plan.xlsx#",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "downloads_file_name",
+          "source_path": "Downloads/.~lock.HERMES_Task4_Task5_plan_dopocet.xlsx#",
+          "context": ".~lock.HERMES_Task4_Task5_plan_dopocet.xlsx#",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "downloads_file_name",
+          "source_path": "Downloads/.~lock.HERMES_Task4_Task5_plan_v2.xlsx#",
+          "context": ".~lock.HERMES_Task4_Task5_plan_v2.xlsx#",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "downloads_file_name",
+          "source_path": "Downloads/.~lock.HERMES_Task4_Task5_plan_v4.xlsx#",
+          "context": ".~lock.HERMES_Task4_Task5_plan_v4.xlsx#",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "downloads_file_name",
+          "source_path": "Downloads/.~lock.HERMES_Task4_Task5_plan_v5.xlsx#",
+          "context": ".~lock.HERMES_Task4_Task5_plan_v5.xlsx#",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "downloads_archive_member_names",
+          "source_path": "Downloads/003_Nov_2025 (1).zip",
+          "context": "003_Nov_2025 (1).zip members 1-10",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/Author queries form.docx",
+          "context": "Author queries form.docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "leveling"
+        }
+      ]
+    },
+    "hm_uncertainty": {
+      "stream": "other_hm_monitoring",
+      "gate": "HM_UNCERTAINTY",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 53,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 3,
+      "status_counts": {
+        "supporting_context_only": 50,
+        "keyword_candidate_not_gate_closure": 3
+      },
+      "top_sources": [
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/AGES_Detailed_Workplan_Task5p3 (1).docx",
+          "context": "AGES_Detailed_Workplan_Task5p3 (1).docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "reference"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/AGES_Detailed_Workplan_Task5p3.docx",
+          "context": "AGES_Detailed_Workplan_Task5p3.docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "reference"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/Author queries form.docx",
+          "context": "Author queries form.docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "quality; reference"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/04_1_media_aqu_liq.xml",
+          "context": "04_1_media_aqu_liq.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "reference"
+        },
+        {
+          "source_kind": "downloads_archive_member_names",
+          "source_path": "Downloads/Chodby_2024__Experiment_Inversion__Copy_.zip",
+          "context": "Chodby_2024__Experiment_Inversion__Copy_.zip members 1-140",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "quality; zero"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/Dokument bez n\u00e1zvu.md",
+          "context": "Dokument bez n\u00e1zvu.md",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "quality"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/Dotazn\u00edk-pro-rodi\u010de (1).docx",
+          "context": "Dotazn\u00edk-pro-rodi\u010de (1).docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "reference"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/Dotazn\u00edk-pro-rodi\u010de (2).docx",
+          "context": "Dotazn\u00edk-pro-rodi\u010de (2).docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "reference"
+        }
+      ]
+    },
+    "perm_endpoint_geometry": {
+      "stream": "permeability_pulse_tests",
+      "gate": "PERM_SUPPORT",
+      "local_status": "supporting_local_context_only_gate_still_external",
+      "candidate_evidence_count": 46,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 0,
+      "status_counts": {
+        "supporting_context_only": 46
+      },
+      "top_sources": [
+        {
+          "source_kind": "downloads_archive_member_names",
+          "source_path": "Downloads/003_Nov_2025 (1).zip",
+          "context": "003_Nov_2025 (1).zip members 1-10",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "coordinate"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/03_parameters_TRM.xml",
+          "context": "03_parameters_TRM.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "permeability"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/04_2_media_twophase.xml",
+          "context": "04_2_media_twophase.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "permeability"
+        },
+        {
+          "source_kind": "downloads_file_text",
+          "source_path": "Downloads/CDA_N4_2D_250403/04_media_TRM.xml",
+          "context": "04_media_TRM.xml",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "permeability"
+        },
+        {
+          "source_kind": "downloads_archive_member_names",
+          "source_path": "Downloads/Chodby_2024__Experiment_Inversion__Copy_.zip",
+          "context": "Chodby_2024__Experiment_Inversion__Copy_.zip members 1-140",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "permeability"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/EURAD-2-HERMES-AWPY1_HERMES (1).docx",
+          "context": "EURAD-2-HERMES-AWPY1_HERMES (1).docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "depth"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/EURAD-2-HERMES-AWPY1_HERMES (2).docx",
+          "context": "EURAD-2-HERMES-AWPY1_HERMES (2).docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "depth"
+        },
+        {
+          "source_kind": "downloads_office_xml_text",
+          "source_path": "Downloads/EURAD-2-HERMES-AWPY1_HERMES.docx",
+          "context": "EURAD-2-HERMES-AWPY1_HERMES.docx",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "depth"
+        }
+      ]
+    }
+  },
+  "notes": [
+    "This audit excludes provider response templates and generated request drafts to avoid circular evidence.",
+    "A possible_gate_closure_evidence_requires_review row is not a closed gate; it is a candidate for manual inspection.",
+    "Supporting context confirms why a stream matters but does not satisfy the gate acceptance criteria."
+  ],
+  "downloads_root": "/home/ber0061/Downloads",
+  "gates_still_external_after_downloads_scan": [
+    "ert_transform_support",
+    "ert_uncertainty",
+    "hm_numeric_exports",
+    "hm_uncertainty",
+    "perm_endpoint_geometry",
+    "rh_active_curve_provenance",
+    "taupe_unit_calibration"
+  ],
+  "inventory_row_count": 348,
+  "inventory_status_counts": {
+    "downloads_relevant_name_candidate": 322,
+    "catalogued_duplicate_sha1_verified": 25,
+    "uncatalogued_extracted_or_run_output_directory": 1
+  },
+  "catalogued_duplicate_sha1_verified_count": 25,
+  "uncatalogued_extracted_or_run_output_directory_count": 1
+}

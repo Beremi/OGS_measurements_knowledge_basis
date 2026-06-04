@@ -1,0 +1,29 @@
+{
+  "c_p_s_value": 1254.74,
+  "cte_bound_property": "Solid:thermal_expansivity:Parameter",
+  "cte_equals_c_p_s": true,
+  "cte_value": 1254.74,
+  "cte_xml_comment": "coefficient of linear thermal_expansivity [J/kgK]",
+  "expected_ogs_unit": "1/K",
+  "gens2017_adopted_expansivity_1_per_K": {
+    "source": "Gens2017 PDF p. 14 reports adopting 1.4e-5 1/K for Opalinus Clay thermal-loading analysis.",
+    "value": 1.4e-05
+  },
+  "media_file": "inversion_workflow/runs/direct_fit_observation_run/04_media_TRM.xml",
+  "outputs": {
+    "csv": "inversion_workflow/thermal_expansivity_parameter_audit.csv",
+    "markdown": "inversion_workflow/thermal_expansivity_parameter_audit.md",
+    "summary": "inversion_workflow/thermal_expansivity_parameter_audit_summary.json"
+  },
+  "parameters_file": "inversion_workflow/runs/direct_fit_observation_run/03_parameters_TRM.xml",
+  "ratio_to_gens2017_adopted": 89624285.71428572,
+  "ratio_to_reference_high": 48259230.769230776,
+  "reason": "The active XML binds CTE to solid thermal_expansivity, but the value equals c_p_s and the XML comment uses heat-capacity-like units. The magnitude is about 4.8e7 times the high end of the cited HE-D solid thermal-expansion range.",
+  "reference_expansivity_range_1_per_K": {
+    "high": 2.6e-05,
+    "low": 1e-05,
+    "source": "Garitte2017 PDF p. 12 lists linear solid thermal expansion coefficients 1.0e-5 to 2.6e-5 1/K across HE-D modelling teams."
+  },
+  "release_gate": "Do not release or physically interpret CTE until Gesa/BGR confirms whether the XML value should be near 1e-5 1/K, a different value, or inactive in the intended run.",
+  "status": "blocked_confirm_cte_value"
+}

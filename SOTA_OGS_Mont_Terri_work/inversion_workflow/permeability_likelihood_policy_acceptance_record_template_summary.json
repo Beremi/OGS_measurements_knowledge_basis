@@ -1,0 +1,72 @@
+{
+  "approval_status_counts": {
+    "not_approved_template_only": 5
+  },
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_policy_acceptance_record_template.csv",
+      "source": "inversion_workflow/permeability_likelihood_policy_acceptance_record_template.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_policy_acceptance_record_template_summary.json",
+      "source": "inversion_workflow/permeability_likelihood_policy_acceptance_record_template_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_policy_acceptance_record_template.md",
+      "source": "inversion_workflow/permeability_likelihood_policy_acceptance_record_template.md"
+    }
+  ],
+  "changes_active_objective": false,
+  "current_report_policy_before_approval": "keep_rowwise_gaussian_default",
+  "next_action": "Fill this template only after the modelling team chooses the direct-permeability likelihood/support/outlier policy. Until exactly one primary policy row is approved with provenance, keep the rowwise Gaussian policy as the current-report default and keep same-support active-objective OGS spending paused.",
+  "next_field_fit_gate_executable_same_support_batch_now": false,
+  "next_field_fit_gate_recommendation": "pause_same_support_active_objective_ogs_until_likelihood_support_bounds_or_stream_gate_changes",
+  "next_field_fit_gate_status": "permeability_next_field_fit_gate_generated",
+  "primary_policy_approval_rows_recorded": 0,
+  "primary_policy_approval_rows_required": 1,
+  "promotes_current_field": false,
+  "ready_to_apply_policy": false,
+  "recommendation_count": 8,
+  "recommendation_packet_status": "permeability_likelihood_support_recommendations_generated",
+  "records_actual_decision": false,
+  "same_support_batch_executable_now": false,
+  "same_support_reducible_objective_gap": 0.0,
+  "selected_policy_option_id": "",
+  "sends_or_modifies_email": false,
+  "source_artifacts": [
+    "inversion_workflow/permeability_likelihood_decision_request.csv",
+    "inversion_workflow/permeability_likelihood_decision_request_summary.json",
+    "inversion_workflow/permeability_likelihood_support_recommendations_summary.json",
+    "inversion_workflow/permeability_support_conflict_spatial_audit_summary.json",
+    "inversion_workflow/permeability_next_field_fit_gate_summary.json"
+  ],
+  "status": "permeability_likelihood_policy_acceptance_record_template_generated",
+  "support_conflict_spatial_active_support_cell_count": 30,
+  "support_conflict_spatial_audit_status": "permeability_support_conflict_spatial_audit_generated",
+  "support_conflict_spatial_range_ge_2_log10_cell_count": 16,
+  "support_conflict_spatial_repeated_support_cell_count": 24,
+  "support_conflict_spatial_top_conflict_cell": {
+    "cell_type": "triangle6",
+    "centroid_x_m": -1.9531543672590785,
+    "centroid_y_m": -0.665476463070921,
+    "centroid_z_m": 0.0,
+    "conflict_class": "configured_scalar_range_conflict",
+    "depth_max_m": 0.87,
+    "depth_min_m": 0.85,
+    "feasibility_statuses": "observed_above_configured_scalar_range;observed_inside_configured_scalar_range",
+    "group_policy_class": "configured_scalar_range_decision_required",
+    "has_large_observed_range_ge_1_log10": true,
+    "has_large_observed_range_ge_2_log10": true,
+    "is_repeated_support_cell": true,
+    "max_abs_residual": 3.4744237387763093,
+    "mean_abs_residual": 3.4744237387763093,
+    "observed_log10_max": -12.096910013008056,
+    "observed_log10_min": -19.045757490560675,
+    "observed_log10_range": 6.948847477552619,
+    "primary_cell_id": 4648,
+    "residual_signs": "overpredicts_observation;underpredicts_observation",
+    "row_count": 3,
+    "segments": "BCD-A32"
+  },
+  "template_row_count": 5
+}

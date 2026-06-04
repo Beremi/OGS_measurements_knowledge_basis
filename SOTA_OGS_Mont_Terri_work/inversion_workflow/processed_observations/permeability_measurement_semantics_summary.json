@@ -1,0 +1,358 @@
+{
+  "activation_rules": [
+    "Treat the workbook value as a noisy scalar interval-scale observation of intrinsic permeability.",
+    "Do not treat the nitrogen pulse-test value as hydraulic conductivity, relative permeability, saturation, or a direct tensor component.",
+    "Compare active rows in log10 permeability space against an interval-weighted directional tensor response e^T K e.",
+    "Keep the broad first-pass sigma of 0.5 log10 units unless collaborator-provided test uncertainties justify a different row-level scale.",
+    "Exclude missing-geometry and outside-mesh rows from the current OGS cell objective until their support is reconstructed."
+  ],
+  "campaign_counts": {
+    "2021": 98,
+    "2024": 106
+  },
+  "direction_counts": {
+    "horizontal": 95,
+    "nearly horizontal": 8,
+    "vertical": 101
+  },
+  "highest_positive_rows": [
+    {
+      "block_label": "BFM-D19 Open twin",
+      "borehole_depth_m": 1.2,
+      "campaign_year": 2021,
+      "direction_inferred_from_label": "nearly horizontal",
+      "log10_permeability_m2": -12.002176919254277,
+      "normalized_segment_label": "BFM-D19",
+      "observation_id": "perm_0086",
+      "permeability_m2": 9.95e-13,
+      "target_status": "missing_segment_geometry",
+      "twin": "open",
+      "usable_for_current_ogs_fit": false
+    },
+    {
+      "block_label": "BFM-D19 Open twin",
+      "borehole_depth_m": 1.7,
+      "campaign_year": 2021,
+      "direction_inferred_from_label": "nearly horizontal",
+      "log10_permeability_m2": -12.031517051446064,
+      "normalized_segment_label": "BFM-D19",
+      "observation_id": "perm_0087",
+      "permeability_m2": 9.3e-13,
+      "target_status": "missing_segment_geometry",
+      "twin": "open",
+      "usable_for_current_ogs_fit": false
+    },
+    {
+      "block_label": "BFM-D19 Open twin",
+      "borehole_depth_m": 1.7,
+      "campaign_year": 2021,
+      "direction_inferred_from_label": "nearly horizontal",
+      "log10_permeability_m2": -12.082494490447454,
+      "normalized_segment_label": "BFM-D19",
+      "observation_id": "perm_0088",
+      "permeability_m2": 8.27e-13,
+      "target_status": "missing_segment_geometry",
+      "twin": "open",
+      "usable_for_current_ogs_fit": false
+    },
+    {
+      "block_label": "BCDA_32",
+      "borehole_depth_m": 0.87,
+      "campaign_year": 2024,
+      "direction_inferred_from_label": "horizontal",
+      "log10_permeability_m2": -12.096910013008056,
+      "normalized_segment_label": "BCD-A32",
+      "observation_id": "perm_0005",
+      "permeability_m2": 8e-13,
+      "target_status": "mapped_inside_mesh",
+      "twin": "open",
+      "usable_for_current_ogs_fit": true
+    },
+    {
+      "block_label": "BCDA_32 (horizontal, 2024)",
+      "borehole_depth_m": 0.87,
+      "campaign_year": 2024,
+      "direction_inferred_from_label": "horizontal",
+      "log10_permeability_m2": -12.096910013008056,
+      "normalized_segment_label": "BCD-A32",
+      "observation_id": "perm_0155",
+      "permeability_m2": 8e-13,
+      "target_status": "mapped_inside_mesh",
+      "twin": "open",
+      "usable_for_current_ogs_fit": true
+    },
+    {
+      "block_label": "BFM-D19 Open twin",
+      "borehole_depth_m": 1.2,
+      "campaign_year": 2021,
+      "direction_inferred_from_label": "nearly horizontal",
+      "log10_permeability_m2": -12.167491087293763,
+      "normalized_segment_label": "BFM-D19",
+      "observation_id": "perm_0085",
+      "permeability_m2": 6.8e-13,
+      "target_status": "missing_segment_geometry",
+      "twin": "open",
+      "usable_for_current_ogs_fit": false
+    },
+    {
+      "block_label": "BFM-D19 Open twin",
+      "borehole_depth_m": 0.7,
+      "campaign_year": 2021,
+      "direction_inferred_from_label": "nearly horizontal",
+      "log10_permeability_m2": -12.681936665037238,
+      "normalized_segment_label": "BFM-D19",
+      "observation_id": "perm_0089",
+      "permeability_m2": 2.08e-13,
+      "target_status": "missing_segment_geometry",
+      "twin": "open",
+      "usable_for_current_ogs_fit": false
+    },
+    {
+      "block_label": "BCDA_34",
+      "borehole_depth_m": 0.55,
+      "campaign_year": 2024,
+      "direction_inferred_from_label": "vertical",
+      "log10_permeability_m2": -13.0,
+      "normalized_segment_label": "BCD-A34",
+      "observation_id": "perm_0029",
+      "permeability_m2": 1e-13,
+      "target_status": "mapped_outside_mesh",
+      "twin": "closed",
+      "usable_for_current_ogs_fit": false
+    }
+  ],
+  "log10_permeability_quantiles_all_positive": {
+    "max": -12.002176919254277,
+    "min": -21.30102999566398,
+    "p10": -20.30102999566398,
+    "p25": -20.0,
+    "p50": -19.096910013008056,
+    "p75": -15.924742501084005,
+    "p90": -13.966007764029223
+  },
+  "log10_permeability_quantiles_usable": {
+    "max": -12.096910013008056,
+    "min": -21.0,
+    "p10": -20.359176003468818,
+    "p25": -19.460409376976187,
+    "p50": -17.221848749616356,
+    "p75": -15.30102999566398,
+    "p90": -14.154901959985745
+  },
+  "lowest_positive_rows": [
+    {
+      "block_label": "BCDA_25 (horizontal, 2021)",
+      "borehole_depth_m": 1.25,
+      "campaign_year": 2021,
+      "direction_inferred_from_label": "horizontal",
+      "log10_permeability_m2": -21.30102999566398,
+      "normalized_segment_label": "BCD-A25",
+      "observation_id": "perm_0131",
+      "permeability_m2": 5e-22,
+      "target_status": "missing_segment_geometry",
+      "twin": null,
+      "usable_for_current_ogs_fit": false
+    },
+    {
+      "block_label": "BCDA_35",
+      "borehole_depth_m": 0.59,
+      "campaign_year": 2024,
+      "direction_inferred_from_label": "horizontal",
+      "log10_permeability_m2": -21.0,
+      "normalized_segment_label": "BCD-A35",
+      "observation_id": "perm_0043",
+      "permeability_m2": 1e-21,
+      "target_status": "mapped_outside_mesh",
+      "twin": "closed",
+      "usable_for_current_ogs_fit": false
+    },
+    {
+      "block_label": "BCDA_25 (horizontal, 2021)",
+      "borehole_depth_m": 0.75,
+      "campaign_year": 2021,
+      "direction_inferred_from_label": "horizontal",
+      "log10_permeability_m2": -21.0,
+      "normalized_segment_label": "BCD-A25",
+      "observation_id": "perm_0141",
+      "permeability_m2": 1e-21,
+      "target_status": "missing_segment_geometry",
+      "twin": null,
+      "usable_for_current_ogs_fit": false
+    },
+    {
+      "block_label": "BCDA_27 Closed twin",
+      "borehole_depth_m": 0.75,
+      "campaign_year": 2021,
+      "direction_inferred_from_label": "horizontal",
+      "log10_permeability_m2": -21.0,
+      "normalized_segment_label": "BCD-A27",
+      "observation_id": "perm_0073",
+      "permeability_m2": 1e-21,
+      "target_status": "missing_segment_geometry",
+      "twin": "closed",
+      "usable_for_current_ogs_fit": false
+    },
+    {
+      "block_label": "BCDA_33 (vertical, 2024)",
+      "borehole_depth_m": 0.59,
+      "campaign_year": 2024,
+      "direction_inferred_from_label": "vertical",
+      "log10_permeability_m2": -21.0,
+      "normalized_segment_label": "BCD-A33",
+      "observation_id": "perm_0195",
+      "permeability_m2": 1e-21,
+      "target_status": "mapped_inside_mesh",
+      "twin": "open",
+      "usable_for_current_ogs_fit": true
+    },
+    {
+      "block_label": "BCDA_25 (horizontal, 2021)",
+      "borehole_depth_m": 3.3,
+      "campaign_year": 2021,
+      "direction_inferred_from_label": "horizontal",
+      "log10_permeability_m2": -20.69897000433602,
+      "normalized_segment_label": "BCD-A25",
+      "observation_id": "perm_0134",
+      "permeability_m2": 2e-21,
+      "target_status": "missing_segment_geometry",
+      "twin": null,
+      "usable_for_current_ogs_fit": false
+    },
+    {
+      "block_label": "BCDA_34",
+      "borehole_depth_m": 1.25,
+      "campaign_year": 2024,
+      "direction_inferred_from_label": "vertical",
+      "log10_permeability_m2": -20.69897000433602,
+      "normalized_segment_label": "BCD-A34",
+      "observation_id": "perm_0036",
+      "permeability_m2": 2e-21,
+      "target_status": "mapped_outside_mesh",
+      "twin": "closed",
+      "usable_for_current_ogs_fit": false
+    },
+    {
+      "block_label": "BCDA_32 (horizontal, 2024)",
+      "borehole_depth_m": 1.25,
+      "campaign_year": 2024,
+      "direction_inferred_from_label": "horizontal",
+      "log10_permeability_m2": -20.69897000433602,
+      "normalized_segment_label": "BCD-A32",
+      "observation_id": "perm_0173",
+      "permeability_m2": 2e-21,
+      "target_status": "mapped_inside_mesh",
+      "twin": "open",
+      "usable_for_current_ogs_fit": true
+    }
+  ],
+  "missing_geometry_groups": 5,
+  "outputs": {
+    "group_summary": "inversion_workflow/processed_observations/permeability_measurement_semantics_group_summary.csv",
+    "markdown": "inversion_workflow/processed_observations/permeability_measurement_semantics.md",
+    "row_audit": "inversion_workflow/processed_observations/permeability_measurement_semantics_audit.csv",
+    "summary": "inversion_workflow/processed_observations/permeability_measurement_semantics_summary.json"
+  },
+  "permeability_m2_quantiles_all_positive": {
+    "max": 9.95e-13,
+    "min": 5e-22,
+    "p10": 5e-21,
+    "p25": 1e-20,
+    "p50": 8e-20,
+    "p75": 1.25e-16,
+    "p90": 1.1089999999999943e-14
+  },
+  "permeability_m2_quantiles_usable": {
+    "max": 8e-13,
+    "min": 1e-21,
+    "p10": 4.4e-21,
+    "p25": 3.5e-20,
+    "p50": 6e-18,
+    "p75": 5e-16,
+    "p90": 7e-15
+  },
+  "positive_rows": 200,
+  "pressure_decay": {
+    "interval_count": 32,
+    "interval_depth_quantiles_m": {
+      "max": 3.3,
+      "min": 0.15,
+      "p10": 0.45,
+      "p25": 1.25,
+      "p50": 1.7,
+      "p75": 2.5,
+      "p90": 2.5
+    },
+    "normalized_pressure_quantiles_pa": {
+      "max": 200152.46826679487,
+      "min": 6797.078297547312,
+      "p10": 98729.45952960607,
+      "p25": 100128.83678924933,
+      "p50": 196220.20316789215,
+      "p75": 199523.59969478752,
+      "p90": 199878.5509703891
+    },
+    "rows": 6687,
+    "source_sheet_counts": {
+      "Messdaten_BCDA26": 3328,
+      "Messdaten_BCDA27": 3359
+    },
+    "time_quantiles_s": {
+      "max": 56098.9999984391,
+      "min": 0.0,
+      "p10": 190.00000040978196,
+      "p25": 510.0000004051253,
+      "p50": 6630.000000237487,
+      "p75": 30989.4999990589,
+      "p90": 46031.599999205224
+    }
+  },
+  "semantic_activation_gate_counts": {
+    "active_direct_log_intrinsic_permeability_candidate": 75,
+    "excluded_current_mesh_outside_domain": 27,
+    "excluded_missing_or_nonpositive_interpreted_value": 4,
+    "excluded_pending_endpoint_geometry_or_digitized_trace": 98
+  },
+  "target_builder_summary": {
+    "interval_length_m": 0.1,
+    "mapped_positive_targets": 102,
+    "missing_geometry_audit_rows": 5,
+    "missing_segment_geometry": 98,
+    "missing_segment_geometry_with_orientation_evidence": 98,
+    "not_usable_missing_or_nonpositive_permeability": 4,
+    "notes": [
+      "These targets are initial observation-operator inputs, not calibrated likelihoods.",
+      "The scalar gas pulse-test value is not treated as a tensor component.",
+      "Cell weights are derived from 0.1 m along-borehole samples selected inside the nominal interval window.",
+      "Older BCD-A24/25/26/27 and BFM-D19 rows retain source-backed orientation evidence, but remain excluded until labelled endpoint geometry is available."
+    ],
+    "processed_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations",
+    "segment_geometry_rows": 8,
+    "target_cell_rows": 102,
+    "target_rows": 204,
+    "target_status": {
+      "mapped_inside_mesh": 75,
+      "mapped_outside_mesh": 27,
+      "missing_segment_geometry": 98,
+      "not_usable_missing_or_nonpositive_permeability": 4
+    },
+    "usable_for_current_ogs_fit": 75
+  },
+  "target_rows": 204,
+  "target_status_counts": {
+    "mapped_inside_mesh": 75,
+    "mapped_outside_mesh": 27,
+    "missing_segment_geometry": 98,
+    "not_usable_missing_or_nonpositive_permeability": 4
+  },
+  "twin_counts": {
+    "closed": 42,
+    "missing": 75,
+    "open": 87
+  },
+  "usable_current_rows": 75,
+  "usable_segment_count": 2,
+  "usable_segments": [
+    "BCD-A32",
+    "BCD-A33"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "active_direct_rows": 75,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_support_lower_bound_audit/derived_files/permeability_support_lower_bound_audit.csv",
+      "source": "inversion_workflow/permeability_support_lower_bound_audit.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_support_lower_bound_audit/derived_files/permeability_support_lower_bound_row_audit.csv",
+      "source": "inversion_workflow/permeability_support_lower_bound_row_audit.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_support_lower_bound_audit/derived_files/permeability_support_lower_bound_audit.md",
+      "source": "inversion_workflow/permeability_support_lower_bound_audit.md"
+    }
+  ],
+  "current_at_single_support_lower_bound": true,
+  "current_row_gaussian_objective": 269.8180571059851,
+  "group_output_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_support_lower_bound_audit.csv",
+  "interpretation": "The current accepted permeability field is already at the duplicate-weighted row-Gaussian lower bound for the current one-value-per-support-cell mapping. The direct permeability mismatch is therefore irreducible by additional same-support spatial sampling: the dominant loss comes from mutually inconsistent pulse-test values assigned to the same model support cells, plus the separate configured scalar-range cases. The next defensible move is a support/likelihood/measurement-interpretation or bounds/tensor-shape decision, not another routine OGS batch in the same parameter family.",
+  "likelihood_policy_current_gaussian_objective": 269.8180571059851,
+  "likelihood_policy_summary_json": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_policy_audit_summary.json",
+  "likelihood_policy_support_mean_unit_objective": 1.7670484276950664e-28,
+  "log10_sigma": 0.5,
+  "lower_bound_tolerance": 1e-09,
+  "notes": [
+    "The lower bound assumes the current observation-to-support-cell mapping and one scalar log10 prediction per support cell.",
+    "A zero reducible gap does not prove the gas-pulse interpretation is correct; it proves same-support field sampling cannot reduce the rowwise Gaussian loss.",
+    "Reducing this loss requires changing support mapping, likelihood semantics, measurement interpretation, or parameter bounds/tensor shape, not more same-family OGS sampling."
+  ],
+  "repeated_support_group_count": 24,
+  "residual_audit_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_residual_conflict_audit.csv",
+  "row_output_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_support_lower_bound_row_audit.csv",
+  "same_support_reducible_objective_fraction": 0.0,
+  "same_support_reducible_objective_gap": 0.0,
+  "single_support_lower_bound_objective": 269.8180571059851,
+  "status": "permeability_support_lower_bound_audit_generated",
+  "summary_markdown": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_support_lower_bound_audit.md",
+  "summary_output_json": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_support_lower_bound_audit_summary.json",
+  "support_group_count": 30,
+  "support_groups_current_at_lower_bound": 30,
+  "support_groups_reducible_above_tolerance": 0,
+  "support_groups_with_observed_range_ge_1_log10": 16,
+  "support_groups_with_observed_range_ge_2_log10": 16,
+  "support_lower_bound_class_counts": {
+    "irreducible_large_same_support_conflict": 16,
+    "single_support_value_lower_bound_met": 14
+  },
+  "top_2_support_group_loss_share": 0.35556972599914893,
+  "top_5_support_group_loss_share": 0.5702309710862508
+}

@@ -1,0 +1,44 @@
+{
+  "above_95_percent_open_twin_caution_rows": 2492,
+  "activation_status_counts": {
+    "blocked_conversion_constants_unverified": 1,
+    "blocked_curve_generation_provenance_missing": 1,
+    "blocked_curve_mapping_needs_confirmation": 1,
+    "blocked_late_measurements_outside_active_curve_range": 1,
+    "blocked_retention_use_policy_unconfirmed": 1,
+    "blocked_sensor_selection_not_documented": 1
+  },
+  "active_curve_date_max": "2023-12-26",
+  "active_curve_date_min": "2019-09-18",
+  "active_curve_implied_rh_percent_max": 96.59114563861547,
+  "active_curve_implied_rh_percent_min": 70.23447131426,
+  "active_curve_rows": 845,
+  "active_curve_rows_below_clean_rh5_rh6_min": 772,
+  "active_objective_rows": 0,
+  "boundary_compared_rows": 2280,
+  "boundary_median_abs_residual_mpa": 12.99802291936514,
+  "boundary_rows_after_active_curve_end": 1948,
+  "catalogue_copies": [
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/suction_relative_humidity/derived_files/rh_boundary_provenance_request.csv",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/suction_relative_humidity/derived_files/rh_boundary_provenance_evidence.csv",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/suction_relative_humidity/derived_files/rh_boundary_provenance_request_summary.json",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/suction_relative_humidity/derived_files/rh_boundary_provenance_request.md"
+  ],
+  "evidence_rows": 10,
+  "low_rh_outlier_rows": 19,
+  "outputs": {
+    "evidence_csv": "inversion_workflow/processed_observations/rh_boundary_provenance_evidence.csv",
+    "markdown": "inversion_workflow/processed_observations/rh_boundary_provenance_request.md",
+    "request_csv": "inversion_workflow/processed_observations/rh_boundary_provenance_request.csv",
+    "summary_json": "inversion_workflow/processed_observations/rh_boundary_provenance_request_summary.json"
+  },
+  "priority_counts": {
+    "high": 3,
+    "medium": 3
+  },
+  "remaining_blocker": "Obtain or reconstruct the generation history for 08_08_open_niche_seasonal.xml before treating the active open-niche pressure curve as verified RH-derived forcing or using RH as a retention-parameter likelihood.",
+  "request_rows": 6,
+  "rh_semantics_status": "boundary_forcing_semantics_ready_curve_provenance_unverified",
+  "status": "request_package_ready_curve_provenance_still_unverified",
+  "valid_non_low_outlier_rows": 4228
+}

@@ -1,0 +1,18 @@
+# Response Notes: ert_transform_support
+- Response status: `missing_response`
+- Request status: `drafted_pending_send`
+- Gate: `ERT_TRANSFORM_SUPPORT`
+- Audience: BGR ERT provider / Markus Furche via Gesa Ziefle
+- Recipient draft: `inversion_workflow/external_gate_requests/bgr_ert_markus_furche_via_gesa_ziefle.md`
+## Received Files Or Answers
+- None recorded yet.
+## Intake Metadata Checklist
+- source contact, response date, coordinate origin/axes, unit convention, support-mask definition, and whether the current local transform model_x=raw_x/model_y=raw_y+500 is accepted.
+## Acceptance Test
+A reproducible ERT-to-OGS transform and accepted support mask can be encoded without freehand interpretation; the ERT spatial projection and support-sensitivity audits can be regenerated with no provisional-transform caveat.
+## Refresh Commands After Acceptance
+`python inversion_workflow/scripts/build_ert_spatial_projection_lookup.py; python inversion_workflow/scripts/build_ert_support_sensitivity_audit.py; python inversion_workflow/scripts/build_measurement_stream_gate_audit.py; python inversion_workflow/scripts/build_measurement_gate_closure_request.py; python inversion_workflow/scripts/build_external_gate_request_pack.py; python inversion_workflow/scripts/build_objective_readiness_audit.py`
+## Gate Decision
+- Current effect if accepted: May close ERT_TRANSFORM_SUPPORT and make ERT support ready for weighted residual design.
+- Decision: `not_evaluated`
+- Evaluated by/date: not recorded

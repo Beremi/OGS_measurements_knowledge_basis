@@ -1,0 +1,134 @@
+BEGIN:VCALENDAR
+METHOD:REQUEST
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:W. Europe Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T030000
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=10
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T020000
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=3
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ORGANIZER;CN="Ziefle, Gesa":MAILTO:Gesa.Ziefle@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Chen, Shua
+ ng":MAILTO:Shuang.Chen@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Kunz, Herb
+ ert":MAILTO:Herbert.Kunz@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Cajuhi, Tu
+ anny":MAILTO:Tuanny.Cajuhi@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Costabel, 
+ Stephan":MAILTO:Stephan.Costabel@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Furche, Ma
+ rkus":MAILTO:Markus.Furche@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Beilecke, 
+ Thies":MAILTO:Thies.Beilecke@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Kumar, Vin
+ ay":MAILTO:Vinay.Kumar@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Jantschik,
+  Kyra Dr.":MAILTO:Kyra.Jantschik@grs.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=franz.koen
+ iger@isu-karlsruhe.com:MAILTO:franz.koeniger@isu-karlsruhe.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Rainer Sch
+ uhmann:MAILTO:rainer.schuhmann@isu-karlsruhe.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Graupner B
+ astian:MAILTO:Bastian.Graupner@ensi.ch
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Peti, Dr. 
+ Leonie":MAILTO:Leonie.Peti@bge.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=michal.ber
+ es@ugn.cas.cz:MAILTO:michal.beres@ugn.cas.cz
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=david.jaeg
+ gi@swisstopo.ch:MAILTO:david.jaeggi@swisstopo.ch
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Karsten Ri
+ nk:MAILTO:karsten.rink@ufz.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=okolditz:M
+ AILTO:olaf.kolditz@ufz.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Maßmann, 
+ Jobst":MAILTO:Jobst.Massmann@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Burschil, 
+ Thomas":MAILTO:Thomas.Burschil@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Czaikowski
+ , Oliver Dr.":MAILTO:Oliver.Czaikowski@grs.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=José Luis
+  Garcia-Sineriz:MAILTO:jl.garciasineriz@amphos21.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Gerowski, 
+ Jana":MAILTO:Jana.Gerowski@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Kneuker, T
+ ilo":MAILTO:Tilo.Kneuker@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=senecio.sc
+ hefer@swisstopo.ch:MAILTO:senecio.schefer@swisstopo.ch
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=sebastian.
+ condamin@swisstopo.ch:MAILTO:sebastian.condamin@swisstopo.ch
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Wengler, D
+ r. Marc":MAILTO:Marc.Wengler@bge.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Susana Tu
+ ñon Valladares:MAILTO:susana.tunon@amphos21.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Ostertag-H
+ enning, Christian":MAILTO:Christian.Ostertag-Henning@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Hesser, J
+ ürgen":MAILTO:Juergen.Hesser@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Middelhoff
+ , Marvin Dr.":MAILTO:Marvin.Middelhoff@grs.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Liebscher,
+  Dr. Axel":MAILTO:Axel.Liebscher@bge.de
+DESCRIPTION;LANGUAGE=de-DE:Dear CD-A Team\n\nas mentioned\, here is the inv
+ itation for the next online CD-A meeting on November 5th.\n\nBest\,\nGesa\
+ n-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-\n-- Den nachstehenden Text 
+ weder löschen noch ändern. --\n\n\n\nTreten Sie Ihrem Webex-Meeting zum 
+ gegebenen Zeitpunkt hier bei.\n\n\n\n\nMeeting beitreten<https://bgr-bund.
+ webex.com/bgr-bund/j.php?MTID=ma23f51744b31606e95bb96ab5adb6bcd>\n\n\n\n\n
+ Weitere Methoden zum Beitreten:\n\n\n\nÜber den Meeting-Link beitreten\n\
+ nhttps://bgr-bund.webex.com/bgr-bund/j.php?MTID=ma23f51744b31606e95bb96ab5
+ adb6bcd\n\n\n\n\nMit Meeting-Kennnummer beitreten\n\nMeeting-Kennnummer (Z
+ ugriffscode): 2740 179 7819\n\nMeeting-Passwort: gNn2XUbqz69\n\n\n\nHier t
+ ippen\, um mit Mobilgerät beizutreten (nur für Teilnehmer)\n+49-619-6781
+ -9736\,\,27401797819##<tel:%2B49-619-6781-9736\,\,*01*27401797819%23%23*01
+ *> Germany Toll\n+49-89-95467578\,\,27401797819##<tel:%2B49-89-95467578\,\
+ ,*01*27401797819%23%23*01*> Germany Toll 2\n\nÜber Telefon beitreten\n+49
+ -619-6781-9736 Germany Toll\n+49-89-95467578 Germany Toll 2\nGlobale Einwa
+ hlnummern<https://bgr-bund.webex.com/bgr-bund/globalcallin.php?MTID=m11951
+ c6d1ea0e68e1366ca5574eabc13>\n\n\nÜber Videogerät oder -anwendung beitre
+ ten\nWählen Sie 27401797819@bgr-bund.webex.com<sip:27401797819@bgr-bund.w
+ ebex.com>\nSie können auch 62.109.219.4 wählen und Ihre Meeting-Nummer e
+ ingeben.\n\n\n\n\n\nWenn Sie Gastgeber sind\, klicken Sie hier<https://bgr
+ -bund.webex.com/webappng/sites/bgr-bund/meeting/info/e5ed2307c5864316b8b93
+ 533059e27fc>\, und melden Sie sich auf der Site an\, um Gastgeberinformati
+ onen anzuzeigen.\n\n\n\n\nBrauchen Sie Hilfe? Gehen Sie auf https://help.w
+ ebex.com\n\n\n\n\n\n
+UID:040000008200E00074C5B7101A82E008000000000046CC3A3EE1DC01000000000000000
+ 010000000AD3E986317DE524DB494415F58C4D924
+SUMMARY;LANGUAGE=de-DE:CD-A: Invitation to November TD
+DTSTART;TZID=W. Europe Standard Time:20261105T100000
+DTEND;TZID=W. Europe Standard Time:20261105T110000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20260511T101614Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:0
+LOCATION;LANGUAGE=de-DE:https://bgr-bund.webex.com/bgr-bund/j.php?MTID=ma23
+ f51744b31606e95bb96ab5adb6bcd
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-OWNERAPPTID:1946900458
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+BEGIN:VALARM
+DESCRIPTION:REMINDER
+TRIGGER;RELATED=START:-PT15M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,27 @@
+target_status,rows,positive_rows,usable_current_rows,mapped_inside_rows,mapped_outside_rows,missing_geometry_rows,nonpositive_or_missing_rows,depth_min_m,depth_max_m,log10_permeability_min,log10_permeability_median,log10_permeability_max,group_type,group_key,campaign_year,twin,direction_inferred_from_label,normalized_segment_label,source_sheet
+mapped_inside_mesh,75,75,75,75,0,0,0,0.15,3.3,-21.0,-17.221848749616356,-12.096910013008056,target_status,mapped_inside_mesh,,,,,
+mapped_outside_mesh,27,27,0,0,27,0,0,0.15,3.3,-21.0,-19.39794000867204,-13.0,target_status,mapped_outside_mesh,,,,,
+missing_segment_geometry,98,98,0,0,0,98,0,0.15,3.3,-21.30102999566398,-19.22184874961636,-12.002176919254277,target_status,missing_segment_geometry,,,,,
+not_usable_missing_or_nonpositive_permeability,4,0,0,0,0,0,4,0.15,0.65,,,,target_status,not_usable_missing_or_nonpositive_permeability,,,,,
+,15,15,0,0,0,15,0,0.15,3.3,-21.0,-19.39794000867204,-16.096910013008056,campaign_twin_direction,2021 | closed | horizontal,2021.0,closed,horizontal,,
+,8,8,0,0,0,8,0,0.7,1.7,-13.995678626217355,-12.424713876165502,-12.002176919254277,campaign_twin_direction,2021 | open | nearly horizontal,2021.0,open,nearly horizontal,,
+,30,30,0,0,0,30,0,0.15,3.3,-21.30102999566398,-19.39794000867204,-13.0,campaign_twin_direction,2021 | missing | horizontal,2021.0,missing,horizontal,,
+,45,45,0,0,0,45,0,0.15,3.3,-20.30102999566398,-19.22184874961636,-13.0,campaign_twin_direction,2021 | missing | vertical,2021.0,missing,vertical,,
+,12,12,0,0,12,0,0,0.17,3.3,-21.0,-19.39794000867204,-19.045757490560675,campaign_twin_direction,2024 | closed | horizontal,2024.0,closed,horizontal,,
+,15,15,0,0,15,0,0,0.15,3.3,-20.69897000433602,-19.30102999566398,-13.0,campaign_twin_direction,2024 | closed | vertical,2024.0,closed,vertical,,
+,38,38,38,38,0,0,0,0.15,3.3,-20.69897000433602,-16.84948500216801,-12.096910013008056,campaign_twin_direction,2024 | open | horizontal,2024.0,open,horizontal,,
+,41,37,37,37,0,0,4,0.15,3.3,-21.0,-17.221848749616356,-14.096910013008056,campaign_twin_direction,2024 | open | vertical,2024.0,open,vertical,,
+,30,30,0,0,0,30,0,0.15,3.3,-20.30102999566398,-17.872363747448347,-13.0,segment,BCD-A24,,,,BCD-A24,
+,30,30,0,0,0,30,0,0.15,3.3,-21.30102999566398,-19.39794000867204,-13.0,segment,BCD-A25,,,,BCD-A25,
+,15,15,0,0,0,15,0,0.15,3.3,-20.22184874961636,-19.69897000433602,-14.221848749616356,segment,BCD-A26,,,,BCD-A26,
+,15,15,0,0,0,15,0,0.15,3.3,-21.0,-19.39794000867204,-16.096910013008056,segment,BCD-A27,,,,BCD-A27,
+,38,38,38,38,0,0,0,0.15,3.3,-20.69897000433602,-16.84948500216801,-12.096910013008056,segment,BCD-A32,,,,BCD-A32,
+,41,37,37,37,0,0,4,0.15,3.3,-21.0,-17.221848749616356,-14.096910013008056,segment,BCD-A33,,,,BCD-A33,
+,15,15,0,0,15,0,0,0.15,3.3,-20.69897000433602,-19.30102999566398,-13.0,segment,BCD-A34,,,,BCD-A34,
+,12,12,0,0,12,0,0,0.17,3.3,-21.0,-19.39794000867204,-19.045757490560675,segment,BCD-A35,,,,BCD-A35,
+,8,8,0,0,0,8,0,0.7,1.7,-13.995678626217355,-12.424713876165502,-12.002176919254277,segment,BFM-D19,,,,BFM-D19,
+,60,60,0,0,0,60,0,0.15,3.3,-21.30102999566398,-19.22184874961636,-13.0,source_sheet,2021,,,,,2021
+,38,38,0,0,0,38,0,0.15,3.3,-21.0,-19.22184874961636,-12.002176919254277,source_sheet,2021_BCDA27_19,,,,,2021_BCDA27_19
+,54,52,52,52,0,0,2,0.15,3.3,-21.0,-19.096910013008056,-12.096910013008056,source_sheet,2024,,,,,2024
+,27,27,0,0,27,0,0,0.15,3.3,-21.0,-19.39794000867204,-13.0,source_sheet,2024_CT,,,,,2024_CT
+,25,23,23,23,0,0,2,0.15,3.3,-20.30102999566398,-15.69897000433602,-12.096910013008056,source_sheet,2024_OT,,,,,2024_OT

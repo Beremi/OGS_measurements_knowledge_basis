@@ -1,0 +1,339 @@
+--- Page 1 ---
+WP HERMES  
+High fid Elity nume Rical siM ulations of strongly coupled processes 
+for rE pository Systems  
+ 
+QUESTIONNAIRE FOR POTENTIAL CONTRI BUTORS TO 
+WP-HERMES  
+ 
+We launch this questionnaire to further develop the work package description where your 
+organ ization has expressed interest. This Questionnaire  will serve as the  input for the WP-HERMES 
+Work Package “ High fidElity numeRical siMulations of strongly coupled processes for rEpository 
+Syst ems ”. The information requested include  4 part:  
+1) Partner Information 
+2) Possible role of your institution in WP-HERMES  
+3) Description of the available expertise and infrastructure 
+4) Description of potential work in WP-HERMES 
+ 
+The reference document for the WP-HERMES scope  & budget is the Template #2 approved by the core 
+group and colleges  
+The selection of the partners will be based in the information provided in the  questionnaire. P lease be 
+accurate, clear and concise. The main criterial for the selection process are the s cientific excellence , 
+relevance, cost/benefits positive attitude towards the collaborative spirit of joint EURAD program.  
+Please download this questioner and budget table to   
+https://drive.switch.ch/index.php/s/DYcO4GIj3nLkSJ3  (DropBox). Access code:  HERMES  
+by the August  17th, 2023 ! 
+Project description (Template #2) and the budget table is available at:  
+https://drive.switch.ch/index.php/s/Hr6db5FUeAYhAfa  
+Project specific question can be send to dedicated e -mail: WP18HERMES@gmx.ch ;
+
+--- Page 2 ---
+2 
+PARTNER INFORMATION  
+Partner 
+Acronym  
+Country  College  
+ 
+Level of 
+interest*  
+H/M/L  
+Willingness to join End -
+user Group**  
+BGR Germany  RE M  N 
+ *L = Low: Supportive, will likely use the results from the WP (e.g. as an end- user)   
+ M = Medium: Supportive, will likely contribute to the WP (e.g. contribute effort/time)  
+H =   High: Supportive,  will likely play a central role in the WP (e.g. Task leader)  
+** The duties of the End- user group are:  Evaluation of work program in terms of scope, excellence and 
+implementation /safety case  relevance . SoTA : contribution and review. End -user group can include 
+partners from RE/TSO/WMO. Work load ~ 1 PM. 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+Note: If 
+your 
+interest is 
+only 
+limited to 
+be an end -
+user group than you have finished with completing this questionnaire.  
+ 
+  
+ Name Institute  Email  
+Person completing survey     
+Contact Person (if different)  Gesa Ziefle  BGR 
+(Geotechnical 
+Safety Analysis)  
+Gesa.Ziefle@bgr.de  
+ 
+Other partner organisations 
+involved in the experiment, if 
+any.  
+Olaf Kolditz  
+Thomas 
+Nagel  
+Michal 
+Béres 
+Nicolas 
+Tardieu  
+UFZ 
+TUBAF  
+ 
+UGN 
+ 
+EDF 
+Olaf.kolditz@ufz.de  
+thomas.nagel@ifgt.t
+u-freiberg.de  
+michal.beres @ugn.c
+as.cz  
+nicolas .tardieu @edf
+.fr
+
+--- Page 3 ---
+3 
+POSSIBLE INVOLVEMENT  IN WP 
+Please select  task(s) you would like to participate in ( based on WP description in template #2 : 
+Task 2 : Knowledge Management  
+• SOTA report(s) & Knowledge gap analysis 
+• Implementation and professional maintenance of 
+collaborative platform for code development and 
+machine learning.  
+• Implementation of EURAD model -hub for linking data 
+and models.  
+• Maintenance of open access platform with experimental 
+data for model testing  
+☐ 
+Expected budget:  
+… [KEUR]  
+Expected effort:  
+… [PM]  
+ 
+Task 3: Process couplings and computational performance  
+• Definition and development of unified interfaces for 
+process coupling  
+• Development and coupling of tools for forward and 
+inverse modelling as well as sensitivity analysis 
+• Development of models with dynamic integration of 
+data  
+• Multiscale models couplings, parame ters transfer and 
+upscaling 
+☐ 
+Expected budget:  
+… [KEUR]  
+Expected effort:  
+… [PM]  
+ 
+Task 4 : Surrogate modes of individual phenomena  
+• Processes addressed: Chemistry / Gas -Mass-Heat 
+transport / Mechanics 
+• Application & implementation of machine learning 
+methods and codes  
+• Benchmarking of surrogate models against physical 
+models and  experimental data 
+☐ 
+Expected budget:  
+… [KEUR]  
+Expected effort:  
+… [PM]  
+Task 5:  Tailored models for SA/PA and field scale mock -ups  
+• Real time simulation of field scale experiments  
+• Assessment of waste package integrity in extended 
+storage 
+• High fidelity models for repository near -field 
+simulations 
+• Dedicated models for optimisation and repository 
+design  
+• Integration of the models into DT concepts to be 
+formalised in WP17 
+☒ 
+Expected budget:  
+ 38.7 [KEUR]  
+Expected effort:  
+1.88 [PM]
+
+--- Page 4 ---
+4 
+EXPERTISE AND TOOLS AVAILABLE  
+Experience in the field s 
+relevant for WP -HERMES  
+BGR has decades of experience in the implementation, 
+development, and evaluation of numerical modeling  
+methods for coupled THM processes, especially in the 
+context of final disposal. This has been gained in 
+international (DECOVALEX, Mont Terri, EBS Task Force, 
+EURAD I, BEACON...) as well as national projects, and 
+participation in safety investigations on t he Asse and 
+Morsleben sites. Within the current DECOVALEX phase and 
+EURAD Gas, BGR is involved in SA/PA tasks; in the national 
+projects VSU, ANSICHT, CHRISTA, KOSINA and RESUS, BGR 
+together with BGE -TECHNOLOGY and GRS was /is involved 
+in the development and  exemplary application of a concept 
+for the safety assessment of possible repository systems in 
+clay, salt and crystalline rock in Germany , partly including 
+UQ
+. Model validation is performed, among others, by 
+numerical simulation of near -field processes in  large -scale 
+experiments, such as Mont Terri (CD -A, FE , Sandwich, FS ), 
+ÄSPÖ, Bure, Horonobe.  
+Link with other WP within 
+EURAD -I 
+Links exist with the current WP GAS (EURAD I) . 
+Key relevant publications 
+(max 5)  
+Ziefle, G., Cajuhi, T., Graebling, N., Jaeggi , D., Kolditz, O., 
+Kunz, H., Maßmann, J., Rink, K. (2022): Multi -disciplinary 
+investigation of the hydraulic -mechanically driven 
+convergence behavior: CD -A twin niches in the Mont Terri 
+Rock Laboratory during the first year. Geomech. Energy 
+Environ . 31 , art. 100325 Sci. 82 (1), art. 42  
+Ziefle, G., Cajuhi, T., Costabel, S., Furche, M., and 
+Maßmann, J. (2023): Water content evolution in the EDZ 
+of Opalinus Clay: A methodic approach for a comparative 
+interpretation of measurements and modelling. Rock 
+Mechani cs and Rock Engineering, submitted  
+Jobmann, M., Bebiolka, A., Burlaka, V., Herold, P., Jahn, S., 
+Lommerzheim, A., Maßmann, J., Meleshyn, A., Mrugalla, S., 
+Reinhold, K., Rübel, A., Stark, L. & Ziefle, G. (2017): Safety 
+assessment methodology for a German high-level waste 
+repository in clay formations. Journal of Rock Mechanics and 
+Geotechnical Engineering, 9, 5: 856-876. 
+DOI:10.1016/j.jrmge.2017.05.007 
+Maßmann, J., Thiedau, J., Bittens, M., Kumar, V., Tran, T.V., 
+Morel, C.G., Kneuker, T. & Schumacher, S. (2022): ANSICHT-II 
+– Methode und Berechnungen zur Integritätsanalyse der 
+geologischen Barriere für ein generisches Endlagersystem im 
+Tongestein. Bundesanstalt für Geowissenschaften und 
+Rohstoffe (BGR), Ergebnisbericht; Hannover. 
+DOI:10.25928/n8ac-y452
+
+--- Page 5 ---
+5 
+Available c omputational 
+infrastructure   
+4 conventional Linux -Server  with up to 100 cores  
+2 KI-Server, each with 4 NVIDIA Tesla V100 GPU  
+ 
+Availability or  / access to 
+experimental data for code 
+validation? (Describe)  
+BGR is the principle investigator in the  Mont Terri CD -A-
+Experiment . This long  term in -situ experiment focuses on 
+the coupled hydraulic and mechanical behaviour of the 
+Opalinus clay around two niches. BGR has  access to long -
+term, ongoing measurements on deformation, humidity, 
+water content, pore  water pressures, crack width, etc. 
+There exist pointwise measurements (as piezometer, 
+extensometer) and two -dimensional measurements, as 
+ERT, TDR and laser scans. Especially for the water content 
+evolution different results from different measurement 
+devices are available.  Furthermore, geological 
+characterization of inhomogeneities, as fractured zones, 
+are available.  
+Available / maintained 
+modelling code  
+(name/type /parallelisation/couplings/ …)  
+BGR uses the OpenSource  FE code OpenGeoSys (OGS). 
+In collaboration with the UFZ, BGR is also involved in the 
+further development of the code. BGR is experienced in 
+parallel computing of large systems with THM coupling, 
+considering two -phase flow.  
+ 
+PhD/Post Doc planned in 
+the field of HERMES  
+ 
+The participation of PhD/ PostDoc in the planned work is 
+being sought.  
+ 
+Modelling tools  
+Modelling codes available 
+(name)  
+Type (FE,DEM, 
+MM,FV,…)  
+Scales covered  
+(Field, 
+Continuum, Pore 
+molecular, …)  
+Opensource  
+code? (Y/N), 
+code developed 
+within EURAD? 
+(Y/N) 
+OpenGeoSys 6  FE Field to lab 
+scale, based 
+on mixing 
+theory of 
+porous media  
+Y 
+Y (partly)  
+    
+Process Couplings to be considered  
+ Thermal  Mechanical  Chemical  Hydraulic  
+Thermal  ☒    
+Mechanical  ☒ ☒   
+Chemical  ☐ ☐ ☐  
+Hydraulic  ☒ ☒ ☐ ☒
+
+--- Page 6 ---
+6 
+ 
+ 
+PROPOSED WORK 
+(Max 100 words per T ask2; Max 300 words Tasks 3- 5 ) 
+T2   
+T3   
+T4   
+T5  The work package aims at simulating strongly coupled effects in the near -field of 
+repository systems. Based on this, the interpretation of field experiments is envisaged. 
+An application for data-driven modelling based on measurements will be the CD-A 
+experiment at Mont Terri (Ziefle et al. 2022). Based on long term measurements and 
+observations, machine learning (ML) methods could be used to analyse the EDZ and the 
+associated water content evolution, with the aim of a process analysis and associated 
+parameterisation of the EDZ as a basis for classical process modelling. This type of 
+measurement driven modelling is an important complement to ML (e.g. neural 
+networks) as it allows heterogeneities to be taken into account and will thus also be an 
+important basis for classical process modelling. The planned Model -Hub (see UFZ Task 
+2) for the combined use of different codes and related data sets would be a valuable 
+tool and important basis for such modelling approaches. Links exist with the other 
+activities such as the Mont Terri project. 
+The aims of this work could be summarized as follows: 
+• Improved understanding of EDZ evolution (TH2M) 
+• Workflow for measurement-driven modelling 
+• Validation on field scale (CD-A experiment) 
+Explain how proposed work is different /similar  from current activities in EURAD -I (200 words max )  
+The planned work is based on the exper ience gained from EURAD -I in the context of 
+numerical modelling for the  safety assessement of potential repository systems in 
+claystone  with OGS. However, EURAD  II will focus  on two aspects : a) The development 
+of strategies for the effective modeling of  heterogeneous  near -field processes in the clay 
+rock under inclusion of measurement data at the  large -scale in -situ experiment  CD-A. A 
+modelling concept considering measurement driven approaches (e.g. ML) will be 
+conceptualized  in collaboration with the team from UGN  (CZ), in particular to take into 
+account the influence of in homogeneities as encountered in the EDZ.  b) The validation 
+of numerical modelling  approaches on the b asis of in -situ measurements is being further 
+advanced in c ollaboration with the team from EDF (FR) using the example of the CD-A 
+experiment in M ont Terri.  
+Indicates risks accompanying implementation of proposed work  
+The risks are considered to be very low, as a lot of experience already exists. One risk is 
+that not all targets can be achieved in the planned time. This could be caused by capacity 
+constraints, especially in t erms of personnel.   
+The proposed development of strategies for near field effects is based on the existence 
+of a related data set. This data set  already exists for a time period of about 5  years.
+
+--- Page 7 ---
+7 
+Consequently,  the risk of a lack of data is very low.   The proposed concept is  based on 
+promising approaches, but parts of it are new and it will only become clear in the course 
+of the work how effectively it can be applied to problems in practice.  
+Define 3 possible KPI and crit eria of project success for evaluation after 48  month  
+- Results from a 3D THM model of the CD -A-experiment are compared with 
+measurements  
+- A concept for measurement-driven process-modelling is defined 
+- This concept was applied as an example to selected measurements 
+ 
+ 
+Possible links with other EURAD -II projects qualified for template#3  
+Links exist with the planned WP17 Digital Twin  (DITOCO) and WP12 Bentonite  
+(ANCHORS) .

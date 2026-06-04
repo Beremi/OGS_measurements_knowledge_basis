@@ -1,0 +1,153 @@
+--- Page 1 ---
+1
+Single-Sided Nuclear
+Magnetic Resonance
+on the walls
+in the CD-A Niches
+Stephan Costabel, BGR, working group B2.1
+
+--- Page 2 ---
+Weekly measurements in open niche -
+reprocessing of data
+2
+
+--- Page 3 ---
+3
+Weekly measurements in open niche -
+reprocessing of data
+
+--- Page 4 ---
+Weekly measurements in open niche -
+data until Feb 2025 
+4
+
+--- Page 5 ---
+Weekly measurements in open niche -
+data until Feb 2025 
+5
+Findings regarding multi-
+exponential approach:
+• Confidence intervals similar to
+mono-exp. approach
+• Water content estimates
+higher than mono-exp. by
+approx. 2 % (interlayer water!?) 
+• Water content estimates with
+slightly larger difference
+between minimum an 
+maximum (opposite for
+relaxation time)
+
+--- Page 6 ---
+Drying experiments in laboratory
+Costabel (2023) Technical Note, MR Experiment in 
+Mont Terri
+6
+Findings regarding multi-
+exponential approach:
+• Confidence intervals similar to
+mono-exp. approach
+• Water content estimates
+higher than mono-exp. by
+approx. 2 % (interlayer water!?) 
+• Water content estimates with
+slightly larger difference
+between minimum an 
+maximum (opposite for
+relaxation time)
+
+--- Page 7 ---
+Weekly measurements in open niche -
+relationship with rel. humidity (apparent phase shift!?)
+7
+7
+9
+11
+13
+15
+60
+70
+80
+90
+100
+Apr. 21 Okt. 21 Apr. 22 Okt. 22 Apr. 23 Okt. 23 Mrz. 24 Sep. 24 Mrz. 25 Sep. 25
+NMR water content [vol %]
+5-day average of measured relative 
+humidity [%]
+Closed Twin RH_2 Open Twin RH_2 Gallery RH
+Open Twin WC - 4S Open Twin WC - 4E
+
+--- Page 8 ---
+Seasonal measurements in both niches -
+data until Feb 2025
+8
+
+--- Page 9 ---
+Seasonal measurements in both niches -
+data until Feb 2025
+9
+
+--- Page 10 ---
+Seasonal measurements in both niches -
+data until Feb 2025
+10
+
+--- Page 11 ---
+Seasonal measurements in both niches -
+data until Feb 2025
+11
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!?
+Increase of
+electromagnetic noise
+level in the niches
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!?
+
+--- Page 12 ---
+Seasonal measurements in both niches -
+data until Feb 2025
+12
+
+--- Page 13 ---
+Seasonal measurements in both niches -
+data until Feb 2025
+13
+
+--- Page 14 ---
+Seasonal measurements in both niches -
+data until Feb 2025
+14
+
+--- Page 15 ---
+Seasonal measurements in both niches -
+correlation with ERT 
+15
+
+--- Page 16 ---
+Seasonal measurements in both niches -
+correlation with ERT 
+16
+Only top and bottom
+
+--- Page 17 ---
+Seasonal measurements in both niches -
+correlation with ERT 
+17
+Only sidewalls
+
+--- Page 18 ---
+Outlook for 2026 (and rest of 2025)
+18
+• Comparison of NMR core scans of 2024 with borehole ERT and other petrophysical data
+
+--- Page 19 ---
+Outlook for 2026 (and rest of 2025)
+19
+• Further laboratory experiments are underway to help interpreting relaxation times:
+• Different well-defined clay mineral powders + grinded OPALINUS clay samples
+• Drying and wetting circles in a climate chamber => NMR at each moisture step
+• Most important question: Do we see the interlayer water in the Opalinus clay?
+
+--- Page 20 ---
+20
+Thank you
+for your attention!

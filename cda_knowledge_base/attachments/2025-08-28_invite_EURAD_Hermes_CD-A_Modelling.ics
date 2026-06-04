@@ -1,0 +1,68 @@
+BEGIN:VCALENDAR
+METHOD:REQUEST
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:W. Europe Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T030000
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=10
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T020000
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+RRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=-1SU;BYMONTH=3
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ORGANIZER;CN="Ziefle, Gesa":MAILTO:Gesa.Ziefle@bgr.de
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=michal.ber
+ es@ugn.cas.cz:MAILTO:michal.beres@ugn.cas.cz
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=Tomáš Lu
+ ber:MAILTO:tomas.luber@ugn.cas.cz
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN="Cajuhi, Tu
+ anny":MAILTO:Tuanny.Cajuhi@bgr.de
+ATTACH:CID:image003.jpg@01DC1800.77923750
+DESCRIPTION;LANGUAGE=de-DE:Hi Michal\, hi Tomas\, and hi Tuanny\,\n\nlet's 
+ begin with the invitation to our online meeting. I'll get back to you with
+  answers to your questions soon - I just need some time to prepare them. I
+ n any case\, I'm excited about our upcoming discussion.\n\nSee you and hav
+ e a nice day\,\nGesa\n\n\n\n\nDr.-Ing. Gesa Ziefle\nSub-department B3.5 
+ – Geotechnical Safety Analyses\n\nFederal Institute for Geosciences and 
+ Natural Resources\nStilleweg 2\n30655 Hannover\nGermany\n\nTel. +49 511 64
+ 3‑3560\ngesa.ziefle@bgr.de\nwww.bgr.bund.de/en<http://www.bgr.bund.de/en
+ >\n[cid:image003.jpg@01DC1800.77923750]<http://www.bgr.bund.de/en>\nInform
+ ation on the processing of your personal data can be found at\nwww.bgr.bun
+ d.de/datenschutzerklaerung_en<http://www.bgr.bund.de/datenschutzerklaerung
+ _en>.\n\n\n\n\n
+UID:040000008200E00074C5B7101A82E00800000000503792770018DC01000000000000000
+ 010000000278399447D8B5D4389C8736EC1B46D22
+SUMMARY;LANGUAGE=de-DE:EURAD Hermes CD-A Modelling
+DTSTART;TZID=W. Europe Standard Time:20250904T100000
+DTEND;TZID=W. Europe Standard Time:20250904T110000
+CLASS:PUBLIC
+PRIORITY:5
+DTSTAMP:20250828T074519Z
+TRANSP:OPAQUE
+STATUS:CONFIRMED
+SEQUENCE:0
+LOCATION;LANGUAGE=de-DE:https://bgr-bund.webex.com/meet/gesa.ziefle
+X-MICROSOFT-CDO-APPT-SEQUENCE:0
+X-MICROSOFT-CDO-OWNERAPPTID:1631356905
+X-MICROSOFT-CDO-BUSYSTATUS:TENTATIVE
+X-MICROSOFT-CDO-INTENDEDSTATUS:BUSY
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:1
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+BEGIN:VALARM
+DESCRIPTION:REMINDER
+TRIGGER;RELATED=START:-PT15M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR

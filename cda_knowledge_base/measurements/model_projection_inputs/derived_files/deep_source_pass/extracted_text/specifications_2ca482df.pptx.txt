@@ -1,0 +1,37 @@
+--- Slide 1 ---
+ts_0000: 18.09.2019
+ts_0001: 18.09.2019 + 10
+days
+=> End
+of
+September 2019
+ts_0003: ts_001 + 1
+month
+=> End
+of
+October
+2019
+ts_0005: ts_003 + 1
+month
+=> End
+of
+November 2019
+…
+
+--- Slide 2 ---
+Quick check at
+point
+ID 127:
+\Delta t = 1 d
+\Delta t = 10 d; 15.2187 d
+Quick convergence check at arbitrary point
+
+--- Slide 3 ---
+t0 = 18.09.2019
+\Delta t = 10 d (864000 s)
+\Delta t = 15.2187 d (1314900 s)
+(365.25 d / y / 12
+months
+= 30.4375 d / m; *0.5 = 2
+weeks
+)

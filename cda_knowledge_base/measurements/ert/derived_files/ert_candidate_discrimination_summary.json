@@ -1,0 +1,65 @@
+{
+  "activation_gate": "Use this only as cross-candidate diagnostic evidence. ERT remains outside the active likelihood until the ERT-to-OGS transform, exact support mask, and uncertainty/correlation model are accepted.",
+  "best_combined_ert_mae_log10": 0.2541796182834413,
+  "best_combined_objective": 3156.353066948979,
+  "best_combined_run": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "best_ert_mae_log10": 0.2540720919307705,
+  "best_ert_run": "broad_continuous_001_001_length_0p023m_shift_1p004",
+  "candidate_output_run_dirs_found": 66,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/ert/derived_files/ert_candidate_discrimination_audit.csv",
+      "source": "inversion_workflow/ert_candidate_discrimination_audit.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/ert/derived_files/ert_candidate_discrimination_timesteps.csv",
+      "source": "inversion_workflow/ert_candidate_discrimination_timesteps.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/ert/derived_files/ert_candidate_discrimination_summary.json",
+      "source": "inversion_workflow/ert_candidate_discrimination_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/ert/derived_files/ert_candidate_discrimination.md",
+      "source": "inversion_workflow/ert_candidate_discrimination.md"
+    }
+  ],
+  "combined_objective_ert_mae_correlation": 0.8894403368395667,
+  "compared_output_times_per_run": 80,
+  "compared_rows_per_run": 162800,
+  "ert_mae_log10_range": 0.019635573360798686,
+  "ert_mae_log10_summary": {
+    "max": 0.2737076652915692,
+    "mean": 0.25520004120252715,
+    "min": 0.2540720919307705,
+    "p10": 0.25417951238332787,
+    "p50": 0.25424557460905234,
+    "p90": 0.2551073332288309,
+    "std": 0.003405515564980301
+  },
+  "max_time_delta_days": 10.0,
+  "nmr_state_ert_mae_correlation": 0.9952774981448052,
+  "reference_ert_mae_log10": 0.2541801957739222,
+  "reference_run": "direct_fit_observation_run",
+  "run_count": 66,
+  "run_kind_counts": {
+    "adaptive_combined": 3,
+    "broad_continuous": 6,
+    "continuous_proposed": 3,
+    "direct_reference": 1,
+    "local_basis": 3,
+    "local_smooth": 5,
+    "lower_support": 9,
+    "optimizer_proposed": 3,
+    "production_sampler": 6,
+    "production_sampler_round": 24,
+    "regularized_ogs": 3
+  },
+  "runs_with_combined_objective": 66,
+  "runs_with_full_active_combined_objective": 66,
+  "status": "ert_candidate_discrimination_audit_generated_transform_support_unconfirmed",
+  "support_cell_rows": 2035,
+  "support_column": "ready_for_residual_after_ogs_output",
+  "worst_ert_mae_log10": 0.2737076652915692,
+  "worst_ert_run": "adaptive_combined_003_length_0p075m"
+}

@@ -1,0 +1,63 @@
+{
+  "activation_gate": "Use this only as cross-candidate diagnostic evidence. Taupe/TDR remains outside the active likelihood until workbook units, sensor calibration, trend uncertainty, and grouped weights are confirmed.",
+  "best_combined_objective": 3156.353066948979,
+  "best_combined_run": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "best_combined_taupe_mae": 1.863211058631399,
+  "best_taupe_mae": 1.829884354078035,
+  "best_taupe_run": "adaptive_combined_001_length_0p050m",
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/taupe_tdr/derived_files/taupe_candidate_discrimination_audit.csv",
+      "source": "inversion_workflow/taupe_candidate_discrimination_audit.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/taupe_tdr/derived_files/taupe_candidate_discrimination_series.csv",
+      "source": "inversion_workflow/taupe_candidate_discrimination_series.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/taupe_tdr/derived_files/taupe_candidate_discrimination_summary.json",
+      "source": "inversion_workflow/taupe_candidate_discrimination_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/taupe_tdr/derived_files/taupe_candidate_discrimination.md",
+      "source": "inversion_workflow/taupe_candidate_discrimination.md"
+    }
+  ],
+  "combined_objective_taupe_mae_correlation": -0.5378399484887728,
+  "compared_rows_per_run": 1860,
+  "compared_series_per_run": 12,
+  "nmr_state_taupe_mae_correlation": -0.6358629565277194,
+  "reference_run": "direct_fit_observation_run",
+  "reference_taupe_mae": 1.8632108603748925,
+  "run_count": 74,
+  "run_kind_counts": {
+    "adaptive_combined": 3,
+    "broad_continuous": 6,
+    "candidate_driver": 3,
+    "continuous_proposed": 3,
+    "direct_reference": 1,
+    "local_basis": 3,
+    "local_smooth": 5,
+    "lower_support": 9,
+    "optimizer_proposed": 3,
+    "other": 5,
+    "production_sampler": 6,
+    "production_sampler_round": 24,
+    "regularized_ogs": 3
+  },
+  "runs_with_combined_objective": 74,
+  "runs_with_full_active_combined_objective": 66,
+  "status": "taupe_candidate_discrimination_audit_generated_not_active_likelihood",
+  "taupe_mae_range": 0.03687076560014302,
+  "taupe_mae_summary": {
+    "max": 1.866755119678178,
+    "mean": 1.8609358827843565,
+    "min": 1.829884354078035,
+    "p10": 1.8515692845483125,
+    "p50": 1.8632559928691155,
+    "p90": 1.8652365605361916,
+    "std": 0.007701921602856694
+  },
+  "worst_taupe_mae": 1.866755119678178,
+  "worst_taupe_run": "optimizer_proposed_002_length_0p019m_shift_0p875"
+}

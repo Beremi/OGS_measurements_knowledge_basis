@@ -1,0 +1,34 @@
+<process>
+<name>TRM</name>
+<type>THERMO_RICHARDS_MECHANICS</type>
+<integration_order>4</integration_order>
+<!-- <dimension>2</dimension> -->
+<!-- Gestein -->
+<constitutive_relation id="0">
+<type>LinearElasticOrthotropic</type>
+<youngs_moduli>E</youngs_moduli>
+<shear_moduli>G</shear_moduli>
+<poissons_ratios>nu</poissons_ratios>
+</constitutive_relation>
+<!-- offene Nische -->
+<constitutive_relation id="1">
+<type>LinearElasticOrthotropic</type>
+<youngs_moduli>E</youngs_moduli>
+<shear_moduli>G</shear_moduli>
+<poissons_ratios>nu</poissons_ratios>
+</constitutive_relation>
+<specific_body_force>0 0</specific_body_force> <!-- body force -->
+<process_variables>
+<displacement>displacement</displacement>
+<pressure>pressure</pressure>
+<temperature>temperature</temperature>
+</process_variables>
+<secondary_variables>
+<secondary_variable internal_name="velocity" output_name="velocity" />
+<secondary_variable internal_name="saturation" output_name="saturation" />
+<secondary_variable internal_name="sigma" output_name="sigma" />
+<secondary_variable internal_name="epsilon" output_name="epsilon" />
+<secondary_variable internal_name="swelling_stress" output_name="swelling_stress" />
+</secondary_variables>
+<!--initial_stress>ic_sigma0</initial_stress-->
+</process>

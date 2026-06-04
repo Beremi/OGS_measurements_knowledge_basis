@@ -1,0 +1,26 @@
+# NMR Water Content Data Content Summary
+
+Generated: 2026-06-01.
+
+This file is the deep content pass over the copied measurement material: workbooks, raw tables, extracted ZIP members, presentation/PDF text extracts, and archive indexes.
+Use it together with `MEASUREMENT_INFO.md` in the measurement-info mirror and with the raw files in `source_files/`.
+
+## Mined Findings
+
+| Category | Item | Data content mined | Source files | Note |
+| --- | --- | --- | --- | --- |
+| catalogue scope | copied source files | 54 files; total copied source bytes 26506257; file kinds fig=11, pdf=3, png=13, text/data=24, xlsx=1, zip=2 |  | Counts are from cda_knowledge_base/measurements/deep_source_index.csv. |
+| weekly NMR table | 2025-09-15_Weekly_2021-2022_at_4S.dat | 21 records; 2021-10-12 23:10:20 to 2022-03-20 00:00:34; water content n=21, min=9.8973 %, mean=12.0038 %, max=13.1692 %; 95% CI n=21, min=0.3565 %, mean=0.4489 %, max=0.6066 %; T2 n=21, min=0.4786 ms, mean=0.5629 ms, max=0.6224 ms | [2025-09-15_Weekly_2021-2022_at_4S.dat](source_files/2025-09-15_Weekly_2021-2022_at_4S.dat) | Columns are Date, volumetric water content, water-content 95% confidence interval, T2, and T2 95% confidence interval. |
+| weekly NMR table | 2025-09-15_Weekly_2022-2025_at_4E.dat | 149 records; 2021-10-06 09:35:30 to 2025-09-09 11:24:25; water content n=149, min=8.5093 %, mean=10.5922 %, max=12.229 %; 95% CI n=149, min=0.3282 %, mean=0.5167 %, max=1.5217 %; T2 n=149, min=0.47 ms, mean=0.5634 ms, max=0.6674 ms | [2025-09-15_Weekly_2022-2025_at_4E.dat](source_files/2025-09-15_Weekly_2022-2025_at_4E.dat) | Columns are Date, volumetric water content, water-content 95% confidence interval, T2, and T2 95% confidence interval. |
+| seasonal NMR archive data tables | seasonal_nmr/saisonally/data_table_ascii | 22 campaign tables; 22 niche-campaign files; positions 3A, 3AB1, 3AB2, 3B, 3C, 3D, 3E, 3F, 3G, 3H, 3I, 3J, 3K, 3L, 3M, 3N, 4A, 4B, 4C, 4D, 4E, 4F, 4G, 4H, 4I, 4J, 4K, 4L, 4M, 4N, 4O, 4P, 4Q, 4R, 4S; water content n=294, min=2.7661 %, mean=12.5753 %, max=22.8096 %; 95% CI n=294, min=0.2849 %, mean=1.542 %, max=11.9794 %; Niche 3: 11 campaigns (2019-10-24 to 2025-02-13); Niche 4: 11 campaigns (2019-10-23 to 2025-02-12) | [Niche3_Y_2019_M_10_D_24.dat](source_files/seasonal_nmr/saisonally/data_table_ascii/Niche3_Y_2019_M_10_D_24.dat), [Niche3_Y_2020_M_03_D_03.dat](source_files/seasonal_nmr/saisonally/data_table_ascii/Niche3_Y_2020_M_03_D_03.dat), [Niche3_Y_2020_M_09_D_17.dat](source_files/seasonal_nmr/saisonally/data_table_ascii/Niche3_Y_2020_M_09_D_17.dat), [Niche3_Y_2021_M_03_D_19.dat](source_files/seasonal_nmr/saisonally/data_table_ascii/Niche3_Y_2021_M_03_D_19.dat) | These .dat files were extracted from the Thunderbird-recovered saisonally.zip archive and are copied under source_files. |
+| archive members | NMR-related extracted archive members | .dat=22, .fig=11, .png=11 |  | The member catalogue records the original ZIP provenance for each extracted NMR seasonal table and figure. |
+| coordinate workbook | Coordinates_NMR_Taupe_characborehole.xlsx / Tabelle1 | 39 x 8 sheet; 255 non-empty cells; numeric ranges: C2: n=35, min=2.579e+06, max=2.579e+06; C3: n=35, min=1.247e+06, max=1.247e+06; C4: n=35, min=507.711, max=514.328; C6: n=35, min=-10.2324, max=13.0348; C7: n=35, min=5.77969, max=11.6326; C8: n=35, min=-4.22899, max=2.38801 | [Coordinates_NMR_Taupe_characborehole.xlsx](source_files/Coordinates_NMR_Taupe_characborehole.xlsx) | This workbook locates NMR/Taupe/characterization borehole labels in original and BGR model coordinates. |
+| document/presentation extract | 2025-09-05_NMR2025.pdf | type pdf; pages/slides 20; keywords ERT; NMR; humidity; water content; CD-A; niche; extract cda_knowledge_base/measurements/nmr/derived_files/deep_source_pass/extracted_text/2025-09-05_NMR2025_2e8f85ac.pdf.txt | [2025-09-05_NMR2025.pdf](source_files/2025-09-05_NMR2025.pdf) | Generated text extracts make these documents searchable without opening the PDF/PPTX manually. |
+| document/presentation extract | CD-A_Slides_TD_260427x.pdf | type pdf; pages/slides 34; keywords ERT; NMR; Taupe; suction; humidity; relative humidity; permeability; water content; saturation; pressure; piezometer; extensometer; crackmeter; laser; levelling; OGS; HERMES; CD-A; niche; extract cda_knowledge_base/measurements/nmr/derived_files/deep_source_pass/extracted_text/CD-A_Slides_TD_260427x_cf33c334.pdf.txt | [CD-A_Slides_TD_260427x.pdf](source_files/CD-A_Slides_TD_260427x.pdf) | Generated text extracts make these documents searchable without opening the PDF/PPTX manually. |
+| document/presentation extract | NMR2026.pdf | type pdf; pages/slides 29; keywords ERT; NMR; humidity; CD-A; niche; extract cda_knowledge_base/measurements/nmr/derived_files/deep_source_pass/extracted_text/NMR2026_22aad1f8.pdf.txt | [NMR2026.pdf](source_files/NMR2026.pdf) | Generated text extracts make these documents searchable without opening the PDF/PPTX manually. |
+
+## Navigation
+
+- Source files: [source_files/](source_files)
+- Generated deep source pass: [source_file_deep_summary.md](derived_files/deep_source_pass/source_file_deep_summary.md)
+- Machine-readable facts: [content_summary.csv](derived_files/content_deep_dive/content_summary.csv)

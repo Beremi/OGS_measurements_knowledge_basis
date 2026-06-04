@@ -1,0 +1,25 @@
+{
+  "interval_length_m": 0.1,
+  "mapped_positive_targets": 102,
+  "missing_geometry_audit_rows": 5,
+  "missing_segment_geometry": 98,
+  "missing_segment_geometry_with_orientation_evidence": 98,
+  "not_usable_missing_or_nonpositive_permeability": 4,
+  "notes": [
+    "These targets are initial observation-operator inputs, not calibrated likelihoods.",
+    "The scalar gas pulse-test value is not treated as a tensor component.",
+    "Cell weights are derived from 0.1 m along-borehole samples selected inside the nominal interval window.",
+    "Older BCD-A24/25/26/27 and BFM-D19 rows retain source-backed orientation evidence, but remain excluded until labelled endpoint geometry is available."
+  ],
+  "processed_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations",
+  "segment_geometry_rows": 8,
+  "target_cell_rows": 102,
+  "target_rows": 204,
+  "target_status": {
+    "mapped_inside_mesh": 75,
+    "mapped_outside_mesh": 27,
+    "missing_segment_geometry": 98,
+    "not_usable_missing_or_nonpositive_permeability": 4
+  },
+  "usable_for_current_ogs_fit": 75
+}

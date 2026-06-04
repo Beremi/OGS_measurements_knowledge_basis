@@ -1,0 +1,1956 @@
+\section{Available measurements and how they can enter the frozen OGS model}
+\label{sec:measurements}
+
+This section is based on the measurement catalogue in
+\path{../cda_knowledge_base/measurements}.  The purpose is not to change the
+provided OGS model, but to define defensible observation and parameter mappings for
+inversion.  In the current XML the unknowns solved by OGS are liquid pressure
+\(\pp\), temperature \(\TT\), and displacement \(\uu\).  The secondary fields exported by
+the TRM process include velocity, saturation, stress, strain, and swelling stress.
+Measurements must therefore enter through one of three routes:
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item \textbf{State observation:} compare a measurement-derived quantity with an OGS
+  output field after an observation operator, e.g. \(S_\ell\mapsto\theta\mapsto\rho\)
+  for ERT.
+  \item \textbf{Boundary-condition reconstruction:} convert atmospheric or niche
+  measurements, especially RH, into liquid-pressure boundary curves.
+  \item \textbf{Parameter-field inference:} infer a heterogeneous and anisotropic
+  intrinsic permeability tensor \(\kperm(\bm x)\), and possibly porosity or retention
+  parameters, then regenerate the XML/mesh parameter input for each inversion sample.
+\end{enumerate}
+
+The strongest first target is the intrinsic permeability tensor.  The current model
+uses the constant diagonal parameter
+\[
+\texttt{k\_i}=\begin{pmatrix}1.00\times10^{-19}&0\\0&0.40\times10^{-19}\end{pmatrix}
+\,\mathrm{m^2}.
+\]
+For the inversion this should be interpreted as a reference tensor only.  A practical
+field parameterisation is
+\[
+\kperm(\bm x)=
+\mathbf R(\theta)^\top
+\begin{pmatrix}
+k_\parallel(\bm x)&0\\
+0&k_\perp(\bm x)
+\end{pmatrix}
+\mathbf R(\theta),
+\qquad
+k_\parallel(\bm x)=r(\bm x)k_\perp(\bm x),
+\]
+with bedding-related orientation \(\theta\).  The measurement chapter below explains
+which data constrain this tensor directly and which constrain it only indirectly
+through saturation, pressure, or water-content dynamics.
+
+\subsection{Measurement inventory by model relevance}
+
+The collected measurement catalogue is outside this report folder at
+\path{../cda_knowledge_base/measurements/}.  Table paths are relative to that
+catalogue root.  A machine-checkable version of the same inventory is kept in
+\path{inversion_workflow/observation_manifest.json}; its validator currently checks
+28 local file/table/mesh conditions across the nine observation groups with zero
+failures.  A second, model-facing layer is kept in
+\path{inversion_workflow/processed_observations/}.  It contains normalized CSV tables
+generated from the collected workbooks and ZIP archives by
+\path{inversion_workflow/scripts/build_processed_observations.py}; every row keeps
+source-file and sheet/member provenance so values can be traced back to the raw
+emails or TeamBeam transfers.
+
+\begin{longtable}{P{2.7cm} P{5.0cm} P{3.7cm} P{5.0cm}}
+\caption{Measurement folders, physical quantity, and intended model-entry route.}
+\label{tab:measurement-entry}\\
+\toprule
+\textbf{Measurement} & \textbf{Files copied in the catalogue} & \textbf{Physical quantity} & \textbf{Model-entry route}\\
+\midrule
+\endfirsthead
+\caption[]{Measurement folders, physical quantity, and intended model-entry route (continued).}\\
+\toprule
+\textbf{Measurement} & \textbf{Files copied in the catalogue} & \textbf{Physical quantity} & \textbf{Model-entry route}\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+ERT &
+\path{ert/source_files}: open-niche VTK ZIP, raw \texttt{tx0/ohm},
+electrode positions, resistivity--water-content sheet/PDF, ERT slides. &
+Electrical resistivity or resistivity change; water content only after empirical
+conversion. &
+Observation operator from OGS saturation/water content to resistivity, preferably on
+the ERT inversion mesh or a projected common mesh.\\
+
+NMR &
+\path{nmr/source_files}: weekly \texttt{.dat} files, seasonal NMR ZIP
+and extracted files, figures, NMR 2025/2026 presentations, coordinates. &
+Hydrogen/NMR-derived volumetric water content and relaxation-time information at
+sparse positions. &
+Point/line observation of water content after deciding whether the target is total
+water, mobile water, or a corrected free-water content.\\
+
+Permeability pulse tests &
+\path{permeability_pulse_tests/source_files}: 2021/2024/2025
+workbooks and characterization papers. &
+Interval-scale hydraulic/gas-test permeability or transmissibility around borehole
+sections. &
+Direct constraint on effective directional components or averages of
+\(\kperm(\bm x)\); not a direct cell-wise tensor value.\\
+
+Taupe/TDR &
+\path{taupe_tdr/source_files}: \texttt{Taupe\_WC.xlsx}, coordinates,
+borehole figures, ISU/TD slides. &
+Apparent relative dielectric permittivity / TDR water-content proxy in EDZ distance
+bands. &
+Baseline-normalized saturation/water-content trend diagnostic; absolute residuals
+require confirmed Taupe unit/calibration.\\
+
+Suction/RH &
+\path{suction_relative_humidity/source_files}: \texttt{OT\_RH5--8.xlsx},
+location figure, annual report, TD slides/minutes. &
+Relative humidity and suction/water potential in boreholes and niches. &
+Boundary-condition reconstruction through Kelvin-equation liquid pressure, and
+validation of desaturation state through the retention curve.\\
+
+Coord./layout &
+\path{coordinates_geometry_layout/source_files}: measurement
+coordinate workbooks, figures, Tecplot layout. &
+Measurement locations, borehole labels, and model coordinates. &
+Mandatory geometric mapping for all observation operators.\\
+
+Projection inputs &
+\path{model_projection_inputs/source_files}: projection script, projected VTU mesh,
+project/XML variant, 2D model archives, timestep notes. &
+Mesh and OGS-input workflow material, not a physical measurement. &
+Concrete bridge for mesh-based parameter fields and for aligning measurement outputs
+with OGS timesteps.\\
+
+Bedding/geology &
+\path{bedding_geology_structure/source_files}: bedding image, bedding
+page, characterization papers. &
+Bedding and fault/structure orientation, not a state variable. &
+Orientation prior for anisotropic \(\kperm\); structural explanation for local ERT
+and pulse-test anomalies.\\
+
+Other HM monitoring &
+\path{other_hm_monitoring/source_files}: TD minutes, modelling slides,
+levelling slides, HERMES input note, Tecplot layout. &
+Extensometer, mini-piezometer, crackmeter, laser scan, levelling, RH/T context. &
+Structured layout, levelling summary, and qualitative pressure/deformation validation;
+Geoscope and laser-scan raw exports still missing for hard residuals.\\
+\end{longtable}
+
+\subsection{Source-file content pass and traceability}
+
+The catalogue has also been checked by a second pass through the copied files
+themselves, not only through the email summaries.  The generated index
+\path{../cda_knowledge_base/measurements/measurement_content_deep_dive.md} contains
+101 mined fact rows across the nine measurement folders, and each measurement folder
+has a local \path{DATA_CONTENT_SUMMARY.md} plus
+\path{derived_files/content_deep_dive/content_summary.csv}.  The mirrored navigation
+copy is under \path{../cda_knowledge_base/measurements_info}.  This pass mines the
+workbook sheets, raw \texttt{.dat}/\texttt{.ohm}/\texttt{.tx0} files, ZIP member
+catalogues, and generated PDF/PPTX text extracts.  Table~\ref{tab:source-content-pass}
+records the main data facts that should be treated as the report-level source
+checklist.
+
+\begin{longtable}{P{2.7cm} P{6.1cm} P{6.6cm}}
+\caption{Second-pass mined source-file facts used as a report traceability checklist.}
+\label{tab:source-content-pass}\\
+\toprule
+\textbf{Folder} & \textbf{Concrete copied data content} & \textbf{Modelling implication}\\
+\midrule
+\endfirsthead
+\caption[]{Second-pass mined source-file facts used as a report traceability checklist (continued).}\\
+\toprule
+\textbf{Folder} & \textbf{Concrete copied data content} & \textbf{Modelling implication}\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+
+ERT &
+15 copied source files; the TeamBeam ERT ZIP has 1,736 indexed members
+(1,675 \texttt{.vtk} fields and 61 timestep/list files) in dated folders from
+November 2019 to December 2024.  The Thunderbird raw example has a 6,128-line
+\texttt{tx0} file, 2,656-line open \texttt{ohm} file, 2,524-line closed
+\texttt{ohm} file, and 72-electrode open/closed text files. &
+ERT can be audited down to raw inversion and electrode files, but it remains an
+indirect log-resistivity state observation.  The ZIP is intentionally retained
+compressed while every member is indexed.\\
+
+NMR &
+54 copied source/data files.  The weekly 4S table has 21 rows from
+2021-10-12 to 2022-03-20 with water content 9.897--13.169 vol.\% and mean
+12.004 vol.\%.  The weekly 4E table has 149 rows from 2021-10-06 to
+2025-09-09 with water content 8.509--12.229 vol.\% and mean 10.592 vol.\%.
+The seasonal archive contributes 22 campaign tables and 294 position rows across
+Niches 3 and 4, with water content 2.766--22.810 vol.\%. &
+NMR is the strongest local water-content evidence, but the source pass also makes
+the bound/interlayer-water problem visible: these values are total NMR water-content
+observations and cannot be equated mechanically to \(nS_\ell\).\\
+
+Permeability pulse tests &
+6 copied source files, including two permeability workbooks.  The workbook pass
+indexes chart sheets, interpreted 2021/2024 sheets, and raw pressure-decay sheets
+with thousands of non-empty cells; the processed observation layer extracts
+204 interpreted interval rows and 6,687 pressure-decay rows. &
+This is the direct parameter-observation stream for \(\kperm\), but the gas pulse
+tests are scalar finite-interval observations with uncertainty, not cell-wise tensor
+components and not liquid relative permeability.\\
+
+Taupe/TDR &
+10 copied source files.  \path{Taupe_WC.xlsx} has sheets A3, A4, A7, and A8,
+each with 212 dated rows from 2019-12-01 to 2025-10-10 and EDZ-band columns.
+The sheet values span approximately 9.87--11.00 in the copied workbook units over
+the four sheets. &
+Taupe/TDR has enough local table structure for trend diagnostics by sensor and EDZ
+band, but the absolute unit/calibration gate remains open; the report should not
+present these values as calibrated saturation.\\
+
+Suction/RH &
+10 copied source files.  The OT\_RH5--8 workbooks contain daily two-column RH
+time series: RH5 has 1,042 data rows (94.081--95.993\%), RH6 has 1,064 rows
+(93.323--94.988\%), RH7 has 1,071 rows (13.188--97.272\%), and RH8 has
+1,070 rows (13.203--96.219\%). &
+RH5/RH6 are the cleanest copied open-twin RH streams.  RH7/RH8 low values are
+explicit source-level outliers or failure candidates, so RH-derived pressure
+boundaries must include sensor screening and provenance.\\
+
+Coord./layout &
+8 copied source files.  The September coordinate workbook has 109 rows and 10
+columns; the November coordinate workbook has 39 rows and 8 columns.  Both are
+indexed with numeric coordinate ranges and linked to the copied figures and
+\path{VisualisationCDA.dat}. &
+All point, line, interval, and borehole observations must pass through this
+geometry layer before they are compared with the current Niche-4 OGS mesh.\\
+
+Bedding/geology &
+4 copied source files, including the bedding image, bedding-page PDF, and local
+characterisation-paper copies. &
+These files provide the structural prior for permeability anisotropy and local
+fault/EDZ interpretation, not a direct residual.\\
+
+Other HM monitoring &
+12 copied source files.  The content pass indexes five PDFs, three PPTX decks,
+the Tecplot-style \path{VisualisationCDA.dat}, and response-note placeholders for
+missing numeric exports and uncertainty information. &
+The current report can use these files for qualitative HM context and levelling
+summary evidence, but hard Geoscope, laser-scan, crackmeter, and related residuals
+still require numeric exports and uncertainty definitions.\\
+
+Projection inputs &
+87 copied source files, including four ZIP archives, 57 XML files, 15 VTU files,
+the projection script, project files, timestep slides, and the extracted report ZIP.
+The source pass confirms the projection workflow references
+\path{generate_projections.py}, \path{specifications.pptx}, and
+\path{cd_a_open_niche_quad.prj}. &
+This folder is the implementation bridge from measurements to OGS: it defines the
+mesh fields, projection support, timestep convention, and exchanged model versions
+without changing the frozen source model equations.\\
+\end{longtable}
+
+\subsection{ERT: resistivity, water content, and saturation}
+
+The ERT archive contains a long open-niche time series: 1,736 files, including
+1,675 VTK files and 61 monthly/timestep lists from November 2019 to December 2024.
+The processed tables \path{ert_archive_inventory.csv} and \path{ert_timesteps.csv}
+catalogue those ZIP members without unpacking the full archive.  They list 1,691
+timestep-list entries and explicitly flag 16 entries without a matching VTK member,
+so an observation operator should not assume a one-to-one date--VTK map without this
+check.  The companion processed files \path{ert_nmr_resistivity_pairs.csv} and
+\path{ert_kruschwitz2004_relation.csv} normalize the local water-content/resistivity
+calibration workbook.
+The raw ERT example recovered from Thunderbird contains one \texttt{tx0} file with
+both niches and separate \texttt{ohm} inversion input files for the open and closed
+niches.  Gesa's accompanying note states that the raw \texttt{tx0} file contains
+open-niche measurements \#1--\#2592 and closed-niche measurements \#2593--\#5184.
+
+ERT does not measure water content or saturation directly.  It measures an electrical
+response that is inverted to apparent/effective resistivity.  Ziefle et al. use the
+CD-A NMR/ERT crossplot to establish an empirical relation between electrical
+resistivity and volumetric water content; the paper writes an Archie-type relation
+\(\rho=c\rho_{\rm fluid}\theta^{-m}\) and then uses the fitted relationship for
+comparison with simulated water content \cite[p.~4453, Eq.~4 and p.~4457,
+Sect.~5.1]{WaterContentEDZ2024}.  This is consistent with Archie's original use of
+formation factor and saturation-resistivity relations in clean porous media
+\cite[pp.~54--58]{Archie1942}.  However, CD-A is claystone, not clean
+sandstone: clay-bearing systems can carry current both through the pore fluid and
+along mineral--water surfaces, with cation-exchange/surface-conductivity terms and
+saturation transforms entering the conductivity model
+\cite[pp.~23925--23927 and p.~23930, Eq.~17]{Revil1998ShalySands}.  The CD-A ERT
+calibration must therefore remain local and empirical rather than a universal
+saturation transform.
+
+For modelling, the correct direction is:
+\[
+S_\ell^{\rm OGS}(\bm x,t)
+\quad\rightarrow\quad
+\theta_{\rm model}(\bm x,t)=n\,S_\ell(\bm x,t)
+\quad\rightarrow\quad
+\rho_{\rm pred}(\bm x,t)
+\quad\rightarrow\quad
+\mathcal O_{\rm ERT}[\rho_{\rm pred}],
+\]
+where \(\mathcal O_{\rm ERT}\) includes projection/interpolation to the ERT mesh and any
+depth/ring averaging.  The inverse direction, converting ERT to ``measured
+saturation'', is useful for plots but should not be treated as raw truth because
+fractures, bedding-parallel conductive paths, electrode geometry, inversion smoothing,
+and the different ERT/OGS meshes all enter the observation.  The September 2025
+slides explicitly list these as open inverse-problem questions, especially filtering
+unstable points and handling the mismatch between the ERT computational domain and
+the OGS domain \cite[PDF pp.~3, 16--17]{CDAModellingSlides2025}.
+
+The workflow now makes the calibration part of \(\mathcal O_{\rm ERT}\) explicit in
+\path{inversion_workflow/scripts/build_ert_observation_operator.py}.  The script fits
+the paired NMR/resistivity rows and the smooth workbook relation columns and writes
+\path{ert_water_content_resistivity_operator.csv}.  The current default first-test
+relation is the workbook \path{model_data2019} curve,
+\[
+\rho_{\Omega{\rm m}} = 1.108\,\theta^{-1.58},
+\qquad \theta=nS_\ell ,
+\]
+over the calibrated water-content range \(0.01\le\theta\le0.18\).  The direct Niche-4
+paired NMR/resistivity fit is retained as a diagnostic, but its scatter is larger
+(0.202 log10 resistivity units), so it should not be mistaken for a completed ERT
+forward model.
+
+The spatial part of the ERT operator is now represented separately by
+\path{build_ert_spatial_projection_lookup.py}.  It reads a reference ERT VTK from
+\path{ERT_meas_Niche_open.zip}, records the raw ERT inversion mesh
+(\(3{,}126\) points and \(5{,}966\) triangular cells), applies the explicit provisional
+transform
+\[
+x_{\rm model}=x_{\rm ERT}, \qquad y_{\rm model}=z_{\rm ERT}+500\,{\rm m},
+\]
+and maps ERT cell centroids to the OGS bulk mesh.  The generated
+\path{ert_spatial_projection_lookup.csv} has 4,676 ERT cells inside an OGS cell and
+2,035 cells that are also inside the approximate 1.5 m central support mask noted in
+the local slides \cite[PDF pp.~16--18]{CDAModellingSlides2025}.  This turns the ERT
+mesh mismatch into a reproducible lookup instead of an undocumented manual step.
+However, the transform and the exact ``35 cm in rock'' near-niche support mask still
+need confirmation against the agreed ERT/FEM coordinate convention before ERT
+log-resistivity residuals are activated.
+The generated ERT semantics audit
+\path{inversion_workflow/processed_observations/ert_measurement_semantics.md}
+records the same gates in row-level form.  It keeps 1,691 ERT timestep rows, of
+which 1,675 have matching VTK members and 16 are blocked by missing VTK files.  The
+reference projection lookup has 5,966 ERT cells; 4,676 are inside an OGS cell,
+2,194 are inside the approximate 1.5 m support screen, and 2,035 satisfy both
+conditions.  These 2,035 rows are the current provisional ERT support under the
+explicit transform/support assumptions.  The audit also records the recommended
+residual as \(\log_{10}\rho_{\rm pred}-\log_{10}\rho_{\rm ERT}\) and explicitly
+excludes use of ERT as measured saturation, measured water content, or measured
+permeability.
+
+The run-local diagnostic
+\path{inversion_workflow/runs/direct_fit_observation_run/ert_resistivity_diagnostic.md}
+now performs that comparison for the direct reference run.  It samples
+\(\theta=nS_\ell\) from the OGS outputs on the 2,035 provisional ERT-support cells,
+converts the sampled water content with the default Kruschwitz relation, and compares
+the prediction with the nearest ERT inversion field within a 10-day tolerance.  The
+diagnostic compares 162,800 cell-time rows across 80 OGS output times; 3 output times
+are outside the time tolerance.  Its area-weighted residual
+\(\log_{10}\rho_{\rm pred}-\log_{10}\rho_{\rm ERT}\) has MAE 0.254 and RMSE 0.300.
+This closes the local OGS-output sampling step, but it is still a diagnostic rather
+than a likelihood term because the coordinate transform, exact near-niche support
+mask, and ERT inversion uncertainty/correlation model are not yet accepted.
+
+The cross-run audit \path{build_ert_candidate_discrimination_audit.py} then applies
+the same compact diagnostic to 66 executed OGS runs with output fields.  Each run
+compares 162,800 ERT cell-time rows over 80 output times.  Across the current
+candidate family the area-weighted ERT MAE spans 0.019635573360798686 log10 units.
+The ERT-only best run is
+\path{broad_continuous_001_001_length_0p023m_shift_1p004}, with MAE
+0.25407209193077057; the best active-objective run is
+\path{local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000}, with ERT MAE
+0.2541796182834413.  The combined-objective/ERT-MAE correlation is
+0.8894403368395667, so candidates that fit the current active permeability+NMR
+objective better generally do not improve the provisional ERT residual.  This is
+candidate-screening evidence only; it does not remove the transform, support-mask, or
+ERT uncertainty gates.
+
+The support-mask part of that gate is now quantified locally by
+\path{build_ert_support_sensitivity_audit.py}.  The audit reuses the row-level ERT
+diagnostic on six representative executed runs and restricts the current provisional
+1.5 m support to tighter radial caps and inner/outer annuli.  It evaluates nine
+support variants.  The ERT-only run
+\path{broad_continuous_001_001_length_0p023m_shift_1p004} remains the best mean
+support-rank candidate, with mean rank 1.67 and worst rank 4.0, but the tightest or
+outer support subsets can swap the winner to
+\path{local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000}.  This strengthens the
+diagnostic record because support sensitivity is now explicit; it still does not
+authorize ERT likelihood weights until the agreed tunnel-contour support and
+uncertainty/correlation model are fixed.
+
+ERT constrains permeability indirectly: permeability changes the simulated
+desaturation/resaturation dynamics, which then affects predicted resistivity.  The
+ERT data are therefore valuable for heterogeneous \(\kperm(\bm x)\), but only through a
+forward observation model; they are not a direct permeability measurement.
+
+\subsection{NMR: total water signal versus OGS liquid saturation}
+
+The NMR folder contains two weekly monitoring tables and a seasonal campaign archive.
+The weekly 4S table has 21 rows from October 2021 to March 2022; the weekly 4E table
+has 149 rows from October 2021 to September 2025.  The values are reported as
+volumetric water content with confidence information and relaxation-time columns.  The
+seasonal ZIP contains 22 \texttt{.dat} data files and 22 figures, covering Niche 3 and
+Niche 4 campaigns between 2019 and 2025.  The processed tables
+\path{nmr_weekly.csv} and \path{nmr_seasonal_profiles.csv} combine these into 170
+weekly rows and 294 seasonal campaign-position rows.  The weekly table flags the
+February--April 2025 4E detuning caveat directly in the row-level \path{caveat}
+column.
+
+The CD-A paper treats NMR as the more direct water-content measurement used to anchor
+the ERT interpretation; Fig.~6 shows the volumetric water content measured by
+single-sided NMR at repeated surface positions, and Fig.~7 uses the NMR/ERT crossplot
+for the empirical resistivity-water-content conversion
+\cite[pp.~4451--4453]{WaterContentEDZ2024}.  That does not automatically mean that
+NMR equals OGS saturation.  NMR observes hydrogen-bearing water with relaxation
+behaviour controlled by pore geometry, surface relaxation, and clay effects.  The CD-A
+NMR 2026 presentation in the local archive specifically flags interlayer/bound water
+as a live interpretation issue; general NMR petrophysics literature also treats clay
+effects and T2 distributions as a key limitation when connecting NMR to capillary
+pressure and producible/mobile water
+\cite[PDF pp.~23--24]{NMR2026Local}\cite[pp.~761--763]{Kleinberg1996NMR}.
+An open-access dual-scale NMR modelling study makes the same point from the forward
+modelling side: T2 distributions are used to infer pore size and permeability, but
+their response is affected by internal magnetic-field gradients and unresolved clay
+micro-porosity, so clay-rich regions require either explicit microstructure or
+effective parameters rather than a direct saturation reading
+\cite[pp.~453--455]{Cui2022DualScaleNMR}.
+
+The defensible modelling map is therefore:
+\[
+\theta_{\rm NMR}^{\rm obs}
+=\theta_{\rm mobile}+\theta_{\rm bound/interlayer}+\epsilon_{\rm NMR},
+\qquad
+\theta_{\rm mobile}^{\rm model}\approx nS_\ell .
+\]
+The generated bound-water sensitivity audit in
+\path{inversion_workflow/processed_observations/nmr_bound_water_sensitivity.md}
+quantifies how large this caveat is for the current model.  With fixed
+\(n=0.105\), 315 of 464 NMR target rows exceed the maximum possible
+model-side \(\theta=nS_\ell\) if interpreted as mobile water without correction.
+Within the currently usable Niche-4 mapped subset, 162 of 287 rows exceed \(n\).
+The required positive bound-water/free-water offset for usable rows has
+p95 \(=0.0402\) and maximum \(=0.1231\); a tested uniform subtraction of 0.05
+maximizes the simple physical-row count but still leaves seven non-physical usable
+rows.  This means a single global subtraction is not a clean correction.
+
+The cross-run NMR candidate bias audit
+\path{build_nmr_candidate_bias_sensitivity_audit.py} tests the ranking consequence of
+that caveat across 66 executed OGS runs with 192 active NMR rows each.  Under the
+current raw absolute-\(\theta\) objective, the best run is
+\path{local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000}, with combined
+objective 3156.353066948979.  If each NMR label is allowed a non-negative constant
+bound/interlayer-water bias, or if only within-label anomalies are compared so that
+constant offsets cancel, the best diagnostic run becomes
+\path{broad_continuous_001_003_length_0p021m}, with diagnostic combined objective
+505.614305828437.  The rank correlation between the current raw objective and the
+per-label-bias diagnostic is 0.6351529067946979.  Therefore the present permeability
+ranking is conditional on the unresolved NMR free-water interpretation, not a final
+NMR-robust inversion result.
+
+The provisional NMR objective decision in
+\path{inversion_workflow/nmr_objective_decision.md} therefore recommends a
+within-label trend/anomaly residual as the first final NMR likelihood candidate,
+while the internal decision register records a current not-default policy for the
+active report state.  Thus the raw-theta active objective is left unchanged, and the
+trend/anomaly residual is used as explicit scenario/provisional-likelihood evidence
+unless the modelling team reopens the default-objective decision.  The residual compares
+\[
+\left(\theta_{\rm model}-\overline{\theta_{\rm model}}_{\ell}\right)
+-
+\left(\theta_{\rm NMR}^{\rm obs}-\overline{\theta_{\rm NMR}^{\rm obs}}_{\ell}\right)
+\]
+within each observation-family/measurement-label group \(\ell\).  Constant
+bound/interlayer-water and campaign offsets then cancel to first order, so the NMR
+stream constrains water-content changes rather than absolute mobile water content.
+This residual now has an executable assembler mode,
+\path{--state-objective-mode} \path{nmr_within_label_trend_anomaly}, and the separate
+\path{inversion_workflow/nmr_trend_anomaly_active_objective.md} ranking validates it
+against the diagnostic audit to numerical roundoff.  In the 66 full active
+direct-permeability plus NMR runs, it selects
+\path{broad_continuous_001_003_length_0p021m} with objective 505.614305828437; the
+raw-objective incumbent is rank 14 under this residual.
+The final NMR residual-policy gate in
+\path{inversion_workflow/nmr_final_residual_policy_gate.md} records the resulting
+promotion boundary: no final NMR policy is selected yet, raw absolute theta remains
+the current-report default with caveats, within-label trend/anomaly is the preferred
+provisional final-policy candidate, and the follow-up planner recommends pausing new
+OGS batches for that promoted-NMR mode because the best unevaluated direct advantage
+is below the materiality threshold.
+The matching acceptance-record template
+\path{inversion_workflow/nmr_final_residual_policy_acceptance_record_template.md}
+is the signoff guardrail for that choice.  It contains the four NMR residual
+options, currently records zero of one required primary approvals, is not ready to
+apply, records no actual decision, changes no active objective, promotes no field,
+and recommends no new OGS batch.
+The package explicitly rejects a single global NMR offset as a final correction
+unless collaborators provide a physical justification, and keeps porosity fixed
+because NMR water content alone cannot separate porosity, saturation, and bound
+water.
+
+For inversion, NMR should initially be used as a calibration/validation anchor for
+near-surface water-content trends and for checking the ERT conversion.  If a free-water
+correction becomes available from Stephan's lab interpretation, the NMR likelihood can
+be tightened.  Without that correction, use a bias/error term or compare changes
+\(\Delta\theta\) rather than absolute saturation.
+
+Important local caveats from the email archive:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Columns 4--5 of the weekly files can be ignored for modelling.
+  \item Technical failures cause gaps.
+  \item February--April 2025 at 4E likely overestimates water content by about
+  \(1\) vol.\% because the device was detuned to the wrong frequency.
+  \item Seasonal data before autumn 2021 are floor/ceiling only; September 2020 is
+  floor only; winter 2024 is missing.
+\end{itemize}
+
+\subsection{Permeability pulse tests: scalar interval data versus tensor field}
+
+The permeability folder contains two main workbooks:
+\path{2025-09-05_CD-A_Permeability.xlsx} and
+\path{Permeability_CDA_all_2025.xlsx}.  The latter includes 2021 data from
+BCDA\_24/BCDA\_25 and 2024 data from BCDA\_32/BCDA\_33.  The September slides describe
+modified COMDRILL double-piston packer pulse tests with a 10 cm test interval,
+nitrogen injection up to 1 bar, and pressure-decay monitoring
+\cite[PDF p.~5]{CDAModellingSlides2025}.  The reported value is
+an interval-scale intrinsic-permeability estimate for a 3D volume around the tested
+borehole segment, with experimental/evaluation uncertainty of about half an order of
+magnitude.  The processed files \path{permeability_interpreted_values.csv} and
+\path{permeability_pressure_decay.csv} extract 204 interpreted interval rows and
+6,687 raw pressure-decay rows while preserving source workbook, sheet, row, campaign
+year, borehole block, depth, permeability, transmissibility, and pressure-time
+provenance.
+
+This is the most direct measurement class for \(\kperm\), but it still does not give a
+cell-wise tensor.  It is an effective scalar or directional response of a finite test
+volume and borehole orientation.  The CD-A characterization paper reports that pulse
+tests indicate a stronger EDZ and permeability increase in the open twin than in the
+closed twin, and later discusses interval permeability values around \(10^{-16}\) to
+\(10^{-13}\,\mathrm{m^2}\) depending on niche, depth, and anomalies
+\cite[PDF pp.~1, 11, Sect.~4.3 and Sect.~6]{Ziefle2024Characterization}.  The
+workbooks and slides further distinguish 2021 (about 1.5 years after excavation) and
+2024 (about 4.5 years after excavation).
+
+The nitrogen-gas detail is crucial.  The OGS TRM Darcy law uses liquid intrinsic
+permeability multiplied by liquid relative permeability:
+\[
+\vW=-\frac{\kperm k_{\rm rel}(S_\ell)}{\mu_w}\nabla p .
+\]
+Gas pulse tests can estimate the medium's intrinsic permeability only after
+accounting for gas slippage and test conditions.  Klinkenberg showed that apparent gas
+permeability depends on reciprocal mean pressure and that extrapolation to infinite
+pressure gives the liquid-equivalent permeability constant
+\cite[pp.~200, 205--207]{Klinkenberg1941}.  In CD-A, this means a nitrogen pulse-test
+value should enter the inversion as a noisy effective observation of intrinsic
+permeability, not as liquid hydraulic conductivity and not as \(k_{\rm rel}\kperm\).
+This separation is also consistent with Opalinus Clay gas-transport literature:
+gas flow in low-permeability claystone depends on intrinsic permeability, porosity,
+gas pressure, water saturation, capillary threshold, and hydromechanical state; once
+gas entry is exceeded, mobility is controlled by intrinsic permeability together with
+relative-permeability and retention relations
+\cite[pp.~124--125, Sects.~2.1--2.2]{Marschall2005}.  The pulse-test interpretation
+therefore informs \(\kperm\), while liquid relative permeability and retention remain
+separate OGS constitutive choices.
+
+Recommended observation operator:
+\[
+d_i^{\rm pulse}
+\approx
+\frac{1}{|\Omega_i|}
+\int_{\Omega_i}
+\bm e_i^\top \kperm(\bm x)\bm e_i \, w_i(\bm x)\,d\bm x
+\quad \text{with lognormal error,}
+\]
+where \(\Omega_i\) is the interval influence volume, \(\bm e_i\) is the dominant
+borehole/test direction or sensitivity direction, and \(w_i\) is an approximate
+sensitivity weight.  If the direction/sensitivity is not reconstructed, use the pulse
+data as order-of-magnitude constraints on EDZ zones rather than point tensor entries.
+
+The working folder now implements the first direct-target version of this idea in
+\path{inversion_workflow/scripts/build_permeability_observation_targets.py}.  The
+script reads the interpreted permeability rows, the borehole line samples, and the
+mesh lookup table, then writes \path{permeability_observation_targets.csv} and
+\path{permeability_observation_cells.csv}, plus
+\path{permeability_missing_geometry_audit.md} for interpreted rows that have source
+orientation evidence but no labelled endpoints.  It does not treat the scalar gas
+pulse-test result as a tensor component.  Instead, it records a noisy interval-scale
+log-permeability target with cell weights over a nominal 10 cm along-borehole
+interval.  The current status is: 75 rows are usable as initial direct constraints in
+the local OGS mesh, 27 rows map outside the current mesh and are retained but excluded
+from the first fit, 98 older rows have interpreted values but lack matching borehole
+endpoint geometry, and 4 rows have no positive interpreted permeability.  The 98
+unmapped rows are grouped into five audit entries: BCD-A24 and BCD-A26 are retained
+as vertical tests, BCD-A25 and BCD-A27 as horizontal tests, and BFM-D19 as nearly
+horizontal evapometer data, but none is activated until labelled endpoint geometry or
+an accepted digitized trace can project the interval into OGS cells.  The companion
+request package
+\path{inversion_workflow/processed_observations/permeability_endpoint_geometry_request.md}
+turns this into a concrete follow-up item: it asks for labelled start/end
+coordinates, coordinate frame, depth-zero reference, along-borehole direction, and
+interval-position convention for BCD-A24, BCD-A25, BCD-A26, BCD-A27, and BFM-D19.
+The same builder writes a 98-row blocked-observation table, so the inactive values
+can be reactivated reproducibly if the endpoints or an approved digitized trace are
+provided.
+The generated semantics audit
+\path{inversion_workflow/processed_observations/permeability_measurement_semantics.md}
+keeps this decision machine-checkable: 204 interpreted rows are present, 200 have
+positive permeability, 75 are active direct candidates, 27 are outside the current
+mesh, and 98 are blocked only by missing endpoint geometry.  The active subset comes
+from BCD-A32 and BCD-A33, with usable log10 permeability values spanning
+\(-21.0\) to \(-12.10\)\,\(\mathrm{m^2}\).  The audit explicitly labels every row as
+a nitrogen pulse-decay scalar interval observation of intrinsic permeability and
+records that it is not a measurement of hydraulic conductivity, saturation, liquid
+relative permeability, or a direct tensor component.
+
+The companion evaluator
+\path{inversion_workflow/scripts/evaluate_permeability_targets.py} is the first
+machine-checkable likelihood component.  It reads a generated mesh field
+\path{k_i_rd}, evaluates \( \bm e^T\kperm\bm e \) on the selected interval cells, and
+compares predicted and observed permeability in log10 space.  For the current
+\path{smoke_test} field, duplicate-aware weighting leaves an effective 52 direct
+targets, with a weighted RMSE of 2.70 log10 units.  The best single global multiplier
+is only \(10^{1.2285}\approx16.9\), reducing the RMSE to 2.40 log10 units.  This
+baseline confirms that the current generated field is only a prior/proposal field;
+the pulse-test data require heterogeneous local high-permeability intervals rather
+than a uniform rescaling.
+
+A first diagnostic direct fit is implemented in
+\path{inversion_workflow/scripts/fit_permeability_field_from_targets.py}.  It scales
+only the mesh cells selected by usable pulse-test intervals, preserves the existing
+tensor orientation and anisotropy, and stores the applied log10 multiplier as mesh-cell
+diagnostic fields.  In \path{runs/direct_permeability_fit/}, this reduces the
+duplicate-aware direct-target RMSE from 2.70 to 1.61 log10 units by adjusting 30 cells,
+with applied log10 multipliers from \(-1.48\) to \(+5.80\).  This is useful for
+locating forced high-permeability intervals, but it is not yet a full OGS inversion
+because it does not rerun the THM problem or include ERT, NMR, Taupe, or RH state
+observations.
+
+The prior/proposal space has also been tested explicitly with
+\path{run_direct_permeability_prior_sweep.py}.  A 12-candidate sweep generated
+heterogeneous anisotropic fields using the two usable pulse-test segment orientations
+and the bedding-prior angle as tensor-angle candidates.  The best generated prior
+field has RMSE 2.41 log10 units and objective 605.00, with an optimal uniform
+multiplier of only 1.15; after that multiplier the RMSE remains 2.41.  This improves
+on the original smoke-test prior but remains far worse than the direct cell-fit
+diagnostic.  The conclusion is that the measured pulse-test intervals require local
+permeability structure, not only a different global scale or a generic random
+anisotropic prior.
+
+A smoother interval-anchored field is implemented in
+\path{fit_smooth_permeability_field_from_targets.py}.  This script takes the same
+duplicate-aware target-derived log10 multipliers used by the direct cell diagnostic,
+but spreads them from the 30 anchor cells through a finite-cutoff Gaussian kernel.  It
+therefore keeps the tensor orientation and anisotropy while producing a neighbourhood
+of affected cells instead of isolated point corrections.  The tested length scales
+show the expected tradeoff: 0.05 m affects 471 cells and gives RMSE 1.67 log10 units
+with objective 291.29, while 0.80 m affects 8,354 cells and relaxes to RMSE 2.13 with
+objective 470.95.  An extended search now also varies shift damping.  Its best direct
+candidate uses a 0.025 m smoothing length, affects 208 cells, and reaches RMSE 1.61
+log10 units with objective 269.97.  This is still smoother than the 30-cell direct
+diagnostic, but more localized than the earlier 0.05 m proposal.  The candidate has
+been passed through the per-candidate driver as
+\path{candidate_smooth_0p025m_search_driver}; it is currently the best direct-fit
+field before state-observation comparison.
+
+Because the direct objective alone favours the strongest local correction, the
+workflow now also ranks the smooth candidates with
+\path{rank_regularized_permeability_candidates.py}.  The ranking is not a calibrated
+geological prior; it is a transparent selection aid that separates direct pulse-test
+misfit from the sum of squared cell-wise log10 permeability updates.  The current
+Pareto tradeoff set contains three 0.025 m support fields: the full-shift
+\path{length_0p025m} field (objective 269.97, RMSE 1.61), the 0.75-shift field
+(objective 301.16, RMSE 1.70), and the 0.5-shift field (objective 392.72, RMSE
+1.94).  A weak field-update penalty still selects the full-shift field, a moderate
+penalty selects the 0.75-shift field, and a strong penalty selects the 0.5-shift
+field.  At least the direct winner and one damped regularized candidate should be
+carried into the first OGS state-output comparison, so that the eventual inversion is
+not judged only on direct permeability overfit.
+
+That handoff is now reproducible with
+\path{run_regularized_ogs_candidate_set.py}.  The script reads the Pareto/scenario
+winners and prepares all three fields through the same candidate harness.  The
+current executed set runs \path{length_0p025m},
+\path{length_0p025m_shift_0p750}, and \path{length_0p025m_shift_0p500} through OGS
+with the collected 6.5.4 SIF via Dockerized Apptainer.  Each run produced 83 output
+VTUs, 37,184 sampled state rows, and 192 active sampled NMR objective rows.  The
+combined objectives are 3166.61, 3198.49, and 3289.65, respectively.  The state
+objective is similar for the three fields (about 2897), so this first combined
+ranking is still driven mainly by the direct permeability term; it is an OGS-backed
+candidate comparison, not yet a final inversion sampler.
+
+The next-batch decision is now recorded by
+\path{build_adaptive_combined_candidate_plan.py}.  The first adaptive batch has now
+executed \path{length_0p050m}, \path{length_0p050m_shift_0p750}, and
+\path{length_0p075m} through the same OGS harness.  Each run produced 83 output VTUs,
+37,184 sampled state rows, and 192 active NMR objective rows.  Their combined
+objectives are 3276.57, 3300.91, and 3353.88; none improves on the
+\path{length_0p025m} objective of 3166.61.  The broader-support batch also increases
+the sampled NMR state objective, so the executed state term is no longer flat over
+that six-candidate set.  A subsequent local-refinement grid around the 0.025 m support
+field executed \path{length_0p013m} and \path{length_0p019m}; both keep the same
+direct RMSE of 1.61 log10 units and improve the combined objective to 3159.66 and
+3164.96, respectively.  The first local-bracketing batch then executed
+\path{length_0p013m_shift_0p875}, \path{length_0p013m_shift_1p125}, and
+\path{length_0p031m}.  Their combined objectives are 3167.34, 3167.21, and 3219.35,
+so neither shift perturbation nor the 0.031 m full-shift support improves on the
+0.013 m local best.  A finite-candidate Bayesian proposal then executed
+\path{length_0p019m_shift_1p125}, \path{length_0p019m_shift_0p875}, and
+\path{length_0p025m_shift_1p125}; their combined objectives are 3172.69, 3172.37,
+and 3173.39, again worse than the 0.013 m local best.  A first continuous-proposal
+batch then executed \path{length_0p006m_shift_0p992}, \path{length_0p007m}, and
+\path{length_0p007m_shift_0p972}; their combined objectives are 3156.78, 3157.74,
+and 3158.16.  A focused lower-support continuous batch then executed
+\path{length_0p004m_shift_0p995}, \path{length_0p003m_shift_0p986}, and
+\path{length_0p004m_shift_0p994}; their combined objectives are 3156.38, 3156.47,
+and 3156.38.  A repeatable loop driver,
+\path{run_continuous_inversion_loop.py}, then refreshed the lower-support proposal,
+executed \path{length_0p003m_shift_1p006},
+\path{length_0p005m_shift_0p985}, and \path{length_0p004m_shift_1p014}, and merged
+those rows into a cumulative lower-support evidence table.  Their combined objectives
+are 3156.37, 3156.49, and 3156.44.  A second loop then executed
+\path{length_0p004m_shift_0p992}, \path{length_0p004m_shift_1p020}, and
+\path{length_0p006m_shift_0p975}; their combined objectives are 3156.40, 3156.53,
+and 3156.70, so none improves the first-loop incumbent.  The current best executed
+smooth field is therefore still \path{length_0p003m_shift_1p006}.  A broad
+continuous evidence batch then executed \path{length_0p023m_shift_1p004},
+\path{length_0p022m_shift_0p998}, and \path{length_0p021m}; their combined
+objectives are 3159.06, 3169.30, and 3169.31, so the broad uncertainty-ranked batch
+also did not improve the incumbent.  The generalized loop driver then ran a repeatable
+broad iteration over \path{length_0p015m}, \path{length_0p016m_shift_0p968}, and
+\path{length_0p010m}; their combined objectives are 3161.36, 3165.33, and 3157.70,
+again leaving the incumbent unchanged.  The regenerated adaptive planner treats 32
+executed smooth-family candidates as evidence and proposes the next
+local batch led by \path{length_0p008m_shift_1p011},
+\path{length_0p007m_shift_1p020}, and \path{length_0p007m_shift_1p022}.  This is
+evidence that the lower-support continuous region has been useful, but the focused
+local family is now near a plateau and still not a substitute for a production
+optimizer or ensemble sampler.
+
+The separate anisotropy sensitivity pass
+\path{build_anisotropy_sensitivity_plan.py} checks a different question: whether the
+direct pulse-test layer prefers a different global principal direction or anisotropy
+ratio than the current bedding-prior tensor.  Starting from
+\path{length_0p003m_shift_1p006}, it preserves each cell's geometric-mean
+permeability and sweeps 35 angle/ratio combinations.  The best direct candidate is
+the unmodified \(144^\circ\), 2.5:1 field itself, with direct objective 269.83549 and
+zero improvement over the baseline; the next candidate, \(140^\circ\) with the same
+ratio, is already worse by 0.05086 objective units.  This does not prove that
+anisotropy is known perfectly, but it means a global angle/ratio-only OGS batch is
+not a good use of computation.  The later local-basis, local-anisotropy,
+cross-stream hybrid, structural/EDZ, and support lower-bound audits show that the
+next permeability search should wait for a support/likelihood decision or for
+currently gated streams such as ERT/Taupe/RH before adding broader tensor degrees of
+freedom.
+
+The first richer local-basis diagnostic is recorded by
+\path{build_local_basis_sampler_plan.py}.  It starts from the same
+\path{length_0p003m_shift_1p006} incumbent, keeps the governing OGS model frozen, and
+builds 30 residual-derived anchor cells from the active permeability pulse-test
+targets.  The sampler scores 131 direct pulse-test candidates in which local
+coefficients can move independently around those anchors while only the run-local
+\path{k_i_rd} tensor magnitude field changes.  The best direct row,
+\path{basis_004_det_l_0p0015_s_1p000}, improves the direct pulse-test objective from
+269.83549 to 269.81806, with weighted RMSE changing from 1.610768 to 1.610715 log10
+units and applied log10 increments between \(-0.03472\) and \(0.00885\).  This is a
+true but very small direct-layer improvement.  The selected OGS batch contains three
+diverse local-basis candidates affecting 30, 37, and 47 cells.  The batch has now
+been executed through the release-gated OGS harness.  All three runs returned code 0,
+passed the release gate, sampled 192 active NMR state rows, and improved the combined
+incumbent slightly: \path{basis_024_det_l_0p0075_s_1p000} has combined objective
+3156.35307, compared with 3156.37301 for the previous
+\path{length_0p003m_shift_1p006} incumbent.  The small improvement makes it the
+current accepted best field, but it is still a local deterministic proposal result,
+not a converged inversion.
+
+The local tensor-anisotropy screen then checks whether the next field family should
+release orientation or anisotropy ratio locally instead of continuing magnitude-only
+updates.  The script
+\path{build_local_anisotropy_sampler_plan.py} starts from the accepted local-basis
+incumbent \path{basis_024_det_l_0p0075_s_1p000}, preserves each cell's
+geometric-mean permeability, and changes only the local principal direction and
+anisotropic split around the 30 mapped pulse-test anchor cells.  It scores 80 direct
+pulse-test candidates across residual-sign, segment-parallel, segment-perpendicular,
+and local-isotropization modes.  The best candidate,
+\path{local_anis_isotropize_l0p015_s0p5_r1}, is worse than the incumbent: direct
+objective 270.00798 versus 269.81806, a \(+0.18992\) objective increase.  Thus the
+active direct permeability data do not justify a local tensor-orientation or
+anisotropy-ratio OGS batch at this stage.
+
+The cross-family production convergence record is now recorded by
+\path{build_production_sampler_convergence_audit.py} and
+\path{runs/production_sampler_convergence/PRODUCTION_SAMPLER_CONVERGENCE.md}.  This
+audit standardizes 54 accepted smooth-family OGS rows and 11 accepted
+local-basis rows, writes a stage-by-stage convergence history, and scores a
+394-candidate smooth/local-basis pool with a random-forest surrogate for the sampled
+NMR state objective plus the known direct permeability objective.  Five production
+handoff rounds have executed thirty candidates; all passed release gates, sampled
+192 active NMR rows, and were worse than the incumbent.  The best production row,
+\path{basis_023_det_l_0p0075_s_0p750}, has combined objective 3156.35476; the fifth
+round's best row, \path{length_0p004m_shift_1p031}, has combined objective
+3156.78544, while the accepted local-basis incumbent remains
+\path{basis_024_det_l_0p0075_s_1p000} at 3156.35307.  Of the 329 remaining
+unexecuted diagnostic rows, 210 have materialized mesh files and are eligible for a
+release-gated execution handoff; 119 random local-basis diagnostics are kept in the
+score table but excluded from the batch because they do not yet have mesh files.  The
+refreshed top executable handoff row is \path{length_0p007m_shift_1p020}, with
+lower-confidence-bound objective 3156.94007 and a diagnostic probability of
+improvement of 0.0166.  Because the local-basis improvement over the previous smooth
+incumbent is only 0.01994 objective units and the cross-validated state-objective RMSE
+of the surrogate is about 10.43, any next batch should be treated as convergence
+evidence, not as proof that the inversion is complete.  The generated
+\path{PRODUCTION_SAMPLER_DECISION.md} therefore recommends
+\path{pause_active_production_sampling} for the current direct-permeability plus NMR
+objective: all five production rounds failed to improve the incumbent, the next top
+handoff probability of improvement is low, and all proposed lower-confidence bounds
+are above the incumbent.  This pause is scoped only to the current active objective;
+it does not close the ERT, Taupe/TDR, RH, or later-parameter gates.
+
+The older smooth-family Bayesian proposal layer also writes
+\path{runs/bayesian_candidate_proposal/OPTIMIZER_CANDIDATE_PROPOSAL.md}.  This is a
+Bayesian surrogate over the already generated finite-grid and continuous smooth-field
+pool: it records the 32 executed smooth-family candidates as evidence, keeps all 32 represented in
+the generated-candidate score table, reconstructs fallback feature rows from executed
+search results where proposal directories had been overwritten, adds the known direct
+permeability objective for each unexecuted mesh, and ranks by a
+lower-confidence-bound acquisition.  Its current top proposal is
+\path{length_0p003m_shift_0p972}; the previous broad top proposals have now been
+executed and proved worse than the incumbent.  The artifact is best read as a
+transparent proposal diagnostic; a production inversion still needs an optimizer or
+ensemble sampler loop over accepted fields.
+The first continuous proposal layer is now recorded in
+\path{runs/continuous_bayesian_candidate_plan/CONTINUOUS_CANDIDATE_PLAN.md}.  It
+samples support length and shift scale outside the fixed finite grid, writes 136 new
+run-local permeability meshes, evaluates the direct pulse-test objective for each,
+and uses the current generated-table evidence intersection to predict the NMR
+state-objective component.  Its
+current proposed OGS batch, excluding already executed continuous rows, is
+\path{length_0p009m_shift_0p979}, \path{length_0p008m_shift_1p040}, and
+\path{length_0p010m_shift_1p050}.  Those rows are not yet accepted evidence; they must be
+executed and sampled through the same release-gated OGS harness before comparing them
+with the current \path{length_0p003m_shift_1p006} best field.  The focused
+lower-support continuous plan separately proposes
+\path{length_0p003m_shift_0p972}, \path{length_0p004m_shift_1p031}, and
+\path{length_0p006m_shift_0p970}; after two executed lower-support loops its best
+probability of improvement is effectively zero, so this local plan is now mainly a
+plateau diagnostic.
+
+\subsection{Taupe/TDR: dielectric proxy and EDZ-band trends}
+
+The Taupe folder contains \texttt{Taupe\_WC.xlsx} with sheets A3, A4, A7, and A8.  Each
+sheet has 212 rows from 2019-12-01 to 2025-10-10 and columns for EDZ distance bands
+\texttt{0-50}, \texttt{0-10}, \texttt{10-20}, \texttt{20-30}, \texttt{30-40}, and
+\texttt{40-50}.  The processed \path{taupe_tdr_bands.csv} table reshapes this workbook
+to 5,088 sensor--date--EDZ-band rows and keeps the workbook column name and EDZ-band
+limits in centimetres.  The 2026 ISU slides identify the method as differential TDR
+using TAUPE sensor cables \cite[PDF p.~1]{TaupeISU2026Local}.  The CD-A
+characterization paper lists Taupe as measuring
+apparent relative dielectric permittivity and classifies it as saturation-related,
+with limited information for EDZ/fault-zone/water-content interpretation
+\cite[PDF pp.~4--5, Tables~1--2]{Ziefle2024Characterization}.
+
+TDR methods infer water content because liquid water has a high dielectric
+permittivity relative to mineral grains and air; the classic Topp et al. relationship
+is a soil-calibration result, not an Opalinus-specific law
+\cite[pp.~574--577]{Topp1980TDR}.  An accessible TDR review makes the same modelling
+caution explicit from the measurement side: TDR estimates water content through bulk
+permittivity, but porous media contain matrix, air, liquid water, and sometimes
+bound water, and the measured response can also include electrical-conductivity and
+dispersion effects \cite[pp.~444--446]{Robinson2003TDRReview}.  The local TD slides
+use a simple volumetric mixing
+expression
+\[
+\epsilon_r=\epsilon_{\rm rock}(1-\phi)+\epsilon_w\phi S_w,
+\qquad \epsilon_w\approx 80,
+\]
+which is useful as a first-order link to saturation but should not be treated as a
+fully calibrated Taupe forward model \cite[PDF p.~8]{CDAModellingSlides2025}.
+
+The current workflow therefore writes an explicit Taupe/TDR trend-operator artifact
+rather than an absolute saturation likelihood.  The script
+\path{build_taupe_observation_operator.py} reads the 5,088 Taupe rows, the Taupe
+line-sample mapping, and the OGS mesh porosity field \path{n_rd}.  It writes
+\path{taupe_tdr_trend_operator.csv}, \path{taupe_tdr_series_summary.csv},
+\path{taupe_tdr_observation_operator_summary.json}, and
+\path{taupe_tdr_observation_operator.md}.  For each of the 24 sensor--EDZ-band
+series, the first three finite workbook values define a baseline; later observations
+are stored as raw differences, relative changes, and robust standardized anomalies.
+Only A3 and A4 are mapped into the current local OGS mesh support, giving 2,544
+trend-ready rows; A7 and A8 are retained but flagged as outside the present mesh
+sampling support.  The intended model-side diagnostic is the corresponding
+baseline-normalized trend in band-averaged
+\(\theta_{\rm model}=\phi S_\ell\), not the raw Taupe number itself.
+
+The follow-up semantics audit \path{build_taupe_semantics_audit.py} writes
+\path{taupe_tdr_semantics_row_audit.csv},
+\path{taupe_tdr_semantics_series_audit.csv},
+\path{taupe_tdr_semantics_group_summary.csv},
+\path{taupe_tdr_semantics_summary.json}, and \path{taupe_tdr_semantics.md}.  It
+classifies the 2,544 A3/A4 rows as mapped trend-diagnostic candidates for runs with
+sampled OGS outputs, while still blocking absolute calibration, and the 2,544 A7/A8
+rows as outside the current mesh support.
+The corresponding state-target table therefore contains 5,088 Taupe/TDR rows, but
+none is active as an absolute state residual in the current candidate objective.
+
+The run-local diagnostic \path{evaluate_taupe_tdr_trend_diagnostic.py} closes the
+next comparison layer without changing the objective.  It matches the mapped A3/A4
+Taupe rows to sampled OGS output times and forms the same-series standardized
+residual
+\[
+  r_{\rm Taupe,trend} =
+  \widehat{\Delta\theta_{\rm model}} -
+  \widehat{\Delta T_{\rm Taupe}},
+\]
+where hats denote within-series robust standardization rather than a calibrated
+absolute unit conversion.  In the direct reference run and the current local-basis
+incumbent, the diagnostic compares 1,860 rows across 12 A3/A4 sensor--band series;
+684 additional mapped A3/A4 rows are outside the available OGS output time horizon,
+and all 2,544 A7/A8 rows remain outside the present mesh support.  The direct-run
+standardized trend mean absolute residual is 1.8632.  This number is a screening
+diagnostic for candidate behaviour, not a likelihood term, because Taupe units and a
+sensor/band uncertainty model remain unconfirmed.
+
+The cross-run audit \path{build_taupe_candidate_discrimination_audit.py} reuses the
+same diagnostic across the executed run directories that already contain
+\path{ogs_state_samples.csv}.  It currently evaluates 74 runs, including 66 runs with
+the full active combined objective.  Across this executed candidate family the Taupe
+standardized-trend MAE spans only 0.03687076560014302.  The best Taupe-only run is
+\path{adaptive_combined_001_length_0p050m}, with MAE 1.829884354078035; the best
+active-objective run is \path{local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000},
+with Taupe MAE 1.863211058631399.  This small spread means the present candidate
+family is a weak discriminator for mapped Taupe trends, even before the
+unit/calibration and weighting gates are solved.  The audit outputs are stored in
+\path{taupe_candidate_discrimination_audit.csv},
+\path{taupe_candidate_discrimination_series.csv},
+\path{taupe_candidate_discrimination_summary.json}, and
+\path{taupe_candidate_discrimination.md}, with catalogue copies under the Taupe/TDR
+measurement folder.
+
+The grouped-weight part of the Taupe gate is now tested by
+\path{build_taupe_series_weight_sensitivity_audit.py}.  The audit uses the
+series-level cross-run diagnostic for the 12 compared A3/A4 series over the 66 full
+active-objective runs.  Because every compared series currently contributes 155 rows,
+aggregate row weighting, equal-series weighting, equal-sensor weighting, and
+equal-EDZ-band weighting all keep
+\path{adaptive_combined_001_length_0p050m} as the best Taupe trend-screen run.  The
+sensor-specific rankings are not identical: A3-only weighting prefers
+\path{local_bracketed_003_length_0p031m}, A4-only weighting prefers
+\path{adaptive_combined_002_length_0p050m_shift_0p750}, and the 12 individual
+series have eight distinct best runs.  Thus the local evidence does not support a
+single hard Taupe residual weight yet; sensor-specific uncertainty and grouped
+weights remain part of the calibration gate.  A7/A8 also remain outside the current
+local mesh support.
+
+The same operator table records candidate absolute conversions for audit only.  If
+the Taupe value is interpreted as volumetric water content in percent, 2,120 of 5,088
+rows give mapped-band saturations in the physical interval \([0,1]\).  If the value is
+interpreted as a Topp-style dielectric permittivity, none of the rows gives physical
+mapped-band saturation for the current porosity field, which is a warning against
+using that generic soil calibration as an Opalinus Clay law.  The local linear mixing
+expression with \(\epsilon_{\rm rock}=6\) gives physical mapped-band saturations for
+2,544 rows.  These physical-range counts are useful sanity checks but do not identify
+the correct calibration; a sensor-specific Taupe/ARDP unit statement is still needed
+before absolute residual weights are assigned.
+
+Model entry should therefore be trend-oriented at first:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Compare simulated \(\Delta S_\ell\) or \(\Delta(nS_\ell)\) in EDZ bands with
+  Taupe temporal trends, using \path{taupe_tdr_trend_operator.csv} as the current
+  row-level operator artifact.
+  \item Use closed-twin stability and open-twin seasonal amplitudes as qualitative or
+  semi-quantitative validation.
+  \item Do not force absolute Taupe values into the likelihood until the ARDP/Taupe
+  workbook columns are mapped to a calibrated dielectric-to-water-content relation.
+\end{itemize}
+
+\subsection{Suction and relative humidity: pressure boundary and retention curve}
+
+The suction/RH folder contains the open-twin sheets \texttt{OT\_RH5.xlsx} through
+\texttt{OT\_RH8.xlsx}, a suction-location figure, the phase 30 report, TD slides, and
+minutes.  The four RH files cover late 2021/early 2022 to 2025-09-04.  RH5 and RH6
+stay near 93--96\%; RH7 and RH8 include low values near 13\%, which should be treated
+as likely outliers or sensor/logger failures until confirmed.  The processed
+\path{rh_open_twin_kelvin.csv} table contains 4,247 daily sensor rows, flags low-RH
+outliers and values above the open-twin 95\% reliability caution threshold, and stores
+the Kelvin-equation liquid-pressure conversion using \(T=298.15\,\mathrm{K}\) and
+\(\rho_\ell=1095\,\mathrm{kg\,m^{-3}}\).
+
+The current OGS model already uses a time-dependent pressure curve on the open niche.
+The active include in \path{08_curves.xml} is
+\path{08_08_open_niche_seasonal.xml}; the shifted
+\path{open_niche_seasonal_curve_shifted.xml} is present but commented out in the
+recovered projection setup.  The active curve contains 845 liquid-pressure values
+ranging approximately from \(-5.23\) MPa to \(-53.24\) MPa.  Those values are
+consistent in scale with a Kelvin-equation conversion from relative humidity to liquid
+pressure/suction rather than with atmospheric pressure.  The Kelvin
+relationship follows from vapour-pressure equilibrium over a curved liquid surface
+\cite[pp.~448--452]{Thomson1871Kelvin}.  In Richards form, gas pressure is treated as
+constant and \(\pcap=-p_l\); therefore an RH-derived suction can be applied as a liquid
+pressure boundary \(p_l=p_g-p_c\), or as a negative gauge liquid pressure if \(p_g\) is
+absorbed into the convention.  Ziefle et al. explicitly describe the CD-A model as
+using Richards' equation, Van Genuchten retention, and Kelvin-equation boundary
+conversion for desaturation around the niches \cite[pp.~4447--4448]{WaterContentEDZ2024}.
+
+The working folder now audits this boundary condition explicitly in
+\path{inversion_workflow/scripts/audit_rh_boundary_curve.py}.  Using the timestep
+comment \(t_0=\) 2019-09-18, the script compares the active OGS curve with the
+processed OT\_RH5--8 Kelvin pressures.  Of 4,247 RH rows, 2,280 lie inside the active
+curve time range, 1,948 later rows are outside it, and 19 low-RH rows are excluded as
+outliers.  Over the overlapping period the median absolute residual between
+RH-derived gauge liquid pressure and the OGS curve is 13.00 MPa, with a mean absolute
+residual of 16.32 MPa.  Therefore the current open-niche curve should not be claimed
+as a verified reconstruction of the local RH workbooks; it is an existing model
+boundary condition whose provenance or preprocessing needs confirmation from BGR/Gesa
+before it is used as a fixed forcing in a calibrated inversion.
+
+The follow-up semantics audit \path{build_rh_semantics_audit.py} writes
+\path{rh_measurement_semantics_row_audit.csv},
+\path{rh_measurement_semantics_sensor_summary.csv},
+\path{rh_boundary_curve_semantics.csv},
+\path{rh_measurement_semantics_summary.json}, and
+\path{rh_measurement_semantics.md}.  It records 4,228 valid non-low-outlier RH rows,
+19 low-RH outlier rows, and 2,492 open-twin rows above the 95\% thermo-hygrometer
+caution threshold.  Inverting the active OGS curve through the same Kelvin coefficient
+gives an implied RH range of 70.23--96.59\%; 772 of the 845 active curve rows are
+drier than the clean RH5/RH6 workbook minimum.  This makes the provenance problem more
+specific: the active curve may include older, filtered, or different boundary
+humidity data, but it is not a direct reconstruction of the current OT\_RH5--8 sheets.
+
+The request package \path{build_rh_boundary_provenance_request.py} turns that
+mismatch into an external information request.  It writes
+\path{rh_boundary_provenance_request.csv},
+\path{rh_boundary_provenance_evidence.csv},
+\path{rh_boundary_provenance_request_summary.json}, and
+\path{rh_boundary_provenance_request.md}, with catalogue copies in the suction/RH
+\path{derived_files} folder.  The package has six request rows and ten evidence rows.
+It asks for the active curve source data and generation script, time-axis and
+extension policy, RH sensor screening, Kelvin temperature/density constants,
+open/closed curve mapping, and the retention-calibration release gate.  The generated
+summary dates the active curve from 2019-09-18 to 2023-12-26 in model time, while the
+copied RH workbooks continue to 2025-09-04.
+
+The local workflow now also writes candidate RH-derived boundary curves with
+\path{build_rh_boundary_candidate_curves.py}.  These are not accepted replacement
+forcings; they are reproducible alternatives that expose what the currently copied
+sensors would imply.  Six sensor-policy curves are generated, with OGS-style XML
+snippets in \path{rh_boundary_candidate_curve_xml}.  The policy-preferred candidate is
+\path{rh5_rh6_median}, because RH5/RH6 are the cleanest copied open-twin
+thermo-hygrometer streams.  It contains 1,063 daily rows from 2021-12-16 to
+2025-09-04, 576 overlap rows against the active curve, 487 rows after the active
+curve ends, and an overlap MAE of 15.15 MPa.  This reinforces the current gate: a
+locally reproducible RH-derived forcing can be prepared, but it should not replace
+\path{08_08_open_niche_seasonal.xml} or enter a retention likelihood until the active
+curve provenance, time axis, sensor screening, conversion constants, and extension
+policy are confirmed.
+
+The candidate policies are also compared as an uncertainty envelope by
+\path{build_rh_boundary_uncertainty_audit.py}.  It writes
+\path{rh_boundary_uncertainty_envelope.csv},
+\path{rh_boundary_uncertainty_audit.csv},
+\path{rh_boundary_uncertainty_summary.json}, and
+\path{rh_boundary_uncertainty.md}, again with catalogue copies in the suction/RH
+\path{derived_files} folder.  Across 1,064 daily envelope rows, 577 overlap the
+active OGS curve and 487 extend beyond it.  In the overlap, the local candidate
+pressure envelope has median width 2.10 MPa and 90th-percentile width 2.20 MPa, while
+the active curve falls outside that local RH-derived envelope on 575 of 577 dates.
+The active curve's mean absolute mismatch to the candidate-envelope median is
+15.22 MPa.  This is not a reason to tune a residual directly against RH yet; it is a
+quantitative expression of the provenance gate and supports requesting the original
+curve-generation data/script before releasing boundary or retention parameters.
+
+For inversion, RH/suction data enter in two ways:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item \textbf{Boundary forcing:} reconstruct or audit the open-niche pressure curve
+  from measured RH and temperature.  This is not a calibrated parameter unless the RH
+  measurement uncertainty is explicitly included.
+  \item \textbf{Retention validation/calibration:} compare measured suction/RH states
+  with OGS \(S_\ell(p_c)\) from the Van Genuchten curve.  The current XML uses
+  residual liquid saturation \(S_{\ell r}=0.1\), residual gas saturation \(0\),
+  exponent \(m=0.45\), and \(p_b=10\) MPa, consistent with the van Genuchten form
+  \cite[pp.~892--895]{VanGenuchten1980}.
+\end{itemize}
+
+The 2026 slides state that thermo-hygrometers are reliable in the open twin below
+95\% RH, while psychrometers are preferred in the closed twin above 95\% RH.  That
+reliability split should be encoded in the measurement error model
+\cite[PDF p.~6]{TDMinutes2026Local}.
+
+\subsection{Coordinates, bedding, and structural constraints}
+
+The coordinate folder provides the essential measurement-to-model map.  The September
+coordinate workbook has 109 entries: 19 NMR, 8 suction, 8 Taupe, and 72 permeability
+entries.  It contains original/3D coordinates plus two 2D model coordinate blocks.
+Email context says the \texttt{2D\_Model (x/y)} columns are the relevant block for the
+current HERMES modelling.  The November TeamBeam coordinate workbook connects NMR,
+Taupe, and characterization borehole labels to BGR model coordinates.  The processed
+\path{measurement_coordinates_xy.csv} and \path{borehole_coordinates.csv} tables keep
+these coordinate rows in flat form for mesh lookup.  The working folder now also
+contains \path{inversion_workflow/scripts/build_mesh_observation_lookup.py}, which
+maps those rows to the projected OGS bulk mesh.  It writes point lookups for 107
+catalogue coordinate rows, endpoint lookups for 35 NMR/characterization/Taupe labels,
+and 0.1 m line samples for 8 borehole or Taupe segments.  The projection mesh is a
+local \([-5,5]\times[-5,5]\,\mathrm{m}\) domain; in the current lookup, 50 of the 107
+catalogue coordinate rows fall outside that mesh bounding box.  These outside flags
+are not errors in the catalogue, but they prove that only a subset of the collected
+coordinate information can be compared directly with the current Niche-4 OGS domain.
+
+The bedding/geology folder provides the structural prior.  Gesa's email gives an
+approximate bedding angle of \(144^\circ\); the characterization papers describe the
+upper sandy facies, fault zones, bedding-parallel structures, and the scale dependence
+of geophysical and permeability measurements.  The CD-A characterization paper states
+that the niches are oriented perpendicular to bedding strike and that the measurement
+campaign includes ERT, MSM, NMR/CCM, Taupe, pulse tests, suction, and deformation
+monitoring \cite[PDF pp.~2, 4--5]{Ziefle2024Characterization}.  For inversion this
+means the anisotropy angle should be bedding-informed, while local anomalies near
+faults should be either represented as heterogeneous permeability features or assigned
+larger observation uncertainty.
+
+\subsection{Projection workflow and mesh-based parameter fields}
+
+The folder \path{model_projection_inputs/source_files} is not a measurement folder in
+the physical sense, but it is the most concrete implementation bridge between the
+measurement catalogue and the frozen OGS process.  The projection archive has also
+been copied into the report working folder at
+\path{GESA_model_original/projection_on_mesh_2025-09-05}.  Its \path{README.txt}
+states that the project file was changed to call a projected mesh, that
+\path{03_parameters_TRM.xml} contains the function/projection specification, and that
+\path{bulk_all.vtu} domain identification must be re-done against the projected mesh
+with \path{identifySubdomains}.
+
+The script \path{generate_projections.py} reads \path{bulk.vtu} with \path{meshio} and
+writes \path{bulk_w_projections.vtu} \cite[PDF p.~20]{CDAModellingSlides2025}.  It creates cell-data arrays called
+\path{n_rd} and \path{k_i_rd} on the triangle elements, using the mesh
+\path{MaterialIDs}.  The corresponding \path{03_parameters_TRM.xml} switches
+\path{phi} and \path{k_i} from constants to OGS \path{MeshElement} parameters with
+field names \path{n_rd} and \path{k_i_rd}; the project file then loads
+\path{bulk_w_projections.vtu} as the bulk mesh.  This is consistent with the OGS
+parameter mechanism: official OGS documentation states that \path{MeshElement}
+parameters are defined by cell-label data arrays in a loaded mesh, selected through
+\path{field_name} \cite[Sec.~``MeshElement and MeshNode'']{OpenGeoSysParametersDocs}.
+
+As a reproducible replacement for the random scalar example, the working folder now
+contains \path{inversion_workflow/scripts/generate_anisotropic_permeability_field.py}.
+That script writes a four-component cell-data tensor
+\[
+\texttt{k\_i\_rd}=(k_{xx},\,k_{xy},\,k_{yx},\,k_{yy})
+\]
+using the same component order as the constant XML tensor
+\(\texttt{1.00E-19 0.00 0.00 0.40E-19}\).  It parameterises the field by a
+lognormal geometric-mean permeability, a global anisotropy ratio, and a bedding angle.
+The example configuration uses \(\theta=144^\circ\), \(r=2.5\), and
+\(k_{\rm ref}=6.32\times 10^{-20}\,\mathrm{m^2}\), matching the current XML reference
+values and Gesa's bedding-angle note.
+
+For the requested inversion this archive should be treated as a prototype, not as the
+final parameter generator:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item It proves that heterogeneous fields can be introduced without changing the TRM
+  process equations: replace the constant XML parameter by a mesh property with the
+  same physical meaning.
+  \item The recovered random \path{k_i_rd} field is scalar, isotropic, uncorrelated,
+  and sampled in linear space.  The new workflow script replaces it with a log-space,
+  spatially correlated tensor field; an actual inversion driver should still replace
+  the prior/proposal draw by sampled or optimized fields conditioned on the data.
+  \item The script has no fixed random seed, so it is not reproducible as written.
+  \item The porosity-field example is useful only if porosity is later released as an
+  unknown.  For the first permeability-focused inversion it should remain fixed unless
+  the data prove permeability alone is not identifiable.
+  \item Before running the projected model, \path{bulk_all.vtu} and all boundary
+  subdomains must be checked after projection; otherwise boundary conditions can be
+  applied to stale or mismatched submeshes.
+\end{itemize}
+
+The workflow now also prepares an OGS-ready run from the direct permeability diagnostic
+field in \path{inversion_workflow/runs/direct_fit_observation_run}.  This run copy
+loads the fitted \path{bulk_w_projections.vtu} and activates output of
+\path{pressure}, \path{saturation}, \path{temperature}, \path{displacement}, and
+\path{porosity}, which are the minimum fields needed for later RH/suction, ERT/NMR,
+Taupe, and HM observation operators.  The original GESA project files remain
+unchanged; the output-variable edit is confined to the run directory and changes only
+what OGS writes.  The run-input audit
+\path{inversion_workflow/scripts/audit_ogs_run_inputs.py} confirms that the project
+mesh files exist, boundary mesh references resolve, the required output variables are
+requested, and \path{bulk_w_projections.vtu} contains both \path{k_i_rd} and
+\path{n_rd}.  The enhanced audit also checks every VTU XML header for point and cell
+counts plus declared \path{DataArray} entries, verifies that the copied
+boundary/support submeshes expose \path{bulk_node_ids} and \path{bulk_element_ids},
+and records that the Dockerized-Apptainer OGS run accepted these project inputs with
+return code 0.  It still flags a reproducibility warning: \path{bulk_all.vtu} and the
+copied boundary/support VTUs are present but fail local \path{meshio} decoding because
+of appended base64 padding, so downstream Python tooling should not depend on
+\path{meshio} reads of those submeshes unless they are regenerated with
+\path{identifySubdomains}.  The local environment does not currently contain an \path{ogs}
+host executable: \path{audit_ogs_environment.py} searched \path{PATH}, \path{/usr/bin},
+\path{/usr/local/bin}, \path{/opt}, and \path{/home/ber0061} to depth 5.  The same
+audit now records \path{ogs_container_found_runtime_available} because it finds the collected
+container image
+\path{cda_knowledge_base/file_transfers/collected/2025-04-04_2d_model_container/apptainer_ogs6.5.4.sif},
+whose embedded label identifies \texttt{ogs/ogs@6.5.4}
+(\texttt{cb5b3235101edecf3ba55e1039fe3c19bc13c636}) and
+\path{/usr/local/ogs/build/bin} on the container path.  No Apptainer/Singularity or
+\path{run-singularity} runtime is installed locally, but the preferred backend is now
+the already used \path{docker_apptainer_sif} path: Docker runs the collected SIF
+through \texttt{ghcr.io/apptainer/apptainer:latest}.  The script
+\path{inversion_workflow/scripts/run_ogs_model.py} now records that
+Dockerized-Apptainer command explicitly, including the workspace bind, numeric user
+mapping, SIF path, and optional timeout.  The initial bounded 60-second startup run
+with this backend parsed the recovered OGS 6.5.4 project, entered the coupled TRM
+solve, and wrote seven partial \path{.vtu} files; it has since been superseded by
+complete direct, regularized, and first adaptive candidate runs.  The post-run
+sampler \path{inversion_workflow/scripts/sample_ogs_state_outputs.py} inventories the
+full OGS outputs and samples 448 lookup rows per output time step: 107 catalogue
+measurement points plus 341 borehole/Taupe line samples.  The sampled outputs contain
+pressure, saturation, temperature, and displacement fields; porosity is still not
+available as a direct OGS output field in these VTUs, so the sampler uses the fixed
+support-mesh \path{n_rd} porosity fallback for the model-side proxy
+\(\theta=\phi S_l\).  This activates 192 NMR rows in complete candidate runs, but
+\(\theta\) must still be interpreted with the NMR bound/interlayer-water caveat
+discussed above.
+
+Operationally, the clean route is to generate one projected mesh per inversion sample
+or per ensemble member, preserve the original May 2025 XML semantics, and change only
+the parameter source from a constant to mesh-cell data.  Observation operators for ERT,
+NMR, Taupe/TDR, permeability intervals, and RH/suction should then read simulation
+outputs at the monthly timesteps documented in the projection archive rather than
+trying to force all measurements onto the OGS mesh beforehand.
+
+The working folder implements this route in
+\path{inversion_workflow/scripts/prepare_ogs_run.py}.  The script creates a
+self-contained run directory, copies the projection model, regenerates
+\path{bulk_w_projections.vtu}, and writes \path{RUN_MANIFEST.json}.  In the current
+smoke test the generated bulk mesh contains \(\texttt{k\_i\_rd}\) as a four-component
+tensor field on all 10,239 \texttt{triangle6} cells and \(\texttt{n\_rd}\) as a fixed
+porosity field, so the projection XML has both mesh fields it reads.
+
+For the non-permeability data, \path{build_state_observation_targets.py} now writes
+\path{state_observation_targets.csv} and \path{state_observation_samples.csv}.  These
+tables do not force all measurements into the same residual form.  They record NMR as
+point \(\theta=\phi S_l\) targets, RH as Kelvin-pressure boundary forcing, Taupe/TDR as
+baseline-normalized EDZ-band trend targets with absolute calibration pending, and ERT
+as external resistivity-field comparisons with calibration, spatial lookup, and a
+direct-run diagnostic ready under explicit transform/support assumptions.
+
+The next workflow layer is now active for NMR where the OGS run covers usable
+observation times and mapped support.  The completed Dockerized-Apptainer runs
+produce 83 output VTUs and 37,184 sampled state rows per executed candidate.  The OGS
+VTUs contain pressure, saturation, temperature, and displacement but not an explicit
+porosity field, so \path{sample_ogs_state_outputs.py} uses the fixed support-mesh
+cell field \texttt{n\_rd} from \path{bulk_w_projections.vtu} as the porosity fallback.
+The script \path{evaluate_state_observation_targets.py} writes 11,490 evaluation rows;
+for the current best lower-support loop candidate, 192 NMR rows are finite objective residuals
+against \(\theta=\phi S_l\), while 4,247 RH rows remain boundary forcing, 1,691 ERT
+rows remain external diagnostic targets pending transform/support/uncertainty
+confirmation, 5,265 Taupe/TDR or unsupported rows are not usable for the current state
+fit, and 95 NMR rows are outside the output time tolerance.
+\path{assemble_inversion_objective.py} then combines this state layer with the direct
+permeability fit.  For the best executed lower-support loop candidate, the combined
+objective has two active components: 75 direct pulse-test rows with effective
+duplicate-aware weight 52 and objective value 269.84 for \(\sigma=0.5\) log10
+permeability units, plus 192 sampled NMR state rows with objective value 2886.54.
+The total active objective is 3156.37.
+
+The model-entry coverage audit in
+\path{inversion_workflow/measurement_operator_coverage.md} makes this status explicit
+across all collected measurement streams.  It lists nine observation groups.  For the
+current best executed lower-support loop candidate, two groups have active objective rows:
+the direct permeability pulse tests and sampled NMR state targets.  ERT is inventoried
+and matched to field files and has theta-to-resistivity calibration, a spatial lookup,
+and direct-run plus 66-run cross-candidate log-resistivity diagnostics, but still
+needs transform/support/uncertainty confirmation before assigning residual weights;
+Taupe/TDR is mapped to EDZ-band line samples and has a
+baseline-normalized trend operator with a run-local A3/A4 comparison diagnostic, but
+remains outside the active objective until the absolute unit/calibration is confirmed;
+RH has been converted to Kelvin pressure, audited as boundary forcing, and expanded
+into local candidate boundary curves, but it remains outside the active objective
+until the active-curve provenance and extension policy are confirmed.  Coordinates,
+bedding/geology, and the model-projection inputs are support layers.  The remaining HM
+monitoring streams now have a structured layout/qualitative layer and levelling summary
+rows, but they remain outside the active objective until the Geoscope time-series
+exports and laser-scan statistical files are located.
+
+The generated model-entry matrix in
+\path{inversion_workflow/measurement_model_entry_matrix.md} joins this coverage map
+with the residual/likelihood semantics, stream activation gates, and final
+include/exclude register.  It keeps the nine collected measurement classes on one
+row each: two classes currently contribute 267 active objective rows, three classes
+are diagnostic or boundary-audit only, three are support/prior layers, and other HM
+monitoring is not ready for hard residual weights.  The matrix is therefore the
+report-facing index for deciding whether a measurement is active, diagnostic,
+support-only, boundary-only, or awaiting a collaborator/provenance decision.
+
+The separate likelihood/activation audit in
+\path{inversion_workflow/measurement_likelihood_model.md} records the stricter
+statistical decisions that should not be inferred from data coverage alone.  It has
+seven stream-level rows and two active streams: direct permeability pulse tests and
+sampled NMR, for 267 active objective rows.  The active permeability residual is
+\(\log_{10} k_{\rm pred}-\log_{10} k_{\rm obs}\) with the current broad
+\(\sigma=0.5\) log10 scale and duplicate-aware weights.  The active NMR residual is
+still caveated: the bound-water sensitivity audit rules out
+a naive absolute \(\theta=nS_\ell\) residual, and the 66-run bias/anomaly audit shows
+that a bias-safe NMR diagnostic changes the top candidate.  NMR therefore requires
+either a trend/anomaly residual or explicit bound/interlayer-water bias or model-error term;
+ERT and Taupe/TDR are kept as forward
+observation operators until support/calibration choices are confirmed; RH remains a
+boundary-condition provenance audit rather than a cell-wise residual.
+
+A dedicated stream gate audit now makes these decisions machine-checkable in
+\path{inversion_workflow/measurement_stream_activation_gate_audit.md}.  It records
+eight stream/support layers, 20 gate checks, and seven required failed gates.  The
+only streams with active objective rows are direct permeability and NMR, both with
+tracked caveats.  ERT and Taupe/TDR are diagnostic-only, RH is boundary-audit-only,
+and other HM monitoring is not ready for hard residuals because no Geoscope,
+laser-scan, or full levelling numeric exports with epochs, units, support, and
+uncertainty are present.  This audit is the current blocker list for promoting the
+diagnostic streams into a weighted all-measurement objective.
+
+The blocker list has been converted into a reproducible closure package in
+\path{inversion_workflow/measurement_gate_closure_request.md}, with the machine table
+\path{inversion_workflow/measurement_gate_closure_request.csv} and an email-ready draft
+in \path{inversion_workflow/measurement_gate_closure_email_draft.md}.  It contains
+13 closure items: seven external BGR/provider requests and six internal modelling
+decisions.  The high-priority requests cover the ERT coordinate transform/support
+mask and covariance model, Taupe workbook unit/calibration, RH active-curve
+provenance and uncertainty policy, Geoscope/laser/levelling numeric exports and
+metadata, and the final NMR bound/interlayer-water residual definition.  The
+internal decision register also records the separate NMR not-promoted-default
+policy for the current report state.
+The medium-priority items record the permeability gas-pulse model-error policy, optional
+historical permeability endpoint geometry, and Taupe grouped weighting/support
+decisions.  Until these items are closed, the report should describe the current
+fit as a direct-permeability plus conditional-NMR inversion with ERT, Taupe/TDR,
+RH/suction, and other-HM streams used as diagnostics or provenance checks.
+
+Before treating those rows as external-only, the same gate criteria were applied to
+the local source catalogue and to raw \path{/home/ber0061/Downloads} files.  The
+catalogue recovery audit in
+\path{inversion_workflow/local_gate_recovery_audit.md} rescanned 2,540 source/index
+documents and found zero possible gate-closing evidence rows.  The Downloads recovery
+audit in \path{inversion_workflow/download_gate_recovery_audit.md} scanned 533
+CD-A/HERMES-relevant filename, archive-member, Office-XML, and text documents and
+also found zero possible gate-closing evidence rows.  Its companion inventory
+\path{inversion_workflow/download_gate_recovery_inventory.csv} records 25
+SHA1-verified duplicate/catalogue rows, including
+\path{ERT_meas_Niche_open (1).zip}, \path{ERT_meas_Niche_open (2).zip}, and
+\path{003_Nov_2025 (1).zip}, plus the extracted/run-output directory
+\path{/home/ber0061/Downloads/CDA_N4_2D_250403}.  That directory contains run-output
+VTUs and duplicated base model files rather than provider answers to the transform,
+uncertainty, calibration, provenance, numeric-export, or endpoint-geometry gates.
+Thus no currently known local download changes the activation status of the seven
+external gates.
+
+The seven external rows are now split into five recipient-specific drafts in
+\path{inversion_workflow/external_gate_request_pack.md}, with suggested contact
+routes resolved from the local mail index.  All five drafts have a suggested
+\path{To} route through \path{Gesa.Ziefle@bgr.de}; the ERT draft additionally lists
+\path{Markus.Furche@bgr.de} as suggested \path{Cc}, while the remaining provider
+routes keep explicit forwarding caveats because no more specific sender was
+resolved locally.  The response-intake tracker
+in \path{inversion_workflow/external_gate_response_intake.md} creates stream-local
+provider-response folders and records one response-note template, acceptance test,
+and refresh-command list per external request.  The dispatch-readiness audit in
+\path{inversion_workflow/external_gate_dispatch_audit.md} checks those drafts against
+the intake tracker before sending: all seven requests are ready across the five
+drafts, all seven rows carry suggested \path{To} routes, zero dispatch checks fail,
+and the Gmail draft tracker
+\path{inversion_workflow/external_gate_gmail_drafts.csv} records five Gmail drafts
+covering all seven request rows.  No request is recorded as sent and all seven
+responses remain missing.
+A point-in-time Gmail live-state audit in
+\path{inversion_workflow/gmail_gate_live_state_audit.md} then checked these same
+threads plus the separate CTE confirmation draft.  At 2026-06-01 03:55:46 CEST, all six
+expected Gmail drafts were still present as drafts; a sent-subject search found zero
+sent copies; the recent named-provider search found zero replies from the Gesa,
+Markus, or Tuanny routes; and the recent CD-A/HERMES/TeamBeam context search returned
+only the generated drafts.  This confirms the current response-intake status but does
+not replace sending or answering the requests.
+
+The consolidated send/response state is now captured in
+\path{inversion_workflow/external_blocker_dashboard.md}.  It joins the external
+request, response-intake, dispatch, Gmail live-state, local-recovery, Downloads
+recovery, and CTE confirmation trackers into eight open blocker rows: seven external
+measurement gates and one CTE confirmation row.  All eight rows remain unsent and
+missing-response blockers; the dashboard therefore provides the current worklist,
+not closure evidence.
+
+The current executed-candidate evidence is also joined in
+\path{inversion_workflow/cross_stream_candidate_scorecard.md}.  The scorecard
+compares 66 common run ids across the active objective, the NMR bias/anomaly
+diagnostic, ERT log-resistivity MAE, and Taupe/TDR trend MAE without changing the
+likelihood.  It finds no candidate in the top 10 of every stream.  The active
+incumbent
+\path{local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000} ranks first in the
+active objective but only 14th in the NMR bias/anomaly diagnostic, 8th in ERT, and
+29th in Taupe/TDR.  The best mean-rank compromise is
+\path{local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000}, with mean rank 10.4
+and worst rank 18.  This is the present evidence that the active-objective incumbent
+should remain conditional on the unresolved diagnostic gates rather than being
+reported as the final all-measurement permeability field.
+
+The same pause point is now checked by
+\path{inversion_workflow/runs/cross_stream_hybrid_field_plan/CROSS_STREAM_HYBRID_FIELD_PLAN.md}.
+That screen builds 15 log-magnitude hybrids from five cross-stream winner runs and
+the active incumbent.  It derives magnitude from the actual \path{k_i_rd} tensor,
+not from the stale \path{k_mag_rd} metadata field, and then preserves the active
+tensor orientation and anisotropy ratio by scalar multiplication.  The best hybrid,
+\path{cross_hybrid_mean_rank_all_streams_plus2_a0p25}, has direct objective
+269.8180571059851, i.e. zero improvement over the active direct objective at the
+reported precision.  Thus the cross-stream hybrids are useful as deliberate
+diagnostic probes, but they do not justify another OGS batch for the active
+direct-permeability plus raw-NMR objective alone.
+
+The parameter-release audit in
+\path{inversion_workflow/inversion_parameter_release_plan.md} then connects those
+measurement decisions back to the actual OGS XML.  It writes 14 rows from the base
+\path{03_parameters_TRM.xml}, media files, projection \path{MeshElement} parameter
+file, and selected regularized candidate run.  The result is deliberately restrictive:
+the only stage-1 active unknown is the \path{k_i_rd} tensor-magnitude field; the
+  \path{n_rd} porosity field is a fixed support field even though sampled NMR state
+residuals are active; tensor shape, van Genuchten \(p_b\), and exponent stay gated
+until the final NMR policy, support decisions, and RH boundary-curve provenance are
+settled; elasticity, Biot, and swelling remain later mechanical validation
+candidates; and the open-niche pressure curve plus the suspicious
+\path{CTE} value are confirmation/provenance blockers, not ordinary calibration
+parameters.  The same audit now records two active objective components with
+objective 3156.353066948979, including 75 direct permeability rows and 192 sampled
+NMR rows from 83 OGS output times, and it blocks further same-support active-objective
+OGS batches until support, likelihood, bounds, or stream-gate evidence changes.
+The dedicated \path{inversion_workflow/cte_confirmation_request.md} package now
+turns the \path{CTE} blocker into a provider-facing question routed to Gesa with
+Tuanny as the model-setup contact in copy.  It asks whether
+\path{CTE=1254.74} is an intended thermal-expansivity value in \(1/K\), a copied
+\path{c_p_s} heat-capacity value, inactive in the intended run, or another
+unit/convention.  Until the response is recorded, the frozen XML value is kept
+unchanged and uninterpreted.
+
+The same staging decision is now enforced on prepared runs by
+\path{inversion_workflow/scripts/audit_inversion_release_gates.py}.  The audit is
+called inside the candidate driver and also writes a global summary in
+\path{inversion_workflow/inversion_release_gate_audit.md}.  For the current three
+regularized candidate directories, first three adaptive candidate directories, two
+local-refinement candidate directories, three local-bracketing candidate directories,
+three optimizer-proposed candidate directories, three continuous-proposed candidate
+directories, three lower-support continuous candidate directories, six
+lower-support loop candidate directories, six broad continuous candidate
+directories, three local-basis candidate directories, and thirty production sampler
+candidate directories it passes 1300 checks:
+\path{k_i} is the active
+\path{MeshElement} field \path{k_i_rd}, \path{phi} remains fixed support
+\path{n_rd = 0.105}, media and retention XML files match the projection reference,
+and no blocked or later-release parameter has been silently changed.
+The consolidated guardrail audit in
+\path{inversion_workflow/frozen_model_measurement_inclusion_audit.md} then links
+that release control back to the measurement catalogue.  It checks 75
+\path{RUN_MANIFEST.json} files, the 65 release-gated OGS candidate runs, the current
+positive-definite permeability-field package, the 206-file measurement-info mirror,
+1,880 indexed archive members, and 34 workbook-sheet summaries.  The audit passes,
+but it also records that the current field remains an active-objective incumbent
+rather than a final all-measurement inversion because the ERT, Taupe/TDR, RH,
+other-HM, endpoint-geometry, and \path{CTE} gates remain open.
+
+Finally, the full objective is tracked by
+\path{inversion_workflow/objective_readiness_audit.md}, generated with
+\path{build_objective_readiness_audit.py}.  This audit is intentionally stricter than
+a progress note: it maps the original report/model/inversion request to 13 evidence
+rows.  At the present state it reports \path{completion_state = not_complete}.  The
+clean report build, source-model recovery, measurement inventory, processed
+observation tables, source coverage, release plan, and release gate are in place.
+The recovered OGS 6.5.4 SIF has now completed direct, regularized, first adaptive,
+local-refinement, local-bracketing, and optimizer-proposed candidate runs through
+continuous, lower-support continuous, repeatable lower-support loop, and broad
+continuous candidate runs
+through Dockerized Apptainer, and sampled NMR rows are active in the combined
+objective.  The full inversion remains
+incomplete because the current comparison is still proposal/sampler-batch selection
+rather than a converged posterior or optimizer trace, ERT/Taupe/RH remain gated, and
+the diagnostic streams have not been calibrated into a common likelihood.
+The remaining report and modelling questions are also consolidated in
+\path{inversion_workflow/open_question_resolution_matrix.md}, generated with
+\path{build_open_question_resolution_matrix.py}.  That matrix links the original
+open-question list, source/citation checks, report-comment audit, external gate
+trackers, and final-promotion criteria.  It records 23 rows: 6 locally
+resolved/current-scope rows, 9 external send/response rows, 6 internal
+policy/final-decision rows, one tracked current-policy caveat, one deferred
+time-dependency row, and an explicit no-new-evidence closeout decision row.  It
+therefore turns the remaining questions into provider-response, modelling-policy,
+or conservative-closeout gates rather than unresolved report comments.
+The local-basis sampler is now included as executed combined evidence: its selected
+three-candidate batch passed release gates and shifted the active best combined
+objective to 3156.35307.
+The current field is packaged separately in
+\path{inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD.md},
+with the copied \path{bulk_w_projections.vtu} mesh, summary JSON files,
+cell-wise statistics for the actual \path{k_i_rd} tensor, detailed direct and sampled
+NMR residual tables, and a run-local \path{ogs_run_inputs/} snapshot of the exact
+project file, XML includes, meshes, and curves used for the executed incumbent.  The
+accompanying \path{packaged_file_manifest.csv} records SHA256 checksums for the
+packaged field, audits, residual tables, summaries, and OGS input snapshot.  The
+generated \path{CURRENT_FIELD_REPRODUCIBILITY_AUDIT.md} verifies 19 package,
+manifest, snapshot, objective, release-gate, execution, and field checks with zero
+required failures.  The package records 10,239 positive-definite
+\texttt{triangle6} tensor cells, fixed anisotropy ratio 2.5,
+bedding angle \(144^\circ\), fixed support porosity \(n=0.105\), and the same active
+objective value.  It is therefore the present deliverable candidate field for
+inspection and reruns, but still not a final all-measurement inversion field.
+The visual inspection artifact in
+\path{inversion_workflow/current_permeability_field/visual_inspection/CURRENT_FIELD_VISUAL_INSPECTION.md}
+renders six cell-wise PNG maps from that packaged VTU, including log10
+geometric-mean permeability, minor and major eigen-permeability, local-basis
+increment, nearest-anchor distance, and local-basis weight support.  These maps are
+used as QA for the active-objective field and do not change the promotion status.
+The promotion decision is made machine-checkable in
+\path{inversion_workflow/current_field_selection_audit.md}: that audit accepts the
+packaged field as the current active-objective incumbent, but refuses promotion to a
+final all-measurement field because the provisional NMR trend/anomaly residual and
+the cross-stream mean-rank scorecard prefer different runs, while ERT, Taupe/TDR,
+RH, other-HM, and external-response criteria remain gated.
+The companion scenario audit
+\path{inversion_workflow/conditional_field_selection_scenarios.md} enumerates eight
+gate/outcome scenarios; the packaged field wins only the current raw-NMR active
+objective, while five different fields win across the scenarios.  This makes the
+non-final status a consequence of the measured stream conflicts, not just a
+wording caveat.
+Those five scenario-winning meshes are copied with common tensor statistics in
+\path{inversion_workflow/conditional_field_candidates/CONDITIONAL_FIELD_CANDIDATES.md}
+so the current active-objective field, promoted-NMR field, ERT-screen field,
+Taupe-screen field, and mixed diagnostic field alternatives can be inspected without
+modifying the exchanged GESA model.  The same package now writes per-candidate
+\path{diagnostic_metric_evidence.csv} files and a combined
+\path{conditional_field_candidate_metric_evidence.csv}: 25 active-objective,
+NMR-label-bias, NMR-trend/anomaly, ERT, and Taupe metric rows are extracted from
+the global diagnostic audits, with no missing metric-evidence rows for the five
+scenario winners.
+The follow-up field-difference audit in
+\path{inversion_workflow/conditional_field_candidates/CONDITIONAL_FIELD_DIFFERENCE_AUDIT.md}
+compares the four non-current scenario winners against the current field cell by
+cell using the geometric-mean \(\log_{10}\) permeability of \(\mathbf{k}_{i,\mathrm{rd}}\).
+One alternative, \path{local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000},
+is essentially the same local-basis field at this scale: its mean absolute
+difference is \(8.5\times10^{-6}\) log units and no cell differs by more than
+0.05 log units.  The broader gate-dependent alternatives are local but material:
+the largest mean absolute difference is 0.0377448 log units, with at most 241
+of 10,239 cells exceeding 0.05 log units and 233 cells exceeding 0.10 log units.
+This supports keeping the current field available for inspection while still
+refusing to label it as an all-measurement inversion result.
+The final-promotion gate is consolidated in
+\path{inversion_workflow/final_inversion_promotion_checklist.md}.  That checklist
+records 17 criteria: five pass, one passes with the tracked source-model caveat, and
+two pass only for the active objective; six remain externally blocked, one remains an
+internal NMR-residual policy decision, and two fail promotion because the scenario
+winner is unstable and the current field-selection audit refuses final promotion.
+Its current decision is therefore \path{do_not_promote_current_field}.  The checklist
+is the practical close-out map: either the ERT, Taupe/TDR, RH, other-HM,
+permeability-endpoint, CTE, and NMR-policy gates must be closed, or the modelling
+team must explicitly record which gated streams are excluded from the final
+objective.
+The companion close-out playbook,
+\path{inversion_workflow/final_inversion_closeout_playbook.md}, expands the nine
+open promotion criteria into actions: six existing Gmail draft/response routes, one
+internal NMR policy decision, and two scenario/final-field decision steps.  It lists
+the response-note locations, acceptance evidence, and regeneration commands needed
+after replies or explicit exclusions are recorded.  The regenerated playbook also
+threads the direct-permeability support-conflict evidence through the permeability
+endpoint, scenario-stability, and final-field approval rows, so resolving or
+explicitly retaining the current support/likelihood policy is a named close-out
+action before same-support OGS spending or final promotion can resume.
+The additional decision register
+\path{inversion_workflow/final_objective_decision_register.md} records the explicit
+include/exclude layer for those same open rows.  It currently contains nine pending
+or not-ready decisions: six external stream/provenance decisions, one internal NMR
+policy decision, and two scenario/final-field decisions.  Each row states the
+current allowed use of the evidence, the include path, the diagnostic-only or
+exclusion path, the acceptance evidence, the report wording requirement, and the
+refresh commands.  It now also carries the direct-permeability support-conflict
+numbers and the still-unapproved support/likelihood policy into the endpoint,
+scenario-stability, and final-field decision rows.  Consequently, a gated stream is
+not silently waived: it must be
+closed, kept diagnostic-only, explicitly excluded, or waived by a documented
+modelling decision before the current permeability field can be promoted.
+The companion final-objective scenario matrix
+\path{inversion_workflow/final_objective_scenario_matrix.md} maps those
+include/exclude choices to nine explicit selection options.  The current packaged
+field wins only the narrow raw-NMR active-objective option and the direct-only
+permeability tie case; every currently scored option that promotes NMR trend/anomaly
+or accepts ERT or Taupe/TDR chooses a different run, while RH, other-HM, and
+endpoint-missing historical permeability remain unscored future options until their
+provider evidence is filed.  The matrix also records that the direct-only tie is
+not a clean final objective: the current support map has repeated-row conflicts,
+zero same-support reducible gap, and no approved direct-permeability policy change.
+The recommendation packet
+\path{inversion_workflow/final_objective_include_exclude_recommendations.md}
+records the conservative no new evidence interpretation of the same rows.  It
+recommends keeping ERT, Taupe/TDR, RH/suction, other-HM monitoring,
+endpoint-missing historical permeability rows, and the suspicious CTE value out of
+final hard likelihood weights unless provider evidence arrives or an explicit
+modelling decision is recorded; it also keeps the current direct-permeability
+support/likelihood policy as a signoff issue rather than a silent final assumption.
+This packet is not itself a decision and does not
+unblock promotion; it keeps the current field labelled as an active-objective
+incumbent.
+The further no-new-evidence closeout draft
+\path{inversion_workflow/final_objective_no_new_evidence_closeout_draft.md}
+translates that conservative position into exact decision text for review.  It
+contains nine draft rows and a single-block acceptance text that would choose the
+narrow \path{F01_current_raw_nmr_exclude_gated_streams} option only after
+user/modelling-team approval and regenerated scenario, current-field, and promotion
+audits.  The draft records no actual decisions, sends no mail, and does not promote
+the current field.
+The matching acceptance-record template
+\path{inversion_workflow/final_objective_no_new_evidence_acceptance_record_template.md}
+is the signoff guardrail for that path.  It has nine fillable rows, zero approvals
+recorded, and a not-ready-to-apply status, so it prevents the draft text from being
+mistaken for an accepted final objective.
+The regenerated draft and acceptance template also carry the direct-permeability
+support-conflict evidence into the final signoff layer itself: 75 active pulse-test
+rows occupy 30 OGS support cells, 24 of those cells contain repeated rows, and 16
+repeated cells span at least two \(\log_{10}\) permeability units.  The dominant
+signoff example is still cell 4648 in BCD-A32 at 0.85--0.87 m, where three active
+rows span 6.948847 \(\log_{10}\) units and include the configured-scalar envelope
+conflict.  Because the permeability likelihood-policy acceptance template still has
+0/1 primary approvals and the next field-fit gate marks same-support
+active-objective batches as non-executable, even the conservative
+no-new-evidence path cannot be read as approval to rerun the same support map or to
+promote the active field.
+For user review before any send action,
+\path{inversion_workflow/gmail_draft_send_review_packet.md} consolidates those six
+Gmail drafts into one table: five external measurement-gate drafts and one CTE
+confirmation draft, eight covered request rows, all six marked ready for review, and
+all six still recorded as unsent.
+The production sampler/convergence audit now adds five executed production rounds
+and recommends pausing the active direct-permeability/raw-NMR sampler.  The
+cross-stream scorecard then shows why this pause is not a final inversion claim:
+the active incumbent does not dominate the NMR bias/anomaly, ERT, and Taupe/TDR
+diagnostics viewed together.
+Two cheap follow-up field-family screens were therefore run before spending more
+OGS time.  The cross-stream hybrid screen in
+\path{inversion_workflow/runs/cross_stream_hybrid_field_plan/CROSS_STREAM_HYBRID_FIELD_PLAN.md}
+blends the active field magnitude with diagnostic-winner magnitude patterns and
+finds no direct-permeability improvement: the best hybrid ties the active direct
+objective at 269.818057.  The structural/EDZ screen in
+\path{inversion_workflow/runs/structural_edz_field_family_plan/STRUCTURAL_EDZ_FIELD_FAMILY_PLAN.md}
+then tests 234 central EDZ caps, central shells, bedding-parallel bands at
+\(144^\circ\), and broad BCD-A32/BCD-A33 open-twin corridors.  It catalogues 30
+active permeability objective support cells and 1,928 ERT ready-support cells, but
+again finds zero improving direct candidates; the best bedding-band row only ties
+the active direct objective.  This makes the pause stronger: more OGS runs in the
+current magnitude-field neighborhood are not justified by the active direct screen
+alone, while ERT, Taupe/TDR, RH, and other-HM gates remain unresolved.
+The residual conflict audit in
+\path{inversion_workflow/permeability_residual_conflict_audit.md} explains why this
+is not merely a sampler-convergence statement.  For the 75 active pulse-test rows it
+finds weighted RMSE 1.610715 log units, 48 rows with absolute residual at least one
+log unit, 21 rows at least two log units, and two high-permeability rows above the
+configured scalar tensor range.  It also finds 24 support cells with repeated active
+rows and 16 cells where repeated observations span at least one log unit.  Thus the
+remaining direct mismatch is a measurement-support, gas-to-water interpretation,
+uncertainty, or parameterization problem before it is another routine OGS batch.
+The spatial support-conflict audit in
+\path{inversion_workflow/permeability_support_conflict_spatial_audit.md} maps those
+support cells back onto the current \path{triangle6} mesh.  It confirms that the 75
+active rows occupy 30 support cells on the 10,239-cell current field, that 24 of the
+support cells have repeated rows, and that 16 repeated cells span at least two
+\(\log_{10}\) units.  The dominant mapped conflict is cell 4648 in BCD-A32 at
+0.85--0.87 m, where three active rows span 6.948847 log units and include the only
+configured-scalar envelope conflict.  This turns the stop rule into a spatially
+inspectable statement: under the present one-value-per-support-cell map, the largest
+direct residuals are co-located contradictory observations, not missing smooth-field
+degrees of freedom.
+The companion likelihood-policy audit in
+\path{inversion_workflow/permeability_likelihood_policy_audit.md} makes this
+distinction sharper without changing the active objective.  Under the recorded
+duplicate-weighted Gaussian row policy the direct objective is 269.818057 and the
+top ten rows contribute 0.494 of the row loss.  A support-cell weighted-mean
+diagnostic, however, collapses the 75 active rows to 30 model-support groups and
+has an objective-like value of \(1.77\times10^{-28}\), while a support-cell median
+diagnostic remains 134.727790.  The current field is therefore matching the
+duplicate-weighted means of conflicting rows that occupy the same support cells;
+switching to robust tails, support-cell aggregation, or scalar-range outlier
+handling must be an explicit likelihood decision rather than an implicit field-fit
+success.
+The support lower-bound audit in
+\path{inversion_workflow/permeability_support_lower_bound_audit.md} turns this into a
+field-search limit.  Holding the current observation-to-support-cell map fixed, the
+best possible single log-permeability prediction for each support cell is the
+duplicate-weighted observed mean.  The accepted field already attains that lower
+bound: the current row-Gaussian direct objective and the single-support lower-bound
+objective are both 269.818057, with zero same-support reducible gap.  All 30 support
+groups are at their lower bound, and 16 groups still span at least two log10 units.
+Thus another field that preserves the same support map cannot reduce the dominant
+row-Gaussian pulse-test loss; reducing it requires changing support, gas-pulse
+interpretation, likelihood semantics, scalar bounds, or tensor-shape freedom.
+The decision request in
+\path{inversion_workflow/permeability_likelihood_decision_request.md} keeps the
+rowwise Gaussian policy as the current-report default, but records the required
+alternatives before further active-objective OGS spending: robust row residuals,
+support-cell aggregation, explicit scalar-range outlier handling, or a genuinely new
+field-family gate with a materiality threshold.
+The configured-scalar outlier disposition in
+\path{inversion_workflow/permeability_configured_scalar_outlier_disposition.md}
+then makes the scalar-bound issue local and explicit.  The two active rows outside
+the configured scalar envelope are one duplicated BCD-A32 \(0.87\,\mathrm{m}\)
+high-permeability value.  It is only \(0.107\) log10 units above the configured
+upper envelope, whereas the same OGS support cell spans \(6.949\) log10 units
+because a nearby active low-permeability row is mapped to the same cell.  The local
+disposition is therefore not to widen eigenvalue bounds or release tensor shape
+from these rows alone; they remain visible under the current rowwise Gaussian
+default until the modelling team accepts that disposition or chooses a
+robust/capped/support-cell/outlier policy explicitly.
+The no-OGS existing-field rerank in
+\path{inversion_workflow/permeability_likelihood_scenario_rerank.md} then scores
+522 materialized permeability-field VTUs under those diagnostic policies.  It finds
+40 active row-Gaussian best ties, with the current accepted field included in that
+tie set.  Huber and Student-t row policies keep their representative winners inside
+the tie set, whereas capped row loss, support-cell median aggregation, and
+configured-scalar inside-only scoring select winners outside it.  Thus the rerank
+is useful decision evidence, but not an approval to change the current-report
+likelihood policy.
+The winner cross-stream audit in
+\path{inversion_workflow/permeability_likelihood_winner_cross_stream_audit.md}
+then checks whether those policy winners have executed-run state and diagnostic
+evidence.  Four of seven policy-winner rows have cross-stream scorecard evidence,
+representing two unique fields.  All three outside-tie non-default winners are
+direct-only fields without OGS/state/ERT/Taupe/NMR scorecard evidence.  The
+row-Gaussian representative selected by candidate-id sorting has active-objective
+rank 45 and mean all-stream rank 30.4, whereas the current accepted field has
+active-objective rank 1 and mean all-stream rank 13.2.  A direct-only non-default
+winner therefore cannot replace the current field without OGS execution and stream
+diagnostics.
+The next field-fit gate in
+\path{inversion_workflow/permeability_next_field_fit_gate.md} makes this stop rule
+explicit.  It records eight gates and recommends pausing same-support
+active-objective OGS batches under the current rowwise Gaussian policy.  Further OGS
+spending should be reopened only after a support mapping, likelihood, configured
+bound/tensor-shape, or accepted measurement-stream objective changes; a non-default
+direct-policy winner also needs OGS state and stream diagnostics before it can be
+used for final promotion.
+The consolidated packet
+\path{inversion_workflow/permeability_likelihood_support_recommendations.md}
+collects the same conclusion into eight direct-permeability decision-support rows.
+It keeps \path{keep_rowwise_gaussian_default} as the current-report policy, records
+zero same-support reducible gap, rejects immediate bound widening or tensor-shape
+release, and states that the packet does not unblock final promotion.
+The matching policy acceptance-record template
+\path{inversion_workflow/permeability_likelihood_policy_acceptance_record_template.md}
+is the signoff guardrail for any direct-permeability likelihood/support/outlier
+policy change.  It contains the five exclusive policy options, currently records
+zero of one required primary approvals, is not ready to apply, records no actual
+decision, changes no active objective, and does not reopen same-support OGS
+spending.
+
+\subsection{Other HM monitoring}
+
+The other HM monitoring folder contains minutes, TD modelling slides, levelling
+slides, the HERMES input note, and the CD-A Tecplot layout.  These sources identify
+extensometers, mini-piezometers, crackmeters, laser scans, levelling/miniprismas,
+temperature/RH, and opening-time records.  The 2024 HERMES input note states that BGR
+has long-term measurements of deformation, humidity, water content, pore water
+pressures, crack width, pointwise piezometer/extensometer data, and two-dimensional
+ERT/TDR/laser-scan data \cite[PDF p.~5]{InputHERMES2024Local}.
+
+The working folder now makes this secondary HM layer explicit with
+\path{build_other_hm_monitoring_inventory.py}.  The script streams
+\path{VisualisationCDA.dat} and writes
+\path{other_hm_visualisation_zones.csv}, \path{other_hm_visualisation_text_labels.csv},
+\path{other_hm_levelling_displacements.csv},
+\path{other_hm_qualitative_targets.csv}, and \path{other_hm_monitoring.md}.  The
+Tecplot layout contains 84 zones and 11 legend labels.  The classified zones include
+5 extensometer zones, 1 mini-piezometer zone, 22 fracture/crack-geometry zones, 12
+miniprisma/geodetic zones, 2 laser-scan surface zones, 6 RH/suction-support zones, and
+support zones for NMR, Taupe/TDR, permeability, convergence points, evapometer, and
+niche geometry.
+
+The 2026 TD minutes are important because they distinguish available streams from
+usable residuals.  They state that a Geoscope update sent on 2026-04-20 covered RH,
+temperature, door openings, extensometer, mini-piezometer, crackmeter, suction, and
+laser scans with statistical interpretation \cite[PDF p.~3]{TDMinutes2026Local}.
+Those raw Geoscope and laser-scan exports are not present in the current catalogue.
+The request package
+\path{inversion_workflow/processed_observations/other_hm_missing_numeric_request.md}
+therefore lists the missing numeric exports explicitly: mini-piezometer time series
+for BCD-A28 to BCD-A31, extensometer time series with BCD-A9/B10 failure metadata,
+crackmeter time series, auxiliary Geoscope RH/temperature/door/suction logs if
+distinct from the already catalogued RH files, the 2026-04-20 laser-scan statistical
+interpretation, and a full precision-levelling survey table.  These rows remain at
+zero active objective weight until the numeric files include units, support geometry,
+reference conventions and quality/status flags.
+The local absence claim is now checked by
+\path{build_other_hm_numeric_source_audit.py}.  It scans the ten current other-HM
+source files, the seven PDF members inside the 2026 presentation ZIP, extracted text,
+the Tecplot layout support, and the levelling table.  All six missing-export request
+classes have some local support geometry or extracted labels, but zero are
+hard-residual-ready.  The ZIP contributes no spreadsheet/CSV-style numeric members;
+the only numeric-extension source in this folder is \path{VisualisationCDA.dat},
+which supplies support geometry rather than dated Geoscope time series.  The audit
+therefore keeps mini-piezometer, extensometer, crackmeter, laser-scan, auxiliary
+boundary-context, and full levelling residuals inactive until the requested exports
+with units, timestamps or survey epochs, reference conventions, uncertainty, and
+quality flags are delivered.
+The same minutes report that mini-piezometers BCD-A28 to BCD-A31 were working well,
+that BCD-A9/B10 closed-niche horizontal/vertical extensometers failed since September
+2025, and that crackmeter data show one ongoing closed-niche trend plus open-niche
+seasonality \cite[PDF p.~3]{TDMinutes2026Local}.  They also record the higher-level
+trend split: the open twin shows ongoing trend in extensometer, suction and Taupe,
+whereas the closed twin is mostly static in extensometer, pore-pressure and suction
+measurements except for one crackmeter position with ongoing closure
+\cite[PDF p.~7]{TDMinutes2026Local}.
+
+The levelling slides provide the only pointwise numeric deformation summary currently
+available in this secondary-HM bundle.  The extracted table has 12 height-change
+values from the first 2022-08-29/30 measurement to the 2026-03 campaign.  The largest
+reported changes are CDA-O1 \(-2.1\) mm settlement and CDA-C4 \(+1.3\) mm
+heave/uplift; the reported detectable displacement is 0.1--0.2 mm at 95\% confidence,
+depending on the point \cite[PDF pp.~5--6]{LevellingTD2026Local}.  These values can
+become deformation-validation targets only after the survey reference frame and the
+OGS displacement-output support are aligned.
+
+The BGR 2026 modelling slides set the same priority for future HM observation
+operators: compare with extensometer displacements/strains, mini-piezometer pore
+pressures, and suction-derived pressure in the desaturated zone
+\cite[PDF p.~2]{BGRModellingTD2026Local}.  They also warn that a simplified
+perfect-ring 2D model already showed simulated strain discrepancies relative to the
+extensometer measurements \cite[PDF p.~15]{BGRModellingTD2026Local}.  This is a useful
+guard against accepting a hydraulic/permeability fit that is mechanically implausible.
+
+For the current permeability-focused inversion these streams are secondary, but they
+should be kept as validation gates:
+
+\begin{itemize}[leftmargin=1.5em]
+  \item Mini-piezometers validate pore-pressure trends after the Geoscope pressure
+  series are located.
+  \item Extensometers/laser scans validate displacement and strain fields, with the
+  September 2025 closed-niche extensometer failure kept as a data-quality boundary.
+  \item Crackmeters and convergence observations constrain whether simulated
+  deformation trends are qualitatively plausible, especially the open/closed twin
+  contrast.
+  \item Levelling values can check the sign and millimetre-scale magnitude of vertical
+  displacement after coordinate/reference-frame alignment.
+  \item Temperature/RH/opening-time records explain boundary-condition disturbances.
+\end{itemize}
+
+\subsection{Recommended staged inversion workflow}
+
+\begin{enumerate}[leftmargin=1.5em]
+  \item Freeze the May 2025 OGS XML and April mesh/project structure as the base model.
+  \item Validate the local data inventory with
+  \path{inversion_workflow/scripts/validate_observation_manifest.py}; this guards
+  against silently fitting against missing or structurally changed measurement files.
+  \item Regenerate the normalized observation tables with
+  \path{inversion_workflow/scripts/build_processed_observations.py} after any
+  catalogue update, and use \path{processed_observations/README.md} as the table
+  index.
+  \item Build a geometry map from \path{coordinates_geometry_layout/source_files} or
+  from the processed coordinate CSVs, then run
+  \path{inversion_workflow/scripts/build_mesh_observation_lookup.py} to separate
+  in-domain measurements from nearest-cell fallback or out-of-domain points.
+  \item Build explicit non-permeability state targets with
+  \path{inversion_workflow/scripts/build_state_observation_targets.py}.  The current
+  layer contains 11,490 target rows: mapped NMR water-content targets, RH
+  Kelvin-pressure boundary-forcing rows, Taupe/TDR baseline-normalized trend targets,
+  and ERT external field-comparison rows.
+  \item Quantify the NMR bound/interlayer-water caveat with
+  \path{inversion_workflow/scripts/build_nmr_bound_water_sensitivity.py} before any
+  absolute NMR water-content row is allowed into the numerical objective.
+  \item Rebuild the likelihood/activation audit with
+  \path{inversion_workflow/scripts/build_measurement_likelihood_model.py} so each
+  measurement stream has an explicit residual transform, scale/weighting rule,
+  bias/model-error caveat, and activation gate before it can enter the objective.
+  \item Rebuild the XML-linked parameter-release plan with
+  \path{inversion_workflow/scripts/build_inversion_parameter_release_plan.py}.  This
+  keeps the inverse problem staged: active \path{k_i_rd} magnitude fields against the
+  direct permeability and sampled NMR objective first, fixed \path{n_rd} support, no
+  further same-support OGS spending without a gate change, and delayed release of
+  tensor shape, porosity, retention, boundary, or mechanical parameters until the
+  recorded gates are met.
+  \item Audit prepared run directories with
+  \path{inversion_workflow/scripts/audit_inversion_release_gates.py}, or use the same
+  gate through \path{evaluate_inversion_candidate.py}.  A failed release gate should
+  stop candidate ranking because the run no longer represents the documented
+  permeability-only stage.
+  \item Refresh the objective-level readiness audit with
+  \path{inversion_workflow/scripts/build_objective_readiness_audit.py}.  This audit
+  is the current completion check: it should remain \path{not_complete} until OGS
+  outputs exist, state likelihoods are activated where justified, the five current
+  external-gate Gmail drafts and the separate CTE Gmail draft are reviewed/sent and
+  answered, and the combined inversion has been run.
+  \item Re-run the local and Downloads gate-recovery audits with
+  \path{inversion_workflow/scripts/build_local_gate_recovery_audit.py} and
+  \path{inversion_workflow/scripts/build_download_gate_recovery_audit.py} whenever
+  new TeamBeam, Gmail, Thunderbird, or raw download files are added.  A duplicate
+  archive or OGS run-output folder is not a gate closure unless it contains the
+  gate-specific transform, uncertainty, calibration, provenance, numeric-export, or
+  endpoint-geometry evidence and is filed through the response-intake tracker.
+  \item Rebuild or replace the projection workflow from
+  \path{model_projection_inputs/source_files} so heterogeneous permeability fields are
+  mesh-cell data with documented field names and reproducible generation.
+  \item Prepare one OGS run directory per permeability-field sample with
+  \path{inversion_workflow/scripts/prepare_ogs_run.py}; each run must carry a
+  \path{RUN_MANIFEST.json} recording the generated or fitted field and the output
+  variables required by observation operators.
+  \item Execute the prepared run with \path{inversion_workflow/scripts/run_ogs_model.py}
+  using either a host OGS executable, a host Apptainer/Singularity runtime, or the
+  recorded Dockerized-Apptainer path for the collected OGS 6.5.4 SIF, and keep
+  \path{OGS_EXECUTION_STATUS.json} with the run outputs.
+  \item Sample OGS outputs with \path{sample_ogs_state_outputs.py}, evaluate the
+  state target layer with \path{evaluate_state_observation_targets.py}, and assemble
+  the direct permeability and state terms with \path{assemble_inversion_objective.py}.
+  \item Use \path{evaluate_inversion_candidate.py} as the per-candidate harness.  The
+  verified runs on the current direct-fit and smooth-search meshes prepare run
+  copies, audit run-input mesh fields and submeshes, evaluate direct permeability,
+  execute or record the OGS command, sample available state outputs, audit the RH
+  boundary curve, evaluate state targets, and write the combined objective summary.
+  \item Use \path{run_inversion_candidate_search.py} as the deterministic search loop
+  around that harness.  The current dry search ranks four smooth candidates and keeps
+  \path{length_0p025m} first with objective 269.97.  In dry mode this is still a
+  direct-permeability-only ranking; in execute mode with the collected SIF through
+  Dockerized Apptainer, the same loop ranks by the combined permeability plus
+  state-observation objective and can be replaced by a Bayesian optimizer or ensemble
+  sampler.
+  \item Use \path{rank_regularized_permeability_candidates.py} to choose a small
+  first OGS comparison set from the direct-only candidates.  At minimum this should
+  include the direct-misfit winner and one damped regularized candidate, because the
+  state observations are needed to decide whether the strongest permeability update
+  is physically acceptable.
+  \item Prepare that comparison set with
+  \path{run_regularized_ogs_candidate_set.py}.  The current executed set contains the
+  full-shift, 0.75-shift, and 0.5-shift 0.025 m fields, each with audited run inputs,
+  83 OGS output VTUs, sampled NMR rows, and a combined objective summary.  The first
+  adaptive broader-support batch has also been executed and is worse than the
+  then-best 0.025 m field.  The first local-refinement batch improves the smooth-field best to
+  \path{length_0p013m} with combined objective 3159.66.  The first local-bracketing
+  batch around that field is worse than this best, with best combined objective
+  3167.21.  The finite-candidate Bayesian proposal batch is also worse, with best
+  combined objective 3172.37.  The first continuous proposal batch improves the
+  active best to \path{length_0p006m_shift_0p992} with combined objective 3156.78.
+  The lower-support continuous batch further improves the active best to
+  \path{length_0p004m_shift_0p995} with combined objective 3156.38, and the first
+  repeatable lower-support loop improves it again to
+  \path{length_0p003m_shift_1p006} with combined objective 3156.37.  The second
+  repeatable lower-support loop did not improve this incumbent, and the refreshed
+  broad continuous evidence batches also did not improve it; the best broad-loop row
+  is \path{length_0p010m} with combined objective 3157.70.  The next step is to
+  treat \path{basis_024_det_l_0p0075_s_1p000} as the current incumbent evidence.
+  Five production handoff rounds did not improve it; the local-anisotropy screen
+  and cross-stream hybrid screen also found no direct-improving follow-up family.  Use
+  \path{PRODUCTION_SAMPLER_DECISION.md} as the current decision to pause the active
+  direct-permeability plus NMR production sampler and move effort to gated
+  measurement streams or a new field family.
+  \item Reproduce the current open-niche pressure curve from RH/T data, or document the
+  residual mismatch if the source data do not fully reproduce it.
+  \item Start with a heterogeneous anisotropic permeability field and fixed porosity,
+  retention, elasticity, swelling, and thermal properties.
+  \item Use pulse-test data as direct log-permeability constraints with large
+  interval-scale errors and gas/slip caveats.
+  \item Use ERT through the documented theta-to-resistivity operator after spatial
+  projection to the ERT/common mesh exists; use NMR as a sparse water-content anchor
+  with bound-water bias/error.
+  \item Use Taupe/TDR through the documented trend operator and suction/RH as
+  trend/consistency constraints until their calibration to model saturation is
+  documented.
+  \item Only after permeability is identifiable should porosity, \(m\), \(p_b\), or
+  other fields be released as additional unknowns.
+\end{enumerate}

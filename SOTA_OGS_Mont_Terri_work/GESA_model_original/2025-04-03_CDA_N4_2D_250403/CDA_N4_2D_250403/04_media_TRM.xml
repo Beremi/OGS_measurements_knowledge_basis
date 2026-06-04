@@ -1,0 +1,72 @@
+<!--
+Parameter, die in Ogs5 vorhanden waren, welche in Ogs6 bisher aber noch zu fehlen scheinen oder
+nicht mehr benötigt werden:
+PERMEABILITY_SATURATION
+CAPILLARY_PRESSURE
+STORAGE
+-->
+<medium id="0,1"><!--,2,3,4,6,7,8,9,11,12,13,14"-->
+	<properties>
+		<property>
+			<name>permeability</name>
+			<type>Parameter</type>
+			<parameter_name>k_i</parameter_name>
+		</property>
+		<property>
+			<name>porosity</name>
+			<type>Parameter</type>
+			<parameter_name>phi</parameter_name>
+		</property>
+		<property>
+			<name>thermal_conductivity</name>
+			<type>EffectiveThermalConductivityPorosityMixing</type>
+		</property>
+		<property>
+			<name>biot_coefficient</name>
+			<type>Parameter</type>
+			<parameter_name>biot</parameter_name>
+		</property>
+		<!-- zusätzliche TRM Parameter-->
+		<include file="./04_2_media_twophase.xml" />
+	</properties>
+	<phases>
+		<!--phase:
+		AqueousLiquid-->
+		<include file="./04_1_media_aqu_liq.xml" />
+		<!--phase:
+		AqueousLiquid-->
+		<phase>
+			<type>Solid</type>
+			<properties>
+				<property>
+					<name>density</name>
+					<type>Parameter</type>
+					<parameter_name>rho_s</parameter_name>
+				</property>
+				<property>
+					<name>thermal_conductivity</name>
+					<type>Parameter</type>
+					<parameter_name>kappa_th_s</parameter_name>
+				</property>
+				<property>
+					<name>specific_heat_capacity</name>
+					<type>Parameter</type>
+					<parameter_name>c_p_s</parameter_name>
+				</property>
+				<property>
+					<name>thermal_expansivity</name>
+					<type>Parameter</type>
+					<parameter_name>CTE</parameter_name>
+				</property>
+				<property>
+					<name>swelling_stress_rate</name>
+					<type>SaturationDependentSwelling</type>
+					<swelling_pressures>1.0E+06 1.0E+06 1.0E+06</swelling_pressures>
+					<exponents>1 1 1</exponents>
+					<lower_saturation_limit>0.1</lower_saturation_limit>
+					<upper_saturation_limit>1</upper_saturation_limit>
+				</property>
+			</properties>
+		</phase>
+	</phases>
+</medium>

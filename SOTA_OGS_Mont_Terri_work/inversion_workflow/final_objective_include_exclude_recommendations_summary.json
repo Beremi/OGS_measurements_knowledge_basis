@@ -1,0 +1,70 @@
+{
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_include_exclude_recommendations.csv",
+      "source": "inversion_workflow/final_objective_include_exclude_recommendations.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_include_exclude_recommendations_summary.json",
+      "source": "inversion_workflow/final_objective_include_exclude_recommendations_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_include_exclude_recommendations.md",
+      "source": "inversion_workflow/final_objective_include_exclude_recommendations.md"
+    }
+  ],
+  "current_field_final_decision_before_packet": "do_not_promote_to_final_all_measurement_field",
+  "diagnostic_or_exclude_without_new_evidence_count": 5,
+  "external_measurement_or_provenance_recommendation_count": 6,
+  "final_promotion_unblocked_by_this_packet": false,
+  "internal_policy_recommendation_count": 1,
+  "missing_response_blocker_count": 8,
+  "next_action": "If the user/model team accepts the conservative recommendations, record the explicit exclusions or diagnostic-only decisions in the decision layer and rerun scenario/current-field/promotion audits. Otherwise send the existing provider drafts and file responses before inclusion.",
+  "open_blocker_count": 8,
+  "open_blocker_ids": [
+    "ert_transform_support",
+    "ert_uncertainty",
+    "hm_numeric_exports",
+    "hm_uncertainty",
+    "rh_active_curve_provenance",
+    "taupe_unit_calibration",
+    "perm_endpoint_geometry",
+    "cte_value_confirmation"
+  ],
+  "permeability_likelihood_policy_primary_approvals_recorded": 0,
+  "permeability_likelihood_policy_primary_approvals_required": 1,
+  "permeability_likelihood_policy_ready_to_apply": false,
+  "permeability_next_field_fit_gate_same_support_batch_executable_now": false,
+  "permeability_support_conflict_spatial_active_support_cell_count": 30,
+  "permeability_support_conflict_spatial_range_ge_2_log10_cell_count": 16,
+  "permeability_support_conflict_spatial_repeated_support_cell_count": 24,
+  "promotion_decision_before_packet": "do_not_promote_current_field",
+  "provider_or_internal_evidence_required_for_include_count": 6,
+  "recommendation_class_counts": {
+    "boundary_audit_only_until_provenance_acceptance": 1,
+    "diagnostic_only_until_provider_acceptance": 2,
+    "do_not_promote_until_scenario_explicit": 1,
+    "internal_policy_not_final": 1,
+    "keep_active_incumbent_label": 1,
+    "model_provenance_scope_out": 1,
+    "partial_support_keep_endpoint_missing_rows_inactive": 1,
+    "qualitative_context_until_numeric_exports_arrive": 1
+  },
+  "recommendation_count": 9,
+  "recommended_current_field_label": "active_objective_incumbent_only",
+  "scenario_or_final_recommendation_count": 2,
+  "source_artifacts": [
+    "inversion_workflow/final_objective_decision_register.csv",
+    "inversion_workflow/external_blocker_dashboard.csv",
+    "inversion_workflow/nmr_final_residual_policy_gate_summary.json",
+    "inversion_workflow/final_inversion_promotion_checklist_summary.json",
+    "inversion_workflow/current_field_selection_audit_summary.json",
+    "inversion_workflow/permeability_support_conflict_spatial_audit_summary.json",
+    "inversion_workflow/permeability_support_lower_bound_audit_summary.json",
+    "inversion_workflow/permeability_likelihood_policy_acceptance_record_template_summary.json",
+    "inversion_workflow/permeability_next_field_fit_gate_summary.json"
+  ],
+  "status": "final_objective_include_exclude_recommendations_generated",
+  "unsent_blocker_count": 8,
+  "waiver_not_recommended_count": 8
+}

@@ -1,0 +1,74 @@
+item_type,name,type,value
+process,TRM,THERMO_RICHARDS_MECHANICS,
+process,specific_body_force,vector,0 0
+process_variable,displacement,components=2; order=2,ic=ic_displacement; bcs=4
+process_variable,pressure,components=1; order=1,ic=ic_pressure; bcs=2
+process_variable,temperature,components=1; order=1,ic=ic_temperature; bcs=1
+medium_property,biot_coefficient,Parameter,biot
+medium_property,permeability,Parameter,k_i
+medium_property,porosity,Parameter,phi
+medium_property,thermal_conductivity,EffectiveThermalConductivityPorosityMixing,
+twophase_property,bishops_effective_stress,BishopsPowerLaw,1
+twophase_property,relative_permeability,RelativePermeabilityVanGenuchten,0.45
+twophase_property,saturation,SaturationVanGenuchten,0.45
+aqueous_property,density,Linear,1095
+aqueous_property,specific_heat_capacity,Parameter,c_p_l
+aqueous_property,thermal_conductivity,Parameter,kappa_l
+aqueous_property,viscosity,Parameter,eta
+phase_property,Solid.density,Parameter,rho_s
+phase_property,Solid.specific_heat_capacity,Parameter,c_p_s
+phase_property,Solid.swelling_stress_rate,SaturationDependentSwelling,
+phase_property,Solid.thermal_conductivity,Parameter,kappa_th_s
+phase_property,Solid.thermal_expansivity,Parameter,CTE
+source_parameter,CTE,Constant,1254.74
+source_parameter,E,Constant,13.80e+9 6.00e+9 13.80e+9
+source_parameter,G,Constant,4.79e+9 2.46e+9 4.79e+9
+source_parameter,bc_atm_pressure,Constant,0.1e+6
+source_parameter,bc_displacement,Constant,0
+source_parameter,bc_pressure_outside,Constant,1.5e+6
+source_parameter,bc_temperature_outside,Constant,298.15
+source_parameter,bc_top_pressure,Function,1.5e6 - ((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*50
+source_parameter,biot,Constant,1
+source_parameter,c_p_l,Constant,4160
+source_parameter,c_p_s,Constant,1254.74
+source_parameter,eta,Constant,1.0e-3
+source_parameter,ic_displacement,Constant,0 0
+source_parameter,ic_pressure,Function,1.5e6 - ((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*y
+source_parameter,ic_sigma0,Function,(-1.21e6) + 1*((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*y; (-7e6 + 1*1.5e6) + 1*((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*y; 0; 0
+source_parameter,ic_temperature,Constant,298.15
+source_parameter,k_i,Constant,1.00E-19 0.00 0.00 0.40E-19
+source_parameter,kappa_l,Constant,0.6
+source_parameter,kappa_th_s,Constant,2.156
+source_parameter,load_top,Function,(-7e6) + 1*((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*50
+source_parameter,nu,Constant,0.44 0.22 0.44
+source_parameter,open_niche_seasonal,CurveScaled,open_niche_seasonal_curve
+source_parameter,phi,Constant,0.105
+source_parameter,pressure_scaling_factor,Constant,1.0
+source_parameter,rho_s,Constant,2.52e+3
+run_parameter,CTE,Constant,1254.74
+run_parameter,E,Constant,13.80e+9 6.00e+9 13.80e+9
+run_parameter,G,Constant,4.79e+9 2.46e+9 4.79e+9
+run_parameter,bc_atm_pressure,Constant,0.1e+6
+run_parameter,bc_displacement,Constant,0
+run_parameter,bc_pressure_outside,Constant,1.5e+6
+run_parameter,bc_temperature_outside,Constant,298.15
+run_parameter,bc_top_pressure,Function,1.5e6 - ((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*50
+run_parameter,biot,Constant,1
+run_parameter,c_p_l,Constant,4160
+run_parameter,c_p_s,Constant,1254.74
+run_parameter,eta,Constant,1.0e-3
+run_parameter,ic_displacement,Constant,0 0
+run_parameter,ic_pressure,Function,1.5e6 - ((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*y
+run_parameter,ic_sigma0,Function,(-1.21e6) + 1*((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*y; (-7e6 + 1*1.5e6) + 1*((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*y; 0; 0
+run_parameter,ic_temperature,Constant,298.15
+run_parameter,k_i,MeshElement,k_i_rd
+run_parameter,kappa_l,Constant,0.6
+run_parameter,kappa_th_s,Constant,2.156
+run_parameter,load_top,Function,(-7e6) + 1*((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*50
+run_parameter,nu,Constant,0.44 0.22 0.44
+run_parameter,open_niche_seasonal,CurveScaled,open_niche_seasonal_curve
+run_parameter,phi,MeshElement,n_rd
+run_parameter,pressure_scaling_factor,Constant,1.0
+run_parameter,rho_s,Constant,2.52e+3
+source_output,variables,VTK,
+run_output,variables,VTK,pressure;saturation;temperature;displacement;porosity

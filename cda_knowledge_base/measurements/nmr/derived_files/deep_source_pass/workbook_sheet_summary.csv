@@ -1,0 +1,2 @@
+measurement,workbook,sheet,max_row,max_column,non_empty_cells,first_non_empty_row,first_non_empty_values,date_range,numeric_summary,keywords
+nmr,cda_knowledge_base/measurements/nmr/source_files/Coordinates_NMR_Taupe_characborehole.xlsx,Tabelle1,39,8,255,1,Original Koordinaten | BGR Model Koordinaten,,"C2: n=35, min=2.579e+06, max=2.579e+06; C3: n=35, min=1.247e+06, max=1.247e+06; C4: n=35, min=507.711, max=514.328; C6: n=35, min=-10.2324, max=13.0348; C7: n=35, min=5.77969, max=11.6326; C8: n=35, min=-4.22899, max=2.38801",NMR; CD-A

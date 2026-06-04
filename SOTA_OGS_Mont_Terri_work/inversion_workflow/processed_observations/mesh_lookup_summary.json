@@ -1,0 +1,45 @@
+{
+  "bgr_to_2d_model_transform": {
+    "ignored_axis": "BGR Y",
+    "model_x": "BGR X + 4.63",
+    "model_y": "BGR Z + -1.28"
+  },
+  "cells": 10239,
+  "generated": {
+    "borehole_line_mesh_samples.csv": {
+      "lookup_status": {
+        "inside_cell": 157,
+        "inside_mesh_bbox_nearest_cell": 4,
+        "outside_mesh_bbox_nearest_cell": 180
+      },
+      "rows": 341,
+      "segments": 8
+    },
+    "borehole_mesh_lookup.csv": {
+      "lookup_status": {
+        "inside_cell": 9,
+        "inside_mesh_bbox_nearest_cell": 16,
+        "outside_mesh_bbox_nearest_cell": 10
+      },
+      "rows": 35
+    },
+    "measurement_mesh_lookup.csv": {
+      "lookup_status": {
+        "inside_cell": 41,
+        "inside_mesh_bbox_nearest_cell": 16,
+        "outside_mesh_bbox_nearest_cell": 50
+      },
+      "rows": 107
+    },
+    "ogs_bulk_mesh_cells.csv": {
+      "rows": 10239
+    }
+  },
+  "mesh": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/GESA_model_original/projection_on_mesh_2025-09-05/bulk.vtu",
+  "mesh_max_x": 5.0,
+  "mesh_max_y": 5.0,
+  "mesh_min_x": -5.0,
+  "mesh_min_y": -5.0,
+  "points": 20873,
+  "processed_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations"
+}

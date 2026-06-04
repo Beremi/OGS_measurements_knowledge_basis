@@ -1,0 +1,5 @@
+measurement,workbook,sheet,max_row,max_column,non_empty_cells,first_non_empty_row,first_non_empty_values,date_range,numeric_summary,keywords
+suction_relative_humidity,cda_knowledge_base/measurements/suction_relative_humidity/source_files/OT_RH5.xlsx,OT_RH5,1043,2,2086,1,time5 | RH5,2022-01-11T00:00:00 to 2025-09-04T00:00:00 (n=1042),"C2: n=1042, min=94.0807, max=95.9927",
+suction_relative_humidity,cda_knowledge_base/measurements/suction_relative_humidity/source_files/OT_RH6.xlsx,OT_RH6,1065,2,2130,1,time6 | RH6,2021-12-16T00:00:00 to 2025-09-04T00:00:00 (n=1064),"C2: n=1064, min=93.3225, max=94.9883",
+suction_relative_humidity,cda_knowledge_base/measurements/suction_relative_humidity/source_files/OT_RH7.xlsx,OT_RH7,1072,2,2144,1,time7 | RH7,2021-12-16T00:00:00 to 2025-09-04T00:00:00 (n=1071),"C2: n=1071, min=13.188, max=97.2722",
+suction_relative_humidity,cda_knowledge_base/measurements/suction_relative_humidity/source_files/OT_RH8.xlsx,OT_RH8,1071,2,2142,1,time8 | RH8,2021-12-16T00:00:00 to 2025-09-04T00:00:00 (n=1070),"C2: n=1070, min=13.2027, max=96.2194",

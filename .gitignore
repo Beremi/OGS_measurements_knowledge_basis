@@ -1,0 +1,54 @@
+# Large binary archives and container images.
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.tar.xz
+*.tar.bz2
+*.7z
+*.rar
+*.sif
+*.img
+*.iso
+*.vmdk
+*.vdi
+*.qcow2
+*.ova
+
+# Large raw/generated data files kept out of root history.
+VisualisationCDA.dat
+ert_resistivity_diagnostic.csv
+ogs_state_samples.csv
+Location_suc.png
+
+# Generated/copy-heavy measurement catalogues and source-file mirrors.
+cda_knowledge_base/measurements_info/
+cda_knowledge_base/measurements/**/source_files/
+
+# Python/cache artifacts.
+__pycache__/
+*.pyc
+
+# LaTeX build artifacts.
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+
+# Generated OGS/inversion run outputs.
+SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/
+
+# Nested Git repository managed separately.
+mont_terri_questions_rewrite/

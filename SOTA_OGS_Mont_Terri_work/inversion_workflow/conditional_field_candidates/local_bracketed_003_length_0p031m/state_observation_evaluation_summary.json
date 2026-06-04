@@ -1,0 +1,36 @@
+{
+  "evaluation_rows": 11490,
+  "evaluation_status_counts": {
+    "boundary_forcing_target_no_state_residual": 4247,
+    "evaluated": 192,
+    "external_projection_required": 1691,
+    "outside_time_tolerance": 95,
+    "target_not_usable_for_current_state_fit": 5265
+  },
+  "max_time_delta_days": 20.0,
+  "notes": [
+    "NMR residuals compare observed volumetric water content to model porosity*saturation.",
+    "Taupe/TDR rows are diagnostic predictions only; taupe_tdr_trend_operator.csv defines the baseline-normalized trend operator while absolute calibration remains pending.",
+    "RH rows are boundary-forcing targets and are not treated as point residuals here.",
+    "ERT rows have theta-to-resistivity calibration and ERT-to-OGS spatial lookup artifacts, but still require transform/support confirmation and OGS state outputs before numerical residuals."
+  ],
+  "objective_value": 2947.9590409204557,
+  "ogs_output_times": 83,
+  "ogs_state_samples": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_bracketed_003_length_0p031m/ogs_state_samples.csv",
+  "rmse_normalized_residual": 5.541471526251375,
+  "state_sample_rows": 37184,
+  "status_by_family": {
+    "('ERT open-niche time series', 'external_projection_required')": 1691,
+    "('NMR seasonal', 'evaluated')": 87,
+    "('NMR seasonal', 'outside_time_tolerance')": 30,
+    "('NMR seasonal', 'target_not_usable_for_current_state_fit')": 177,
+    "('NMR weekly', 'evaluated')": 105,
+    "('NMR weekly', 'outside_time_tolerance')": 65,
+    "('Suction/RH', 'boundary_forcing_target_no_state_residual')": 4247,
+    "('Taupe/TDR', 'target_not_usable_for_current_state_fit')": 5088
+  },
+  "target_samples": "inversion_workflow/processed_observations/state_observation_samples.csv",
+  "targets": "inversion_workflow/processed_observations/state_observation_targets.csv",
+  "time_origin": "2019-09-18T00:00:00",
+  "used_in_objective_rows": 192
+}

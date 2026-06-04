@@ -1,0 +1,7 @@
+measurement,workbook,sheet,max_row,max_column,non_empty_cells,first_non_empty_row,first_non_empty_values,date_range,numeric_summary,keywords
+ert,cda_knowledge_base/measurements/ert/source_files/2025-04-04_WC_vs_RHO_2025-02.xlsx,Data2019+,42,10,325,1,Archie-Plot,2019-10-22T00:00:00 to 2025-02-13T00:00:00 (n=23),"C2: n=37, min=0.1007, max=0.1716; C3: n=37, min=0.0017, max=0.0438; C4: n=37, min=21.0753, max=53.0637; C7: n=35, min=0.0752, max=0.15; C8: n=35, min=0.0029, max=0.0581; C9: n=35, min=16.704, max=193.597",NMR
+ert,cda_knowledge_base/measurements/ert/source_files/2025-04-04_WC_vs_RHO_2025-02.xlsx,open-closed,1,1,0,,,,,
+ert,cda_knowledge_base/measurements/ert/source_files/2025-04-04_WC_vs_RHO_2025-02.xlsx,sidewalls,1,1,0,,,,,
+ert,cda_knowledge_base/measurements/ert/source_files/2025-04-04_WC_vs_RHO_2025-02.xlsx,top-bottom,1,1,0,,,,,
+ert,cda_knowledge_base/measurements/ert/source_files/2025-04-04_WC_vs_RHO_2025-02.xlsx,Tabelle1,10,2,16,1,ERT data is missing:,2022-04-28T00:00:00 to 2025-02-13T00:00:00 (n=11),,ERT; niche
+ert,cda_knowledge_base/measurements/ert/source_files/2025-04-04_WC_vs_RHO_2025-02.xlsx,Kruschwitz2004,25,7,120,1,water content | saturation | cond. | resistivity | Model Data2019+ | old fit,,"C1: n=18, min=0.01, max=0.18; C2: n=21, min=0.0666667, max=26.92; C3: n=18, min=0.0390984, max=0.387025; C4: n=18, min=2.58381, max=25.5765; C6: n=18, min=16.6421, max=1601.55; C7: n=18, min=16.3597, max=753.377",water content; saturation

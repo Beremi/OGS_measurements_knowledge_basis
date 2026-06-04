@@ -1,0 +1,40 @@
+{
+  "active_component_count": 2,
+  "component_count": 2,
+  "components": [
+    {
+      "active_in_combined_objective": true,
+      "candidate_rows": 204,
+      "component": "direct_permeability_pulse_tests",
+      "effective_weight": 52.0,
+      "notes": "Direct fit of measured pulse-test permeabilities to directional tensor permeability.",
+      "objective_value": 271.09126073611066,
+      "primary_metric": "weighted_rmse_log10",
+      "primary_metric_value": 1.6145113000060476,
+      "source_evaluation": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round3_002_length_0p028m_shift_1p050/permeability_fit_evaluation.csv",
+      "source_summary": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round3_002_length_0p028m_shift_1p050/permeability_fit_summary.json",
+      "status": "evaluated",
+      "used_rows": 75
+    },
+    {
+      "active_in_combined_objective": true,
+      "candidate_rows": 11490,
+      "component": "state_observations",
+      "effective_weight": 192.0,
+      "notes": "NMR residual layer is prepared, but the sampled OGS outputs must cover usable observation times and required model quantities before finite rows activate; RH is boundary forcing, Taupe/TDR has a trend diagnostic, and ERT has calibration plus spatial lookup but still needs support confirmation.",
+      "objective_value": 2896.7882188334866,
+      "primary_metric": "rmse_normalized_residual",
+      "primary_metric_value": 5.493166416513838,
+      "source_evaluation": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round3_002_length_0p028m_shift_1p050/state_observation_evaluation.csv",
+      "source_summary": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/production_sampler_round3_002_length_0p028m_shift_1p050/state_observation_evaluation_summary.json",
+      "status": "evaluated",
+      "used_rows": 192
+    }
+  ],
+  "inactive_component_count": 0,
+  "notes": [
+    "The combined total includes only components with finite objective rows.",
+    "State observations become active only after sampled OGS state outputs cover usable observation times and quantities so numerical residuals can be formed."
+  ],
+  "total_active_objective_value": 3167.879479569597
+}

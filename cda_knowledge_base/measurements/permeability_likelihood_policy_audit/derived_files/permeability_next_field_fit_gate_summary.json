@@ -1,0 +1,131 @@
+{
+  "active_rows_outside_configured_scalar_range": 2,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_next_field_fit_gate.csv",
+      "source": "inversion_workflow/permeability_next_field_fit_gate.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_next_field_fit_gate_summary.json",
+      "source": "inversion_workflow/permeability_next_field_fit_gate_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_next_field_fit_gate.md",
+      "source": "inversion_workflow/permeability_next_field_fit_gate.md"
+    }
+  ],
+  "configured_scalar_outlier_disposition_bounds_release_now": false,
+  "configured_scalar_outlier_disposition_max_excess_log10": 0.10719186674877967,
+  "configured_scalar_outlier_disposition_status": "permeability_configured_scalar_outlier_disposition_generated",
+  "configured_scalar_outlier_disposition_tensor_shape_release_now": false,
+  "configured_scalar_outlier_disposition_unique_group_count": 1,
+  "current_at_single_support_lower_bound": true,
+  "current_field_final_decision": "do_not_promote_to_final_all_measurement_field",
+  "current_field_run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "current_report_default_policy": "keep_rowwise_gaussian_default",
+  "executable_same_support_active_objective_batch_now": false,
+  "final_objective_current_field_winning_option_count": 2,
+  "final_objective_option_count": 9,
+  "gate_count": 8,
+  "gate_status_counts": {
+    "available_for_inspection_active_only": 1,
+    "blocked_by_external_stream_gates": 1,
+    "blocked_by_support_conflicts_and_endpoint_geometry": 1,
+    "blocked_until_policy_approved_and_ogs_executed": 1,
+    "do_not_run_more_same_support_sampling_now": 1,
+    "local_outlier_disposition_recorded_policy_still_required": 1,
+    "not_ready_until_objective_finalized": 1,
+    "rowwise_gaussian_default_retained_for_current_report": 1
+  },
+  "gate_type_counts": {
+    "bounds_or_tensor_shape_gate": 1,
+    "completion_gate": 1,
+    "deliverable_gate": 1,
+    "execution_gate": 1,
+    "external_stream_gate": 1,
+    "internal_policy_gate": 1,
+    "stop_gate": 1,
+    "support_mapping_gate": 1
+  },
+  "next_decision_sequence": [
+    "Keep the current field active-only while final objective gates remain open.",
+    "Do not run another same-support active-objective OGS batch under the current row-Gaussian policy.",
+    "Use the spatial support-conflict audit to inspect where the repeated-row support conflicts sit on the mesh before changing support or likelihood semantics.",
+    "Choose whether direct permeability needs robust rows, support-cell aggregation, scalar outlier handling, or a new parameterization.",
+    "Use the configured-scalar outlier disposition: current local evidence does not justify bounds widening or tensor-shape release from the two duplicate envelope rows alone.",
+    "If a non-default direct policy is approved and selects a direct-only winner, execute OGS/state/diagnostic evidence before any promotion.",
+    "After external stream gates are closed or explicitly excluded, rebuild final-objective scenarios and the promotion checklist."
+  ],
+  "open_blocker_count": 8,
+  "open_blocker_ids": [
+    "ert_transform_support",
+    "ert_uncertainty",
+    "hm_numeric_exports",
+    "hm_uncertainty",
+    "rh_active_curve_provenance",
+    "taupe_unit_calibration",
+    "perm_endpoint_geometry",
+    "cte_value_confirmation"
+  ],
+  "open_promotion_criterion_count": 9,
+  "open_promotion_criterion_ids": [
+    "P08_nmr_residual_policy",
+    "P09_ert_gate",
+    "P10_taupe_gate",
+    "P11_rh_gate",
+    "P12_other_hm_gate",
+    "P13_perm_endpoint_gate",
+    "P14_cte_confirmation",
+    "P15_conditional_field_stability",
+    "P16_final_field_decision"
+  ],
+  "outside_tie_direct_only_policy_winner_rows": 3,
+  "overall_recommendation": "pause_same_support_active_objective_ogs_until_likelihood_support_bounds_or_stream_gate_changes",
+  "same_support_reducible_objective_fraction": 0.0,
+  "same_support_reducible_objective_gap": 0.0,
+  "source_artifacts": [
+    "inversion_workflow/permeability_residual_conflict_audit_summary.json",
+    "inversion_workflow/permeability_support_lower_bound_audit_summary.json",
+    "inversion_workflow/permeability_support_conflict_spatial_audit_summary.json",
+    "inversion_workflow/permeability_likelihood_decision_request_summary.json",
+    "inversion_workflow/permeability_configured_scalar_outlier_disposition_summary.json",
+    "inversion_workflow/permeability_likelihood_scenario_rerank_summary.json",
+    "inversion_workflow/permeability_likelihood_winner_cross_stream_audit_summary.json",
+    "inversion_workflow/final_objective_scenario_matrix_summary.json",
+    "inversion_workflow/final_inversion_promotion_checklist_summary.json",
+    "inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD_SUMMARY.json",
+    "inversion_workflow/runs/production_sampler_convergence/PRODUCTION_SAMPLER_DECISION.json"
+  ],
+  "status": "permeability_next_field_fit_gate_generated",
+  "support_conflict_spatial_active_support_cell_count": 30,
+  "support_conflict_spatial_audit_status": "permeability_support_conflict_spatial_audit_generated",
+  "support_conflict_spatial_configured_scalar_conflict_cell_count": 1,
+  "support_conflict_spatial_mesh_cell_count": 10239,
+  "support_conflict_spatial_range_ge_1_log10_cell_count": 16,
+  "support_conflict_spatial_range_ge_2_log10_cell_count": 16,
+  "support_conflict_spatial_repeated_support_cell_count": 24,
+  "support_conflict_spatial_top_conflict_cell": {
+    "cell_type": "triangle6",
+    "centroid_x_m": -1.9531543672590785,
+    "centroid_y_m": -0.665476463070921,
+    "centroid_z_m": 0.0,
+    "conflict_class": "configured_scalar_range_conflict",
+    "depth_max_m": 0.87,
+    "depth_min_m": 0.85,
+    "feasibility_statuses": "observed_above_configured_scalar_range;observed_inside_configured_scalar_range",
+    "group_policy_class": "configured_scalar_range_decision_required",
+    "has_large_observed_range_ge_1_log10": true,
+    "has_large_observed_range_ge_2_log10": true,
+    "is_repeated_support_cell": true,
+    "max_abs_residual": 3.4744237387763093,
+    "mean_abs_residual": 3.4744237387763093,
+    "observed_log10_max": -12.096910013008056,
+    "observed_log10_min": -19.045757490560675,
+    "observed_log10_range": 6.948847477552619,
+    "primary_cell_id": 4648,
+    "residual_signs": "overpredicts_observation;underpredicts_observation",
+    "row_count": 3,
+    "segments": "BCD-A32"
+  },
+  "support_groups_with_observed_range_ge_2_log10": 16
+}

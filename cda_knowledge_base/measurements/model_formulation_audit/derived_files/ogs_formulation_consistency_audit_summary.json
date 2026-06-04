@@ -1,0 +1,72 @@
+{
+  "all_hard_checks_pass": true,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/model_formulation_audit/derived_files/ogs_formulation_consistency_audit.csv",
+      "source": "inversion_workflow/ogs_formulation_consistency_audit.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/model_formulation_audit/derived_files/ogs_formulation_xml_inventory.csv",
+      "source": "inversion_workflow/ogs_formulation_xml_inventory.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/model_formulation_audit/derived_files/ogs_formulation_consistency_audit_summary.json",
+      "source": "inversion_workflow/ogs_formulation_consistency_audit_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/model_formulation_audit/derived_files/ogs_formulation_consistency_audit.md",
+      "source": "inversion_workflow/ogs_formulation_consistency_audit.md"
+    }
+  ],
+  "check_count": 18,
+  "fail_count": 0,
+  "notes": [
+    "Hard checks compare active XML elements, not commented-out alternatives.",
+    "The representative run-local directory may change parameter representation and output selection while preserving process/media semantics."
+  ],
+  "outputs": {
+    "checks_csv": "inversion_workflow/ogs_formulation_consistency_audit.csv",
+    "inventory_csv": "inversion_workflow/ogs_formulation_xml_inventory.csv",
+    "markdown": "inversion_workflow/ogs_formulation_consistency_audit.md",
+    "summary_json": "inversion_workflow/ogs_formulation_consistency_audit_summary.json"
+  },
+  "pass_count": 17,
+  "primary_variables": [
+    "displacement",
+    "pressure",
+    "temperature"
+  ],
+  "process_type": "THERMO_RICHARDS_MECHANICS",
+  "run_local_field_parameters": {
+    "k_i": "k_i_rd",
+    "phi": "n_rd"
+  },
+  "run_output_variables": [
+    "pressure",
+    "saturation",
+    "temperature",
+    "displacement",
+    "porosity"
+  ],
+  "source_artifacts": [
+    "ogs_settings/01_processes_TRM.xml",
+    "ogs_settings/02_process_variables_TRM.xml",
+    "ogs_settings/03_parameters_TRM.xml",
+    "ogs_settings/04_media_TRM.xml",
+    "ogs_settings/04_1_media_aqu_liq.xml",
+    "ogs_settings/04_2_media_twophase.xml",
+    "ogs_settings/05_time_loop_TRM.xml",
+    "inversion_workflow/runs/direct_fit_observation_run/03_parameters_TRM.xml",
+    "inversion_workflow/runs/direct_fit_observation_run/05_time_loop_TRM.xml",
+    "inversion_workflow/current_permeability_field/current_best_field_stats.csv"
+  ],
+  "source_output_variables": [],
+  "specific_body_force": "0 0",
+  "status": "ogs_formulation_consistency_audit_generated",
+  "status_counts": {
+    "pass": 16,
+    "pass_with_caveat": 1,
+    "tracked_caveat": 1
+  },
+  "tracked_caveat_count": 2
+}

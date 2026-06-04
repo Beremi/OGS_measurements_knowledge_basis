@@ -1,0 +1,101 @@
+--- Page 1 ---
+Federal Department of Defence,
+Civil Protection and Sport DDPS
+Federal Office of Topography swisstopo
+Geodesy and Federal Directorate of Cadastral Surveying
+Precision Levelling Twin Niches
+28.04.2026 | Technical Discussion CD-A
+Senecio Schefer
+Sebastian Condamin
+
+--- Page 2 ---
+Federal Office of Topography swisstopo
+Geodesy and Federal Directorate of Cadastral Surveying
+2
+Precision Levelling Twin Niches
+Structure geodetic network
+Precision Levelling Twin Niches
+28.04.2026 | Technical Discussion CD-A
+• First measurement 29/30 August 2022
+• 5 points in both niches
+• Reference points in the Lab
+• Synchronous with the laser scanning and 
+convergence measurements
+• Relative height changes in the twin niches detectable
+• Previous measurement campaigns:
+• 2022 Aug. (double measurement)
+• 2022 Sept. 
+• 2022 Nov. 
+• 2023 Mar. 
+• 2023 Sept. 
+• 2024 Feb. 
+• 2025 Mar.
+• 2025 Sept.
+• 2026 Mar.
+Reference 
+Point
+Reference 
+Point
+
+--- Page 3 ---
+Federal Office of Topography swisstopo
+Geodesy and Federal Directorate of Cadastral Surveying
+3
+Precision Levelling Twin Niches
+Current results → all intermediate epochs
+Precision Levelling Twin Niches
+28.04.2026 | Technical Discussion CD-A
+
+--- Page 4 ---
+Federal Office of Topography swisstopo
+Geodesy and Federal Directorate of Cadastral Surveying
+4
+Precision Levelling Twin Niches
+Current results → total displacement
+Precision Levelling Twin Niches
+28.04.2026 | Technical Discussion CD-A
+
+--- Page 5 ---
+Federal Office of Topography swisstopo
+Geodesy and Federal Directorate of Cadastral Surveying
+Point name Location Height difference from 
+initial measurement [mm]
+57 Galerie 18 -0.1
+58 Galerie 18 0.3
+CDA-C1 Closed Twin 0.6
+CDA-C2 Closed Twin 0.8
+CDA-C3 Closed Twin 0.6
+CDA-C4 Closed Twin 1.3
+CDA-C5 Closed Twin 0.5
+CDA-O1 Open Twin -2.1
+CDA-O2 Open Twin 0.2
+CDA-O3 Open Twin 0.4
+CDA-O4 Open Twin 0.4
+CDA-O5 Open Twin 0.9
+5
+Precision Levelling Twin Niches
+Current results → total displacement
+Precision Levelling Twin Niches
+28.04.2026 | Technical Discussion CD-A
+
+--- Page 6 ---
+Federal Office of Topography swisstopo
+Geodesy and Federal Directorate of Cadastral Surveying
+• Detectable displacement: from 0.1 to 0.2 mm 
+(depending on the point; Confidence level 95%)
+• Largest deformations: 
+• CDA-O1:  -2.1 mm (settlement)
+• CDA-C4: +1.3 mm (heave / uplift)
+• On all other points:
+• With the exception of CDA-O1, there is a tendency towards uplift at all points in the 
+Twin Niches.
+• The height changes in the Open Twin are smaller (except at the aforementioned 
+point O1).
+• Outlook
+• Measurements over a longer time period
+• Direct comparison with laser scanning measurements 
+6
+Precision Levelling Twin Niches
+Summary
+Precision Levelling Twin Niches
+28.04.2026 | Technical Discussion CD-A

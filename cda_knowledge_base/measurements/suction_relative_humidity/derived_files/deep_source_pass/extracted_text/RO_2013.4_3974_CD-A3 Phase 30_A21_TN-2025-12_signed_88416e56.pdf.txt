@@ -1,0 +1,504 @@
+--- Page 1 ---
+RO2013.4 
+     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CD-A Experiment 
+TN2025-12. CD-A Experiment, 
+Phase 30: Supervision and 
+maintenance of the suction 
+measuring system 
+S. Tuñón, B. Villasante & J.L. García-Siñeriz 
+ 
+ 
+ 
+ 
+16/04/2026 
+Final Report  
+Version 1   
+ 
+ 
+ 󠅺 RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+
+--- Page 2 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+RO2013.4 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+In bibliography, this report will be cited as follows: 
+Tuñón, S.; García-Siñeriz, J.-L. (2025). TN2025-12. CD-A Experiment, Phase 30: Supervision 
+and maintenance of the suction measuring system . Report code : RO_2013.4_3974_CD-A3 
+Phase 30_A21_TN-2025-12. 
+ 
+ 
+Amphos 21 Consulting S.L. 
+Calle Raquel Meller nº7, planta baja. 
+28027 Madrid (Spain) 
+www.amphos21.com  
+ 
+Prepared by  Reviewed by  Validated by 
+Editors 
+ 
+Project Director 
+ 
+Member of the Managing 
+Board 
+Borja Villasante
+
+--- Page 3 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+3/22 
+Index 
+1 Introduction ................................ ................................ ................................ ................. 5 
+2 Experiment outline ................................ ................................ ................................ ...... 6 
+3 Scope of the report ................................ ................................ ................................ ...... 7 
+4 Performance of the suction measuring system ................................ ........................ 7 
+4.1 Remote supervision ................................ ................................ ...............................  7 
+4.2 Incidents and observations recorded during the supervision ................................ .. 7 
+4.3 In-situ maintenance ................................ ................................ .............................. 12 
+4.4 Data evolution ................................ ................................ ................................ ...... 12 
+4.5 Summary and conclusions from the supervision ................................ .................. 13 
+4.6 Recommendations ................................ ................................ ...............................  14 
+A. Thermo-hygrometer data trends (RH and Temperature) ................................ ......... 16 
+B. Psychrometers data trends (RH) ................................ ................................ .............. 18 
+C. Appendix 3: Thermo-hygrometers and Psycrometers data trends ........................ 20 
+5 Log of Changes ................................ ................................ ................................ ......... 22
+
+--- Page 4 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+4/22 
+List of Figures 
+Figure 1-1: Overall Project set-up of the CD-A experiment ................................ .................... 5 
+Figure 2-1: Cabinets with the electronics installed between the two niches ........................... 6 
+Figure 4-1: Thermo-hygrometers installed in Open & Closed twins ................................ ..... 16 
+Figure 4-2: Temperatures from the Thermo-hygrometers installed in Open & Closed twins 17 
+Figure 4-3: Psychrometers installed in Open twin ................................ ................................  18 
+Figure 4-4: Psychrometers installed in Closed twin ................................ ............................. 19 
+Figure 4-5: Data trends of Thermo-hygrometers and Psychrometers installed in Open twin 20 
+Figure 4-6: Data trends of Thermo-hygrometrs and Psychrometers installed in Closed twin 21
+
+--- Page 5 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+5/22 
+1 Introduction  
+The present document is framed into the CD-A Experiment currently running in the CD-A twin 
+tubes at the Mont Terri Underground Laboratory in Switzerland.  
+CD-A project focuses on the evaluation of the highly coupled hydraulic -mechanical (HM) 
+processes. To gain an increased process understanding of the excavation induced processes, 
+a comparison of coupled hydraulic-mechanical effects in the CD-A twin niches – one open tube 
+providing coupled hydraulic-mechanical effects due to desaturation and the other one closed 
+to avoid desaturation effects as much as possible - is carried out (see overall project set-up in 
+Figure 1-1).  
+Figure 1-1: Overall Project set-up of the CD-A experiment 
+The investigations within this experiment comprise of a complex measuring campaign 
+designed aiming on the comparison of values in both niches and at different positions within 
+the niches, numerical modelling of the physical effects and the improvement of vi sualization 
+techniques. The installed measuring program focuses on the understanding of seasonally 
+influenced, long-term coupled hydraulic-mechanical effects. 
+As these zones are characterized by seasonal changes of de - and re-saturation, the suction 
+measurements in the near field of the niches are necessary to analyse physical effects like 
+swelling/shrinkage of the material, capillary effects, changes of materia l properties amongst 
+others. Consequently, RH and psychrometers were installed to measure relative humidity 
+values higher than 96%. The maintenance of these sensors and their data acquisition systems 
+are the main objective of this report.
+
+--- Page 6 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+6/22 
+CD-A experiment was installed at the beginning of August 2021 by Amberg Infraestructuras 
+(AI). The team of AI involved in the project moved to Amphos21 in February 2024. The report 
+“AS BUILT CD-A2” 󠅺dated 󠅺on 󠅺18/11/2021 󠅺includes 󠅺all 󠅺the 󠅺information 󠅺about 󠅺the 󠅺installation 󠅺of 󠅺
+the experiment.  
+2 Experiment outline  
+The suction measurement system consists of 8 psychrometers and 8 thermo -hygrometers 
+installed inside boreholes drilled in the twin niches, reaching depths of up to 70 cm.  
+The psychrometers are connected to a datalogger installed inside a PS cabinet, see Figure 
+2-1, which performs the measurements. The data are transmitted to the computer via USB, 
+and a specialized software reads the data from the datalogger. 
+The thermo-hygrometers are connected to the RH cabinet, see Figure 2-1, which provides 
+power and manages digital communication with the sensors. Serial d ata are sent to the 
+computer through an USB port using a RS-485 serial to USB converter. 
+Figure 2-1: Cabinets with the electronics installed between the two niches 
+All sensor data are recorded on a minicomputer.  
+  
+PS 
+RH
+S
+
+--- Page 7 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+7/22 
+Two different software applications handle the data acquisition and management: 
+o iFIX Scada  from General Electric reads and manages the data from the thermo -
+hygrometers (RH sensors), 
+o A dedicated program reads the psychrometers data and stores the values in data 
+files. 
+The data files are transferred to t hree different folders, PSS_CDA2 , RH_CDA2 and 
+RH&Suction_CDA2, located on a Server at the Amphos21 Madrid offices. These folders are 
+made accessible via  FTP for subsequent transfer to the centralized d atabase (Geoscope), 
+which consolidates them with the remaining data acquired from the sensors monitored during 
+the experiment. 
+3 Scope of the report 
+This report is intended to inform about the performance of the suction measuring system during 
+Phase 30 from 01/01/2025 to 31/12/2025 and the results of the carried-out maintenance visit, 
+performed on 19/06/2025. 
+4 Performance of the suction measuring system 
+4.1 Remote supervision 
+The supervision is carried out remotely on a weekly basis by connecting to the minicomputer 
+to verify that all sensors are operational and providing the required data. The data transfer 
+between the minicomputer and the Madrid server is also checked , as well as the FTP 
+communication. 
+4.2 Incidents and observations recorded during the supervision 
+All Data Acquisition System issues in this experiment are related to the psychrometer software. 
+This software takes control of all computer ports, and when this occurs, the SCADA system is 
+unable to access to the thermo-hygrometers (RH) values measured by the Vaisala sensors, 
+which are connected to the computer via a USB peripheral port. 
+When this issue arises, no thermo-hygrometers data are recorded. It is typically detected 
+during weekly supervision and is often resolved by shutting down the psychrometer software
+
+--- Page 8 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+8/22 
+and restarting the SCADA system. Once it is confirmed that SCADA is correctly reading the 
+thermo-hygrometers data, the psychrometer software is restarted. 
+If the psychrometers fail to read sensor values, the solution is to restart the Phycrometers 
+System Software ( PSS). The PSS is started weekly during routine supervision; however, it 
+often stops reading signals from the sensors after a few minutes, or at most within 4–5 hours. 
+If restarting the software does not resolve the issue  with the psycrometers data acquisition , 
+restarting the computer usually restores proper PSS operation, as the ports are reinitialized 
+during the Windows startup process. If the problem persists, it may be necessary to switch off 
+the power supply to the in situ psychrometer unit. This procedure  typically resolves the 
+psychrometer data acquisition issue. 
+The main incidents and observations recorded from 01/07/2023 to 31/12/2025 are presented 
+below. Incidents of 2025 are indicated in italics. 
+July 2023 
+10, 17, 24 and 31: During the remote supervision t he PSS was found not providing data 
+and it was necessary to re-start it to resume monitoring. 
+August 2023 
+7, 8, 16 and 22: During the remote supervision the PSS was found not providing data and 
+it was necessary to re-start it to resume monitoring. 
+September 2023 
+4, 12, 20 and 25: During the remote supervision the PSS was found not providing data and 
+it was necessary to re-start it to resume monitoring. 
+On 26  & 27/09 in -situ maintenance was done, see remedial report of Amberg 
+Infraestructuras dated 02/10/2023. A new psychrometer was installed to replace the faulty 
+PS-03, and PS-08 could not be recovered. 
+October 2023 
+9, 17, 24 and 30: During the remote supervision the PSS was found not providing data and 
+it was necessary to re-start it to resume monitoring.
+
+--- Page 9 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+9/22 
+November 2023 
+6, 14, 21 and 27: During the remote supervision the PSS was found not providing data and 
+it was necessary to re-start it to resume monitoring. 
+December 2023 
+12 and 18: During the remote supervision the PSS was found not providing data and it was 
+necessary to re-start it to resume monitoring. 
+January 2024 
+15 and 22: During the remote supervision the PSS was found not providing data and it was 
+necessary to re-start it to resume monitoring. On 15/01 the minicomputer re-started due to 
+Windows update, an attempt to cancel this option was made. 
+February 2024 
+8 and 19: During the remote supervision the PSS was found not providing data and it was 
+necessary to re-start it to resume monitoring. 
+March 2024 
+4 and 18: During the remote supervision the PSS was found not providing data and it was 
+necessary to re-start it to resume monitoring. On 4/03 it was found that the minicomputer 
+re-started again due to Windows update, it seems this problem cannot be solved. 
+April 2024 
+1, 2, 9 and 15: During the remote supervision the PSS was found not providing data and it 
+was necessary to re-start it to resume monitoring.  
+May 2024 
+13, 21 and 27: During the remote supervision the PSS was found not providing data and it 
+was necessary to re-start it to resume monitoring.
+
+--- Page 10 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+10/22 
+June 2024 
+18: During the remote supervision t he PSS was found not providing data and it was 
+necessary to re-start it to resume monitoring.  
+July 2024 
+3: During the remote supervision t he PSS was found not providing data and it was 
+necessary to re-start it to resume monitoring.  
+August 2024 
+None. 
+September 2024 
+9: During the remote supervision t he PSS was found not providing data and it was 
+necessary to re-start it to resume monitoring.  
+October 2024 
+8, 14, 21 and 28: During the remote supervision the PSS was found not providing data and 
+it was necessary to re-start it to resume monitoring.  
+November 2024 
+1, 18 and 25: During the remote supervision the PSS was found not providing data and it 
+was necessary to re-start it to resume monitoring.  
+December 2024 
+2 and 16: During the remote supervision the PSS was found not providing data and it was 
+necessary to re-start it to resume monitoring.  
+January 2025 
+There were no thermo-hygrometers data recorded between 16/12/2024 and 06/01/2025, 
+and between 16/01/2025 and 20/01/2025. Data acquisition resumed after the system was 
+restarted.
+
+--- Page 11 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+11/22 
+February 2025 
+There were no thermo-hygrometers data recorded between 06/02/2025 and 10/02/2025. 
+Data acquisition resumed after the system was restarted. 
+March-April 2025 
+There were no thermo -hygrometers data recorded between 12/03/2025 and 17/03/2025 
+and between 31/03/2025 and 02/04/2025. Data acquisition resumed after the system was 
+restarted on 17/03/2025 and 02/04/2025 respectively. 
+May-June 2025 
+There was a period of frequent Scada restarting from 28/05/2025 to 27/06/2025. 
+August 2025 
+No thermo-hygrometer data were recorded between 22/08/2025 and 03/09/2025. Data 
+acquisition resumed after the system was restarted on 03/09/2025. 
+September 2025 
+There were no thermo-hygrometers data recorded between 23/09/2025 and 26/09/2025. 
+Data acquisition resumed after the system was restarted on 26/09/2025. 
+October-November 2025 
+There were no thermo -hygrometers data recorded between 06/10/2025 and 07/10/2025 
+and between 30/10/2025 and 03/11/2025. Data acquisition resumed after the system was 
+restarted on 07/10/2025 and 03/11/2025 respectively. 
+November-December 2025 
+Thermo-hygrometer data were not recorded from 12/11/2025 to 17/11/2025 , until the 
+system was restored.  
+Additionally, no PS or RH data were recorded during the periods 18/11/2025 to 05/12/2025 
+and 12/12/2025 to 17/12/2025 due to the computer being switched off.
+
+--- Page 12 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+12/22 
+4.3 In-situ maintenance 
+An in-situ maintenance was carried out on 19/06/2025.  
+Communication with the psychrometer data acquisition logger was restored. The USB port 
+previously used on the computer was found to be faulty. The psychrometer data logger cable 
+was therefore connected to an alternative USB port (previously used for the mo use), which 
+resolved the issue. 
+Psychrometers 1 and 2 (Open Twin) were tested using an alternative measuring device 
+(PsyPro) to compare their readings with those obtained from the current data logger. The 
+results indicate that both sensors are operating at or below their lower measuremen t limit. 
+Therefore, the low suction values recorded by the data logger for these sensors, are not 
+considered reliable. Psychrometer 3 was successfully recovered. 
+4.4 Data evolution 
+The graphs that sinthetise the evolution of the recorded parameters since the beginning ar e 
+included in the Appendix. 
+A.- Thermo-hygrometers (RH and Temperature) in both twins 
+B.- Psychrometers (RH) in open and closed twins 
+C.- Comparison of RH given by thermo-hygrometers and psychrometers in open and 
+closed twins 
+As can be seen in Appendix A, the thermo-hygrometers installed in both twins are evolving in 
+different way: 
+• Those in the closed twin are showing increasing  RH trends from the beginning and 
+those at the wall provide higher values than those at the same deepth at the floor.  
+Distance from entry does not show a significante effect. 
+• Those in the open twin are showing RH trends related with the stational changes of 
+the laboratory atmosphera from the beginning. Those at the back section, which are 
+deeper, show higher values.  Again, those at the wall provide higher values than those 
+at the same deepth at the floor. 
+• Concerning the temperatures, all are showing the seasonal changes but with higher 
+amplitude in those installed in the open twin. 
+Concerning the psychometers, see Appendix B:
+
+--- Page 13 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+13/22 
+• For those installed in open twin, as stated in section 4.3 and in line with the RH values 
+given by the thermo-hygrometers, numbers 1 & 2 installed at 40 cm from the surface 
+seem to be out of range (below 95% RH). Only those at 70 cm depth can provide 
+reliable data. 
+• All ones installed in closed twin must be within the operating range. However, in line 
+with the values given by the thermo-hygrometers, numbers 5 and 7 probably reached 
+full saturation and this is the reason they have not provided data since long ago.  
+Comparing the values given by the different types of sensors by niche, see Appendix C: 
+• In the open  twin the values given by the thermo-hygrometers can be compared with 
+psychrometers 3 & 4 only. Psychometer 3 seems to match well with the corresponding 
+thermo-hygrometer, while psychrometer 4 seems to follow a similar trend that the 
+corresponding thermo-hygrometer but at higher RH, what is reasonable given the 
+difference in accuracy. 
+• In the closed twin, psychometers 5, 6 & 7 show a high saturation in agreement with the 
+corresponding thermo-hygrometers but not showing the continuous increase of them, 
+well above the 100%, which must be caused by drift with time and their lower accuracy. 
+Psychrometer 8 does not look to provide relevant data. 
+4.5 Summary and conclusions from the supervision 
+The problems related to the functioning of the PSS datalogger persist. T he psychrometers 
+software is frequently found stopped and no data being collected. Sometimes this influences 
+the SCADA due to the blockage of the communication port with the RH unit. In general, the 
+problem can be solved by re -starting the PSS software but sometimes the reset of the PSS 
+datalogger is also needed.  
+The data acquisition of the thermo-hygrometers is running smoothly, and the trends are easy 
+to understand. However, data from those installed in the closed twin seem to be affected by 
+the high saturation of the rock driving to an increasing trend above the upper range, which is 
+not realistic and probably related with drift and lack of accuracy at such range. 
+The datalogger of the psychrometers is running with some difficulties but the data provided is 
+usable. In the open niche the ranges are in general below the minimum for them. 
+As conclusion, the thermo-hygrometers are the best for the supervision of the open niche while
+
+--- Page 14 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+14/22 
+the psychrometers seems to be better for the closed one. 
+4.6 Recommendations 
+Concerning the thermo-hygrometers system, it is recommended to isolate the connection port 
+from the PSS ones. Initially this could be done  with a serial to Ethernet converter. However, 
+as there are two sensors (RH5 & RH7) above from 100% RH, it could happen they finally fail, 
+and this could lead to communication difficulties in the common serial line. This phenomenon 
+was already detected in Sandwich experiment. Thus, the proposal is installing a serial swich 
+instead, which will isolate the serial lines of the 8 sensors and will connect to the computer by 
+Ethernet. 
+Several issues have been identified with the computer, including unexpected restarts and a 
+faulty USB port used for connecting the psychrometer data logger. It is recommended to 
+replace the computer with a new unit running a professional-grade operating system, ensuring 
+compatibility with the legacy controllers required for the psychrometer logger.
+
+--- Page 15 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+15/22 
+ 
+ 
+ 
+ 
+ 
+ 
+Appendix
+
+--- Page 16 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12   RO2013.4 
+16/22 
+A. Thermo-hygrometer data trends (RH and Temperature)   
+Figure 4-1: Thermo-hygrometers installed in Open & Closed twins 
+1 
+ 3 
+2 
+4 
+Thermo-hygrometer range: 90-100% RH 
+Error: +/-1.2 to +/-2% RH 
+5 
+7 
+6 
+8
+
+--- Page 17 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12   RO2013.4 
+17/22 
+Figure 4-2: Temperatures from the Thermo-hygrometers installed in Open & Closed twins 
+1 
+ 3 
+2 
+4 
+5 
+7 
+6 
+8 
+5 
+7 
+6 
+8
+
+--- Page 18 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12   RO2013.4 
+18/22 
+B. Psychrometers data trends (RH)  
+Figure 4-3: Psychrometers installed in Open twin 
+ 
+95 %RH 
+99.6 %RH 
+PSS high range:  95-99,96%RH 
+Error: <1% RH 
+1 
+ 3 
+2 
+4
+
+--- Page 19 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12   RO2013.4 
+19/22 
+Figure 4-4: Psychrometers installed in Closed twin 
+  
+PSS high range:  95-99,96%RH 
+Error: <1% RH 
+95 %RH 
+99.6 %RH 
+5 
+7 
+6 
+8
+
+--- Page 20 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12   RO2013.4 
+20/22 
+C. Appendix 3: Thermo-hygrometers and Psycrometers data trends 
+Figure 4-5: Data trends of Thermo-hygrometers and Psychrometers installed in Open twin 
+1 
+ 3 
+2 
+4
+
+--- Page 21 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12   RO2013.4 
+21/22 
+Figure 4-6: Data trends of Thermo-hygrometers and Psychrometers installed in Closed twin 
+5 
+7 
+6 
+8
+
+--- Page 22 ---
+ CD-A3 Phase 30_A21_TN-2025-12   
+ RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-12
+   RO2013.4 
+22/22 
+5 Log of Changes  
+ 
+REVIEW DATE REASON 
+1 16/04/2026 First version

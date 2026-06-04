@@ -1,0 +1,76 @@
+{
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_decision_register.csv",
+      "source": "inversion_workflow/final_objective_decision_register.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_decision_register_summary.json",
+      "source": "inversion_workflow/final_objective_decision_register_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_decision_register.md",
+      "source": "inversion_workflow/final_objective_decision_register.md"
+    }
+  ],
+  "conditional_scenario_count": 8,
+  "conditional_unique_winner_count": 5,
+  "current_field_final_decision": "do_not_promote_to_final_all_measurement_field",
+  "decision_count": 9,
+  "decision_status_counts": {
+    "not_ready_for_final_approval": 1,
+    "pending_after_stream_include_exclude_decisions": 1,
+    "pending_modelling_team_final_policy": 1,
+    "pending_user_send_and_provider_response_or_explicit_exclusion": 6
+  },
+  "explicit_exclusion_possible_count": 7,
+  "external_stream_decision_count": 6,
+  "gmail_draft_ids": [
+    "r-4809950961900799564",
+    "r-4984596174110032107",
+    "r-8461584324877432346",
+    "r1284411814726937591",
+    "r2947727639429158073",
+    "r6776618065355728003"
+  ],
+  "gmail_packet_status": "gmail_draft_send_review_packet_generated_not_sent",
+  "gmail_packet_unsent_draft_count": 6,
+  "internal_policy_decision_count": 1,
+  "next_action": "For each row, either close the evidence gate and include the stream, record a diagnostic-only/exclusion decision, or leave final promotion blocked.",
+  "open_criterion_ids": [
+    "P08_nmr_residual_policy",
+    "P09_ert_gate",
+    "P10_taupe_gate",
+    "P11_rh_gate",
+    "P12_other_hm_gate",
+    "P13_perm_endpoint_gate",
+    "P14_cte_confirmation",
+    "P15_conditional_field_stability",
+    "P16_final_field_decision"
+  ],
+  "pending_or_not_ready_decision_count": 9,
+  "permeability_likelihood_policy_primary_approvals_recorded": 0,
+  "permeability_likelihood_policy_primary_approvals_required": 1,
+  "permeability_likelihood_policy_ready_to_apply": false,
+  "permeability_next_field_fit_gate_same_support_batch_executable_now": false,
+  "permeability_support_conflict_spatial_active_support_cell_count": 30,
+  "permeability_support_conflict_spatial_audit_status": "permeability_support_conflict_spatial_audit_generated",
+  "permeability_support_conflict_spatial_range_ge_2_log10_cell_count": 16,
+  "permeability_support_conflict_spatial_repeated_support_cell_count": 24,
+  "promotion_decision": "do_not_promote_current_field",
+  "scenario_or_final_decision_count": 2,
+  "source_artifacts": [
+    "inversion_workflow/final_inversion_promotion_checklist.csv",
+    "inversion_workflow/final_inversion_closeout_playbook.csv",
+    "inversion_workflow/external_blocker_dashboard.csv",
+    "inversion_workflow/internal_gate_decision_register.csv",
+    "inversion_workflow/conditional_field_selection_scenarios_summary.json",
+    "inversion_workflow/current_field_selection_audit_summary.json",
+    "inversion_workflow/gmail_draft_send_review_packet_summary.json",
+    "inversion_workflow/permeability_support_conflict_spatial_audit_summary.json",
+    "inversion_workflow/permeability_support_lower_bound_audit_summary.json",
+    "inversion_workflow/permeability_likelihood_policy_acceptance_record_template_summary.json",
+    "inversion_workflow/permeability_next_field_fit_gate_summary.json"
+  ],
+  "status": "final_objective_decision_register_generated"
+}

@@ -1,0 +1,31 @@
+{
+  "active_objective_rows": 0,
+  "largest_zone_by_nodes": {
+    "elements": 2891741,
+    "measurement_type": "laser_scan_surface",
+    "nodes": 1499860,
+    "zone_name": "open_twin_LS"
+  },
+  "levelling_rows": 12,
+  "model_facing_rows": 22,
+  "qualitative_target_rows": 10,
+  "remaining_blocker": "Locate Geoscope mini-piezometer/extensometer/crackmeter time-series exports and laser-scan statistical interpretation files before assigning hard numerical residual weights.",
+  "status": "layout_and_qualitative_targets_ready_numeric_series_missing",
+  "text_label_rows": 11,
+  "zone_counts_by_measurement_type": {
+    "convergence_points": 2,
+    "evapometer": 1,
+    "extensometer": 5,
+    "fracture_or_crack_geometry": 22,
+    "laser_scan_geodetic_support": 3,
+    "laser_scan_surface": 2,
+    "mini_piezometer": 1,
+    "miniprisma_geodesy": 12,
+    "niche_geometry": 8,
+    "nmr_support": 19,
+    "permeability_support": 2,
+    "rh_suction_support": 6,
+    "taupe_tdr_support": 1
+  },
+  "zone_rows": 84
+}

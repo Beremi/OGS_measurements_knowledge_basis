@@ -1,0 +1,513 @@
+{
+  "status": "local_gate_recovery_audit_generated",
+  "document_count": 2540,
+  "evidence_row_count": 4553,
+  "gate_count": 7,
+  "gates_with_closure_candidates": [],
+  "gates_still_external_after_local_rescan": [
+    "ert_transform_support",
+    "ert_uncertainty",
+    "hm_numeric_exports",
+    "hm_uncertainty",
+    "perm_endpoint_geometry",
+    "rh_active_curve_provenance",
+    "taupe_unit_calibration"
+  ],
+  "gate_summaries": {
+    "ert_transform_support": {
+      "stream": "ert_resistivity",
+      "gate": "ERT_TRANSFORM_SUPPORT",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 2070,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 6,
+      "status_counts": {
+        "supporting_context_only": 2064,
+        "keyword_candidate_not_gate_closure": 6
+      },
+      "top_sources": [
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 10",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "projection"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 100",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1000",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1001",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1002",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1003",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1004",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1005",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        }
+      ]
+    },
+    "ert_uncertainty": {
+      "stream": "ert_resistivity",
+      "gate": "ERT_UNCERTAINTY",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 1889,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 19,
+      "status_counts": {
+        "supporting_context_only": 1870,
+        "keyword_candidate_not_gate_closure": 19
+      },
+      "top_sources": [
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 100",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1000",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1001",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1002",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1003",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1004",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1005",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1006",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "ert"
+        }
+      ]
+    },
+    "taupe_unit_calibration": {
+      "stream": "taupe_tdr",
+      "gate": "TAUPE_UNIT_CALIBRATION",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 105,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 9,
+      "status_counts": {
+        "supporting_context_only": 96,
+        "keyword_candidate_not_gate_closure": 9
+      },
+      "top_sources": [
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1872",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "taupe; tdr"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1873",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "taupe; tdr"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1874",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "taupe; tdr"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1875",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "taupe; tdr"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1876",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "taupe; tdr"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1877",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "taupe; tdr"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1878",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "taupe; tdr"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1879",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "taupe; tdr"
+        }
+      ]
+    },
+    "rh_active_curve_provenance": {
+      "stream": "relative_humidity_suction",
+      "gate": "RH_ACTIVE_CURVE_PROVENANCE",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 166,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 4,
+      "status_counts": {
+        "supporting_context_only": 162,
+        "keyword_candidate_not_gate_closure": 4
+      },
+      "top_sources": [
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 13",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "08_08_open_niche_seasonal; open_niche_seasonal"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 15",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "seasonal curve"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 16",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "open_niche_seasonal; seasonal curve"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1846",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "08_08_open_niche_seasonal; open_niche_seasonal"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1856",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "seasonal curve"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1857",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "open_niche_seasonal; seasonal curve"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1868",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "08_08_open_niche_seasonal; open_niche_seasonal"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1870",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "seasonal curve"
+        }
+      ]
+    },
+    "hm_numeric_exports": {
+      "stream": "other_hm_monitoring",
+      "gate": "HM_NUMERIC_EXPORTS",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 138,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 9,
+      "status_counts": {
+        "supporting_context_only": 129,
+        "keyword_candidate_not_gate_closure": 9
+      },
+      "top_sources": [
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1872",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1876",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1878",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1879",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1880",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1881",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "xlsx"
+        },
+        {
+          "source_kind": "deep_extracted_text",
+          "source_path": "measurements/bedding_geology_structure/derived_files/deep_source_pass/extracted_text/2025-09-05_Ziefle_et_al_2023_Characterization_083fc8f3.pdf.txt",
+          "context": "2025-09-05_Ziefle_et_al_2023_Characterization_083fc8f3.pdf.txt",
+          "evidence_status": "keyword_candidate_not_gate_closure",
+          "matched_terms": "extensometer; laser; laser scan; mini-piezometer; piezometer; survey"
+        },
+        {
+          "source_kind": "deep_extracted_text",
+          "source_path": "measurements/bedding_geology_structure/derived_files/deep_source_pass/extracted_text/Perm_Sec_4-3_Ziefle_et_al_2023_Characterization_47842a2a.pdf.txt",
+          "context": "Perm_Sec_4-3_Ziefle_et_al_2023_Characterization_47842a2a.pdf.txt",
+          "evidence_status": "keyword_candidate_not_gate_closure",
+          "matched_terms": "extensometer; laser; laser scan; mini-piezometer; piezometer; survey"
+        }
+      ]
+    },
+    "hm_uncertainty": {
+      "stream": "other_hm_monitoring",
+      "gate": "HM_UNCERTAINTY",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 58,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 10,
+      "status_counts": {
+        "keyword_candidate_not_gate_closure": 10,
+        "supporting_context_only": 48
+      },
+      "top_sources": [
+        {
+          "source_kind": "deep_extracted_text",
+          "source_path": "measurements/bedding_geology_structure/derived_files/deep_source_pass/extracted_text/2025-09-05_Ziefle_et_al_2023_Characterization_083fc8f3.pdf.txt",
+          "context": "2025-09-05_Ziefle_et_al_2023_Characterization_083fc8f3.pdf.txt",
+          "evidence_status": "keyword_candidate_not_gate_closure",
+          "matched_terms": "calibration; extensometer; laser; piezometer; quality; reference"
+        },
+        {
+          "source_kind": "deep_extracted_text",
+          "source_path": "measurements/bedding_geology_structure/derived_files/deep_source_pass/extracted_text/Perm_Sec_4-3_Ziefle_et_al_2023_Characterization_47842a2a.pdf.txt",
+          "context": "Perm_Sec_4-3_Ziefle_et_al_2023_Characterization_47842a2a.pdf.txt",
+          "evidence_status": "keyword_candidate_not_gate_closure",
+          "matched_terms": "calibration; extensometer; laser; piezometer; quality; reference"
+        },
+        {
+          "source_kind": "deep_extracted_text",
+          "source_path": "measurements/bedding_geology_structure/derived_files/deep_source_pass/extracted_text/bedding_page_4_Ziefle_GETE_2022_301223fe.pdf.txt",
+          "context": "bedding_page_4_Ziefle_GETE_2022_301223fe.pdf.txt",
+          "evidence_status": "keyword_candidate_not_gate_closure",
+          "matched_terms": "calibration; extensometer; laser; piezometer; quality; reference; uncertainty; zero"
+        },
+        {
+          "source_kind": "deep_source_index.csv",
+          "source_path": "measurements/deep_source_index.csv",
+          "context": "row 2",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "extensometer; laser; piezometer"
+        },
+        {
+          "source_kind": "deep_source_index.csv",
+          "source_path": "measurements/deep_source_index.csv",
+          "context": "row 3",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "extensometer; laser; piezometer"
+        },
+        {
+          "source_kind": "deep_source_index.csv",
+          "source_path": "measurements/deep_source_index.csv",
+          "context": "row 5",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "extensometer; laser; piezometer"
+        },
+        {
+          "source_kind": "deep_extracted_text",
+          "source_path": "measurements/coordinates_geometry_layout/derived_files/deep_source_pass/extracted_text/VisualisationCDA_4ced4300.dat.head.txt",
+          "context": "VisualisationCDA_4ced4300.dat.head.txt",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "extensometer; piezometer"
+        },
+        {
+          "source_kind": "source_file_text",
+          "source_path": "measurements/coordinates_geometry_layout/source_files/VisualisationCDA.dat",
+          "context": "VisualisationCDA.dat",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "extensometer; piezometer"
+        }
+      ]
+    },
+    "perm_endpoint_geometry": {
+      "stream": "permeability_pulse_tests",
+      "gate": "PERM_SUPPORT",
+      "local_status": "keyword_context_found_but_gate_still_external",
+      "candidate_evidence_count": 127,
+      "possible_closure_evidence_count": 0,
+      "keyword_candidate_not_closure_count": 5,
+      "status_counts": {
+        "supporting_context_only": 122,
+        "keyword_candidate_not_gate_closure": 5
+      },
+      "top_sources": [
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1872",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "coordinate"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1873",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "coordinate"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1874",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "coordinate"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1875",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "coordinate"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1876",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "coordinate"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1877",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "coordinate"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1878",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "coordinate"
+        },
+        {
+          "source_kind": "archive_member_catalog.csv",
+          "source_path": "measurements/archive_member_catalog.csv",
+          "context": "row 1879",
+          "evidence_status": "supporting_context_only",
+          "matched_terms": "coordinate"
+        }
+      ]
+    }
+  },
+  "notes": [
+    "This audit excludes provider response templates and generated request drafts to avoid circular evidence.",
+    "A possible_gate_closure_evidence_requires_review row is not a closed gate; it is a candidate for manual inspection.",
+    "Supporting context confirms why a stream matters but does not satisfy the gate acceptance criteria."
+  ]
+}

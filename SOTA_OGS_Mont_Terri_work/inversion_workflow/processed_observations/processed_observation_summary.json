@@ -1,0 +1,251 @@
+{
+  "generated": [
+    {
+      "file": "manifest_summary.csv",
+      "rows": 9,
+      "columns": [
+        "observation_id",
+        "measurement_type",
+        "model_role",
+        "state_or_parameter",
+        "primary_quantity",
+        "model_quantity",
+        "check_count",
+        "check_types"
+      ]
+    },
+    {
+      "file": "nmr_weekly.csv",
+      "rows": 170,
+      "columns": [
+        "source_file",
+        "station",
+        "date_raw",
+        "date_iso",
+        "water_content_vol_percent",
+        "wc_ci95_vol_percent",
+        "t2_ms",
+        "t2_ci95_ms",
+        "caveat"
+      ]
+    },
+    {
+      "file": "nmr_seasonal_profiles.csv",
+      "rows": 294,
+      "columns": [
+        "source_file",
+        "source_member",
+        "niche",
+        "campaign_date",
+        "position",
+        "water_content_vol_percent",
+        "wc_ci95_vol_percent"
+      ]
+    },
+    {
+      "file": "nmr_seasonal_zip_inventory.csv",
+      "rows": 44,
+      "columns": [
+        "source_file",
+        "source_member",
+        "suffix",
+        "size_bytes"
+      ]
+    },
+    {
+      "file": "taupe_tdr_bands.csv",
+      "rows": 5088,
+      "columns": [
+        "source_file",
+        "source_sheet",
+        "sensor",
+        "date_iso",
+        "source_column",
+        "edz_band_cm",
+        "edz_min_cm",
+        "edz_max_cm",
+        "taupe_value",
+        "quantity_note"
+      ]
+    },
+    {
+      "file": "rh_open_twin_kelvin.csv",
+      "rows": 4247,
+      "columns": [
+        "source_file",
+        "source_sheet",
+        "sensor",
+        "date_iso",
+        "rh_percent",
+        "valid_rh_0_100",
+        "low_outlier_rh_lt_50",
+        "above_95_percent_open_twin_caution",
+        "liquid_pressure_gauge_pa_kelvin",
+        "liquid_pressure_abs_pa_if_gas_101325pa",
+        "assumed_temperature_K",
+        "assumed_liquid_density_kg_m3",
+        "kelvin_coefficient_pa"
+      ]
+    },
+    {
+      "file": "permeability_interpreted_values.csv",
+      "rows": 204,
+      "columns": [
+        "source_file",
+        "source_sheet",
+        "source_row_1based",
+        "campaign_year",
+        "campaign_note",
+        "block_label",
+        "twin",
+        "direction_inferred",
+        "interval_id",
+        "borehole_depth_m",
+        "permeability_m2",
+        "transmissibility_m3",
+        "log10_permeability_m2",
+        "positive_permeability"
+      ]
+    },
+    {
+      "file": "permeability_pressure_decay.csv",
+      "rows": 6687,
+      "columns": [
+        "source_file",
+        "source_sheet",
+        "source_row_1based",
+        "interval_label",
+        "interval_depth_m",
+        "time_s",
+        "normalized_interval_pressure_pa"
+      ]
+    },
+    {
+      "file": "permeability_workbook_inventory.csv",
+      "rows": 7,
+      "columns": [
+        "source_file",
+        "source_sheet",
+        "rows",
+        "columns",
+        "non_empty_cells",
+        "numeric_cells",
+        "positive_numeric_cells",
+        "positive_numeric_min",
+        "positive_numeric_max",
+        "top_left_content_preview"
+      ]
+    },
+    {
+      "file": "ert_archive_inventory.csv",
+      "rows": 61,
+      "columns": [
+        "source_file",
+        "folder",
+        "vtk_files",
+        "txt_files",
+        "timestep_entries",
+        "missing_vtk_matches",
+        "first_timestamp_iso",
+        "last_timestamp_iso",
+        "sample_vtk_member",
+        "sample_points",
+        "sample_cells",
+        "sample_scalars"
+      ]
+    },
+    {
+      "file": "ert_timesteps.csv",
+      "rows": 1691,
+      "columns": [
+        "source_file",
+        "source_member",
+        "folder",
+        "timestep_index_in_file",
+        "data_filename",
+        "timestamp_iso",
+        "matching_vtk_member",
+        "has_matching_vtk"
+      ]
+    },
+    {
+      "file": "ert_vtk_sample_metadata.csv",
+      "rows": 61,
+      "columns": [
+        "source_file",
+        "sample_vtk_member",
+        "points",
+        "cells",
+        "cell_data",
+        "point_data",
+        "scalars"
+      ]
+    },
+    {
+      "file": "ert_nmr_resistivity_pairs.csv",
+      "rows": 72,
+      "columns": [
+        "source_file",
+        "source_sheet",
+        "niche",
+        "date_iso",
+        "location",
+        "nmr_water_content_fraction",
+        "nmr_water_content_vol_percent",
+        "nmr_water_content_std_fraction",
+        "resistivity_ohm_m"
+      ]
+    },
+    {
+      "file": "ert_kruschwitz2004_relation.csv",
+      "rows": 24,
+      "columns": [
+        "source_file",
+        "source_sheet",
+        "water_content",
+        "saturation",
+        "cond",
+        "resistivity",
+        "unnamed_4",
+        "model_data2019",
+        "old_fit"
+      ]
+    },
+    {
+      "file": "measurement_coordinates_xy.csv",
+      "rows": 107,
+      "columns": [
+        "source_file",
+        "source_sheet",
+        "source_row_1based",
+        "measurement_type",
+        "original_3d_x",
+        "original_3d_y",
+        "original_3d_z",
+        "model_xz_x",
+        "model_xz_y",
+        "model_xz_z",
+        "model_xy_x",
+        "model_xy_y",
+        "model_xy_z"
+      ]
+    },
+    {
+      "file": "borehole_coordinates.csv",
+      "rows": 35,
+      "columns": [
+        "source_file",
+        "source_sheet",
+        "source_row_1based",
+        "group",
+        "label",
+        "original_x",
+        "original_y",
+        "original_z",
+        "bgr_model_x",
+        "bgr_model_y",
+        "bgr_model_z"
+      ]
+    }
+  ]
+}

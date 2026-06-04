@@ -1,0 +1,97 @@
+{
+  "status": "pass",
+  "check_count": 13,
+  "pass_count": 13,
+  "warning_count": 0,
+  "failure_count": 0,
+  "status_counts": {
+    "pass": 13
+  },
+  "nonpassing_check_ids": [],
+  "source_model_run_manifest_count": 75,
+  "source_model_wrong_manifest_count": 0,
+  "release_gate_run_count": 65,
+  "release_gate_check_count": 1300,
+  "current_field_run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "current_field_triangle6_cell_count": 10239,
+  "current_field_positive_definite_cell_count": 10239,
+  "measurement_info": {
+    "folder_count": 9,
+    "source_file_rows": 206,
+    "archive_member_rows": 1880,
+    "workbook_sheet_rows": 34,
+    "kind_counts": {
+      "bib": 1,
+      "fig": 11,
+      "jpg": 1,
+      "pdf": 25,
+      "png": 22,
+      "pptx": 4,
+      "pvsm": 1,
+      "py": 1,
+      "tex": 2,
+      "text/data": 100,
+      "vtu": 15,
+      "xlsx": 12,
+      "zip": 11
+    },
+    "manifest_path": "../cda_knowledge_base/measurements_info/measurement_info_manifest.csv",
+    "archive_catalog_path": "../cda_knowledge_base/measurements_info/archive_member_catalog.csv",
+    "workbook_index_path": "../cda_knowledge_base/measurements_info/workbook_sheet_deep_index.csv"
+  },
+  "measurement_operator_coverage_status_counts": {
+    "active_parameter_objective": 1,
+    "active_state_residual_from_sampled_ogs_outputs": 1,
+    "boundary_forcing_audited_not_point_residual": 1,
+    "layout_and_qualitative_targets_ready_numeric_series_missing": 1,
+    "resistivity_diagnostic_generated_transform_support_unconfirmed": 1,
+    "structural_prior_ready": 1,
+    "support_layer_ready": 1,
+    "trend_operator_ready_absolute_calibration_pending": 1,
+    "workflow_support_ready": 1
+  },
+  "measurement_likelihood_activation_state_counts": {
+    "active_direct_parameter_likelihood": 1,
+    "active_state_likelihood_from_sampled_ogs_outputs": 1,
+    "boundary_forcing_audit_not_point_likelihood": 1,
+    "qualitative_validation_layer_numeric_series_missing": 1,
+    "resistivity_diagnostic_evaluated_transform_support_unconfirmed": 1,
+    "support_and_prior_layer": 1,
+    "trend_diagnostic_evaluated_pending_absolute_calibration": 1
+  },
+  "final_promotion_decision": "do_not_promote_current_field",
+  "final_promotion_open_blocker_ids": [
+    "ert_transform_support",
+    "ert_uncertainty",
+    "hm_numeric_exports",
+    "hm_uncertainty",
+    "rh_active_curve_provenance",
+    "taupe_unit_calibration",
+    "perm_endpoint_geometry",
+    "cte_value_confirmation"
+  ],
+  "outputs": {
+    "checks_csv": "inversion_workflow/frozen_model_measurement_inclusion_audit.csv",
+    "summary_json": "inversion_workflow/frozen_model_measurement_inclusion_audit_summary.json",
+    "markdown": "inversion_workflow/frozen_model_measurement_inclusion_audit.md"
+  },
+  "notes": [
+    "This audit checks evidence wiring and guardrails, not new scientific acceptance.",
+    "A pass means the source model is frozen, only staged run-local fields are released, all measurement groups are catalogued and model-entry classified, and gated streams still block final promotion.",
+    "The current field remains an active-objective incumbent until external and modelling gates are closed or explicitly excluded."
+  ],
+  "catalogue_copies": [
+    {
+      "source": "inversion_workflow/frozen_model_measurement_inclusion_audit.csv",
+      "catalogue_copy": "../cda_knowledge_base/measurements/model_formulation_audit/derived_files/frozen_model_measurement_inclusion_audit.csv"
+    },
+    {
+      "source": "inversion_workflow/frozen_model_measurement_inclusion_audit_summary.json",
+      "catalogue_copy": "../cda_knowledge_base/measurements/model_formulation_audit/derived_files/frozen_model_measurement_inclusion_audit_summary.json"
+    },
+    {
+      "source": "inversion_workflow/frozen_model_measurement_inclusion_audit.md",
+      "catalogue_copy": "../cda_knowledge_base/measurements/model_formulation_audit/derived_files/frozen_model_measurement_inclusion_audit.md"
+    }
+  ]
+}

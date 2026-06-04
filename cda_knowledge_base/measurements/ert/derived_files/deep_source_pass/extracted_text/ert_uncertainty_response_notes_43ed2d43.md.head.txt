@@ -1,0 +1,18 @@
+# Response Notes: ert_uncertainty
+- Response status: `missing_response`
+- Request status: `drafted_pending_send`
+- Gate: `ERT_UNCERTAINTY`
+- Audience: BGR ERT provider / Markus Furche via Gesa Ziefle
+- Recipient draft: `inversion_workflow/external_gate_requests/bgr_ert_markus_furche_via_gesa_ziefle.md`
+## Received Files Or Answers
+- None recorded yet.
+## Intake Metadata Checklist
+- sigma units/log base, temporal grouping, spatial correlation assumptions, filtering rules, unstable-cell handling, and whether cells may be aggregated before comparison.
+## Acceptance Test
+The ERT likelihood can assign defensible row/group weights without treating dense VTK cells as independent observations.
+## Refresh Commands After Acceptance
+`python inversion_workflow/scripts/build_measurement_likelihood_model.py; python inversion_workflow/scripts/build_ert_candidate_discrimination_audit.py; python inversion_workflow/scripts/build_measurement_stream_gate_audit.py; python inversion_workflow/scripts/build_measurement_gate_closure_request.py; python inversion_workflow/scripts/build_external_gate_request_pack.py; python inversion_workflow/scripts/build_objective_readiness_audit.py`
+## Gate Decision
+- Current effect if accepted: May close ERT_UNCERTAINTY and allow ERT to move from diagnostic screen toward a hard residual.
+- Decision: `not_evaluated`
+- Evaluated by/date: not recorded

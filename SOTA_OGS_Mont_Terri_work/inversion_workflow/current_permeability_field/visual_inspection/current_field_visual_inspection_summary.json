@@ -1,0 +1,99 @@
+{
+  "current_field_deliverable_status": "best_executed_active_objective_candidate_not_final_all_measurement_inversion",
+  "current_field_run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "generated_images": [
+    "inversion_workflow/current_permeability_field/visual_inspection/log10_k_geom_map.png",
+    "inversion_workflow/current_permeability_field/visual_inspection/log10_k_eigen_min_map.png",
+    "inversion_workflow/current_permeability_field/visual_inspection/log10_k_eigen_max_map.png",
+    "inversion_workflow/current_permeability_field/visual_inspection/local_basis_increment_map.png",
+    "inversion_workflow/current_permeability_field/visual_inspection/nearest_anchor_distance_map.png",
+    "inversion_workflow/current_permeability_field/visual_inspection/local_basis_weight_sum_map.png"
+  ],
+  "image_count": 6,
+  "key_metrics": {
+    "anisotropy_ratio": {
+      "finite_count": 10239,
+      "max": 2.5000000000000013,
+      "min": 2.499999999999998,
+      "p05": 2.499999999999999,
+      "p50": 2.4999999999999996,
+      "p95": 2.5000000000000004
+    },
+    "local_basis_applied_log10_increment": {
+      "finite_count": 10239,
+      "max": 0.00885024756522411,
+      "min": -0.03472002265049577,
+      "p05": 0.0,
+      "p50": 0.0,
+      "p95": 0.0
+    },
+    "local_basis_nearest_anchor_distance_m": {
+      "finite_count": 10239,
+      "max": 7.433553778706038,
+      "min": 0.0,
+      "p05": 0.1655942081433988,
+      "p50": 1.3341074008425977,
+      "p95": 3.7666646341910783
+    },
+    "log10_k_eigen_max_m2": {
+      "finite_count": 10239,
+      "max": -13.145383122411173,
+      "min": -20.304720717434023,
+      "p05": -19.37060688513698,
+      "p50": -18.98734234807743,
+      "p95": -18.704068052007393
+    },
+    "log10_k_eigen_min_m2": {
+      "finite_count": 10239,
+      "max": -13.543323131083211,
+      "min": -20.70266072610606,
+      "p05": -19.768546893809017,
+      "p50": -19.385282356749467,
+      "p95": -19.10200806067943
+    },
+    "log10_k_geom_m2": {
+      "finite_count": 10239,
+      "max": -13.344353126747192,
+      "min": -20.50369072177004,
+      "p05": -19.569576889472998,
+      "p50": -19.18631235241345,
+      "p95": -18.903038056343412
+    },
+    "n_rd": {
+      "finite_count": 10239,
+      "max": 0.105,
+      "min": 0.105,
+      "p05": 0.105,
+      "p50": 0.105,
+      "p95": 0.105
+    },
+    "theta_deg": {
+      "finite_count": 10239,
+      "max": 144.0,
+      "min": 144.0,
+      "p05": 144.0,
+      "p50": 144.0,
+      "p95": 144.0
+    }
+  },
+  "mesh_points": 20873,
+  "metric_summary_csv": "inversion_workflow/current_permeability_field/visual_inspection/current_field_visual_metric_summary.csv",
+  "notes": [
+    "These plots are visual QA for the packaged active-objective incumbent, not a final promotion decision.",
+    "The orientation overlay on the geometric-mean map uses the median k_theta_deg_rd value.",
+    "The plots use the first three nodes of each triangle6 cell for 2D rendering; cell data values remain one value per triangle6 element."
+  ],
+  "output_dir": "inversion_workflow/current_permeability_field/visual_inspection",
+  "positive_definite_cells": 10239,
+  "source_mesh": "inversion_workflow/current_permeability_field/current_best_bulk_w_projections.vtu",
+  "status": "current_field_visual_inspection_generated",
+  "triangle_cells": 10239,
+  "x_extent_m": [
+    -5.0,
+    5.0
+  ],
+  "y_extent_m": [
+    -5.0,
+    5.0
+  ]
+}

@@ -1,0 +1,18 @@
+# Response Notes: hm_uncertainty
+- Response status: `missing_response`
+- Request status: `drafted_pending_send`
+- Gate: `HM_UNCERTAINTY`
+- Audience: Gesa Ziefle / BGR Geoscope, laser-scan, and levelling source
+- Recipient draft: `inversion_workflow/external_gate_requests/bgr_other_hm_exports_via_gesa_ziefle.md`
+## Received Files Or Answers
+- None recorded yet.
+## Intake Metadata Checklist
+- unit/reference convention, uncertainty model, covariance or independence assumptions, quality flags, failure periods, laser registration uncertainty/masks, and levelling covariance frame.
+## Acceptance Test
+Each candidate other-HM residual has enough metadata to state which OGS quantity/support it measures and what residual weight it receives.
+## Refresh Commands After Acceptance
+`python inversion_workflow/scripts/build_other_hm_missing_numeric_request.py; python inversion_workflow/scripts/build_measurement_likelihood_model.py; python inversion_workflow/scripts/build_measurement_stream_gate_audit.py; python inversion_workflow/scripts/build_measurement_gate_closure_request.py; python inversion_workflow/scripts/build_external_gate_request_pack.py; python inversion_workflow/scripts/build_objective_readiness_audit.py`
+## Gate Decision
+- Current effect if accepted: May close HM_UNCERTAINTY after numeric exports exist and residual weights are defensible.
+- Decision: `not_evaluated`
+- Evaluated by/date: not recorded

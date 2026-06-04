@@ -1,0 +1,78 @@
+<phase>
+  <type>AqueousLiquid</type>
+  <properties>
+    <property>
+      <name>specific_heat_capacity</name>
+      <type>Parameter</type>
+      <parameter_name>c_p_l</parameter_name> 
+    </property>
+    <property>
+      <name>thermal_conductivity</name>
+      <type>Parameter</type>
+      <parameter_name>kappa_l</parameter_name>
+    </property>
+    <property>
+      <name>viscosity</name>
+      <type>Parameter</type>
+      <parameter_name>eta</parameter_name>
+    </property>
+    <property>
+      <name>density</name>
+      <type>Linear</type>
+      <reference_value>1095</reference_value>
+      <independent_variable>
+	      <variable_name>temperature</variable_name>
+	      <reference_condition>298.15</reference_condition>
+	      <slope>-5E-4</slope>
+      </independent_variable>
+      <independent_variable>
+	      <variable_name>liquid_phase_pressure</variable_name>
+	      <reference_condition>7.5e6</reference_condition>
+	      <slope>3.2e-10</slope>
+      </independent_variable>
+    </property>
+    <!--<property>
+      <name>density</name>
+      <type>Function</type>
+      <value>
+        <expression>730.6 + 2.025*temperature-3.8e-3*temperature*temperature +(2.362-1.197e-2*temperature+1.835e-5*temperature*temperature)*phase_pressure*1e-6+(2.374-1.024e-2*temperature+1.49e-5*temperature*temperature)*150</expression>
+      </value>
+      <dvalue>
+        <variable_name>temperature</variable_name>
+        <expression>2.025-7.6e-3*temperature +(-1.197e-2+3.67e-5*temperature)*phase_pressure*1e-6 +(-1.024e-2+2.98e-5*temperature)*150</expression>
+      </dvalue>   
+      <dvalue>
+        <variable_name>phase_pressure</variable_name>
+        <expression>(2.362-1.197e-2*temperature+1.835e-5*temperature*temperature)*1e-6</expression>
+      </dvalue>
+    </property>-->
+  <!--  <property>
+      <name>viscosity</name>
+      <type>Function</type><value>
+        <expression>1e-3*((1+2.765e-3*150)*exp(11.897-5.943e-2*temperature+6.422e-5*temperature*temperature))</expression>
+      </value>
+      <dvalue><variable_name>temperature</variable_name>
+        <expression>exp((-0.05943 + 0.00006422*temperature)* temperature)*(-12.3448 + 0.0266795*temperature)</expression>
+      </dvalue>
+    </property> -->
+   <!-- <property>
+        <name>vapour_density</name>
+        <type>WaterVapourDensity</type>
+    </property> -->
+   <!--  <property>
+        <name>vapour_diffusion</name>
+        <type>VapourDiffusionFEBEX</type>
+        <tortuosity>1.0</tortuosity>
+    </property> -->
+    <!--<property>
+        <name>latent_heat</name>
+        <type>LinearWaterVapourLatentHeat</type>
+    </property>-->
+ <!--   <property>
+        <name>thermal_diffusion_enhancement_factor
+        </name>
+        <type>Constant</type>
+        <value>1.0</value>
+    </property> -->
+  </properties>
+</phase>

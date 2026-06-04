@@ -1,0 +1,385 @@
+--- Page 1 ---
+Minutes TD517_CD-A  
+ 
+ 
+ 
+ 
+ 
+Technical discussion TD517_CD-A 
+CDA Experiment 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Place:  Hybrid Meeting (St. Ursanne, Webex)  
+Date: April 28 2026, 09:00 – 11:15
+
+--- Page 2 ---
+Participants Distribution 
+ Participants 
+and 
+ 
+D. Jaeggi (swisstopo) 
+K. Rink (UFZ) 
+O. Kolditz (UFZ) 
+J. Maßmann (BGR) 
+T. Burschil (BGR) 
+O. Czaikowski (GRS) 
+J.L. Garcia-Sineriz (Amphos) 
+J. Gerowski (BGR) 
+T. Kneuker (BGR) 
+S. Schefer (swisstopo) 
+S. Condamin (swisstopo) 
+M. Wengler (BGE) 
+S. Tunon Valladares (Amphos) 
+C. Ostertag-Henning (BGR) 
+J. Hesser (BGR) 
+M. Middelhoff (GRS) 
+A. Liebscher (BGE) 
+ 
+ 
+BGR:  G. Ziefle 
+S. Chen (online) 
+H. Kunz (online) 
+T. Cajuhi (online) 
+S. Costabel (online) 
+M. Furche 
+T. Beilecke 
+V. Kumar 
+GRS: K. Jantschik 
+ISU:  F. Königer 
+R. Schuhmann (online)  
+swisstopo:  - 
+ENSI:  B. Graupner 
+UFZ:                    - 
+BGE:  L. Peti 
+Amphos:  - 
+IGN:  M. Beres (online)
+
+--- Page 3 ---
+2 
+Agenda  
+ 
+Update of measurements (Geoscope and laser scans) has 
+been sent (20.04.26) 
+ 
+9:00 – 10:30: 
+Update of measurements 
+1. ERT (Markus) 
+2. NMR (Stephan) 
+3. Taupe (Franz) 
+4. Levelling (Sebastian, Senecio, today: Gesa) 
+5. Suction (Susana, Jose Luis, today: Gesa) 
+6. Hannover Meeting focusing on measuring techniques 
+(Taupe, NMR, ERT) 18.09.25 
+ 
+10:30 – 11:30: 
+Modelling activities 
+1. Collaborations in the EURAD Hermes Workpackage 
+(Gesa) 
+2. Modelling at BGR (Shuang) 
+ 
+Next steps:  
+3. Measured trends? Any adjustments needed? 
+4. Drilling program? 
+5. Next meeting 
+ 
+The slides of all presentations of this meeting (Gesa, Markus, 
+Stephan, Franz, Sebastian, Shuang) as well as the current report 
+on suction measurements (Susana) are send by mail (11.05.26).
+
+--- Page 4 ---
+3 
+1. Update of measurements  
+ 
+• An update of all measurements that are handled via 
+Geoscope (relative humidity, temperature, opening times 
+of door, extensometer, Mini-Piezometer, crackmeter, 
+suction measurements) plus Laser scans with statistical 
+interpretation has been sent to all partners (Mail sent by 
+Gesa at 20.04.2026) 
+ 
+Some remarks to these measurements: 
+• RH and T measurements indicate very cold temperatures 
+and low RH during the winter 25/26 
+• Data failure of horizontal and vertical extensometers 
+(BCD-A9 and BCD-A10) in the closed niche since 
+September 2025 – next steps? 
+• Mini-Piezometers BCD-A28 to BCD-A31 are working well 
+• Crackmeter indicate ongoing trend in closed niche (1 
+measuring point) and seasonal variation in open niche 
+ 
+1. ERT 
+ 
+Presentation Markus: CD-A_Stand-ERT-2026-04.pdf 
+ 
+Update of relation between contact resistances and RH 
+measurements confirms the strong correlation between 
+these values. 
+Comparison of the yearly amplitude indicates a decrease 
+of the amplitude which might be a result of climatic 
+conditions or a general effect. 
+Interpretation of ERT mapping with yearly intervals in 
+terms of relative resistivity changes show no continuous 
+trend of the last 6 years. Resistivity changes are 
+distributed heterogeneous along the niche contour. 
+Largest changes are observed at the top of the niche and 
+at distinct structures like fractures. 
+ 
+2. NMR 
+ 
+Presentation Stephan: NMR2026.pdf 
+ 
+Weekly measurements of WC in open niche are presented 
+as relationship with RH. 
+While the closed niche behaves as expected (no 
+significant difference), the seasonal changes in the open 
+niche seem to be decreasing. To be observed 
+ 
+Further laboratory experiments to interprete the relaxation 
+times of clay rocks have been performed: Drying and 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Gesa / All
+
+--- Page 5 ---
+4 
+wetting circles in a climate chamber => NMR at each 
+moisture step. 
+Most important question: Do we see the interlayer water in 
+the Opalinus clay and can we quantify the content using 
+NMR relaxometry? 
+OPA in natural solid formation: bimodal NMR response 
+indicates the two types of water binding. 
+Separating them using cut-off values seem possible, 
+however, diffusion and data noise smears the 
+water signal in the range of the cut-off => quantification 
+still challenging! 
+ 
+3. Taupe 
+ 
+Presentation Franz: 2604_TD_CD-A_ISU.pdf 
+ 
+(Differential) TDR using TAUPE Sensor Cables: 
+Closed Twin: No significant changes in ARDP during more 
+than 6 years. However, areas with locally increased ARDP 
+can be found near horizontal as well as vertical borehole. 
+Open Twin: Interpretation of the mean amplitude over the 
+first 0.5m: Major variations on ARDP due to 
+meteorological effects, stronger in horizontal direction.  
+A significant reduction in the ARDP from the start of 2025 
+appears (not at S7front). 
+Interpretation of mean amplitude over varying depth has 
+been perfomed. 
+Summary:  
+Closed Twin: Horizontal: EDZ narrow, Moderate ARDP in 
+most parts, Medium ARDP around 40 110 cm depth, 
+slightly increasing, Starting increased ARDP zone at rear 
+end 
+Vertical: EDZ quite pronounced, Medium ARDP, in most 
+parts only slightly increasing, Higher ARDP around 150 
+cm and at borehole end (significant) 
+Open Twin: Horizontal: EDZ pronounced, Slight variations 
+of ARDP between 80 and 300 cm, Significantly higher 
+ARDP behind about 300 cm (Borehole end), Potentially: 
+Wet spots ? Perturbation/fault 
+Vertical: EDZ quite pronounced, Low/medium ARDP over 
+complete borehole, Only slight variations of ARDP over 
+time, Slightly increased ARDP zone at sensor connection -
+-> artificial 
+ 
+4. Levelling 
+ 
+Presentation Sebastian/Senecio (Gesa): 
+Folien_Niv_TD_CDA_2026.pdf 
+ 
+Precision Levelling Twin Niches Summary:  
+Detectable displacement: from 0.1 to 0.2 mm 
+(depending on the point; Confidence level 95%)
+
+--- Page 6 ---
+5 
+Largest deformations: 
+• CDA-O1: -2.1 mm (settlement) 
+• CDA-C4: +1.3 mm (heave / uplift) 
+On all other points: 
+• With the exception of CDA-O1, there is a tendency 
+towards uplift at all points in the Twin Niches. 
+• The height changes in the Open Twin are smaller 
+(except at the aforementioned point O1). 
+Outlook 
+• Measurements over a longer time period 
+• Direct comparison with laser scanning measurements 
+ 
+5. Suction 
+ 
+Report Susana/ Jose Luis:  
+RO_2013.4_3974_CD-A3 Phase 30_A21_TN-2025-
+12_signed.pdf 
+ 
+Report summarizes the performance of the suction 
+measuring system, the supervisions, the interventions and 
+gives recommendations for further proceeding 
+Conclusions: 
+The problems related to the functioning of the PSS 
+datalogger persist. The psychrometers software is 
+frequently found stopped and no data being collected. 
+Sometimes this influences the SCADA due to the 
+blockage of the communication port with the RH unit. In 
+general, the problem can be solved by re-starting the PSS 
+software but sometimes the reset of the PSS datalogger is 
+also needed. 
+The data acquisition of the thermo-hygrometers is running 
+smoothly, and the trends are easy to understand. 
+However, data from those installed in the closed twin 
+seem to be affected by the high saturation of the rock 
+driving to an increasing trend above the upper range, 
+which is not realistic and probably related with drift and 
+lack of accuracy at such range. 
+The datalogger of the psychrometers is running with some 
+difficulties but the data provided is usable. In the open 
+niche the ranges are in general below the minimum for 
+them. 
+As conclusion, the thermo-hygrometers are the best for 
+the supervision of the open niche while the psychrometers 
+seems to be better for the closed one. 
+Recommendations: 
+Concerning the thermo-hygrometers system, it is 
+recommended to isolate the connection port from the PSS 
+ones. Initially this could be done with a serial to Ethernet 
+converter. However, as there are two sensors (RH5 & 
+RH7) above from 100% RH, it could happen they finally 
+fail, and this could lead to communication difficulties in the 
+common serial line. This phenomenon was already
+
+--- Page 7 ---
+6 
+detected in Sandwich experiment. Thus, the proposal is 
+installing a serial swich instead, which will isolate the serial 
+lines of the 8 sensors and will connect to the computer by 
+Ethernet. 
+Several issues have been identified with the computer, 
+including unexpected restarts and a faulty USB port used 
+for connecting the psychrometer data logger. It is 
+recommended to replace the computer with a new unit 
+running a professional-grade operating system, ensuring 
+compatibility with the legacy controllers required for the 
+psychrometer logger. 
+ 
+Amphos is going to provide a proposal for the next steps 
+ 
+6. Hannover meeting on measuring techniques 
+In September 2025 there has been a meeting related to 
+measurements focusing on water content and related 
+values (ERT, NMR, Taupe). It is planned to provide an 
+interpretation of these measurements by means of the 
+water content. The established and updated relationship 
+between resistivity (ERT) and water content (NMR) will be 
+used. An updated version of this relationship is planned for 
+June 2026. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Susana/José 
+Luis 
+ 
+ 
+ 
+ 
+Markus/Steph
+an 
+2. Modelling  
+ 
+• BGR Modelling Collaborations (Gesa) 
+ 
+There are two collaborations within the EURAD Hermes 
+Workpackage: 
+ 
+1.) Collaboration with IGN (Czech Republic) 
+Optimizing numerical models using geophysical data 
+sets 
+The colleague Tomas Luber (IGN) will be at the BGR 
+from 22.6. to 26.6.26  
+2.) Collaboration with EDF (France) 
+Validation of modeling results against measurements. 
+3 step strategy (basic 2D, 2D, 3D) as presented by 
+Shunag 
+ 
+• BGR Modelling (Presentation by Shuang): 
+ 
+2D Models 
+-Model with precise surface geometry:  
+solver behavior and efficiency tested 
+-Model with perfect ring geometry:  
+Simulated elastic strain showed discrepancies vs. 
+measurements (extensometer). This is focus of ongoing 
+modeling.
+
+--- Page 8 ---
+7 
+ 
+Modelling Strategy  
+Stepwise benchmarking: Simple 2D → Complex 3D in-situ 
+model. Finally targets to compare with extensometer and 
+pore pressure measurement data. 
+ 
+Next steps 
+BGR internal: test of constitutive models.  
+Collaboration: Benchmark BGR vs. EDF modelling. 
+ 
+3. Various   
+• Discussion of measurements with focus on measured 
+trends and the question about next steps and possible 
+adjustments of the CD-A experiment: 
+Open twin: ongoing trend can be observed by various 
+types of measurements (extensometer, suction, 
+Taupe…). No adjustments planned. 
+Closed twin: 
+Most of the measurements indicate static conditions 
+(extensometer, pore pressure, suction, …). The 
+crackmeter measurements at one position in the CT 
+indicate ongoing closure of the crack. Possible 
+adjustments have been discussed and can be further 
+discussed.  
+Current idea/proposal (to be discussed): 
+2027: Re-Installation of extensometer or fiber optic 
+measurements in the closed twin (failure of old 
+measurements since September 2025) 
+Early 2028: Drilling campaign with geophysical 
+characterization (NMR, ERT, Seismic, Permeability…) 
+End of 2028: Climatization of Open Twin (to be 
+defined) 
+ 
+ 
+ 
+ 
+ 
+GRS 
+4. Next steps  
+It is planned to have an online meeting at the 5th of November at 
+10am. An invitation will follow. 
+A hybrid TD is planned in combination with the Technical Meeting 
+2027. 
+Gesa 
+ 
+Gesa 
+ 
+Hannover, 11.05.2026 
+Protocol: Gesa Ziefle, BGR

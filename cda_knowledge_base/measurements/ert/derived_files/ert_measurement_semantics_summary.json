@@ -1,0 +1,181 @@
+{
+  "activation_rules": [
+    "ERT measures an electrical resistivity field, not water content, saturation, pressure, or permeability directly.",
+    "Use OGS theta = porosity * liquid_saturation as the model input to a local empirical rho(theta) relation.",
+    "Use log10-resistivity residuals after projection to the ERT/common support because the calibration is multiplicative.",
+    "Do not activate ERT residuals until OGS outputs exist and the ERT-to-OGS transform plus exact near-niche support mask are confirmed.",
+    "Aggregate or regularize ERT cells before weighting because neighbouring inversion cells are spatially correlated."
+  ],
+  "archive_first_timestamp_iso": "2019-11-01T02:00:00",
+  "archive_folders": 61,
+  "archive_last_timestamp_iso": "2024-12-31T02:00:00",
+  "archive_timestep_entries": 1691,
+  "archive_vtk_files": 1675,
+  "kruschwitz_relation_rows": 24,
+  "n4_pair_rmse_log10_resistivity": 0.2020947007860937,
+  "operator_relation_rows": 6,
+  "outputs": {
+    "markdown": "inversion_workflow/processed_observations/ert_measurement_semantics.md",
+    "projection_group_summary": "inversion_workflow/processed_observations/ert_measurement_semantics_projection_groups.csv",
+    "relation_audit": "inversion_workflow/processed_observations/ert_measurement_semantics_relation_audit.csv",
+    "summary": "inversion_workflow/processed_observations/ert_measurement_semantics_summary.json",
+    "timestep_audit": "inversion_workflow/processed_observations/ert_measurement_semantics_timestep_audit.csv"
+  },
+  "paired_nmr_resistivity_niche_counts": {
+    "N3": 37,
+    "N4": 35
+  },
+  "paired_nmr_resistivity_rows": 72,
+  "projection_inside_approx_1p5m_support_rows": 2194,
+  "projection_inside_ogs_cell_rows": 4676,
+  "projection_lookup_rows": 5966,
+  "projection_lookup_status_counts": {
+    "inside_cell": 4676,
+    "inside_mesh_bbox_nearest_cell": 159,
+    "outside_mesh_bbox_nearest_cell": 1131
+  },
+  "projection_ready_after_ogs_output_rows": 2035,
+  "projection_sample_log10_resistivity_quantiles": {
+    "max": 2.5247918493957,
+    "min": 0.47776044705068,
+    "p10": 0.9483441775721251,
+    "p25": 1.208939605438725,
+    "p50": 1.34930955646205,
+    "p75": 1.53894552238705,
+    "p90": 1.7718333699228999
+  },
+  "projection_summary": {
+    "calibration_relation_id": "kruschwitz_model_data2019",
+    "calibration_status": "calibration_operator_ready_mesh_projection_pending",
+    "ert_cell_type": "triangle",
+    "ert_cells": 5966,
+    "ert_points": 3126,
+    "ert_timesteps": 1691,
+    "ert_timesteps_missing_matching_vtk": 16,
+    "ert_timesteps_with_matching_vtk": 1675,
+    "ert_zip": "../cda_knowledge_base/measurements/ert/source_files/ERT_meas_Niche_open.zip",
+    "inside_ogs_cell_rows": 4676,
+    "inside_ogs_mesh_bbox_rows": 4835,
+    "lookup_status_counts": {
+      "inside_cell": 4676,
+      "inside_mesh_bbox_nearest_cell": 159,
+      "outside_mesh_bbox_nearest_cell": 1131
+    },
+    "notes": [
+      "Raw ERT VTK coordinates are shifted by +500 m in the second coordinate by default, matching the local slide convention that FEM x/y is interpreted in ERT x/z.",
+      "The lookup uses ERT cell centroids, not electrode-pair forward modelling; it is a pragmatic common-support approximation.",
+      "The approximate 1.5 m radius flag follows the local slide note, but the exact 35 cm-in-rock mask is not reconstructed here.",
+      "Numerical residuals should use log10 resistivity after OGS theta is sampled and converted with the documented ERT calibration relation."
+    ],
+    "ogs_mesh": "GESA_model_original/projection_on_mesh_2025-09-05/bulk.vtu",
+    "ogs_mesh_bounds": {
+      "max": [
+        5.0,
+        5.0
+      ],
+      "min": [
+        -5.0,
+        -5.0
+      ]
+    },
+    "raw_ert_bounds": {
+      "max": [
+        10.0,
+        -490.0,
+        0.0
+      ],
+      "min": [
+        -10.0,
+        -510.0,
+        0.0
+      ]
+    },
+    "ready_for_residual_after_ogs_output_rows": 2035,
+    "reference_vtk_member": "Niche open/2019/11-2019/dcinv.result_01.vtk",
+    "remaining_blocker": "Confirm the ERT-to-OGS coordinate transform and exact near-niche support mask, then sample OGS theta outputs and form log-resistivity residuals.",
+    "status": "projection_lookup_ready_transform_assumed_ogs_outputs_pending",
+    "transform": {
+      "model_x": "raw_x * 1 + 0",
+      "model_y": "raw_y * 1 + 500"
+    },
+    "transformed_ert_bounds": {
+      "max": [
+        9.819158254042334,
+        9.782842292063341
+      ],
+      "min": [
+        -9.769414469845334,
+        -9.814676013259998
+      ]
+    },
+    "within_approx_1p5m_center_support_rows": 2194
+  },
+  "projection_support_group_rows": [
+    {
+      "area_m2_sum": 392.9400222991918,
+      "group_key": "False | False",
+      "group_type": "central_support_and_ready",
+      "inside_approx_1p5m_support_rows": 0,
+      "inside_ogs_cell_rows": 2641,
+      "nearest_ogs_distance_m_max": 6.806157130134059,
+      "nearest_ogs_distance_m_median": 0.0596092567936513,
+      "ready_after_ogs_output_rows": 0,
+      "rows": 3772,
+      "sample_log10_resistivity_max": 2.011258582773,
+      "sample_log10_resistivity_median": 1.3109442519088,
+      "sample_log10_resistivity_min": 0.47776044705068
+    },
+    {
+      "area_m2_sum": 0.10070697938975098,
+      "group_key": "True | False",
+      "group_type": "central_support_and_ready",
+      "inside_approx_1p5m_support_rows": 159,
+      "inside_ogs_cell_rows": 0,
+      "nearest_ogs_distance_m_max": 0.0593461935131201,
+      "nearest_ogs_distance_m_median": 0.026324671278048,
+      "ready_after_ogs_output_rows": 0,
+      "rows": 159,
+      "sample_log10_resistivity_max": 2.5247918493957,
+      "sample_log10_resistivity_median": 1.5372598457654,
+      "sample_log10_resistivity_min": 0.93597883105147
+    },
+    {
+      "area_m2_sum": 2.437586221418157,
+      "group_key": "True | True",
+      "group_type": "central_support_and_ready",
+      "inside_approx_1p5m_support_rows": 2035,
+      "inside_ogs_cell_rows": 2035,
+      "nearest_ogs_distance_m_max": 0.0329299460973676,
+      "nearest_ogs_distance_m_median": 0.0093086792189292,
+      "ready_after_ogs_output_rows": 2035,
+      "rows": 2035,
+      "sample_log10_resistivity_max": 2.4757288431501,
+      "sample_log10_resistivity_median": 1.3772679142315,
+      "sample_log10_resistivity_min": 0.96570525199865
+    }
+  ],
+  "recommended_relation": {
+    "coefficient_a": 1.107999999999997,
+    "exponent_b": -1.5800000000000012,
+    "n_points": 18,
+    "resistivity_max_ohm_m": 1601.547265986488,
+    "resistivity_min_ohm_m": 16.64214119518955,
+    "rmse_log10_resistivity": 4.409944738201401e-16,
+    "theta_max": 0.18,
+    "theta_min": 0.01
+  },
+  "recommended_relation_id": "kruschwitz_model_data2019",
+  "remaining_blocker": "Confirm the ERT-to-OGS coordinate transform and exact near-niche support mask, then sample OGS theta outputs and form log-resistivity residuals.",
+  "state_ert_target_rows": 1691,
+  "state_ert_target_status_counts": {
+    "has_matching_ert_vtk": 1675,
+    "missing_matching_ert_vtk": 16
+  },
+  "timestep_activation_gate_counts": {
+    "blocked_missing_matching_vtk_member": 16,
+    "prepared_timestep_pending_ogs_output_transform_support_and_uncertainty": 1675
+  },
+  "timestep_rows": 1691,
+  "timesteps_missing_matching_vtk": 16,
+  "timesteps_with_matching_vtk": 1675
+}

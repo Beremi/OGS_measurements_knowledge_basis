@@ -1,0 +1,81 @@
+{
+  "approval_rows_recorded": 0,
+  "approval_rows_required": 9,
+  "approval_status": "awaiting_user_or_modelling_team_signoff",
+  "approval_status_counts": {
+    "not_approved_template_only": 9
+  },
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_no_new_evidence_acceptance_record_template.csv",
+      "source": "inversion_workflow/final_objective_no_new_evidence_acceptance_record_template.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_no_new_evidence_acceptance_record_template_summary.json",
+      "source": "inversion_workflow/final_objective_no_new_evidence_acceptance_record_template_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_no_new_evidence_acceptance_record_template.md",
+      "source": "inversion_workflow/final_objective_no_new_evidence_acceptance_record_template.md"
+    }
+  ],
+  "current_field_is_winner_after_full_approval": true,
+  "missing_response_blocker_count_before_approval": 8,
+  "next_action": "Use this as a fillable signoff record only if the user/model team chooses the conservative no-new-evidence closeout. Until every approval field is filled from a real decision, leave final promotion blocked.",
+  "open_blocker_count_before_approval": 8,
+  "permeability_likelihood_policy_primary_approvals_recorded": 0,
+  "permeability_likelihood_policy_primary_approvals_required": 1,
+  "permeability_likelihood_policy_ready_to_apply": false,
+  "permeability_next_field_fit_gate_same_support_batch_executable_now": false,
+  "permeability_support_conflict_spatial_active_support_cell_count": 30,
+  "permeability_support_conflict_spatial_audit_status": "permeability_support_conflict_spatial_audit_generated",
+  "permeability_support_conflict_spatial_range_ge_2_log10_cell_count": 16,
+  "permeability_support_conflict_spatial_repeated_support_cell_count": 24,
+  "permeability_support_conflict_spatial_top_conflict_cell": {
+    "cell_type": "triangle6",
+    "centroid_x_m": -1.9531543672590785,
+    "centroid_y_m": -0.665476463070921,
+    "centroid_z_m": 0.0,
+    "conflict_class": "configured_scalar_range_conflict",
+    "depth_max_m": 0.87,
+    "depth_min_m": 0.85,
+    "feasibility_statuses": "observed_above_configured_scalar_range;observed_inside_configured_scalar_range",
+    "group_policy_class": "configured_scalar_range_decision_required",
+    "has_large_observed_range_ge_1_log10": true,
+    "has_large_observed_range_ge_2_log10": true,
+    "is_repeated_support_cell": true,
+    "max_abs_residual": 3.4744237387763093,
+    "mean_abs_residual": 3.4744237387763093,
+    "observed_log10_max": -12.096910013008056,
+    "observed_log10_min": -19.045757490560675,
+    "observed_log10_range": 6.948847477552619,
+    "primary_cell_id": 4648,
+    "residual_signs": "overpredicts_observation;underpredicts_observation",
+    "row_count": 3,
+    "segments": "BCD-A32"
+  },
+  "promotes_current_field": false,
+  "ready_to_apply_decisions": false,
+  "records_actual_decisions": false,
+  "refresh_after_full_approval": "python inversion_workflow/scripts/build_internal_gate_decision_register.py; python inversion_workflow/scripts/build_external_gate_response_intake.py; python inversion_workflow/scripts/build_external_gate_dispatch_audit.py; python inversion_workflow/scripts/build_external_blocker_dashboard.py; python inversion_workflow/scripts/build_measurement_stream_gate_audit.py; python inversion_workflow/scripts/build_conditional_field_selection_scenarios.py; python inversion_workflow/scripts/build_current_field_selection_audit.py; python inversion_workflow/scripts/build_final_inversion_promotion_checklist.py; python inversion_workflow/scripts/build_final_inversion_closeout_playbook.py; python inversion_workflow/scripts/build_final_objective_decision_register.py; python inversion_workflow/scripts/build_final_objective_scenario_matrix.py; python inversion_workflow/scripts/build_final_objective_include_exclude_recommendations.py; python inversion_workflow/scripts/build_final_objective_no_new_evidence_closeout_draft.py; python inversion_workflow/scripts/build_objective_readiness_audit.py",
+  "sends_or_modifies_email": false,
+  "source_artifacts": [
+    "inversion_workflow/final_objective_no_new_evidence_closeout_draft.csv",
+    "inversion_workflow/final_objective_no_new_evidence_closeout_draft_summary.json",
+    "inversion_workflow/final_objective_decision_register.csv",
+    "inversion_workflow/final_objective_scenario_matrix.csv",
+    "inversion_workflow/final_objective_include_exclude_recommendations.csv",
+    "inversion_workflow/final_inversion_promotion_checklist_summary.json",
+    "inversion_workflow/current_field_selection_audit_summary.json",
+    "inversion_workflow/external_blocker_dashboard_summary.json",
+    "inversion_workflow/gmail_draft_send_review_packet_summary.json",
+    "inversion_workflow/permeability_support_conflict_spatial_audit_summary.json",
+    "inversion_workflow/permeability_likelihood_policy_acceptance_record_template_summary.json",
+    "inversion_workflow/permeability_next_field_fit_gate_summary.json"
+  ],
+  "status": "final_objective_no_new_evidence_acceptance_record_template_generated",
+  "template_row_count": 9,
+  "unsent_gmail_draft_count_before_approval": 6,
+  "would_select_scenario_after_full_approval": "F01_current_raw_nmr_exclude_gated_streams",
+  "would_select_winner_after_full_approval": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000"
+}

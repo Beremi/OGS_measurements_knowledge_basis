@@ -1,0 +1,39 @@
+{
+  "area_weighted_residual_log10": {
+    "mae": 0.2541796182834413,
+    "mean": 0.15730357173200954,
+    "p50_abs": 0.24532454120341218,
+    "p90_abs": 0.4381915737701618,
+    "rmse": 0.2999655432285216
+  },
+  "compared_output_times": 80,
+  "compared_rows": 162800,
+  "diagnostic_rows": 162800,
+  "ert_timestep_rows": 1691,
+  "ert_zip": "../cda_knowledge_base/measurements/ert/source_files/ERT_meas_Niche_open.zip",
+  "max_time_delta_days": 10.0,
+  "mean_abs_time_delta_days": 1.350546630968318,
+  "notes": [
+    "Diagnostic only: ERT-to-OGS transform remains the documented +500 m assumption and exact near-niche support still needs confirmation.",
+    "Residuals are log10(rho_pred) - log10(rho_ERT) using the recommended local theta-resistivity relation.",
+    "Area-weighted summaries reduce, but do not eliminate, the correlation problem in neighbouring ERT inversion cells.",
+    "Do not add this diagnostic to the active objective until transform, support mask, and ERT uncertainty are accepted."
+  ],
+  "ogs_output_count": 83,
+  "ogs_output_dir": "inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/ogs_output",
+  "outside_time_tolerance_output_times": 3,
+  "processed_dir": "inversion_workflow/processed_observations",
+  "relation": {
+    "coefficient_a": 1.107999999999997,
+    "exponent_b": -1.5800000000000012,
+    "theta_max": 0.18,
+    "theta_min": 0.01
+  },
+  "relation_id": "kruschwitz_model_data2019",
+  "status": "ert_resistivity_diagnostic_generated_transform_support_unconfirmed",
+  "support_cell_rows": 2035,
+  "support_column": "ready_for_residual_after_ogs_output",
+  "support_mesh": "inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/bulk_w_projections.vtu",
+  "theta_inside_calibration_rows": 162800,
+  "time_origin": "2019-09-18T00:00:00"
+}

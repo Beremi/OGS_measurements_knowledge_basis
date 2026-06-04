@@ -1,0 +1,36 @@
+{
+  "band_mean_porosity_range": {
+    "max": 0.1703187298601793,
+    "min": 0.0756638555435984
+  },
+  "baseline_rows_per_series": 3,
+  "candidate_absolute_interpretation_physical_rows": {
+    "linear_mixing_epsilon_rock_6": 2544,
+    "taupe_value_as_topp_epsilon": 0,
+    "taupe_value_as_vol_percent": 2120
+  },
+  "date_max": "2025-10-10",
+  "date_min": "2019-12-01",
+  "mapped_trend_operator_rows": 2544,
+  "mesh": "GESA_model_original/projection_on_mesh_2025-09-05/bulk_w_projections.vtu",
+  "notes": [
+    "Trend anomalies are baseline-normalized within each sensor/EDZ-band series and can be compared to model theta trends after OGS outputs exist.",
+    "The value-as-water-content-percent candidate is plausible enough to track, but not strong enough to use as a hard likelihood without confirmation.",
+    "Topp and linear-mixing dielectric conversions are included only as sensitivity diagnostics; Topp is not Opalinus-Clay-specific.",
+    "Band porosity diagnostics use the OGS n_rd mesh field and the Taupe line-sample mapping already used by state_observation_targets.csv."
+  ],
+  "operator_rows": 5088,
+  "processed_dir": "inversion_workflow/processed_observations",
+  "recommended_numerical_role": "trend diagnostic; not an active absolute saturation likelihood",
+  "remaining_blocker": "Confirm whether Taupe_WC workbook values are calibrated volumetric water-content percent, apparent relative dielectric permittivity, or another ARDP-derived proxy before assigning absolute residual weights.",
+  "series_rows": 24,
+  "standardized_anomaly_range": {
+    "max": 6.668247847911397,
+    "min": -6.553317429259198
+  },
+  "status": "trend_operator_ready_absolute_calibration_pending",
+  "taupe_value_range": {
+    "max": 11.004376182086776,
+    "min": 9.87126613789583
+  }
+}

@@ -1,0 +1,1219 @@
+--- Page 1 ---
+International Journal of Rock Mechanics & Mining Sciences 174 (2024) 105624
+Available online 13 January 2024
+1365-1609/© 2024 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY-NC license ( http://creativecommons.org/licenses/by-
+nc/4.0/).
+Contents lists available at ScienceDirect
+International Journal of Rock Mechanics and Mining Sciences
+journal homepage: www.elsevier.com/locate/ijrmms
+CD-A twin niches in the Mont Terri Rock Laboratory: Characterization and
+interpretation of hydraulic parameters with regard to safety aspects
+Gesa Ziefle a,∗, Tuanny Cajuhia, Stephan Costabela, Antoine Fourriérea, Markus Furchea,
+Jana Gerowski a, Tilo Kneukera, Franz Königerb, Jobst Maßmanna
+a Federal Institute for Geosciences and Natural Resources (BGR), Hanover, Germany
+b Ingenieurgesellschaft für Sensorik in der Umwelttechnik mbH (ISU), Karlsruhe, Germany
+A R T I C L E I N F O
+Keywords:
+Mont Terri Project
+Characterization of opalinus claystone
+CD-A experiment
+Coupled hydraulic–mechanical effects
+Geology
+Geophysical measurements
+A B S T R A C T
+In the Mont Terri Rock Laboratory (Switzerland), a comprehensive interdisciplinary exploration program is
+carried out to increase knowledge about long-term coupled hydraulic–mechanical effects in Opalinus Clay. As
+these effects are of significant interest regarding the stability and integrity of a potential storage facility for high
+radioactive waste, the ‘‘Influence of humidity on cyclic and longterm deformations’’ (CD-A) experiment aims to
+characterize the Opalinus Clay, especially its heterogeneous sandy facies, and to investigate the evolution of the
+water content, pressure and deformation in the formation. This article provides an overview of measurement
+examinations and geologic investigations carried out in the context of the CD-A experiment. The twin niches of
+the CD-A experiment are located in the upper sandy facies of the Opalinus Clay which is characterized by the
+existence of different subfacies types and fault zones. This contribution focuses on the detailed characterization
+of the claystone, while the evolution of the water content. Combined geophysical and geological investigations
+during the first two years after the excavation of the niches have been carried out. They indicate that the
+subfacies type and pre-existing fault zones do not affect the distribution of water content severely, which
+could be an essential finding in the context of detection procedures for potential high level waste (HLW)
+repositories. Furthermore, miniseismic as well as pulse tests indicate clearly, that the extent of the excavation
+damaged zone (EDZ) strongly depends on the climatic conditions in the underground galleries: After 1.5 years
+the EDZ and the increase of permeability is much more pronounced in the open than in the closed twin. Future
+work aims on an increased process understanding based on a verified constitutive model for Opalinus Clay
+and a comprehensive system understanding considering long-term effects due to climatic conditions as well as
+the impact of geotechnical boundary conditions and heteregeneities.
+1. Introduction
+The comprehension of coupled hydraulic–mechanical (HM) effects
+in claystone is of significant importance for the safety assessment
+of a potential repository for high-level radioactive waste (HLW). In
+particular the various coupling effects are to be regarded as relevant:
+For example, the water content not only influences numerous mate-
+rial parameters but also potential plastic effects and crack formation
+behavior. These mechanical effects in turn have a direct influence
+on stress state and potential flow processes and thus on the integrity
+and also stability of the repository. Consequently, the applicability of
+constitutive material models for claystone and thus also the safety
+assessment is essentially dependent on the correct formulation of the
+hydraulic–mechanical couplings. Here, the constitutive material model
+and also the correct parametrization of the material are of significant
+∗ Corresponding author.
+E-mail address: gesa.ziefle@bgr.de (G. Ziefle).
+importance. As described, the coupled effects depend essentially on
+the hydraulic situation in the Opalinus Clay - especially on the water
+content, which is not necessary homogeneous. Therefore, a focus of
+the presented investigations is also related on material heterogeneities
+and their impact on safety aspects. The multi-disciplinary investigations
+and their results form a basis for a well-founded characterization of
+the rock, taking the water content into account. The presented inves-
+tigations are carried out in the context of the ‘‘Influence of humidity
+on cyclic and longterm deformations’’ (CD-A) experiment as part of
+the Mont Terri Project, which is introduced in Section 2 . This work is
+motivated by the need of a detailed understanding of the geotechnical
+system and its properties as it is required to evaluate the stability
+and integrity over long time periods. It provides a comprehensive
+characterization and combined interpretation of the material based
+https://doi.org/10.1016/j.ijrmms.2023.105624
+Received 22 April 2022; Received in revised form 13 November 2023; Accepted 9 December 2023
+
+--- Page 2 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+2
+G. Ziefle et al.
+on geologic and geophysical investigations, building the basis for nu-
+merical approaches to capture coupled hydraulic–mechanical effects.
+Claystone is a very complex material, characterized by anisotropy and
+often heterogeneities. These have significant impact on the hydraulic
+and mechanical boundary conditions, like the moisture content and
+the stress state, on the material behavior. Various laboratory, in-situ
+and theoretical investigations with this regard have also been car-
+ried out and discussed in the literature (Refs. 1–4 amongst others),
+indicating a high impact of the claystone composition on the ma-
+terial parameters and especially on the transport properties like gas
+and water permeabilities and on the swelling behavior. Besides the
+anisotropic conditions, the saturation plays an important role on on
+the coupled effects, influencing the stiffness, strength and swelling
+capacity of the rock, as discussed in Refs. 3, 5, 6. Another specific
+focus of various investigations is the interplay between the material
+properties, e.g. permeability, and the evolution of the EDZ. 7–9 In this
+context, a stronger influence of coupled HM effects is observed in
+fractured regions, e.g. increase of permeability. Ref. 10 states that the
+evolution of permeability in excavation damaged zones is crucial to
+investigate, especially during cyclic loading. Due to the importance of
+this kind of material conditions, geophysical and geohydraulic methods
+are highly requested in claystone research. In various geophysical fields
+of interest, research aims on a relationship between geophysical logging
+data and mechanical material properties. In the last years, various con-
+stitutive approaches for effects in claystone are discussed and illustrate
+the difficulty of correctly representing the complex material behavior
+even under consideration of various boundary conditions. Ref. 11 pre-
+sented a pragmatic approach to abstract the excavation damaged zone
+around tunnels of a geological radioactive waste repository in numer-
+ical models. Combined presentations of experimental and numerical
+investigations are presented in Refs. 12, 13. For handling coupled HM
+effects in numerical simulations, coupled numerical approaches have
+been proposed in the nineteens by Refs. 14, 15 amongst others. The
+work on hand focuses on the geologic interpretation and the description
+of various types of geophysical measurements conducted in boreholes
+around an excavation aiming on a characterization of the host rock in-
+cluding heterogeneities at different scales such as subfacies types, fault
+zones and the zone, which is affected by the excavation. In this context,
+the literature distinguishes between excavation damaged zone (EDZ),
+with unreversible changes and the excavation disturbed zone (EdZ),
+where changes may be in the elastic range coming along with reversibil-
+ity. Here, the designation EDZ (excavation damaged zone) is used, even
+if the geophysical measurements do not necessarily provide information
+about the reversibility. The combined interpretation - also focusing on
+the water content distribution - provides a detailed characterization of
+the host rock and additional information about hydraulic parameters,
+like resistivity, seismic wave velocity, lithologic description, permittiv-
+ity, permeability, and water content. The setup of the CD-A experiment
+and its twin niches enable to compare these parameters under different
+conditions. For that, we discuss the corresponding results directly and
+within 1.5 years after the excavations and provide an overview of the
+strengths and limitations of the different investigation strategies. The
+impact of the opening conditions as well as heterogeneities is discussed
+and a comprehensive characterization of the Opalinus Clay with ad-
+ditional information on hydraulic parameters can be provided. The
+presented data aims on further understanding of hydraulic effects and
+related further development of coupled constitutive material models in
+heterogeneous claystone.
+2. CD-A experiment in the Mont Terri project
+The presented investigations are carried out in the context of the
+‘‘Influence of humidity on cyclic and longterm deformations’’ (CD-A)
+experiment as part of the Mont Terri Project, which is introduced
+in Ref. 16. The Mont Terri Project is an international research project
+aiming at the geological and geotechnical characterization of Opalinus
+Clay as summarized in Ref. 17. The Mont Terri rock laboratory is
+located in the western part of Switzerland in the Jura mountains and
+hosts various field experiments to investigate the coupled thermal,
+hydraulic, mechanical, chemical and biological (THMBC) processes in
+the claystone. Information about the lithology of the Opalinus Clay in
+the area of the Mont Terri rock laboratory can be found in Refs. 17–19.
+The tectonic structure of the main fault is discussed in Ref. 20, and the
+geomechanical behavior at multiple scales is summarized in Ref. 21.
+Ref. 22 discuss multidisciplinary data from petrographic and structural
+studies, geophysical borehole logging and permeability tests to assess
+the impact of brittle faults on barrier capability. And an updated review
+of the rock mechanics properties of the Opalinus Clay of the Mont
+Terri rock laboratory based on laboratory23–25 and combined with field
+testing can be found in Ref. 26. The aim of the CD-A experiment is
+the evaluation of HM long-term processes. The experiment is charac-
+terized by a comprehensive measuring program including geological,
+geotechnical and geophysical characterization. The unique setting of
+the twin niches enables an understanding of the unrevealed influence
+of varying climatic conditions on the host rock. It assesses the impact of
+the lithology on the subfacies scale on barrier relevant properties like
+water content and resistivity. Furthermore, it investigates the extent
+and hydraulic characteristics of the EDZ with regard to potential flow
+paths. This article summarizes the results of the first two years after
+excavation of the twin niches.
+The excavation of the CD-A twin niches has been carried out as
+part of the extension of the Mont Terri Rock Laboratory (Ref. 27)
+in September 2019. The niches were excavated in fall 2019 near the
+Gallery 2018 in an area characterized by the upper sandy facies of
+the Opalinus Clay as shown in Fig. 1. With a diameter of 2.3 m and
+a length of 11 m, both are oriented perpendicular to the strike of
+bedding. The surface of the claystone in the niches is not covered
+with any kind of stabilizing support. Consequently, a direct interaction
+between the humidity and temperature in the niche and the claystone
+is possible and measurable. The aim of investigating the twin niches is a
+direct comparison of the different climatic conditions within the niches
+(open/closed) and their impact on the hydraulic–mechanical effects in
+the host rock. While the open twin is characterized by the seasonal
+variation of temperature and relative humidity as in the rest of the
+rock laboratory, the conditions in the closed twin provide a constantly
+high relative humidity and very low changes in the temperature as
+well. As a result of these boundary conditions, there will be an ongoing
+desaturation of the host rock around the open twin, which is not
+expected around the closed twin. The evolution of relative humidity
+as measured in the niches is depicted in Fig. 2.
+The complex measuring program of the experiment focuses on the
+climatic conditions within the twin niches, the characterization of the
+host rock, and the evolution of the deformation, saturation and pore
+pressure as it is presented in Ref. 28 and Ref. 29 and summarized in
+Fig. 3 and Table 1. Within a few weeks after excavation, the measuring
+system (Extensometer, Taupe system, Mini-Piezometer, Climatic de-
+vices, Convergence measurements and further more) in and around the
+niches has been installed and the climatization has been adjusted as de-
+scribed in Ref. 16. Beside the boreholes that are used for the permanent
+installation of measurements like TDR technique-based Taupe system,
+mini-piezometer and extensometer measurements, several additional
+boreholes have been drilled in September 2019 and March 2021 to
+investigate the Opalinus Clay around the niches with core and borehole
+measurements. Methods like the electric resistivity tomography (ERT),
+the nuclear magnetic resonance measurements (NMR), the Calcium
+Carbide method (CCM), pulse tests, evapometer measurements, bore-
+hole and core scans are used in the context of characterization of the
+rock. They provide information about certain material parameters like
+the electric resistivity, the permittivity and process variables like the
+water content directly after drilling. Furthermore, geological investi-
+gations of drill cores and of the rocks cropping out at the surface
+of the niches and the gallery walls have been carried out (Ref. 30).
+
+--- Page 3 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+3
+G. Ziefle et al.
+Fig. 1. Top: Location of the CD-A experiment in the Mont Terri URL (top) and view into the open (bottom left/blue frame) and the closed (bottom right/red frame) niche. (For
+interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.)
+Fig. 2. 5-day average of measured relative humidity within the twin niches.
+A comparative interpretation of the investigated parameters provide
+information concerning the distribution of different litho-stratigraphic
+(sub)units, the extent of an EDZ and a borehole disturbed zone (BDZ)
+as well as the occurrence and properties of tectonic fault zones and
+individual faults (Table 2). To complement the experimental campaign,
+numerical calculations are performed to provide information about the
+water content and the importance of the mentioned heterogeneities
+on the coupled HM processes. 31 Additional measurements focusing on
+
+--- Page 4 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+4
+G. Ziefle et al.
+Fig. 3. Location of boreholes in the vicinity of the CD-A twin niches.
+Table 1
+Measurement campaign of the CD-A experiment. The investigations discussed here focus
+on the characterization of claystone and the related saturation including the information
+about the climatic conditions.
+To be investigated Kind of measurement Parameter Unit
+Characterization ERT (borehole) Electric resistivity Ω m
+of claystone ERT (niche profile) Electric resistivity Ω m
+MSM (borehole) Elastic wave velocity m/s
+permeability (borehole) permeability m 2
+Geologic characterization Lithology –
+Climatic conditions Air humidity %
+Temperature ◦C
+Atmospheric pressure Pa
+Saturation Taupe measurements Permittivity –
+NMR (core) Water content m 3/m3
+CCM (core) Water content m 3/m3
+NMR (niche surface) Water content m 3/m3
+Evapometer Conductivity m/s
+Pressure Mini-piezometer Pore pressure Pa
+Psychrometer Suction Pa
+Thermo-hygrometer Suction Pa
+Deformation Extensometer Displacement m
+Convergence (niche) Displacement m
+Laserscan (niche profile) Displacement μm
+the deformation behavior such as laser scans, convergence and exten-
+someter measurements are not part of this article and are discussed
+e.g. in Ref. 32.
+The characterization of the Opalinus Clay around the twin niches
+is carried out with geologic and mineralogical investigations as well
+as electric resistivity measurements (ERT), use of the mini seismic
+method (MSM), pulse tests and evapometer measurements. Focusing on
+the water content around the niches, the nuclear magnetic resonance
+method (NMR), the Calcium-Carbide Method (CCM) and Taupe/TDR
+measurements are used.
+3. Geology and lithology
+This paper focuses on a combined interpretation of lithological
+investigations with related geophysical measurements, also aiming on
+the determination of the water content. Similar approaches for the
+characterization have already been discussed in Ref. 33, who conducted
+multidisciplinary investigations of Mont Terri drill cores to capture the
+structural and compositional variability of different sub-facies types
+of Opalinus Clay. The study states; the variability depends signifi-
+cantly on the direction relative to the bedding plane and underline
+the proposed composition scheme of geological subfacies types con-
+ducted by Ref. 34. Furthermore, the presented investigations point out
+the impact of structural and compositional heterogeneities on barrier
+properties like mechanical behavior, radionuclide retention capacity,
+swelling capacity and also the behavior under thermal load. Further
+in-situ investigations, as reported in Refs. 33 –35, use high-resolution
+seismic tomography for the characterization of the anisotropic material
+behavior of the shaly and carbonate-rich sandy facies of the Opalinus
+Clay in the Mont Terri rock laboratory. A seismotectonic analysis of
+the Mont Terri rock laboratory has been presented by Ref. 36 . In
+general, the Opalinus Clay in the Mont Terri Rock Laboratory can be
+divided into three facies types: the shaly, the sandy and the carbonate-
+rich sandy facies type. Until recently, the shaly and the lower sandy
+facies type of the Opalinus Clay were in the focus of the geological
+investigations.37 The construction of the new Gallery 2018, where the
+twin niches of the CD-A experiment are located, now provides the
+opportunity for a detailed characterization of the upper sandy facies
+type. A detailed study and interpretation of the geology around the twin
+niches can be found in Ref. 30 .
+The sandy facies consists of a silty-sandy claystone with abundant
+thin elongated sand lenses, mm-thick bedded or laminated sand lay-
+ers, calcareous and often bioturbated micritic nodules and biodetritic
+horizons. Quartz grains inside the sand layers are commonly cemented
+by carbonates, however, the cementation is not always continuous. In
+the Mont Terri Rock Laboratory, the sandy facies can be subdivided
+into an upper and a lower sandy facies type. Both are characterized
+by differences in composition. Compared to the lower sandy facies,
+the upper sandy facies includes a higher quantity of clay-rich inter-
+layers. Furthermore, the niches are characterized by variously dipping
+faults and fault zones that are summarized in Fig. 4 . The geologic
+investigation indicates fault planes parallel to the bedding as well as
+non-bedding parallel fault planes are present. A disintegration of the
+fault rock along brittle microshears into duplex-like tectonites was
+observed at several locations. This scaly clay fabric indicates distributed
+shear along numerous discrete fault planes (compare to Ref. 38). Some
+of the encountered fault planes are filled with calcite (Ref. 30 ).
+3.1. Core and borehole investigations
+High-resolution core photographs were taken using a DMT CoreS-
+can3 system specifically designed to take 360 ◦ photographs. For this
+
+--- Page 5 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+5
+G. Ziefle et al.
+Table 2
+Investigation methods and available information.
+Info:
+Method: Lith. ERT MSM NMR/CCM Taupe Pulse test Numerics
+Subfacies type + + – – – – (*)
+EDZ – – + – + (+) (*)
+Fault zones + – – – (+) (+) (*)
+Water content – + – + (+) – +
+[ +: information available, -: no information available. *: may provide information about their importance on physical effects, (): limited information ]. Lith. = Lithological
+investigations on drill cores.
+Fig. 4. Structural geology of the twin niches.
+Source: Extracted from Ref. 30 .
+purpose, the core is rotated around its longitudinal axis while a digital
+camera records the picture. Core scans have been carried out on drill
+cores from all studied boreholes (BCD-A1 to BCD-A4, BCD-A7, BCD-
+A8, BCD-A24 to BCD-A27) while optical borehole images (OBI) have
+been acquired using an QL40-OBI-2G borehole televiewer (Mount So-
+pris Instruments) in boreholes BCD-A24 to BCD-A27. Borehole scanner
+data was captured by a Mount Sopris SCOUT data acquisition system.
+Furthermore, water content investigations at the cores have been car-
+ried out using NMR (nuclear magnetic resonance) and CCM (Calcium-
+Carbide) methods as will be explained in Sections 4.5 and 4.6 . A
+summary of these investigations can also be found in the supplementary
+data.
+3.2. Lithological interpretations
+Structural–lithological investigations form the basis for rock charac-
+terization and exploration. On site, the swisstopo team first described
+the non-oriented drill cores visually. The drill core material from the
+CD-A experiment niches has been further characterized at the BGR core
+repositories in Berlin and Hannover (Germany).
+The investigated drill cores capture one of the five major facies
+types of the Opalinus Clay and therefore allow to study the intra-facies
+variability of the upper sandy facies type. In this context, the subfacies
+classification proposed by Ref. 34 provides a framework for an in-depth
+characterization of lithological intra-facies variations for the Opalinus
+Clay. Each subfacies type is characterized by a distinctive color, grain
+size, fabric and lithology. By combining the high-resolution core scans
+with detailed petrographic-structural observations directly on the drill
+core material, lithological profiles including the subfacies types clas-
+sification according to Ref. 34 were produced and are presented in
+Fig. 10, Fig. 11, Fig. 8, and Fig. 9 in comparison with the results of
+other investigation techniques. In order to further quantify the intra-
+facies variability, it is planned to perform additional microstructural
+and mineralogical–geochemical analyses on the core material in the
+near future.
+4. Measurement examination
+In this section the various measurement methods are introduced:
+Electric Resistivity Tomography (ERT), Mini Seismic Method (MSM),
+the pulse tests, evapometer measurements, Time Domain Reflectom-
+etry (TDR/Taupe), Nuclear Magnetic Resonance (NMR), and Calcium
+Carbide Method (CCM). These measurements focus on the characteri-
+zation of the claystone by investigating the electric resistivity, seismic
+velocities, water content, the and the permeability of the host rock.
+
+--- Page 6 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+6
+G. Ziefle et al.
+Fig. 5. Schematic representation of a resistance measurement in four-point
+arrangement over a layered half space (after Ref. 40 ).
+4.1. Electric resistivity tomography (ERT)
+ERT measurements provide robust results regarding the detection
+and in situ characterization of structural and sedimentary hetero-
+geneities in claystone (Ref. 22, Ref. 39 and Ref. 33).
+To determine the spatial resistivity distribution (or its reciprocal –
+conductivity) in the ground, a direct current (DC) is introduced through
+two point electrodes (A, B). The produced electrical field is measured
+using two other electrodes (M, N), as shown in Fig. 5. A point electrode
+introducing an electrical current 𝐼 will generate a potential 𝑉𝑟 at a
+distance 𝑟 from the source. Assuming two current electrodes (A, B) that
+introduce a current 𝐼 into the homogeneous half-space, the potential
+difference between the electrodes M and 𝑁 is calculated as
+𝛥𝑉 = 𝜌𝐼
+[
+1
+2𝜋
+(
+1
+𝐴𝑀
+− 1
+𝐴𝑁
+− 1
+𝐵𝑀
++ 1
+𝐵𝑁
+)]
+, (1)
+where 𝑃1𝑃2 denotes the distance between two points 𝑃1 and 𝑃2. Replac-
+ing the factor in square brackets by 𝐶, we obtain the resistivity of the
+homogeneous half space as follows:
+𝜌 = 𝐶 𝛥𝑉
+𝐼 (2)
+The parameter 𝐶 is called configuration factor or geometric factor.
+For inhomogeneous conditions it gives the resistivity of an equivalent
+homogeneous half-space. For this value the term apparent resistivity
+𝜌𝑎 in Ωm is introduced, which is normally assigned to the center
+of the electrode array. Multi-electrode resistivity meters enable the
+measurement of 2D resistivity surveys (2D imaging). The advantages
+of this kind of measurements are their high vertical and horizontal
+resolution along the profile.
+The geoelectrical measurements were performed using the high-
+resolution earth resistivity meter 4-point light 10 W (Lippmann Geo-
+physikalische Messgeräte), controlled by the software GeoTest
+(Geophysik–Dr. Rauen). Within the CD-A experiment, high-resolution
+borehole measurements along exploratory boreholes are used to char-
+acterize the rock. These are carried out once shortly after the drilling
+is completed using the BGR probe GB100-15 (Ref. 33 ). It consists of
+100 electrodes with a spacing of 15 mm. The tool has a diameter of
+80 mm (for typical hole diameters of 86 mm), but greater diameters
+can be adapted. The electrodes can be extended pneumatically for
+the required connection to the borehole wall. The spatial resolution is
+limited by 2 times the electrode distance (30 mm), the maximum depth
+of investigation is about 30 cm perpendicular to the borehole wall. The
+chosen electrode configuration represents a Wenner- 𝛼 setup (Ref. 40).
+A numerical inversion process is necessary for data analysis and
+interpretation. The measured apparent resistivities along the borehole
+are thus transformed into a spatial model, discretized into a distinct
+number of elements of homogeneous resistivity, taking into account
+the electrode geometry. The forward operator in the inversion process
+is generally obtained by finite-difference (FD) or finite-element (FE)
+methods. For our data, the non-commercial software package BERT
+(Boundless Electrical Resistivity Tomography) developed by T. Günther
+(Leibniz Institute of Applied Geophysics, Hannover) and C. Rücker
+(BASE) is usedc. For further details, see Ref. 41 and Ref. 42 .
+4.2. Mini seismic method (MSM)
+Seismic velocity measurements make use of elastic waves excited at
+defined source locations. The seismic wave field is recorded in terms of
+travel time and amplitude at certain receiver positions. Taking into ac-
+count the acquisition geometry and travel time, propagation velocity of
+direct pressure (p-) waves 𝑣𝑝 and secondary shear (s-) waves 𝑣𝑠 can be
+calculated. Typical velocity values for the relevant lithology obtained
+by in-situ borehole measurements at the Mont Terri laboratory are
+discussed in Refs. 22, 43 and for laboratory investigations by Ref. 44 .
+The data indicates for the intact shaly facies of OPA P-wave velocity
+values around 2500 m/s, for the carbonate rich areas values between
+3000 and 4000 m/s, and for the sandy facies values around 3000 to
+3500 m/s. In fault zones an average decrease of 200 to 400 m/s relative
+to the base value was observed. Near excavations the measured values
+for the intact and damaged zones are varying, reflected by the highly
+variable seismic signal with fluctuations from 1500 m/s up to 2600 m/s
+as discussed by Ref. 22.
+Depending on the respective survey geometry, travel time data can
+be used to deduce a velocity model along travel paths of the waves
+in two (2D) or three spatial dimensions (3D). If repeat survey data
+are available, temporal data can be included and velocity changes
+determined (4D), to permit geological process analyses. For the acqui-
+sition of interval velocity data, special interval velocity measurements
+(IVM) are carried out. In the CD-A experiment, a seismic borehole
+probe with one seismic source and seven receivers is moved stepwise
+along the surveyed boreholes with 5 cm intervals. At each step, the
+probe actuator and sensors are pneumatically attached to the borehole
+wall to establish sufficient mechanical coupling for the generation and
+detection of the emitted impulsive (‘‘shot’’) elastic waves ( Fig. 6). The
+wave signals are recorded with seven receiver channels and one source
+channel (trigger channel).
+4.3. Pulse tests and evapometer measurements
+Information about the permeability of the host rock is gained with
+pulse tests in the boreholes BCD-A24 to BCD-A27 and with evapometer
+measurements in borehole BFM-D19. While the boreholes BCD-A24
+and BCD-A26 are aligned in vertical direction, boreholes BCD-A25 and
+BCD-A27 are aligned in horizontal direction and BFM-D19 nearly in
+horizontal direction as presented in Fig. 3. The twin niches are located
+perpendicular to the strike of bedding with an inclination of 55-60 ◦ in
+the direction of the niches (145/59) which is summarized in Ref. 30 in
+detail. The pulse tests have been carried out in March 2021, 1.5 years
+after excavation of the niches, while the evapometer measurements
+have been carried out in summer (June/July) 2020 about 10 months
+after excavation.
+In the pulse tests, a modified COMDRILL double piston packer
+system (http://www.comdrill.de/) with a static interval length of 10 cm
+is used. A non-reactive nitrogen gas at standard temperature and pres-
+sure was used as injection medium with an injection pressure up to
+1 bar. The pulse test is characterized by the injection of the gas and
+hereafter a monitoring of the pressure evolution within the test interval.
+This allows the determination of the intrinsic permeability of a 3D
+volume in the near field around a 10 cm long borehole interval. A
+c https://gitlab.com/resistivity-net/bert
+
+--- Page 7 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+7
+G. Ziefle et al.
+Fig. 6. Principle of seismic velocity measurements. Top: Emitted and recorded wave field at 0 to 40 cm distance. Blue: sketch of pressure wave propagation. Red: sketch of shear
+wave propagation. Below: geometry of interval velocity measurements (IVM, single hole). (For interpretation of the references to color in this figure legend, the reader is referred
+to the web version of this article.)
+Fig. 7. Measured permeabilities with pulse tests (BCD-A24 to BCD-A27) and evapometer (BFM-D19) in open (blue) and closed (red) twin in horizontal (contour) and vertical
+(filled) drilling direction. (For interpretation of the references to color in this figure legend, the reader is referred to the web version of this article.)
+maximum error from experimental and evaluation sources is half the
+order of magnitude. More information about these tests is summarized
+in Ref. 22 . The measured interval permeabilities in m 2 indicate that
+the permeability in the damaged zone can be up to seven orders of
+magnitude higher than in the undisturbed host rock as expected and
+also already described in Ref. 45 (two orders of magnitude higher)
+amongst others. These high permeabilities are found near the surface
+of the niche and decrease to the original value in the range up to
+1.0 m distance from the surface. Furthermore, a significantly higher
+permeability within the first 1 m of the host rock around the open twin
+(presented in blue) than in the closed twin (presented in red) is found
+in March 2021, 1.5 years after excavation (June/July 2020). In the ver-
+tical boreholes, this decrease is followed by another increase at depths
+around 1 m, followed by permeability values as in the undisturbed rock
+from a depth of about 1.2 m. As expected, the reported in-situ measured
+permeabilities are slightly lower than related results of laboratory tests.
+Ref. 46 reported higher hydraulic conductivities around 1 ⋅𝑒−13 m∕s
+computed from oedometric and constant-head permeability tests in the
+laboratory. Ref. 47 identified permeabilities for the intact host rock
+in a range between 6.9 ⋅10−21 to 2.3 ⋅10−19m2 for gas and water
+permeability measured in a permeameter called Hassler cell parallel
+and perpendicular to the bedding plane.
+
+--- Page 8 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+8
+G. Ziefle et al.
+The evapometer measures the hydraulic conductivity 𝐾 in m/s by
+measuring the humidity flux from a surrounding formation into a bore-
+hole at a 21 cm long test interval, the so-called matrix permeability.
+The intrinsic permeability 𝑘 in m 2 as a parameter characterizing the
+host rock results from
+𝑘 = 𝐾 ⋅ 𝜇∕(𝜌𝑔) (3)
+with intrinsic permeability 𝑘 in m 2, hydraulic conductivity 𝐾 in m/s,
+viscosity 𝜇 in Pa ⋅s, density 𝜌 in kg/m 3 and gravity 𝑔 in m/s 2. The
+measured permeability in m 2 is also presented in Fig. 7 indicating
+similar ranges than the pulse tests. Within the evapometer, a silica gel
+absorbs the air humidity which results in a change of the electrical field.
+For more information on the evapometer measurements the reader is
+referred to Ref. 16. As the evapometer measurements (carried out in
+summer 2020) are also influenced by the saturation of the host rock,
+the measurements indicate lower values for the humidity flux (up to
+two orders of magnitude) in the nearfield of the niche, characterized
+by a significant dehydration of the host rock. It has to be kept in
+mind that these assumptions are based on very few data points and
+hopefully can be convinced by further measurements in the future.
+The measured permeabilities are presented in comparison with other
+boreholes measurements in Figs. 8–11.
+4.4. Time domain reflectometry (TDR/Taupe) measurements
+The application of Time Domain Reflectometry, TDR, with the
+Taupe measurement system uses high-frequency voltage pulses on elec-
+trodes in contact with the material to determine its related apparent
+relative dielectric permittivity, ARDP. Due to the high ARDP of water
+(about 80 at room temperature) in relation to low ARDP of mineral
+materials (3...6), TDR method allows to identify water content in such
+environments. The traveling time of a pulse along the electrodes and
+back can be determined and the mean ARDP over the length of the
+electrodes calculated. Amplitude distribution of the TDR raw signal
+over the electrode length allows to determine the spatial resolution of
+ARDP values. A calibration function is necessary to calculate the water
+content from ARDP.
+TDR tube sensors, consisting of two coupled parts of 2 m length
+each, are mounted in the vertical and horizontal boreholes in the twin
+niches. Because the sensors, mounted on the outside of the tubes, might
+not be in good contact to the host rock over its complete length,
+a certain time has to be maintained to establish reliable results for
+the ARDP determination. This is less significant for the horizontally
+installed tubes, but vertically installed sensors require up to 100 days
+until convergence of the host rock provides closing of possible air gaps
+around the tube sensors. Starting conditions and settling processes are
+not influenced by atmospheric conditions in open and closed niches,
+but dominantly by the geological situation inside the host rock, given
+by different layers crossing the bore holes.
+The Taupe results presented in Fig. 10, Fig. 11, Fig. 8 and Fig. 9
+show the timely resolved locally results for both niches. For the open
+twin, results of nearly horizontal borehole A3 (Fig. 8) show an increase
+in ARDP amplitude in a depth between 330 and 400 cm. Most signifi-
+cant, a rise in ARDP up to about 10.5 indicates accumulation of fluid
+at the back side of the borehole over time. Because of the inclination of
+the horizontal boreholes of −10 degrees, fluid can progress by capillary
+rise or ingress the amount of fluid coming from faults in the host rock.
+The ARDP distribution from sensors in vertical borehole A4 (Fig. 9)
+remains nearly constant with only small variations in depth and a
+total range of ARDP between about 7 and 8. Slightly higher values are
+concentrated in depth between 60 cm and 250 cm.
+In the closed twin the nearly horizontal borehole A7 (Fig. 10) shows
+a configuration that is nearly stable after about 110 days indicating a
+zone of slightly higher ARDP centered at about 90 cm and ranging from
+about 40 cm to about 200 cm. ARDP range is between 7.5 and 8.5 with
+only low indication of additional fluid access, but on settling processes
+in the host rock around the bore hole.
+The rear part of the coupled TDR tube sensor in vertical borehole
+A8 (Fig. 11), closed twin, was not completely inserted into the bore
+hole and the sensor start is about 15 cm out of the bore hole mouth.
+Results show an ARDP distribution which varies only slightly with
+ARDP values ranging from 7 to 9 in a depth range between 100 and
+250 cm. Additionally, a zone of ARDP values around 8.5 exist around
+depth 285 cm and at the backside of the sensor up to ARDP values of
+9. Because of its stability, this might show structural properties of the
+host rock.
+The structure of the vertical boreholes, A4 and A8, is comparable,
+but absolute values are higher in A8. Responsible for the difference
+in the vertical boreholes could be the different geological situation
+at the location of the boreholes. As expected, the nearly horizontal
+boreholes A3 and A7 show different structures and different ARDP
+value ranges due to the distance between them. Despite the fact of
+strong geology changes and different measuring orientations of the TDR
+sensors, ARDP values of all measurements vary only in a narrow range.
+Data of borehole A3 indicate a restricted inflow of fluid at the sensor
+end, which is reducing over time.
+At the front part of the TDR sensors ranges of lower ARDP exist,
+possibly indicating the existence of an EDZ.
+4.5. Nuclear magnetic resonance measurements (NMR)
+Geophysical applications of nuclear magnetic resonance (NMR) es-
+timate the water content of porous geo-materials by detecting the
+response signal of 1𝐻 nuclei after electromagnetic stimulation. The ap-
+plication of an electromagnetic excitation forces the spins of the proton
+nuclei in the water molecules to tilt away from their equilibrium. After
+shutting off the excitation field, the spins relax back to equilibrium
+in a static magnetic field, which is captured by the NMR sensor as
+an exponentially decaying signal. The more 1𝐻 protons are included
+in this process, i.e., the more water molecules are inside the sensitive
+volume of the measurement, the stronger is the detected signal. A
+simple linear relationship transfers the measured signal amplitudes into
+estimates of water content. We determine the signal amplitude in this
+study by mono-exponential fitting of the measured NMR data. Besides
+water content, also pore space information can be provided from the
+relaxation behavior of NMR signals such as pore size distribution, capil-
+lary pressure curve, and permeability.48–50 However, the interpretation
+of relaxation times for pure clay rock is an issue of resent research50–52
+and is not part of the CD-A project at this early state.
+The drilling program in 2021 was accompanied by measurements
+using mobile NMR technologies for investigating the drilled rock cores
+directly after taking them, the so-called single-sided NMR 53 and a mo-
+bile core scanner. 54 Interpreting the results, one important difference
+has to be kept in mind: While the single-sided NMR device measures
+a thin slice with a thickness about 200 μm, the mobile NMR scanner
+interprets several hundreds of cubic centimeters. Using a mobile NMR
+core scanner provides the opportunity of keeping the core material
+undamaged for subsequent studies. The working principle is the same
+as for conventional laboratory NMR devices 49 with the limitation that
+the mobility, i.e., flexible installation and usage anywhere in the tunnel,
+comes at the costs of a light-weighed and thus weaker permanent
+magnet inside. This leads to a worse signal-to-noise ratio compared
+to the data quality of usual laboratory NMR data. Immediately after
+taking the drilling cores, the core material was covered with plastic
+foil and step-wise pushed through the device. Measurement points were
+determined with a spatial resolution of about 20 cm, which corresponds
+to the length of the sensitive range inside the Scanner. In doing so, a
+more or less continuous coverage of the cores could be realized. The
+results are depicted in Figs. 8–11 and compared to water contents as
+measured in the laboratory by weighing at 105 ◦C and using the CCM.
+The results are in agreement. In contrast to the drilling program in
+
+--- Page 9 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+9
+G. Ziefle et al.
+Fig. 8. Comparative presentation of the lithologic interpretation, the measured electric resistivity in Ω, seismic velocity in km/s, apparent relative dielectric permittivity, and
+permeability in m 2 as interpreted from the horizontal boreholes and related cores taken in September 2019 and March 2021 in the open twin niche.
+2021, the core water contents during the initial core drilling in 2019
+had to be measured using single-sided NMR, for which specific samples
+had to be prepared out of the cores. These results can also be found in
+Figs. 8–11.
+4.6. Calcium carbide method (CCM)
+The Calcium Carbide Method (CCM) is a technique to measure the
+water content of a soil sample of a few cubic centimeters based on this
+chemical reaction:
+2H2O + CaC2− > Ca(OH)2 + C2H2 (4)
+By measuring the excess pressure due to the formation of the acety-
+lene gas (C2H2) (and ethin C2H2) in a closed reactor, one can decipher
+the amount of water (H 2O), which reacted with the Calcium Carbide
+(CaC2). This technique is well adapted to measurements in-situ. In the
+CD-A experiment, it has been first used in March 2021. For this purpose
+we were using the ‘‘Carbide Moisture Meter’’ equipment from Radtke
+Messtechnik. As soon as a core was drilled, we took a 20.0 g sample
+of the soil and ground it in the calibrated pressure bottle using steel
+balls and a stirring rod. Then an ampule with 7.0 g ( ±140 mg) Calcium
+Carbide was introduced and the container was sealed. By shaking the
+calibrated pressure bottle, the ampule cracks and the CaC reacts with
+the free water molecules. After ten minutes of reaction, we measured
+the increase of pressure on the manometer of the sealed bottle and
+determined the water content in the sample.
+During the drilling program in 2021, the CCM was applied in
+addition to the NMR water content acquisition (see Figs. 8 –11).
+5. Comparative presentation and interpretation
+A comparative representation of the geophysical measurements and
+geologic interpretation of the boreholes in horizontal and vertical
+direction is presented in Figs. 8–11 for both niches.
+To quantify the intra-facies variability of the Opalinus Clay at
+the Mont Terri Rock Laboratory, the main facies types are further
+subdivided into several subfacies (SF) types. Each subfacies type is
+characterized by a distinctive color, lithology, grain size, fabric and
+increasing carbonate content (Ref. 34):
+• SF2: Medium-dark gray, sparsely bioturbated, continuous to dis-
+continuous planar-parallel-laminated, argillaceous-siliceous
+medium to coarse-grained mudstone including sparse bioclastic
+fragments.
+• SF2a: Dark gray, argillaceous-siliceous medium-grained mud-
+stone, with less sparsely to moderately cemented silt-rich lami-
+naes in comparison to SF2.
+• SF3: Medium gray, moderately bioturbated, lenticular-laminated
+or interwoven, siliceous-argillaceous sandy mud-stone with com-
+mon bioclastic fragments.
+• SF4: Medium-light gray, strongly bioturbated, flaser-bedded to
+homogeneous siliceous-calcareous sandy mudstone with abun-
+dant bioclastic fragments.
+The lithologic characterization indicates various subfacies types are
+occurring along the boreholes as can be seen in all drilling profiles.
+Please note that the figures show a generalized overview, further
+variations can occur at the cm- and sub-cm-scale. The Opalinus Clay
+in the vicinity of the niches is characterized by the subfacies types SF2
+to SF4 according to the classification of Ref. 34 . Subfacies type SF1
+(homogeneous, argillaceous fine to medium grained mudstone) and SF5
+(Light gray, medium to coarse grained calcareous-sandy mudstone to
+limestone) were not encountered in the upper sandy facies of the CD-A
+drill cores.
+Regarding Figs. 8 –11 it becomes apparent, that a rather high-
+lithological intra-facies variability subperpendicular to bedding is
+widespread, as indicated by various small-scale subfacies variations
+in this particular orientation. On the other hand, the data indicates a
+rather low lateral variability parallel to bedding.
+The lithologic profiles correlate to the measurements of the electric
+resistivity. Varying resistivity in high-resolution ERT measurements can
+be attributed to differences in clay mineral and carbonate content
+or structural features (see below). Especially the vertical boreholes
+indicate characteristic sequences with different resistivities with values
+between 10 to 50 Ω m which correspond to varying subfacies types. In
+the horizontal boreholes, this correlation is not as pronounced, since
+in the boreholes parallel to bedding the ERT results depend on the
+orientation of the high-resistivity carbonate layers as well as on the
+measurement geometry.
+
+--- Page 10 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+10
+G. Ziefle et al.
+Fig. 9. Comparative presentation of the lithologic interpretation, the measured electric resistivity in Ω, seismic velocity in km/s, apparent relative dielectric permittivity, and
+permeability in m 2 as interpreted from the vertical boreholes and related cores taken in September 2019 and March 2021 in the open twin niche.
+Fig. 10. Comparative presentation of the lithologic interpretation, the measured electric resistivity in Ω, seismic velocity in km/s, apparent relative dielectric permittivity, and
+permeability in m 2 as interpreted from the horizontal boreholes and related cores taken in September 2019 and March 2021 in the closed twin niche.
+Generally, the intervals with higher carbonate content (subfacies
+types SF3 and SF4) are characterized by increased values of electric
+resistivity > 30 Ω m. On the other hand, the measurements that focus
+on the water content like Taupe, NMR, and CCM measurements show
+no clear correlation of the water content with the subfacies type in
+question. In addition, the measurements of the interval permeability
+derived from hydraulic pulse test indicates no clear correlation to
+the lithologic profile. Nevertheless, due to general fluctuations in the
+measured values as well as the rather low number of measurements to
+date, no clear statement regarding the correlation between subfacies
+type/lithology and measured water content is possible so far. A com-
+parison of different facies types can be found for example in Ref. 33
+while the measurements in the context of the CD-A experiment focus
+on different subfacies types. The small-scaled water content measure-
+ments (CCM and NMR) do not show the expected increasing trend
+with increasing depth and differ to the Taupe results in this regard.
+The reason for this is most likely the different integration ranges of
+these measurements. The measured permeabilities show the expected
+increase near the excavation and also some measurement anomalies,
+such as the elevated permeability (10 −16 m2) at 2.5 m borehole depth
+in borehole BCD-A27, which can be well explained by the presence
+of an artificial discontinuity as it is reported in the lithology plot of
+10 by the blue line and also in the borehole scan, showing a distinct
+
+--- Page 11 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+11
+G. Ziefle et al.
+Fig. 11. Comparative presentation of the lithologic interpretation, the measured electric resistivity in Ω, seismic velocity in km/s, apparent relative dielectric permittivity, and
+permeability in m 2 as interpreted from the vertical boreholes and related cores taken in September 2019 and March 2021 in the closed twin niche.
+horizontal fracture structure at 2.4 m (given in the supplementary data
+for borehole BCD-A27).
+In addition to the lithological variability, geophysical measurement
+repetitions can provide information about the zone, which is affected
+by the excavation: What is their extent and what is the degree of
+influence? The geophysical measurements presented here are to be
+seen as a time-related statement - they do not provide information
+about the temporal evolution and a possible associated reversibility.
+However, the geophysical monitoring is an important part of the long-
+term program of the CD-A project and might provide insights also on
+EDZ dynamics in the future. The evolution of the EDZ has already
+been in the focus of previous investigations as for example discussed
+by Ref. 55 providing information about the hydro-mechanical evolution
+of the EDZ as transport path for radionuclides and gas. Especially
+the MSM indicates the extent of the EDZ very clearly as presented in
+Figs. 8–11 and indicates an extent of the EDZ varying between 20 cm
+and 50 cm, measured immediately after the excavation of the niches
+(BCD-A3, BCD-A4, BCD-A7 and BCD-A8). The EDZ is characterized
+by clearly reduced p-wave velocities varying between 1000 m/s and
+2600 m/s, compared to velocities between 2800 m/s and 3500 m/s
+for the intact rock. 1.5 years later (in the boreholes BCD-A24 to BCD-
+A27), the EDZ can only be measured clearly in the vertical direction
+of each twin, while there is no clear change in the measured velocities
+in the horizontal directions. While the open twin is characterized by a
+significant increase of the measured EDZ, there is only a minor increase
+in the closed twin. As resistivity is dependent on porosity and water
+saturation (Ref. 56 ), some features of the unsaturated EDZ are also
+visible in the geoelectric profiles, showing increased resistivities 𝜌 >
+25 Ω m. This effect can be found in all resisitivity measurements of
+the open twin and also in the early horizontal measurement (BCD-A7)
+of the closed twin.
+The measurements of the apparent relative dielectric permittivity
+with the Taupe sensor as well as the permeability measurements by
+the pulse tests provide information about the characteristics in the
+nearfield of the niches. The measurements of the interval permeability
+in boreholes BCD-A24 to BCD-A27 have been carried out 1.5 years after
+the excavation of the niches ( Fig. 7). The extend of the zone showing
+a significant increase of the permeability is significantly higher in the
+open (up to 1 m) than in the closed niche (up to 50 cm), with max.
+permeability values varying from usually (one outlier is measured at
+a depth of about 40 cm) 10 −16 m2 (closed) to 10 −13 m2 (open). The
+contrasting climatic conditions in the open and closed niche might be a
+reason for the different extent of the EDZ and the differences of several
+orders of magnitude in interval transmissibility.
+The measurements of the apparent relative dielectric permittivity
+with the Taupe sensors indicate varying values in the nearfield of
+the niches compared to the deeper parts of the boreholes. Due to the
+continuous evolution of the ARDP, the range of the EDZ is not easy to
+distinguish in the dataset, but comparing TDR results in this area with
+ERT results indicate ARDP values below about 7.5 as a delimitation of
+a zone away from the niche surface (Open twin about 40 cm for A3
+and A4, closed twin: about 15 cm for A7 and about 25 cm for A8).
+Focusing on the temporal evolution of the nearfield effects in Figs. 8 –
+11, the measurements indicate nearly constant values for both niches
+and show no significant apparent increase of the damaged area around
+the niches. Considering all three methods, the extent of the affected
+zone in the nearfield of the niches is in the same range, nevertheless,
+the exact values may vary e.g. in the horizontal borehole of the open
+twin.
+As several fault zones and discontinuities are crossing the studied
+section of the Opalinus Clay, the interpretation of the measured values
+with regard to existing heterogeneities is of interest. The compre-
+hensive geologic interpretation provides information about artificial
+discontinuities as well as the information regarding core losses, the
+location of different subfacies types, the orientation of the bedding
+planes and the lithologic characteristic of the host rock. Taking this data
+into account, it is possible to relate some of the observed anomalies
+in permeability (outside the EDZ) to discrete artificial and tectonic
+features (see Fig. 10 where these effects can be correlated with the di-
+agram). For example, the elevated permeability (10 −17 m2⋅m) at 2.5 m
+borehole depth in borehole BCD-A27 can be well explained by the
+presence of an artificial discontinuity (blue line in the lithology plot
+in Fig. 10).
+Discontinuities may vary significantly with regard to their mechan-
+ical and hydraulic properties and the interpretation of the relevance
+of fault zones concerning their impact on coupled thermal–hydraulic–
+mechanical and chemical effects is challenging. Fig. 12 provides an
+overview of the observed faults and fault zones in the vicinity of the
+
+--- Page 12 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+12
+G. Ziefle et al.
+Fig. 12. Observed fault zones in the vicinity of the twin niches and extensometer measurements of strains.
+Source: Taken from Ref. 32 .
+twin niches. For more information about the structural interpretation
+and the measured displacements, the reader is referred to Ref. 32 .
+Comparing the lithologic description and the geophysical/geohydraulic
+data with the occurrence of fault zones results in some interesting
+observations which are summarized in the following section.
+6. Results and discussion
+The presented methods of investigation aim on various parameters
+and build a useful combination to investigate the characteristic of
+the claystone at a meter-scale around the niches. The subfacies types
+can be identified with electric resistivity measurements and lithologic
+description. Given that the measurements of lithology, water content
+and permittivity exhibit no clear correlation, it becomes evident that
+the primary objective of a numerical model is to represent the overar-
+ching coupled behavior rather than individual subfacies. Consequently,
+a homogeneous modeling approach might be sufficient to capture this
+behavior in the presence of diverse subfacies types of Opalinus Clay.
+However, there has to be a particular focus on the EDZ around the
+excavations as this area is characterized by various heterogenities and
+an ongoing evolution over the years. Nevertheless, also the presented
+measurement examinations provide information about the extent of the
+EDZ around the niches (ERT, MSM, Taupe, Pulse test) at the borehole
+locations, their evolution 1.5 years after excavation and the impact of
+the climatic conditions on the EDZ. While the initial extent in both
+niches and both directions results to 20 to 50 cm, 1.5 years later
+we found no clear indications of the EDZ (by ERT measurements) in
+horizontal directions of both niches, while the EDZ in vertical directions
+results to 140 cm in the open and 50 cm in the closed twin, indicating
+a significant impact of the climatic conditions on the EDZ evolution.
+This impact is also seen in the permeability measurements in horizontal
+as well as vertical direction - permeability measurements 1.5 years
+after excavation with hydraulic pulse tests display different behavior
+in the closed (affected area up to 50 cm) in comparison to the open
+twin (affected area up to 100 cm) and differences of several orders of
+magnitude in interval permeability. The most obvious reason for this
+result - which has to be confirmed by further measurements - seems to
+be the different climatic conditions of the niches. Nevertheless, aspects
+such as the characteristics of the claystone, the orientation in relation
+to stress field and bedding and the climatic boundary conditions must
+be taken into account. Nevertheless, the Taupe measurements indicate
+no remarkable change of measured permittivity in the EDZ over time.
+The Opalinus Clay in the vicinity of the twin niches is characterized
+by several discontinuities like fractures and fault zones with varying im-
+pact on the hydraulic as well as mechanical conditions. Heterogeneities
+such as faulted areas as well as micro cracks can be investigated due
+to the lithological description of boreholes, geologic characterization
+of the host rock, the electric resistivity measurements (especially sea-
+sonally affected fractures), and potentially the Taupe measurements,
+indicating an impact of fractures on the hydraulic effects. While there
+seems to be a correlation between some of the observed artificial
+discontinuities and the electric resistivity as well as the permeability,
+the overall impact on the water content seems to be low in the range
+of the borehole length of 4 m. Nevertheless, the impact of these kind of
+heterogeneities varies significantly from case to case and underlines the
+very complex behavior of claystone. The resulting change of material
+parameters may be of significant importance concerning a potential
+safety case of a long-term HLW repository and therefore is planned
+to be in the focus of further investigations, aiming particularly on the
+decimeter-scale around the excavations.
+The water content is a key parameter for the coupled effects in
+the vicinity of the twin niches, which is observed in this project by
+a combination of various methods. In Ref. 31 , water content measure-
+ments performed along the surface of the niches were correlated with
+eletrical resistivity data and numerical modeling. Seasonal effects have
+been described and the statistical evaluation of such temporal data
+has been argumented and correlated with geological characterization.
+The investigations enable a temporal description of the water content
+evolution around the niches, indicating the highly heterogeneous near
+field effects. Here, NMR and CCM measurements have been successfully
+conducted using the fresh core material immediately after drilling to
+provide water content profiles as original as possible. The two methods
+yielded very similar results that could be validated by subsequent
+weighing in the laboratory. These water content profiles with values
+scattering within the range of 10 to 16 vol% do not show clear trends
+or systematic variations and thus support the idea of a homogeneous
+water content model for the numerical HM simulations at the average
+of the observed values. However, further investigations are necessary
+to access the relationship between the lithological subfacies types and
+corresponding water content. A clear relationship does not seem to exist
+regarding our data base to date, which is not intuitive. One challenge
+in this context is the different dimensions at which the individual
+methods monitor the water content and their individual measurement
+principles ranging from a few μm (single-sided NMR), over a few
+cubic centimeters (CCM) up to several hundreds of cubic centimeters
+(mobile NMR). Further laboratory research, which considers these
+methodological issues, is underway to characterize how the pore water
+in the Opalinus Clay reacts at the μm to the cm scale on atmospherical
+changes.
+Although indicated by Taupe, an increasing water content with
+increasing depth in the range of the EDZ was not observed with NMR
+
+--- Page 13 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+13
+G. Ziefle et al.
+and CCM. We address this observation to the fact that these methods
+work at a smaller scale than Taupe and are thus not able to probe
+volumes large enough to cover the corresponding changes, i.e., most
+likely cracks and fissures.
+The long-term CD-A experiment is a favorable environment to fur-
+ther evaluate the presented investigation procedure aiming on a quan-
+titative evaluation and verification of the used measuring and model-
+ing approaches. Additional investigations like laser scans, convergence
+measurements, and extensometer measurements are carried out within
+and around the niches. They focus on the deformation behavior of the
+host rock around the niches and are discussed in combination with
+geologic interpretations, numerical modeling approaches and visual-
+ization techniques in Ref. 57, and Ref. 32. Investigations focusing on
+the pressure evolution conducted by mini-piezometer, psychrometer
+and thermo-hygrometer measurements in combination with numerical
+modeling procedures are underway. Within a HM coupled framework,
+the numerical procedure should describe the changes of water content
+as observed during the experiment. Furthermore, it is important to
+study the excavation-induced effects, e.g. size of EDZ, accounting for
+the mechanical anisotropic behavior of the rock that affects the EDZ
+shape/formation and, consequently the pore pressure distribution. Note
+that the initial in-situ stress state as well as initial pore pressures also
+have an influence on how the excavation will deform and how the wa-
+ter content will distribute. 58 Furthermore, the ability of the numerical
+model to reproduce such behavior must be critically evaluated.
+Declaration of competing interest
+The authors declare that they have no known competing finan-
+cial interests or personal relationships that could have appeared to
+influence the work reported in this paper.
+Data availability
+Data will be made available on request.
+Acknowledgments
+The work described in this paper was conducted in the frame-
+work of the Mont Terri Project. The CD-A experiment itself is funded
+by the partners BGE (Bundesgesellschaft für Endlagerung, Germany),
+BGR (Bundesanstalt für Geowissenschaften und Rohstoffe, Germany)
+on behalf of the BMWK (Bundesministerium für Wirtschaft und Kli-
+maschutz, Germany), ENSI (Eidgenössisches Nuklearsicherheitsinspek-
+torat, Switzerland), GRS (Gesellschaft für Anlagen- und Reaktorsicher-
+heit gGmbH, Germany), Helmholtz (Helmholtz-Gemeinschaft Deutscher
+Forschungs–zentren e.V., Germany) and swisstopo (Bundesamt für Lan-
+destopografie, Switzerland). This support is gratefully acknowledged.
+The views expressed in the paper are, however, those of the authors
+and not necessarily those of the Funding Organizations.
+Appendix A. Supplementary data
+Supplementary material related to this article can be found online
+at https://doi.org/10.1016/j.ijrmms.2023.105624.
+References
+1. Wild KM, Amann F. Experimental study of the hydro-mechanical response of Opal-
+inus Clay–Part 1: Pore pressure response and effective geomechanical properties
+under consideration of confinement and anisotropy. Eng Geol . 2018;237:32–41.
+2. Wild KM, Amann F. Experimental study of the hydro-mechanical response of
+Opalinus Clay–Part 2: Influence of the stress path on the pore pressure response.
+Eng Geol . 2018;237:92–101.
+3. Zhang C-L, Laurich B. Mechanical behavior of sandy facies of Opalinus Clay
+under different load conditions. J Rock Mech Geotech Eng . 2020;12:223–241.
+http://dx.doi.org/10.1016/j.jrmge.2019.09.005.
+4. Millard A, Bond A, Nakama S, Zhang C, Barnichon B. Accounting for anisotropic
+effects in the prediction of the hydro-mechanical response of a ventilated tunnel
+in an argillaceous rock. J Rock Mech Geotech Eng . 2013;5(2):97–109. URL https:
+//www.scopus.com, Cited By :8.
+5. Ip SCY, Borja RI. Evolution of anisotropy with saturation and its implications
+for the elastoplastic responses of clay rocks. Int J Numer Anal Methods Geomech .
+2022;46(1):23–46. URL https://www.scopus.com, Cited By :1.
+6. Wang C, Talandier J, Skoczylas F. Swelling and Fluid Transport of Re-sealed
+Callovo–Oxfordian Claystone. Rock Mech Rock Eng . 2022. URL https://www.
+scopus.com.
+7. Fernàndez-Garcia D, Gómez-Hernández JJ, Mayor J-C. Estimating hydraulic
+conductivity of the Opalinus Clay at the regional scale: Combined effect of
+desaturation and EDZ. Phys Chem Earth A/B/C . 2007;32(8–14):639–645.
+8. Pardoen B, Talandier J, Collin F. Permeability evolution and water transfer in
+the excavation damaged zone of a ventilated gallery. Int J Rock Mech Min Sci .
+2016;85:192–208.
+9. Hale S, Ries X, Jaeggi D, Blum P. Mechanical and hydraulic properties of the
+excavation damaged zone (EDZ) in the Opalinus Clay of the Mont Terri rock
+laboratory, Switzerland. Solid Earth . 2021;12:1581–1600. http://dx.doi.org/10.
+5194/se-12-1581-2021.
+10. Chen X, Xie SY, Zhang W, Armand G, Shao JF. Creep Deformation and Gas
+Permeability in Fractured Claystone Under Various Stress States. Rock Mech Rock
+Eng. 2022. URL https://www.scopus.com.
+11. Alcolea A, Kuhlmann U, Marschall P, et al A pragmatic approach to abstract the
+excavation damaged zone around tunnels of a geological radioactive waste repository:
+Application to the HG-A experiment in Mont Terri, Vol. 443 No. 1 . Geological Society
+Special Publication; 2017:127–147.
+12. Kolditz O, Fischer T, Frühwirt T, et al GeomInt: geomechanical integrity of host
+and barrier rocks–experiments, models and analysis of discontinuities. Environ
+Earth Sci . 2021;80(16). URL https://www.scopus.com.
+13. Pardoen B, Bésuelle P, Dal Pont S, Cosenza P, Desrues J. Effect of Claystone
+Small-Scale Characteristics on the Variability of Micromechanical Response and
+on Microcracking Modelling. In: Barla M, Di Donna A, Sterpi D, eds. Challenges
+and Innovations in Geomechanics: Project: Accounting for the Spatial Variability of
+Argillite’s Properties Through a Multi-Scale Numeric-Experimental Approach . Springer;
+2020. http://dx.doi.org/10.1007/978-3-030-64514-4_52.
+14. Gawin D, Schrefler B. Thermo-hydro-mechanical analysis of partially saturated
+porous materials. Eng Comput . 1996;13(7):113–143.
+15. Bishop AW, Blight G. Some aspects of effective stress in saturated and partly
+saturated soils. Geotechnique. 1963;13(3):177–197.
+16. Ziefle G, Bossart P, Costabel S, et al Mont Terri, CD-A experiment: Installation report
+TN 2020-41 . Mont Terri Technical Note; 2021.
+17. Bossart P, Bernier F, Birkholzer J, et al Mont terri rock laboratory, 20 years
+of research: introduction, site characteristics and overview of experiments. In:
+Bossart P, Milnes AG, eds. Mont Terri Rock Laboratory, 20 Years: Two Decades of
+Research and Experimentation on Claystones for Geological Disposal of Radioactive
+Waste. Cham: Springer International Publishing; 2018:3–22. http://dx.doi.org/10.
+1007/978-3-319-70458-6_1,
+18. Hostettler B, Reisdorf AG, Jaeggi D, et al Litho- and biostratigraphy of the opalinus
+clay and bounding formations in the mont terri rock laboratory (Switzerland). In:
+Bossart P, Milnes AG, eds. Mont Terri Rock Laboratory, 20 Years: Two Decades of
+Research and Experimentation on Claystones for Geological Disposal of Radioactive
+Waste. Cham: Springer International Publishing; 2018:23–39. http://dx.doi.org/
+10.1007/978-3-319-70458-6_2,
+19. Nussbaum C, Kloppenburg A, Caër T, Bossart P. Tectonic evolution around the
+Mont Terri rock laboratory, northwestern Swiss Jura: constraints from kinematic
+forward modelling. In: Bossart P, Milnes AG, eds. Mont Terri Rock Laboratory, 20
+Years: Two Decades of Research and Experimentation on Claystones for Geological Dis-
+posal of Radioactive Waste . Cham: Springer International Publishing; 2018:41–68.
+http://dx.doi.org/10.1007/978-3-319-70458-6_3,
+20. Jaeggi D, Laurich B, Nussbaum C, Schuster K, Connolly P. Tectonic structure of
+the ‘‘main fault’’ in the opalinus clay, mont terri rock laboratory (Switzerland).
+In: Bossart P, Milnes AG, eds. Mont Terri Rock Laboratory, 20 Years: Two Decades
+of Research and Experimentation on Claystones for Geological Disposal of Radioactive
+Waste. Cham: Springer International Publishing; 2018:69–86. http://dx.doi.org/
+10.1007/978-3-319-70458-6_4,
+21. Amann F, Wild KM, Loew S, Yong S, Thoeny R, Frank E. Geomechanical behaviour
+of opalinus clay at multiple scales: results from mont terri rock laboratory
+(Switzerland). In: Bossart P, Milnes AG, eds. Mont Terri Rock Laboratory, 20 Years:
+Two Decades of Research and Experimentation on Claystones for Geological Disposal
+of Radioactive Waste . Cham: Springer International Publishing; 2018:153–173.
+http://dx.doi.org/10.1007/978-3-319-70458-6_8, URL ,
+22. Kneuker T, Hammer J, Shao H, Schuster K, Furche M, Zulauf G. Microstructure
+and composition of brittle faults in claystones of the Mont Terri rock laboratory
+(Switzerland): New data from petrographic studies, geophysical borehole logging
+and permeability tests. Eng Geol . 2017;231:139–156.
+23. Keller LM, Holzer L, Schuetz P, Gasser P. Pore space relevant for gas perme-
+ability in Opalinus clay: Statistical analysis of homogeneity, percolation, and
+representative volume element. J Geophys Res Solid Earth . 2013;118(6):2799–2812.
+
+--- Page 14 ---
+International Journal of Rock Mechanics and Mining Sciences 174 (2024) 105624
+14
+G. Ziefle et al.
+24. Houben M, Desbois G, Urai J. A comparative study of representative 2D mi-
+crostructures in Shaly and Sandy facies of Opalinus Clay (Mont Terri, Switzerland)
+inferred form BIB-SEM and MIP methods. Mar Pet Geol . 2014;49:143–161.
+25. Laurich B, Urai JL, Nussbaum C. Microstructures and deformation mechanisms in
+Opalinus Clay: Insights from scaly clay from the Main Fault in the Mont Terri
+Rock Laboratory (CH). Solid Earth . 2017;8(1):27–44.
+26. Bock H. RA Experiment: Updated Review of the Rock Mechanics Properties of the
+Opalinus Clay of the Mont Terri URL based on Laboratory and Field Testing . Mont
+Terri Technical Report; 2009 2008–04.
+27. Bossart P, Burrus X. GA18: The Gallery 2018, Extension of the Mont Terri Rock
+Laboratory. Mont Terri Technical Report; 2019.
+28. Ziefle G, Bossart P, Costabel S, et al Influence of humidity on cyclic and longterm
+deformations: CD-A experiment, Mont Terri Rock Laboratory. In: Innovative
+Feuchtemessung in Forschung Und Praxis: Berichtsband Zur Tagung 2019,Karlsruhe,
+10.-11. Oktober 2019 . Schuhmann, R.; 2019:65–78.
+29. Maßmann J, Ziefle G, Costabel S, et al In-situ Experiment on the Influence of Hu-
+midity on the Cyclic and Long-Term Deformation Behavior (CD-A) of the Opalinus
+Clay at the Mont Terri Underground Research Laboratory, Switzerland: Mea-
+surement Program and Pre-Simulations. Geophys Res Abstracts EGU2019-6788-1 .
+2019;21.
+30. Jaeggi D, Galletti M, Amacher F, et al Mont Terri Project, Gallery 2018: Excavation
+and geological documentation . Technical Report 2018-04; Mont Terri Technical
+Report; 2020.
+31. Ziefle G, Cajuhi T, Costabel S, Furche M, Maßmann J. Water content evolution in
+the EDZ of Opalinus Clay: A methodic approach for a comparative interpretation
+of measurements and modelling (accepted). J Rock Mech Rock Eng . 2024.
+32. Ziefle G, Cajuhi T, Graebling N, et al Multi-disciplinary investigation of the
+hydraulic-mechanically driven convergence behaviour: CD-A twin niches in the
+Mont Terri Rock Laboratory during the first year. Geomech Energy Environ .
+2022:100325. http://dx.doi.org/10.1016/j.gete.2022.100325, URL https://www.
+sciencedirect.com/science/article/pii/S2352380822000090,
+33. Kneuker T, Furche M. Capturing the structural and compositional variability of
+Opalinus Clay: constraints from multidisciplinary investigations of Mont Terri drill
+cores (Switzerland). Environ Earth Sci . 2021;80(421).
+34. Lauper B, Jaeggi D, Deplazes G, Foubert A. Multi-proxy facies analysis of
+the Opalinus Clay and depositional implications (Mont Terri Rock Laboratory,
+Switzerland). Swiss J Geosci . 2018;111:383–398.
+35. Esefelder R, Wawerzinek B, Lüth S, Giese R, Krawczyk CM. Seismic anisotropy
+of Opalinus Clay: tomographic investigations using the infrastructure of an
+underground rock laboratory (URL). Swiss J Geosci . 2021;114(1). URL https:
+//www.scopus.com.
+36. Abednego M, Blascheck P, Schefer S, et al Seismotectonic analysis around the
+Mont Terri rock laboratory (Switzerland): a pilot study. In: Mont Terri Rock
+Laboratory, 20 Years: Two Decades of Research and Experimentation on Claystones for
+Geological Disposal of Radioactive Waste . Cham: Springer International Publishing;
+2018:235–253. http://dx.doi.org/10.1007/978-3-319-70458-6_12,
+37. Bossart P, Bernier F, Birkholzer J, et al Mont Terri rock laboratory, 20 years of
+research: introduction, site characteristics and overview of experiments. Swiss J
+Geosci. 2017;110(1):3–22.
+38. Kneuker T, Blumenberg M, Strauss H, Dohrmann R, Hammer J, Zulauf G.
+Structure, kinematics and composition of fluid-controlled brittle faults and veins
+in Lower Cretaceous claystones (Lower Saxony Basin, Northern Germany): Con-
+straints from petrographic studies, microfabrics, stable isotopes and biomarker
+analyses. Chem Geol . 2020;540(119501).
+39. Schuster K, Furche M, Shao H, et al Understanding the evolution of nuclear waste
+repositories by performing appropriate experiments selected investigations at Mont
+Terri rock laboratory. Adv Geosci . 2019;49:175–186.
+40. Knödel K, Lange G, Voigt H-J. Environmental Geology − Handbook of Field Methods
+and Case Studies . Springer; 2007.
+41. Günther T, Rücker C, Spitzer K. Three-dimensional modeling and inversion
+of dc resistivity data incorporating tomography – II. Inversion. Geophys J Int .
+2006;166:506–517.
+42. Rücker C, Günther T, Spitzer K. Three-dimensional modeling and inversion
+of dc resistivity data incorporating tomography – I. Modelling. Geophys J Int .
+2006;166:495–505.
+43. Schuster K, Amann F, Yong S, Bossart P, Connolly P. High-resolution mini-
+seismic methods applied in the Mont Terri rock laboratory (Switzerland). In: Mont
+Terri Rock Laboratory, 20 Years: Two Decades of Research and Experimentation on
+Claystones for Geological Disposal of Radioactive Waste . Cham: Springer International
+Publishing; 2018:215–233. http://dx.doi.org/10.1007/978-3-319-70458-6_11,
+44. Wenning Q, Madonna C, Zappone A, et al Shale fault zone structure and stress
+dependent anisotropic permeability and seismic velocity properties (Opalinus Clay,
+Switzerland). J Struct Geol . 2021;144(104273).
+45. Cho W, Kim J-S, Lee C, Choi H-J. Gas permeability in the excavation damaged
+zone at KURT. Eng Geol . 2013;164:222–229.
+46. Crisci E, Ferrari A, Giger SB, Laloui L. Hydro-mechanical behaviour of shal-
+low Opalinus Clay shale. Eng Geol . 2019;251:214–227. http://dx.doi.org/10.
+1016/j.enggeo.2019.01.016, URL https://www.sciencedirect.com/science/article/
+pii/S0013795218313991,
+47. Al Reda S, Yu C, Berthe G, Matray J-M. Study of the permeability in the
+Opalinus clay series (Mont Terri - Switzerland) using the steady state method
+in Hassler cell. J Pet Sci Eng . 2020;184. http://dx.doi.org/10.1016/j.petrol.
+2019.106457, URL https://www.scopus.com/inward/record.uri?eid=2-s2.0-
+85072082297&doi=10.1016%2fj.petrol.2019.106457&partnerID=40&md5=
+f5cf473dd7ef3aa0feb552731672db70, Cited by: 3; All Open Access, Bronze Open
+Access, Green Open Access.
+48. Kleinberg R. Utility of NMR T2 distributions, connection with capillary pressure,
+clay effect, and determination of the surface relaxivity parameter r2. Magnet Reson
+Imag. 1996;14:761–767. http://dx.doi.org/10.1016/S0730-725X(96)00161-0.
+49. Müller-Petke M, Yaramanci U. Tools and techniques: Nuclear magnetic resonance.
+In: Treatise on Geophysics . Elsevier; 2015:419–445. http://dx.doi.org/10.1016/
+b978-0-444-53802-4.00206-2.
+50. Elsayed M, Glatz G, El-Husseiny A, et al The effect of clay content on
+the spin–spin NMR relaxation time measured in porous media. ACS Omega .
+2020;5(12):6545–6555. http://dx.doi.org/10.1021/acsomega.9b04228.
+51. Fleury M, Romero-Sarmiento M. Characterization of shales using T1–T2
+NMR maps. J Pet Sci Eng . 2016;137:55–62. http://dx.doi.org/10.1016/j.
+petrol.2015.11.006, URL https://www.sciencedirect.com/science/article/pii/
+S0920410515301728,
+52. Ohkubo T, Ibaraki M, Tachi Y, Iwadate Y. Pore distribution of water-
+saturated compacted clay using NMR relaxometry and freezing tempera-
+ture depression; effects of density and salt concentration. Appl Clay Sci .
+2016;123:148–155. http://dx.doi.org/10.1016/j.clay.2016.01.014, URL http://
+www.sciencedirect.com/science/article/pii/S0169131716300163,
+53. Blümich B, Perlo J, Casanova F. Mobile single-sided NMR. Progr Nuclear
+Magnet Reson Spectrosc . 2008;52(4):197–269. http://dx.doi.org/10.1016/j.
+pnmrs.2007.10.002, URL https://www.sciencedirect.com/science/article/pii/
+S007965650700091X,
+54. Vista Clara I. NMR solutions for soil and core. 2021 online available at https://
+www.vista-clara.com/nmr-solutions-for-soil-and-core/, inspected on 2 Oct 2021.
+55. Marschall P, Giger S, De La Vassière R, et al Hydro-mechanical evolution of
+the EDZ as transport path for radionuclides and gas: insights from the Mont
+Terri rock laboratory (Switzerland). In: Mont Terri Rock Laboratory, 20 Years:
+Two Decades of Research and Experimentation on Claystones for Geological Disposal
+of Radioactive Waste . Cham: Springer International Publishing; 2018:175–196.
+http://dx.doi.org/10.1007/978-3-319-70458-6_9,
+56. Shah PH, Singh D. Generalized Archie’s law for estimation of soil electrical
+conductivity. J ASTM Int . 2005;2(5):1–20.
+57. sigeom. Mont Terri Project, Convergence Monitoring By Laser Scanning in Niches 3
+and 4, Gallery 18 . Mont Terri Technical Note; 2020.
+58. Vu M-N, Guayacán Carrillo L, Armand G. Excavation induced over pore pres-
+sure around drifts in the Callovo-Oxfordian claystone. Eur J Environ Civ Eng .
+2023;27(8):2614–2629. http://dx.doi.org/10.1080/19648189.2020.1784800.

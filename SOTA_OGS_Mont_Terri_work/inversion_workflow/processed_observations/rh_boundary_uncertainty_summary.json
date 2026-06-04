@@ -1,0 +1,265 @@
+{
+  "activation_gate": "Diagnostic only: the local RH candidate envelope quantifies sensor-policy spread and active-curve mismatch. RH boundary forcing and any retention/suction likelihood remain gated until BGR/Gesa confirm the active curve provenance, sensor screening, time axis, Kelvin constants, and extension policy.",
+  "active_curve_outside_envelope_count": 575,
+  "active_curve_outside_envelope_fraction": 0.9965337954939342,
+  "after_active_curve": {
+    "active_abs_minus_envelope_median_mpa": {
+      "mae": null,
+      "max": null,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "p90": null,
+      "rmse": null
+    },
+    "active_inside_candidate_envelope_fraction": null,
+    "active_outside_candidate_envelope_count": 0,
+    "candidate_count_quantiles": {
+      "max": 6.0,
+      "mean": 6.0,
+      "min": 6.0,
+      "p10": 6.0,
+      "p25": 6.0,
+      "p50": 6.0,
+      "p75": 6.0,
+      "p90": 6.0
+    },
+    "date_count": 487,
+    "date_max": "2025-09-04",
+    "date_min": "2023-12-27",
+    "preferred_abs_minus_envelope_median_mpa": {
+      "mae": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": 0.0,
+      "p90": 0.0,
+      "rmse": 0.0
+    },
+    "pressure_range_mpa": {
+      "max": 2.2914938809767964,
+      "mean": 2.1389244798133236,
+      "min": 1.981767221735077,
+      "p10": 2.0380189365735637,
+      "p25": 2.075090601408999,
+      "p50": 2.1434225880098445,
+      "p75": 2.195973809794099,
+      "p90": 2.233200831926998
+    },
+    "rh_range_percent": {
+      "max": 1.4326884114737908,
+      "mean": 1.3399069996930362,
+      "min": 1.2417838506945458,
+      "p10": 1.2812841990902826,
+      "p25": 1.300901399305424,
+      "p50": 1.3429262604167036,
+      "p75": 1.3758268269126006,
+      "p90": 1.3974113032230178
+    }
+  },
+  "candidate_count": 6,
+  "candidate_curve_rows": 6348,
+  "catalogue_copies": [
+    "../cda_knowledge_base/measurements/suction_relative_humidity/derived_files/rh_boundary_uncertainty_envelope.csv",
+    "../cda_knowledge_base/measurements/suction_relative_humidity/derived_files/rh_boundary_uncertainty_audit.csv",
+    "../cda_knowledge_base/measurements/suction_relative_humidity/derived_files/rh_boundary_uncertainty_summary.json",
+    "../cda_knowledge_base/measurements/suction_relative_humidity/derived_files/rh_boundary_uncertainty.md"
+  ],
+  "envelope_date_count": 1064,
+  "largest_pressure_range_dates": [
+    {
+      "active_inside_candidate_envelope": true,
+      "active_ogs_pressure_mpa": -23.456106221010312,
+      "candidate_count": 6,
+      "comparison_regime": "compared_to_active_curve",
+      "date": "2022-03-16",
+      "pressure_mpa_max": -7.661657022177308,
+      "pressure_mpa_median": -8.817868580562607,
+      "pressure_mpa_min": -25.539354091191363,
+      "pressure_mpa_range": 17.877697069014054
+    },
+    {
+      "active_inside_candidate_envelope": true,
+      "active_ogs_pressure_mpa": -22.554035354846718,
+      "candidate_count": 6,
+      "comparison_regime": "compared_to_active_curve",
+      "date": "2022-03-20",
+      "pressure_mpa_max": -7.774397834099662,
+      "pressure_mpa_median": -8.527599141065222,
+      "pressure_mpa_min": -25.561122359441644,
+      "pressure_mpa_range": 17.78672452534198
+    },
+    {
+      "active_inside_candidate_envelope": false,
+      "active_ogs_pressure_mpa": -23.22653071787769,
+      "candidate_count": 6,
+      "comparison_regime": "compared_to_active_curve",
+      "date": "2022-03-17",
+      "pressure_mpa_max": -7.6917975603757265,
+      "pressure_mpa_median": -8.846594591801452,
+      "pressure_mpa_min": -17.20359917883532,
+      "pressure_mpa_range": 9.511801618459593
+    },
+    {
+      "active_inside_candidate_envelope": false,
+      "active_ogs_pressure_mpa": -25.6308495940615,
+      "candidate_count": 6,
+      "comparison_regime": "compared_to_active_curve",
+      "date": "2022-03-07",
+      "pressure_mpa_max": -7.406674967353846,
+      "pressure_mpa_median": -8.632246634909336,
+      "pressure_mpa_min": -15.537093134556832,
+      "pressure_mpa_range": 8.130418167202986
+    },
+    {
+      "active_inside_candidate_envelope": false,
+      "active_ogs_pressure_mpa": -22.775034872313725,
+      "candidate_count": 6,
+      "comparison_regime": "compared_to_active_curve",
+      "date": "2022-03-19",
+      "pressure_mpa_max": -7.746509081960369,
+      "pressure_mpa_median": -8.514317793587429,
+      "pressure_mpa_min": -15.733392363620789,
+      "pressure_mpa_range": 7.98688328166042
+    },
+    {
+      "active_inside_candidate_envelope": false,
+      "active_ogs_pressure_mpa": -26.135903138335028,
+      "candidate_count": 6,
+      "comparison_regime": "compared_to_active_curve",
+      "date": "2022-03-05",
+      "pressure_mpa_max": -7.358175900860541,
+      "pressure_mpa_median": -8.606724963581428,
+      "pressure_mpa_min": -13.698674117236807,
+      "pressure_mpa_range": 6.340498216376266
+    },
+    {
+      "active_inside_candidate_envelope": false,
+      "active_ogs_pressure_mpa": -38.20261774199387,
+      "candidate_count": 5,
+      "comparison_regime": "compared_to_active_curve",
+      "date": "2022-01-10",
+      "pressure_mpa_max": -5.8476985995147,
+      "pressure_mpa_median": -8.1877721403439,
+      "pressure_mpa_min": -8.1877721403439,
+      "pressure_mpa_range": 2.3400735408292004
+    },
+    {
+      "active_inside_candidate_envelope": false,
+      "active_ogs_pressure_mpa": -34.50724660000981,
+      "candidate_count": 6,
+      "comparison_regime": "compared_to_active_curve",
+      "date": "2022-01-31",
+      "pressure_mpa_max": -6.230369569579018,
+      "pressure_mpa_median": -7.51724248523506,
+      "pressure_mpa_min": -8.56375587923118,
+      "pressure_mpa_range": 2.3333863096521625
+    },
+    {
+      "active_inside_candidate_envelope": false,
+      "active_ogs_pressure_mpa": -35.16526927969481,
+      "candidate_count": 6,
+      "comparison_regime": "compared_to_active_curve",
+      "date": "2022-01-28",
+      "pressure_mpa_max": -6.178205837366466,
+      "pressure_mpa_median": -7.447571632513846,
+      "pressure_mpa_min": -8.502152024039793,
+      "pressure_mpa_range": 2.323946186673327
+    },
+    {
+      "active_inside_candidate_envelope": false,
+      "active_ogs_pressure_mpa": -35.37657015506175,
+      "candidate_count": 6,
+      "comparison_regime": "compared_to_active_curve",
+      "date": "2022-01-27",
+      "pressure_mpa_max": -6.167966815343151,
+      "pressure_mpa_median": -7.432854654290229,
+      "pressure_mpa_min": -8.488456845324661,
+      "pressure_mpa_range": 2.32049002998151
+    }
+  ],
+  "lowest_overlap_mae_candidate": "rh6_only",
+  "outputs": {
+    "candidate_audit_csv": "inversion_workflow/processed_observations/rh_boundary_uncertainty_audit.csv",
+    "envelope_csv": "inversion_workflow/processed_observations/rh_boundary_uncertainty_envelope.csv",
+    "markdown": "inversion_workflow/processed_observations/rh_boundary_uncertainty.md",
+    "summary_json": "inversion_workflow/processed_observations/rh_boundary_uncertainty_summary.json"
+  },
+  "overlap": {
+    "active_abs_minus_envelope_median_mpa": {
+      "mae": 15.224020899910924,
+      "max": 62.189359339086295,
+      "mean": 15.224020899910924,
+      "median": 12.244767571013748,
+      "min": 3.7914937697338633,
+      "p90": 30.169179855406867,
+      "rmse": 18.259938499057714
+    },
+    "active_inside_candidate_envelope_fraction": 0.0034662045060658286,
+    "active_outside_candidate_envelope_count": 575,
+    "candidate_count_quantiles": {
+      "max": 6.0,
+      "mean": 5.937608318890814,
+      "min": 1.0,
+      "p10": 6.0,
+      "p25": 6.0,
+      "p50": 6.0,
+      "p75": 6.0,
+      "p90": 6.0
+    },
+    "date_count": 577,
+    "date_max": "2023-12-26",
+    "date_min": "2021-12-16",
+    "preferred_abs_minus_envelope_median_mpa": {
+      "mae": 0.003233160088555065,
+      "max": 0.4161830209069617,
+      "mean": 0.003233160088555065,
+      "median": 0.0,
+      "min": 0.0,
+      "p90": 0.0,
+      "rmse": 0.03506459963683266
+    },
+    "pressure_range_mpa": {
+      "max": 17.877697069014054,
+      "mean": 2.1929867264150618,
+      "min": 0.0,
+      "p10": 2.061081242064855,
+      "p25": 2.074378776364016,
+      "p50": 2.103967930926996,
+      "p75": 2.1773682692408878,
+      "p90": 2.2048500471756514
+    },
+    "rh_range_percent": {
+      "max": 10.13691374999999,
+      "mean": 1.3730850544315418,
+      "min": 0.0,
+      "p10": 1.2976985975263973,
+      "p25": 1.3037221944449016,
+      "p50": 1.321876875000342,
+      "p75": 1.3670617812501433,
+      "p90": 1.3840557554607613
+    }
+  },
+  "preferred_policy": {
+    "abs_delta_vs_preferred_mpa_mae": 0.0,
+    "abs_delta_vs_preferred_mpa_median": 0.0,
+    "abs_delta_vs_preferred_mpa_p90": 0.0,
+    "after_active_curve_rows": 487,
+    "candidate_id": "rh5_rh6_median",
+    "compared_to_active_curve_rows": 576,
+    "date_max": "2025-09-04",
+    "date_min": "2021-12-16",
+    "dates_with_preferred_overlap": 1063,
+    "median_sensor_count": 2.0,
+    "overlap_abs_residual_mpa_mae": 15.145716829491423,
+    "overlap_abs_residual_mpa_median": 12.214684230216594,
+    "overlap_residual_mpa_rmse": 18.094071519270447,
+    "pressure_mpa_p50": -8.862104182461579,
+    "pressure_mpa_range": 2.6101266518804263,
+    "rows": 1063,
+    "source_row_count_total": 2106,
+    "source_sensors": "RH5;RH5+RH6;RH6"
+  },
+  "preferred_policy_candidate": "rh5_rh6_median",
+  "status": "rh_boundary_uncertainty_envelope_generated_provenance_still_unverified"
+}

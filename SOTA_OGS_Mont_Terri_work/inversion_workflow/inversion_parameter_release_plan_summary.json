@@ -1,0 +1,131 @@
+{
+  "parameter_release_rows": 14,
+  "stage_counts": {
+    "blocked_or_confirm_provenance": 1,
+    "blocked_or_confirm_value": 1,
+    "fixed_for_current_experiment": 1,
+    "fixed_model_setup_confirm_before_mechanics": 1,
+    "fixed_numerical_control": 1,
+    "stage_1_active_field": 1,
+    "stage_1_fixed_support_field": 1,
+    "stage_2_candidate_scalar": 2,
+    "stage_2_candidate_tensor_shape": 1,
+    "stage_2_fixed_until_retention_data": 1,
+    "stage_3_candidate_mechanical": 2,
+    "stage_3_validation_only": 1
+  },
+  "active_field_parameters_now": [
+    "intrinsic permeability tensor magnitude field"
+  ],
+  "fixed_first_stage_parameters": [
+    "porosity support field",
+    "residual saturations",
+    "relative-permeability numerical floor",
+    "thermal and liquid transport constants",
+    "initial pressure and stress setup"
+  ],
+  "blocked_or_confirm_items": [
+    "open-niche pressure boundary curve",
+    "solid thermal expansivity"
+  ],
+  "stage_gate_summary": [
+    "Stage 1 releases only k_i_rd magnitude fields against active direct permeability rows and sampled NMR state residuals.",
+    "Porosity n_rd is field-capable but fixed until the final NMR residual policy and a porosity/saturation/bound-water separation audit are approved.",
+    "Do not run more same-support active-objective OGS batches until support, likelihood, bounds, or stream gates change.",
+    "Retention parameters require final NMR policy selection plus RH boundary-curve provenance before release.",
+    "Mechanical, swelling, Biot, and initial-stress parameters require numeric HM/pressure residuals before release.",
+    "CTE and open-niche pressure curve remain confirmation/provenance blockers, not calibration targets."
+  ],
+  "current_evidence": {
+    "active_released_parameter_groups": [
+      "intrinsic permeability tensor magnitude field"
+    ],
+    "active_component_count": 2,
+    "total_active_objective_value": 3156.353066948979,
+    "direct_permeability_objective_value": 269.8180571059851,
+    "direct_permeability_objective_rows": 75,
+    "state_observation_objective_value": 2886.535009842994,
+    "state_observation_used_rows": 192,
+    "sampled_ogs_output_times": 83,
+    "nmr_final_policy_selected": false,
+    "nmr_current_report_default_policy": "retain_raw_absolute_theta_current_report_default_with_caveats",
+    "next_field_fit_recommendation": "pause_same_support_active_objective_ogs_until_likelihood_support_bounds_or_stream_gate_changes",
+    "same_support_active_objective_batch_executable_now": false,
+    "support_conflict_cell_counts": {
+      "active_support_cells": 30,
+      "repeated_support_cells": 24,
+      "range_ge_2_log10_cells": 16
+    },
+    "open_external_or_provenance_blockers": 8,
+    "candidate_set_ogs_mode": "execute",
+    "candidate_set_selected_candidate_count": 3
+  },
+  "measurement_context": {
+    "likelihood_summary": {
+      "activation_state_counts": {
+        "active_direct_parameter_likelihood": 1,
+        "active_state_likelihood_from_sampled_ogs_outputs": 1,
+        "boundary_forcing_audit_not_point_likelihood": 1,
+        "qualitative_validation_layer_numeric_series_missing": 1,
+        "resistivity_diagnostic_evaluated_transform_support_unconfirmed": 1,
+        "support_and_prior_layer": 1,
+        "trend_diagnostic_evaluated_pending_absolute_calibration": 1
+      },
+      "active_streams_now": 2,
+      "current_candidate_total_active_objective": 3159.6643814648755,
+      "ert_support_sensitivity_best_mean_rank_run": "broad_continuous_001_001_length_0p023m_shift_1p004",
+      "ert_support_sensitivity_runs": 6,
+      "ert_support_sensitivity_variant_count": 9,
+      "measurement_streams": 7,
+      "notes": [
+        "This artifact records likelihood intent and activation gates, not just data coverage.",
+        "Direct permeability pulse tests and sampled NMR rows are active for the current executed OGS candidate where usable observation times and required model quantities are covered.",
+        "NMR is the first active state residual, but the generated bound-water sensitivity audit rules out treating raw absolute theta as a naive saturation residual.",
+        "ERT and Taupe/TDR remain diagnostic until their support/calibration choices are confirmed.",
+        "RH currently audits boundary-condition provenance and candidate-envelope uncertainty rather than acting as a cell residual."
+      ],
+      "other_hm_numeric_source_audit_hard_ready_requests": 0,
+      "other_hm_numeric_source_audit_request_rows": 6,
+      "other_hm_numeric_source_audit_support_ready_requests": 6,
+      "rh_boundary_uncertainty_active_outside_envelope_count": 575,
+      "rh_boundary_uncertainty_envelope_dates": 1064,
+      "rh_boundary_uncertainty_overlap_pressure_range_p50_mpa": 2.103967930926996,
+      "state_evaluation_status_counts": {
+        "boundary_forcing_target_no_state_residual": 4247,
+        "evaluated": 192,
+        "external_projection_required": 1691,
+        "outside_time_tolerance": 95,
+        "target_not_usable_for_current_state_fit": 5265
+      },
+      "state_target_rows": 11490,
+      "taupe_series_weight_sensitivity_best_mean_rank_run": "adaptive_combined_001_length_0p050m",
+      "taupe_series_weight_sensitivity_compared_series": 12,
+      "taupe_series_weight_sensitivity_distinct_series_winners": 8,
+      "taupe_series_weight_sensitivity_runs": 66,
+      "total_candidate_rows": 11858,
+      "total_current_objective_rows": 267
+    },
+    "candidate_set_summary": {
+      "selected_candidate_count": 3,
+      "ogs_mode": "execute",
+      "results_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/regularized_ogs_candidate_set/regularized_ogs_candidate_set_results.csv"
+    }
+  },
+  "source_files": {
+    "base_parameters": "ogs_settings/03_parameters_TRM.xml",
+    "projection_parameters": "GESA_model_original/projection_on_mesh_2025-09-05/03_parameters_TRM.xml",
+    "candidate_parameters": "inversion_workflow/runs/regularized_ogs_candidate_001_length_0p025m/03_parameters_TRM.xml",
+    "media": "ogs_settings/04_media_TRM.xml",
+    "liquid_media": "ogs_settings/04_1_media_aqu_liq.xml",
+    "twophase_media": "ogs_settings/04_2_media_twophase.xml",
+    "likelihood_summary": "inversion_workflow/measurement_likelihood_model_summary.json",
+    "likelihood_csv": "inversion_workflow/measurement_likelihood_model.csv",
+    "candidate_set_summary": "inversion_workflow/runs/regularized_ogs_candidate_set/REGULARIZED_OGS_CANDIDATE_SET.json",
+    "current_combined_summary": "inversion_workflow/current_permeability_field/combined_objective_summary.json",
+    "current_state_summary": "inversion_workflow/current_permeability_field/state_observation_evaluation_summary.json",
+    "next_field_fit_gate": "inversion_workflow/permeability_next_field_fit_gate_summary.json",
+    "nmr_final_policy_gate": "inversion_workflow/nmr_final_residual_policy_gate_summary.json",
+    "external_blocker_dashboard": "inversion_workflow/external_blocker_dashboard_summary.json",
+    "objective_readiness": "inversion_workflow/objective_readiness_audit_summary.json"
+  }
+}

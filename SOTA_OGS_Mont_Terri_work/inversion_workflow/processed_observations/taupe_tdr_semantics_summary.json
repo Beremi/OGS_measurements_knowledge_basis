@@ -1,0 +1,97 @@
+{
+  "activation_rules": [
+    "Taupe/TDR currently measures a Taupe workbook proxy or ARDP/dielectric response, not model saturation directly.",
+    "The robust current use is a same-series temporal trend residual for each sensor and EDZ band.",
+    "The model-side quantity is band-average theta_model = porosity * liquid_saturation over the mapped Taupe support.",
+    "A3 and A4 provide the current mapped support; A7 and A8 are retained as source data but outside the current local OGS mesh.",
+    "Do not activate absolute saturation or water-content residuals until the workbook unit and sensor calibration are documented."
+  ],
+  "band_mean_porosity_quantiles": {
+    "max": 0.1703187298601793,
+    "min": 0.0756638555435984,
+    "p10": 0.075815082312704,
+    "p25": 0.108096175792722,
+    "p50": 0.11436992124570369,
+    "p75": 0.12262705517280409,
+    "p90": 0.1546897095322866
+  },
+  "candidate_absolute_interpretation_physical_rows": {
+    "linear_mixing_epsilon_rock_6": 2544,
+    "taupe_value_as_topp_epsilon": 0,
+    "taupe_value_as_vol_percent": 2120
+  },
+  "date_max": "2025-10-10",
+  "date_min": "2019-12-01",
+  "edz_bands_cm": [
+    "0-10",
+    "0-50",
+    "10-20",
+    "20-30",
+    "30-40",
+    "40-50"
+  ],
+  "group_summary_rows": 44,
+  "mapped_trend_rows": 2544,
+  "mapping_status_counts": {
+    "band_samples_outside_mesh": 2544,
+    "mapped_band_samples": 2544
+  },
+  "operator_rows": 5088,
+  "operator_status_counts": {
+    "band_samples_outside_mesh": 2544,
+    "trend_operator_ready_absolute_calibration_pending": 2544
+  },
+  "outputs": {
+    "group_summary": "inversion_workflow/processed_observations/taupe_tdr_semantics_group_summary.csv",
+    "markdown": "inversion_workflow/processed_observations/taupe_tdr_semantics.md",
+    "row_audit": "inversion_workflow/processed_observations/taupe_tdr_semantics_row_audit.csv",
+    "series_audit": "inversion_workflow/processed_observations/taupe_tdr_semantics_series_audit.csv",
+    "summary": "inversion_workflow/processed_observations/taupe_tdr_semantics_summary.json"
+  },
+  "outside_current_mesh_rows": 2544,
+  "outside_current_mesh_series": 12,
+  "remaining_blocker": "Confirm whether Taupe_WC workbook values are calibrated volumetric water-content percent, apparent relative dielectric permittivity, or another ARDP-derived proxy before assigning absolute saturation or water-content residual weights.",
+  "semantic_activation_gate_counts": {
+    "excluded_current_mesh_outside_support": 2544,
+    "trend_diagnostic_ready_pending_ogs_outputs_absolute_calibration_blocked": 2544
+  },
+  "sensors": [
+    "A3",
+    "A4",
+    "A7",
+    "A8"
+  ],
+  "series_rows": 24,
+  "source_files": {
+    "coordinate_workbook": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/taupe_tdr/source_files/Coordinates_NMR_Taupe_characborehole.xlsx",
+    "measurement_catalogue": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/taupe_tdr",
+    "taupe_workbook": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/taupe_tdr/source_files/Taupe_WC.xlsx"
+  },
+  "standardized_anomaly_quantiles": {
+    "max": 6.668247847911397,
+    "min": -6.553317429259198,
+    "p10": -3.221280477678487,
+    "p25": -1.6081801611953184,
+    "p50": 0.6479695174833389,
+    "p75": 1.9586288723880143,
+    "p90": 3.301905766757401
+  },
+  "state_target_rows": 5088,
+  "state_target_status_counts": {
+    "band_samples_outside_mesh": 2544,
+    "mapped_band_samples": 2544
+  },
+  "state_target_usable_rows": 0,
+  "status": "trend_semantics_ready_absolute_calibration_blocked",
+  "taupe_value_quantiles": {
+    "max": 11.004376182086776,
+    "min": 9.87126613789583,
+    "p10": 10.100202027127263,
+    "p25": 10.165157794943772,
+    "p50": 10.238145215457234,
+    "p75": 10.375566662601692,
+    "p90": 10.710672653061467
+  },
+  "trend_ready_series": 12,
+  "workbook_rows": 5088
+}

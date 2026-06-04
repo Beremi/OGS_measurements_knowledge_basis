@@ -1,0 +1,72 @@
+{
+  "copied_files": [
+    "01_processes_TRM.xml",
+    "02_process_variables_TRM.xml",
+    "03_parameters_TRM.xml",
+    "03_parameters_TRM_orig.xml",
+    "04_1_media_aqu_liq.xml",
+    "04_2_media_twophase.xml",
+    "04_media_TRM.xml",
+    "05_1_fixed_timestepping.xml",
+    "05_time_loop_TRM.xml",
+    "06_nonlinear_solver_T.xml",
+    "07_linear_solver_T.xml",
+    "08_08_open_niche_seasonal.xml",
+    "08_curves.xml",
+    "README.txt",
+    "bulk.vtu",
+    "bulk_all.vtu",
+    "bulk_w_projections.vtu",
+    "cd-a_bottom.vtu",
+    "cd-a_left.vtu",
+    "cd-a_niche4.vtu",
+    "cd-a_right.vtu",
+    "cd-a_top.vtu",
+    "cd_a_open_niche_quad.prj",
+    "closed_niche_seasonal_curve_shifted.xml",
+    "open_niche_seasonal_curve_shifted.xml"
+  ],
+  "field_generation": {
+    "command": [],
+    "mesh_override": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_plan/basis_024_det_l_0p0075_s_1p000/bulk_w_projections.vtu",
+    "output_mesh": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/bulk_w_projections.vtu",
+    "stdout": [
+      "copied mesh override /home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_plan/basis_024_det_l_0p0075_s_1p000/bulk_w_projections.vtu to /home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/bulk_w_projections.vtu"
+    ]
+  },
+  "missing_required_files": [],
+  "notes": [
+    "The governing OGS process/XML semantics are not changed here.",
+    "bulk_w_projections.vtu is regenerated with k_i_rd and n_rd mesh-cell data.",
+    "Optional output-variable edits affect only what the run writes for observation comparison.",
+    "Before a production OGS run, verify or regenerate submeshes with identifySubdomains as noted in the recovered projection README."
+  ],
+  "output_configuration": {
+    "file": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/05_time_loop_TRM.xml",
+    "updated": true,
+    "variables": [
+      "pressure",
+      "saturation",
+      "temperature",
+      "displacement",
+      "porosity"
+    ]
+  },
+  "permeability_field": {
+    "anisotropy_ratio": 2.5,
+    "corr_length": 0.6,
+    "field_name": "k_i_rd",
+    "log_sigma": 0.5,
+    "max_k": 1e-13,
+    "mean_k_ref": 6.32e-20,
+    "min_k": 1e-22,
+    "n_features": 96,
+    "porosity": 0.105,
+    "seed": 20260528,
+    "theta_deg": 144.0
+  },
+  "project_file": "cd_a_open_niche_quad.prj",
+  "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "source_projection_model_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/GESA_model_original/projection_on_mesh_2025-09-05"
+}

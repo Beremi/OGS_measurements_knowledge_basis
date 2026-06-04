@@ -1,0 +1,116 @@
+--- Page 1 ---
+ISU GmbH – Ingenieur-Gesellschaft für Sensorik in der Umwelttechnik mbH 
+CD-A
+(Differential) TDR using TAUPE Sensor Cables
+F. Königer, R. Schuhmann, G. Ziefle (BGR), D. Jaeggi (MT)
+ISU GmbH – Ingenieur-Gesellschaft für Sensorik in der Umwelttechnik mbH 
+ISU GmbH – Ingenieur-Gesellschaft für Sensorik in der Umwelttechnik mbH
+
+--- Page 2 ---
+horizontal -10° vertical
+EDZ
+EDZ
+Remark: 
+Taupe tube sensor was 
+not completely inserted,
+bore hole starts at 15 cm
+Start: 22.10.2019
+Area of increased ARDP
+Locally increased ARDP
+→ fluid from host rock?
+Present : 17.04.2026 = 2361 days
+Air
+Borehole
+end
+Closed Twin: ARDP
+28.04.2026 Franz Königer Technical discussion 28.04.20262
+No significant changes 
+in ARDP during more 
+than six years
+No significant changes 
+in ARDP , areas with 
+locally increased ARDP
+
+--- Page 3 ---
+verticalhorizontal -10°
+EDZ
+Area of increased ARDP
+→ fluid from host rock?
+Open Twin: ARDP
+28.04.2026 Franz Königer Technical discussion 28.04.20263
+Start: 22.10.2019 Present : 17.04.2026 = 2361 days
+EDZ
+No significant changes 
+in ARDP during more 
+than six years
+No significant changes 
+in ARDP in first 2 m,
+areas with locally 
+increased ARDP at 
+the end of the bore hole
+
+--- Page 4 ---
+Open Twin Closed Twin
+Major variations on ARDP due to meteorological
+effects, stronger in the horizontal direction No visible meteorological effects in both directions
+Meteorological effects on EDZ
+(Mean amplitude over first 0.5 m)
+28.04.2026 Franz Königer Technical discussion 28.04.20264
+Start: 22.10.2019 Present : 17.04.2026 = 2361 days
+A significant reduction in 
+the ARDP from the start 
+of 2025 appears (not at 
+S7front)
+
+--- Page 5 ---
+ARDP is
+- Varying on an annual scale
+- Increasing over depth range
+- Decreasing over time for depth behind 0.6 m
+- Increasing behind about 0.6 m
+- Decreasing to lower values since start of 2025,
+not for ranges behind 0.7 m
+ARDP as function of time shows a slight downward trend
+ARDP as function of time shows a slight upward trend
+Meteorological effects on EDZ at S3front
+(Mean amplitude over varying depth, starting at 0 m)
+28.04.2026 Franz Königer Technical discussion 28.04.20265
+
+--- Page 6 ---
+ARDP as function of time shows a slight downward trend
+Meteorological influences on EDZ at S4front
+(Mean amplitude over varying depth, starting at 0 m)
+28.04.2026 Franz Königer Technical discussion 28.04.20266
+ARDP is
+- Varying on an annual scale
+- Increasing over depth range
+- Increasing over time for depth below 0.4 m
+- Decreasing behind about 0.4 m
+- Decreasing to lower values since start of 2025
+
+--- Page 7 ---
+Closed Twin
+Horizontal -10°
+Vertical
+Open Twin
+Horizontal -10°
+Vertical
+- EDZ narrow
+- Moderate ARDP in most parts
+- Medium ARDP around 40 – 110 cm depth, slightly increasing
+- Starting increased ARDP zone at rear end
+- EDZ quite pronounced
+- Medium ARDP, in most parts only slightly increasing
+- Higher ARDP around 150 cm and at borehole end (significant)
+- EDZ pronounced
+- Slight variations of ARDP between 80 and 300 cm
+- Significantly higher ARDP behind about 300 cm (Borehole end)
+Potentially: Wet spots? Perturbation/fault?
+- EDZ quite pronounced
+- Low/medium ARDP over complete borehole
+- Only slight variations of ARDP over time
+- Slightly increased ARDP zone at sensor connection -> artificial ?
+Summary
+Nearly unaffected
+Nearly unaffected
+28.04.2026 Franz Königer Technical discussion 28.04.20267

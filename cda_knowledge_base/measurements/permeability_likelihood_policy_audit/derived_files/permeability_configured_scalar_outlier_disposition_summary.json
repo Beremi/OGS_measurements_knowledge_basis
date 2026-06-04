@@ -1,0 +1,40 @@
+{
+  "bounds_release_recommended_now": false,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_configured_scalar_outlier_disposition.csv",
+      "source": "inversion_workflow/permeability_configured_scalar_outlier_disposition.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_configured_scalar_outlier_disposition_summary.json",
+      "source": "inversion_workflow/permeability_configured_scalar_outlier_disposition_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_configured_scalar_outlier_disposition.md",
+      "source": "inversion_workflow/permeability_configured_scalar_outlier_disposition.md"
+    }
+  ],
+  "classification_counts": {
+    "minor_upper_envelope_duplicate_inside_major_same_support_conflict": 2
+  },
+  "current_row_gaussian_loss_from_outlier_rows": 24.143240633144696,
+  "current_row_gaussian_loss_share_from_outlier_rows": 0.08947970677759785,
+  "max_range_excess_factor": 1.2799466462760474,
+  "max_range_excess_log10": 0.10719186674877967,
+  "max_same_support_observed_range_factor": 8888888.888888886,
+  "max_same_support_observed_range_log10": 6.948847477552619,
+  "outlier_row_count": 2,
+  "recommended_disposition": "Record the two active scalar-envelope outlier rows as one duplicated high-permeability BCD-A32 support-cell value that is only slightly above the configured upper envelope, but embedded in a much larger same-support conflict with a low-permeability row. Keep the active rowwise Gaussian objective unchanged for reproducibility; do not widen bounds or release tensor shape on this evidence alone.",
+  "remaining_policy_decision": "Before new OGS spending or final promotion, the modelling team still has to accept this local disposition or choose a robust/capped/support-aggregation/outlier policy explicitly.",
+  "same_support_active_objective_batch_reopened_by_this_disposition": false,
+  "source_artifacts": [
+    "inversion_workflow/permeability_residual_conflict_audit.csv",
+    "inversion_workflow/permeability_residual_support_cell_audit.csv",
+    "inversion_workflow/processed_observations/permeability_measurement_semantics_audit.csv",
+    "inversion_workflow/permeability_likelihood_policy_row_audit.csv",
+    "inversion_workflow/permeability_likelihood_policy_audit_summary.json"
+  ],
+  "status": "permeability_configured_scalar_outlier_disposition_generated",
+  "tensor_shape_release_recommended_now": false,
+  "unique_physical_outlier_group_count": 1
+}

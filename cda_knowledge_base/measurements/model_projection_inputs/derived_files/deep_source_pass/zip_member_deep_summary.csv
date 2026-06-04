@@ -1,0 +1,16 @@
+archive,member,extension,size_bytes,compressed_bytes,loose_file_with_same_name_present,loose_file_with_same_name_present_anywhere
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/01_processes_TRM.xml,.xml,1613,473,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/02_process_variables_TRM.xml,.xml,2378,386,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/03_parameters_TRM.xml,.xml,5601,1323,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/04_1_media_aqu_liq.xml,.xml,2880,785,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/04_2_media_twophase.xml,.xml,792,260,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/04_media_TRM.xml,.xml,1950,685,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/06_nonlinear_solver_T.xml,.xml,185,101,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/07_linear_solver_T.xml,.xml,146,88,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/08_08_open_niche_seasonal.xml,.xml,35319,15016,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/08_curves.xml,.xml,223,116,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/closed_niche_seasonal_curve_shifted.xml,.xml,146,105,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/open_niche_seasonal_curve_shifted.xml,.xml,33881,14425,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/05_time_loop_TRM.xml,.xml,1913,753,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,ogs_settings/05_1_fixed_timestepping.xml,.xml,2354,525,True,True
+cda_knowledge_base/measurements/model_projection_inputs/source_files/SOTA___OGS___Mont_Terri.zip,wang_kosakoeski_kolditz_thm_2009.pdf,.pdf,982106,845736,True,True

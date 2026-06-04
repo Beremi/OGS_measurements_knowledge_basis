@@ -1,0 +1,370 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,margin=18mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{statusred}{RGB}{150,35,35}
+\definecolor{statusamber}{RGB}{130,90,20}
+\definecolor{softgray}{RGB}{245,245,245}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlength{\tabcolsep}{3pt}
+\sloppy
+\hbadness=10000
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.2em,topsep=0.2em}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=0.2em,topsep=0.2em}
+
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\checkbox}{\texttt{[ ]}}
+\newcommand{\decision}[1]{\textcolor{statusamber}{\textbf{#1}}}
+\newcommand{\blocked}[1]{\textcolor{statusred}{\textbf{#1}}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\title{\textbf{CD-A OGS Inversion Blocker Discussion Packet}}
+\author{Prepared as a self-contained discussion and request packet}
+\date{Generated 2026-06-01}
+
+\begin{document}
+\maketitle
+
+\section*{Purpose}
+
+This packet puts the remaining external questions, provider file requests, and
+modelling-team decisions in one place for discussion. It is intended to be
+sent as a standalone document: all questions, required evidence, context, and
+response instructions needed by the recipients are included here.
+
+\textbf{Important email-safety note:} this document does not send email. The
+mailbox state checked on \code{2026-06-01T03:55:46+02:00} recorded six prepared
+request emails, all still unsent. The check found zero sent copies of the
+generated request subjects, zero provider-reply hits, and zero recent non-draft
+CD-A/HERMES/TeamBeam hits in the searched scope.
+
+\textbf{How recipients should respond:} reply by email with the request id(s) in
+the subject, body, or filename. Attach machine-readable source tables, scripts,
+calibration notes, geometry files, or provenance notes directly to the reply
+where possible. For every response, include source contact, response date,
+units, coordinate/reference frame, processing provenance, quality/status flags,
+and uncertainty/covariance assumptions where applicable. No access to local
+folders or previous file paths is required.
+
+\section*{Current Status Snapshot}
+
+\begin{tabularx}{\textwidth}{@{}L{0.34\textwidth}Y@{}}
+\toprule
+Item & Current state \\
+\midrule
+Overall objective readiness & \code{not_complete}. The non-complete requirements are the permeability field/final combined inversion and remaining open questions. \\
+Final promotion decision & \blocked{\code{do_not_promote_current_field}}. The current field is an active-objective incumbent only. \\
+Open blockers & 8 total: 7 measurement/provider gates and 1 model-provenance confirmation. \\
+Request email state & 6/6 expected request emails prepared, 6 still unsent, no sent-subject hits, no provider-reply hits. \\
+Recovered material state & Email, file-transfer, and download recovery scans found zero additional gate-closing rows. \\
+Report and catalogue state & Active report comments resolved; citation locators pass; measurement traceability passes; frozen-model inclusion audit passes. \\
+\bottomrule
+\end{tabularx}
+
+\section*{High-Level Discussion Decisions}
+
+\begin{enumerate}
+\item \checkbox\ Decide whether to send the six request emails as written, edit them first, or route them differently.
+\item \checkbox\ Decide whether to wait for provider responses or explicitly mark some gated streams as diagnostic-only/excluded for the final objective.
+\item \checkbox\ Decide the final NMR residual semantics.
+\item \checkbox\ Decide the direct-permeability likelihood/support/outlier policy.
+\item \checkbox\ After responses or exclusions are recorded, rerun the stream gates, conditional scenarios, field-selection audit, final-promotion checklist, final objective decision register, and objective-readiness audit.
+\end{enumerate}
+
+\section{Open Blocker Register}
+
+\begin{longtable}{@{}L{0.19\textwidth}L{0.16\textwidth}L{0.16\textwidth}L{0.21\textwidth}L{0.20\textwidth}@{}}
+\toprule
+Request id & Priority / stream & Email route & Missing evidence & What closes the gate \\
+\midrule
+\endhead
+\path{ert_transform_support} & high / ERT resistivity & Request email 1; To Gesa; Cc Markus Furche & ERT-to-OGS transform and exact near-niche support mask are assumed, not confirmed. & Coordinate-frame note or transform script, coordinate reference, accepted tunnel/niche support polygon or mask, and decision on 35 cm rock-depth handling. \\
+\path{ert_uncertainty} & high / ERT resistivity & Request email 1 & No defensible ERT residual sigma/correlation model; dense VTK pixels cannot be treated as independent rows. & Per-cell, regional, or time-level uncertainty/covariance export, or a simplified weighting rule with log base, filtering, spatial correlation, and effective degrees of freedom. \\
+\path{hm_numeric_exports} & high / other HM monitoring & Request email 2; To Gesa & Available collected files contain layout/qualitative evidence, but no hard-residual-ready Geoscope time series, laser statistical product, or full levelling table. & Machine-readable Geoscope mini-piezometer, extensometer, crackmeter, laser-scan interpretation, and levelling tables with time/epoch and support. \\
+\path{hm_uncertainty} & high / other HM monitoring & Request email 2 & Metadata for hard HM residual weights are absent. & Unit/reference convention, uncertainty model, covariance/independence assumptions, quality flags, failure periods, laser registration uncertainty/masks, and levelling covariance frame. \\
+\path{rh_active_curve_provenance} & high / RH/suction & Request email 3; To Gesa & Active boundary-curve generation, sensor screening, time axis, constants, and extension policy are not confirmed. & Source table/script, sensor selection note, Kelvin conversion constants, model-time origin/timezone, smoothing/manual-edit policy, sign convention, and open/closed mapping. \\
+\path{taupe_unit_calibration} & high / Taupe/TDR & Request email 4; To Gesa & Taupe values are not confirmed as volumetric water-content percent, permittivity, or another ARDP-derived proxy. & Workbook unit definition, sensor/band calibration equations, uncertainty by sensor/band, baseline/reference date, and dielectric/water-content conversion notes. \\
+\path{perm_endpoint_geometry} & medium / permeability pulse tests & Request email 5; To Gesa & Historical permeability endpoints are needed only if older rows should enter the fit. & Endpoint coordinates, digitized traces, or interval geometry tables for BCD-A24, BCD-A25, BCD-A26, BCD-A27, and BFM-D19 intervals. \\
+\path{cte_value_confirmation} & high / model provenance & Request email 6; To Gesa; Cc Tuanny & The XML binds \code{CTE} to solid thermal expansivity, but the value/comment look like a copied heat-capacity entry. & Provider confirmation that the value is intended, inactive/irrelevant, a typo not to be changed in the frozen model, or another documented provenance case. \\
+\bottomrule
+\end{longtable}
+
+\section{Provider Request Email Pack}
+
+\subsection*{Request Email 1: ERT transform, support, and uncertainty}
+\begin{tabularx}{\textwidth}{@{}L{0.24\textwidth}Y@{}}
+\toprule
+Subject & CD-A ERT transform, support, and uncertainty needed for OGS comparison \\
+To / Cc & \code{Gesa.Ziefle@bgr.de} / \code{Markus.Furche@bgr.de} \\
+Contact route & Coordinator with named provider Cc. Markus Furche is found in ERT/meeting context, but no direct Gmail sender messages from Markus were found in the scan. \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Questions to ask / files requested}
+\begin{itemize}
+\item Confirm the ERT coordinate origin, axes, units, and the currently assumed transform \code{model_x=raw_x}, \code{model_y=raw_y+500}.
+\item Provide or confirm the accepted near-niche support mask/polygon used for comparing ERT to OGS.
+\item State how 35 cm rock-depth handling and radial support variants should be treated.
+\item Provide the ERT uncertainty model: sigma units/log base, time grouping, spatial correlation, filtering rules, unstable-cell handling, and whether cells may be aggregated before comparison.
+\end{itemize}
+
+\textbf{Acceptance evidence}
+\begin{itemize}
+\item ERT spatial projection/support sensitivity can be regenerated without a provisional-transform caveat.
+\item ERT can be weighted without treating dense VTK cells as independent residual rows.
+\end{itemize}
+
+\textbf{Requested response package:} reply by email with request id
+\code{ert_transform_support} and/or \code{ert_uncertainty}. Attach source
+tables, scripts/notebooks, polygons/masks, coordinate-frame notes, and
+uncertainty/covariance descriptions directly to the reply.
+
+\subsection*{Request Email 2: Geoscope, laser-scan, levelling, and other HM exports}
+\begin{tabularx}{\textwidth}{@{}L{0.24\textwidth}Y@{}}
+\toprule
+Subject & CD-A Geoscope, laser-scan, and levelling numeric exports needed for model validation \\
+To / Cc & \code{Gesa.Ziefle@bgr.de} / none \\
+Contact route & Coordinator only. Ask Gesa to forward to the relevant BGR Geoscope, laser-scan, and levelling data owners if needed. \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Questions to ask / files requested}
+\begin{itemize}
+\item Machine-readable Geoscope mini-piezometer time series.
+\item Extensometer and crackmeter time series if available.
+\item Laser-scan statistical interpretation products, not only surface geometry.
+\item Full precision-levelling tables, including survey epochs and reference convention.
+\item For every numeric export: instrument id, timestamp/epoch, value, unit, coordinate/support id, reference/zero convention, processing provenance, quality/status flag.
+\item For every candidate residual: uncertainty/covariance or an accepted simplified weighting rule, including failed-sensor and maintenance intervals.
+\end{itemize}
+
+\textbf{Acceptance evidence}
+\begin{itemize}
+\item At least one other-HM request class becomes hard-residual-ready with time/epoch and model-facing support.
+\item Each residual has enough metadata to state what OGS quantity/support it measures and what residual weight it receives.
+\end{itemize}
+
+\textbf{Requested response package:} reply by email with request id
+\code{hm_numeric_exports} and/or \code{hm_uncertainty}. Attach
+machine-readable tables and metadata directly to the reply, preferably one file
+per instrument class plus a short provenance/readme note.
+
+\subsection*{Request Email 3: RH/suction boundary-curve provenance}
+\begin{tabularx}{\textwidth}{@{}L{0.24\textwidth}Y@{}}
+\toprule
+Subject & CD-A RH/suction boundary-curve provenance needed for OGS forcing \\
+To / Cc & \code{Gesa.Ziefle@bgr.de} / none \\
+Contact route & Coordinator only; no separate RH/OGS pressure-curve processing owner was identified in the scan. \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Questions to ask / files requested}
+\begin{itemize}
+\item Active open-niche pressure-curve source table and any script/notebook used to generate the XML curve.
+\item Sensor selection/screening note, including failed or excluded sensors.
+\item Model-time zero, timezone, RH percent/fraction convention, pressure unit/sign convention, and temperature/density constants.
+\item Kelvin conversion constants and any smoothing/manual-edit or extrapolation policy.
+\item Open/closed curve mapping and post-active-curve extension policy.
+\end{itemize}
+
+\textbf{Acceptance evidence}
+\begin{itemize}
+\item The active XML pressure curve can be regenerated or explained well enough that replacement curves/retention targets are no longer based on unknown provenance.
+\end{itemize}
+
+\textbf{Requested response package:} reply by email with request id
+\code{rh_active_curve_provenance}. Attach the source table, generation
+script/notebook, screening note, and any pressure/RH conversion assumptions
+directly to the reply.
+
+\subsection*{Request Email 4: Taupe/TDR units and calibration}
+\begin{tabularx}{\textwidth}{@{}L{0.24\textwidth}Y@{}}
+\toprule
+Subject & CD-A Taupe/TDR workbook units and calibration needed before objective activation \\
+To / Cc & \code{Gesa.Ziefle@bgr.de} / none \\
+Contact route & Coordinator only. Ask Gesa to forward to the Taupe/TDR provider or confirm the source directly. \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Questions to ask / files requested}
+\begin{itemize}
+\item Define the units and meaning of \code{Taupe_WC.xlsx} values by sheet/column.
+\item Confirm whether values are volumetric water-content percent, permittivity, or another ARDP-derived proxy.
+\item Provide sensor/band calibration equations, constants, baseline/reference date, and uncertainty model.
+\item State whether matrix/porosity corrections have already been applied.
+\end{itemize}
+
+\textbf{Acceptance evidence}
+\begin{itemize}
+\item The Taupe semantics audit can decide whether absolute Taupe values are water content, permittivity/proxy, or trend-only evidence.
+\end{itemize}
+
+\textbf{Requested response package:} reply by email with request id
+\code{taupe_unit_calibration}. Attach the workbook unit definition,
+calibration equations/constants, baseline/reference information, uncertainty
+model, and any matrix/porosity correction notes directly to the reply.
+
+\subsection*{Request Email 5: Historical permeability endpoint geometry}
+\begin{tabularx}{\textwidth}{@{}L{0.24\textwidth}Y@{}}
+\toprule
+Subject & CD-A historical permeability endpoint geometry needed for inactive intervals \\
+To / Cc & \code{Gesa.Ziefle@bgr.de} / none \\
+Contact route & Coordinator only. Ask Gesa to forward to the BGR permeability data owner if interval endpoints come from another source. \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Questions to ask / files requested}
+\begin{itemize}
+\item Endpoint coordinates, labelled digitized traces, or interval geometry tables for historical BCD-A24, BCD-A25, BCD-A26, BCD-A27, and BFM-D19 permeability intervals.
+\item For every interval: borehole id, open/closed assignment, start/end coordinates or depths, orientation convention, interval length/support, source date/table, permeability value, uncertainty/evaluation note.
+\item If endpoint geometry will not be used, confirm whether these older rows should remain inactive/excluded from the final fit.
+\end{itemize}
+
+\textbf{Acceptance evidence}
+\begin{itemize}
+\item Inactive historical rows can be projected to OGS cells with a trace/support definition rather than excluded for missing geometry.
+\end{itemize}
+
+\textbf{Requested response package:} reply by email with request id
+\code{perm_endpoint_geometry}. Attach endpoint coordinate tables, digitized
+traces, interval-geometry files, or a written confirmation that the older rows
+should remain inactive/excluded from the final fit.
+
+\subsection*{Request Email 6: CTE value/provenance confirmation}
+\begin{tabularx}{\textwidth}{@{}L{0.24\textwidth}Y@{}}
+\toprule
+Subject & CD-A OGS CTE value/provenance confirmation needed before thermal-parameter interpretation \\
+To / Cc & \code{Gesa.Ziefle@bgr.de} / \code{Tuanny.Cajuhi@bgr.de} \\
+Contact route & Coordinator with model-setup Cc. \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Questions to ask / files requested}
+\begin{itemize}
+\item Confirm whether the XML \code{CTE} value bound to solid thermal expansivity is intended.
+\item If not intended, state whether it is inactive/irrelevant for the current run, a known typo not to be changed in the frozen model, or copied from another parameter such as heat capacity.
+\item Provide the provenance/source document or model-setup note for the value.
+\end{itemize}
+
+\textbf{Acceptance evidence}
+\begin{itemize}
+\item The report open-comment audit can move the CTE row from confirmation-required to confirmed inactive, confirmed typo, or confirmed value with the provider response cited.
+\end{itemize}
+
+\textbf{Requested response package:} reply by email with request id
+\code{cte_value_confirmation}. Include the intended interpretation of the
+current XML value and attach or cite the source/provenance note for that value.
+
+\section{Internal Modelling Decisions}
+
+\subsection*{NMR final residual semantics}
+
+\decision{Decision required before final promotion.} The current report keeps
+\path{retain_raw_absolute_theta_current_report_default_with_caveats}. The
+recommended provisional candidate is \code{within_label_trend_anomaly}, but the
+acceptance template records 0/1 approvals.
+
+\begin{tabularx}{\textwidth}{@{}L{0.23\textwidth}L{0.22\textwidth}Y@{}}
+\toprule
+Option & Current status & Discussion consequence \\
+\midrule
+\path{raw_absolute_current} & active but conditional & Keeps the current active objective, but compares total NMR-visible water content to mobile OGS water content without a bound/interlayer-water correction. \\
+\path{global_uniform_offset} & stress test only & Reject unless collaborators provide one physically justified global offset. \\
+\path{absolute_with_label_bias} & conditional & Preserves absolute information but needs approved bias/offset priors and wording that biases are not transport water. \\
+\path{within_label_trend_anomaly} & recommended after acceptance & Safest provisional NMR residual because constant bound/interlayer/campaign offsets cancel; absolute water content is not fitted. \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Required signoff fields:} approval status, primary policy selection,
+approver name, approval date, approval reference, and accepted residual
+definition.
+
+\subsection*{Direct-permeability likelihood/support policy}
+
+\decision{Decision required before reopening same-support OGS spending or final
+field promotion.} The current-report policy is
+\path{keep_rowwise_gaussian_default}. The same-support active-objective batch
+gate is closed because the current field is already at the support lower bound
+for the current support map.
+
+\begin{tabularx}{\textwidth}{@{}L{0.25\textwidth}L{0.23\textwidth}Y@{}}
+\toprule
+Option & Diagnostic value & Discussion consequence \\
+\midrule
+\path{keep_rowwise_gaussian_default} & 269.818057 & Reproducible current default, but top row losses and support conflicts must be explicitly accepted. \\
+\path{use_robust_row_likelihood} & Student-t diagnostic 121.169 & Needs a written kernel, scale, outlier treatment, and comparison rule against historical row-Gaussian objectives. \\
+\path{aggregate_by_model_support_cell} & weighted-mean diagnostic \(1.77\times10^{-28}\) & Needs grouping key, statistic, group weights, and reporting of within-support observation ranges. \\
+\path{gate_configured_scalar_outliers} & inside-only 245.675 & Needs row-specific outlier disposition and explicit bounds/tensor-shape decision. \\
+\path{new_parameterization_before_more_ogs} & gate option & Requires a named field family and materiality threshold before spending more OGS runs. \\
+\bottomrule
+\end{tabularx}
+
+\textbf{Support-conflict evidence to acknowledge:} 30 active support cells, 24
+repeated support cells, 16 cells spanning at least two log10 units, with the top
+conflict at cell 4648, BCD-A32, 0.85-0.87 m, observed range 6.94885 log10.
+
+\subsection*{Final objective scenario selection}
+
+The current field wins only the current raw-NMR scenario and ties the direct-only
+scenario. Every currently scored scenario that includes promoted NMR, ERT, or
+Taupe selects a different field.
+
+\begin{longtable}{@{}L{0.24\textwidth}L{0.22\textwidth}L{0.20\textwidth}L{0.25\textwidth}@{}}
+\toprule
+Scenario & Winner & Current rank & What is still required \\
+\midrule
+\endhead
+\path{F01_current_raw_nmr_exclude_gated_streams} & Current field & 1 & Explicitly exclude or keep diagnostic-only all gated streams. \\
+\path{F02_promoted_nmr_trend_only} & \path{broad_continuous_001_003_length_0p021m} & 14 & Approve NMR trend/anomaly policy. \\
+\path{F03_raw_nmr_plus_ert} & \path{local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000} & 3 & Close ERT transform/support and uncertainty gates. \\
+\path{F04_raw_nmr_plus_taupe} & \path{local_bracketed_003_length_0p031m} & 21 & Close Taupe/TDR unit/calibration gate. \\
+\path{F05_raw_nmr_plus_ert_taupe} & \path{production_sampler_round3_002_length_0p028m_shift_1p050} & 19 & Close ERT and Taupe/TDR gates. \\
+\path{F06_promoted_nmr_plus_ert_taupe} & \path{production_sampler_round3_002_length_0p028m_shift_1p050} & 18 & Approve NMR policy and close ERT/Taupe gates. \\
+\path{F07_rank_consensus_diagnostic_selection} & \path{local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000} & 2 & Record explicit waiver that diagnostic ranks, not likelihood, select the field. \\
+\path{F08_exclude_nmr_direct_permeability_only} & Current field tie & 1 & Explicitly exclude NMR and decide direct-only tie-break. \\
+\path{F09_wait_for_rh_other_hm_endpoint_expansion} & not scored & n/a & Wait for RH, other-HM, or endpoint evidence, then rebuild scenarios. \\
+\bottomrule
+\end{longtable}
+
+\section{After Replies Arrive: Internal Follow-Up}
+
+\begin{enumerate}
+\item Record which request ids were sent, which people received them, and which
+answers/files came back.
+\item For every received answer, record source contact, response date, file
+names, units, coordinate/reference frame, processing provenance, quality/status
+flags, uncertainty/covariance assumptions, and which acceptance evidence it
+satisfies.
+\item Save received files into the project archive under the matching
+measurement stream, preserving original filenames where possible and adding a
+short readme/provenance note.
+\item Rerun the stream gates, conditional scenario matrix, field-selection
+audit, final-promotion checklist, final objective decision register, and
+objective-readiness audit in the working repository.
+\item If new evidence changes the modelling interpretation, update the report
+text, citations, measurement traceability notes, and frozen-model inclusion
+audit before making any final field-promotion claim.
+\end{enumerate}
+
+\section{Packet Provenance}
+
+This document is a self-contained summary of the current CD-A OGS inversion
+blockers, provider questions, and modelling-team decisions. It intentionally
+does not require recipients to open local folders, internal tracker files, or
+previous email drafts. The request ids in this packet are the stable labels to
+use when discussing or replying to the open issues.
+
+\end{document}

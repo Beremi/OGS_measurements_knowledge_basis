@@ -1,0 +1,92 @@
+{
+  "checked_at": "2026-06-01T03:55:46+02:00",
+  "observation_count": 4,
+  "external_request_row_count": 7,
+  "unique_external_draft_count": 5,
+  "cte_draft_present_in_tracker": true,
+  "expected_draft_count_including_cte": 6,
+  "observed_draft_count": 6,
+  "all_expected_drafts_observed": true,
+  "missing_expected_draft_ids": [],
+  "external_gmail_send_status_counts": {
+    "gmail_draft_created_not_sent": 7
+  },
+  "sent_subject_search_result_count": 0,
+  "provider_reply_search_result_count": 0,
+  "teambeam_context_search_result_count": 6,
+  "teambeam_context_non_draft_result_count": 0,
+  "draft_ids_observed": [
+    "r-4809950961900799564",
+    "r-4984596174110032107",
+    "r-8461584324877432346",
+    "r1284411814726937591",
+    "r2947727639429158073",
+    "r6776618065355728003"
+  ],
+  "observations": [
+    {
+      "check_id": "list_drafts_gate_requests",
+      "checked_at": "2026-06-01T03:55:46+02:00",
+      "connector_tool": "list_drafts",
+      "query_or_scope": "max_results=50",
+      "result_count": "6",
+      "matched_draft_ids": "r6776618065355728003; r1284411814726937591; r-8461584324877432346; r-4809950961900799564; r-4984596174110032107; r2947727639429158073",
+      "matched_message_ids": "19e7f5b474a8b331; 19e7f5b8191fa466; 19e7f5ba6f82e787; 19e7f5bcbd697dcf; 19e7f5beff237940; 19e7f61a36cb3470",
+      "interpretation": "All five external-gate Gmail drafts plus the separate CTE confirmation draft are still present with Gmail DRAFT labels.",
+      "caveat": "Connector observation is a point-in-time mailbox check; rerun before claiming send/reply status."
+    },
+    {
+      "check_id": "sent_subject_search",
+      "checked_at": "2026-06-01T03:55:46+02:00",
+      "connector_tool": "search_email_ids",
+      "query_or_scope": "in:sent newer_than:7d (\"CD-A ERT transform\" OR \"CD-A Geoscope\" OR \"CD-A RH/suction\" OR \"CD-A Taupe\" OR \"CD-A historical permeability\" OR \"CD-A OGS CTE\")",
+      "result_count": "0",
+      "matched_draft_ids": "",
+      "matched_message_ids": "",
+      "interpretation": "No sent copies of the gate-request or CTE draft subjects were found in the last seven days.",
+      "caveat": "Search is subject-limited to the generated draft subjects."
+    },
+    {
+      "check_id": "provider_reply_search",
+      "checked_at": "2026-06-01T03:55:46+02:00",
+      "connector_tool": "search_email_ids",
+      "query_or_scope": "in:anywhere newer_than:7d (from:Gesa.Ziefle@bgr.de OR from:Markus.Furche@bgr.de OR from:Tuanny.Cajuhi@bgr.de) (CD-A OR CDA OR HERMES OR OGS OR ERT OR Taupe OR RH OR suction OR Geoscope OR permeability OR CTE)",
+      "result_count": "0",
+      "matched_draft_ids": "",
+      "matched_message_ids": "",
+      "interpretation": "No recent reply from the named gate contacts was found for the gate topics.",
+      "caveat": "Search is limited to the three named route contacts and recent mail."
+    },
+    {
+      "check_id": "teambeam_context_search",
+      "checked_at": "2026-06-01T03:55:46+02:00",
+      "connector_tool": "search_email_ids",
+      "query_or_scope": "in:anywhere newer_than:14d (teambeam OR \"TeamBeam\" OR \"CD-A\" OR CDA OR HERMES)",
+      "result_count": "6",
+      "matched_draft_ids": "r6776618065355728003; r1284411814726937591; r-8461584324877432346; r-4809950961900799564; r-4984596174110032107; r2947727639429158073",
+      "matched_message_ids": "19e7f5b474a8b331; 19e7f5b8191fa466; 19e7f5ba6f82e787; 19e7f5bcbd697dcf; 19e7f5beff237940; 19e7f61a36cb3470",
+      "interpretation": "The recent CD-A/HERMES/TeamBeam context search returned only the six generated drafts, not new provider or TeamBeam messages.",
+      "caveat": "Search is broad but still a point-in-time Gmail connector query."
+    }
+  ],
+  "notes": [
+    "This is a point-in-time Gmail connector check, not a mailbox automation.",
+    "No Gmail send/archive/delete/label operation is performed by this audit.",
+    "A zero result in the provider reply search is evidence for current triage, not proof that no reply can arrive later."
+  ],
+  "status": "gmail_gate_live_state_checked_drafts_still_not_sent_no_responses_found",
+  "catalogue_copies": [
+    {
+      "source": "inversion_workflow/gmail_gate_live_state_observations.csv",
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/gmail_gate_live_state_observations.csv"
+    },
+    {
+      "source": "inversion_workflow/gmail_gate_live_state_audit_summary.json",
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/gmail_gate_live_state_audit_summary.json"
+    },
+    {
+      "source": "inversion_workflow/gmail_gate_live_state_audit.md",
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/gmail_gate_live_state_audit.md"
+    }
+  ]
+}

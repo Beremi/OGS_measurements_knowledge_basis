@@ -1,0 +1,106 @@
+{
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_no_new_evidence_closeout_draft.csv",
+      "source": "inversion_workflow/final_objective_no_new_evidence_closeout_draft.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_no_new_evidence_closeout_draft_summary.json",
+      "source": "inversion_workflow/final_objective_no_new_evidence_closeout_draft_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/final_objective_no_new_evidence_closeout_draft.md",
+      "source": "inversion_workflow/final_objective_no_new_evidence_closeout_draft.md"
+    }
+  ],
+  "current_field_final_decision_before_draft": "do_not_promote_to_final_all_measurement_field",
+  "current_field_is_winner_in_draft_scenario": true,
+  "draft_acceptance_status_counts": {
+    "draft_requires_user_or_modelling_team_approval_not_recorded": 9
+  },
+  "draft_decision_count": 9,
+  "external_blocker_count": 8,
+  "external_or_provenance_draft_count": 6,
+  "final_promotion_unblocked_by_this_draft": false,
+  "gmail_draft_count": 6,
+  "gmail_draft_ids": [
+    "r6776618065355728003",
+    "r1284411814726937591",
+    "r-8461584324877432346",
+    "r-4809950961900799564",
+    "r-4984596174110032107",
+    "r2947727639429158073"
+  ],
+  "gmail_unsent_draft_count": 6,
+  "internal_policy_draft_count": 1,
+  "missing_response_blocker_count": 8,
+  "next_action": "Review this draft with the modelling team. If accepted, record the decisions in the decision layer, then rerun the listed audits. If not accepted, send/file provider responses before including the gated streams.",
+  "open_blocker_count": 8,
+  "open_blocker_ids": [
+    "ert_transform_support",
+    "ert_uncertainty",
+    "hm_numeric_exports",
+    "hm_uncertainty",
+    "rh_active_curve_provenance",
+    "taupe_unit_calibration",
+    "perm_endpoint_geometry",
+    "cte_value_confirmation"
+  ],
+  "permeability_likelihood_policy_primary_approvals_recorded": 0,
+  "permeability_likelihood_policy_primary_approvals_required": 1,
+  "permeability_likelihood_policy_ready_to_apply": false,
+  "permeability_next_field_fit_gate_recommendation": "pause_same_support_active_objective_ogs_until_likelihood_support_bounds_or_stream_gate_changes",
+  "permeability_next_field_fit_gate_same_support_batch_executable_now": false,
+  "permeability_support_conflict_spatial_active_support_cell_count": 30,
+  "permeability_support_conflict_spatial_audit_status": "permeability_support_conflict_spatial_audit_generated",
+  "permeability_support_conflict_spatial_configured_scalar_conflict_cell_count": 1,
+  "permeability_support_conflict_spatial_range_ge_2_log10_cell_count": 16,
+  "permeability_support_conflict_spatial_repeated_support_cell_count": 24,
+  "permeability_support_conflict_spatial_top_conflict_cell": {
+    "cell_type": "triangle6",
+    "centroid_x_m": -1.9531543672590785,
+    "centroid_y_m": -0.665476463070921,
+    "centroid_z_m": 0.0,
+    "conflict_class": "configured_scalar_range_conflict",
+    "depth_max_m": 0.87,
+    "depth_min_m": 0.85,
+    "feasibility_statuses": "observed_above_configured_scalar_range;observed_inside_configured_scalar_range",
+    "group_policy_class": "configured_scalar_range_decision_required",
+    "has_large_observed_range_ge_1_log10": true,
+    "has_large_observed_range_ge_2_log10": true,
+    "is_repeated_support_cell": true,
+    "max_abs_residual": 3.4744237387763093,
+    "mean_abs_residual": 3.4744237387763093,
+    "observed_log10_max": -12.096910013008056,
+    "observed_log10_min": -19.045757490560675,
+    "observed_log10_range": 6.948847477552619,
+    "primary_cell_id": 4648,
+    "residual_signs": "overpredicts_observation;underpredicts_observation",
+    "row_count": 3,
+    "segments": "BCD-A32"
+  },
+  "promotes_current_field": false,
+  "promotion_decision_before_draft": "do_not_promote_current_field",
+  "records_actual_decisions": false,
+  "refresh_after_acceptance": "python inversion_workflow/scripts/build_internal_gate_decision_register.py; python inversion_workflow/scripts/build_external_gate_response_intake.py; python inversion_workflow/scripts/build_external_gate_dispatch_audit.py; python inversion_workflow/scripts/build_external_blocker_dashboard.py; python inversion_workflow/scripts/build_measurement_stream_gate_audit.py; python inversion_workflow/scripts/build_conditional_field_selection_scenarios.py; python inversion_workflow/scripts/build_current_field_selection_audit.py; python inversion_workflow/scripts/build_final_inversion_promotion_checklist.py; python inversion_workflow/scripts/build_final_inversion_closeout_playbook.py; python inversion_workflow/scripts/build_final_objective_decision_register.py; python inversion_workflow/scripts/build_final_objective_scenario_matrix.py; python inversion_workflow/scripts/build_final_objective_include_exclude_recommendations.py; python inversion_workflow/scripts/build_final_objective_no_new_evidence_closeout_draft.py; python inversion_workflow/scripts/build_objective_readiness_audit.py",
+  "requires_user_or_modelling_team_approval": true,
+  "scenario_or_final_draft_count": 2,
+  "sends_or_modifies_email": false,
+  "single_block_acceptance_text": "For the no-new-evidence closeout, we retain raw absolute NMR water-content residuals with bound-water/mobile-water caveats; keep ERT and Taupe/TDR as diagnostic-only evidence; keep RH/suction as boundary-audit-only evidence; keep other HM monitoring as qualitative/geometric context only; keep endpoint-missing historical permeability rows inactive; scope the suspicious CTE value out of permeability-field interpretation; and use F01_current_raw_nmr_exclude_gated_streams only as the narrow accepted scenario after the individual decisions are recorded and the scenario/current-field/promotion audits are regenerated. This decision does not include those gated streams in the likelihood, does not assert a final all-measurement inversion, and does not promote the current field without a separate post-regeneration approval.",
+  "source_artifacts": [
+    "inversion_workflow/final_objective_include_exclude_recommendations.csv",
+    "inversion_workflow/final_objective_decision_register.csv",
+    "inversion_workflow/final_objective_scenario_matrix.csv",
+    "inversion_workflow/final_inversion_promotion_checklist_summary.json",
+    "inversion_workflow/current_field_selection_audit_summary.json",
+    "inversion_workflow/external_blocker_dashboard_summary.json",
+    "inversion_workflow/gmail_draft_send_review_packet_summary.json",
+    "inversion_workflow/permeability_support_conflict_spatial_audit_summary.json",
+    "inversion_workflow/permeability_likelihood_policy_acceptance_record_template_summary.json",
+    "inversion_workflow/permeability_next_field_fit_gate_summary.json"
+  ],
+  "status": "final_objective_no_new_evidence_closeout_draft_generated",
+  "unsent_blocker_count": 8,
+  "would_select_scenario_if_all_rows_approved_and_audits_rerun": "F01_current_raw_nmr_exclude_gated_streams",
+  "would_select_winner_if_all_rows_approved_and_audits_rerun": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000"
+}

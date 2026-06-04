@@ -1,0 +1,76 @@
+{
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/measurement_gate_closure_request.csv",
+      "source": "inversion_workflow/measurement_gate_closure_request.csv"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/measurement_gate_closure_request.md",
+      "source": "inversion_workflow/measurement_gate_closure_request.md"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/measurement_gate_closure_email_draft.md",
+      "source": "inversion_workflow/measurement_gate_closure_email_draft.md"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/measurement_gate_closure_request_summary.json",
+      "source": "inversion_workflow/measurement_gate_closure_request_summary.json"
+    }
+  ],
+  "external_request_count": 7,
+  "failed_gate_request_count": 7,
+  "gates_represented_count": 13,
+  "generated_files": [
+    "inversion_workflow/measurement_gate_closure_request.csv",
+    "inversion_workflow/measurement_gate_closure_request_summary.json",
+    "inversion_workflow/measurement_gate_closure_request.md",
+    "inversion_workflow/measurement_gate_closure_email_draft.md"
+  ],
+  "high_priority_request_ids": [
+    "ert_transform_support",
+    "ert_uncertainty",
+    "hm_numeric_exports",
+    "hm_uncertainty",
+    "rh_active_curve_provenance",
+    "taupe_unit_calibration",
+    "nmr_bound_water",
+    "perm_likelihood_policy",
+    "rh_uncertainty"
+  ],
+  "internal_decision_count": 6,
+  "request_count": 13,
+  "request_counts_by_external_or_internal": {
+    "external": 7,
+    "internal_with_optional_external_confirmation": 6
+  },
+  "request_counts_by_priority": {
+    "high": 9,
+    "medium": 4
+  },
+  "request_counts_by_stream": {
+    "ert_resistivity": 2,
+    "nmr_water_content": 1,
+    "other_hm_monitoring": 2,
+    "permeability_pulse_tests": 3,
+    "relative_humidity_suction": 2,
+    "taupe_tdr": 3
+  },
+  "request_counts_by_type": {
+    "calibration_confirmation": 1,
+    "internal_method_decision": 1,
+    "likelihood_policy_decision": 1,
+    "metadata_and_uncertainty_model": 1,
+    "method_decision_and_optional_source_confirmation": 1,
+    "provenance_and_processing_files": 1,
+    "source_file_request": 2,
+    "support_geometry_and_transform": 1,
+    "support_geometry_decision": 1,
+    "uncertainty_model": 2,
+    "uncertainty_model_and_policy": 1
+  },
+  "required_failed_gates_from_audit": 7,
+  "required_warning_gates_from_audit": 4,
+  "status": "measurement_gate_closure_request_generated",
+  "tracked_caveat_request_count": 1,
+  "warning_gate_request_count": 4
+}

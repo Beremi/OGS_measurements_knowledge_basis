@@ -1,0 +1,34 @@
+[
+  {
+    "category": "catalogue scope",
+    "comment": "Counts are from cda_knowledge_base/measurements/deep_source_index.csv.",
+    "item": "copied source files",
+    "measurement": "bedding_geology_structure",
+    "sources": "",
+    "value": "4 files; total copied source bytes 20321112; file kinds pdf=3, png=1"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "2025-09-05_Ziefle_et_al_2023_Characterization.pdf",
+    "measurement": "bedding_geology_structure",
+    "sources": "cda_knowledge_base/measurements/bedding_geology_structure/source_files/2025-09-05_Ziefle_et_al_2023_Characterization.pdf",
+    "value": "type pdf; pages/slides 14; keywords ERT; NMR; Taupe; TDR; suction; humidity; relative humidity; permeability; bedding; fault; fracture; water content; saturation; pressure; piezometer; extensometer; laser; CD-A; niche; extract cda_knowledge_base/measurements/bedding_geology_structure/derived_files/deep_source_pass/extracted_text/2025-09-05_Ziefle_et_al_2023_Characterization_083fc8f3.pdf.txt"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "Perm_Sec_4-3_Ziefle_et_al_2023_Characterization.pdf",
+    "measurement": "bedding_geology_structure",
+    "sources": "cda_knowledge_base/measurements/bedding_geology_structure/source_files/Perm_Sec_4-3_Ziefle_et_al_2023_Characterization.pdf",
+    "value": "type pdf; pages/slides 14; keywords ERT; NMR; Taupe; TDR; suction; humidity; relative humidity; permeability; bedding; fault; fracture; water content; saturation; pressure; piezometer; extensometer; laser; CD-A; niche; extract cda_knowledge_base/measurements/bedding_geology_structure/derived_files/deep_source_pass/extracted_text/Perm_Sec_4-3_Ziefle_et_al_2023_Characterization_47842a2a.pdf.txt"
+  },
+  {
+    "category": "document/presentation extract",
+    "comment": "Generated text extracts make these documents searchable without opening the PDF/PPTX manually.",
+    "item": "bedding_page_4_Ziefle_GETE_2022.pdf",
+    "measurement": "bedding_geology_structure",
+    "sources": "cda_knowledge_base/measurements/bedding_geology_structure/source_files/bedding_page_4_Ziefle_GETE_2022.pdf",
+    "value": "type pdf; pages/slides 18; keywords ERT; Taupe; TDR; humidity; relative humidity; permeability; bedding; fault; fracture; water content; saturation; pressure; piezometer; extensometer; laser; OGS; CD-A; niche; extract cda_knowledge_base/measurements/bedding_geology_structure/derived_files/deep_source_pass/extracted_text/bedding_page_4_Ziefle_GETE_2022_301223fe.pdf.txt"
+  }
+]

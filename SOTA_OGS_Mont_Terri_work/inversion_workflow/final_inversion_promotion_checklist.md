@@ -1,0 +1,67 @@
+# Final Inversion Promotion Checklist
+
+This checklist is the current promotion gate for calling any permeability
+field a final all-measurement inversion result. It intentionally separates
+the accepted active-objective incumbent from unresolved final-promotion
+criteria.
+
+- Status: `final_inversion_promotion_checklist_generated`
+- Promotion decision: `do_not_promote_current_field`
+- Criteria: 17
+- Status counts: {'pass': 5, 'pass_with_caveat': 1, 'active_only_pass': 2, 'blocked_external': 6, 'blocked_internal_decision': 1, 'fails_promotion': 2}
+- Current field: `local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000`
+- Active-objective decision: `accept_as_current_active_objective_incumbent`
+- Final all-measurement decision: `do_not_promote_to_final_all_measurement_field`
+- Open blockers: 8 (['ert_transform_support', 'ert_uncertainty', 'hm_numeric_exports', 'hm_uncertainty', 'rh_active_curve_provenance', 'taupe_unit_calibration', 'perm_endpoint_geometry', 'cte_value_confirmation'])
+- Conditional scenario winners: 5 unique winners across 8 scenarios
+
+## Checklist
+
+| Criterion | Status | Evidence | Required for promotion |
+| --- | --- | --- | --- |
+| `P01_report_build` Report build is clean and has no active review markers. | `pass` | main.pdf pages=36; log clean=True; active report markers=0. | Keep the report build clean after every checklist or chapter edit. |
+| `P03_measurement_traceability` All collected measurement classes are catalogued, processed, and linked to report/model evidence. | `pass` | traceability status=measurement_report_traceability_audit_generated; observations=9; missing sections=0; manifest failures=0. | Refresh traceability after adding any new files or provider responses. |
+| `P04_current_field_package` The current permeability field is packaged for inspection and rerun provenance. | `pass` | status=current_permeability_field_package_generated; run=local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000; cells=10239; positive-definite=10239; mesh=inversion_workflow/current_permeability_field/current_best_bulk_w_projections.vtu. | Keep the packaged field synchronized with the accepted active-objective incumbent. |
+| `P07_release_gate` Run-local parameter release gate remains clean for executed candidates. | `pass` | status=pass; audited runs=65; checks=1300; failures=0. | Continue to reject silent release of porosity, retention, mechanical, boundary, or thermal fields. |
+| `P17_citation_package` Citations, source locators, and unavailable/fulltext tracking are complete for current report claims. | `pass` | status=citation_locator_audit_generated; citation instances=63; unique keys=29; missing/weak locators=0; missing BibTeX=0. | Rerun citation audit after adding sources or changing measurement semantics. |
+| `P02_model_freeze` Frozen GESA model semantics are recovered and run-local edits are bounded. | `pass_with_caveat` | formulation checks=18; hard failures=0; process=THERMO_RICHARDS_MECHANICS; run-input status=run_inputs_ogs_accepted_with_meshio_submesh_warnings; OGS returncode=0. | Keep CTE and fixed-porosity caveats explicit; regenerate appended-data submeshes only if downstream meshio decoding is required. |
+| `P06_active_sampler_pause` Further same-neighborhood active-objective OGS spending is not currently justified. | `active_only_pass` | recommendation=pause_active_production_sampling; production rounds=5; P(improve)=0.01657360931530728; EI=0.0030884394147730476; reason=Five production handoff rounds have not improved the local-basis incumbent, the next batch has low diagnostic improvement probability, and every proposed batch LCB is worse than the incumbent; prioritize measurement-stream gates or a new field family before spending more OGS runs on the current smooth handoff.. | Treat this only as an active-objective stopping point; it does not close gated all-measurement criteria. |
+| `P05_active_objective_incumbent` The packaged field is the current active direct-permeability/raw-NMR incumbent. | `active_only_pass` | active decision=accept_as_current_active_objective_incumbent; active objective=3156.353066948979; active rank=1.0. | This is necessary but not sufficient; final promotion also requires stable accepted measurement semantics and closed gates. |
+| `P13_perm_endpoint_gate` Historical permeability endpoint geometry/provenance is closed. | `blocked_external` | open blocker ids for this criterion=['perm_endpoint_geometry']; dashboard status=external_blocker_dashboard_generated_waiting_user_send_and_responses; unsent blockers=8; missing responses=8. support-conflict active/repeated/range>=2 cells=30/24/16; top conflict cell=4648 (BCD-A32 0.85-0.87 m, observed range=6.948847477552619); same-support lower-bound gap=0.0; current at lower bound=True; policy approvals=0/1; policy ready=False; same-support batch executable=False; next recommendation=pause_same_support_active_objective_ogs_until_likelihood_support_bounds_or_stream_gate_changes. | Obtain the missing endpoint traces/geometries, or record that the current projected rows are the only accepted direct-permeability support while keeping the likelihood/support policy explicit. |
+| `P10_taupe_gate` Taupe/TDR unit/calibration and uncertainty gates are closed. | `blocked_external` | open blocker ids for this criterion=['taupe_unit_calibration']; dashboard status=external_blocker_dashboard_generated_waiting_user_send_and_responses; unsent blockers=8; missing responses=8. | Accept workbook units/calibration and grouped uncertainty before Taupe/TDR can select a final field. |
+| `P11_rh_gate` RH/suction boundary-curve provenance and uncertainty gates are closed. | `blocked_external` | open blocker ids for this criterion=['rh_active_curve_provenance']; dashboard status=external_blocker_dashboard_generated_waiting_user_send_and_responses; unsent blockers=8; missing responses=8. | Resolve active curve generation, time axis, sensor screening, and uncertainty before RH informs a hard residual or retention/boundary release. |
+| `P12_other_hm_gate` Other HM numeric exports and uncertainty gates are closed. | `blocked_external` | open blocker ids for this criterion=['hm_numeric_exports', 'hm_uncertainty']; dashboard status=external_blocker_dashboard_generated_waiting_user_send_and_responses; unsent blockers=8; missing responses=8. | Obtain hard-residual-ready Geoscope, laser scan, and levelling numeric exports or explicitly exclude them from final likelihood. |
+| `P14_cte_confirmation` Suspicious thermal-expansivity value is confirmed or scoped out of interpretation. | `blocked_external` | open blocker ids for this criterion=['cte_value_confirmation']; dashboard status=external_blocker_dashboard_generated_waiting_user_send_and_responses; unsent blockers=8; missing responses=8. | Send/close the CTE confirmation and record whether CTE=1254.74 is intended, inactive, copied heat capacity, or another convention. |
+| `P09_ert_gate` ERT transform/support and uncertainty gates are closed. | `blocked_external` | open blocker ids for this criterion=['ert_transform_support', 'ert_uncertainty']; dashboard status=external_blocker_dashboard_generated_waiting_user_send_and_responses; unsent blockers=8; missing responses=8. | Accept ERT transform/support mask and covariance/uncertainty before ERT can select a final field. |
+| `P08_nmr_residual_policy` Final NMR residual semantics are settled. | `blocked_internal_decision` | NMR default promotion status=local_policy_recorded_not_promoted_default; final NMR policy selected=False; recommended candidate policy=within_label_trend_anomaly; recommended candidate run=broad_continuous_001_003_length_0p021m; current raw incumbent rank under trend/anomaly=14.0; trend/anomaly winner raw rank=56.0; follow-up recommendation=pause_new_trend_anomaly_ogs_batch; trend/anomaly winner=broad_continuous_001_003_length_0p021m; current trend/anomaly rank=14.0. | Record whether final NMR uses raw absolute theta, model-error/bias handling, trend/anomaly residuals, or an explicit free-water correction. |
+| `P15_conditional_field_stability` The same permeability field wins across accepted or plausible final measurement scenarios. | `fails_promotion` | conditional decision=single_field_not_stable_across_gate_scenarios; scenarios=8; unique winners=5; current field wins=1; candidate package status=conditional_field_candidate_package_generated; difference audit status=conditional_field_difference_audit_generated. support-conflict active/repeated/range>=2 cells=30/24/16; top conflict cell=4648 (BCD-A32 0.85-0.87 m, observed range=6.948847477552619); same-support lower-bound gap=0.0; current at lower bound=True; policy approvals=0/1; policy ready=False; same-support batch executable=False; next recommendation=pause_same_support_active_objective_ogs_until_likelihood_support_bounds_or_stream_gate_changes. | Close/accept/exclude gated streams, settle the direct-permeability support/likelihood policy, and rerun the scenario audit until the final objective has a stable winner. |
+| `P16_final_field_decision` The selected field is approved as the final all-measurement permeability inversion result. | `fails_promotion` | current field final decision=do_not_promote_to_final_all_measurement_field; current selection status=current_field_selection_audit_generated; selection status counts={'pass': 2, 'pass_with_caveat': 2, 'fails_final_promotion': 2, 'blocked_or_gated': 4}; required stream-gate failures=7. support-conflict active/repeated/range>=2 cells=30/24/16; top conflict cell=4648 (BCD-A32 0.85-0.87 m, observed range=6.948847477552619); same-support lower-bound gap=0.0; current at lower bound=True; policy approvals=0/1; policy ready=False; same-support batch executable=False; next recommendation=pause_same_support_active_objective_ogs_until_likelihood_support_bounds_or_stream_gate_changes. | Only switch to promoted after every preceding final-promotion criterion is pass or explicitly waived with a documented modelling decision, including the direct-permeability likelihood/support decision. |
+
+## Interpretation
+
+- The current field can be used as the active direct-permeability/raw-NMR incumbent.
+- It cannot be promoted to a final all-measurement field while external measurement gates remain unsent/unanswered.
+- It also cannot be promoted while conditional scenario winners are unstable across accepted or plausible gate outcomes.
+- A final promotion requires either closing the listed gates or recording an explicit modelling decision to exclude a gated stream from the final objective.
+
+## Source Artifacts
+
+- `inversion_workflow/report_open_comment_audit.md`
+- `inversion_workflow/measurement_report_traceability_audit.md`
+- `inversion_workflow/ogs_formulation_consistency_audit.md`
+- `inversion_workflow/runs/direct_fit_observation_run/OGS_RUN_INPUT_AUDIT.md`
+- `inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD.md`
+- `inversion_workflow/current_field_selection_audit.md`
+- `inversion_workflow/conditional_field_selection_scenarios.md`
+- `inversion_workflow/conditional_field_candidates/CONDITIONAL_FIELD_CANDIDATES.md`
+- `inversion_workflow/conditional_field_candidates/CONDITIONAL_FIELD_DIFFERENCE_AUDIT.md`
+- `inversion_workflow/runs/production_sampler_convergence/PRODUCTION_SAMPLER_DECISION.md`
+- `inversion_workflow/measurement_stream_activation_gate_audit.md`
+- `inversion_workflow/nmr_final_residual_policy_gate.md`
+- `inversion_workflow/external_blocker_dashboard.md`
+- `inversion_workflow/internal_gate_decision_register.md`
+- `inversion_workflow/permeability_support_conflict_spatial_audit.md`
+- `inversion_workflow/permeability_support_lower_bound_audit.md`
+- `inversion_workflow/permeability_likelihood_policy_acceptance_record_template.md`
+- `inversion_workflow/permeability_next_field_fit_gate.md`
+- `Library/citation_locator_audit.md`

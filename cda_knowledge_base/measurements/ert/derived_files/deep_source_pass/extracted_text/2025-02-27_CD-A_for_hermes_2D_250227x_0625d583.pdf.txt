@@ -1,0 +1,214 @@
+--- Page 1 ---
+Rink (UFZ)
+Air lock
+The CD-A experiment in Mont Terri
+Outline:
+• Set-up of CD-A Experiment
+• Measurements
+o Long-term monitoring of electrical resistivity (ERT)
+o Measurements of water content (NMR)
+• Modelling CD-A
+1
+
+--- Page 2 ---
+• 2 horizontal excavations
+• perpendicular to strike of 
+bedding
+• no stabilization
+• upper sandy facies
+• influence of climatic 
+conditions on HM 
+behaviour
+• Long-term investigation
+• CD: “cyclic deformations”
+Aiming on a 
+detailed
+process
+and 
+system understanding
+as a basis
+for safety
+assessment.
+Rink (UFZ)
+Air lock
+CD-A Experiment: 
+Investigation of coupled HM effects in Opalinus clay
+2
+
+--- Page 3 ---
+Climatic conditions within the niches
+Measuring campaign
+25.11.2024      ClayConference 2024
+
+--- Page 4 ---
+Reference day: 31.10.2019 
+(5 days after installation)
+Electrodes #17/#18 
+not used !
+No interpretation possible
+for this area!
+Niche open
+Niche closed
+New results of ERT monitoring
+(Markus Furche, BGR)
+Furche (BGR)
+
+--- Page 5 ---
+Relative change of the electrical resistivity
+
+--- Page 6 ---
+Water content evolution at a depth of 40cm
+Closed niche:
+- Higher humidity
+- Increase of humidity
+Open niche:
+- Lower humidity
+- Seasonality
+- Decrease of humidity
+Both niches:
+Higher relative humidities in 
+horizontal direction (lighter 
+colors)
+725.11.2024      ClayConference 2024
+40cm
+70cm
+70cm
+40cm
+
+--- Page 7 ---
+Material parameters: 
+Permeability measurements by pulse tests
+Difference even clearer in vertical direction
+Difference becomes more evident over time
+Significant differences up to 1.5 meters
+Open twin: Permeability ~ 1e-15m²         Closed twin: Permeability ~ 1e-19m²
+Shao, Gerowski (BGR)
+Measurements in 2021 
+(1.5 yrs after excavation)
+Measurements in 2024 
+(4.5 yrs after excavation)
+8
+
+--- Page 8 ---
+Convergence behavior is more pronounced in closed than 
+in open twin
+Convergence behavior: Laser scans of the niche surface
+Closed twinOpen twin
+Convergence > 3mm
+Divergence > 3mm
+Fault zones
+9
+
+--- Page 9 ---
+Ongoing compression of host rock within first meter
+Distance > 175cm to the surface: no effect of climatic conditions
+Segmental strains under the niches
+0.50m
+1.00m
+4.00m
+1.75m
+2.75m
+Niche
+Segment 1
+Segment 2
+Segment 3
+Segment 4
+1025.11.2024      ClayConference 2024
+
+--- Page 10 ---
+Segmental strains under the niches
+Ongoing compression of host rock within first meter
+Distance > 175cm to the surface: no effect of climatic conditions
+Strains remain low
+Stationary conditions after ~ 1 year
+1125.11.2024      ClayConference 2024
+
+--- Page 11 ---
+Segmental strains around the niches
+Vertical direction Horizontal direction Drilled from gallery
+
+--- Page 12 ---
+Single-Sided Nuclear
+Magnetic Resonance
+in the CD-A niches
+
+--- Page 13 ---
+Weekly program on 4E in the open niche
+
+--- Page 14 ---
+Evaluation of ERT data
+15
+• Data on 10m by 10m
+• Reliable range: 
+1.5m radius (green in the image), 
+35cm in the rock – only use this range!!
+• Definition x/y (in model x/z)
+• Mesh for ERT evaluation not equal to FEM 
+mesh
+• Data available daily (vtk)
+• Data set includes several parameters 
+(resistivity, delta resistivity, log resistivity, 
+phase angle…)
+• Data on exact circular shape
+10m
+10m
+1.5m
+35cm
+
+--- Page 15 ---
+CD-A Experiment:
+Models
+16
+3D model:
+• Modelling of excavation (gallery, niches)
+• Modelling of long-term effects due to excavation 
+and desaturation
+2D (100m*100m):
+• Long-term effects due to desaturation
+• Homogeneous material (EDZ, Host rock)
+2D (10m*10m):
+• Long-term effects due to desaturation
+• Use of ERT/NMR data
+• Precise geometry
+2D Quarter:
+• Ideal ring (DigBen)
+
+--- Page 16 ---
+Combination of physical model and data set
+17
+Numerical model: 
+saturation
+ERT/NMR measurement:
+Resistivity, water content
+Relation between
+Resistivity and water content
+
+--- Page 17 ---
+Combination of physical model and data set
+18
+• Numerical (physical) model:
+• Process variables (pressure, deformation, saturation)
+• Material parameters (permeability, porosity)
+• Data set:
+• Electrical resistivity / Water content
+• Related to:
+• Saturation (process variable)
+• Permeability (material parameter)
+• Adaptation of mesh during ML routine?
+Numerical model: 
+saturation
+Data set: 
+Eletrical resistivity /
+Water content
+
+--- Page 18 ---
+From our side, I think it would be good to start with the following:
+• If you have any publications or notes on the model, it would help us get a better understanding.
+https://rdcu.be/ea1vq
+• If possible, could you provide access to a repository for your model in OpenGeoSys, ideally with 
+instructions on how to set it up and get it running?
+• Lastly, are you able to share the data, or is it subject to any licensing restrictions?
+There’s no rush on any of this. As usual, the end of the year is quite busy for us, so we won’t be able to 
+dive deeply into it in the coming months. However, it would be great to have a starting point ready for 
+when we can find the time to explore further.
+19

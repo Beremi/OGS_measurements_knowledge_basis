@@ -1,0 +1,45 @@
+{
+  "duplicate_groups": 52,
+  "effective_objective_weight": 52.0,
+  "field_name": "k_i_rd",
+  "field_shape": [
+    10239,
+    4
+  ],
+  "finite_objective_rows": 75,
+  "log10_sigma": 0.5,
+  "max_abs_log10_residual": 3.474423738776311,
+  "mesh": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/broad_continuous_001_003_length_0p021m/bulk_w_projections.vtu",
+  "notes": [
+    "Prediction uses weighted arithmetic averaging of e^T K e over selected target cells.",
+    "Residuals are predicted log10(k) minus observed log10(k).",
+    "Objective weights divide duplicate rows with the same campaign, segment, depth and observed log10(k).",
+    "This evaluates only the direct permeability target layer; it does not run OGS or compare state observations."
+  ],
+  "objective_value": 269.83003197782165,
+  "objective_value_after_global_shift": 269.8299834094227,
+  "optimal_global_log10_shift_to_prediction": 0.0006833767891437039,
+  "optimal_global_permeability_multiplier": 1.00157477186056,
+  "reported_prediction_rows": 102,
+  "residual_by_segment": {
+    "BCD-A32": {
+      "count": 38,
+      "effective_weight": 27.0,
+      "weighted_mean_abs_log10_residual": 1.2996857400415318,
+      "weighted_rmse_log10": 1.685030523675502
+    },
+    "BCD-A33": {
+      "count": 37,
+      "effective_weight": 25.0,
+      "weighted_mean_abs_log10_residual": 1.1567144507570724,
+      "weighted_rmse_log10": 1.526475202740236
+    }
+  },
+  "target_cells": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/permeability_observation_cells.csv",
+  "target_rows": 204,
+  "targets": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/permeability_observation_targets.csv",
+  "used_in_objective_rows": 75,
+  "weighted_mean_abs_log10_residual": 1.230949543270157,
+  "weighted_rmse_log10": 1.6107512341290584,
+  "weighted_rmse_log10_after_global_shift": 1.610751089164446
+}

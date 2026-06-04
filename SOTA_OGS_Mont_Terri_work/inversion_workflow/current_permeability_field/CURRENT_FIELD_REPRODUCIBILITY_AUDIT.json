@@ -1,0 +1,183 @@
+{
+  "status": "current_field_reproducibility_verified",
+  "package_dir": "inversion_workflow/current_permeability_field",
+  "run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "required_failure_count": 0,
+  "warning_failure_count": 0,
+  "check_count": 19,
+  "manifest_row_count": 46,
+  "run_input_snapshot_file_count": 25,
+  "project_reference_count": 15,
+  "project_file": "inversion_workflow/current_permeability_field/ogs_run_inputs/cd_a_open_niche_quad.prj",
+  "total_active_objective_value": 3156.353066948979,
+  "direct_used_rows": 75,
+  "state_used_rows": 192,
+  "ogs_returncode": 0,
+  "field_triangle6_cell_count": 10239,
+  "field_positive_definite_cell_count": 10239,
+  "checks": [
+    {
+      "check_id": "summary_exists",
+      "group": "package",
+      "severity": "required",
+      "status": "pass",
+      "details": "summary path exists=True",
+      "evidence": "inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD_SUMMARY.json"
+    },
+    {
+      "check_id": "package_status",
+      "group": "package",
+      "severity": "required",
+      "status": "pass",
+      "details": "status=current_permeability_field_package_generated",
+      "evidence": "inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD_SUMMARY.json"
+    },
+    {
+      "check_id": "markdown_exists",
+      "group": "package",
+      "severity": "required",
+      "status": "pass",
+      "details": "current field package markdown exists",
+      "evidence": "inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD.md"
+    },
+    {
+      "check_id": "manifest_exists",
+      "group": "manifest",
+      "severity": "required",
+      "status": "pass",
+      "details": "manifest rows=46",
+      "evidence": "inversion_workflow/current_permeability_field/packaged_file_manifest.csv"
+    },
+    {
+      "check_id": "manifest_row_count_matches_summary",
+      "group": "manifest",
+      "severity": "required",
+      "status": "pass",
+      "details": "csv rows=46, summary rows=46",
+      "evidence": "inversion_workflow/current_permeability_field/packaged_file_manifest.csv; inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD_SUMMARY.json"
+    },
+    {
+      "check_id": "manifest_hashes_verify",
+      "group": "manifest",
+      "severity": "required",
+      "status": "pass",
+      "details": "all manifest sizes and SHA256 values verify",
+      "evidence": "inversion_workflow/current_permeability_field/packaged_file_manifest.csv"
+    },
+    {
+      "check_id": "required_packaged_files_present",
+      "group": "manifest",
+      "severity": "required",
+      "status": "pass",
+      "details": "all required packaged evidence files are present",
+      "evidence": "inversion_workflow/current_permeability_field/packaged_file_manifest.csv"
+    },
+    {
+      "check_id": "run_input_snapshot_required_files",
+      "group": "run_input_snapshot",
+      "severity": "required",
+      "status": "pass",
+      "details": "snapshot files=25",
+      "evidence": "inversion_workflow/current_permeability_field/ogs_run_inputs"
+    },
+    {
+      "check_id": "project_references_resolve",
+      "group": "run_input_snapshot",
+      "severity": "required",
+      "status": "pass",
+      "details": "project refs=15",
+      "evidence": "inversion_workflow/current_permeability_field/ogs_run_inputs/cd_a_open_niche_quad.prj"
+    },
+    {
+      "check_id": "nested_includes_resolve",
+      "group": "run_input_snapshot",
+      "severity": "required",
+      "status": "pass",
+      "details": "all nested include files resolve",
+      "evidence": "inversion_workflow/current_permeability_field/ogs_run_inputs"
+    },
+    {
+      "check_id": "combined_objective_components_sum",
+      "group": "objective",
+      "severity": "required",
+      "status": "pass",
+      "details": "component sum=3156.353066948979; total=3156.353066948979",
+      "evidence": "inversion_workflow/current_permeability_field/combined_objective_summary.json"
+    },
+    {
+      "check_id": "expected_active_components",
+      "group": "objective",
+      "severity": "required",
+      "status": "pass",
+      "details": "active_component_count=2",
+      "evidence": "inversion_workflow/current_permeability_field/combined_objective_summary.json"
+    },
+    {
+      "check_id": "direct_residual_rows_match_summary",
+      "group": "objective",
+      "severity": "required",
+      "status": "pass",
+      "details": "csv used rows=75; component used rows=75",
+      "evidence": "inversion_workflow/current_permeability_field/permeability_fit_evaluation.csv"
+    },
+    {
+      "check_id": "state_residual_rows_match_summary",
+      "group": "objective",
+      "severity": "required",
+      "status": "pass",
+      "details": "csv used rows=192; component used rows=192",
+      "evidence": "inversion_workflow/current_permeability_field/state_observation_evaluation.csv"
+    },
+    {
+      "check_id": "release_gate_passed",
+      "group": "release_gate",
+      "severity": "required",
+      "status": "pass",
+      "details": "status=pass; failures=0",
+      "evidence": "inversion_workflow/current_permeability_field/INVERSION_RELEASE_GATE_AUDIT.json"
+    },
+    {
+      "check_id": "ogs_execution_returncode_zero",
+      "group": "ogs_execution",
+      "severity": "required",
+      "status": "pass",
+      "details": "returncode=0",
+      "evidence": "inversion_workflow/current_permeability_field/OGS_EXECUTION_STATUS.json"
+    },
+    {
+      "check_id": "ogs_run_input_audit_accepts_inputs",
+      "group": "run_input_snapshot",
+      "severity": "required",
+      "status": "pass",
+      "details": "status=run_inputs_ogs_accepted_with_meshio_submesh_warnings; error checks=[]",
+      "evidence": "inversion_workflow/current_permeability_field/OGS_RUN_INPUT_AUDIT.json"
+    },
+    {
+      "check_id": "field_positive_definite",
+      "group": "field",
+      "severity": "required",
+      "status": "pass",
+      "details": "cells=10239; positive=10239; non_positive=0",
+      "evidence": "inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD_SUMMARY.json"
+    },
+    {
+      "check_id": "fixed_porosity_support",
+      "group": "field",
+      "severity": "required",
+      "status": "pass",
+      "details": "n_rd min/max=0.105/0.105",
+      "evidence": "inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD_SUMMARY.json"
+    }
+  ],
+  "source_artifacts": [
+    "inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD_SUMMARY.json",
+    "inversion_workflow/current_permeability_field/packaged_file_manifest.csv",
+    "inversion_workflow/current_permeability_field/current_best_bulk_w_projections.vtu",
+    "inversion_workflow/current_permeability_field/permeability_fit_evaluation.csv",
+    "inversion_workflow/current_permeability_field/state_observation_evaluation.csv",
+    "inversion_workflow/current_permeability_field/ogs_state_samples.csv",
+    "inversion_workflow/current_permeability_field/OGS_EXECUTION_STATUS.json",
+    "inversion_workflow/current_permeability_field/OGS_RUN_INPUT_AUDIT.json",
+    "inversion_workflow/current_permeability_field/ogs_run_inputs"
+  ]
+}

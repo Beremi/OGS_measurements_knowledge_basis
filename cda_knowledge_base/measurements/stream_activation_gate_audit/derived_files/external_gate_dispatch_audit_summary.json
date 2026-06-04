@@ -1,0 +1,90 @@
+{
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_gmail_drafts.csv",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_gmail_drafts.csv"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_dispatch_audit.csv",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_dispatch_audit.csv"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_dispatch_audit_summary.json",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_dispatch_audit_summary.json"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_dispatch_audit.md",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_dispatch_audit.md"
+    }
+  ],
+  "contact_route_status_counts": {
+    "coordinator_only_processing_owner_unresolved": 1,
+    "coordinator_only_provider_unresolved": 1,
+    "coordinator_only_source_owner_unresolved": 1,
+    "coordinator_only_specific_provider_unresolved": 2,
+    "coordinator_with_named_provider_cc": 2
+  },
+  "draft_count": 5,
+  "draft_paths": [
+    "inversion_workflow/external_gate_requests/bgr_ert_markus_furche_via_gesa_ziefle.md",
+    "inversion_workflow/external_gate_requests/bgr_historical_permeability_geometry_via_gesa_ziefle.md",
+    "inversion_workflow/external_gate_requests/bgr_other_hm_exports_via_gesa_ziefle.md",
+    "inversion_workflow/external_gate_requests/bgr_rh_boundary_curve_provenance_via_gesa_ziefle.md",
+    "inversion_workflow/external_gate_requests/taupe_tdr_calibration_via_gesa_ziefle.md"
+  ],
+  "failed_check_count": 0,
+  "generated_files": [
+    "inversion_workflow/external_gate_gmail_drafts.csv",
+    "inversion_workflow/external_gate_dispatch_audit.csv",
+    "inversion_workflow/external_gate_dispatch_audit_summary.json",
+    "inversion_workflow/external_gate_dispatch_audit.md"
+  ],
+  "generated_on": "2026-05-31",
+  "gmail_draft_request_count": 7,
+  "gmail_draft_tracker": "inversion_workflow/external_gate_gmail_drafts.csv",
+  "gmail_send_status_counts": {
+    "gmail_draft_created_not_sent": 7
+  },
+  "intake_directory_count": 5,
+  "intake_response_status_counts": {
+    "missing_response": 7
+  },
+  "missing_response_count": 7,
+  "no_response_recorded_count": 7,
+  "not_ready_request_count": 0,
+  "not_sent_request_count": 7,
+  "ready_request_count": 7,
+  "request_count": 7,
+  "request_ids": [
+    "ert_transform_support",
+    "ert_uncertainty",
+    "hm_numeric_exports",
+    "hm_uncertainty",
+    "rh_active_curve_provenance",
+    "taupe_unit_calibration",
+    "perm_endpoint_geometry"
+  ],
+  "request_pack_response_status_counts": {
+    "no_response_recorded": 7
+  },
+  "request_status_counts": {
+    "drafted_pending_send": 7
+  },
+  "response_note_template_count": 7,
+  "status": "external_gate_dispatch_gmail_drafts_created_waiting_user_send_and_responses",
+  "suggested_cc_present_count": 2,
+  "suggested_to_present_count": 7,
+  "summary_checks": {
+    "all_acceptance_tests_present": true,
+    "all_recipient_drafts_exist": true,
+    "all_refresh_commands_present": true,
+    "all_request_rows_have_gmail_draft": true,
+    "all_response_notes_exist": true,
+    "all_suggested_to_present": true,
+    "intake_request_ids_unique": true,
+    "request_id_counts_match_intake": true,
+    "request_ids_match_intake": true,
+    "request_ids_unique": true
+  },
+  "unique_gmail_draft_count": 5
+}

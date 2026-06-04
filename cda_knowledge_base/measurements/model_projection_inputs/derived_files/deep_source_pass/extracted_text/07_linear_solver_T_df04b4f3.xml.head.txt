@@ -1,0 +1,6 @@
+<linear_solver>
+<name>general_linear_solver</name>
+<eigen>
+<solver_type>PardisoLU</solver_type>
+</eigen>
+</linear_solver>

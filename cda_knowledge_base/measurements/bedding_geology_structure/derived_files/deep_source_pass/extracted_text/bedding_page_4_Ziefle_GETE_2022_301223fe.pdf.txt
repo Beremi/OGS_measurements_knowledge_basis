@@ -1,0 +1,1182 @@
+--- Page 1 ---
+Geomechanics for Energy and the Environment 31 (2022) 100325
+Contents lists available at ScienceDirect
+Geomechanics for Energy and the Environment
+journal homepage: www.elsevier.com/locate/gete
+Multi-disciplinary investigation of the hydraulic-mechanically driven
+convergence behaviour: CD-A twin niches in the Mont Terri Rock
+Laboratory during the first year
+G. Ziefle a,∗, T. Cajuhi a, N. Graebling b, D. Jaeggi d, O. Kolditz b,c, H. Kunz a, J. Maßmann a,
+K. Rink b
+a Federal Institute for Geosciences and Natural Resources (BGR), Hanover, Germany
+b Department of Environmental Informatics, Helmholtz-Centre for Environmental Research – UFZ, Leipzig, Germany
+c Technische Universität Dresden (TUD), Germany
+d Swiss Geological Survey, Federal Office of Topography (swisstopo), Wabern, Switzerland
+a r t i c l e i n f o
+Article history:
+Received 10 May 2021
+Received in revised form 29 January 2022
+Accepted 9 February 2022
+Available online 18 February 2022
+Editors-in-Chief:
+Professor Lyesse Laloui and Professor Tomasz
+Hueckel
+Keywords:
+Mont Terri CD-A experiment
+Coupled hydraulic–mechanical effects
+Geology
+Convergence measurements
+Numerical modelling (OpenGeoSys)
+Visualisation
+a b s t r a c t
+To enable safe geological storage of high-level radioactive waste, a comprehensive understanding of
+the overall system must include relevant physical processes, geological and geotechnical boundary
+conditions. In the Mont Terri Rock Laboratory (Switzerland) the Cyclic Deformation (CD-A) experiment
+has been established with the excavation of the two twin niches in the year 2019. To study the impact
+of the different climatic conditions on the hydraulic and mechanical processes in the claystone, an
+extensive investigation program has been carried out. As part of the CD-A experiment, we present
+here a multidisciplinary interpretation including geological characterisation, geodetic and geotechnical
+measurements, numerical modelling and visualisation techniques. The period under consideration
+runs between September 2019 and March 2021. Geological mappings illustrate different zones of
+tectonically induced faulted rock in the sandy facies of the Opalinus Clay and laserscans conducted at
+regular intervals show small convergence of the niches. While the deformation around the open niche
+tends to continue, extensometer measurements around the closed twin indicate a reduced deformation
+after the first months. First coupled hydraulic–mechanical simulations demonstrate that the numerical
+approach is capable of reproducing the hydro-mechanical behaviour qualitatively, including the
+extent of the desaturated zone. The application of state-of-the-art visualisation techniques allows
+simultaneous evaluation and comparison of geological features, measurements and simulation results.
+This holistic approach – discussed here exemplary for the mechanical effects – provides a valuable basis
+for the rating of the impact of geologic structures, material heterogeneities, and climatic conditions
+on the Opalinus Clay. Thus, it can be a valuable component for the safe construction and operation of
+a repository and for the long term safety assessment.
+© 2022 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY-NC-ND
+license (http://creativecommons.org/licenses/by-nc-nd/4.0/).
+1. Introduction
+The siting process for high-level radioactive waste repositories
+(HLW) is a challenging task of international interest, which is
+being dealt with at EU level in joint projects like EURAD e and
+PREDIS.f The challenge to meet social and political requirements
+concerning the safety of such repositories during a period of
+up to one million years is a worldwide challenge. As a matter
+of fact, there exist several approaches to investigate the related
+∗ Corresponding author.
+E-mail address: Gesa.Ziefle@bgr.de (G. Ziefle).
+e https://www.ejp-eurad.eu/ Last access date: 22-01-24.
+f https://predis-h2020.eu/ Last access date: 22-01-24.
+geological, physical, chemical and biological effects and obtain
+an increased understanding of the relevant processes, the char-
+acteristics of the host rock and the geotechnical barrier. The
+common goal of all investigation concepts is a fundamental un-
+derstanding of the whole system as this is of significant impor-
+tance for the implementation of a secure repository for high-level
+radioactive waste. Typical investigation methods are geological
+investigations, laboratory investigations, in-situ measurements,
+as well as numerical modelling approaches. Many of these inves-
+tigations are hosted in Underground Research Laboratories like
+Äspö1 in Sweden, Meuse/Haute-Marne 2 in France, Grimsel 3 and
+Mont Terri 4 in Switzerland amongst others. They are operated
+in close collaboration with related laboratory experiments. The
+development of conceptual approaches and numerical models for
+https://doi.org/10.1016/j.gete.2022.100325
+2352-3808/© 2022 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/by-
+nc-nd/4.0/).
+
+--- Page 2 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 1. Location of the CD-A experiment in the Mont Terri rock laboratory.
+safety assessments associated with these geophysical investiga-
+tions is carried out in the context of international projects like
+DECOVALEX,5 FORGE,6 BEACON7 and implemented in codes like
+OpenGeoSys,8,9 CodeBright,10 Lagamine,11,12 3DEC13,14 amongst
+others. Additional effort is undertaken in the area of data as well
+as knowledge management, visualisation techniques and recently
+also in fields like artificial intelligence or similar approaches. All
+geological and geophysical findings have to be interpreted in a
+combined manner to establish a groundwork for a holistic under-
+standing of the system including information about uncertainties
+and possible risks. The complex information is characterised by
+various uncertainties and relevant boundary conditions that have
+to be considered for the interpretation of the results. Conse-
+quently, there exists a relevant need of knowledge management
+in order to find the best possible solution for the management
+of high-level radioactive waste. This is an important basis for a
+political decision which is supported by the population.
+This paper focuses on the interface between geologic-
+geophysical investigations and numerical modelling approaches
+with regard to the impact of host-rock heterogeneities on the
+convergence behaviour around an excavation. Understanding the
+short- and long-term convergence behaviour of excavations is a
+challenging task with high relevance for the safety assessment of
+a potential HLW repository. The topic has also been discussed in
+Refs. 15–18. In the literature, various laboratory and in-situ obser-
+vations concerning the geologic and geophysical characteristics
+of Opalinus Clay at different scales and with different areas of in-
+terest are reported and discussed. General geologic investigations
+exist to characterise the Opalinus Clay like. 4,19–21 Other studies 22
+focus on the hydraulic and mechanical properties of the exca-
+vation damaged zone and on the hydraulic–mechanical effects
+due to excavation 15,23 using in-situ investigations. Furthermore,
+research is carried out to understand the coupled HM behaviour
+of fault zones. 24,25 Additionally, laboratory experiments are per-
+formed, interpreted and discussed in Ref. 26. Nevertheless, the
+interpretation of the observed characteristics and the related nu-
+merical modelling approaches are part of the current research 27
+and pose many open questions, for example the implications of
+fault zones for safety assessments. General statements are rarely
+possible and the interpretation demands interdisciplinary collab-
+oration. The work at hand presents a combined interpretation
+of geologic characterisation as well as geodetic and geotechnical
+measurements supported by visualisation techniques. It focuses
+on a specific experiment carried out in the Opalinus Clay of
+the Mont Terri rock laboratory in Switzerland and enables an
+improved system understanding. The interdisciplinary approach
+shown here proposes a methodic approach shifting from a pure
+process level to a system level understanding. It provides infor-
+mation about the possibilities of different investigation methods
+and, with the help of visual methods, simplifies the interpretation
+of the results obtained. Finally, it aims at informing about the
+impact of various fault zones on the integrity and stability of
+potential waste repositories.
+The Mont Terri rock laboratory accommodates various field
+experiments focusing on coupled thermal, hydraulic, mechanical,
+chemical and biological effects in Opalinus Clay as summarised in
+Ref. 4. The coupled hydraulic–mechanical (HM) effects are in the
+focus of experiments like the Ventilation Experiment (VE), 28 the
+RA experiment (Updated review of the Rock Mechanics Properties
+of the Opalinus Clay of the Mont Terri URL based on Laboratory
+and Field Testing 29) and also in the CD-A (Influence of humidity
+on cyclic and longterm deformations) experiment. It aims for the
+comprehension of these effects in claystone as they are of signif-
+icant importance for the evaluation of the stability and integrity
+of a potential deep geological HLW repository. It is important to
+notice that the mentioned effects are long term effects. The ex-
+pected convergence of the niches as well as possible desaturation
+effects take place over dozens of years whereas the investigations
+presented in this contribution were carried out in the first one to
+two years after excavation. Consequently, the presented results
+focus on the understanding of the system with its heterogeneities
+and potential areas of particular interest. The interpretation of
+measurements as well as the comparison of measurements and
+modelling results focuses on general observations concerning
+the system understanding and on a qualitative comparison of
+measurements with numerical modelling results at this stage. The
+planned quantitative numerical investigation of the convergence
+behaviour will be based on the presented findings concerning the
+impact of fault zones and on calibrated and further developed
+numerical models.
+The CD-A experiment evaluates strongly coupled hydraulic–
+mechanical processes, aiming at the identification of the signifi-
+cant effects in the vicinity of an excavation. It is characterised by
+two parallel niches of 2.3 m diameter and 11 m length, which are
+both oriented perpendicular to the strike of bedding and intersect
+the same stratigraphical level. The CD-A experiment has been
+implemented in 2019 and is located in the so-called Gallery 18.
+Fig. 1 pictures the Mont Terri Rock Laboratory in combination
+with the finite element mesh for the numerical CD-A model. The
+rock near Gallery 18 is characterised by the sandy facies of the
+Opalinus Clay. In the remainder of this paper, the colour code
+generally used in the context of the CD-A experiment is used,
+i.e. results of the open twin are plotted in blue, while results
+of the closed twin are plotted in red, indicated by the red door
+sealing the closed niche (presented in Fig. 2). The position along
+the niche axes is given below in niche meters (NM), with niche
+meter zero at the niche entrance of each niche. The host rock is
+characterised by different zones of fractured rock. The excavation
+and the climatic conditions in the niches lead to a desaturation
+of the surrounding Opalinus Clay and convergence of the niches.
+The surface of the claystone in the niches is not covered by any
+kind of stabilising support as it can be seen in Fig. 2, which
+2
+
+--- Page 3 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 2. View into the twin niches. The niches have a diameter of 2.3 m. The surface of the claystone is neither stabilised nor covered.
+Fig. 3. Relative air humidity monitoring the seasonal effects in the open twin and the high relative humidity in the closed twin within the first years.
+provides a view of both niches. Consequently, a direct exchange of
+the humidity and temperature in the niches and the claystone is
+possible, which includes desiccation effects leading to shrinkage
+and possible fracturing. While the closed niche features an air
+lock at the entrance to ensure that the relative air humidity
+remains as high as possible to avoid desaturation effects, the
+climatic conditions in the open niche vary due to seasonal effects
+as in the rest of the Mont Terri rock laboratory Fig. 3. With that,
+the CD-A experiment focuses on a comparison of the processes
+of the two parallel niches: the open niche is characterised by
+effects due to seasonal desaturation, whereas desaturation effects
+are minimised in the closed niche by maintaining a constant high
+humidity.
+After the excavation of the niches, laser scans of both niches
+have been carried out and give precise information about the con-
+vergence behaviour. Furthermore, various measurements focus-
+ing on the deformation behaviour as well as hydraulic aspects are
+carried out and introduced in Ref. 30. Fig. 4 provides an overview
+of boreholes around the twin niches, hosting various devices
+monitoring the temperature, the water content (Taupe/TDR mea-
+surements), the permeability (Evapometer measurements), the
+pore pressure (Minipiezometer measurements) and the tempera-
+ture and strains (Extensometer measurements). Additional mea-
+surements focusing on the climatic conditions, the evolution of
+the water content, the electric resistivity and the evolution of
+microcracks are carried out within the niches. This paper concen-
+trates on the deformation measurements within and around the
+niches, while the results of related measurements are discussed
+in Refs. 31, 32. Further publications concerning these topics are
+in preparation.
+Besides the measurements, the current study focuses on the
+visualisation and interpretation of the measured convergence
+during the first years after excavation. Potential impacts of the
+heterogeneities characterising the claystone as well as preexisting
+fractured areas and climatic conditions within the niches are
+taken into account.
+2. Methods of investigation
+The combination of different investigation methods is a
+promising procedure for an increased understanding of the com-
+plex coupled hydraulic–mechanical effects in the heterogeneous
+claystone. The investigation program comprises the geologic
+characterisation, geophysical measurements, numerical modelling
+and visualisation techniques and a combined interpretation of the
+results is presented in the following Section 3.
+2.1. Geology of the open and closed twin niches
+This section provides information about the geology of the
+niches as it is presented in Ref. 33 in detail. More information
+about the lithography of the Opalinus Clay in the area of the
+Mont Terri rock laboratory can be found in Refs. 4, 20, 21. The
+tectonic structure of the main fault is discussed in Ref. 34 and the
+3
+
+--- Page 4 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 4. Section of Gallery 18 (blue) with the closed (red) and open (blue) twin niche. The gallery is shown opaque while its excavation disturbed zone is slightly
+transparent. Also visible are boreholes containing measurement equipment. The precise location where the extensometer sensors are installed is shown in yellow.
+Fig. 5. Closed twin NM8.8, sideritic lenses (brown), biodetritic rich lenses (blue)
+and pyrite nodule (yellow) illustrating the heterogeneity of the upper sandy
+facies.
+geomechanical behaviour across multiple scales is summarised in
+Ref. 17.
+2.1.1. Methodology
+The geological mapping of the open and closed twin niches
+was performed in September 2019. The two 11 m long niches
+with 2.3 m circular shape were excavated with daily progress
+ranging between 1 and 2 m with a pneumatic hammer. The pho-
+togrammetric system ShapeMetrix3D ™ was applied in order to
+document the geological structures on a fully digital basis. At the
+outcrop, a digital mapping on a tablet computer was combined
+with the photogrammetric acquisition. Once the 3D model of the
+daily advance was created in the office, the geological model
+could be refined and imported into the geo-modelling tool move ™
+for further geometric analysis and the creation of the geological
+map view.
+2.1.2. Results regarding lithology
+The two niches are located in the upper sandy facies entirely.
+Bedding here is dipping 55–60 ◦ towards 145◦. The axis of the two
+niches is oriented perpendicular to strike of bedding. The upper
+sandy facies is characterised by silty clay with abundant thin
+elongated sand lenses, mm-thick sand layers, calcareous micritic,
+bioturbated and sideritic nodules and biodetritic layers (Fig. 5).
+Up to several tens of cm long calcareous micritic concretions
+with typical inherent calcite veins and cm-long pyrite nodules
+are common. The abrupt changes of rather soft laminated clay
+to well cemented and extremely hard micritic concretions lead
+to high sedimentary heterogeneity and changing rock stiffness.
+For both niches, especially in the first 3 m, micritic layers of up
+to 30 cm thickness and large concretions are abundant. Sideritic
+lenses and pyrite nodules occur all over the place. A significant
+pyrite horizon composed of discontinuous individual nodules of
+1–3 cm thickness is present in both niches at niche meter 3.0 m.
+Fig. 6. Flat SSW-dipping fault displacing a biodetritic bed within the first niche
+meter of the closed twin. The lower photo displays the second crossing of the
+bed (to the left of the upper photo).
+2.1.3. Results on tectonic structure
+The faults in the closed twin niche form 3 clusters. Bedding
+parallel faults (144/57), flatly SW-dipping faults (195/30) and N-
+S-striking faults. At niche meter (NM) 2.0, a flat SW-dipping fault
+displacing a biomicritic carbonate bed by about 20 cm is present
+(Fig. 6 top). The fault cuts the same bed on the left tunnel wall
+displacing the bed of about 15 cm. At this location, the fault
+splits into two branches (Fig. 6 bottom). Another conspicuous
+fault is a vertical N-S striking fault (097/85) with thin calcite
+crystallisation. The fault crosscuts the niche obliquely from NM6
+to NM8.7. The N-S striking fault was formed relatively early in
+the tectonic history as it was displaced by bedding parallel fault
+planes at several locations with displacements ranging between
+5 to 15 cm (Fig. 7).
+Although the two twin niches are parallel and only 10 m apart,
+the observed characteristics of the faults in this region strongly
+4
+
+--- Page 5 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 7. N-S-striking fault in the closed twin, here in the ceiling. Displacement
+(A) and rotation (B) of the fault when crossing bedding parallel faults.
+Fig. 8. Open twin, NM 5.5. Bedding-parallel fault zone (dark red) cutting a flat
+SW-dipping fault (orange) (view towards East).
+Fig. 9. Open twin, system of flatly dipping (238/07) faults (red) showing drag
+folds (orange) and cm displacement of bedding planes (green). Faults are filled
+with calcite precipitations and visible as veins.
+differ as shown in Fig. 10. In the open twin, mainly flat to very
+flat faults dipping SW and NW are observed. Scaly clay occurred
+at a flat NW-dipping fault (296/25) intersected by the SW-dipping
+one at NM 5.5. One major bedding parallel structure is observed.
+It is a 5 to 15 cm-thick fault zone (145/59) with scaly clay and
+well visible shear bands at NM 4.5. This bedding parallel fault
+zone is cutting a flat SW-dipping fault (222/07). On the other
+side of the fault zone, the flat SW-dipping fault is not visible
+anymore (Fig. 8), pointing to an enhanced displacement. This
+fault is part of series of calcite-filled faults occurring from NM 5.5
+until NM 11. They are organised in a system with several levels
+of flat SW-NW-dipping (10–25 ◦) faults. All these veins are being
+displaced or stopping at the bedding parallel fault zone. As part
+of the faults, these veins are featuring a varying thickness across
+short distances and often split into several branches. Calcite veins
+can be traced over several metres and some of them show well
+developed drag folds indicating a dextral shear direction (Fig. 9).
+2.2. Geodetic and geotechnical measurements
+In the context of the CD-A experiment, different kinds of
+geodetic and geotechnical measurements are used. While this
+paper focuses on the deformation measurements, the investiga-
+tions concerning the water content and the pore pressures will be
+discussed in accompanying publications (in preparation). Further
+information concerning the installation and the set-up of the
+measuring program can also be found in Refs. 30, 35. Concerning
+the convergence of the niches, the laser scans provide detailed
+information at each point of the surface of the niches, while the
+extensometers measure deformations within the host rock and
+the 3D-convergence measurements provide precise information
+of the convergence of the niches with regard to defined an-
+chor points and dates. The different kinds of measurements are
+summarised in Table 1 and introduced in this section while a
+discussion of the results can be found in Section 3.
+2.2.1. Laser scans
+Within the first year after the excavation of the niches, laser
+scans with a resolution of 1 mm and an accuracy in the order of
+2 to 3 mm have been carried out at seven different days during
+the whole year and introduced in Ref. 36. The measurements
+are related to fixed points in Gallery 18, known to be station-
+ary and located in the niche area. Within and in front of each
+niche, various targets have been positioned for the calibration
+of the point clouds. About 6 scans per niche were performed
+for pre-calibration on site to obtain the highest accuracy for
+the measurements on the rock. The distance of the targets, the
+resolution and the angle of impact of the laser on the measured
+element were taken into account to guarantee the quality of
+the measurements. First results indicate that both niches are
+very stable with small deformations in a range of millimetres.
+Fig. 11 (top) presents the results of the laser scans for the initial
+measurements, carried out on September 13, 2019. Within the
+context of the CD-A experiment, the temporal evolution of the
+deformations at different locations is of particular interest. The
+results indicate areas where the surface of the host rock moves
+towards the central axis (convergence) of the niche or in the op-
+posite direction (divergence) as it is presented in Fig. 11 (bottom).
+A cylindrical coordinate system has been used for calculation and
+evaluation of the changes.
+Fig. 12 shows the deformation of the closed and open niches at
+different dates after postprocessing. The visualised measurements
+have been carried out in winter 2019 and summer 2020 during
+the first year after excavation and are evaluated with regard
+to the initial measurement in September 2019. Both niches are
+very stable but are also characterised by an ongoing convergence
+process with deformations in the range of tenth of millimetres
+as indicated by the yellow areas. These measurements indicate
+a convergence of the niches in the vertical direction, while the
+horizontal deformations show no clear trend for this short time
+period since excavation. In the open niche (blue frame), the
+pictured deformations depend significantly on the distance to the
+Gallery 18. A possible reason might be the geological characteris-
+tic of the host rock in this area. Judging the influence of seasonal
+changes of the climatic conditions is currently not possible. This
+is due to the fact that the available measurements correspond to
+a single year after excavation. Further observation of these effects
+within the next years will provide important information to an-
+swer some of these questions and will be part of the long-term
+investigation program within the CD-A experiment.
+5
+
+--- Page 6 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 10. Faults observed in the area of the twin niches as 3-dimensional plot (top) and 2-dimensional presentation as given in Ref. 33 (bottom).
+Table 1
+Convergence measurement methods within the CD-A experiment and respective
+measured entities.
+Method Position Interval Measured entity Unit
+Laser scans Surface Varying [months] Position –
+Convergence Depths 5 cm Varying Displacement mm
+measurements and 20 cm [months]
+Chain extensometer Boreholes Continuous Displacement mm
+2.2.2. 3D-convergence measurements
+Convergence measurements are carried out within both niches
+and are described in detail in Ref. 30. The prisms for the conver-
+gence measurements are located at three different profiles within
+each niche. They are fixed in a depth of 5 cm at niche meter
+5.5 m and at a depth of 20 cm at 5.0 m and 6.0 m, respectively.
+This kind of measurements focuses on the long term evolution of
+the niches and provides periodic information regarding the dis-
+placement of the prisms. Measurements during the first months
+after excavation are depicted in Fig. 13 for the vertical direction
+and in Fig. 14 for the translatoric direction. The results for the
+positions in the upper part of the niches are presented at the
+top, the lower positions at the bottom. The vertical displacements
+indicate an uplift of the ground and a subsidence of the roof
+which is consistent with the expected convergence of the niches.
+This trend can be seen at all measured positions of the closed
+twin. Differing results are measured only for upper region of
+the SW-oriented (‘‘left’’) part of the open twin which exhibits
+different results compared to the NE-oriented part of this niche.
+Fig. 14 shows the translatoric displacements within the niches.
+While all positions indicate displacements up to a maximum of
+2.5 mm, there is one outlier in position 60. This point shows
+higher values up to 3.0 mm. Nevertheless, all measurements
+indicate a trend of the displacements towards the NE-direction.
+Furthermore, the measurements in the open twin indicate a slight
+influence of the seasonal variations of the climatic conditions of
+the niches. This is a preliminary assumption based on very few
+measurements carried out until now.
+As expected, the measurements indicate a convergence of the
+niches. This trend is even clearer for the vertical direction than for
+6
+
+--- Page 7 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 11. The initial measurements of the open niche (top left/blue frame) and the closed niche (top right/red frame) are shown. The evaluation of the convergence
+due to laser scan data at different dates are depicted on the bottom: the deformation of the niche leading to a reduction of its profile is shown in yellow, while a
+profile extension is shown in red.
+Fig. 12. Convergence of the niches resulting from laser scan data at different times. Yellow areas: Convergence of the niche. Red areas: Extension of the niche.
+7
+
+--- Page 8 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 13. Measured vertical displacements [mm] of the anchor points during the first months after excavation. The blue lines indicate results of the open twin and
+the red lines of the closed twin. The dashed lines represent the anchors at the SW-oriented (‘‘left side’’) positions while the solid lines represent the anchors at the
+NE-oriented (‘‘right side’’) positions within the niches.
+the horizontal direction, which can also be seen in Fig. 15. Here,
+the displacements measured in February 2021 are visualised with
+regard to the initial state measured by the laser scan. While the
+colour code represents the amplitude of the displacement, the
+radius of the coloured dots provides information about the depth
+of the anchor (big sphere: anchor depth of 5 cm and small sphere:
+anchor depth of 20 cm). Outliers are located in the NE-part of the
+open twin and the SW-part of the closed twin, which could be
+caused by the geologic heterogeneities in these zones.
+2.2.3. Extensometer measurements
+Extensometer measurements are used to get information
+about the deformation behaviour around the niches. The ex-
+tensometer measurements are located in boreholes around the
+niches as depicted in Fig. 4 and as it is carried out similarly in
+Ref. 15. Each niche accommodates a vertical and a horizontal
+borehole with a length of 4 m each. Two additional boreholes
+have been drilled from the gallery and end up at about 1 m below
+the niches respectively. They have a length of approximately
+12.5 m each. Within the boreholes, chain extensometers have
+been installed. They consist of anchor-elements connected to
+each other by glass fibre rods and measure the unidirectional
+displacements of the anchor points relative to each other. The
+measuring range of the displacement sensors is 100 mm and
+provides an accuracy of 0.0015% of full scale (FS). The sensor is
+also equipped with a temperature measurement device and pro-
+vides information about the length of each segment continuously.
+Further information is summarised in Ref. 37.
+As the chain extensometers provide measurements of the
+change of the length of a segment between two anchor points,
+there is no fixed point which could be used as a static refer-
+ence. Consequently, the evaluation of the displacements contains
+uncertainties as every point might be subjected to possible move-
+ments. As a consequence, the interpretation of the measured
+values in the following section is carried out with two different
+approaches, namely the segmental interpretation and the fixpoint
+interpretation. The segmental interpretation gives information
+about the strains of each single segment and indicates directly
+the segments which are characterised by compression or ex-
+tension. In contrast to that, the fixpoint interpretation of the
+measurements is characterised by the assumption that the point
+with the largest distance to the niche is fixed. This gives the
+opportunity to indicate the displacements of each anchor point
+relative to the fixpoint. One has to keep in mind that especially for
+the boreholes, which are drilled from the gallery, this approach
+neglects displacements near the gallery.
+The temporal evolution of the segmental strains is presented
+in Fig. 16 (top) for both niches while Fig. 16 (bottom) shows the
+8
+
+--- Page 9 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 14. Measured translatoric displacements [mm] of the anchor points during the first months after excavation. The blue lines indicate results of the open twin
+and the red lines of the closed twin. The dashed lines represent the anchors at the SW-oriented (‘‘left side’’) positions while the solid lines represent the anchors
+at the NE-oriented (‘‘right side’’) positions within the niches.
+Fig. 15. Visualisation of the last date of measurement (February 2021) for the open twin (left) and the closed twin (right) at a depth of 5 cm (big sphere) and of
+20 cm (small sphere) in combination with the laser scan data.
+situation for the last measuring date in a 3-dimensional view.
+Here, the colour code of the segments represents the strains of
+each segment. The fixpoint interpretation is pictured in Fig. 17.
+The colour code of the measuring points indicates displacements
+with regard to the fixpoint. Positive values suggest an increase
+of the distance to the fixpoint while negative values indicate a
+movement of this point towards the fixpoint. Generally, the order
+of magnitude of the measured deformations is in the range of
+tenths of a millimetre. This order of magnitude of deformations
+seems to be in line with other tests, such as mine-by tests in
+different kinds of shales, 15,23 which yield deformations in the
+range of a few millimetres up to some centimetres. The measure-
+ments in the vertical boreholes indicate an uplift of the ground
+in both niches as expected, but the deformations around the
+open niche are generally larger. Finally, the interpretation of the
+measurements yields the following assumptions:
+• Movements around the open niche (BCD-A2 and BCD-A6)
+are significantly higher than at comparable locations at the
+closed niche. This can be seen clearly in both interpretations
+(Figs. 16 and 17). The measurements along the borehole
+BCD-A2 are characterised by heterogeneities which lead
+to differing results for the different measuring points and
+segments. This effect might be due to heterogeneities and
+fractures in this area.
+9
+
+--- Page 10 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 16. Evaluation of the extensometer measurements as segmental strains [mm/mm] near the closed twin (left/red) and the open twin (right/blue). Top:
+measurements of BCD-A1 (closed niche) and BCD-A2 (open niche) (drilled from the gallery); Centre upper part: measurements along the vertical boreholes; Centre
+lower part: measurements along the horizontal boreholes. Bottom: Visualisation of the segmental displacements along the boreholes drilled from the gallery for the
+last measuring date.
+• The vertical deformations are characterised by positive
+strains (extension) – they indicate an uplift of the ground
+of the niches. Remarkable in this context are the results of
+the segments near the twins (darkest lines). As expected,
+these points show the highest values. Furthermore, they
+show significantly different behaviour, which might be due
+to the different climatic conditions within the niches and
+will be part of further investigations.
+• Horizontal displacements are significantly smaller than ver-
+tical displacements.
+• While the deformation around the open niche tends to
+continue, the measurements in the closed niche seem to be
+10
+
+--- Page 11 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 17. Extensometer measurements near the open twin (left/blue) and the closed twin (right/red): Evaluation of measured displacements related to a fixpoint. This
+fixpoint is assumed to be at point 0, which is located at the deepest point of the borehole. Top: Measurements of BCD-A2 (open niche) and BCD-A1 (closed niche)
+(drilled from the gallery); Central upper part: Measurements along the vertical boreholes; Central lower part: Measurements along the horizontal boreholes. Bottom:
+Visualisation of the extensometer measurements along the boreholes drilled from the gallery 1.5 years after installation.
+11
+
+--- Page 12 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 18. CD-A numerical model setup. The closed niche is represented in red, while the parallel oriented open twin niche is coloured in blue. The niches are accessed
+through the gallery (blue). In the closed niche, a constant pressure is applied. Both the open niche and the gallery are subjected to a cyclic pore pressure. The
+pressures assigned to the boundary conditions (outer boundary layer of each niche) are based on the measured relative air humidity.
+characterised by reduced deformation after the first years.
+This might be a result of the climatic conditions within
+the closed niche and should be part of further long-term
+investigations.
+2.3. Numerical modelling
+At this early state of the CD-A experiment, the model set-up
+aims for a basic understanding of the prevailing processes. Het-
+erogeneities as they are discussed in this paper as well as more
+complex constitutive relationships like plastic or viscous be-
+haviour, saturation dependent parameters, and swelling/shrinkage
+of the host rock are not captured in the model so far. To reproduce
+the cyclic deformation related to the coupled process induced
+by seasonal humidity changes, a three-dimensional model of the
+Opalinus Clay with the Gallery 18 and both twin niches has been
+set up using the Finite Element software OpenGeoSys (OGS). 38,39
+This modelling software is open-source, which is of great ad-
+vantage in the research of numerical methods. In the geosci-
+entific community, OGS is used to simulate thermal–hydraulic–
+mechanical and chemical processes in porous media. In this
+work, a macroscopic hydro-mechanical model consisting of the
+momentum balance equation of the solid and the mass balance
+equation of the pore fluid 18,39,40 is used. The coupling between the
+hydraulic and mechanical processes is realised by the Biot’s effec-
+tive stress law and a linear Bishop’s approximation. 40–42 The main
+variables of the model are the solid displacement vector (de-
+formation) and the liquid pore pressure. The hydro-mechanical
+coupled model takes into account variable saturation according
+to the Richards assumption 43: The air pressure is considered
+constant and the liquid pore pressure drives the development
+of capillary pressure. The balance equations are complemented
+with constitutive laws such as the van Genuchten curve 44 to
+compute variable saturation. The gas entry pressure, shape pa-
+rameter and residual saturation for fitting the van Genuchten
+curve are displayed in Table 2. Fig. 18 shows different views of
+the modelled domain, which has dimensions of approximately
+50 × 30 × 20 m 3 and which is discretised by approximately
+180 thousand tetrahedral elements for the computation with the
+Finite Element Method. Note that the air lock between the gallery
+and the closed niche are explicitly modelled, whereas the exca-
+vation damage zones are not. The material properties utilised in
+the simulation correspond to the sandy facies of the Opalinus Clay
+with anisotropic hydraulic and mechanical behaviours described
+in the literature. 4 The material properties are summarised in
+Table 2. An anisotropy ratio of 2.5 is chosen to compute intrinsic
+permeability.45
+Initially, an in-situ stress 18,46 is assigned to the mesh and the
+liquid pore pressure is set to 0 MPa on the entire domain. The
+measurements of in-situ stress and in-situ pore pressure are chal-
+lenging and change due to activities such as excavation and open
+Table 2
+Parameters and material properties for modelling the CD-A experiment.
+Parameter Value
+In-situ stress −(5, 5, 7) × 106 Pa
+In-situ pore pressure 0 .0 × 106 Pa
+Grain density 2520 kg m −3
+Porosity 0.105
+Liquid density 1000 kg m −3
+Dynamic viscosity 1 .0 × 10−3 Pa s −1
+Bulk modulus 1 .0 × 109 Pa
+Intrinsic permeability 1 .0 × 10−19 m2
+Anisotropy ratio 2.5
+Gas entry 10 .0 × 106 Pa
+Shape parameter 0.45
+Residual saturation 0.10
+Elastic modulus (perpendicular) 6 .0 × 109 Pa
+Elastic modulus (parallel) 13 .8 × 109 Pa
+Poisson’s ratio (perpendicular) 0.22
+Poisson’s ratio (parallel) 0.44
+Shear modulus (perpendicular) 3 .2 × 109 Pa
+Biot coefficient 1
+conditions.46,47 Note that the in-situ pore pressure is smaller than
+the measured pore pressure in Mont Terri 48 to avoid numerical
+instabilities due to the boundaries (size) of the modelled domain.
+Since the focus of the current paper is a qualitative comparison
+between the model behaviour and measurements, the effect of
+initial conditions, excavation and selected heterogeneities will be
+considered in further investigations. Furthermore, the mechanical
+boundary conditions are assigned to avoid rigid body motion nor-
+mal to the outer boundaries and the liquid pore pressure around
+the outer boundaries of the domain corresponds to the initial
+condition. In the experimental setup, the relative air humidity is
+monitored in the niches as depicted in Fig. 3. To reproduce the
+experiment and obtain input data for the numerical simulation,
+we calculate the pore pressure using the relative air humidity via
+the Kelvin equation. To reproduce the seasonal changes of relative
+humidity, a seasonal, sine shaped, time-dependent pore pressure
+is applied in the open niche and gallery walls (blue segments in
+Fig. 18). A constant pressure based on the average of the largest
+monitored air humidity values is applied in the closed niche (light
+red segments in Fig. 18).
+The model is able to reproduce the expected coupled hydro-
+mechanical behaviour qualitatively, where changes in saturation
+lead to deformation (displacements). Desaturated zones are iden-
+tified in the simulation after a few winter-summer cycles as
+shown in Fig. 19. These results are in agreement with the ob-
+servations, since desaturation is recorded during winter, while
+a re-saturation is observed in the near field during the summer
+period.18 The low permeability of the rock does not allow for
+rapid changes in saturation and the material remains wetter,
+12
+
+--- Page 13 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 19. Desaturated zones around the niches and the gallery.
+Fig. 20. Location of the experiment within the stratigraphy of Jurassic mountains. Left: Visualisation of the sandy and shaly layers within the Opalinus Clay (OC).
+Right: mapping layer information onto the tunnel system.
+the further away it is from the open niche/gallery. To avoid
+repetitions, the results concerning the mechanical behaviour are
+discussed and compared with the experiments in Section 3. Fur-
+ther aspects regarding the modelled domain, influence of exca-
+vation and extension of constitutive laws to allow the modelling
+of shrinkage-induced cracking 32,49 will be considered in future
+studies.
+2.4. Visualisation
+To facilitate an improved understanding of the complex pro-
+cesses taking place inside the layer of Opalinus Clay surrounding
+Gallery 18 and the twin niches, a 3D scene has been set up
+using the OpenGeoSys Data Explorer. 50 and ParaView 51 Both pro-
+grammes employ the VTK programming library 52 for creating,
+modifying, and representing 3D objects and datasets. Structures
+such as the tunnel system, geological layers and faults are repre-
+sented via triangulated surfaces of varying resolution, depending
+on the level of detail needed to adequately represent the data.
+Boreholes shown in Fig. 4 are represented via tubes with a diam-
+eter scaling corresponding to the size of the diameter of the drill
+bit used, with locations of sensor positions (e.g. extensometers)
+being enlarged for emphasis. The numerical model detailed in
+Section 2.3 consists of over 180.000 tetrahedra, including more
+than a dozen parameters assigned to either nodes or cells, includ-
+ing material parameters required for the simulation as well as
+values calculated during the process simulation. Colour look-up
+tables and parameters such as transparency, scaling, or light-
+ing can be adjusted for each dataset individually, based on the
+requirements of the research. In addition, datasets can be post-
+processed by applying algorithms either modifying the geomet-
+rical structure of the data (e.g. clipping planes) or calculating
+representations on the node- or cell-based parameters (e.g. con-
+tour surfaces based on simulated saturation, as shown in Fig. 19).
+CAD-data, measurements, and simulation results are integrated
+within the same frame of reference, allowing for an interactive
+exploration of the setup of the experiment (Fig. 4). With the scene
+being fully interactive and the user being able to navigate freely
+and to adjust parameters as needed, it also becomes possible
+to thoroughly explore and assess the complex transient hydro-
+mechanical simulation results calculated via OpenGeoSys and
+compare them to observation data collected via sensors. In addi-
+tion, the 3D scene gives a structural perspective of discontinuities
+within the domain of the experiment and where the experiment
+is located, both within the Mont Terri tunnel system (Fig. 1) and
+within the sandy facies of the Opalinus Clay layer as part of the
+complex stratigraphy of the Jurassic Mountains (Fig. 20).
+3. Holistic interpretation and discussion of the results
+The aim of the presented investigations is an increased pro-
+cess understanding of the hydraulic-mechanically driven effects
+around the niches and the understanding of the geological sys-
+tem. The derived information of geological investigations has to
+be interpreted regarding the impact of different heterogeneities
+in order to decide whether the detected fault zones have to be
+considered in the numerical modelling approach. The introduced
+approaches give complementary information on various scales
+of time and space. The expected coupled hydraulic–mechanical
+processes are characterised by the excavation effects as well
+as the initial desaturation of the claystone around the niches
+and the gallery. The host rock is characterised by heterogeneous
+claystone and a complex non-linear material behaviour. The cou-
+pled hydraulic–mechanical effects are influenced and controlled
+13
+
+--- Page 14 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Fig. 21. Visualisation of the convergence of the niches via measurements and simulation. The convergence of the niches is clearly indicated in the convergence and
+extensometer measurements as well as in the simulation.
+on the one hand by the heterogeneous material composition,
+mineralogical composition and geologic characteristics and on the
+other hand by the boundary conditions like the stress field, the
+water content, the temperature and the technical construction of
+the excavated areas. The presented methods of investigation give
+insights in the complex situation. Main outcomes are discussed
+in this section.
+The convergence of the niches in the vertical direction can
+be clearly seen in the extensometer measurements and the laser
+scan data at the bottom of the niches. Furthermore, the laser
+scans and the convergence measurements confirm this trend at
+the top of the niches. In the horizontal direction, such a trend is
+not clear yet, which is consistent with results presented in Ref. 23
+but might also be a matter of the short time period since the
+excavation of the niches. According to the laser scans, the trend of
+convergence is stronger in the closed niche than in the open twin.
+The overall trend of convergence in the measurements is also re-
+flected by the numerical modelling results, where contraction and
+extension is calculated in the expected areas. The vertical strains
+are larger (absolute value) than the horizontal ones. Furthermore,
+the influence of the seasonal boundary condition is observed at
+the entrance of the closed niche and along the open niche. Fig. 21
+provides a comprehensive overview of the deformation behaviour
+in the measured and simulated data.
+The scale of the measured deformations is in a similar range
+for all types of measurements and also for the numerical results.
+In the latter, pre-calculations to evaluate the model parameters
+and its sensitivity were performed. As expected, the calculated
+deformations near the gallery are larger than in the surrounding
+area. The measured range of deformations lies in the order of
+tenth of millimetres near the niches. Nevertheless, it is important
+to notice that all types of measurements indicate outliers or irreg-
+ular results which may result from different uncertainty sources.
+The treatment of these measured values has to be discussed on
+the basis of the individual case. A summary of these cases is
+presented in Table 3 and indicates that most of the deviating
+results are measured in the area near the open twin. This might
+be due to the geologic situation especially on the SW-side (‘‘left
+side’’) of the open twin as it is presented in Fig. 22. Here, an
+impression of the geologic situation around the niches in com-
+bination with a visualisation of the measuring positions is given
+(top) and fault zones of specific interest are highlighted (bottom).
+Another reason for irregular measurements at the open twin,
+especially in the near-field of the niche, might be the climatic
+situation of the open twin which is characterised by seasonal
+influences.
+The interpretation of the laser scan data has to be carried out
+carefully as the measurements are restricted to the first year after
+excavation. Within this time period, the niches are very stable
+and the observed deformations are in a very small range, which is
+close to the accuracy of the measurement method. Nevertheless,
+the provided results are physically comprehensible as presented
+in Section 2.2.1. The comparison of scanned data of both twins
+indicates different behaviour along the niche axes. While the
+measured trend of convergence is nearly constant along the niche
+axis for the closed twin, the behaviour in the open twin varies
+significantly along the niche as shown in Fig. 12. The impact of
+the climatic conditions at this initial state seems to be low as the
+measured relative humidities show only minor variations along
+the niche axes. Nevertheless, the laser scan data will be in the
+14
+
+--- Page 15 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+Table 3
+List of outliers measure by the extensometer and convergence sensor and their possible causes.
+Measurement Outlier Remark
+Extensometer Values are larger than Perhaps due to geologic
+BCD-A2 comparable extensometer heterogeneities in this area
+(open twin) measurements and not constant as presented in Fig. 22.
+along the borehole axis.
+Convergence Values indicate different Same area than BCD-A2
+(open twin) behaviour for the side walls. extensometer. Hetero-
+geneities given in Fig. 22.
+Extensometer While most of the extensometer Might be
+BCD-A6 near measurements indicate extension, affected by seasonal effects
+the surface this point indicates compression. in the open twin.
+(open twin/vertical)
+Convergence Significantly higher translatoric Not reproduced by other
+(closed twin/ deformations than at the measurements. Possible
+anchor 60) other positions. influence of fault system
+(Fig. 22 (bottom left)).
+Fig. 22. Closed twin with fault zones, laser scan and extensometer (top left). Open twin with fault zones, laser scan and extensometer (top right). Both twins with
+system of faults that is found in both niches and extensometers (bottom left). Open twin with fault zone and extensometers (bottom right).
+focus of further interpretation and statistical evaluation aiming
+to better understand the impact of the climatic conditions.
+In summary, the presented investigations of various kinds of
+measurements, geologic investigation and numerical modelling
+are demanding and difficult to communicate to non-experts. Each
+one has its particular advantages and disadvantages, and their
+accuracy and error-proneness have to be included in the inter-
+pretation of the results.
+The measured values have to be checked for their physical
+plausibility. Do the different methods show different phenom-
+ena? Do they picture the same trend? And the same scale? Do
+they contain anomalies? Do the anomalies appear in more than
+one method? What are possible reasons? It has to be kept in
+mind that uncertainties due to the measuring method or inho-
+mogeneities of the material may appear. A critical discussion of
+the measuring method and a suitable interpretation of the data
+is essential in this context.
+For the interpretation of the numerical modelling results it has
+to be kept in mind that the claystone is characterised by a com-
+plex coupled thermal–hydraulic–mechanical–chemical–biological
+material behaviour as well as by geological heterogeneities and
+discontinuities on different length scales. Not all of these aspects
+have been taken into account in the current numerical model,
+since the latter is homogeneous. The consideration of the entire
+complexity – including all known fault zones – in the numerical
+model is not necessarily reasonable but potential impacts of
+some single fault zones have to be determined. The constitutive
+15
+
+--- Page 16 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+approach and the chosen material parameters have to be anal-
+ysed in detail and possible sources of errors have to be taken
+into account by the interpretation of the results. Moreover, an
+extension of the modelling approach is required to account for
+more complex material behaviour, e.g. plasticity, cracking. The
+visualisation of the dominant fault zones in the near field of the
+niches is a valuable tool to increase the system understanding and
+investigate irregularities and outliers.
+However, the usage of different methods and their combi-
+nation in a comprehensive approach reduce the susceptibility
+to errors and increase the process understanding. Furthermore,
+it strengthens the interaction between different scientific disci-
+plines and is an important basis for decision making and knowl-
+edge management.
+4. Conclusions
+The use of different types of investigation methods has signif-
+icant advantages such as the increase of the process and system
+understanding. Sophisticated visualisation techniques give valu-
+able support to interpret the results in a consolidating manner.
+The combined interpretation of the results with consideration
+of specific uncertainties and statements regarding the relevance
+of different physical effects is a challenging task, but also an
+important basis for the enhancement of numerical modelling ap-
+proaches, which are used for the safety assessment of a potential
+repository.
+The investigations carried out in the context of the CD-A
+experiment in the Mont Terri rock laboratory indicate the ex-
+pected convergence of the niches: all measurement strategies and
+numerical model show this trend in a similar and a compre-
+hensive scale. Geological investigations as well as measurements
+underline the heterogeneity which characterises the Opalinus
+Clay. Seasonal effects are of lesser importance for the deformation
+behaviour within this first period of investigation. Nevertheless,
+all types of measurements show outliers which might be a result
+of heterogeneities, the technical boundary conditions or due to
+uncertainties within the measuring methods. Also, the numer-
+ical modelling approach is characterised by uncertainties due
+to various required input parameters, simplifying assumptions
+within the model setup and the mathematical formulation itself,
+which will never cover the reality completely. The different CD-A
+experiment measurements produce outliers mostly in the same
+niche regions. We therefore assume that a common reason for
+these irregular results might be inhomogeneities in the host
+rock originating from faults or lithological variances. Visualisation
+techniques are used, which help us to combine the outcome
+of different kinds of investigation like geologic investigations,
+measurements and numerical modelling.
+In principle, the investigations in the context of the CD-A ex-
+periment focus on long-term effects such as deformations driven
+by the very slow desaturation of the low permeable Opalinus
+Clay. The investigations presented in this article focus on the
+initial two years of the experiment and give some insights into
+the geologic situation as well as the impact of the excavation and
+the climatic conditions on the deformations around the niches
+during this phase. The detected and visualised fault zones advise
+on the geologic situation around the twin niches. The interpre-
+tation of these heterogeneities with regard to their relevance
+for coupled hydraulic–mechanical effects is a challenging task.
+Ongoing investigations aim to identify zones with stronger or
+weaker coupled HM effects.
+Future work will also focus on the excavation induced and
+seasonal effects within the niches and their impact on the coupled
+hydraulic–mechanical processes. In this context, further hydra-
+ulic-mechanically coupled effects such as swelling and shrink-
+age, the evolution of desiccation cracks and their handling in
+a constitutive modelling approach are of specific interest. Fur-
+thermore, the continued detailed interpretation of the ongoing
+measurements and the reinforced use of visualisation techniques
+are foreseen. The well established multidisciplinary evaluation
+presented in this article will be continued.
+The interpretation of the first data sets of the CD-A experiment
+in a holistic manner provides a diverse and detailed insight into
+the coupled hydraulic–mechanical effects around the twin niches
+in the Mont Terri rock laboratory. In summary, the presented re-
+search has shown that the multidisciplinary approach combining
+geological mapping, geophysical measurements, numerical mod-
+elling and visualisation techniques is a promising way to better
+understand complex mechanisms and the process behind them.
+Thus, it can be a valuable component for the safe construction and
+operation of a repository and for the long term safety assessment.
+CRediT authorship contribution statement
+G. Ziefle: Conceptualization, Validation, Writing – original
+draft, Supervision, Project administration. T. Cajuhi: Conceptual-
+ization, Methodology, Writing – review & editing. N. Graebling:
+Software, Formal analysis, Visualization. D. Jaeggi: Methodology,
+Validation, Formal analysis. O. Kolditz: Methodology, Visualiza-
+tion. H. Kunz: Software, Formal analysis, Visualization. J. Maß-
+mann: Conceptualization, Validation, Writing – review & editing.
+K. Rink: Software, Formal analysis, Visualization.
+Declaration of competing interest
+The authors declare that they have no known competing finan-
+cial interests or personal relationships that could have appeared
+to influence the work reported in this paper.
+Acknowledgements
+The work described in this paper was conducted in the frame-
+work of the Mont Terri Project. The CD-A experiment itself is
+funded by BGE (Bundesgesellschaft für Endlagerung, Germany),
+BGR (Bundesanstalt für Geowissenschaften und Rohstoffe, Ger-
+many) on behalf of the BMWK (Bundesministerium für Wirtschaft
+und Klimaschutz, Germany), ENSI (Eidgenössisches Nuklearsicher-
+heitsinspektorat, Switzerland), GRS (Gesellschaft für Anlagen-
+und Reaktorsicherheit gGmbH, Germany), Helmholtz (Helmholtz-
+Gemeinschaft Deutscher Forschungszentren e.V., Germany)and
+swisstopo (Bundesamt für Landestopografie, Switzerland). This
+support is gratefully acknowledged. The views expressed in the
+paper are, however, those of the authors and not necessarily those
+of the Funding Organisations. We would like to acknowledge the
+time and effort devoted by the unknown reviewers to contribute
+constructive comments to our manuscript and to Michael Pitz for
+the english review.
+References
+1. SKB. Äspö Hard Rock Laboratory - Annual Report 2019 . Technical Report
+TR-20-10; Swedish Nuclear Fuel and Waste Management Co; 2020.
+2. Andra. The Cigeo project - France’s industrial centre for geological disposal
+of radioactive waste. 2020 https://international.andra.fr/sites/international/
+files/2021-11/Andra-Plaquette_Cigeo-MAJ-19_08-ALR_C02_V2_EN.pdf.
+3. Pfister E, Nold A. The Grimsel Rock Laboratory In-Situ Experiments in Crys-
+talline Rock . International Atomic Energy Agency (IAEA): IAEA; 1984 https:
+//inis.iaea.org/search/search.aspx?orig_q=RN:15042256.
+4. Bossart P, Bernier F, Birkholzer J, Bruggeman C, Connolly P, Dewonck S,
+Fukaya M, Herfort M, Jensen M, Matray J-M, Mayor JC, Moeri A, Oyama T,
+Schuster K, Shigeta N, Vietor T, Wieczorek K. Mont Terri rock laboratory,
+20 years of research: introduction, site characteristics and overview of
+experiments. In: Bossart P, Milnes AG, eds. Mont Terri Rock Laboratory, 20
+Years: Two Decades of Research and Experimentation on Claystones for Geolog-
+ical Disposal of Radioactive Waste . Cham: Springer International Publishing;
+2018:3–22. http://dx.doi.org/10.1007/978-3-319-70458-6_1,
+16
+
+--- Page 17 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+5. Birkholzer J, Tsang C, Bond A, Hudson J, Jing L, Stephansson O. 25 Years of
+DECOVALEX - Scientific advances and lessons learned from an international
+research collaboration in coupled subsurface processes. Int J Rock Mech Min
+Sci. 2019;122. http://dx.doi.org/10.1016/j.ijrmms.2019.03.015,
+6. Shaw R. FORGE - fate of repository gases: Overview and key achievements
+of the FORGE project. In: Euratom 7th Framework Programme Project: FORGE .
+British Geologic Survey; 2014.
+7. Thatcher K, Newson R, Watson S, S. N. BEACON Bentonite Mechanical Evo-
+lution: Review of Data and Models on the Mechanical Properties of Bentonite
+Aavailable at the Start of Beacon . Work pacakge 2, deliverable d2.2; 2018.
+8. Bilke L, Flemisch B, Kalbacher T, et al. Development of open-source
+porous media simulators: Principles and experiences. Transp Porous Media .
+2019;130:337–361. http://dx.doi.org/10.1007/s11242-019-01310-1.
+9. Kolditz, et al. OpenGeoSys – Open-source multi physics. 2022 https://www.
+opengeosys.org/.
+10. Zhang C-L, Kröhn K-P, Rothfuchs T. Applications of CODE-BRIGHT to Thermal-
+Hydro-Mechanical Experiments on Clays, Vol. 94 . 2005:341–357. http://dx.doi.
+org/10.1007/3-540-26737-9_24,
+11. de Montleau P, Cela J, Moto Mpong S, Godinas A. A parallel computing
+model for the acceleration of a finite element software. 2002:449–456.
+http://dx.doi.org/10.1007/3-540-47847-7_41,
+12. Cerfontaine B, Charlier R, Collin F, Taiebat M. Validation of a new elasto-
+plastic constitutive model dedicated to the cyclic behaviour of brittle rock
+materials. Rock Mech Rock Eng . 2017;50. http://dx.doi.org/10.1007/s00603-
+017-1258-3.
+13. Israelsson JI. Short descriptions of UDEC and 3DEC. In: Stephansson O, Jing L,
+Tsang C-F, eds. Coupled Thermo-Hydro-Mechanical Processes of Fractured
+Media. Elsevier; 1996:523–528. In: Developments in Geotechnical Engineer-
+ing; vol. 79, http://dx.doi.org/10.1016/S0165-1250(96)80041-1, URL https:
+//www.sciencedirect.com/science/article/pii/S0165125096800411.
+14. Hu M, Rutqvist J, Wang Y. A numerical manifold method model for
+analyzing fully coupled hydro-mechanical processes in porous rock masses
+with discrete fractures. Adv Water Resour . 2017;102:111–126. http://dx.doi.
+org/10.1016/j.advwatres.2017.02.007, URL https://www.sciencedirect.com/
+science/article/pii/S0309170816306492,
+15. Armand G, Noiret A, Zghondi J, Seyedi D. Short- and long-term behaviors
+of drifts in the Callovo-Oxfordian claystone at the Meuse/Haute-Marne Un-
+derground Research Laboratory. J Rock Mech Geotech Eng . 2013;5:221–230.
+http://dx.doi.org/10.1016/j.jrmge.2013.05.005.
+16. Blümling P, Bernier F, Lebon P, Derek Martin C. The excavation dam-
+aged zone in clay formations time-dependent behaviour and influence
+on performance assessment. Phys Chem Earth A/B/C . 2007;32(8):588–599.
+http://dx.doi.org/10.1016/j.pce.2006.04.034, URL https://www.sciencedirect.
+com/science/article/pii/S1474706506002075. Clay in natural and engineered
+barriers for radioactive waste confinement - Part 2.
+17. Amann F, Wild KM, Loew S, Yong S, Thoeny R, Frank E. Geomechanical
+behaviour of opalinus clay at multiple scales: results from mont terri
+rock laboratory (Switzerland). In: Bossart P, Milnes AG, eds. Mont Terri
+Rock Laboratory, 20 Years: Two Decades of Research and Experimentation
+on Claystones for Geological Disposal of Radioactive Waste . Cham: Springer
+International Publishing; 2018:153–173. http://dx.doi.org/10.1007/978-3-
+319-70458-6_8,
+18. Ziefle G, Matray J-M, Maßmann J, Möri A. Coupled hydraulic-mechanical
+simulation of seasonally induced processes in the Mont Terri rock laboratory
+(Switzerland). Swiss J Geosci . 2017. http://dx.doi.org/10.1007/s00015-016-
+0252-1.
+19. Kneuker T, Furche M. Capturing the structural and compositional variability
+of Opalinus Clay: constraints from multidisciplinary investigations of Mont
+Terri drill cores (Switzerland). Environ Earth Sci . 2021;80. http://dx.doi.org/
+10.1007/s12665-021-09708-1.
+20. Nussbaum C, Kloppenburg A, Caër T, Bossart P. Tectonic evolution around
+the Mont Terri rock laboratory, northwestern Swiss Jura: constraints from
+kinematic forward modelling. In: Bossart P, Milnes AG, eds. Mont Terri
+Rock Laboratory, 20 Years: Two Decades of Research and Experimentation
+on Claystones for Geological Disposal of Radioactive Waste . Cham: Springer
+International Publishing; 2018:41–68. http://dx.doi.org/10.1007/978-3-319-
+70458-6_3,
+21. Hostettler B, Reisdorf AG, Jaeggi D, Deplazes G, Bläsi H, Morard A, Feist-
+Burkhardt S, Waltschew A, Dietze V, Menkveld-Gfeller U. Litho- and
+biostratigraphy of the opalinus clay and bounding formations in the mont
+terri rock laboratory (Switzerland). In: Bossart P, Milnes AG, eds. Mont Terri
+Rock Laboratory, 20 Years: Two Decades of Research and Experimentation
+on Claystones for Geological Disposal of Radioactive Waste . Cham: Springer
+International Publishing; 2018:23–39. http://dx.doi.org/10.1007/978-3-319-
+70458-6_2,
+22. Hale S, Ries X, Jaeggi D, Blum P. Mechanical and hydraulic properties of
+the excavation damaged zone (EDZ) in the Opalinus Clay of the Mont
+Terri rock laboratory, Switzerland. Solid Earth . 2021;12:1581–1600. http:
+//dx.doi.org/10.5194/se-12-1581-2021.
+23. Martin C, Giger S, Lanyon G. Behaviour of weak shales in underground
+environments. Rock Mech Rock Eng . 2016;49:673–687. http://dx.doi.org/10.
+1007/s00603-015-0860-5.
+24. Guglielmi Y, Nussbaum C, Jeanne P, Rutqvist J, Cappa F, Birkholzer J.
+Complexity of fault rupture and fluid leakage in shale: Insights from a
+controlled fault activation experiment. J. Geophysical Research: Solid Earth .
+2020;125. http://dx.doi.org/10.1029/2019JB017781.
+25. Kakurina M, Guglielmi Y, Nussbaum C, Valley B. In situ direct displacement
+information on fault reactivation during fluid injection. Rock Mech Rock Eng .
+2021;53:4313–4328. http://dx.doi.org/10.1007/s00603-020-02160-w.
+26. Zhang C-L, Laurich B. Mechanical behavior of sandy facies of Opalinus Clay
+under different load conditions. J Rock Mech Geotech Eng . 2020;12:223–241.
+http://dx.doi.org/10.1016/j.jrmge.2019.09.005.
+27. Pardoen B, Bésuelle P, Dal Pont S, Cosenza P, Desrues J. Effect of claystone
+small-scale characteristics on the variability of micromechanical response
+and on microcracking modelling. In: Barla M, Di Donna A, Sterpi D, eds.
+Challenges and Innovations in Geomechanics: Project: Accounting for the Spatial
+Variability of Argillite’s Properties Through a Multi-Scale Numeric-Experimental
+Approach.. Springer; 2020. http://dx.doi.org/10.1007/978-3-030-64514-4_
+52.
+28. Bond A, Millard A, Nakama S, Zhang C, Garritte B. Approaches for repre-
+senting hydro-mechanical coupling between sub-surface excavations and
+argillaceous porous media at the ventilation experiment, Mont Terri. J Rock
+Mech Geotech Eng . 2013;5:85–96.
+29. Bock H. RA Experiment: Updated Review of the Rock Mechanics Properties of
+the Opalinus Clay of the Mont Terri URL based on Laboratory and Field Testing .
+Mont Terri Technical Report, 2008–04; 2009.
+30. Ziefle G, Bossart P, Costabel S, Czaikowski O, Furche M, Graupner B,
+Hesser J, Jaeggi D, Jantschik K, Kolditz O, Königer F, Kunz H, Maßmann J,
+Nicaty C, Rebscher D, Rink K, Schuhmann R, Wieczorek K. Mont Terri, CD-A
+Experiment: Installation Report TN 2020-41 . Mont Terri Technical Note; 2021.
+31. Ziefle G, Cajuhi T, Condamin S, Costabel S, Czaikowski O, Fourriére A,
+Friedenberg L, Furche M, Graebling N, Graupner B, Hesser J, Jaeggi D,
+Jantschik K, Kneuker T, Kolditz O, Königer F, Kunz H, Laurich B, Maßmann J,
+Ostertag-Henning C, Rebscher D, Rink K, Rühaak W, Schefer S, Schuh-
+mann R, Wengler M, Wieczorek K. From process to system understanding
+with multi-disciplinary investigation methods: set-up and first results of
+the CD-A experiment (Mont Terri rock laboratory). In: Safety of Nuclear
+Waste Disposal, 1 . Deutschland: Bundesamt für die Sicherheit der nuklearen
+Entsorgung (BASE); 2021:79–81. http://dx.doi.org/10.5194/sand-1-79-2021.
+32. Cajuhi T, Maßmann J, Ziefle G. Building the bridge between safety require-
+ments and numerical modeling: an example considering crack development
+of Opalinus clay in laboratory and field scales. In: Safety of Nuclear
+Waste Disposal, 1 . Deutschland: Bundesamt für die Sicherheit der nuklearen
+Entsorgung (BASE); 2021:165–167. http://dx.doi.org/10.5194/sand-1-165-
+2021.
+33. Jaeggi D, Galletti M, Amacher F, Dunst R, Nussbaum C, Raselli R,
+Ringeisen M, Schefer S, Bossart P. Mont Terri Project, Technical Report 2018-
+04, Gallery 2018: Excavation and Geological Documentation . Switzerland:
+swisstopo; 2020.
+34. Jaeggi D, Laurich B, Nussbaum C, Schuster K, Connolly P. Tectonic structure
+of the ‘‘Main Fault’’ in the Opalinus Clay, Mont Terri rock laboratory
+(Switzerland). In: Bossart P, Milnes AG, eds. Mont Terri Rock Laboratory, 20
+Years: Two Decades of Research and Experimentation on Claystones for Geolog-
+ical Disposal of Radioactive Waste . Cham: Springer International Publishing;
+2018:69–86. http://dx.doi.org/10.1007/978-3-319-70458-6_4,
+35. Ziefle G, Bossart P, Costabel S, Czaikowski O, Furche M, Graupner B, Hesser J,
+Jaeggi D, Kneuker T, Kolditz O, Königer F, Maßmann J, Rink K, Schuhmann R,
+Schuster K, Vowinckel B, Wieczorek K. Influence of humidity on cyclic and
+longterm deformations: CD-A experiment, Mont Terri Rock Laboratory. In:
+Innovative Feuchtemessung in Forschung und Praxis: Berichtsband zur Tagung
+2019,Karlsruhe, 10.-11. Oktober 2019 . Schuhmann, R.; 2019:65–78.
+36. sigeom. Mont Terri Project, Convergence Monitoring by Laser Scanning in
+Niches 3 and 4, Gallery 18 . Mont Terri Technical Note; 2020.
+37. Schwab L, Gisiger J, Rösli U. Mont Terri, CD-A Experiment, Installation of
+Extensometers and Climate Sensors and Configuration of DAS - Installation
+Report TN 2019-86 . Mont Terri Technical Note; 2021.
+38. Kolditz O, Bauer S, Bilke L, Böttcher N, Delfs J-O, Fischer T, Görke UJ,
+Kalbacher T, Kosakowski G, McDermott C, et al. OpenGeoSys: an
+open-source initiative for numerical simulation of thermo-hydro-
+mechanical/chemical (THM/C) processes in porous media. Environ Earth Sci .
+2012;67(2):589–599.
+39. Kolditz O, Görke U-J, Konietzky H, Maßmann J, Nest M, Steeb H, Wuttke F,
+Nagel TE eds, GeomInt–Mechanical Integrity of Host Rocks . Springer; 2021. In:
+Terrestrial Environmental Sciences; http://dx.doi.org/10.1007/978-3-030-
+61909-1,
+17
+
+--- Page 18 ---
+G. Ziefle, T. Cajuhi, N. Graebling et al. Geomechanics for Energy and the Environment 31 (2022) 100325
+40. Gawin D, Schrefler B. Thermo-hydro-mechanical analysis of partially
+saturated porous materials. Eng Comput . 1996;13(7):113–143.
+41. Bishop AW, Blight G. Some aspects of effective stress in saturated and partly
+saturated soils. Geotechnique. 1963;13(3):177–197.
+42. Lewis R, Schrefler B. The Finite Element Method in the Static and Dynamic
+Deformation and Consolidation of Porous Media . mendes; 1998.
+43. Richards LA. Capillary conduction of liquids through porous mediums.
+Physics. 1931;1(5):318–333.
+44. Van Genuchten MT. A closed-form equation for predicting the hy-
+draulic conductivity of unsaturated soils. Soil Sci Soc Am J . 1980;44(5):
+892–898.
+45. Jahn S, Mrugalla S, Stark L. Endlagerstandortmodell SÜD–Teil II:
+Zusammenstellung von gesteinseigenschaften für den langzeitsicherheit-
+snachweis. In: Projekt ANSICHT: Methodik und Anwendungsbezug eines
+Sicherheits-und Nachweiskonzeptes für ein HAW-Endlager im Tonstein .
+Hannover: BGR; 2016.
+46. Martin C, Lanyon G. Measurement of in-situ stress in weak rocks at
+Mont Terri Rock Laboratory, Switzerland. Int J Rock Mech Min Sci .
+2003;40(7–8):1077–1088.
+47. Friedenberg L, Czaikowski O, Wieczorek K, Ziefle G. Interpretative modelling
+of selected in-situ measurements obtained at the cyclic deformation exper-
+iment at mont terri RL. In: 8th International Conference on Clays in Natural
+and Engineered Barriers for Radioactive Waste Confinement, to be held from
+13-16th June 2022 . Nancy, France: 2022.
+48. Garitte B, Nguyen T, Barnichon J, Graupner B, Lee C, Maekawa K,
+Manepally C, Ofoegbu G, Dasgupta B, Fedors R, et al. Modelling the Mont
+Terri HE-d experiment for the Thermal–Hydraulic–Mechanical response of
+a bedded argillaceous formation to heating. Environmental Earth Sciences .
+2017;76(9):345.
+49. Cajuhi T, Sanavia L, De Lorenzis L. Phase-field modeling of fracture in
+variably saturated porous media. Comput Mech . 2018;61(3):299–318.
+50. Rink K, Bilke L, Kolditz O. Visualisation strategies for environmental mod-
+elling data. Environ Earth Sci . 2014;72(10):3857–3868. http://dx.doi.org/10.
+1007/s12665-013-2970-2.
+51. Ahrens J, Geveci B, Law C. ParaView: An end-user tool for large data
+visualization. In: Hansen C, Johnson C, eds. The Visualization Handbook .
+Elsevier; 2005.
+52. Schroeder W, Martin K, Lorensen B. Visualization Toolkit: An Object-Oriented
+Approach to 3D Graphics (4th Edition) . Kitware, Inc.; 2006.
+18

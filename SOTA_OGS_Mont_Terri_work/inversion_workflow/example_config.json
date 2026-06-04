@@ -1,0 +1,15 @@
+{
+  "input_mesh": "GESA_model_original/projection_on_mesh_2025-09-05/bulk.vtu",
+  "output_mesh": "bulk_w_projections.vtu",
+  "field_name": "k_i_rd",
+  "seed": 20260528,
+  "theta_deg": 144.0,
+  "anisotropy_ratio": 2.5,
+  "mean_k_ref": 6.32e-20,
+  "log_sigma": 0.5,
+  "corr_length": 0.6,
+  "n_features": 96,
+  "min_k": 1.0e-22,
+  "max_k": 1.0e-13,
+  "porosity": 0.105
+}

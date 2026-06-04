@@ -1,0 +1,78 @@
+{
+  "active_direct_rows": 75,
+  "alternate_policy_winner_outside_current_gaussian_best_set_count": 3,
+  "bounds_release_recommended_now": false,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_support_recommendations.csv",
+      "source": "inversion_workflow/permeability_likelihood_support_recommendations.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_support_recommendations_summary.json",
+      "source": "inversion_workflow/permeability_likelihood_support_recommendations_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_support_recommendations.md",
+      "source": "inversion_workflow/permeability_likelihood_support_recommendations.md"
+    }
+  ],
+  "current_at_single_support_lower_bound": true,
+  "current_gaussian_objective": 269.8180571059851,
+  "current_report_policy": "keep_rowwise_gaussian_default",
+  "final_promotion_unblocked_by_this_packet": false,
+  "next_action": "Keep the rowwise Gaussian direct-permeability policy as the current-report default, pause same-support active-objective OGS sampling, and require an explicit likelihood/support/outlier/bounds/tensor-shape decision before reopening field-fit execution.",
+  "outside_tie_direct_only_policy_winner_rows": 3,
+  "policy_winner_summary_lines": [
+    "capped_gaussian_abs1_log10: winner=local_anisotropy_sampler_plan/local_anis_residual_sign_l0p0015_s0p5_r2p5, value=64.81233623477108, winner_in_current_gaussian_best_tie_set=False, current_rank=183.0",
+    "configured_scalar_inside_only_gaussian: winner=lower_support_continuous_candidate_plan/length_0p007m_shift_0p946, value=244.31792014948041, winner_in_current_gaussian_best_tie_set=False, current_rank=110.0",
+    "current_duplicate_weighted_gaussian: winner=broad_continuous_loop_001_001_length_0p015m, value=269.8180571059851, winner_in_current_gaussian_best_tie_set=True, current_rank=1.0",
+    "huber_delta_2sigma: winner=broad_continuous_loop_001_001_length_0p015m, value=183.6712474083337, winner_in_current_gaussian_best_tie_set=True, current_rank=1.0",
+    "student_t_nu4: winner=broad_continuous_loop_001_001_length_0p015m, value=121.16896116540623, winner_in_current_gaussian_best_tie_set=True, current_rank=1.0",
+    "support_cell_weighted_mean_unit_gaussian: winner=current_permeability_field/current_best, value=1.072850831100576e-28, winner_in_current_gaussian_best_tie_set=True, current_rank=1.0",
+    "support_cell_weighted_median_unit_gaussian: winner=local_anisotropy_sampler_plan/local_anis_perpendicular_all_l0p0015_s1_r12, value=81.82840410875852, winner_in_current_gaussian_best_tie_set=False, current_rank=228.0"
+  ],
+  "recommendation_count": 8,
+  "same_support_active_objective_batch_executable_now": false,
+  "same_support_reducible_objective_gap": 0.0,
+  "source_artifacts": [
+    "inversion_workflow/permeability_likelihood_policy_audit_summary.json",
+    "inversion_workflow/permeability_likelihood_decision_request_summary.json",
+    "inversion_workflow/permeability_support_lower_bound_audit_summary.json",
+    "inversion_workflow/permeability_support_conflict_spatial_audit_summary.json",
+    "inversion_workflow/permeability_configured_scalar_outlier_disposition_summary.json",
+    "inversion_workflow/permeability_likelihood_scenario_rerank_summary.json",
+    "inversion_workflow/permeability_likelihood_winner_cross_stream_audit_summary.json",
+    "inversion_workflow/permeability_next_field_fit_gate_summary.json"
+  ],
+  "status": "permeability_likelihood_support_recommendations_generated",
+  "support_conflict_spatial_active_support_cell_count": 30,
+  "support_conflict_spatial_range_ge_2_log10_cell_count": 16,
+  "support_conflict_spatial_repeated_support_cell_count": 24,
+  "support_conflict_spatial_status": "permeability_support_conflict_spatial_audit_generated",
+  "support_conflict_spatial_top_conflict_cell": {
+    "cell_type": "triangle6",
+    "centroid_x_m": -1.9531543672590785,
+    "centroid_y_m": -0.665476463070921,
+    "centroid_z_m": 0.0,
+    "conflict_class": "configured_scalar_range_conflict",
+    "depth_max_m": 0.87,
+    "depth_min_m": 0.85,
+    "feasibility_statuses": "observed_above_configured_scalar_range;observed_inside_configured_scalar_range",
+    "group_policy_class": "configured_scalar_range_decision_required",
+    "has_large_observed_range_ge_1_log10": true,
+    "has_large_observed_range_ge_2_log10": true,
+    "is_repeated_support_cell": true,
+    "max_abs_residual": 3.4744237387763093,
+    "mean_abs_residual": 3.4744237387763093,
+    "observed_log10_max": -12.096910013008056,
+    "observed_log10_min": -19.045757490560675,
+    "observed_log10_range": 6.948847477552619,
+    "primary_cell_id": 4648,
+    "residual_signs": "overpredicts_observation;underpredicts_observation",
+    "row_count": 3,
+    "segments": "BCD-A32"
+  },
+  "support_group_count": 30,
+  "support_groups_with_observed_range_ge_1_log10": 16,
+  "tensor_shape_release_recommended_now": false
+}

@@ -1,0 +1,50 @@
+{
+  "candidates": [],
+  "container_candidates": [
+    {
+      "cmake_args": " -DOGS_USE_MKL=ON -G Ninja -DCMAKE_INSTALL_PREFIX=/usr/local/ogs -DOGS_CPU_ARCHITECTURE=OFF -DOGS_INSTALL_DEPENDENCIES=ON -DBUILD_SHARED_LIBS=ON --preset=bgr-container -B /usr/local/ogs/build",
+      "container_path_mentions_ogs": true,
+      "has_runsingularity_shebang": true,
+      "has_sif_magic": true,
+      "path": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/file_transfers/collected/2025-04-04_2d_model_container/apptainer_ogs6.5.4.sif",
+      "size_bytes": 6163963904,
+      "source_image": "master_ogs_container:latest",
+      "version_label": "ogs/ogs@6.5.4 (cb5b3235101edecf3ba55e1039fe3c19bc13c636)"
+    }
+  ],
+  "container_max_depth": 7,
+  "container_search_dirs": [
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/file_transfers/collected",
+    "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements"
+  ],
+  "max_depth": 5,
+  "notes": [
+    "This audit only checks local executable availability.",
+    "A collected Apptainer/Singularity SIF can be a valid OGS candidate only if a SIF runtime is available.",
+    "A successful candidate still needs a model run and output sampling before state residuals are active."
+  ],
+  "path_lookup": null,
+  "runtime_status": {
+    "available_container_runtimes": {},
+    "docker_apptainer_backend_available": true,
+    "docker_apptainer_image": "ghcr.io/apptainer/apptainer:latest",
+    "docker_path": "/usr/bin/docker",
+    "native_sif_runtime_available": false,
+    "notes": [
+      "Apptainer/Singularity/run-singularity can execute SIF images.",
+      "If no native SIF runtime is installed, the workflow can execute the collected SIF through Dockerized Apptainer.",
+      "This audit records command availability; run_ogs_model.py records the actual OGS execution command and return code."
+    ],
+    "preferred_container_backend": "docker_apptainer_sif",
+    "preferred_container_runtime": "/usr/bin/docker"
+  },
+  "search_dirs": [
+    "/usr/bin",
+    "/usr/local/bin",
+    "/opt",
+    "/home/ber0061"
+  ],
+  "selected_container": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/file_transfers/collected/2025-04-04_2d_model_container/apptainer_ogs6.5.4.sif",
+  "selected_executable": null,
+  "status": "ogs_container_found_runtime_available"
+}

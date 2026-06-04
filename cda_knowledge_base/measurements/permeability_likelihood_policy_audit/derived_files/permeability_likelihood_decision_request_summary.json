@@ -1,0 +1,52 @@
+{
+  "active_direct_rows": 75,
+  "active_rows_outside_configured_scalar_range": 2,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_decision_request.csv",
+      "source": "inversion_workflow/permeability_likelihood_decision_request.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_decision_request.md",
+      "source": "inversion_workflow/permeability_likelihood_decision_request.md"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_likelihood_policy_audit/derived_files/permeability_likelihood_decision_request_summary.json",
+      "source": "inversion_workflow/permeability_likelihood_decision_request_summary.json"
+    }
+  ],
+  "current_gaussian_objective": 269.8180571059851,
+  "decision_option_count": 5,
+  "default_policy_change_required": false,
+  "group_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_policy_group_summary.csv",
+  "notes": [
+    "This is a decision request, not a likelihood change.",
+    "The active default remains duplicate-weighted rowwise Gaussian until the modelling team approves a change.",
+    "The existing-field rerank and winner cross-stream audit are now available as evidence, but any accepted non-default policy should still trigger refreshed readiness audits and, if needed, targeted follow-up fields."
+  ],
+  "output_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_decision_request.csv",
+  "policy_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_policy_audit.csv",
+  "policy_summary_json": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_policy_audit_summary.json",
+  "recommended_current_report_policy": "keep_rowwise_gaussian_default",
+  "row_loss_top_10_share": 0.49400403343820803,
+  "scenario_rerank_alternate_policy_winner_outside_current_gaussian_best_set_count": 3,
+  "scenario_rerank_candidate_fields_scored": 522,
+  "scenario_rerank_current_accepted_in_current_gaussian_best_tie_set": true,
+  "scenario_rerank_current_gaussian_best_tie_count": 40,
+  "scenario_rerank_status": "permeability_likelihood_scenario_rerank_generated",
+  "scenario_rerank_summary_json": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_scenario_rerank_summary.json",
+  "status": "permeability_likelihood_decision_request_generated",
+  "summary_json": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_decision_request_summary.json",
+  "summary_markdown": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_decision_request.md",
+  "support_groups_with_observed_range_ge_1_log10": 16,
+  "support_mean_unit_objective": 1.7670484276950664e-28,
+  "support_median_unit_objective": 134.72779043641356,
+  "winner_cross_stream_current_accepted_active_rank": 1.0,
+  "winner_cross_stream_direct_only_policy_winner_rows": 3,
+  "winner_cross_stream_outside_tie_direct_only_policy_winner_rows": 3,
+  "winner_cross_stream_policy_winner_rows_with_cross_stream_scorecard": 4,
+  "winner_cross_stream_row_gaussian_representative_active_rank": 45.0,
+  "winner_cross_stream_status": "permeability_likelihood_winner_cross_stream_audit_generated",
+  "winner_cross_stream_summary_json": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_likelihood_winner_cross_stream_audit_summary.json",
+  "winner_cross_stream_unique_winners_with_cross_stream_scorecard": 2
+}

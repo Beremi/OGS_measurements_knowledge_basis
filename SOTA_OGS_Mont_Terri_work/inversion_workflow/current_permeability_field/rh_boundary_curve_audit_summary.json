@@ -1,0 +1,172 @@
+{
+  "active_curve_include": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000/08_08_open_niche_seasonal.xml",
+  "compared_rows": 2280,
+  "curve_pressure_pa": {
+    "max": -5225888.298031268,
+    "mean": -25235594.31157132,
+    "median": -23116000.588411316,
+    "min": -53238251.54678071
+  },
+  "curve_rows": 845,
+  "curve_time_end_s": 134820864.14414415,
+  "curve_time_start_s": 0.0,
+  "notes": [
+    "Residual is RH-derived Kelvin gauge liquid pressure minus the active OGS open-niche pressure curve.",
+    "Rows above 95 percent RH are compared but retain the processed-table reliability caution flag.",
+    "Low RH rows below 50 percent are excluded as likely outliers/sensor failures.",
+    "Rows after the active curve end are retained and flagged as outside_active_curve_time_range."
+  ],
+  "overall_abs_residual_mpa": {
+    "max": 69.0693301673929,
+    "mean": 16.318672497526755,
+    "median": 12.99802291936514,
+    "min": 0.5903766502866372
+  },
+  "overall_residual_rh_kelvin_minus_ogs_mpa": {
+    "max": 34.94043906703809,
+    "mean": 15.903451546455685,
+    "median": 12.770097015001719,
+    "min": -69.0693301673929
+  },
+  "rh_rows": 4247,
+  "rh_table": "inversion_workflow/processed_observations/rh_open_twin_kelvin.csv",
+  "run_dir": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "sensor_summary": {
+    "RH5": {
+      "abs_residual_mpa": {
+        "max": 32.03133080762992,
+        "mean": 15.228941725701096,
+        "median": 11.757511532645056,
+        "min": 4.537367244498152
+      },
+      "compared_rows": 555,
+      "residual_rh_kelvin_minus_ogs_mpa": {
+        "max": 32.03133080762992,
+        "mean": 15.228941725701096,
+        "median": 11.757511532645056,
+        "min": 4.537367244498152
+      },
+      "rh_kelvin_pressure_mpa": {
+        "max": -6.162292456396863,
+        "mean": -8.024500782249683,
+        "median": -8.126116776280384,
+        "min": -9.193734727414768
+      },
+      "rh_percent": {
+        "max": 95.9927206227757,
+        "mean": 94.81480555190974,
+        "median": 94.74971892471274,
+        "min": 94.0807375963905
+      },
+      "rows": 1042,
+      "status_counts": {
+        "compared_to_active_curve": 555,
+        "outside_active_curve_time_range": 487
+      }
+    },
+    "RH6": {
+      "abs_residual_mpa": {
+        "max": 31.40464905173162,
+        "mean": 14.329438187989322,
+        "median": 11.359142460253652,
+        "min": 3.0455506590182893
+      },
+      "compared_rows": 577,
+      "residual_rh_kelvin_minus_ogs_mpa": {
+        "max": 31.40464905173162,
+        "mean": 14.329438187989322,
+        "median": 11.359142460253652,
+        "min": 3.0455506590182893
+      },
+      "rh_kelvin_pressure_mpa": {
+        "max": -7.747258209630746,
+        "mean": -9.577696448716953,
+        "median": -9.637656295913455,
+        "min": -10.412968291083377
+      },
+      "rh_percent": {
+        "max": 94.9882577361112,
+        "mean": 93.84201203614344,
+        "median": 93.8039636199196,
+        "min": 93.322527442857
+      },
+      "rows": 1064,
+      "status_counts": {
+        "compared_to_active_curve": 577,
+        "outside_active_curve_time_range": 487
+      }
+    },
+    "RH7": {
+      "abs_residual_mpa": {
+        "max": 69.0693301673929,
+        "mean": 18.50804395316325,
+        "median": 15.069754209872453,
+        "min": 0.5903766502866372
+      },
+      "compared_rows": 577,
+      "residual_rh_kelvin_minus_ogs_mpa": {
+        "max": 34.94043906703809,
+        "mean": 17.915619105140085,
+        "median": 14.41891780114283,
+        "min": -69.0693301673929
+      },
+      "rh_kelvin_pressure_mpa": {
+        "max": -4.16728047397746,
+        "mean": -7.667740716428503,
+        "median": -5.495603920427247,
+        "min": -305.2478627951225
+      },
+      "rh_percent": {
+        "max": 97.27216088,
+        "mean": 95.76652619712418,
+        "median": 96.41839778,
+        "min": 13.18797
+      },
+      "rows": 1071,
+      "status_counts": {
+        "compared_to_active_curve": 577,
+        "excluded_low_rh_outlier": 7,
+        "outside_active_curve_time_range": 487
+      }
+    },
+    "RH8": {
+      "abs_residual_mpa": {
+        "max": 68.59067161156997,
+        "mean": 17.175627742822872,
+        "median": 13.25713555095603,
+        "min": 4.0450557631307875
+      },
+      "compared_rows": 571,
+      "residual_rh_kelvin_minus_ogs_mpa": {
+        "max": 33.34768242386234,
+        "mean": 16.116302644516956,
+        "median": 12.529237621523873,
+        "min": -68.59067161156997
+      },
+      "rh_kelvin_pressure_mpa": {
+        "max": -5.806933136539242,
+        "mean": -10.651835397369291,
+        "median": -6.972919664542118,
+        "min": -305.07954925866386
+      },
+      "rh_percent": {
+        "max": 96.2193812777774,
+        "mean": 94.38296792900036,
+        "median": 95.47767031250005,
+        "min": 13.20271
+      },
+      "rows": 1070,
+      "status_counts": {
+        "compared_to_active_curve": 571,
+        "excluded_low_rh_outlier": 12,
+        "outside_active_curve_time_range": 487
+      }
+    }
+  },
+  "status_counts": {
+    "compared_to_active_curve": 2280,
+    "excluded_low_rh_outlier": 19,
+    "outside_active_curve_time_range": 1948
+  },
+  "time_origin": "2019-09-18T00:00:00"
+}

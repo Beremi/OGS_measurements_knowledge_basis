@@ -1,0 +1,20 @@
+{
+  "run_id": "example_20260528",
+  "projection_model_dir": "GESA_model_original/projection_on_mesh_2025-09-05",
+  "run_root": "inversion_workflow/runs",
+  "project_file": "cd_a_open_niche_quad.prj",
+  "permeability_field": {
+    "seed": 20260528,
+    "theta_deg": 144.0,
+    "anisotropy_ratio": 2.5,
+    "mean_k_ref": 6.32e-20,
+    "log_sigma": 0.5,
+    "corr_length": 0.6,
+    "n_features": 96,
+    "min_k": 1.0e-22,
+    "max_k": 1.0e-13,
+    "porosity": 0.105,
+    "field_name": "k_i_rd"
+  }
+}
+

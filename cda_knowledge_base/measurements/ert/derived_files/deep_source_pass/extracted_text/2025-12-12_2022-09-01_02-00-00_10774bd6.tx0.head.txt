@@ -1,0 +1,80 @@
+* Data file >C:\Mont Terri\CD-A\Originaldaten\2022-09-01_02-00-00.tx0< * 01.09.2022
+* Version info *************************************************************************************************************
+* Program * >GeoTest.EXE< version >2.51a ~ 3.12.2020< * >Device_LGM.DLL< version >1.29 ~ 3.8.2020< max data = 45000
+* Operating system * version >Win..(6.2)<
+* Measuring device * type = LGM 4-Point Light 10W * hardware version = 2 * firmware version = 4.69 * settling time = 200 ms
+* ActEle * Multi channel switch box = 1
+* Communication * COM port = 3 * baudrate = 19200
+* Battery voltages internal (V) * begin = 5,62 * end = 5,63
+* Battery voltages external (V) * begin = 11,97 * end = 11,96
+* Program registration * User >BGR Hannover< * software key >E40 F52 I53 T60 H48 V51 G48 N53<* hardware key >none<
+* Cable settings ***********************************************************************************************************
+* Number of used cables = 8
+* Cable(1) used = 1
+* Cable(1) Electrode 1st = 1
+* Cable(1) Electrode last = 18
+* Cable(2) used = 1
+* Cable(2) Electrode 1st = 19
+* Cable(2) Electrode last = 36
+* Cable(3) used = 1
+* Cable(3) Electrode 1st = 37
+* Cable(3) Electrode last = 54
+* Cable(4) used = 1
+* Cable(4) Electrode 1st = 55
+* Cable(4) Electrode last = 72
+* Cable(5) used = 1
+* Cable(5) Electrode 1st = 73
+* Cable(5) Electrode last = 90
+* Cable(6) used = 1
+* Cable(6) Electrode 1st = 91
+* Cable(6) Electrode last = 108
+* Cable(7) used = 1
+* Cable(7) Electrode 1st = 109
+* Cable(7) Electrode last = 126
+* Cable(8) used = 1
+* Cable(8) Electrode 1st = 127
+* Cable(8) Electrode last = 144
+* Profile and data file settings *******************************************************************************************
+* Profile name = 2022-09-01_02-00-00
+* Profile direction =
+* User = Furche Tietz
+* Comment =
+* Data folder = C:\Mont Terri\CD-A\Originaldaten\
+* Configuration Profiling or Mapping = Profiling
+* Profiling settings *******************************************************************************************************
+* Electrode start num = 1
+* Electrode start (m) = 0,000
+* Electrode separation (m) = 0,100
+* Electrode 1st num = 1
+* Electrode 1st (m) = 0,000
+* Electrode last num = 144
+* Electrode Roll on OK = 0
+* Electrode Roll on 1st = 127
+* Level 1st = 1
+* Level last = 33
+* Level 102 1st = 1
+* Level 102 last = 1
+* SP type = 0
+* Dipole factor 1st = 1
+* Dipole factor last = 1
+* Measurement type = 6
+* Custom made Electrode positions *
+* Spread Direction = 0
+* Spread Type = -1
+* Sort by = 0
+* Sort increasing = 1
+* Pseudodepth confine = 0
+* Pseudodepth min (m) = 0,000
+* Pseudodepth max (m) = 0,000
+* Pseudodepth between min and max = 0
+* Pseudodepth reduction to (%) = 100
+* Profiling Start X (m) = 0,000
+* Profiling Start Y (m) = 0,000
+* Profiling Start Z (m) = 0,000
+* Profiling Direction = 0
+* Mapping settings *********************************************************************************************************
+* Mapping Start X (m) = 0,000
+* Mapping Start Y (m) = 0,000
+* Mapping Start Z (m) = 0,000
+* Mapping Grid Size x = 5
+* Mapping Grid Size y = 5

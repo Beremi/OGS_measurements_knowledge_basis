@@ -1,0 +1,253 @@
+{
+  "active_direct_rows": 75,
+  "active_rows_outside_configured_scalar_range": 2,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_residual_conflict_audit/derived_files/permeability_residual_conflict_audit.csv",
+      "source": "inversion_workflow/permeability_residual_conflict_audit.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_residual_conflict_audit/derived_files/permeability_residual_segment_summary.csv",
+      "source": "inversion_workflow/permeability_residual_segment_summary.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_residual_conflict_audit/derived_files/permeability_residual_support_cell_audit.csv",
+      "source": "inversion_workflow/permeability_residual_support_cell_audit.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/permeability_residual_conflict_audit/derived_files/permeability_residual_conflict_audit.md",
+      "source": "inversion_workflow/permeability_residual_conflict_audit.md"
+    }
+  ],
+  "configured_max_k_eigenvalue": 1e-12,
+  "configured_min_k_eigenvalue": 1e-22,
+  "configured_scalar_feasibility_counts_active": {
+    "observed_above_configured_scalar_range": 2,
+    "observed_inside_configured_scalar_range": 73
+  },
+  "current_field_run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "current_field_summary": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD_SUMMARY.json",
+  "direct_summary": {
+    "duplicate_groups": 52,
+    "effective_objective_weight": 52.0,
+    "field_name": "k_i_rd",
+    "field_shape": [
+      10239,
+      4
+    ],
+    "finite_objective_rows": 75,
+    "log10_sigma": 0.5,
+    "max_abs_log10_residual": 3.4744237387763093,
+    "mesh": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/current_permeability_field/current_best_bulk_w_projections.vtu",
+    "notes": [
+      "Prediction uses weighted arithmetic averaging of e^T K e over selected target cells.",
+      "Residuals are predicted log10(k) minus observed log10(k).",
+      "Objective weights divide duplicate rows with the same campaign, segment, depth and observed log10(k).",
+      "This evaluates only the direct permeability target layer; it does not run OGS or compare state observations."
+    ],
+    "objective_value": 269.8180571059851,
+    "objective_value_after_global_shift": 269.818057105985,
+    "optimal_global_log10_shift_to_prediction": 1.3664283380001927e-16,
+    "optimal_global_permeability_multiplier": 1.0000000000000002,
+    "reported_prediction_rows": 102,
+    "residual_by_segment": {
+      "BCD-A32": {
+        "count": 38,
+        "effective_weight": 27.0,
+        "weighted_mean_abs_log10_residual": 1.2996857400415318,
+        "weighted_rmse_log10": 1.685030523675502
+      },
+      "BCD-A33": {
+        "count": 37,
+        "effective_weight": 25.0,
+        "weighted_mean_abs_log10_residual": 1.1538039216005709,
+        "weighted_rmse_log10": 1.526396752860839
+      }
+    },
+    "target_cells": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/permeability_observation_cells.csv",
+    "target_rows": 204,
+    "targets": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/permeability_observation_targets.csv",
+    "used_in_objective_rows": 75,
+    "weighted_mean_abs_log10_residual": 1.2295502504064544,
+    "weighted_rmse_log10": 1.61071549171474,
+    "weighted_rmse_log10_after_global_shift": 1.6107154917147397
+  },
+  "evaluation_rows": 204,
+  "extreme_residual_active_rows_ge_3_log10": 6,
+  "field_name": "k_i_rd",
+  "interpretation": "2 active rows are outside the configured scalar multiplier range; more spatial sampling within the same scalar-bounded family cannot close those rows without revisiting bounds, tensor-shape release, or measurement interpretation.",
+  "large_residual_active_rows_ge_1_log10": 48,
+  "log10_sigma": 0.5,
+  "mesh": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/current_permeability_field/current_best_bulk_w_projections.vtu",
+  "notes": [
+    "Residuals are predicted log10(k) minus observed log10(k).",
+    "The configured scalar range assumes each cell tensor keeps its orientation/anisotropy ratio and can only scale until the configured eigenvalue bounds are hit.",
+    "This is a direct pulse-test audit only; it does not run OGS or change likelihood activation gates."
+  ],
+  "output_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_residual_conflict_audit.csv",
+  "recommended_next_action_counts_active": {
+    "locally_consistent_under_current_log10_sigma": 27,
+    "review support_geometry_gas_to_water_conversion_or_uncertainty_before_more_ogs": 46,
+    "review_sampler_bounds_tensor_shape_or_measurement_interpretation_before_more_spatial_sampling": 2
+  },
+  "residual_band_counts_active": {
+    "abs_1_to_2_log10": 27,
+    "abs_2_to_3_log10": 15,
+    "abs_ge_3_log10": 6,
+    "abs_lt_0p5_log10": 27
+  },
+  "residual_sign_counts_active": {
+    "overpredicts_observation": 25,
+    "underpredicts_observation": 40,
+    "zero_residual": 10
+  },
+  "segment_output_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_residual_segment_summary.csv",
+  "segment_summary": [
+    {
+      "active_rows": 38,
+      "max_abs_residual": 3.4744237387763093,
+      "max_depth_m": 3.3,
+      "mean_abs_residual": 1.3822723183387857,
+      "mean_residual": -0.4404174503004341,
+      "min_depth_m": 0.15,
+      "normalized_segment_label": "BCD-A32",
+      "observed_log10_max": -12.096910013008056,
+      "observed_log10_min": -20.69897000433602,
+      "predicted_log10_max": -13.34948500216801,
+      "predicted_log10_min": -20.41195437047216,
+      "weighted_mean_abs_residual": 1.2996857400415318
+    },
+    {
+      "active_rows": 37,
+      "max_abs_residual": 3.451544993495972,
+      "max_depth_m": 3.3,
+      "mean_abs_residual": 1.169395866487065,
+      "mean_residual": -0.38979862216235484,
+      "min_depth_m": 0.17,
+      "normalized_segment_label": "BCD-A33",
+      "observed_log10_max": -14.096910013008056,
+      "observed_log10_min": -21.0,
+      "predicted_log10_max": -14.154901959985745,
+      "predicted_log10_min": -20.39794000867204,
+      "weighted_mean_abs_residual": 1.1538039216005709
+    }
+  ],
+  "status": "permeability_residual_conflict_audit_generated",
+  "summary_markdown": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_residual_conflict_audit.md",
+  "support_cell_output_csv": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/permeability_residual_support_cell_audit.csv",
+  "support_cell_rows": 30,
+  "support_cells_with_observed_range_ge_1_log10": 16,
+  "support_cells_with_repeated_active_rows": 24,
+  "target_cells": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/permeability_observation_cells.csv",
+  "target_rows": 204,
+  "target_status_counts": {
+    "mapped_inside_mesh": 75,
+    "mapped_outside_mesh": 27,
+    "missing_segment_geometry": 98,
+    "not_usable_missing_or_nonpositive_permeability": 4
+  },
+  "targets": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/processed_observations/permeability_observation_targets.csv",
+  "top_abs_residual_rows": [
+    {
+      "borehole_depth_m": 0.87,
+      "configured_scalar_feasibility_status": "observed_above_configured_scalar_range",
+      "log10_residual_pred_minus_obs": -3.4744237387763093,
+      "normalized_segment_label": "BCD-A32",
+      "observation_id": "perm_0005",
+      "observed_log10_permeability_m2": -12.096910013008056,
+      "predicted_log10_permeability_m2": -15.571333751784366,
+      "recommended_next_action": "review_sampler_bounds_tensor_shape_or_measurement_interpretation_before_more_spatial_sampling"
+    },
+    {
+      "borehole_depth_m": 0.87,
+      "configured_scalar_feasibility_status": "observed_above_configured_scalar_range",
+      "log10_residual_pred_minus_obs": -3.4744237387763093,
+      "normalized_segment_label": "BCD-A32",
+      "observation_id": "perm_0155",
+      "observed_log10_permeability_m2": -12.096910013008056,
+      "predicted_log10_permeability_m2": -15.571333751784366,
+      "recommended_next_action": "review_sampler_bounds_tensor_shape_or_measurement_interpretation_before_more_spatial_sampling"
+    },
+    {
+      "borehole_depth_m": 0.85,
+      "configured_scalar_feasibility_status": "observed_inside_configured_scalar_range",
+      "log10_residual_pred_minus_obs": 3.4744237387763093,
+      "normalized_segment_label": "BCD-A32",
+      "observation_id": "perm_0169",
+      "observed_log10_permeability_m2": -19.045757490560675,
+      "predicted_log10_permeability_m2": -15.571333751784366,
+      "recommended_next_action": "review support_geometry_gas_to_water_conversion_or_uncertainty_before_more_ogs"
+    },
+    {
+      "borehole_depth_m": 0.55,
+      "configured_scalar_feasibility_status": "observed_inside_configured_scalar_range",
+      "log10_residual_pred_minus_obs": -3.451544993495972,
+      "normalized_segment_label": "BCD-A33",
+      "observation_id": "perm_0181",
+      "observed_log10_permeability_m2": -14.096910013008056,
+      "predicted_log10_permeability_m2": -17.548455006504028,
+      "recommended_next_action": "review support_geometry_gas_to_water_conversion_or_uncertainty_before_more_ogs"
+    },
+    {
+      "borehole_depth_m": 0.55,
+      "configured_scalar_feasibility_status": "observed_inside_configured_scalar_range",
+      "log10_residual_pred_minus_obs": -3.451544993495972,
+      "normalized_segment_label": "BCD-A33",
+      "observation_id": "perm_0015",
+      "observed_log10_permeability_m2": -14.096910013008056,
+      "predicted_log10_permeability_m2": -17.548455006504028,
+      "recommended_next_action": "review support_geometry_gas_to_water_conversion_or_uncertainty_before_more_ogs"
+    },
+    {
+      "borehole_depth_m": 0.59,
+      "configured_scalar_feasibility_status": "observed_inside_configured_scalar_range",
+      "log10_residual_pred_minus_obs": 3.451544993495972,
+      "normalized_segment_label": "BCD-A33",
+      "observation_id": "perm_0195",
+      "observed_log10_permeability_m2": -21.0,
+      "predicted_log10_permeability_m2": -17.548455006504028,
+      "recommended_next_action": "review support_geometry_gas_to_water_conversion_or_uncertainty_before_more_ogs"
+    },
+    {
+      "borehole_depth_m": 1.01,
+      "configured_scalar_feasibility_status": "observed_inside_configured_scalar_range",
+      "log10_residual_pred_minus_obs": -2.287015633863861,
+      "normalized_segment_label": "BCD-A32",
+      "observation_id": "perm_0156",
+      "observed_log10_permeability_m2": -14.522878745280336,
+      "predicted_log10_permeability_m2": -16.809894379144197,
+      "recommended_next_action": "review support_geometry_gas_to_water_conversion_or_uncertainty_before_more_ogs"
+    },
+    {
+      "borehole_depth_m": 1.01,
+      "configured_scalar_feasibility_status": "observed_inside_configured_scalar_range",
+      "log10_residual_pred_minus_obs": -2.287015633863861,
+      "normalized_segment_label": "BCD-A32",
+      "observation_id": "perm_0006",
+      "observed_log10_permeability_m2": -14.522878745280336,
+      "predicted_log10_permeability_m2": -16.809894379144197,
+      "recommended_next_action": "review support_geometry_gas_to_water_conversion_or_uncertainty_before_more_ogs"
+    },
+    {
+      "borehole_depth_m": 0.95,
+      "configured_scalar_feasibility_status": "observed_inside_configured_scalar_range",
+      "log10_residual_pred_minus_obs": 2.2870156338638594,
+      "normalized_segment_label": "BCD-A32",
+      "observation_id": "perm_0170",
+      "observed_log10_permeability_m2": -19.096910013008056,
+      "predicted_log10_permeability_m2": -16.809894379144197,
+      "recommended_next_action": "review support_geometry_gas_to_water_conversion_or_uncertainty_before_more_ogs"
+    },
+    {
+      "borehole_depth_m": 1.15,
+      "configured_scalar_feasibility_status": "observed_inside_configured_scalar_range",
+      "log10_residual_pred_minus_obs": -2.150514997831994,
+      "normalized_segment_label": "BCD-A32",
+      "observation_id": "perm_0157",
+      "observed_log10_permeability_m2": -15.096910013008056,
+      "predicted_log10_permeability_m2": -17.24742501084005,
+      "recommended_next_action": "review support_geometry_gas_to_water_conversion_or_uncertainty_before_more_ogs"
+    }
+  ],
+  "very_large_residual_active_rows_ge_2_log10": 21
+}

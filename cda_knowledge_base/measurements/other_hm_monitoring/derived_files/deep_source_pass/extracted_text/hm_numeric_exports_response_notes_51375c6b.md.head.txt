@@ -1,0 +1,18 @@
+# Response Notes: hm_numeric_exports
+- Response status: `missing_response`
+- Request status: `drafted_pending_send`
+- Gate: `HM_NUMERIC_EXPORTS`
+- Audience: Gesa Ziefle / BGR Geoscope, laser-scan, and levelling source
+- Recipient draft: `inversion_workflow/external_gate_requests/bgr_other_hm_exports_via_gesa_ziefle.md`
+## Received Files Or Answers
+- None recorded yet.
+## Intake Metadata Checklist
+- instrument id, timestamp or survey epoch, measured value, unit, coordinate/support id, reference/zero convention, processing provenance, and quality/status flag.
+## Acceptance Test
+The other-HM source audit finds at least one hard-residual-ready numeric request class with time/epoch and model-facing support.
+## Refresh Commands After Acceptance
+`python inversion_workflow/scripts/build_other_hm_monitoring_inventory.py; python inversion_workflow/scripts/build_other_hm_missing_numeric_request.py; python inversion_workflow/scripts/build_measurement_operator_coverage.py; python inversion_workflow/scripts/build_measurement_stream_gate_audit.py; python inversion_workflow/scripts/build_measurement_gate_closure_request.py; python inversion_workflow/scripts/build_external_gate_request_pack.py; python inversion_workflow/scripts/build_objective_readiness_audit.py`
+## Gate Decision
+- Current effect if accepted: May close HM_NUMERIC_EXPORTS and create candidate pressure/deformation/laser/levelling validation residuals.
+- Decision: `not_evaluated`
+- Evaluated by/date: not recorded

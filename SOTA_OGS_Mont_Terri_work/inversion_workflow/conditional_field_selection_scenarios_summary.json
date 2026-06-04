@@ -1,0 +1,542 @@
+{
+  "status": "conditional_field_selection_scenarios_generated",
+  "current_run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "scenario_count": 8,
+  "unique_winner_count": 5,
+  "unique_winners": [
+    "broad_continuous_001_003_length_0p021m",
+    "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+    "local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000",
+    "local_bracketed_003_length_0p031m",
+    "production_sampler_round3_002_length_0p028m_shift_1p050"
+  ],
+  "current_field_winning_scenario_count": 1,
+  "conditional_winner_count": {
+    "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000": 1,
+    "broad_continuous_001_003_length_0p021m": 1,
+    "local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000": 2,
+    "local_bracketed_003_length_0p031m": 2,
+    "production_sampler_round3_002_length_0p028m_shift_1p050": 2
+  },
+  "final_decision": "single_field_not_stable_across_gate_scenarios",
+  "gate_context": {
+    "stream_gate_status": "measurement_stream_activation_gate_audit_generated",
+    "required_gate_fail_count": 7,
+    "required_gate_warn_count": 4,
+    "promotion_decision_counts": {
+      "active_with_tracked_caveats": 2,
+      "boundary_audit_only": 1,
+      "diagnostic_only": 2,
+      "not_ready_for_hard_residual": 1,
+      "support_layer_ready": 2
+    }
+  },
+  "interpretation": [
+    "The current packaged field wins only the active raw-NMR objective scenario.",
+    "Different defensible diagnostic or promoted-NMR scenarios select different fields.",
+    "Use this as a conditional selection map; it does not promote ERT, Taupe/TDR, RH, or other-HM into the likelihood."
+  ],
+  "top_by_scenario": {
+    "S01_current_active_raw_nmr": [
+      {
+        "run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+        "run_kind": "local_basis",
+        "scenario_score": 0.0,
+        "scenario_rank": 1.0,
+        "active_rank": 1.0,
+        "nmr_trend_rank": 14.0,
+        "ert_rank": 8.0,
+        "taupe_rank": 29.0,
+        "mean_rank_all_streams": 13.2,
+        "worst_rank_all_streams": 29.0
+      },
+      {
+        "run_id": "local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000",
+        "run_kind": "local_basis",
+        "scenario_score": 6.071130057587179e-06,
+        "scenario_rank": 2.0,
+        "active_rank": 2.0,
+        "nmr_trend_rank": 13.0,
+        "ert_rank": 6.0,
+        "taupe_rank": 18.0,
+        "mean_rank_all_streams": 10.4,
+        "worst_rank_all_streams": 18.0
+      },
+      {
+        "run_id": "production_sampler_round2_005_basis_023_det_l_0p0075_s_0p750",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 8.561487926993683e-06,
+        "scenario_rank": 3.0,
+        "active_rank": 3.0,
+        "nmr_trend_rank": 19.0,
+        "ert_rank": 7.0,
+        "taupe_rank": 23.0,
+        "mean_rank_all_streams": 14.2,
+        "worst_rank_all_streams": 23.0
+      },
+      {
+        "run_id": "production_sampler_round2_004_basis_018_det_l_0p0050_s_0p750",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 4.055942278247917e-05,
+        "scenario_rank": 4.0,
+        "active_rank": 4.0,
+        "nmr_trend_rank": 17.0,
+        "ert_rank": 9.0,
+        "taupe_rank": 21.0,
+        "mean_rank_all_streams": 13.6,
+        "worst_rank_all_streams": 21.0
+      },
+      {
+        "run_id": "production_sampler_round2_002_basis_008_det_l_0p0025_s_0p750",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 4.055942379083005e-05,
+        "scenario_rank": 5.0,
+        "active_rank": 5.0,
+        "nmr_trend_rank": 16.0,
+        "ert_rank": 11.0,
+        "taupe_rank": 22.0,
+        "mean_rank_all_streams": 14.0,
+        "worst_rank_all_streams": 22.0
+      }
+    ],
+    "S02_promoted_nmr_trend_anomaly": [
+      {
+        "run_id": "broad_continuous_001_003_length_0p021m",
+        "run_kind": "broad_continuous",
+        "scenario_score": 0.0,
+        "scenario_rank": 1.0,
+        "active_rank": 56.0,
+        "nmr_trend_rank": 1.0,
+        "ert_rank": 60.0,
+        "taupe_rank": 62.0,
+        "mean_rank_all_streams": 36.0,
+        "worst_rank_all_streams": 62.0
+      },
+      {
+        "run_id": "local_refined_002_length_0p019m",
+        "run_kind": "local_smooth",
+        "scenario_score": 3.65229329498976e-07,
+        "scenario_rank": 2.0,
+        "active_rank": 47.0,
+        "nmr_trend_rank": 2.0,
+        "ert_rank": 55.0,
+        "taupe_rank": 64.0,
+        "mean_rank_all_streams": 34.0,
+        "worst_rank_all_streams": 64.0
+      },
+      {
+        "run_id": "local_refined_001_length_0p013m",
+        "run_kind": "local_smooth",
+        "scenario_score": 6.350506832387795e-05,
+        "scenario_rank": 3.0,
+        "active_rank": 40.0,
+        "nmr_trend_rank": 3.0,
+        "ert_rank": 46.0,
+        "taupe_rank": 56.0,
+        "mean_rank_all_streams": 29.6,
+        "worst_rank_all_streams": 56.0
+      },
+      {
+        "run_id": "broad_continuous_loop_001_001_length_0p015m",
+        "run_kind": "broad_continuous",
+        "scenario_score": 6.70587726190435e-05,
+        "scenario_rank": 4.0,
+        "active_rank": 45.0,
+        "nmr_trend_rank": 4.0,
+        "ert_rank": 48.0,
+        "taupe_rank": 51.0,
+        "mean_rank_all_streams": 30.4,
+        "worst_rank_all_streams": 51.0
+      },
+      {
+        "run_id": "broad_continuous_001_002_length_0p022m_shift_0p998",
+        "run_kind": "broad_continuous",
+        "scenario_score": 0.0001117106504149,
+        "scenario_rank": 5.0,
+        "active_rank": 55.0,
+        "nmr_trend_rank": 5.0,
+        "ert_rank": 61.0,
+        "taupe_rank": 65.0,
+        "mean_rank_all_streams": 38.2,
+        "worst_rank_all_streams": 65.0
+      }
+    ],
+    "S03_active_plus_ert_screen": [
+      {
+        "run_id": "local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000",
+        "run_kind": "local_basis",
+        "scenario_score": 0.0027353913745925933,
+        "scenario_rank": 1.0,
+        "active_rank": 2.0,
+        "nmr_trend_rank": 13.0,
+        "ert_rank": 6.0,
+        "taupe_rank": 18.0,
+        "mean_rank_all_streams": 10.4,
+        "worst_rank_all_streams": 18.0
+      },
+      {
+        "run_id": "production_sampler_round2_005_basis_023_det_l_0p0075_s_0p750",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.0027369371953951467,
+        "scenario_rank": 2.0,
+        "active_rank": 3.0,
+        "nmr_trend_rank": 19.0,
+        "ert_rank": 7.0,
+        "taupe_rank": 23.0,
+        "mean_rank_all_streams": 14.2,
+        "worst_rank_all_streams": 23.0
+      },
+      {
+        "run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+        "run_kind": "local_basis",
+        "scenario_score": 0.00273804972982035,
+        "scenario_rank": 3.0,
+        "active_rank": 1.0,
+        "nmr_trend_rank": 14.0,
+        "ert_rank": 8.0,
+        "taupe_rank": 29.0,
+        "mean_rank_all_streams": 13.2,
+        "worst_rank_all_streams": 29.0
+      },
+      {
+        "run_id": "production_sampler_round2_004_basis_018_det_l_0p0050_s_0p750",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.0027640068175473894,
+        "scenario_rank": 4.0,
+        "active_rank": 4.0,
+        "nmr_trend_rank": 17.0,
+        "ert_rank": 9.0,
+        "taupe_rank": 21.0,
+        "mean_rank_all_streams": 13.6,
+        "worst_rank_all_streams": 21.0
+      },
+      {
+        "run_id": "production_sampler_round2_002_basis_008_det_l_0p0025_s_0p750",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.0027640068188078152,
+        "scenario_rank": 5.0,
+        "active_rank": 5.0,
+        "nmr_trend_rank": 16.0,
+        "ert_rank": 11.0,
+        "taupe_rank": 22.0,
+        "mean_rank_all_streams": 14.0,
+        "worst_rank_all_streams": 22.0
+      }
+    ],
+    "S04_active_plus_taupe_screen": [
+      {
+        "run_id": "local_bracketed_003_length_0p031m",
+        "run_kind": "local_smooth",
+        "scenario_score": 0.1892354952685581,
+        "scenario_rank": 1.0,
+        "active_rank": 62.0,
+        "nmr_trend_rank": 41.0,
+        "ert_rank": 63.0,
+        "taupe_rank": 3.0,
+        "mean_rank_all_streams": 42.0,
+        "worst_rank_all_streams": 63.0
+      },
+      {
+        "run_id": "adaptive_combined_001_length_0p050m",
+        "run_kind": "adaptive_combined",
+        "scenario_score": 0.3042887106039556,
+        "scenario_rank": 2.0,
+        "active_rank": 63.0,
+        "nmr_trend_rank": 62.0,
+        "ert_rank": 65.0,
+        "taupe_rank": 1.0,
+        "mean_rank_all_streams": 50.6,
+        "worst_rank_all_streams": 65.0
+      },
+      {
+        "run_id": "production_sampler_round3_002_length_0p028m_shift_1p050",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.31072663401243794,
+        "scenario_rank": 3.0,
+        "active_rank": 53.0,
+        "nmr_trend_rank": 48.0,
+        "ert_rank": 49.0,
+        "taupe_rank": 4.0,
+        "mean_rank_all_streams": 40.4,
+        "worst_rank_all_streams": 53.0
+      },
+      {
+        "run_id": "production_sampler_round3_001_length_0p028m",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.317475862925882,
+        "scenario_rank": 4.0,
+        "active_rank": 52.0,
+        "nmr_trend_rank": 39.0,
+        "ert_rank": 51.0,
+        "taupe_rank": 7.0,
+        "mean_rank_all_streams": 37.6,
+        "worst_rank_all_streams": 52.0
+      },
+      {
+        "run_id": "production_sampler_round2_006_length_0p026m_shift_1p107",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.32099086220388795,
+        "scenario_rank": 5.0,
+        "active_rank": 57.0,
+        "nmr_trend_rank": 56.0,
+        "ert_rank": 50.0,
+        "taupe_rank": 5.0,
+        "mean_rank_all_streams": 44.8,
+        "worst_rank_all_streams": 57.0
+      }
+    ],
+    "S05_active_plus_ert_taupe_screen": [
+      {
+        "run_id": "production_sampler_round3_002_length_0p028m_shift_1p050",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.21804843781222916,
+        "scenario_rank": 1.0,
+        "active_rank": 53.0,
+        "nmr_trend_rank": 48.0,
+        "ert_rank": 49.0,
+        "taupe_rank": 4.0,
+        "mean_rank_all_streams": 40.4,
+        "worst_rank_all_streams": 53.0
+      },
+      {
+        "run_id": "production_sampler_round3_001_length_0p028m",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.22328750164165867,
+        "scenario_rank": 2.0,
+        "active_rank": 52.0,
+        "nmr_trend_rank": 39.0,
+        "ert_rank": 51.0,
+        "taupe_rank": 7.0,
+        "mean_rank_all_streams": 37.6,
+        "worst_rank_all_streams": 52.0
+      },
+      {
+        "run_id": "production_sampler_round2_006_length_0p026m_shift_1p107",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.2255857290013773,
+        "scenario_rank": 3.0,
+        "active_rank": 57.0,
+        "nmr_trend_rank": 56.0,
+        "ert_rank": 50.0,
+        "taupe_rank": 5.0,
+        "mean_rank_all_streams": 44.8,
+        "worst_rank_all_streams": 57.0
+      },
+      {
+        "run_id": "broad_continuous_001_001_length_0p023m_shift_1p004",
+        "run_kind": "broad_continuous",
+        "scenario_score": 0.2295105837225153,
+        "scenario_rank": 4.0,
+        "active_rank": 38.0,
+        "nmr_trend_rank": 25.0,
+        "ert_rank": 1.0,
+        "taupe_rank": 10.0,
+        "mean_rank_all_streams": 19.8,
+        "worst_rank_all_streams": 38.0
+      },
+      {
+        "run_id": "optimizer_proposed_003_length_0p025m_shift_1p125",
+        "run_kind": "optimizer_proposed",
+        "scenario_score": 0.2325090191633338,
+        "scenario_rank": 5.0,
+        "active_rank": 60.0,
+        "nmr_trend_rank": 57.0,
+        "ert_rank": 52.0,
+        "taupe_rank": 6.0,
+        "mean_rank_all_streams": 46.4,
+        "worst_rank_all_streams": 60.0
+      }
+    ],
+    "S06_active_plus_promoted_nmr_ert_taupe": [
+      {
+        "run_id": "production_sampler_round3_002_length_0p028m_shift_1p050",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.16609949203382465,
+        "scenario_rank": 1.0,
+        "active_rank": 53.0,
+        "nmr_trend_rank": 48.0,
+        "ert_rank": 49.0,
+        "taupe_rank": 4.0,
+        "mean_rank_all_streams": 40.4,
+        "worst_rank_all_streams": 53.0
+      },
+      {
+        "run_id": "production_sampler_round3_001_length_0p028m",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.16862208193131073,
+        "scenario_rank": 2.0,
+        "active_rank": 52.0,
+        "nmr_trend_rank": 39.0,
+        "ert_rank": 51.0,
+        "taupe_rank": 7.0,
+        "mean_rank_all_streams": 37.6,
+        "worst_rank_all_streams": 52.0
+      },
+      {
+        "run_id": "broad_continuous_001_001_length_0p023m_shift_1p004",
+        "run_kind": "broad_continuous",
+        "scenario_score": 0.17230504246867118,
+        "scenario_rank": 3.0,
+        "active_rank": 38.0,
+        "nmr_trend_rank": 25.0,
+        "ert_rank": 1.0,
+        "taupe_rank": 10.0,
+        "mean_rank_all_streams": 19.8,
+        "worst_rank_all_streams": 38.0
+      },
+      {
+        "run_id": "regularized_ogs_candidate_001_length_0p025m",
+        "run_kind": "regularized_ogs",
+        "scenario_score": 0.17729247961246164,
+        "scenario_rank": 4.0,
+        "active_rank": 49.0,
+        "nmr_trend_rank": 27.0,
+        "ert_rank": 58.0,
+        "taupe_rank": 9.0,
+        "mean_rank_all_streams": 34.0,
+        "worst_rank_all_streams": 58.0
+      },
+      {
+        "run_id": "production_sampler_round4_001_length_0p029m_shift_0p954",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.17954481793240282,
+        "scenario_rank": 5.0,
+        "active_rank": 54.0,
+        "nmr_trend_rank": 52.0,
+        "ert_rank": 54.0,
+        "taupe_rank": 8.0,
+        "mean_rank_all_streams": 44.0,
+        "worst_rank_all_streams": 54.0
+      }
+    ],
+    "S07_diagnostics_only_nmr_ert_taupe": [
+      {
+        "run_id": "local_bracketed_003_length_0p031m",
+        "run_kind": "local_smooth",
+        "scenario_score": 0.18145402847654743,
+        "scenario_rank": 1.0,
+        "active_rank": 62.0,
+        "nmr_trend_rank": 41.0,
+        "ert_rank": 63.0,
+        "taupe_rank": 3.0,
+        "mean_rank_all_streams": 42.0,
+        "worst_rank_all_streams": 63.0
+      },
+      {
+        "run_id": "production_sampler_round3_002_length_0p028m_shift_1p050",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.20201506247840403,
+        "scenario_rank": 2.0,
+        "active_rank": 53.0,
+        "nmr_trend_rank": 48.0,
+        "ert_rank": 49.0,
+        "taupe_rank": 4.0,
+        "mean_rank_all_streams": 40.4,
+        "worst_rank_all_streams": 53.0
+      },
+      {
+        "run_id": "production_sampler_round3_001_length_0p028m",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.20625816695942345,
+        "scenario_rank": 3.0,
+        "active_rank": 52.0,
+        "nmr_trend_rank": 39.0,
+        "ert_rank": 51.0,
+        "taupe_rank": 7.0,
+        "mean_rank_all_streams": 37.6,
+        "worst_rank_all_streams": 52.0
+      },
+      {
+        "run_id": "production_sampler_round2_006_length_0p026m_shift_1p107",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.2145487906945693,
+        "scenario_rank": 4.0,
+        "active_rank": 57.0,
+        "nmr_trend_rank": 56.0,
+        "ert_rank": 50.0,
+        "taupe_rank": 5.0,
+        "mean_rank_all_streams": 44.8,
+        "worst_rank_all_streams": 57.0
+      },
+      {
+        "run_id": "production_sampler_round4_001_length_0p029m_shift_0p954",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 0.21767507461900906,
+        "scenario_rank": 5.0,
+        "active_rank": 54.0,
+        "nmr_trend_rank": 52.0,
+        "ert_rank": 54.0,
+        "taupe_rank": 8.0,
+        "mean_rank_all_streams": 44.0,
+        "worst_rank_all_streams": 54.0
+      }
+    ],
+    "S08_rank_consensus_all_streams": [
+      {
+        "run_id": "local_basis_sampler_003_basis_029_det_l_0p0100_s_1p000",
+        "run_kind": "local_basis",
+        "scenario_score": 10.4,
+        "scenario_rank": 1.0,
+        "active_rank": 2.0,
+        "nmr_trend_rank": 13.0,
+        "ert_rank": 6.0,
+        "taupe_rank": 18.0,
+        "mean_rank_all_streams": 10.4,
+        "worst_rank_all_streams": 18.0
+      },
+      {
+        "run_id": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+        "run_kind": "local_basis",
+        "scenario_score": 13.2,
+        "scenario_rank": 2.0,
+        "active_rank": 1.0,
+        "nmr_trend_rank": 14.0,
+        "ert_rank": 8.0,
+        "taupe_rank": 29.0,
+        "mean_rank_all_streams": 13.2,
+        "worst_rank_all_streams": 29.0
+      },
+      {
+        "run_id": "production_sampler_round4_002_basis_009_det_l_0p0025_s_1p000",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 13.2,
+        "scenario_rank": 2.0,
+        "active_rank": 12.0,
+        "nmr_trend_rank": 8.0,
+        "ert_rank": 14.0,
+        "taupe_rank": 24.0,
+        "mean_rank_all_streams": 13.2,
+        "worst_rank_all_streams": 24.0
+      },
+      {
+        "run_id": "production_sampler_round2_004_basis_018_det_l_0p0050_s_0p750",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 13.6,
+        "scenario_rank": 4.0,
+        "active_rank": 4.0,
+        "nmr_trend_rank": 17.0,
+        "ert_rank": 9.0,
+        "taupe_rank": 21.0,
+        "mean_rank_all_streams": 13.6,
+        "worst_rank_all_streams": 21.0
+      },
+      {
+        "run_id": "production_sampler_round2_003_basis_013_det_l_0p0035_s_0p750",
+        "run_kind": "production_sampler_round",
+        "scenario_score": 13.6,
+        "scenario_rank": 4.0,
+        "active_rank": 6.0,
+        "nmr_trend_rank": 15.0,
+        "ert_rank": 12.0,
+        "taupe_rank": 20.0,
+        "mean_rank_all_streams": 13.6,
+        "worst_rank_all_streams": 20.0
+      }
+    ]
+  },
+  "source_artifacts": [
+    "inversion_workflow/cross_stream_candidate_scorecard.csv",
+    "inversion_workflow/current_permeability_field/CURRENT_PERMEABILITY_FIELD_SUMMARY.json",
+    "inversion_workflow/measurement_stream_activation_gate_audit_summary.json"
+  ]
+}

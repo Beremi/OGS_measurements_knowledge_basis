@@ -1,0 +1,52 @@
+{
+  "active_objective_changed": false,
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/nmr/derived_files/nmr_final_residual_policy_gate.csv",
+      "source": "inversion_workflow/nmr_final_residual_policy_gate.csv"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/nmr/derived_files/nmr_final_residual_policy_gate_summary.json",
+      "source": "inversion_workflow/nmr_final_residual_policy_gate_summary.json"
+    },
+    {
+      "catalogue_copy": "../cda_knowledge_base/measurements/nmr/derived_files/nmr_final_residual_policy_gate.md",
+      "source": "inversion_workflow/nmr_final_residual_policy_gate.md"
+    }
+  ],
+  "conditional_scenario_decision": "single_field_not_stable_across_gate_scenarios",
+  "conditional_unique_winner_count": 5,
+  "current_field_winning_scenario_count": 1,
+  "current_raw_incumbent_objective": 3156.353066948979,
+  "current_raw_incumbent_rank_under_trend_anomaly": 14.0,
+  "current_raw_incumbent_run": "local_basis_sampler_002_basis_024_det_l_0p0075_s_1p000",
+  "current_report_default_policy": "retain_raw_absolute_theta_current_report_default_with_caveats",
+  "final_nmr_policy_selected": false,
+  "followup_best_unevaluated_direct_advantage": 0.011974871836514467,
+  "followup_materiality_threshold": 0.7394950176895989,
+  "followup_median_state_beating_candidates": 0,
+  "followup_recommendation": "pause_new_trend_anomaly_ogs_batch",
+  "gate_count": 4,
+  "next_decision_sequence": [
+    "Keep raw absolute theta as the current-report default for reproducibility until a final NMR policy is selected.",
+    "If promoted, use within-label trend/anomaly as the preferred provisional final NMR residual and state that absolute water content is not fitted.",
+    "Do not run a new trend/anomaly OGS batch now because the best unevaluated direct advantage is below the materiality threshold.",
+    "After selecting the final NMR policy, regenerate conditional field selection, final promotion, final objective, and readiness audits."
+  ],
+  "promotion_decision": "do_not_promote_current_field",
+  "recommended_candidate_policy": "within_label_trend_anomaly",
+  "recommended_candidate_policy_objective": 505.614305828437,
+  "recommended_candidate_policy_run": "broad_continuous_001_003_length_0p021m",
+  "source_artifacts": [
+    "inversion_workflow/nmr_objective_decision_summary.json",
+    "inversion_workflow/nmr_trend_anomaly_active_objective_summary.json",
+    "inversion_workflow/runs/nmr_trend_anomaly_followup_plan/NMR_TREND_ANOMALY_FOLLOWUP_PLAN.json",
+    "inversion_workflow/conditional_field_selection_scenarios_summary.json",
+    "inversion_workflow/final_inversion_promotion_checklist_summary.json"
+  ],
+  "status": "nmr_final_residual_policy_gate_generated",
+  "trend_anomaly_full_active_runs": 66,
+  "trend_anomaly_mode_status": "nmr_trend_anomaly_active_objective_mode_implemented_provisional",
+  "trend_anomaly_validation_max_abs_delta": 5.684341886080802e-14,
+  "trend_anomaly_winner_raw_rank": 56.0
+}

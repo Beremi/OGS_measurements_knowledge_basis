@@ -1,0 +1,78 @@
+<!-- IC -->
+<parameter>
+<name>ic_displacement</name>
+<type>Constant</type>
+<values>0 0</values>
+<!--type>MeshNode</type>
+<field_name>displacement</field_name-->
+</parameter>
+<parameter>
+<name>ic_pressure</name> <!-- check pressure0 + ic_sigma0 -->
+<type>Function</type>
+<expression>1.5e6 - ((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*y</expression> <!-- just 1% difference if not considering the change in rho-->
+<!--type>MeshNode</type>
+<field_name>pressure_interpolated</field_name-->
+</parameter>
+<parameter>
+<name>ic_temperature</name> <!-- 25°C -->
+<type>Constant</type>
+<value>298.15</value>
+<!--type>MeshNode</type>
+<field_name>temperature_interpolated</field_name-->
+</parameter>
+<parameter>
+<name>ic_sigma0</name><!-- check in-situ pressure -->
+<type>Function</type> <!-- values from discussion between BGR and GRS -->
+<expression>(-1.21e6) + 1*((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*y</expression> <!-- \nu_13 0.22 * \sigma_v'-->
+<!--expression>(-2.42e6) + 1*((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*z</expression--> <!-- \nu_23 0.44 * \sigma_v'-->
+<expression>(-7e6 + 1*1.5e6) + 1*((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*y</expression> <!-- sigma_v' -->
+<expression>0</expression>
+<expression>0</expression>
+<!--expression>0</expression-->
+</parameter>
+<!-- BC -->
+<parameter>
+<name>bc_displacement</name>
+<type>Constant</type>
+<value>0</value>
+</parameter>
+<parameter>
+<name>bc_pressure_outside</name> <!-- check imposed ic_press* -->
+<type>Constant</type>
+<value>1.5e+6</value>
+</parameter>
+<parameter>
+<name>bc_top_pressure</name>
+<type>Function</type>
+<expression>1.5e6 - ((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*50</expression>
+</parameter>
+<parameter>
+<name>bc_temperature_outside</name> <!-- check value ic_temp* -->
+<type>Constant</type>
+<value>298.15</value>
+</parameter>
+<parameter>
+<name>load_top</name>
+<type>Function</type>
+<expression>(-7e6) + 1*((1095*(1 + 3.2e-10*(1.5e6 - 7.5e6))))*0*50</expression> <!-- use total stress for consistency here; load_top at z=30m -->
+</parameter>
+<!-- Boundary conditions for gallery and niche -->
+<parameter>
+<name>bc_atm_pressure</name>
+<type>Constant</type>
+<values>0.1e+6</values>
+</parameter>
+<parameter>
+<name>pressure_scaling_factor</name>
+<type>Constant</type>
+<value>1.0</value>
+</parameter>
+<parameter>
+<name>open_niche_seasonal</name>
+<type>CurveScaled</type>
+<curve>open_niche_seasonal_curve</curve>
+<parameter>pressure_scaling_factor</parameter>
+</parameter>
+<!--
+<parameter>
+<name>closed_niche_seasonal</name>

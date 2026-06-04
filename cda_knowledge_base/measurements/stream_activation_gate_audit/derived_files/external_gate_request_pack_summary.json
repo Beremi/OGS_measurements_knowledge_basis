@@ -1,0 +1,79 @@
+{
+  "catalogue_copies": [
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_request_pack.csv",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_request_pack.csv"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_request_pack_summary.json",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_request_pack_summary.json"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_request_pack.md",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_request_pack.md"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_requests/bgr_ert_markus_furche_via_gesa_ziefle.md",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_requests/bgr_ert_markus_furche_via_gesa_ziefle.md"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_requests/bgr_historical_permeability_geometry_via_gesa_ziefle.md",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_requests/bgr_historical_permeability_geometry_via_gesa_ziefle.md"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_requests/bgr_other_hm_exports_via_gesa_ziefle.md",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_requests/bgr_other_hm_exports_via_gesa_ziefle.md"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_requests/bgr_rh_boundary_curve_provenance_via_gesa_ziefle.md",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_requests/bgr_rh_boundary_curve_provenance_via_gesa_ziefle.md"
+    },
+    {
+      "catalogue_copy": "/home/ber0061/Repositories/gesa_mails/cda_knowledge_base/measurements/stream_activation_gate_audit/derived_files/external_gate_requests/taupe_tdr_calibration_via_gesa_ziefle.md",
+      "source": "/home/ber0061/Repositories/gesa_mails/SOTA_OGS_Mont_Terri_work/inversion_workflow/external_gate_requests/taupe_tdr_calibration_via_gesa_ziefle.md"
+    }
+  ],
+  "contact_route_counts": {
+    "coordinator_only_processing_owner_unresolved": 1,
+    "coordinator_only_provider_unresolved": 1,
+    "coordinator_only_source_owner_unresolved": 1,
+    "coordinator_only_specific_provider_unresolved": 1,
+    "coordinator_with_named_provider_cc": 1
+  },
+  "draft_files": [
+    "inversion_workflow/external_gate_requests/bgr_ert_markus_furche_via_gesa_ziefle.md",
+    "inversion_workflow/external_gate_requests/bgr_historical_permeability_geometry_via_gesa_ziefle.md",
+    "inversion_workflow/external_gate_requests/bgr_other_hm_exports_via_gesa_ziefle.md",
+    "inversion_workflow/external_gate_requests/bgr_rh_boundary_curve_provenance_via_gesa_ziefle.md",
+    "inversion_workflow/external_gate_requests/taupe_tdr_calibration_via_gesa_ziefle.md"
+  ],
+  "external_request_count": 7,
+  "generated_files": [
+    "inversion_workflow/external_gate_request_pack.csv",
+    "inversion_workflow/external_gate_request_pack_summary.json",
+    "inversion_workflow/external_gate_request_pack.md"
+  ],
+  "generated_on": "2026-05-31",
+  "high_priority_external_request_count": 6,
+  "medium_priority_external_request_count": 1,
+  "recipient_count": 5,
+  "recipient_with_suggested_cc_count": 1,
+  "recipient_with_suggested_to_count": 5,
+  "request_counts_by_audience": {
+    "BGR ERT provider / Markus Furche via Gesa Ziefle": 2,
+    "Gesa Ziefle / BGR Geoscope, laser-scan, and levelling source": 2,
+    "Gesa Ziefle / BGR RH or OGS boundary-curve source": 1,
+    "Gesa Ziefle / BGR permeability source": 1,
+    "Taupe/TDR provider via Gesa Ziefle": 1
+  },
+  "request_ids": [
+    "ert_transform_support",
+    "ert_uncertainty",
+    "hm_numeric_exports",
+    "hm_uncertainty",
+    "rh_active_curve_provenance",
+    "taupe_unit_calibration",
+    "perm_endpoint_geometry"
+  ],
+  "status": "external_gate_request_pack_generated_not_sent"
+}

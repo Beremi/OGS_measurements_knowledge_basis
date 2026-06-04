@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "description": "Machine-checkable inventory of local CD-A measurement inputs and their intended observation-operator roles.",
+  "data_root": "../../cda_knowledge_base/measurements",
+  "observations": [
+    {
+      "id": "ert_open_time_series",
+      "measurement_type": "ERT",
+      "model_role": "resistivity observation operator from OGS saturation/water content to ERT mesh or projected common mesh",
+      "state_or_parameter": "indirect state observation; constrains permeability through saturation dynamics",
+      "primary_quantity": "electrical resistivity / resistivity change",
+      "model_quantity": "n*S_l mapped to resistivity by empirical Archie-type relation",
+      "checks": [
+        {
+          "type": "zip",
+          "path": "ert/source_files/ERT_meas_Niche_open.zip",
+          "min_files": 1700,
+          "suffix_counts_min": {
+            ".vtk": 1600,
+            ".txt": 50
+          }
+        },
+        {
+          "type": "text",
+          "path": "ert/source_files/2025-12-12_2022-09-01_02-00-00.tx0",
+          "min_lines": 6000,
+          "contains": "GeoTest"
+        },
+        {
+          "type": "text",
+          "path": "ert/source_files/2025-12-12_2022-09-01_02-00_open.ohm",
+          "min_lines": 2500,
+          "contains": "Number of electrodes"
+        },
+        {
+          "type": "text",
+          "path": "ert/source_files/2025-12-12_2022-09-01_02-00_closed.ohm",
+          "min_lines": 2400,
+          "contains": "Number of electrodes"
+        },
+        {
+          "type": "xlsx",
+          "path": "ert/source_files/2025-04-04_WC_vs_RHO_2025-02.xlsx",
+          "required_sheets": ["Data2019+", "Kruschwitz2004"]
+        }
+      ]
+    },
+    {
+      "id": "nmr_weekly_and_seasonal",
+      "measurement_type": "NMR",
+      "model_role": "sparse water-content anchor with bound/interlayer-water bias term",
+      "state_or_parameter": "state observation",
+      "primary_quantity": "NMR-derived volumetric water content and T2",
+      "model_quantity": "n*S_l plus measurement/bound-water model",
+      "checks": [
+        {
+          "type": "csv",
+          "path": "nmr/source_files/2025-09-15_Weekly_2021-2022_at_4S.dat",
+          "delimiter": ",",
+          "min_rows": 20,
+          "required_columns": ["Date", "Vol.Wat.Content[%]", "WC-Conf.Int.95%", "T2[ms]"]
+        },
+        {
+          "type": "csv",
+          "path": "nmr/source_files/2025-09-15_Weekly_2022-2025_at_4E.dat",
+          "delimiter": ",",
+          "min_rows": 140,
+          "required_columns": ["Date", "Vol.Wat.Content[%]", "WC-Conf.Int.95%", "T2[ms]"]
+        },
+        {
+          "type": "zip",
+          "path": "nmr/source_files/2025-09-15_saisonally.zip",
+          "min_files": 40,
+          "suffix_counts_min": {
+            ".dat": 20,
+            ".png": 10
+          }
+        },
+        {
+          "type": "xlsx",
+          "path": "nmr/source_files/Coordinates_NMR_Taupe_characborehole.xlsx",
+          "required_sheets": ["Tabelle1"]
+        }
+      ]
+    },
+    {
+      "id": "permeability_pulse_tests",
+      "measurement_type": "permeability_pulse_tests",
+      "model_role": "direct noisy log-permeability constraints on interval-scale effective directional averages",
+      "state_or_parameter": "parameter observation",
+      "primary_quantity": "nitrogen pulse-test apparent/intrinsic permeability or transmissibility",
+      "model_quantity": "local average of e^T k(x) e over test influence volume",
+      "checks": [
+        {
+          "type": "xlsx",
+          "path": "permeability_pulse_tests/source_files/2025-09-05_CD-A_Permeability.xlsx",
+          "required_sheets": ["2024_OT", "2024_CT", "2021_BCDA27_19", "Messdaten_BCDA26", "Messdaten_BCDA27"]
+        },
+        {
+          "type": "xlsx",
+          "path": "permeability_pulse_tests/source_files/Permeability_CDA_all_2025.xlsx",
+          "required_sheets": ["2021", "2024"]
+        }
+      ]
+    },
+    {
+      "id": "taupe_tdr_edz_bands",
+      "measurement_type": "Taupe/TDR",
+      "model_role": "semi-quantitative EDZ-band water-content trend validation",
+      "state_or_parameter": "state observation",
+      "primary_quantity": "Taupe/TDR water-content or dielectric proxy by EDZ distance band",
+      "model_quantity": "band averages of S_l or n*S_l",
+      "checks": [
+        {
+          "type": "xlsx",
+          "path": "taupe_tdr/source_files/Taupe_WC.xlsx",
+          "required_sheets": ["A3", "A4", "A7", "A8"],
+          "required_columns_by_sheet": {
+            "A3": ["Datum", "MV EDZ 0-50", "MV EDZ 0-10", "MV EDZ 10-20", "MV EDZ 20-30", "MV EDZ 30-40", "MV EDZ 40-50"],
+            "A4": ["Datum", "MV EDZ 0-50", "MV EDZ 0-10", "MV EDZ 10-20", "MV EDZ 20-30", "MV EDZ 30-40", "MV EDZ 40-50"],
+            "A7": ["Datum", "MV EDZ 0-50", "MV EDZ 0-10", "MV EDZ 10-20", "MV EDZ 20-30", "MV EDZ 30-40", "MV EDZ 40-50"],
+            "A8": ["Datum", "MV EDZ 0-50", "MV EDZ 0-10", "MV EDZ 10-20", "MV EDZ 20-30", "MV EDZ 30-40", "MV EDZ 40-50"]
+          },
+          "min_rows_by_sheet": {
+            "A3": 200,
+            "A4": 200,
+            "A7": 200,
+            "A8": 200
+          }
+        }
+      ]
+    },
+    {
+      "id": "suction_relative_humidity_open_twin",
+      "measurement_type": "suction_relative_humidity",
+      "model_role": "Kelvin-equation pressure boundary reconstruction and retention validation",
+      "state_or_parameter": "boundary forcing and state validation",
+      "primary_quantity": "relative humidity time series",
+      "model_quantity": "liquid-pressure boundary p_l or capillary pressure p_c",
+      "checks": [
+        {
+          "type": "xlsx",
+          "path": "suction_relative_humidity/source_files/OT_RH5.xlsx",
+          "required_sheets": ["OT_RH5"],
+          "required_columns_by_sheet": {"OT_RH5": ["time5", "RH5"]},
+          "min_rows_by_sheet": {"OT_RH5": 1000}
+        },
+        {
+          "type": "xlsx",
+          "path": "suction_relative_humidity/source_files/OT_RH6.xlsx",
+          "required_sheets": ["OT_RH6"],
+          "required_columns_by_sheet": {"OT_RH6": ["time6", "RH6"]},
+          "min_rows_by_sheet": {"OT_RH6": 1000}
+        },
+        {
+          "type": "xlsx",
+          "path": "suction_relative_humidity/source_files/OT_RH7.xlsx",
+          "required_sheets": ["OT_RH7"],
+          "required_columns_by_sheet": {"OT_RH7": ["time7", "RH7"]},
+          "min_rows_by_sheet": {"OT_RH7": 1000}
+        },
+        {
+          "type": "xlsx",
+          "path": "suction_relative_humidity/source_files/OT_RH8.xlsx",
+          "required_sheets": ["OT_RH8"],
+          "required_columns_by_sheet": {"OT_RH8": ["time8", "RH8"]},
+          "min_rows_by_sheet": {"OT_RH8": 1000}
+        }
+      ]
+    },
+    {
+      "id": "coordinates_and_geometry",
+      "measurement_type": "coordinates_geometry_layout",
+      "model_role": "coordinate transform and measurement-to-mesh lookup for all observation operators",
+      "state_or_parameter": "geometry support",
+      "primary_quantity": "measurement positions and labels",
+      "model_quantity": "2D_Model (x/y) coordinates and BGR model coordinates",
+      "checks": [
+        {
+          "type": "xlsx",
+          "path": "coordinates_geometry_layout/source_files/2025-09-05_Mess_Koord_XY.xlsx",
+          "required_sheets": ["Tabelle1"]
+        },
+        {
+          "type": "xlsx",
+          "path": "coordinates_geometry_layout/source_files/Coordinates_NMR_Taupe_characborehole.xlsx",
+          "required_sheets": ["Tabelle1"]
+        },
+        {
+          "type": "text",
+          "path": "coordinates_geometry_layout/source_files/VisualisationCDA.dat",
+          "min_lines": 1000,
+          "contains": "TEXT"
+        }
+      ]
+    },
+    {
+      "id": "bedding_structure",
+      "measurement_type": "bedding_geology_structure",
+      "model_role": "anisotropy-angle prior and structural uncertainty flags",
+      "state_or_parameter": "structural prior",
+      "primary_quantity": "bedding/fault orientation context",
+      "model_quantity": "rotation angle theta and local uncertainty inflation",
+      "checks": [
+        {
+          "type": "file",
+          "path": "bedding_geology_structure/source_files/bedding_angle_ERT.png"
+        },
+        {
+          "type": "file",
+          "path": "bedding_geology_structure/source_files/bedding_page_4_Ziefle_GETE_2022.pdf"
+        }
+      ]
+    },
+    {
+      "id": "model_projection_inputs",
+      "measurement_type": "model_projection_inputs",
+      "model_role": "mesh-cell parameter-field injection and OGS output/measurement timestep alignment",
+      "state_or_parameter": "workflow support",
+      "primary_quantity": "projection script, model archives, projected mesh",
+      "model_quantity": "MeshElement fields n_rd and k_i_rd",
+      "checks": [
+        {
+          "type": "zip",
+          "path": "model_projection_inputs/source_files/2025-09-05_Niche_4_no_gravity_no_sigV_no_uy_deltat_projection_on_mesh.zip",
+          "min_files": 25,
+          "suffix_counts_min": {
+            ".xml": 14,
+            ".vtu": 7,
+            ".py": 1,
+            ".prj": 1
+          }
+        },
+        {
+          "type": "mesh",
+          "path": "../../SOTA_OGS_Mont_Terri_work/GESA_model_original/projection_on_mesh_2025-09-05/bulk.vtu",
+          "cell_type": "triangle6",
+          "min_cells": 10000,
+          "required_cell_data": ["MaterialIDs"]
+        }
+      ]
+    },
+    {
+      "id": "other_hm_monitoring",
+      "measurement_type": "other_hm_monitoring",
+      "model_role": "secondary pressure/deformation validation gates where numeric data become available",
+      "state_or_parameter": "state validation",
+      "primary_quantity": "extensometer, mini-piezometer, crackmeter, laser scan, levelling context",
+      "model_quantity": "displacement, strain, pressure and qualitative trend checks",
+      "checks": [
+        {
+          "type": "file",
+          "path": "other_hm_monitoring/source_files/2024-12-19_Input_HERMES_BGR_20241217.pdf"
+        },
+        {
+          "type": "file",
+          "path": "other_hm_monitoring/source_files/CD-A_TD_2026_sc.pdf"
+        },
+        {
+          "type": "file",
+          "path": "other_hm_monitoring/source_files/2026-05-11_TD517_CD-A_260507__Minutes.pdf"
+        },
+        {
+          "type": "file",
+          "path": "other_hm_monitoring/source_files/Folien_Niv_TD_CDA_2026.pdf"
+        },
+        {
+          "type": "text",
+          "path": "other_hm_monitoring/source_files/VisualisationCDA.dat",
+          "min_lines": 1000,
+          "contains": "TEXT"
+        }
+      ]
+    }
+  ]
+}

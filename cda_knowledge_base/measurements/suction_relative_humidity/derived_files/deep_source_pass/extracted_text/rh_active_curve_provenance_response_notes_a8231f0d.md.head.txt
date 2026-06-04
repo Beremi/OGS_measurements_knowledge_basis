@@ -1,0 +1,18 @@
+# Response Notes: rh_active_curve_provenance
+- Response status: `missing_response`
+- Request status: `drafted_pending_send`
+- Gate: `RH_ACTIVE_CURVE_PROVENANCE`
+- Audience: Gesa Ziefle / BGR RH or OGS boundary-curve source
+- Recipient draft: `inversion_workflow/external_gate_requests/bgr_rh_boundary_curve_provenance_via_gesa_ziefle.md`
+## Received Files Or Answers
+- None recorded yet.
+## Intake Metadata Checklist
+- source sensors/sheets, model-time zero, RH percent/fraction convention, temperature/density constants, pressure unit/sign, extension/extrapolation policy, and post-active-curve decision.
+## Acceptance Test
+The active XML pressure curve can be regenerated or explained well enough that replacement curves/retention targets are no longer based on unknown provenance.
+## Refresh Commands After Acceptance
+`python inversion_workflow/scripts/audit_rh_boundary_curve.py; python inversion_workflow/scripts/build_rh_semantics_audit.py; python inversion_workflow/scripts/build_rh_boundary_candidate_curves.py; python inversion_workflow/scripts/build_measurement_stream_gate_audit.py; python inversion_workflow/scripts/build_measurement_gate_closure_request.py; python inversion_workflow/scripts/build_external_gate_request_pack.py; python inversion_workflow/scripts/build_objective_readiness_audit.py`
+## Gate Decision
+- Current effect if accepted: May close RH_ACTIVE_CURVE_PROVENANCE and make RH boundary forcing reproducible.
+- Decision: `not_evaluated`
+- Evaluated by/date: not recorded
