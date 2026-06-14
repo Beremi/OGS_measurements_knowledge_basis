@@ -1,0 +1,16 @@
+\begin{tabular}{p{0.20\linewidth}p{0.34\linewidth}p{0.36\linewidth}}
+\toprule
+Parameter & Prior / treatment & Role \\
+\midrule
+$k_0$ & $\mathcal{N}(-21.02,5.1^2)$ & global log10 intrinsic-permeability level \\
+$\alpha$ & $\mathcal{N}(139.9,5^2)$ & bedding-aligned tensor rotation \\
+$q=K_{22}/K_{11}$ & $\mathcal{U}(0.1,0.9)$ & local anisotropy ratio before rotation \\
+$\phi_0$ & trunc. $\mathcal{N}(0.1504,0.012^2)$ on [0.05, 0.175] & mean porosity level before RF perturbation \\
+$\Delta t_{\rm niche}$ & trunc. $\mathcal{N}(92.09,35^2)$ on [0, 260] & open-niche suction-curve time shift \\
+$s_{\rm niche}$ & trunc. $\mathcal{N}(1.23,0.15^2)$ on [0.65, 1.35] & open-niche suction-curve amplitude multiplier \\
+$c_{\rm niche}$ & trunc. $\mathcal{N}(0.2434,0.6^2)$ on [-2, 2] & open-niche suction offset \\
+$\xi^K_1,\ldots,\xi^K_{100}$ & independent normal prior entries & permeability KL coefficients on the mesh \\
+$\xi^\phi_1,\ldots,\xi^\phi_{100}$ & independent normal prior entries & porosity random-field coefficients \\
+$a_s,b_s$ & bounded least-squares, not sampled & per-support Archie intercept and slope fitted inside likelihood \\
+\bottomrule
+\end{tabular}
