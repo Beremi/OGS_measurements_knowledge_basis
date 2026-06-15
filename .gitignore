@@ -1,4 +1,5 @@
 # Large binary archives and container images.
+.local_ogs/
 *.zip
 *.tar
 *.tar.gz
@@ -52,3 +53,5 @@ SOTA_OGS_Mont_Terri_work/inversion_workflow/runs/
 
 # Nested Git repository managed separately.
 mont_terri_questions_rewrite/
+inversion_atempt/
+surrDAMH/
