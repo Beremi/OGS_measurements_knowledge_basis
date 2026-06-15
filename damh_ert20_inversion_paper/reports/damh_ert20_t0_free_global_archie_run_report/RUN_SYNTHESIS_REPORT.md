@@ -145,9 +145,9 @@ Rank 15 did not leave a likelihood-history file before the crash.
 
 The mesh-aligned radial Archie comparison is a key diagnostic artifact:
 
-- Numbered mesh support map: `pdf_report/figures/11_ert20_supports_numbered_on_mesh.png`
-- Figure: `pdf_report/figures/10_archie_radial_by_depth.png`
-- Values: `pdf_report/archie_radial_by_depth_values.csv`
+- Numbered mesh support map: `figures/11_ert20_supports_numbered_on_mesh.png`
+- Figure: `figures/10_archie_radial_by_depth.png`
+- Values: `archie_radial_by_depth_values.csv`
 
 The strongest departure from the current global Archie pair is localized rather than domain-wide.
 It is dominated by the shallower `15 cm` support trace, especially supports `3-5` in the previous
